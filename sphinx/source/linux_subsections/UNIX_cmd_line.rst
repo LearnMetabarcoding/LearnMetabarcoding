@@ -36,7 +36,7 @@ Sometimes in these resources we will ask you to run a command that is quite long
 	$ echo \
 	> "hello world"
 
-To enter this in the command prompt, we type the first line (excluding the :code:`$`) and then press Enter after typing the :code:`/\` symbol. This symbol at the end of the command tells the shell that we want to continue typing the same command on the next line. The prompt will change to a :code:`>`. We then type the second line, *excluding the* :code:`>` *symbol*. 
+To enter this in the command prompt, we type the first line (excluding the :code:`$`) and then press Enter after typing the :code:`\` symbol. This symbol at the end of the command tells the shell that we want to continue typing the same command on the next line. The prompt will change to a :code:`>`. We then type the second line, *excluding the* :code:`>` *symbol*. 
 
 Finally, the shell will ignore anything on a line after the first :code:`#` symbol it encounters. This is to allow for comments, and these resources will sometimes use this to comment lines of code. For example, you could type everything after the :code:`$` symbol of the following command into the terminal and run it:
 
