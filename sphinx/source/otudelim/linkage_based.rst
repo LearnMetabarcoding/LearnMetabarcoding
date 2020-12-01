@@ -7,5 +7,6 @@ SWARM is a slightly different clustering algorithm. Rather than using a threshol
 .. code-block::bash
 
 	$ swarm -w ​out.fasta​ -d 1 -z ​in.fasta
+	
 
 * What happens if you run with higher ``-d`` values (they must be integers).
