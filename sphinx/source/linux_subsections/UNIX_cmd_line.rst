@@ -24,7 +24,8 @@ If your command prompt is ever a different symbol, such as :code:`>`, this proba
 Try running the following:
 
 .. code-block:: bash
- 	$ echo "hello
+ 	
+     $ echo "hello
 
 You should be met with a :code:`>` symbol. Finish the command by typing :code:`world"` and pressing Enter.
 
