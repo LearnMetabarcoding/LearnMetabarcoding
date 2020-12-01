@@ -7,6 +7,7 @@ The command prompt
 --------------------------------
 
 Whether you are using SSH to access a remote linux server, using Terminal on a Mac or Windows Linux subsystem, you will be presented with a window of text awaiting your command. Depending on the computer and how it is configured, this exact nature of the promt will vary, but most commonly it will say your username, machine name and/or current directory, followed by a :code:`$` sign, like this:
+
 .. code-block:: bash
 
 	user@server:~/file/path$
