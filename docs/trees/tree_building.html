@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tree building &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OTU trees" href="otu_trees.html" />
+    <link rel="prev" title="Concatenating alignments" href="concatenating_alignments.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">The Practical Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Introduction to the linux command line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">Identifying OTUs and Generating Outputs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="preparing_mitogenome_data.html">Preparing mitogenome data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extracting_protein_coding_genes.html">Extracting protein coding genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aligning_protein_coding_genes.html">Aligning protein coding genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concatenating_alignments.html">Concatenating alignments</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tree building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otu_trees.html">OTU trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tree_viewing.html">Tree Viewing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../placing_otus_in_trees.html">Placing OTUs in reference trees</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../trees.html">Building Phylogenetic Trees for Metagenetics</a> &raquo;</li>
+        
+      <li>Tree building</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/trees/tree_building.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tree-building">
+<h1>Tree building<a class="headerlink" href="#tree-building" title="Permalink to this headline">¶</a></h1>
+<p>We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an “approximately maximum likelihood” phylogenetic tree building method, broadly similar in method to PhyML or RAxML.</p>
+<p>Use the following command, using the output from the previous step as the input and choosing an appropriate name for your tree. The <code class="docutils literal notranslate"><span class="pre">-gtr</span></code> option tells FastTree to use the GTR+CAT model, and the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option specifies that this is DNA data.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ FastTree -gtr -nt &lt; ​supermatrix.fasta​ &gt; ​tree.nwk
+</pre></div>
+</div>
+<p>The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the <code class="docutils literal notranslate"><span class="pre">head</span></code> command. Each terminal in the tree has the ID of the sequence used to generate it. These code names are very useful for linking to data about our sequences, but aren’t helpful for examining the tree and interrogating its success.</p>
+<p>In this case, we’ll use a script to pull metadata from the GenBank files to do the renaming. Again, this is a custom script used to skip over tedious bits of this pipeline, it’s definitely not a required step.</p>
+<p>The script is <code class="docutils literal notranslate"><span class="pre">rename_newick_with_gb.pl</span></code>, check out the helpfile using <code class="docutils literal notranslate"><span class="pre">-h</span></code> and rename the tree with the fields you think would be useful. My suggestion is in the footnote <a class="footnote-reference brackets" href="#f1" id="id1">1</a>.</p>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">rename_newick_with_gb.pl</span> <span class="pre">-g</span> <span class="pre">​novelmt.gb</span> <span class="pre">genbankmt.gb​</span> <span class="pre">-t</span> <span class="pre">​tree.nwk​</span> <span class="pre">-o</span> <span class="pre">​tree_RN.nwk​</span></code>
+<code class="docutils literal notranslate"><span class="pre">-fields</span> <span class="pre">LOCUS</span> <span class="pre">TAXONOMY</span> <span class="pre">-ntax</span> <span class="pre">6</span></code></p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="otu_trees.html" class="btn btn-neutral float-right" title="OTU trees" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="concatenating_alignments.html" class="btn btn-neutral float-left" title="Concatenating alignments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
