@@ -5,7 +5,6 @@ Introduction to the linux command line in bioinformatics
 .. toctree::
 	:hidden: 
 	
-	linux_subsections/linux_fundamentals
 	linux_subsections/UNIX_cmd_line
 	linux_subsections/linux_servers
 	linux_subsections/nano
