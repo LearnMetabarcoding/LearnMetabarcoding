@@ -1,5 +1,5 @@
 ==========================================================
-Introduction to the linux command line in bioinformatics
+Introduction to command line bioinformatics
 ==========================================================
 
 .. toctree::
