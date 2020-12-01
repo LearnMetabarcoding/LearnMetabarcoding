@@ -1,11 +1,12 @@
 ==========================================================
-Introduction to command line bioinformatics
+Command line bioinformatics
 ==========================================================
 
 .. toctree::
 	:hidden: 
 	
 	linux_subsections/UNIX_cmd_line
+	linux_subsections/basic_UNIX
 	linux_subsections/linux_servers
 	linux_subsections/nano
 	linux_subsections/grep
