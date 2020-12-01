@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pair merging &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pair concatenation Extension" href="extensions/pair_concat.html" />
+    <link rel="prev" title="Quality Settings Extension" href="extensions/quality_settings_extension.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">The Practical Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Introduction to the linux command line in bioinformatics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../readprocessing.html">Read processing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fastq.html">FASTQ files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demultiplexing.html">Demultiplexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primer_removal.html">Primer removal</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pair merging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extensions/pair_concat.html">Pair concatenation Extension</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data_concat.html">Data concatenation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">Identifying OTUs and Generating Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../placing_otus_in_trees.html">Placing OTUs in reference trees</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../readprocessing.html">Read processing</a> &raquo;</li>
+        
+      <li>Pair merging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/processing/pair_merging.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pair-merging">
+<span id="id1"></span><h1>Pair merging<a class="headerlink" href="#pair-merging" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>These reads were sequenced such that 300bp of our fragment was read from each end. There should be 418bp of sequence between the primer pair.</p>
+<ul class="simple">
+<li><p>You know from previous sections how much index and primer sequence was trimmed from each end. How much sequence should we have left in each direction?</p></li>
+<li><p>How much should these sequences overlap?</p></li>
+</ul>
+<p>This overlap between these is definitely enough to be able to confidently assemble each pair together, and each pair of the primer-trimmed files can now become one, by merging the mate pairs together by finding where the sequence overlaps.</p>
+<p>An important consideration when pair merging is that, in general, sequence reads decline in quality along their length. This quality information is stored in the FASTQ file - it would be a lot of work to check all of our sequences manually, but there are some ways to summarise the quality scores. It’s good practice to do this with your reads at this point</p>
+<p>One very popular option is to use the program FastQC. You can run it on a single file like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ fastqc ​in.fastq
+</pre></div>
+</div>
+<p>You can view the output of FastQC by using your FTP software (e.g. FileZilla) to access the server, navigating to the directory in which you ran fastqc and opening the html file with the same name as your file. There are lots of useful graphs, but the first one is key here.</p>
+<p>If you don’t want to have to use your FTP software, one fun way of checking a file’s quality with output on the command line is fastqe:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ fastqe --bin ​in.fastq
+</pre></div>
+</div>
+<p>The ends away from the primer are the parts that the merging algorithm is attempting to match, and you’ll notice these tend to be lower quality. This leads to two considerations:</p>
+<ol class="arabic simple">
+<li><p>It is important to be aware of quality scores when merging, since erroneous sequence could cause the merging of reads that are not the same fragment, forming a chimera</p></li>
+<li><p>However, merging can actually provide some validation of quality and improve quality scores for the overlap region if it matches.</p></li>
+</ol>
+<p>As always, check out the helpfile for PEAR:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pear --help
+</pre></div>
+</div>
+<p>Not too many options. Try running PEAR on a single pair of your primer-trimmed files from the previous section, after creating a new directory to hold merged files. The output should be the first part of the name - PEAR will add to this for the output files</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pear -f ​in_R1.fastq​ -r ​in_R2.fastq​ -o ​merged/out
+</pre></div>
+</div>
+<p>PEAR gives us some really informative information on the terminal, make sure to review it. As you’ll have seen from the helpfile, there are many different thresholds that can be applied to the merging.</p>
+<ul class="simple">
+<li><p>Run your command again, applying a sensible minimum overlap based on what we calculated earlier.</p></li>
+<li><p>Run your command again, trying out some different p values and quality thresholds. The former is the threshold probability of an overlap being incorrect, the latter is the threshold score for trimming off low quality read ends.</p></li>
+</ul>
+<p>I generally set the quality threshold for trimming low quality ends to 26, and the minimum overlap to a value around 20-30 bases less than the presumed overlap length. These sequences are pretty good quality so these settings won’t reject much more than the default in this case. Clean up your experimentation.</p>
+<p>Like with cutadapt, we can run PEAR in a loop to apply it to all of our samples: again, we list our files, find our unique samples, then loop on these and use each sample name to run an iteration of PEAR. Here my command assumes your files are in a directory called 2_trimmed and you’re outputting to a directory called 3_merged - you should modify these as necessary:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="k">while</span> <span class="nb">read</span> l<span class="p">;</span> <span class="k">do</span> pear -f 2_trimmed/<span class="si">${</span><span class="nv">l</span><span class="si">}</span>_R1.fastq -r 2_trimmed/<span class="si">${</span><span class="nv">l</span><span class="si">}</span>_R2.fastq -o 3_merged/<span class="nv">$l</span> -q <span class="m">26</span> -v <span class="m">100</span><span class="p">;</span> <span class="k">done</span> &lt; &lt;<span class="o">(</span>ls 2_trimmed/ <span class="p">|</span> cut -d_ -f1 <span class="p">|</span> sort <span class="p">|</span> uniq<span class="o">)</span>
+</pre></div>
+</div>
+<p>Make sure to review those terminal outputs! Then list the contents of your merged directory, you’ll see files for the assembled, unassembled and discarded reads. We don’t need the latter two, so let’s clean up:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> 3_merged
+$ rm *discarded* *unassembled* <span class="o">&amp;&amp;</span> rename -e <span class="s2">&quot;s/assembled\.//&quot;</span> *
+$ <span class="nb">cd</span> ../
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> here runs both commands on this line one after the other. The <code class="docutils literal notranslate"><span class="pre">rename</span></code> command uses regular expressions to remove the “assembled followed by a full stop” part from any files with that in the name.</p>
+<p>In our example our read lengths are long enough compared to our fragment length so that they overlap. This isn’t always the case. If there is no overlap then the sequnces are concatenated
+not merged. If you’d like to know more about this look at the <a class="reference internal" href="extensions/pair_concat.html#pair-concatenation"><span class="std std-ref">pair concatenation extension</span></a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="extensions/pair_concat.html" class="btn btn-neutral float-right" title="Pair concatenation Extension" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="extensions/quality_settings_extension.html" class="btn btn-neutral float-left" title="Quality Settings Extension" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
