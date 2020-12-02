@@ -1,0 +1,62 @@
+.. _pair_concatenation:
+
+========================================
+Pair concatenation Extension
+========================================
+
+What happens if our fragment length is so much longer than our read length that it doesn’t overlap? For example, if we had sequenced these fragments using a 2x150bp metric instead of 2x300bp? Let’s simulate it.
+
+
+Using the output from primer trimming, we can apply cutadapt to remove 150bp from the 3’ end of each read for a pair of files. First create a folder for this experiment (mine is called trimmed_150), then run these commands:
+
+.. code-block:: bash 
+
+	$ cutadapt -u -150 -o trimmed_150/T11_R1.fastq trimmed/T11_R1.fastq
+	$ cutadapt -u -150 -o trimmed_150/T11_R2.fastq trimmed/T11_R2.fastq
+
+* Try running PEAR on these two files.
+
+We obviously can’t merge them, because there’s nothing left that overlaps. So instead we have to perform concatenation - stitching the forward and reverse reads together. This achieves the same aim as PEAR, converting into a single sequence rather than two independent reads.
+
+The sequencer has introduced some length variation - some reads have recovered a little more data than others. PEAR took care of this automatically when it was forming a single read using the overlap, but concatenation is more basic. With non-overlapping data we need to concatenate like with like so that we generate a consistent (pseudo-)region of DNA. Otherwise we would generate spurious insertions/deletions when comparing our sequences.
+
+In most cases, we would trim or discard reads such that the forward and reverse reads were each a fixed length, and then stitch each mate pair together to form a pseudo-locus. While there’s really a missing section of DNA in the middle, we have summarised our molecular information into a single fragment that is perfectly usable for many metabarcoding applications.
+
+Let’s review the length distribution of our sequences to select a fixed length for each direction:
+
+.. code-block:: bash 
+
+	$ sed -n '2~4p' ​in.fastq​ | while read l; do echo ${#l} ; done | sort | uniq -c
+
+Generally, we would select something around the central tendency, to retain as much data as possible.
+
+* Select a length for each read. It does not need to be the same value.
+
+
+We know the end with the primer is the accurate end, so we trim bases from the other end. We use cutadapt for this. The -l argument trims reads down to a value, and the -m argument specifies a minimum length. Set them as the same value:
+
+.. code-block:: bash 
+
+	$ cutadapt -l ​n​ -m ​n​ -o ​out.fastq​ ​in.fastq
+
+Run this on your forward and reverse read file.
+
+PEAR can stitch our mate pairs, and it reverse-complements the reverse reads for us.
+
+.. code-block:: bash 
+
+	$ pear -i -f ​in_R1.fastq​ -r ​in_R2.fastq -​ o ​outname
+
+Oh dear. The problem is that we removed short reads without removing their mates. This gives us the opportunity to test using a tool for mate-pairing - i.e. making sure two files are in sync. We will use `pairfq <https://github/sestaton/pairfq>`_ for this:
+
+.. code-block:: bash 
+
+	$ pairfq makepairs -f ​in_R1.fastq -r ​in_R2.fastq -fp ​out_R1.fastq -rp ​out_R2.fastq -fs ​out_R1_unpaired.fastq​ -rs ​out_R2_unpaired.fastq
+
+As always, use grep to check out file read numbers. Then run pear again to create the mate pairs.
+
+* Are these concatenated sequences as reliable as our merged sequences? Why not?
+
+You could at this point create a parallel dataset of concatenated short reads. Later, you can come back to these and work through the rest of the pipeline. Compare how these sequences behave in the future steps, particularly chimera filtering and OTU delimitation.
+
+As an aside, if we have reads that are just too short to overlap, or too short to overlap well (e.g. < 10-20bp overlap), one option is to edit the reads such that the small missing region is padded with Ns. Reads that do overlap are merged if possible, or trimmed to be consecutive. Reads that are too short have N added to go up to the right length, and then the reads are stitched. This only applies to regions where we can be reasonably confident of a consistent, predictable length between primers. One issue would be the selection of an OTU delimitation method that took account of the ambiguous regions, otherwise the sequences would in general be more similar to one another than expected. For this reason this would only usually be done for projects with a small missing region.
