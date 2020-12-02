@@ -16,7 +16,7 @@ We can then run this in crop. Note it creates several outputs using ``outname`` 
 
 	$ crop -b 40 -z 400 -s -r 0 -i ​in.fasta​ -o ​outname
 
-The options ``-b``, ``-z`` and ``-r`` are for optimising the MCMC process. You can read more about these in their `documentation <​https://github.com/tingchenlab/CROP/wiki/THE-CROP-WIKI​>`_. You can leave these alone. Option ``​-s`` specifies that we want the equivalent of 3% clustering. We could change this to ``-g`` which is equivalent to 5%. You can alternatively supply values to ``-l`` and ``-u`` , for example ``​-l 1 -u 3`` , which are the lower and upper bounds of similarity levels.
+The options ``-b``, ``-z`` and ``-r`` are for optimising the MCMC process. You can read more about these in their `documentation <https://github.com/tingchenlab/CROP/wiki/THE-CROP-WIKI>`_. You can leave these alone. Option ``​-s`` specifies that we want the equivalent of 3% clustering. We could change this to ``-g`` which is equivalent to 5%. You can alternatively supply values to ``-l`` and ``-u`` , for example ``​-l 1 -u 3`` , which are the lower and upper bounds of similarity levels.
 
 
 CROP creates a bunch of extra files, you may want to ​mv​ them to their own folder. You could create a folder for each CROP run you do and make sure you’re in that directory when you run it.

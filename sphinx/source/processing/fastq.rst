@@ -27,7 +27,7 @@ We would like to review the structure of these files. We could print the whole f
 
 	$ head -n 10 ​file
 
-You will see the fastq format comprising header, sequence and quality scores. A useful point to note is the structure of the file header, specifically that it starts with “@D00”. If the structure of this file is completely new to you, take a few minutes to read the first section on the `wikipedia page on fastq format <https://en.wikipedia.org/wiki/FASTQ_format>`_.
+You will see the fastq format comprising header, sequence and quality scores. A useful point to note is the structure of the file header, specifically that it starts with “@D00”. If the structure of this file is completely new to you, take a few minutes to read the first section on the wikipedia page on `fastq format <https://en.wikipedia.org/wiki/FASTQ_format>`_.
 
 To get specific lines from a file, use the sed function:
 
