@@ -6,7 +6,7 @@ Working with GenBank
 
 There are many ways to get this data, the most efficient would be to use NCBI’s command line tools. However, we don’t want to run into issues with our server repeatedly accessing GenBank, so this is the easy way.
 
-1. Go to the genbank nucleotide core database at `https://www.ncbi.nlm.nih.gov/nuccore <https://www.ncbi.nlm.nih.gov/nuccore>`_ 
+1. Go to the genbank nucleotide core `database <https://www.ncbi.nlm.nih.gov/nuccore>`_ 
 
 2. In the search bar, type the following:
 		

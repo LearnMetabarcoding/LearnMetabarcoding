@@ -10,7 +10,7 @@ The other downside to the prior method is that GenBank is not necessarily author
 
 One issue with using these more advanced classification tools is that they often require quite specific reference database structures. Thankfully, many curated database authors have released their databases in these formats.
 
-For CO1, the MIDORI database (Machida, 2017, doi: 10.1038/sdata.2017.27) is a curated version of GenBank’s CO1 sequences. The authors have taken the useful step of creating a server for searching sequences against MIDORI using three of the above classifiers. You can access the server here: `http://reference-midori.info/server.php <http://reference-midori.info/server.php>`_ 
+For CO1, the MIDORI database (Machida, 2017, doi: 10.1038/sdata.2017.27) is a curated version of GenBank’s CO1 sequences. The authors have taken the useful step of creating a server for searching sequences against MIDORI using three of the above classifiers. You can access the server `here. <http://reference-midori.info/server.php>`_ 
 
 You can see that you can select a program, paste or upload your sequences, and select a database and searching parameters. We don’t want to overload their server with redundant searches, so we’ve already done this step for you. We ran the 3% OTUs against the MIDORI CO1 database using RDP and SINTAX, and you can find the resulting files in ``/AMM/resources/metabarcoding/taxassign/`` under the different program names. We ran SPINGO too, but its outputs require more processing to be comparable, so we’ll just consider RDP and SINTAX. Copy the files to your directory. RDP outputs two files, the “hier_outfile” is a summary and the “usga_classified” is the individual OTU taxonomies.
 

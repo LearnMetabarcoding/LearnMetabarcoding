@@ -20,6 +20,6 @@ Other ‘point errors’ are harder to spot. Some will not affect coding at all,
 
 .. rubric:: Footnotes 
 
-.. [#f1] This custom script is available on my github `https://github.com/tjcreedy <https://github.com/tjcreedy>`_. 
+.. [#f1] This custom script is available on my `github <https://github.com/tjcreedy>`_. 
 		 Please let me know if you know of any established software that can do this in a similar manner!
 .. [#f2] ``$ ​filtertranslate.py ​in.fasta​ 5`` ​- yup, it’s that simple!

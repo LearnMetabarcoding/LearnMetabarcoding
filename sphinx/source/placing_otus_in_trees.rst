@@ -12,7 +12,7 @@ The first step in doing this is to align our OTUs to our mitogenome dataset. Run
 
 	$ mafft --thread 1 --addfragments ​otus.fasta​ --6merpair ​supermatrix.fasta​ > ​out.fasta
 
-Here we use mafft’s ​--addfragments argument, which you can read about at `https://mafft.cbrc.jp/alignment/software/addsequences.html <https://mafft.cbrc.jp/alignment/software/addsequences.html>`_. Again, we’re using some options which make this alignment very very fast, but the accuracy might not be great.
+Here we use mafft’s ​--addfragments argument, which you can read about `here <https://mafft.cbrc.jp/alignment/software/addsequences.html>`_. Again, we’re using some options which make this alignment very very fast, but the accuracy might not be great.
 
 Download this alignment and have a look at it using your alignment viewer.
 
@@ -20,7 +20,7 @@ Download this alignment and have a look at it using your alignment viewer.
 
 We now build a tree using this new data, but with our existing mitogenome tree as a constraint tree. We will do this again in FastTree.
 
-First, we must convert our existing tree into a constraint alignment, as detailed in the documentation: `http://www.microbesonline.org/fasttree/constrained.html <http://www.microbesonline.org/fasttree/constrained.html>`_ ​. You’ll notice that they supply a handy script for this conversion - we’ve already downloaded this for you, so go ahead and copy it from ``/AMM/resources/phylogenetics/TreeToConstraints.pl`` to your directory.
+First, we must convert our existing tree into a constraint alignment, as detailed in the `documentation <http://www.microbesonline.org/fasttree/constrained.html>`_ ​. You’ll notice that they supply a handy script for this conversion - we’ve already downloaded this for you, so go ahead and copy it from ``/AMM/resources/phylogenetics/TreeToConstraints.pl`` to your directory.
 
 You can now run the script as instructed in the documentation to convert the mitogenome tree from the previous section [#f1]_.
 

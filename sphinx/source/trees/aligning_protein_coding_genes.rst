@@ -12,7 +12,7 @@ Run the following command, making sure to replace *raw* with the name of the dir
 
 	$ for f in ​dir​/*; do mafft --thread 1 --retree 2 --maxiterate 0 $f >​ new/​${f#*/}; done
 
-While this is running, have a look at the manual for mafft `https://mafft.cbrc.jp/alignment/software/manual/manual.html <https://mafft.cbrc.jp/alignment/software/manual/manual.html>`_. Have a look at the different methods for alignment and think about what might be best for these genes [#f1]_.
+While this is running, have a look at the `manual for mafft <https://mafft.cbrc.jp/alignment/software/manual/manual.html>`_. Have a look at the different methods for alignment and think about what might be best for these genes [#f1]_.
 
 Once it’s complete, pick one of your alignments and download it to your computer. Use an alignment viewer, such as AliView, to open the alignment.
 

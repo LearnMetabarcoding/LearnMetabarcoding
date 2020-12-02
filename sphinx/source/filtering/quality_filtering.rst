@@ -23,9 +23,9 @@ All three are commonly used in amplicon filtering.
 
 With paired amplicons, we know that the end of the read is likely to be lower quality; but we have already merged our pairs. The quality scores in the middle of our reads have been adjusted to take account of the duplicate data, so in general it’s unlikely we have any specific poor regions of our reads. Excluding reads entirely based on quality is a more conservative approach and is generally suggested here.
 
-For basic fastq filtering based on minimum score, we will use fastq_quality_filter from the fastx_toolkit package. This is a great little package of handy tools available here `http://hannonlab.cshl.edu/fastx_toolkit/index.html <http://hannonlab.cshl.edu/fastx_toolkit/index.html>`_ 
+For basic fastq filtering based on minimum score, we will use fastq_quality_filter from the fastx_toolkit package. This is a great little package of handy tools available `here <http://hannonlab.cshl.edu/fastx_toolkit/index.html>`_ 
 
-We will use the fastx_filter function from the VSEARCH software for filtering by expected error and expected error rate. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. We’ll see other tools from this useful package later; you can read the documentation here: https://github.com/torognes/vsearch
+We will use the fastx_filter function from the VSEARCH software for filtering by expected error and expected error rate. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. We’ll see other tools from this useful package later; you can read the documentation `here. <https://github.com/torognes/vsearch>`_
 
 Let’s try doing some different sorts of quality filtering. Here are some commands.
 

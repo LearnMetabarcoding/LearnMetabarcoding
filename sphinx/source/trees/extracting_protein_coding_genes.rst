@@ -14,7 +14,7 @@ We will use a custom script to extract the 13 mitochondrial protein coding genes
 
 Replace the italics parts in the following command with the appropriate file and directory names and run it. Make sure you match up the arguments with the help file and understand what you’re doing here! The *outdir* will hold a file for each gene. You don’t need to create this, the script will
 
-..code-block:: bash
+.. code-block:: bash
 
 	$ extract_genes.pl -g ​novelmt.gb genbankmt.gb ​-o ​outdir/​ -minregion 10
 

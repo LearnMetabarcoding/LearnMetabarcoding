@@ -14,7 +14,7 @@ Let’s use BLAST to search our OTUs against this fasta of references. There’s
 
 Because we know that both our OTUs and our reference set are likely to all be closely related, we’re setting a strict ``-evalue`` and a threshold percentage identity so that we don’t simply get every OTU matching against every reference.
 
-Use ``cat`` to view the output file. We’re using the standard blast tabulated output (``-​ outfmt 6``); you can find out what the columns refer to at `https://www.ncbi.nlm.nih.gov/books/NBK279684/ <https://www.ncbi.nlm.nih.gov/books/NBK279684/>`_. Rather obviously, the first refers to the query sequence, the second the subject, and the third the percent identity. You can see we’ve got some clear hits for some of our OTUs!
+Use ``cat`` to view the output file. We’re using the standard blast tabulated output (``-​ outfmt 6``); you can find out what the columns refer to `here <https://www.ncbi.nlm.nih.gov/books/NBK279684/>`_. Rather obviously, the first refers to the query sequence, the second the subject, and the third the percent identity. You can see we’ve got some clear hits for some of our OTUs!
 
 * Do any of our OTUs hit multiple different references? Why might this be?
 
