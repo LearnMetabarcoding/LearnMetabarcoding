@@ -47,7 +47,7 @@ PEAR can stitch our mate pairs, and it reverse-complements the reverse reads for
 
 	$ pear -i -f ​in_R1.fastq​ -r ​in_R2.fastq -​ o ​outname
 
-Oh dear. The problem is that we removed short reads without removing their mates. This gives us the opportunity to test using a tool for mate-pairing - i.e. making sure two files are in sync. We will use `pairfq <https://github/sestaton/pairfq>`_ for this:
+Oh dear. The problem is that we removed short reads without removing their mates. This gives us the opportunity to test using a tool for mate-pairing - i.e. making sure two files are in sync. We will use `pairfq <https://github.com/sestaton/pairfq>`_ for this:
 
 .. code-block:: bash 
 
