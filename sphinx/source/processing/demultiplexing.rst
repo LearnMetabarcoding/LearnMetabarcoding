@@ -38,7 +38,7 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 
 You’ll probably see that there are occasions where no index or primer is highlighted on a sequence. This means there was a sequencing error. Look closely and you’ll see that a base is missing or inserted, or just wrong.
 
-We want to split each of these libraries up by index into a separate pair of files for each of the 12 samples, and remove the index sequences. We will do this using the tool `cutadapt. <​https://cutadapt.readthedocs.io​>`_ This versatile tool allows separating files by index and removal of these indices and primers. It can allow for some error in the index sequence, and can keep read pairs in sync (more on this later).
+We want to split each of these libraries up by index into a separate pair of files for each of the 12 samples, and remove the index sequences. We will do this using the tool `cutadapt. <https://cutadapt.readthedocs.io>`_ This versatile tool allows separating files by index and removal of these indices and primers. It can allow for some error in the index sequence, and can keep read pairs in sync (more on this later).
 
 As ever with a new tool, first cast your eye over the help, either online or buy running: 
 
