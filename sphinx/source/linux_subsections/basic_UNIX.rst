@@ -1,3 +1,5 @@
+.. _basic_unix:
+
 ==================================
 Basic UNIX commands
 ==================================
@@ -9,6 +11,7 @@ Some commonly used commands
 The following are some basic commands you might use to navigate around and manipulate files on a linux computer using the command line interface. 
 
 .. code-block:: bash
+
 	$ pwd               # print the current working directory
 
 	$ mkdir ​./dir       # make a new directory ​called dir​ inside the working directory
@@ -58,7 +61,7 @@ If you need to change directory you can type ``cd`` followed  by the path of the
 
 	$ cd directory
 
-If you need to create a new directory you can use the `mkdir`` command followed by what name you want to give the new directory.
+If you need to create a new directory you can use the ``mkdir`` command followed by what name you want to give the new directory.
 
 .. code-block:: bash 
 	

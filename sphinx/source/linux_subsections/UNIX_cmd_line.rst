@@ -18,9 +18,9 @@ When you see this ``$`` sign, this means the shell is expecting a new command. W
 
 	$ echo "hello world"
 
-You would enter everything *after* the ``$`, but never the ``$`` itself. You would then press Enter (Return) to run the command. In this case, it would print the text `hello world`` and then the instruction would finish, returning to the prompt.
+You would enter everything *after* the ``$``, but never the ``$`` itself. You would then press Enter (Return) to run the command. In this case, it would print the text ``hello world`` and then the instruction would finish, returning to the prompt.
 
-If your command prompt is ever a different symbol, such as ``>`, this probably means that the shell is waiting for you to finish a command you've previously entered. This functionality allows you to write commands over multiple lines if they're very long. However, it's easy to accidentally enter this mode if you fail to close a parenthesis (``()`) or quotation marks ``"`` in a command, then try to run it.
+If your command prompt is ever a different symbol, such as ``>``, this probably means that the shell is waiting for you to finish a command you've previously entered. This functionality allows you to write commands over multiple lines if they're very long. However, it's easy to accidentally enter this mode if you fail to close a parenthesis (``()``) or quotation marks ``"`` in a command, then try to run it.
 
 Try running the following:
 
@@ -37,7 +37,7 @@ Sometimes in these resources we will ask you to run a command that is quite long
 	$ echo \
 	> "hello world"
 
-To enter this in the command prompt, we type the first line (excluding the ``$`) and then press Enter after typing the ``\``` symbol. This symbol at the end of the command tells the shell that we want to continue typing the same command on the next line. The prompt will change to a ``>`. We then type the second line, *excluding the* ``>`` *symbol*. 
+To enter this in the command prompt, we type the first line (excluding the ``$``) and then press Enter after typing the ``\`` symbol. This symbol at the end of the command tells the shell that we want to continue typing the same command on the next line. The prompt will change to a ``>``. We then type the second line, *excluding the* ``>`` *symbol*. 
 
 Finally, the shell will ignore anything on a line after the first ``#`` symbol it encounters. This is to allow for comments, and these resources will sometimes use this to comment lines of code. For example, you could type everything after the ``$`` symbol of the following command into the terminal and run it:
 
@@ -57,7 +57,7 @@ When you use a graphical file explorer, like Explorer on Windows or Finder on Ma
 
 Unless you say otherwise, any command you run will look for any files you specify within your current working directory, and output any files you generate into the current working directory. To say otherwise, you specify the *path* to the file. This is simply giving an address to the terminal for it to find the file you want within the directory structure. A path can be relative (directions to the location relative to the current working directory) or absolute (directions to the location relative to the root of the filesystem - the root is like the master parent directory which contains everything else in the computer).
 
-You can see examples of these commands on the :ref:`basic UNIX commands<basic_UNIX>`` page.
+You can see examples of these commands on the :ref:`basic UNIX commands<basic_UNIX>` page.
 
 --------------------------------
 Input/output and pipes
