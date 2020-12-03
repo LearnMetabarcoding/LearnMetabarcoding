@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The grep command &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The sed command" href="sed.html" />
+    <link rel="prev" title="Using Nano to edit documents" href="nano.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">The Practical Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="UNIX_cmd_line.html">UNIX command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_UNIX.html">Basic UNIX commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux_servers.html">Accessing linux servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nano.html">Using Nano to edit documents</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The grep command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sed.html">The sed command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html">Loops in bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html">Cheatsheet of useful commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">Identifying OTUs and Generating Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../placing_otus_in_trees.html">Placing OTUs in reference trees</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../linuxintro.html">Command line bioinformatics</a> &raquo;</li>
+        
+      <li>The grep command</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/linux_subsections/grep.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-grep-command">
+<h1>The grep command<a class="headerlink" href="#the-grep-command" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">grep</span></code> command is a very powerful tool for searching and subsetting a text file. The <code class="docutils literal notranslate"><span class="pre">grep</span></code> command performs searching using a standardised search language called Regular Expressions, or regex. Regular expressions are short code expressions that detail how to search for some text, generally in order to include varying or unknown sections of text.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Learning Regular Expressions in detail is beyond the scope of these resources. <a class="reference external" href="https://regexone.com/">RegexOne</a> provides a great interactive tutorial for learning the basics of Regular Expressions, <a class="reference external" href="https://www.regular-expressions.info/">regular-expressions.info</a> is a good reference site to look up particular expressions, and <a class="reference external" href="https://regex101.com/">regex101.com</a> is a really handy tool to test your RegEx</p>
+</div>
+<p>Here we’ll cover some basic ways we can use grep to help us with bioinformatics. There are two important facts to remember about how <code class="docutils literal notranslate"><span class="pre">grep</span></code> operates by default:</p>
+<ul class="simple">
+<li><p>grep searches line by line for a match to the search term</p></li>
+<li><p>any lines that match the term are returned</p></li>
+</ul>
+<div class="section" id="finding-a-sequence-motif">
+<h2>Finding a sequence motif<a class="headerlink" href="#finding-a-sequence-motif" title="Permalink to this headline">¶</a></h2>
+<p>We can use grep to find instances of a particular sequence in a sequence file. You can test this out on the fastq files that form the starting point of the metabarcoding pipeline. For example, we can search these files for a particular index sequence, e.g. <code class="docutils literal notranslate"><span class="pre">AACACC</span></code>. Replace file.fastq with the name of one of the starting fastq files.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep <span class="s2">&quot;AACACC&quot;</span> file.fastq
+</pre></div>
+</div>
+<p>This will print lots and lots of lines, because this is a very common motif. This is too much to handle, so let’s instead just count the number of lines that have a match:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$grep</span> -c <span class="s2">&quot;AACACC&quot;</span> file.fastq
+</pre></div>
+</div>
+<p>This index is used for demultiplexing, so we might want to review some sequences to check that it’s in the right place. We’ll just look at the first three sequences (first 12 lines) using the <code class="docutils literal notranslate"><span class="pre">head</span></code> command, then send that to grep. We’re going to add <code class="docutils literal notranslate"><span class="pre">|$</span></code> to our regular expression. <code class="docutils literal notranslate"><span class="pre">|</span></code> in regular expressions means “or”, and <code class="docutils literal notranslate"><span class="pre">$</span></code> means “the end of a line”. So we’re searching for either our sequence of interest, or the end of a line. This means that every line will match (since every line ends), but only our sequenc of interest will be highlighted. The <code class="docutils literal notranslate"><span class="pre">-E</span></code> tells grep to use extended regular expressions, which is needed to make this search work.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ head -n <span class="m">12</span> file.fastq <span class="p">|</span> grep -E <span class="s2">&quot;AACACC|</span>$<span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">|</span></code> between the head and grep commands means that the output of the head command is being piped (sent) to the input of the grep command. This is a completely different meaning to the use of <code class="docutils literal notranslate"><span class="pre">|</span></code> as “or” in the regular expression.</p>
+</div>
+<div class="section" id="counting-sequences">
+<h2>Counting sequences<a class="headerlink" href="#counting-sequences" title="Permalink to this headline">¶</a></h2>
+<p>We saw the <code class="docutils literal notranslate"><span class="pre">-c</span></code> option earlier - this is really useful for counting up the number of sequences in a fasta or fastq file. This is because the structure of these files is very predictable. Each sequence will have one and only one header line, and this line will start with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> for fasta files and <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> for fastq files. So for fasta files, we can count the number of sequences by counting the number of lines that start with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -c <span class="s2">&quot;^&gt;&quot;</span> file.fasta
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol means “the start of a line”. So the regex <code class="docutils literal notranslate"><span class="pre">^&gt;</span></code> means “the start of a line immediately followed by <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</p>
+<p>For fastq files it’s a little more tricky, because <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> is also a symbol used to denote a base quality score, and it’s possible that the first base of a sequence has this score. So if we just searched for the number of lines starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, we’d risk overestimating because we’d be counting all of the header lines <em>and</em> all of the quality score lines starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>. However, if the sequences you’re working with are sequence reads, it’s likely that they have very similar headers, because the sequence matchine has named them. Check this by looking at the first 20 lines of a fastq file: you’ll see that they probably all start with the same string, often a sequence machine identifier code.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ head -20 file.fastq
+</pre></div>
+</div>
+<p>You can then add this to the regular expression to search more accurately. For example, say our sequence headers all start with <code class="docutils literal notranslate"><span class="pre">D00</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -c <span class="s2">&quot;^@D00&quot;</span>
+</pre></div>
+</div>
+<p>Note that this isn’t infallable - with millions of reads, it’s possible that you might have one that has a quality score starting with <code class="docutils literal notranslate"><span class="pre">&#64;D00</span></code> - all of these characters are quality score values. If you need to be 100% certain, it’s better to use a tool that explicitely parses fastq files.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sed.html" class="btn btn-neutral float-right" title="The sed command" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="nano.html" class="btn btn-neutral float-left" title="Using Nano to edit documents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
