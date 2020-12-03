@@ -6,41 +6,44 @@ Basic UNIX commands
 Some commonly used commands
 --------------------------------
 
+The following are some basic commands you might use to navigate around and manipulate files on a linux computer using the command line interface. 
+
 .. code-block:: bash
-	
-	$ cd ​./dir          #change location to ​dir​ inside current directory
+	$ pwd               # print the current working directory
 
-	$ cd ../            #change location to parent directory
+	$ mkdir ​./dir       # make a new directory ​called dir​ inside the working directory
 
-	$ pwd               #show current directory
+	$ cd ​./dir          # change working directory to a directory named to ​dir​ that is inside the working directory
 
-	$ mkdir ​./dir       #make new directory ​dir​ insider current directory
+	$ cd ../            # change working directory to the parent of the working directory
 
-	$ ls    	    #show the contents of the current directory
+	$ ls                # show the contents of the working directory
 
-	$ ls -lh 	    #show the contents in an ordered list with file sizes
+	$ ls -lh            # show the contents in an ordered list with file sizes
 
-	$ mv fileA ../      #move ​fileA ​to parent directory (in this instance)
+	$ touch fileA       # create a blank file called fileA
 
-	$ cp fileA ../      #copy ​fileA​ to parent directory
+	$ mv fileA ../      # move ​fileA ​to the parent of the working directory
 
-	$ mv fileA fileB    #rename ​fileA​ to ​fileB
+	$ cp ../fileA ./    # copy ​fileA​ from the parent of the working directory to the working directory
 
-	$ rm fileA          #delete ​fileA ​(Be careful!)
+	$ mv fileA fileB    # rename ​fileA​ to ​fileB
 
-	$ rm -d dirA        #delete an empty directory
+	$ rm fileA          # delete ​fileA ​(be careful!)
 
-	$ mv file* ./dir    #move all files starting with ​file​ to directory ​dir
+	$ rm -d dirA        # delete an empty directory called dirA
 
-	$ rm *.fa	    #delete all files ending with ​.fa ​(Be really careful!)
+	$ mv file* ./dir    # move all files starting with ​file​ in the current directory to directory ​dir
 
-	$ rm -rf dirA       #delete a directory and contents (Be extremely careful!)
+	$ rm *.fasta        # delete all files ending with ​.fasta ​(be really careful!)
 
-	$ head ​fileB        #display first 10 lines of ​fileB
+	$ rm -rf dirA       # delete the directory called dirA and its contents (be extremely careful!)
 
-	$ head -n 20 ​fileB  #display first 20 lines of ​fileB
+	$ head ​fileB        # display first 10 lines of ​fileB
 
-	$ more ​fileB	     #display ​fileB ​in a scrollable format (press q to quit)
+	$ head -n 20 ​fileB  # display first 20 lines of ​fileB
+
+	$ more ​fileB        # display ​fileB ​in a scrollable format (press q to quit)
 
 ----------------------------------------------------
 More detailed examples for beginners
@@ -48,14 +51,14 @@ More detailed examples for beginners
 
 **Navigating a linux system**
 
-To check where you are in a system you type in ``pwd``. This will show you your present working directory. 
+To check where you are in a system you type in ``pwd``. This will show you your current working directory. 
 If you need to change directory you can type ``cd`` followed  by the path of the directory you want. 
 
 .. code-block:: bash
 
-	$ cd /directory
+	$ cd directory
 
-If you need to create a new directory you can use the ``mkdir`` command followed by what name you want to give the new directory.
+If you need to create a new directory you can use the `mkdir`` command followed by what name you want to give the new directory.
 
 .. code-block:: bash 
 	

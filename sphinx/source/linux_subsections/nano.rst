@@ -2,8 +2,9 @@
 Using Nano to edit documents
 =====================================
 
-Nano is a command line text editor which allows you to create, edit and save files. 
-If you are new to using the command line, and need to make substantial changes to a document, its recommended to download the file onto your computer and edit in a program you are comfortable with. 
+Nano is a command line text editor which allows you to create, edit and save plaintext files. A plaintext file is a file that contains only text, with no formatting, such as those produced by Notepad on Windows. Generally, sequence data is stored in plaintext files, although the layout of these files generally conforms to some sort of standard (such as the fasta or fastq standards). We also sometimes use plaintext files to write and store parameters for specific software.
+
+If you are new to using the command line, and need to make substantial changes to a document, its recommended to download the file onto your computer and edit in a program you are comfortable with. However, nano provides a quick way to make easy edits directly on the command line.
 
 To create a document using nano you simply type ``nano`` followed by the name you would like to give the file. For example:
 
