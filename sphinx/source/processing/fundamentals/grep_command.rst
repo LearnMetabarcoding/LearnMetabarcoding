@@ -1,7 +1,7 @@
 .. _grep_command:
 
 =============================
-Grep command 
+Fundamentals: Grep command 
 =============================
 
 We can use ``grep`` to illustrate the location of these indices on the sequences. We take the output of the ``head`` command (from the previous section) to show only the first three sequences in a file, send this to the next function using the pipe (​|​) command. The next function is ``grep`` ​, which we use to search for an index sequence using regex. The ``|$`` at the end of the regex means “or the end of the line” - we use this to print every line, but only highlight the parts of interest.

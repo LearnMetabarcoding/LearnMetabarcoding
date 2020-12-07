@@ -1,5 +1,5 @@
 ====================================
-FASTQ files
+Fundamentals: FASTQ files
 ====================================
 
 Let’s review a few basic points about sequence file structure and exploring these files using the command line. If you have experience working with fastq files you can move onto the :ref:`demultiplexing section<demultiplexing>`. 

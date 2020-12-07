@@ -1,7 +1,7 @@
 .. _quality_settings: 
 
 ================================
-Quality Settings Extension 
+Extension: Quality Settings
 ================================
 
 Because primers are a region on our sequence that we have some ​*a priori*​ knowledge about, this is a good opportunity for filtering sequences with errors.

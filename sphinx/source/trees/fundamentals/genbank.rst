@@ -1,7 +1,7 @@
 .. _genbank:
 
 ======================================
-Working with GenBank 
+Fundamentals: Working with GenBank 
 ======================================
 
 There are many ways to get this data, the most efficient would be to use NCBI’s command line tools. However, we don’t want to run into issues with our server repeatedly accessing GenBank, so this is the easy way.

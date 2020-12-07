@@ -1,7 +1,7 @@
 .. _tree_comparison:
 
 ==================================
-Comparing OTU methods
+Extension: Comparing OTU methods
 ==================================
 
 Now that we’ve learned a quick method of building trees, we can use this knowledge to compare our OTUs from different methods.
