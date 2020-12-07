@@ -70,5 +70,49 @@ Notice that we use the ``<`` symbol to set indices.txt as the standard input. As
 
 	$ sed -e "s/$/T/" indices.txt | while read i; do grep -c "$i" inputs/*.fasta; done
 
+------------------------------------
+Variables in loops
+------------------------------------
 
+When we set up a loop we initialise a variable that will contain a different value for each iteration of the loop. For the for loops, we named the variable ``$f``, and for the while loops we named it ``$i``. The name is arbitrary, the contents is what is important. As we are often operating on many files, the variable often contains a file path and/or name, but we may want to modify this while carrying out the loop - we might want to change the file extension or the path to the file. We do this using something called bash parameter substitution, which is a very powerful way of modifying the content of a variable on the fly. We'll cover just two methods of parameter expansion, but you can read about many more ways at `nixCraft <https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html>`_.
 
+The basic syntax of parameter substitution is ``${f operation}`` where ``f`` is the name of your variable and ``operation`` is the alteration you want to make. Firstly, to remove text from the end of a variable, you use the ``%`` operator, like this:
+
+.. code-block:: bash
+	$ i="file.fasta"
+	$ o=${i%.fasta}
+	$ echo "$o"
+
+If you run the above lines, you should see that the file extension has been removed. If you don't know what the exact file extension will be, you can use ``*``, the wildcard character:
+
+.. code-block:: bash
+	$ i="file.fasta"
+	$ o=${i%.*}
+	$ echo "$o"
+
+Alternatively, we might want to remove a directory name from the front of the text. We do this using the ``#`` symbol:
+
+.. code-block:: bash
+	$ i="directory/file.fastq"
+	$ o=${i#*/}
+	$ echo "$o"
+
+Notice how we used a wildcard character rather than removing the directory?
+
+We can chain these together to make very flexible loops. For example, imagine we have many FASTQ files in a directory called "raw" and we want to convert them to FASTA files and put them in a directory called "converted". Let's just assume our conversion tool is called ``convert``. This is a toy example:
+
+.. code-block:: bash
+	$ for f in raw/* \               # Loop through the contents of raw/
+	> do \
+	>	o=${f%.fastq} \          # Remove the .fastq file extension
+	>	o=${o#raw/} \            # Remove the directory
+	>	o="converted/$o.fasta" \ # Add the new directory and file extension
+	>	convert --input $f --output "$o" \
+	> done
+
+This can be written in a condensed, one-line format as follows:
+
+.. code-block:: bash
+	$ for f in raw/*; do o=${f%.*}; convert --input $f --output "converted/${o#raw/}.fastq"; done
+
+Notice how we did the second parameter expansion within another command, rather than by itself.
