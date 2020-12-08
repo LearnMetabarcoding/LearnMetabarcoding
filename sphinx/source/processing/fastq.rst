@@ -45,13 +45,13 @@ While we can divide the results of our wordcount function above by four to get t
 
 	$ grep -c "^@D00" ​file
 
-The ​:code:`^@D00` is a regular expression - the ​^ character is a special symbol in regex meaning “the beginning of a line”. So this regex searches for lines beginning with ``​@D00`` We use more than just ``​@`` because it is also the symbol for a quality score of 31. Any sequences where the first base has a score of 31 will be counted twice - once for the header, once for the quality string, as they are two different lines starting with ``​@`` ​. Hence using multiple characters.
+The ​:code:` ^@D00` is a regular expression - the ​^ character is a special symbol in regex meaning “the beginning of a line”. So this regex searches for lines beginning with ``​@D00`` We use more than just ``​@`` because it is also the symbol for a quality score of 31. Any sequences where the first base has a score of 31 will be counted twice - once for the header, once for the quality string, as they are two different lines starting with ``​@`` ​. Hence using multiple characters.
 
 Like the ​wc -l function above, we can run grep on all of our files at once to get the total read numbers for each of our libraries:
 
 .. code-block:: bash 
 
-	$ grep -c " ^@D00" *.fastq
+	$ grep -c "^@D00" *.fastq
 
 We can see that we’re dealing with about 9000 reads per library.
 
