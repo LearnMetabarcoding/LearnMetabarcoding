@@ -71,6 +71,8 @@ Carefully examin the following command and make sure you're clear on what each o
 	> -o 1_demux/{name1}-{name2}_R1.fastq -p 1_demux/{name1}-{name2}_R2.fastq \ 
 	> 0_rawsequences/Lib1_R1.fastq 0_rawsequences/Lib1_R2.fastq
 
+TODO: update this command to use internal indices.
+
 .. topic:: Questions
 
 	Before you check, think: how many files do you expect to get out of this command?
