@@ -57,4 +57,4 @@ We can see that we’re dealing with about 9000 reads per library.
 
 * Do all the libraries have the same R1 and R2 read numbers?
 
-You're now ready to move onto the first step of our pipeline, :ref:`demultiplexing.<demultiplexing>`
+You're now ready to move onto the first step of read processing, :ref:`demultiplexing.<demultiplexing>`
