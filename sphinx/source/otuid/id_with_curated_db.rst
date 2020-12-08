@@ -1,8 +1,8 @@
 .. _id_curated:
 
-=======================================
-Identifiation using a curated database 
-=======================================
+==========================================
+3) Identifiation using a curated database 
+==========================================
 
 BLAST is not fundamentally designed as a taxonomic assignment tool, and MEGAN is forced to work with BLAST’s alignment and matching summary outputs to assign taxonomy. There are other tools out there that are specifically designed for the assignment of taxonomy to anonymous sequences. Rather than comparing a sequence against a database one-by-one, these methods use k-mer approaches to place a sequence within the whole set of references. Then, they use an approach broadly analogous to MEGAN’s LCA method to probabilistically assign taxonomy, generally assigning confidence scores to different taxonomic levels. Such methods include PROTAX, SINTAX, SPINGO and RDPclassifier. It should be noted that like much of the software available for metabarcoding, these tools are often written for use on 16S. It should always be considered whether other loci may not be treated as expected by such tools.
 
@@ -33,3 +33,5 @@ Download these files to your computer using your FTP client and open them up in 
 * What other taxa do we apparently have? You will see that we have some obvious non-Coleoptera OTUs, but also some OTUs that have been assigned to other Insect orders. How consistent are these identifications between methods? Are we confident that these really are not Coleoptera?
 
 Note that it’s perfectly feasible that there could have been non-Coleoptera Insect DNA in these samples.
+
+Now lets see how we would do identification with a local database in the :ref:`next step.<id_local>`

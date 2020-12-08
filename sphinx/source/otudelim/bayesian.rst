@@ -1,3 +1,5 @@
+.. _bayesian:
+
 =========================
 Bayesian clustering
 =========================
@@ -34,3 +36,5 @@ For a quick look, we can use the following command to count the number of exactl
 	$ cat​ in1.fasta in2.fasta [in3.fasta]​ | \
 	> perl -pe '$. > 1 and /^>/ ? print "\n" : chomp' | \ 
 	> sed -n '2~2p' | sort | uniq -c | grep -c "2"
+
+Now we have OTUs its time to try and :ref:`identify them!<otu_id>`
