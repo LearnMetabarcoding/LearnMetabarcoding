@@ -1,7 +1,7 @@
 .. _demultiplexing:
 
 ========================================
-Demultiplexing
+1) Demultiplexing
 ========================================
 
 .. toctree::
@@ -108,7 +108,8 @@ This will delete the files beginning with unknown. These contain the sequences f
 
 In the above command, the ​for part sets up a loop that works through each file name in the directory, using ​f to store the current name. It then uses something called parameter substitution to strip the names down to the first and second sample names, storing these in two variables. It then asks if the two sample names are different - if so, the current file is deleted, otherwise (i.e. they’re the same), the file is renamed (moved from one name to another), again using parameter substitution to strip out the unneeded parts of the name. You do not need to understand this.
 
-If you'd like to explore more cutadapt parameters check out this extension task: :ref:`cutadapt extension<cutadapt_extension>`.
+If you'd like to explore more cutadapt parameters check out this extension task: :ref:`cutadapt extension<cutadapt_extension>`. Otherwise, move on to 
+our next step :ref:'primer removal.<primer_removal>'
 
 .. rubric:: Footnotes 
 
