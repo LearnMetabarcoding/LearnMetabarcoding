@@ -1,3 +1,5 @@
+.. _linkage_based:
+
 =================================
 Linkage-based clustering
 =================================
@@ -9,3 +11,5 @@ SWARM is a slightly different clustering algorithm. Rather than using a threshol
 	$ swarm -w ​out.fasta​ -d 1 -z ​in.fasta
 
 * What happens if you run with higher ``-d`` values (they must be integers).
+
+Now lets try a :ref:`bayesian method!<bayesian>`

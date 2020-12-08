@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>FASTQ files &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>Fundamentals: FASTQ files &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Demultiplexing" href="demultiplexing.html" />
+    <link rel="next" title="1) Demultiplexing" href="demultiplexing.html" />
     <link rel="prev" title="Read processing" href="../readprocessing.html" /> 
 </head>
 
@@ -87,11 +87,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../notes.html">The Practical Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../readprocessing.html">Read processing</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">FASTQ files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demultiplexing.html">Demultiplexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="primer_removal.html">Primer removal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pair_merging.html">Pair merging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_concat.html">Data concatenation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fundamentals: FASTQ files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demultiplexing.html">1) Demultiplexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primer_removal.html">2) Primer removal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_merging.html">3) Pair merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_concat.html">4) Data concatenation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
@@ -147,7 +147,7 @@
         
           <li><a href="../readprocessing.html">Read processing</a> &raquo;</li>
         
-      <li>FASTQ files</li>
+      <li>Fundamentals: FASTQ files</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -166,8 +166,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="fastq-files">
-<h1>FASTQ files<a class="headerlink" href="#fastq-files" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="fundamentals-fastq-files">
+<h1>Fundamentals: FASTQ files<a class="headerlink" href="#fundamentals-fastq-files" title="Permalink to this headline">¶</a></h1>
 <p>Let’s review a few basic points about sequence file structure and exploring these files using the command line. If you have experience working with fastq files you can move onto the <a class="reference internal" href="demultiplexing.html#demultiplexing"><span class="std std-ref">demultiplexing section</span></a>.</p>
 <p>Change into the directory and list its contents, showing sizes:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> 0_rawsequences/
@@ -198,7 +198,7 @@ We would like to review the structure of these files. We could print the whole f
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -c <span class="s2">&quot;^@D00&quot;</span> ​file
 </pre></div>
 </div>
-<p>The ​``^&#64;D00`` is a regular expression - the ​^ character is a special symbol in regex meaning “the beginning of a line”. So this regex searches for lines beginning with <code class="docutils literal notranslate"><span class="pre">​&#64;D00</span></code> We use more than just <code class="docutils literal notranslate"><span class="pre">​&#64;</span></code> because it is also the symbol for a quality score of 31. Any sequences where the first base has a score of 31 will be counted twice - once for the header, once for the quality string, as they are two different lines starting with <code class="docutils literal notranslate"><span class="pre">​&#64;</span></code> ​. Hence using multiple characters.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">^&#64;D00</span></code> is a regular expression - the ​^ character is a special symbol in regex meaning “the beginning of a line”. So this regex searches for lines beginning with <code class="docutils literal notranslate"><span class="pre">​&#64;D00</span></code> We use more than just <code class="docutils literal notranslate"><span class="pre">​&#64;</span></code> because it is also the symbol for a quality score of 31. Any sequences where the first base has a score of 31 will be counted twice - once for the header, once for the quality string, as they are two different lines starting with <code class="docutils literal notranslate"><span class="pre">​&#64;</span></code> ​. Hence using multiple characters.</p>
 <p>Like the ​wc -l function above, we can run grep on all of our files at once to get the total read numbers for each of our libraries:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -c <span class="s2">&quot;^@D00&quot;</span> *.fastq
 </pre></div>
@@ -207,6 +207,7 @@ We would like to review the structure of these files. We could print the whole f
 <ul class="simple">
 <li><p>Do all the libraries have the same R1 and R2 read numbers?</p></li>
 </ul>
+<p>You’re now ready to move onto the first step of read processing, <a class="reference internal" href="demultiplexing.html#demultiplexing"><span class="std std-ref">demultiplexing.</span></a></p>
 </div>
 
 
@@ -217,7 +218,7 @@ We would like to review the structure of these files. We could print the whole f
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="demultiplexing.html" class="btn btn-neutral float-right" title="Demultiplexing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="demultiplexing.html" class="btn btn-neutral float-right" title="1) Demultiplexing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../readprocessing.html" class="btn btn-neutral float-left" title="Read processing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

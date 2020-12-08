@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cutadapt extension &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>Extension: Cutadapt &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Primer removal" href="../primer_removal.html" />
-    <link rel="prev" title="Grep command" href="../fundamentals/grep_command.html" /> 
+    <link rel="next" title="2) Primer removal" href="../primer_removal.html" />
+    <link rel="prev" title="Fundamentals: Grep command" href="../fundamentals/grep_command.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,15 +87,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../notes.html">The Practical Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../linuxintro.html">Command line bioinformatics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../readprocessing.html">Read processing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../fastq.html">FASTQ files</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../demultiplexing.html">Demultiplexing</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../fundamentals/grep_command.html">Grep command</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Cutadapt extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fastq.html">Fundamentals: FASTQ files</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../demultiplexing.html">1) Demultiplexing</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../fundamentals/grep_command.html">Fundamentals: Grep command</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Extension: Cutadapt</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../primer_removal.html">Primer removal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pair_merging.html">Pair merging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data_concat.html">Data concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../primer_removal.html">2) Primer removal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pair_merging.html">3) Pair merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_concat.html">4) Data concatenation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">Filtering Amplicon Data</a></li>
@@ -151,9 +151,9 @@
         
           <li><a href="../../readprocessing.html">Read processing</a> &raquo;</li>
         
-          <li><a href="../demultiplexing.html">Demultiplexing</a> &raquo;</li>
+          <li><a href="../demultiplexing.html">1) Demultiplexing</a> &raquo;</li>
         
-      <li>Cutadapt extension</li>
+      <li>Extension: Cutadapt</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,8 +172,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="cutadapt-extension">
-<span id="id1"></span><h1>Cutadapt extension<a class="headerlink" href="#cutadapt-extension" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="extension-cutadapt">
+<span id="cutadapt-extension"></span><h1>Extension: Cutadapt<a class="headerlink" href="#extension-cutadapt" title="Permalink to this headline">¶</a></h1>
 <p>Cutadapt has a lot more parameters for searching. It can be error-tolerant, allowing you to permit some mismatches between your indices and the sequences. Our adapters are all at least 3 bases different, so in theory we could allow a one-base difference to try and get more reads for our samples. The relevant option is ​-e​, which is the maximum error rate (0-1), i.e. the total proportion of errors allowed in our indices. The default, 0.1, would allow 10% errors, but since our indices are only 6 bases this rounds to 0 errors allowed.</p>
 <ul class="simple">
 <li><p>Create two more new directories and try ​-e values that allow one error or two errors, putting the outputs into those two directories. Explore the read numbers using ​grep</p></li>
@@ -193,10 +193,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../primer_removal.html" class="btn btn-neutral float-right" title="Primer removal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../primer_removal.html" class="btn btn-neutral float-right" title="2) Primer removal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../fundamentals/grep_command.html" class="btn btn-neutral float-left" title="Grep command" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../fundamentals/grep_command.html" class="btn btn-neutral float-left" title="Fundamentals: Grep command" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

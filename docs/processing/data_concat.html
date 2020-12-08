@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data concatenation &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>4) Data concatenation &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Filtering Amplicon Data" href="../filtering.html" />
-    <link rel="prev" title="Pair concatenation Extension" href="extensions/pair_concat.html" /> 
+    <link rel="prev" title="Extension: Pair concatenation" href="extensions/pair_concat.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,11 +87,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../notes.html">The Practical Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../readprocessing.html">Read processing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="fastq.html">FASTQ files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demultiplexing.html">Demultiplexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="primer_removal.html">Primer removal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pair_merging.html">Pair merging</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Data concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastq.html">Fundamentals: FASTQ files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demultiplexing.html">1) Demultiplexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primer_removal.html">2) Primer removal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_merging.html">3) Pair merging</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4) Data concatenation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
@@ -147,7 +147,7 @@
         
           <li><a href="../readprocessing.html">Read processing</a> &raquo;</li>
         
-      <li>Data concatenation</li>
+      <li>4) Data concatenation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -167,7 +167,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="data-concatenation">
-<h1>Data concatenation<a class="headerlink" href="#data-concatenation" title="Permalink to this headline">¶</a></h1>
+<span id="data-concat"></span><h1>4) Data concatenation<a class="headerlink" href="#data-concatenation" title="Permalink to this headline">¶</a></h1>
 <p>Now have complete set of sequence reads with extraneous sequence removed and read pairs brought together.</p>
 <p>Metabarcoding works on all sequence reads from across the dataset to find OTUs, and it’s more efficient if we do the following steps with all reads compiled into one file. In theory this can be done at any point in the pipeline, but this seems like a convenient point.</p>
 <p>We could simply use the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command to concatenate all the files, but then we’d lose information about what reads come from what sample and this is important later. So we add the sample name to the header of each read prior to concatenation using the following command. Before you run this, make sure you’re in the directory containing your merged sequences.</p>
@@ -178,7 +178,7 @@
 </pre></div>
 </div>
 <p>This command loops through all the files in the directory. For each file, the <code class="docutils literal notranslate"><span class="pre">sed</span></code> command using regular expression substitution to add a string to the end of each header line containing the sample name, and adds the entire file to the end of a single file in the parent directory called <code class="docutils literal notranslate"><span class="pre">​mbc_concat.fastq​</span></code>. Regular expressions are a very powerful part of coding that I suggest you learn at some point if you don’t know about them already. There are plenty of tutorials on the internet.</p>
-<p>Return to the parent directory, use <code class="docutils literal notranslate"><span class="pre">grep</span></code> to count the number of sequences in <code class="docutils literal notranslate"><span class="pre">​mbc_concat.fastq</span></code> ​and view the <code class="docutils literal notranslate"><span class="pre">​head​</span></code> of the file. We will use this file in the next practical.</p>
+<p>Return to the parent directory, use <code class="docutils literal notranslate"><span class="pre">grep</span></code> to count the number of sequences in <code class="docutils literal notranslate"><span class="pre">​mbc_concat.fastq</span></code> ​and view the <code class="docutils literal notranslate"><span class="pre">​head​</span></code> of the file. We will use this file in the next <a class="reference internal" href="../filtering.html#filtering"><span class="std std-ref">practical section.</span></a></p>
 </div>
 
 
@@ -192,7 +192,7 @@
         <a href="../filtering.html" class="btn btn-neutral float-right" title="Filtering Amplicon Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="extensions/pair_concat.html" class="btn btn-neutral float-left" title="Pair concatenation Extension" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="extensions/pair_concat.html" class="btn btn-neutral float-left" title="Extension: Pair concatenation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

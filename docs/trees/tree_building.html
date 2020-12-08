@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Tree building &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>5) Tree building &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="OTU trees" href="otu_trees.html" />
-    <link rel="prev" title="Concatenating alignments" href="concatenating_alignments.html" /> 
+    <link rel="next" title="6) OTU trees" href="otu_trees.html" />
+    <link rel="prev" title="4) Concatenating alignments" href="concatenating_alignments.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,13 +91,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../otuid.html">Identifying OTUs and Generating Outputs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="preparing_mitogenome_data.html">Preparing mitogenome data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extracting_protein_coding_genes.html">Extracting protein coding genes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="aligning_protein_coding_genes.html">Aligning protein coding genes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concatenating_alignments.html">Concatenating alignments</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Tree building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="otu_trees.html">OTU trees</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tree_viewing.html">Tree Viewing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preparing_mitogenome_data.html">1) Preparing mitogenome data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extracting_protein_coding_genes.html">2) Extracting protein coding genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aligning_protein_coding_genes.html">3) Aligning protein coding genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concatenating_alignments.html">4) Concatenating alignments</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5) Tree building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otu_trees.html">6) OTU trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tree_viewing.html">7) Tree Viewing</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../placing_otus_in_trees.html">Placing OTUs in reference trees</a></li>
@@ -149,7 +149,7 @@
         
           <li><a href="../trees.html">Building Phylogenetic Trees for Metagenetics</a> &raquo;</li>
         
-      <li>Tree building</li>
+      <li>5) Tree building</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -169,7 +169,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="tree-building">
-<h1>Tree building<a class="headerlink" href="#tree-building" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>5) Tree building<a class="headerlink" href="#tree-building" title="Permalink to this headline">¶</a></h1>
 <p>We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an “approximately maximum likelihood” phylogenetic tree building method, broadly similar in method to PhyML or RAxML.</p>
 <p>Use the following command, using the output from the previous step as the input and choosing an appropriate name for your tree. The <code class="docutils literal notranslate"><span class="pre">-gtr</span></code> option tells FastTree to use the GTR+CAT model, and the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option specifies that this is DNA data.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ FastTree -gtr -nt &lt; ​supermatrix.fasta​ &gt; ​tree.nwk
@@ -177,10 +177,11 @@
 </div>
 <p>The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the <code class="docutils literal notranslate"><span class="pre">head</span></code> command. Each terminal in the tree has the ID of the sequence used to generate it. These code names are very useful for linking to data about our sequences, but aren’t helpful for examining the tree and interrogating its success.</p>
 <p>In this case, we’ll use a script to pull metadata from the GenBank files to do the renaming. Again, this is a custom script used to skip over tedious bits of this pipeline, it’s definitely not a required step.</p>
-<p>The script is <code class="docutils literal notranslate"><span class="pre">rename_newick_with_gb.pl</span></code>, check out the helpfile using <code class="docutils literal notranslate"><span class="pre">-h</span></code> and rename the tree with the fields you think would be useful. My suggestion is in the footnote <a class="footnote-reference brackets" href="#f1" id="id1">1</a>.</p>
+<p>The script is <code class="docutils literal notranslate"><span class="pre">rename_newick_with_gb.pl</span></code>, check out the helpfile using <code class="docutils literal notranslate"><span class="pre">-h</span></code> and rename the tree with the fields you think would be useful. My suggestion is in the footnote <a class="footnote-reference brackets" href="#f1" id="id2">1</a>.</p>
+<p>The next stage is to <a class="reference internal" href="otu_trees.html#otu-tree"><span class="std std-ref">build a tree for our OTUs</span></a></p>
 <p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
-<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">rename_newick_with_gb.pl</span> <span class="pre">-g</span> <span class="pre">​novelmt.gb</span> <span class="pre">genbankmt.gb​</span> <span class="pre">-t</span> <span class="pre">​tree.nwk​</span> <span class="pre">-o</span> <span class="pre">​tree_RN.nwk​</span></code>
 <code class="docutils literal notranslate"><span class="pre">-fields</span> <span class="pre">LOCUS</span> <span class="pre">TAXONOMY</span> <span class="pre">-ntax</span> <span class="pre">6</span></code></p>
 </dd>
@@ -195,10 +196,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="otu_trees.html" class="btn btn-neutral float-right" title="OTU trees" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="otu_trees.html" class="btn btn-neutral float-right" title="6) OTU trees" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="concatenating_alignments.html" class="btn btn-neutral float-left" title="Concatenating alignments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="concatenating_alignments.html" class="btn btn-neutral float-left" title="4) Concatenating alignments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

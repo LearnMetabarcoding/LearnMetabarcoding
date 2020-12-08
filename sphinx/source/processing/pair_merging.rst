@@ -1,7 +1,7 @@
 .. _pair_merging:
 
 ==================================
-Pair merging
+3) Pair merging
 ==================================
 
 .. toctree::
@@ -78,5 +78,5 @@ Make sure to review those terminal outputs! Then list the contents of your merge
 The ``&&`` here runs both commands on this line one after the other. The ``rename`` command uses regular expressions to remove the “assembled followed by a full stop” part from any files with that in the name.
 
 In our example our read lengths are long enough compared to our fragment length so that they overlap. This isn't always the case. If there is no overlap then the sequnces are concatenated 
-not merged. If you'd like to know more about this look at the :ref:`pair concatenation extension<pair_concatenation>`.
+not merged. If you'd like to know more about this look at the :ref:`pair concatenation extension<pair_concatenation>`. The next step is :ref:`data concatenation.<data_concat>`
 

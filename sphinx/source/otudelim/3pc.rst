@@ -14,3 +14,5 @@ The key parameter here is the ``--id``, which is the minimum distance (pairwise 
 
 If you’re familiar with CD-HIT-EST, this is very similar. CD-HIT-EST uses a slightly different calculation of
 dissimilarity, which can be used by including the parameter ``iddef 0`` 
+
+Now lets try a :ref:`linkage-based approach.<linkage_based>`

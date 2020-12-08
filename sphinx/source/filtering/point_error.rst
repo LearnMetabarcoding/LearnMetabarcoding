@@ -1,5 +1,7 @@
+.. _point_error:
+
 ========================================
-Point error filtering
+5) Point error filtering
 ========================================
 
 Filtering by length will remove sequences that have one or more PCR/sequencer-caused insertions or one or more deletions, however in some cases these errors may cancel one another out; or alternatively, PCR or sequencing may induce the equivalent of point mutations, where a single base is misread. Similarly, noncoding gene variants such as numts or pseudogenes may actually have point mutations in comparison to the ‘true’ region.
@@ -17,6 +19,8 @@ You may want to rename the automatically-named output.
 * Have a look at the failed file. Go to an online amino acid translator and paste in a sequence. See what the translation looks like. Can you see the stop(s)?
 
 Other ‘point errors’ are harder to spot. Some will not affect coding at all, which is impossible to distinguish from natural variation. The majority will affect coding, but again distinguishing these natural variation is very hard. This is actually something that some denoising algorithms attempt to do, broadly, but further work on this is ongoing.
+
+The next step is :ref:`chimera filtering<chimera>`
 
 .. rubric:: Footnotes 
 

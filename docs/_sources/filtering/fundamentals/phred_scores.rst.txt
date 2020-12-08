@@ -1,7 +1,7 @@
 .. _phred_scores:
 
 ===============================
-Phred Scores
+Fundamentals: Phred Scores
 ===============================
 
 We have seen that the strings of letters in fastq files stand for quality values, but what do these values actually mean? Phred scores are not just some arbitrary values. They are actually logarithmically related to the probability of a base calling error. Given a phred score S, the probability of the base being incorrect P is:

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Pair merging &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>3) Pair merging &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pair concatenation Extension" href="extensions/pair_concat.html" />
-    <link rel="prev" title="Quality Settings Extension" href="extensions/quality_settings_extension.html" /> 
+    <link rel="next" title="Extension: Pair concatenation" href="extensions/pair_concat.html" />
+    <link rel="prev" title="Extension: Quality Settings" href="extensions/quality_settings_extension.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,14 +87,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../notes.html">The Practical Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../readprocessing.html">Read processing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="fastq.html">FASTQ files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demultiplexing.html">Demultiplexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="primer_removal.html">Primer removal</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Pair merging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="extensions/pair_concat.html">Pair concatenation Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastq.html">Fundamentals: FASTQ files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demultiplexing.html">1) Demultiplexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primer_removal.html">2) Primer removal</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3) Pair merging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extensions/pair_concat.html">Extension: Pair concatenation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="data_concat.html">Data concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_concat.html">4) Data concatenation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
@@ -150,7 +150,7 @@
         
           <li><a href="../readprocessing.html">Read processing</a> &raquo;</li>
         
-      <li>Pair merging</li>
+      <li>3) Pair merging</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,7 +170,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pair-merging">
-<span id="id1"></span><h1>Pair merging<a class="headerlink" href="#pair-merging" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>3) Pair merging<a class="headerlink" href="#pair-merging" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 <p>These reads were sequenced such that 300bp of our fragment was read from each end. There should be 418bp of sequence between the primer pair.</p>
@@ -220,7 +220,7 @@ $ <span class="nb">cd</span> ../
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> here runs both commands on this line one after the other. The <code class="docutils literal notranslate"><span class="pre">rename</span></code> command uses regular expressions to remove the “assembled followed by a full stop” part from any files with that in the name.</p>
 <p>In our example our read lengths are long enough compared to our fragment length so that they overlap. This isn’t always the case. If there is no overlap then the sequnces are concatenated
-not merged. If you’d like to know more about this look at the <a class="reference internal" href="extensions/pair_concat.html#pair-concatenation"><span class="std std-ref">pair concatenation extension</span></a>.</p>
+not merged. If you’d like to know more about this look at the <a class="reference internal" href="extensions/pair_concat.html#pair-concatenation"><span class="std std-ref">pair concatenation extension</span></a>. The next step is <a class="reference internal" href="data_concat.html#data-concat"><span class="std std-ref">data concatenation.</span></a></p>
 </div>
 
 
@@ -231,10 +231,10 @@ not merged. If you’d like to know more about this look at the <a class="refere
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="extensions/pair_concat.html" class="btn btn-neutral float-right" title="Pair concatenation Extension" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="extensions/pair_concat.html" class="btn btn-neutral float-right" title="Extension: Pair concatenation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="extensions/quality_settings_extension.html" class="btn btn-neutral float-left" title="Quality Settings Extension" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="extensions/quality_settings_extension.html" class="btn btn-neutral float-left" title="Extension: Quality Settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

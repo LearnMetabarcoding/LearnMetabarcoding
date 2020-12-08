@@ -1,8 +1,8 @@
 .. _map_to_other_otus:
 
-===========================================
-Mapping reads to CROP and swarm OTUs 
-===========================================
+================================================
+Extension: Mapping reads to CROP and swarm OTUs 
+================================================
 
 The reads can be mapped to the CROP OTUs in a similar fashion, altering the -id value to fit the clustering threshold used in CROP. Swarm OTUs are not generated in quite as consistent a manner, but an appropriate threshold using vsearch would be ``-id 0.99``.
 

@@ -1,5 +1,7 @@
+.. _data_concat:
+
 ===================================
-Data concatenation
+4) Data concatenation
 ===================================
 
 Now have complete set of sequence reads with extraneous sequence removed and read pairs brought together.
@@ -17,4 +19,4 @@ We could simply use the ``cat`` command to concatenate all the files, but then w
 
 This command loops through all the files in the directory. For each file, the ``sed`` command using regular expression substitution to add a string to the end of each header line containing the sample name, and adds the entire file to the end of a single file in the parent directory called ``​mbc_concat.fastq​``. Regular expressions are a very powerful part of coding that I suggest you learn at some point if you don’t know about them already. There are plenty of tutorials on the internet.
 
-Return to the parent directory, use ``grep`` to count the number of sequences in ``​mbc_concat.fastq`` ​and view the ``​head​`` of the file. We will use this file in the next practical.
+Return to the parent directory, use ``grep`` to count the number of sequences in ``​mbc_concat.fastq`` ​and view the ``​head​`` of the file. We will use this file in the next :ref:`practical section.<filtering>`

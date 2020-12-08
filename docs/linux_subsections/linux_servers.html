@@ -171,11 +171,27 @@
             
   <div class="section" id="accessing-linux-servers">
 <h1>Accessing linux servers<a class="headerlink" href="#accessing-linux-servers" title="Permalink to this headline">¶</a></h1>
+<p>If you have access to a remote linux server this section covers how to connect to it remotely. Depending on the operating system you are running and the version of this operating system there is a few different ways of doing this. Look at the appropriate section below for your operating system.</p>
 <div class="section" id="using-teminal-in-macos">
 <h2>Using teminal in MacOS<a class="headerlink" href="#using-teminal-in-macos" title="Permalink to this headline">¶</a></h2>
+<p>If you are using a mac then connecting to a server is simple using an SSH (secure shell). Open your terminal application (if you haven’t used this before you can access it by using spotlight search or by navigating to the application using launchpad). You then type an SSH command which looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ssh username@server_address
+</pre></div>
+</div>
+<p>You will need to replace the username in the above command with your username for the server. You’ll also need to replace the server_address with the actual address of the server you are connecting to. If it is your first time connecting it will ask you if you trust the server then will usually ask you for a password.</p>
 </div>
 <div class="section" id="using-windows-subsystem-for-linux">
 <h2>Using windows subsystem for linux<a class="headerlink" href="#using-windows-subsystem-for-linux" title="Permalink to this headline">¶</a></h2>
+<p>If you are running an upto date version of windows then you can use the windows subsystem for linux (WSL) to connect to the remote server. To get WSL up and running you can follow the documentation on <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">microsofts site.</a>
+You should then be able to connect to your remote server using SSH as below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ssh username@server_address
+</pre></div>
+</div>
+<p>You will need to replace the username in the above command with your username for the server. You’ll also need to replace the server_address with the actual address of the server you are connecting to. If it is your first time connecting it will ask you if you trust the server then will usually ask you for a password.</p>
+</div>
+<div class="section" id="using-putty-in-older-windows-os">
+<h2>Using PuTTY in older windows OS<a class="headerlink" href="#using-putty-in-older-windows-os" title="Permalink to this headline">¶</a></h2>
+<p>If you are running an older windows OS that doesn’t support WSL then you can use a program called PuTTY which is an SSH client for windows. Open PuTTY and type the server address in the host name field. Then click open. This will then bring up the login screen. Enter your credentials and it will give you access to the server.</p>
 </div>
 </div>
 

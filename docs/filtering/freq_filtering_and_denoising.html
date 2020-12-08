@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Frequency filtering / denoising &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>4) Frequency filtering / denoising &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Point error filtering" href="point_error.html" />
-    <link rel="prev" title="What if we have a more variable region? Extension" href="extensions/more_variable_region.html" /> 
+    <link rel="next" title="5) Point error filtering" href="point_error.html" />
+    <link rel="prev" title="Extension: What if we have a more variable region?" href="extensions/more_variable_region.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,12 +88,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="quality_filtering.html">Quality Filtering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="not_filtering_dereplication.html">Not Filtering: Dereplication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indel_filtering.html">Indel Filtering</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Frequency filtering / denoising</a></li>
-<li class="toctree-l2"><a class="reference internal" href="point_error.html">Point error filtering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chimera_filtering.html">Chimera filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quality_filtering.html">1) Quality Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="not_filtering_dereplication.html">2) Not Filtering: Dereplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indel_filtering.html">3) Indel Filtering</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4) Frequency filtering / denoising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point_error.html">5) Point error filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chimera_filtering.html">6) Chimera filtering</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
@@ -148,7 +148,7 @@
         
           <li><a href="../filtering.html">Filtering Amplicon Data</a> &raquo;</li>
         
-      <li>Frequency filtering / denoising</li>
+      <li>4) Frequency filtering / denoising</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,7 +168,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="frequency-filtering-denoising">
-<span id="denoising"></span><h1>Frequency filtering / denoising<a class="headerlink" href="#frequency-filtering-denoising" title="Permalink to this headline">¶</a></h1>
+<span id="denoising"></span><h1>4) Frequency filtering / denoising<a class="headerlink" href="#frequency-filtering-denoising" title="Permalink to this headline">¶</a></h1>
 <p>Due to the use of PCR to generate metabarcoding datasets, we should generate plenty of copies of the amplicon of interest, and thus many reads - depending on sequencing depth, of course. We can therefore be relatively confident that sequences that occur at very low frequencies in the dataset are more likely to be errors.</p>
 <p>These can be filtered out with a simple threshold, although the selection of this threshold is likely to be dataset-dependent.</p>
 <p>We can actually do this as part of the dereplication command we just did. Try running the command from the last section again, with the same input and adding the argument <code class="docutils literal notranslate"><span class="pre">minuniquesize</span> <span class="pre">1</span></code> ​to get rid of all singleton sequences <a class="footnote-reference brackets" href="#f1" id="id1">1</a>. <strong>​Use a different output filename​</strong>, we’re not going to keep this output.</p>
@@ -196,6 +196,7 @@
 <ul class="simple">
 <li><p>Compare the total unique read numbers and size distribution to the version produced earlier</p></li>
 </ul>
+<p>You’re now ready to move onto the <a class="reference internal" href="point_error.html#point-error"><span class="std std-ref">next step.</span></a></p>
 <p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
 <dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -212,10 +213,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="point_error.html" class="btn btn-neutral float-right" title="Point error filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="point_error.html" class="btn btn-neutral float-right" title="5) Point error filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="extensions/more_variable_region.html" class="btn btn-neutral float-left" title="What if we have a more variable region? Extension" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="extensions/more_variable_region.html" class="btn btn-neutral float-left" title="Extension: What if we have a more variable region?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

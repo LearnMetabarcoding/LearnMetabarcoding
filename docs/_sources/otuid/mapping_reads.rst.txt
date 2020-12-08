@@ -1,5 +1,5 @@
 =====================================
-Mapping reads to OTUs
+1) Mapping reads to OTUs
 =====================================
 
 .. toctree::

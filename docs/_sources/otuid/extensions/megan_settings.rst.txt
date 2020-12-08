@@ -1,7 +1,7 @@
 .. _megan_settings: 
 
 ====================================
-MEGAN settings
+Extension: MEGAN settings
 ====================================
 
 Go to ​Options > Change LCA Parameters​. Let’s adjust this to only take into account close relatives by modifying the ​Min Percent Identity parameter to ignore any hits below, say, 80% similarity (i.e. ​Min Percent Identity​ = 0.80).

@@ -1,6 +1,8 @@
-=====================================
-Identification using local database 
-=====================================
+.. _id_local:
+
+=======================================
+4) Identification using local database 
+=======================================
 
 It’s clear that global and curated databases are very useful for assigning broad taxonomy, but don’t do great identifying our OTUs to lower taxonomic levels for these sorts of samples. Usefully, we picked out some morphospecies and sequenced them separately using Sanger sequencing.
 
@@ -21,3 +23,6 @@ Use ``cat`` to view the output file. We’re using the standard blast tabulated 
 * Do the OTUs matching Coleoptera references correspond to those assigned to Coleoptera using MEGAN?
 
 * Does this give us more information about any of our OTUs compared with the global database search?
+
+You can now have a look at the next extension task on :ref:`mapping reads to references.<map_to_ref>`
+Alternatively you can move onto the next practical section on :ref:`building phylogentic trees.<trees>`

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mapping reads to references &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>Extension: Mapping reads to references &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -38,7 +38,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Identifying contigs" href="id_contigs.html" />
-    <link rel="prev" title="Identification using local database" href="id_local.html" /> 
+    <link rel="prev" title="4) Identification using local database" href="id_local.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,11 +90,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../otuid.html">Identifying OTUs and Generating Outputs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="mapping_reads.html">Mapping reads to OTUs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="id_with_megan.html">Identification using GenBank and MEGAN</a></li>
-<li class="toctree-l2"><a class="reference internal" href="id_with_curated_db.html">Identifiation using a curated database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="id_local.html">Identification using local database</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Mapping reads to references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapping_reads.html">1) Mapping reads to OTUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_with_megan.html">2) Identification using GenBank and MEGAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_with_curated_db.html">3) Identifiation using a curated database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_local.html">4) Identification using local database</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Extension: Mapping reads to references</a></li>
 <li class="toctree-l2"><a class="reference internal" href="id_contigs.html">Identifying contigs</a></li>
 </ul>
 </li>
@@ -148,7 +148,7 @@
         
           <li><a href="../otuid.html">Identifying OTUs and Generating Outputs</a> &raquo;</li>
         
-      <li>Mapping reads to references</li>
+      <li>Extension: Mapping reads to references</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -167,8 +167,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mapping-reads-to-references">
-<h1>Mapping reads to references<a class="headerlink" href="#mapping-reads-to-references" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="extension-mapping-reads-to-references">
+<span id="map-to-ref"></span><h1>Extension: Mapping reads to references<a class="headerlink" href="#extension-mapping-reads-to-references" title="Permalink to this headline">¶</a></h1>
 <p>If we were only interested in the species for which we have reference sequences, for example if we were monitoring for a single or set of known species, there isn’t really much need to generate anonymous OTUs. We could simply map our trimmed, merged and quality filtered reads against the references directly, to get counts of our reference species in each sample.</p>
 <p>Try using both <code class="docutils literal notranslate"><span class="pre">​blastn</span></code> and <code class="docutils literal notranslate"><span class="pre">vsearch</span> <span class="pre">--usearch_global</span></code> to map the raw reads against the reference sequences, drawing on what you learned from using the previous commands.</p>
 <p>Experiment with different thresholds and outputs.</p>
@@ -189,7 +189,7 @@
         <a href="id_contigs.html" class="btn btn-neutral float-right" title="Identifying contigs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="id_local.html" class="btn btn-neutral float-left" title="Identification using local database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="id_local.html" class="btn btn-neutral float-left" title="4) Identification using local database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

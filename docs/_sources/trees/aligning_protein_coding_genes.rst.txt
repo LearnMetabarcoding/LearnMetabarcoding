@@ -1,5 +1,7 @@
+.. _aligning:
+
 ======================================
-Aligning protein coding genes
+3) Aligning protein coding genes
 ======================================
 
 The sequences for each gene need to be aligned so that comparable regions are lined up. In phylogenetic terms, this means we need to ensure that the positions used for tree inference are homologous.
@@ -23,6 +25,8 @@ Once it’s complete, pick one of your alignments and download it to your comput
 * Are there any sequences that look very out of place. If there were, what could this mean?
 
 Sequence alignment is a big topic, beyond the scope of this course. There is a wide range of software out there: two other commonly-used alignment tools are MUSCLE and CLUSTAL. We find MAFFT to be very versatile and fast for all sorts of alignment tasks. If doing this with your own data, you would generally try to optimise the gap opening parameters for each gene in order to generate an optimum alignment, and you might manually edit your alignment. Manual editing is used to remove sequencing errors, correct obvious misalignments and most importantly to check start/stop codons and ensure that codon positions are correctly maintained across the alignment.
+
+Now we can :ref:`concatenate our alignments!<concat_alignments>`
 
 .. rubric:: Footnotes
 

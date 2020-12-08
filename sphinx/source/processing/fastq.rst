@@ -21,8 +21,6 @@ We can see how many lines in each file using the word count function, specifying
 The ​``*.fastq`` here means we want all of the files ending in ``.fastq`` in the directory. We could replace this with a single file name if we just wanted to count the lines of a single file.
 
 
-We would like to review the structure of these files. We could print the whole file to the terminal using the ``cat`` command, but these files are over 35000 lines. We expect them to be the same structure all through the file, so the first 10 lines should be fine. Run the following command, replacing ​``file`` with one of the file names.
-
 .. code-block:: bash
 
 	$ head -n 10 ​file

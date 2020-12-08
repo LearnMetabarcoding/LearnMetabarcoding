@@ -1,7 +1,7 @@
 .. _quality_filtering:
 
 ==========================
-Quality Filtering
+1) Quality Filtering
 ==========================
 
 .. toctree::

@@ -1,6 +1,8 @@
-==============================
-Mapping reads to references
-==============================
+.. _map_to_ref:
+
+========================================
+Extension: Mapping reads to references
+========================================
 
 If we were only interested in the species for which we have reference sequences, for example if we were monitoring for a single or set of known species, there isn’t really much need to generate anonymous OTUs. We could simply map our trimmed, merged and quality filtered reads against the references directly, to get counts of our reference species in each sample.
 

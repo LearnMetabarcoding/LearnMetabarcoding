@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mapping reads to OTUs &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>1) Mapping reads to OTUs &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -37,7 +37,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mapping reads to CROP and swarm OTUs" href="extensions/map_to_other_otus.html" />
+    <link rel="next" title="Extension: Mapping reads to CROP and swarm OTUs" href="extensions/map_to_other_otus.html" />
     <link rel="prev" title="Identifying OTUs and Generating Outputs" href="../otuid.html" /> 
 </head>
 
@@ -90,14 +90,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../otuid.html">Identifying OTUs and Generating Outputs</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Mapping reads to OTUs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="extensions/map_to_other_otus.html">Mapping reads to CROP and swarm OTUs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1) Mapping reads to OTUs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extensions/map_to_other_otus.html">Extension: Mapping reads to CROP and swarm OTUs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="id_with_megan.html">Identification using GenBank and MEGAN</a></li>
-<li class="toctree-l2"><a class="reference internal" href="id_with_curated_db.html">Identifiation using a curated database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="id_local.html">Identification using local database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mapping_reads_to_refs.html">Mapping reads to references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_with_megan.html">2) Identification using GenBank and MEGAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_with_curated_db.html">3) Identifiation using a curated database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_local.html">4) Identification using local database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapping_reads_to_refs.html">Extension: Mapping reads to references</a></li>
 <li class="toctree-l2"><a class="reference internal" href="id_contigs.html">Identifying contigs</a></li>
 </ul>
 </li>
@@ -151,7 +151,7 @@
         
           <li><a href="../otuid.html">Identifying OTUs and Generating Outputs</a> &raquo;</li>
         
-      <li>Mapping reads to OTUs</li>
+      <li>1) Mapping reads to OTUs</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,7 +171,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mapping-reads-to-otus">
-<h1>Mapping reads to OTUs<a class="headerlink" href="#mapping-reads-to-otus" title="Permalink to this headline">¶</a></h1>
+<h1>1) Mapping reads to OTUs<a class="headerlink" href="#mapping-reads-to-otus" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 <p>This step takes our trimmed, merged and quality filtered reads and tries to find which OTU each read belongs to. We take our reads prior to the more recent read filtering because this filtering may have removed many true but rare variants of our OTUs, or slight PCR or sequencing-induced error variants. These reads get matched to the closest OTU, but we set a similarity cut-off so that any reads that are major errors will not match to any OTU and be ignored.</p>
@@ -193,7 +193,7 @@ Alternatively, move on to the next <a class="reference internal" href="id_with_m
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="extensions/map_to_other_otus.html" class="btn btn-neutral float-right" title="Mapping reads to CROP and swarm OTUs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="extensions/map_to_other_otus.html" class="btn btn-neutral float-right" title="Extension: Mapping reads to CROP and swarm OTUs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../otuid.html" class="btn btn-neutral float-left" title="Identifying OTUs and Generating Outputs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

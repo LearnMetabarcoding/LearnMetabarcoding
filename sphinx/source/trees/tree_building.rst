@@ -1,5 +1,7 @@
+.. _tree_building:
+
 ================================
-Tree building
+5) Tree building
 ================================
 
 We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an “approximately maximum likelihood” phylogenetic tree building method, broadly similar in method to PhyML or RAxML.
@@ -15,6 +17,8 @@ The algorithm generates a newick file, which is the most common format for phylo
 In this case, we’ll use a script to pull metadata from the GenBank files to do the renaming. Again, this is a custom script used to skip over tedious bits of this pipeline, it’s definitely not a required step.
 
 The script is ``rename_newick_with_gb.pl``, check out the helpfile using ``-h`` and rename the tree with the fields you think would be useful. My suggestion is in the footnote [#f1]_.
+
+The next stage is to :ref:`build a tree for our OTUs<otu_tree>`
 
 .. rubric:: Footnotes
 

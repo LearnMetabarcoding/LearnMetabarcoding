@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Grep command &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>Fundamentals: Grep command &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Cutadapt extension" href="../extensions/cutadapt_extension.html" />
-    <link rel="prev" title="Demultiplexing" href="../demultiplexing.html" /> 
+    <link rel="next" title="Extension: Cutadapt" href="../extensions/cutadapt_extension.html" />
+    <link rel="prev" title="1) Demultiplexing" href="../demultiplexing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,15 +87,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../notes.html">The Practical Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../linuxintro.html">Command line bioinformatics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../readprocessing.html">Read processing</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../fastq.html">FASTQ files</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../demultiplexing.html">Demultiplexing</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Grep command</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../extensions/cutadapt_extension.html">Cutadapt extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fastq.html">Fundamentals: FASTQ files</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../demultiplexing.html">1) Demultiplexing</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Fundamentals: Grep command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/cutadapt_extension.html">Extension: Cutadapt</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../primer_removal.html">Primer removal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pair_merging.html">Pair merging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data_concat.html">Data concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../primer_removal.html">2) Primer removal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pair_merging.html">3) Pair merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_concat.html">4) Data concatenation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">Filtering Amplicon Data</a></li>
@@ -151,9 +151,9 @@
         
           <li><a href="../../readprocessing.html">Read processing</a> &raquo;</li>
         
-          <li><a href="../demultiplexing.html">Demultiplexing</a> &raquo;</li>
+          <li><a href="../demultiplexing.html">1) Demultiplexing</a> &raquo;</li>
         
-      <li>Grep command</li>
+      <li>Fundamentals: Grep command</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,8 +172,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="grep-command">
-<span id="id1"></span><h1>Grep command<a class="headerlink" href="#grep-command" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="fundamentals-grep-command">
+<span id="grep-command"></span><h1>Fundamentals: Grep command<a class="headerlink" href="#fundamentals-grep-command" title="Permalink to this headline">¶</a></h1>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">grep</span></code> to illustrate the location of these indices on the sequences. We take the output of the <code class="docutils literal notranslate"><span class="pre">head</span></code> command (from the previous section) to show only the first three sequences in a file, send this to the next function using the pipe (​|​) command. The next function is <code class="docutils literal notranslate"><span class="pre">grep</span></code> ​, which we use to search for an index sequence using regex. The <code class="docutils literal notranslate"><span class="pre">|$</span></code> at the end of the regex means “or the end of the line” - we use this to print every line, but only highlight the parts of interest.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ head -n <span class="m">12</span> ​file​ <span class="p">|</span> grep -E <span class="s2">&quot;​INDEX​|</span>$<span class="s2">&quot;</span>
 </pre></div>
@@ -193,10 +193,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../extensions/cutadapt_extension.html" class="btn btn-neutral float-right" title="Cutadapt extension" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../extensions/cutadapt_extension.html" class="btn btn-neutral float-right" title="Extension: Cutadapt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../demultiplexing.html" class="btn btn-neutral float-left" title="Demultiplexing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../demultiplexing.html" class="btn btn-neutral float-left" title="1) Demultiplexing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

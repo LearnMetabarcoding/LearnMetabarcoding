@@ -1,7 +1,7 @@
 .. _more_variable:
 
 ======================================================================
-What if we have a more variable region? Extension
+Extension: What if we have a more variable region?
 ======================================================================
 
 What if we have a coding region like CO1 where we expect no single-base indels, but overall the region is more variable (or we have a wider range of taxa) and we might see real established whole-codon insertions or deletions?

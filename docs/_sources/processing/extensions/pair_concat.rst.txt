@@ -1,7 +1,7 @@
 .. _pair_concatenation:
 
 ========================================
-Pair concatenation Extension
+Extension: Pair concatenation
 ========================================
 
 What happens if our fragment length is so much longer than our read length that it doesn’t overlap? For example, if we had sequenced these fragments using a 2x150bp metric instead of 2x300bp? Let’s simulate it.

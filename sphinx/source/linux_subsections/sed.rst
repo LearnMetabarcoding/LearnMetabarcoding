@@ -39,9 +39,9 @@ This will allow you to test out your regular expression on a subset of the file.
 
 A final note: by default, ``sed`` replaces the first instance of your search string *per line*. If you want to replace every instance, use ``s///g`` (global).
 
------------------------------
+-------------------------------------
 Selecting lines from a file with sed
------------------------------
+-------------------------------------
 
 To print a specific line using sed, you use the ``p`` instruction. You pair this with the ``-n`` option, which does not return any lines unless explicitely told to. So, to print the 10th line of a file, you'd do:
 
