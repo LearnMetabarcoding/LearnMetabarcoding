@@ -1,7 +1,7 @@
 .. _demultiplexing:
 
 ========================================
-1) Demultiplexing
+1. Demultiplexing
 ========================================
 
 .. toctree::
@@ -22,19 +22,18 @@ The ``​cat`` command simply outputs the entire contents of the files it is giv
 
 When we did PCR, the index was part of the primers used, so that the reaction added this sequence to our amplicons when copying them. The primers used for this metabarcoding reaction were:
 
-Forward (R1): **​CCNGAYATRGCNTTYCCNCG**
-
-Reverse (R2): **​TANACYTCNGGRTGNCCRAARAAYCA**
+:Forward (R1): ``​CCNGAYATRGCNTTYCCNCG``
+:Reverse (R2): ``TANACYTCNGGRTGNCCRAARAAYCA``
 
 Note the presence of non ATCG bases - these are ambiguities added to the primers to allow them to be less specific and bind to a greater variety of taxa.
 
-* Use the grep command above to search for the primer sequence in a file. If you are unfamilliar with the grep command, see :ref:`here<grep_command>`.
 
-	* Note that ambiguities (any base apart from ATCG) should be replaced with a ​. (full stop) which is a special regex symbol meaning “any character”.
+.. topic:: Do this
+	Use the grep command above to search for the primer sequence in a file. If you are unfamilliar with the grep command, see :ref:`here<grep_command>`. Note that ambiguities (any base apart from ATCG) should be replaced with a ​``.`` (full stop) which is a special regex symbol meaning "any character".
+	
+	Try writing the command yourself before looking at the answer in the footnote below [#f1]_.
 
-	* Try writing the command yourself before looking at the answer in the footnote below [#f1]_.
-
-	* Look at a few different libraries, both forward and reverse, both index and primer.
+	Look at a few different libraries, both forward and reverse, both index and primer.
 
 You’ll probably see that there are occasions where no index or primer is highlighted on a sequence. This means there was a sequencing error. Look closely and you’ll see that a base is missing or inserted, or just wrong.
 
@@ -61,9 +60,9 @@ Cutadapt has settings for all of these situations. It will allow reading two fil
 
 Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1. To avoid a mess of files, I strongly suggest returning up to the parent directory and creating a new directory [#f2]_ . Call this something appropriate.
 
-This command assumes that you are in the directory containing the “0_rawsequences” directory and an empty directory called “1_demux”. Reminder: using the ​\ allows us to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command at the beginning of the next line.
+This following commands assume that you are in the directory containing the "0_rawsequences" directory and an empty directory called "1_demux". Let's first try and demultiplex a single file. Reminder: we used the ``​\`` to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command at the beginning of the next line.
 
-Run the following, then review what is printed to the terminal carefully. Make sure you understand what it’s saying:
+Carefully examin the following command and make sure you're clear on what each of the arguments is doing. Then, run the command and inspect the terminal output and make sure you understand what it's saying.
 
 .. code-block:: bash 
 
@@ -72,29 +71,38 @@ Run the following, then review what is printed to the terminal carefully. Make s
 	> -o 1_demux/{name1}-{name2}_R1.fastq -p 1_demux/{name1}-{name2}_R2.fastq \ 
 	> 0_rawsequences/Lib1_R1.fastq 0_rawsequences/Lib1_R2.fastq
 
-* How many files do you expect to get out of this?
+.. topic:: Questions
+
+	Before you check, think: how many files do you expect to get out of this command?
 
 List the files in the demux directory, and run the grep command from the previous section to see the read numbers per file [#f3]_ . More than you expected?
 
-This is because the command has looked for all adapter combinations. This is nice security against errors. The sequencer has mistakenly associated some reads as the same fragment when they aren’t - they actually come from two different samples, hence some files with two different sample names. And in some cases, no index can be found on one or both of a paired read, probably due to a sequencing error. These are marked as unknown. Happily, all of these errors are in a distinct minority, and the majority of reads have been allocated to files for our samples.
+This is because the command has looked for all adapter combinations. When we have 3 different forward indices and 3 different reverse indices, there are 9 different combinations possible. Add on top of this that there are 6 possibilites where only a forward *or* a reverse index is used, plus the possibility where *no* indices are used. Some researchers use this to efficiently apply few indices to identify many many different samples. However, this makes it much harder to spot errors. We don't have any valid sequences that use different forward and reverse indices, yet the demultiplexer has found many: these are errors in the sequencing. The sequencer has mistakenly associated some reads as the same fragment when they aren’t - they actually come from two different samples, hence some files with two different sample names. And in some cases, no index can be found on one or both of a paired read, probably due to a sequencing error. These are marked as unknown. Happily, all of these errors are in a distinct minority, and the majority of reads have been allocated to files for our samples. If we had used all 9 combinations, we wouldn't have been able to spot many of these errors!
 
 If you add everything up, you’ll notice we’re missing some reads from our original files: these had no mate pair and were completely discarded.
 
-* Construct three more cutadapt commands to demultiplex the other three libraries, placing the outputs into the same demux directory.
+.. topic:: Do this
+
+	Construct three more cutadapt commands to demultiplex the other three libraries, placing the outputs into the same demux directory.
 
 You should now have lots of files in that demux directory. It’s good practice to keep track of how demultiplexing performed: you could put the output of a grep command into a file to keep a record [#f4]_.
 
-Let’s get rid of the files we don’t need. You’ve doubled the amount of storage you’re using - here the files aren’t very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don’t match. You do not need to type any ​#comments​, or add the extra spaces - this is just to make it clearer.
+Let’s get rid of the files we don’t need. You’ve doubled the amount of storage you’re using - here the files aren’t very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don’t match. You do not need to type any ​``#comments​``, or add the extra spaces - this is just to make it clearer.
 
 .. code-block:: bash 
 
-	$ for f in *; do \                          # loop through files
-	> s1=${f%-*} ; s2=${f%_*} ; s2=${s2#*-}; \  # extract sample names
-	> if [ $s1 != $s2 ]; \ 			    # check if different
-	> then rm $f; \ 			    # delete if different
-	> else mv $f ${f#*-}; \			    # keep if same
-	> fi; \ 				    # end if clause
-	> done 					    # end loop 
+	$ for f in * \			# loop through files
+	> do \
+	>	s1=${f%-*} \
+	>	s2=${f%_*} \		# extract sample names
+	>	s2=${s2#*-} \
+	>	if [ $s1 != $s2 ] \	# check if different
+	>	then
+	>		rm $f; \	# delete if different
+	>	else
+	>		mv $f ${f#*-} \	# keep if same
+	>	fi \ 			# end if clause
+	> done 				# end loop 
 
 An explanation for this code is below. This isn’t a crucial bioinformatics step, it’s just to tidy things up. You don’t need to understand everything about this command, although the loop syntax is going to crop up frequently.
 
