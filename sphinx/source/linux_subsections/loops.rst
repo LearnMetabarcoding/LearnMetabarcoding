@@ -79,6 +79,7 @@ When we set up a loop we initialise a variable that will contain a different val
 The basic syntax of parameter substitution is ``${f operation}`` where ``f`` is the name of your variable and ``operation`` is the alteration you want to make. Firstly, to remove text from the end of a variable, you use the ``%`` operator, like this:
 
 .. code-block:: bash
+
 	$ i="file.fasta"
 	$ o=${i%.fasta}
 	$ echo "$o"
@@ -86,6 +87,7 @@ The basic syntax of parameter substitution is ``${f operation}`` where ``f`` is 
 If you run the above lines, you should see that the file extension has been removed. If you don't know what the exact file extension will be, you can use ``*``, the wildcard character:
 
 .. code-block:: bash
+
 	$ i="file.fasta"
 	$ o=${i%.*}
 	$ echo "$o"
@@ -93,6 +95,7 @@ If you run the above lines, you should see that the file extension has been remo
 Alternatively, we might want to remove a directory name from the front of the text. We do this using the ``#`` symbol:
 
 .. code-block:: bash
+
 	$ i="directory/file.fastq"
 	$ o=${i#*/}
 	$ echo "$o"
@@ -102,6 +105,7 @@ Notice how we used a wildcard character rather than removing the directory?
 We can chain these together to make very flexible loops. For example, imagine we have many FASTQ files in a directory called "raw" and we want to convert them to FASTA files and put them in a directory called "converted". Let's just assume our conversion tool is called ``convert``. This is a toy example:
 
 .. code-block:: bash
+
 	$ for f in raw/* \               # Loop through the contents of raw/
 	> do \
 	>	o=${f%.fastq} \          # Remove the .fastq file extension
@@ -113,6 +117,7 @@ We can chain these together to make very flexible loops. For example, imagine we
 This can be written in a condensed, one-line format as follows:
 
 .. code-block:: bash
+
 	$ for f in raw/*; do o=${f%.*}; convert --input $f --output "converted/${o#raw/}.fastq"; done
 
 Notice how we did the second parameter expansion within another command, rather than by itself.
