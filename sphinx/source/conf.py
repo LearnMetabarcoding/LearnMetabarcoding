@@ -56,7 +56,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_static_path = ['customcss']
 
 def setup(app):
-    app.add_css_file('customcss/custom.css')
+    app.add_css_file('custom.css')
 
 
 def setup(app):
