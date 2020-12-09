@@ -22,7 +22,12 @@ We now build a tree using this new data, but with our existing mitogenome tree a
 
 First, we must convert our existing tree into a constraint alignment, as detailed in the `documentation <http://www.microbesonline.org/fasttree/constrained.html>`_ ​. You’ll notice that they supply a handy script for this conversion - we’ve already downloaded this for you, so go ahead and copy it from ``/AMM/resources/phylogenetics/TreeToConstraints.pl`` to your directory.
 
-You can now run the script as instructed in the documentation to convert the mitogenome tree from the previous section [#f1]_.
+You can now run the script as instructed in the documentation to convert the mitogenome tree from the previous section.
+
+.. admonition:: Solution
+	:class: toggle
+
+	``$ perl TreeToConstraints.pl < ​mtgenometree.nwk ​> ​constraints.txt``
 
 Now we can run the new tree building to place the OTUs within this tree. We add the ​-constraints option to FastTree to do this. Remember, we’re running this using the combined supermatrix you just made with mafft.
 
@@ -43,7 +48,3 @@ Download this tree to your computer and view it.
 * Have any OTUs been placed close to any of our novel references? Do these correspond to the matches when we BLASTed our OTUs against our barcodes?
 
 * You selected your references at random from the pool available. Compare your tree with your neighbours. Have the references used affected the conclusions you draw?
-
-.. rubric:: Footnotes 
-
-.. [#f1] ``$ perl TreeToConstraints.pl < ​mtgenometree.nwk ​> ​constraints.txt`` 
