@@ -14,7 +14,7 @@ So a phred score of S=10 gives P=0.1, meaning there is a 10% chance of error. A 
 
 Given this knowledge, we can use the Phred scores to calculate the number of expected errors over a sequence, by converting each base’s quality score into a probability and then summing the probabilities.
 
-Given the below fastq, convert the phred scores to probabilities (look up the S values for each character on the fastq wikipedia page), then calculate the number of expected errors [#f1]_.
+Given the below fastq, convert the phred scores to probabilities (look up the S values for each character on the fastq wikipedia page), then calculate the number of expected errors.
 
 .. code-block:: rst
 	
@@ -23,12 +23,14 @@ Given the below fastq, convert the phred scores to probabilities (look up the S 
 	+
 	@EB>9:7/.(&
 
+.. admonition:: Solution
+	:class: toggle
+
+	S = 31,36,33,29,24,25,22,15,14,8,5
+		 
+	P = 0.0008, 0.0003, 0.0005, 0.001, 0.004, 0.003, 0.006, 0.03, 0.04, 0.2, 0.3 
+		 
+	E = 0.56
+	
+
 You can now continue with the rest of the :ref:`quality filtering section<quality_filtering>`
-
-.. rubric:: Footnotes 
-
-.. [#f1] ​S = 31,36,33,29,24,25,22,15,14,8,5
-		 
-		 P = 0.0008, 0.0003, 0.0005, 0.001, 0.004, 0.003, 0.006, 0.03, 0.04, 0.2, 0.3 
-		 
-		 E = 0.56
