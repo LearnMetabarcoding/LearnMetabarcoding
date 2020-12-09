@@ -16,11 +16,13 @@ The algorithm generates a newick file, which is the most common format for phylo
 
 In this case, we’ll use a script to pull metadata from the GenBank files to do the renaming. Again, this is a custom script used to skip over tedious bits of this pipeline, it’s definitely not a required step.
 
-The script is ``rename_newick_with_gb.pl``, check out the helpfile using ``-h`` and rename the tree with the fields you think would be useful. My suggestion is in the footnote [#f1]_.
+The script is ``rename_newick_with_gb.pl``, check out the helpfile using ``-h`` and rename the tree with the fields you think would be useful. My suggestion is below.
+
+.. admonition:: Suggestion
+	:class: toggle
+
+	``rename_newick_with_gb.pl -g ​novelmt.gb genbankmt.gb​ -t ​tree.nwk​ -o ​tree_RN.nwk​``
+	``-fields LOCUS TAXONOMY -ntax 6``
+	
 
 The next stage is to :ref:`build a tree for our OTUs<otu_tree>`
-
-.. rubric:: Footnotes
-
-.. [#f1] ``rename_newick_with_gb.pl -g ​novelmt.gb genbankmt.gb​ -t ​tree.nwk​ -o ​tree_RN.nwk​``
-		 ``-fields LOCUS TAXONOMY -ntax 6``
