@@ -64,4 +64,4 @@ html_js_files = [
 ]
 
 def setup(app):
-    app.add_js_file('js/custom.js')
+    app.add_js_file('customjs/custom.js')
