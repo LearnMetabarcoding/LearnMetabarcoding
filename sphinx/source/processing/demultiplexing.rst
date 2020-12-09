@@ -37,10 +37,9 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 
 .. admonition:: Solution
 	:class: toggle
-
 	``$ head -n 12 ​in_R1.fastq​ | grep -E "CC.GA.AT.GC.TT.CC.CG|$"`` 
 	     
-	 ``$ head -n 12 ​in_R2.fastq​ | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"`` 
+	``$ head -n 12 ​in_R2.fastq​ | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"`` 
 
 
 You’ll probably see that there are occasions where no index or primer is highlighted on a sequence. This means there was a sequencing error. Look closely and you’ll see that a base is missing or inserted, or just wrong.
