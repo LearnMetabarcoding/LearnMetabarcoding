@@ -70,6 +70,7 @@ Notice that we use the ``<`` symbol to set indices.txt as the standard input. As
 
 	$ sed -e "s/$/T/" indices.txt | while read i; do grep -c "$i" inputs/*.fasta; done
 
+.. _parameter-substitution:
 ------------------------------------
 Variables in loops
 ------------------------------------
