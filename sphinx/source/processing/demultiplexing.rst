@@ -36,7 +36,7 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 	Look at a few different libraries, both forward and reverse, both index and primer.
 
 .. admonition:: Solution
-	:class: .toggle
+	:class: toggle
 	
 	``$ head -n 12 ​in_R1.fastq​ | grep -E "CC.GA.AT.GC.TT.CC.CG|$"``
 	``$ head -n 12 ​in_R2.fastq​ | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"``
