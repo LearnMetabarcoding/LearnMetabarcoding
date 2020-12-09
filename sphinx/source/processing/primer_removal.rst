@@ -28,9 +28,8 @@ Cutadapt is aware of ambiguous bases so it’s fine to use them as-is. The prime
 .. admonition:: Solution
 	:class: toggle
 
-	``$ cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA -o 2_trimmed/T11_R1.fastq -p`` 
-	
-	``2_trimmed/T11_R2.fastq --discard-untrimmed 1_demux/T11_R1.fastq 1_demux/T11_R2.fastq``
+	``$ cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA -o 2_trimmed/T11_R1.fastq`` 
+	``-p 2_trimmed/T11_R2.fastq --discard-untrimmed 1_demux/T11_R1.fastq 1_demux/T11_R2.fastq``
 
 Make sure to look over the output from cutadapt because this is very informative. You’ll notice now that some errors are being allowed, since these sequences are longer and so the default 10% allows 2 errors in these primers. Additionally you’ll notice that unlike with the indices, the length of sequence removed has varied slightly. We’ll come back to this.
 
