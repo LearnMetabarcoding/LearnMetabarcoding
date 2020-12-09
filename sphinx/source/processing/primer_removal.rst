@@ -1,7 +1,7 @@
 .. _primer_removal:
 
 ============================================
-2) Primer removal
+2. Primer removal
 ============================================
 
 .. toctree::
@@ -23,7 +23,14 @@ This process is very similar to demultiplexing, except we only have one sequence
 
 Making sure you’re in the parent directory, try and adapt our demultiplexing command to trim the primers given earlier from one of the demultiplexed file pairs. You will want to add the parameter ``--discard-untrimmed`` ​. We could have added this to demultiplexing to remove all “unknown” files as well.
 
-Cutadapt is aware of ambiguous bases so it’s fine to use them as-is. The primers should have been consecutive with the indices, so now must be at the start of the reads: thus you can use ​^ to anchor the sequence as before. You don’t need to name the primer sequences (``XX=``), and you don’t need to use ``{name}``  in the output - the file name will do. Try running it, if it doesn’t work, check the answer [#f1]_.
+Cutadapt is aware of ambiguous bases so it’s fine to use them as-is. The primers should have been consecutive with the indices, so now must be at the start of the reads: thus you can use ​^ to anchor the sequence as before. You don’t need to name the primer sequences (``XX=``), and you don’t need to use ``{name}``  in the output - the file name will do. Try running it, if it doesn’t work, check the answer.
+
+.. admonition:: Solution
+	:class: toggle
+
+	``$ cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA -o 2_trimmed/T11_R1.fastq -p`` 
+	
+	``2_trimmed/T11_R2.fastq --discard-untrimmed 1_demux/T11_R1.fastq 1_demux/T11_R2.fastq``
 
 Make sure to look over the output from cutadapt because this is very informative. You’ll notice now that some errors are being allowed, since these sequences are longer and so the default 10% allows 2 errors in these primers. Additionally you’ll notice that unlike with the indices, the length of sequence removed has varied slightly. We’ll come back to this.
 
@@ -49,7 +56,3 @@ Check your trimmed directory to make sure you have all of your files, and check 
 If you want to explore more about the quality settings of primer removal, check out this page: :ref:`quality settings extension<quality_settings>`. 
 If you'd rather move on, go to the :ref:`pair merging section<pair_merging>`.
 
-.. rubric:: Footnotes 
-
-.. [#f1] ``$ cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA -o 2_trimmed/T11_R1.fastq -p`` 
-		 ``2_trimmed/T11_R2.fastq --discard-untrimmed 1_demux/T11_R1.fastq 1_demux/T11_R2.fastq``
