@@ -72,6 +72,7 @@ Referring to the indices.txt file, we can now construct a command that demultipl
 	:class: toggle
 	
 	``$ cd ../``
+	
 	``$ mkdir 1_demux``
 
 This following commands assume that you are in the directory containing the "0_rawsequences" directory and an empty directory called "1_demux". Let's first try and demultiplex a single file. Reminder: we used the ``​\`` to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command at the beginning of the next line.
@@ -97,6 +98,7 @@ List the files in the demux directory, and run the grep command from the previou
 	:class: toggle
 	
 	``$ ls 1_demux/*``
+	
 	``$ grep -c "^@D00" 1_demux/*`` 
 
 This is because the command has looked for all adapter combinations. When we have 3 different forward indices and 3 different reverse indices, there are 9 different combinations possible. Add on top of this that there are 6 possibilites where only a forward *or* a reverse index is used, plus the possibility where *no* indices are used. Some researchers use this to efficiently apply few indices to identify many many different samples. However, this makes it much harder to spot errors. We don't have any valid sequences that use different forward and reverse indices, yet the demultiplexer has found many: these are errors in the sequencing. The sequencer has mistakenly associated some reads as the same fragment when they aren’t - they actually come from two different samples, hence some files with two different sample names. And in some cases, no index can be found on one or both of a paired read, probably due to a sequencing error. These are marked as unknown. Happily, all of these errors are in a distinct minority, and the majority of reads have been allocated to files for our samples. If we had used all 9 combinations, we wouldn't have been able to spot many of these errors!
