@@ -8,7 +8,12 @@ Due to the use of PCR to generate metabarcoding datasets, we should generate ple
 
 These can be filtered out with a simple threshold, although the selection of this threshold is likely to be dataset-dependent.
 
-We can actually do this as part of the dereplication command we just did. Try running the command from the last section again, with the same input and adding the argument ``minuniquesize 1`` ​to get rid of all singleton sequences [#f1]_. **​Use a different output filename​**, we’re not going to keep this output.
+We can actually do this as part of the dereplication command we just did. Try running the command from the last section again, with the same input and adding the argument ``minuniquesize 1`` ​to get rid of all singleton sequences. **​Use a different output filename​**, we’re not going to keep this output. See the solution below if you get stuck!
+
+.. admonition:: Solution
+	:class: toggle
+
+	``$ vsearch --derep_fulllength ​in.fasta​ --output ​out.fasta​ --sizeout --relabel uniq --minuniquesize 1``
 
 A much more sophisticated approach to filtering errors is denoising. Denoising algorithms use read frequency and sequence composition to infer likely sequencing errors. Instead of doing the size filtering as part of dereplication, we will instead do it as part of a denoising command. We will use the unoise3 algorithm, implemented again in VSEARCH. Your input file here should be the output from dereplicating in the last section.
 
@@ -42,6 +47,3 @@ Some researchers argue that denoising should be run at the level of the individu
 
 You're now ready to move onto the :ref:`next step.<point_error>`
 
-.. rubric:: Footnotes 
-
-.. [#f1] ``$ vsearch --derep_fulllength ​in.fasta​ --output ​out.fasta​ --sizeout --relabel uniq --minuniquesize 1``
