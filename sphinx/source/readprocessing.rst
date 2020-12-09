@@ -4,6 +4,14 @@
 Read processing
 ==========================================
 
+.. toctree::
+	:hidden:
+        processing/fastq
+        processing/demultiplexing
+        processing/primer_removal
+        processing/pair_merging
+        processing/data_concat
+
 ------------------------------------------
 Introduction
 ------------------------------------------
@@ -32,5 +40,6 @@ If you are completely new to sequence data, you might want to review the FASTQ f
 4. Quality filtering: removing reads with errors
 
 .. note::
+
 The first three steps in this pipeline could be performed in any order. We structure them in this order for a few reasons. Firstly, pair merging is a computationally intensive task, so by employing this last of the three we get a small speedup by not having to process any reads rejected in the previous steps. Secondly, demultiplexing separates out samples that may belong to different projects and may not need to be processed together, so it makes sense to do this first.
 
