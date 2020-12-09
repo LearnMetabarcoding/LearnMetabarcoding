@@ -32,7 +32,7 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 
 	Use the grep command above to search for the primer sequence in a file. If you are unfamilliar with the grep command, see :ref:`here<grep_command>`. Note that ambiguities (any base apart from ATCG) should be replaced with a ​``.`` (full stop) which is a special regex symbol meaning "any character".
 	
-	Try writing the command yourself before looking at the answer in the footnote below [#f1]_.
+	Try writing the command yourself before looking at the answer in the solution box below.
 
 	Look at a few different libraries, both forward and reverse, both index and primer.
 
@@ -66,7 +66,13 @@ It’s quite long, but at least read the first section. It’s helpful to think 
 
 Cutadapt has settings for all of these situations. It will allow reading two files as input, and will ensure that pairs of reads in these files are kept in sync. Indices at the beginning of reads are specified using ``-g`` ( ``​-G`` for the second file of reads), and we can specify these multiple times, and give different adapters names. We also specify that the adapters are right at the beginning, with no gaps, using a ``^`` symbol. We can specify that we want output files depending on the combination of adapters found using the ``​-o`` and ``​-p`` options for the first and second files respectively.
 
-Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1. To avoid a mess of files, I strongly suggest returning up to the parent directory and creating a new directory [#f2]_ . Call this something appropriate.
+Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1. To avoid a mess of files, I strongly suggest returning up to the parent directory and creating a new directory. Call this something appropriate. If you're unsure how to do this check the solution box below.
+
+.. admonition:: Solution
+	:class: toggle
+	
+	``$ cd ../``
+	``$ mkdir 1_demux``
 
 This following commands assume that you are in the directory containing the "0_rawsequences" directory and an empty directory called "1_demux". Let's first try and demultiplex a single file. Reminder: we used the ``​\`` to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command at the beginning of the next line.
 
@@ -85,7 +91,13 @@ TODO: update this command to use internal indices.
 
 	Before you check, think: how many files do you expect to get out of this command?
 
-List the files in the demux directory, and run the grep command from the previous section to see the read numbers per file [#f3]_ . More than you expected?
+List the files in the demux directory, and run the grep command from the previous section to see the read numbers per file. Try this in your own then check the solution box below if you have trouble. More than you expected?
+
+.. admonition:: Solution
+	:class: toggle
+	
+	``$ ls 1_demux/*``
+	``$ grep -c "^@D00" 1_demux/*`` 
 
 This is because the command has looked for all adapter combinations. When we have 3 different forward indices and 3 different reverse indices, there are 9 different combinations possible. Add on top of this that there are 6 possibilites where only a forward *or* a reverse index is used, plus the possibility where *no* indices are used. Some researchers use this to efficiently apply few indices to identify many many different samples. However, this makes it much harder to spot errors. We don't have any valid sequences that use different forward and reverse indices, yet the demultiplexer has found many: these are errors in the sequencing. The sequencer has mistakenly associated some reads as the same fragment when they aren’t - they actually come from two different samples, hence some files with two different sample names. And in some cases, no index can be found on one or both of a paired read, probably due to a sequencing error. These are marked as unknown. Happily, all of these errors are in a distinct minority, and the majority of reads have been allocated to files for our samples. If we had used all 9 combinations, we wouldn't have been able to spot many of these errors!
 
@@ -95,7 +107,12 @@ If you add everything up, you’ll notice we’re missing some reads from our or
 
 	Construct three more cutadapt commands to demultiplex the other three libraries, placing the outputs into the same demux directory.
 
-You should now have lots of files in that demux directory. It’s good practice to keep track of how demultiplexing performed: you could put the output of a grep command into a file to keep a record [#f4]_.
+You should now have lots of files in that demux directory. It’s good practice to keep track of how demultiplexing performed: you could put the output of a grep command into a file to keep a record (see solution box below). 
+
+.. admonition:: Solution
+	:class: toggle
+
+	``$ ​grep -c "^@D00" 1_demux/* > demuxlog.txt``
 
 Let’s get rid of the files we don’t need. You’ve doubled the amount of storage you’re using - here the files aren’t very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don’t match. You do not need to type any ​``#comments​``, or add the extra spaces - this is just to make it clearer.
 
@@ -129,16 +146,3 @@ In the above command, the ​for part sets up a loop that works through each fil
 If you'd like to explore more cutadapt parameters check out this extension task: :ref:`cutadapt extension<cutadapt_extension>`. Otherwise, move on to 
 our next step :ref:`primer removal.<primer_removal>`
 
-.. rubric:: Footnotes 
-
-
-.. [#f1] ``$ head -n 12 ​in_R1.fastq​ | grep -E "CC.GA.AT.GC.TT.CC.CG|$"`` 
-	     
-		 ``$ head -n 12 ​in_R2.fastq​ | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"`` 
-.. [#f2] ``$ cd ../``
-		 
-		 ``$ mkdir 1_demux``
-.. [#f3] ``$ ls 1_demux/*``
-		 
-		 ``$ grep -c "^@D00" 1_demux/*`` 
-.. [#f4] ``$ ​grep -c "^@D00" 1_demux/* > demuxlog.txt``
