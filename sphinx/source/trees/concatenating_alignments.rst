@@ -11,7 +11,7 @@ We use the ​catfasta2phyml.pl command to concatenate the aligned files into a 
 .. admonition:: Solution
 	:class: toggle
 
-    ``catfasta2phyml.pl -c -fasta ​genes_aligned/*​ > ​supermatrix.fasta``
+    ``catfasta2phyml.pl -c -fasta genes_aligned/* > supermatrix.fasta``
 
 We can now move onto :ref:`tree building<tree_building>`
 
