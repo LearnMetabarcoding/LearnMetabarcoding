@@ -35,6 +35,14 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 
 	Look at a few different libraries, both forward and reverse, both index and primer.
 
+.. admonition:: Solution
+	:class: toggle
+
+	``$ head -n 12 ​in_R1.fastq​ | grep -E "CC.GA.AT.GC.TT.CC.CG|$"`` 
+	     
+	 ``$ head -n 12 ​in_R2.fastq​ | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"`` 
+
+
 You’ll probably see that there are occasions where no index or primer is highlighted on a sequence. This means there was a sequencing error. Look closely and you’ll see that a base is missing or inserted, or just wrong.
 
 We want to split each of these libraries up by index into a separate pair of files for each of the 12 samples, and remove the index sequences. We will do this using the tool `cutadapt. <https://cutadapt.readthedocs.io>`_ This versatile tool allows separating files by index and removal of these indices and primers. It can allow for some error in the index sequence, and can keep read pairs in sync (more on this later).
