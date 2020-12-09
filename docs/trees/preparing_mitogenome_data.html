@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1) Preparing mitogenome data &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/customcss/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fundamentals: Working with GenBank" href="fundamentals/genbank.html" />
+    <link rel="prev" title="Building Phylogenetic Trees for Metagenetics" href="../trees.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">Identifying OTUs and Generating Outputs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1) Preparing mitogenome data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fundamentals/genbank.html">Fundamentals: Working with GenBank</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extracting_protein_coding_genes.html">2) Extracting protein coding genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aligning_protein_coding_genes.html">3) Aligning protein coding genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concatenating_alignments.html">4) Concatenating alignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tree_building.html">5) Tree building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otu_trees.html">6) OTU trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tree_viewing.html">7) Tree Viewing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../placing_otus_in_trees.html">Placing OTUs in reference trees</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../trees.html">Building Phylogenetic Trees for Metagenetics</a> &raquo;</li>
+        
+      <li>1) Preparing mitogenome data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/trees/preparing_mitogenome_data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="preparing-mitogenome-data">
+<span id="prep-mitogenome-data"></span><h1>1) Preparing mitogenome data<a class="headerlink" href="#preparing-mitogenome-data" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>First, copy the set of novel Coleoptera mitogenomes from the canopy project to your directory (<code class="docutils literal notranslate"><span class="pre">/AMM/references/canopy_ColeopMT.gb</span></code>). This is the complete version of what you assembled in the last section.</p>
+<p>We want to supplement these mitogenomes with some good data from GenBank in order to generate a more comprehensive tree. We will use mitogenome data from the NCBI RefSeq database. This database holds the set of best-curated sequences on GenBank.</p>
+<p>While we will obviously want to acquire some Coleoptera data, we should also include representatives from other taxa. Most importantly, we want to be able to validate the assignment of OTUs to other Insect orders that we observed using our taxonomic assignment methods. Given that CO1 is a fast-evolving gene, and we are just using a short, highly variable region, we should not expect that deep-level (i.e. order-level) relationships will be properly resolved on a tree based solely on this data. In other words, we shouldn’t necessarily assume that the beetles and non-beetles will form separate monophyletic clades on a tree if only the metabarcode region is used to separate them. So, we will also use data for a set of other Arthropod orders. ​This data is all already downloaded to the server.</p>
+<p>If you’ve not previously acquired data from GenBank, or aren’t familiar with the GenBank file format, look at this page go over <a class="reference internal" href="fundamentals/genbank.html#genbank"><span class="std std-ref">how we retrieved the Coleoptera data</span></a>.</p>
+<p>Copy to your directory the two files for the Coleoptera and selected other Arthropods (Blattodea, Hemiptera, Lepidoptera, Diptera, Araneae, and Collembola):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp /AMM/references/GBdl_RefSeq_ColeopMT_2019-09-20.gb ./
+$ cp /AMM/references/GBdl_RefSeq_OtherArthMT_2019-09-20.gb ./
+</pre></div>
+</div>
+<p>For speed, we’re just assuming this data is perfect and completely suitable for our purposes. If approaching this comprehensively, we would check through the sequences to ensure that:</p>
+<ul class="simple">
+<li><p>All of the sequences come from species within the group we’re interested in</p></li>
+<li><p>All of the annotations are accurate</p></li>
+</ul>
+<p>We are going to remove some redundancy in these datasets, since in total we now have over 1,400 references. Not only will building trees with this many sequences be very time-consuming, but it’ll make our trees very complicated to view and understand. We are going to reduce our dataset by taking representatives from each family in our references - three per family for the Coleoptera, one per family for everything else.</p>
+<p>We’ll run a custom script that loads the entries, sorts them by a specified taxonomic level, and outputs a specified number of entries from each group. It is imaginatively named “subset_gb_by_taxonomy.pl”. Check out the helpfile if you wish, the commands we need are:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ subset_gb_by_taxonomy.pl -g GBdl_RefSeq_OtherArthMT_2019-09-20.gb -t family -n <span class="m">1</span> -random -o GBdl_RefSeq_OtherArthMT_1pfamily
+$ subset_gb_by_taxonomy.pl -g GBdl_RefSeq_ColeopMT_2019-09-20.gb -t family -i -n <span class="m">3</span> -random -o GBdl_RefSeq_ColeopMT_3pfamily
+</pre></div>
+</div>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">-i</span></code> in the second command - this ensures we include families that have fewer than three representatives. You may get some messages about “trouble dissecting…” - you can ignore these. For each command you should get 2-4 files - the one we want is the one with _subset in the name. Concatenate the two _subset files into a single file.</p>
+<p>The next step is to <a class="reference internal" href="extracting_protein_coding_genes.html#extract-coding"><span class="std std-ref">extract protein coding genes</span></a>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fundamentals/genbank.html" class="btn btn-neutral float-right" title="Fundamentals: Working with GenBank" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../trees.html" class="btn btn-neutral float-left" title="Building Phylogenetic Trees for Metagenetics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

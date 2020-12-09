@@ -1,0 +1,239 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Extension: Mapping reads to references &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/customcss/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Identifying contigs" href="id_contigs.html" />
+    <link rel="prev" title="4) Identification using local database" href="id_local.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../otuid.html">Identifying OTUs and Generating Outputs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mapping_reads.html">1) Mapping reads to OTUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_with_megan.html">2) Identification using GenBank and MEGAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_with_curated_db.html">3) Identifiation using a curated database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_local.html">4) Identification using local database</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Extension: Mapping reads to references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_contigs.html">Identifying contigs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../placing_otus_in_trees.html">Placing OTUs in reference trees</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../otuid.html">Identifying OTUs and Generating Outputs</a> &raquo;</li>
+        
+      <li>Extension: Mapping reads to references</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/otuid/mapping_reads_to_refs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="extension-mapping-reads-to-references">
+<span id="map-to-ref"></span><h1>Extension: Mapping reads to references<a class="headerlink" href="#extension-mapping-reads-to-references" title="Permalink to this headline">¶</a></h1>
+<p>If we were only interested in the species for which we have reference sequences, for example if we were monitoring for a single or set of known species, there isn’t really much need to generate anonymous OTUs. We could simply map our trimmed, merged and quality filtered reads against the references directly, to get counts of our reference species in each sample.</p>
+<p>Try using both <code class="docutils literal notranslate"><span class="pre">​blastn</span></code> and <code class="docutils literal notranslate"><span class="pre">vsearch</span> <span class="pre">--usearch_global</span></code> to map the raw reads against the reference sequences, drawing on what you learned from using the previous commands.</p>
+<p>Experiment with different thresholds and outputs.</p>
+<ul class="simple">
+<li><p>Experiment with different thresholds and outputs.</p></li>
+<li><p>Is one method clearly superior?</p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="id_contigs.html" class="btn btn-neutral float-right" title="Identifying contigs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="id_local.html" class="btn btn-neutral float-left" title="4) Identification using local database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
