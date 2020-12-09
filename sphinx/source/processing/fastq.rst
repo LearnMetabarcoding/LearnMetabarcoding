@@ -54,4 +54,5 @@ Like the ​wc -l function above, we can run grep on all of our files at once to
 We can see that we’re dealing with about 9000 reads per library.
 
 .. topic:: Questions
+
 	Do all the libraries have the same R1 and R2 read numbers?
