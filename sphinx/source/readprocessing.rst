@@ -6,6 +6,7 @@ Read processing
 
 .. toctree::
 	:hidden:
+	
         processing/fastq
         processing/demultiplexing
         processing/primer_removal
