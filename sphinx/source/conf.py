@@ -57,3 +57,9 @@ html_static_path = ['customcss']
 
 def setup(app):
     app.add_css_file('customcss/custom.css')
+
+
+html_js_files = [
+    'js/custom.js',
+]
+
