@@ -29,6 +29,7 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 
 
 .. topic:: Do this
+
 	Use the grep command above to search for the primer sequence in a file. If you are unfamilliar with the grep command, see :ref:`here<grep_command>`. Note that ambiguities (any base apart from ATCG) should be replaced with a ​``.`` (full stop) which is a special regex symbol meaning "any character".
 	
 	Try writing the command yourself before looking at the answer in the footnote below [#f1]_.
