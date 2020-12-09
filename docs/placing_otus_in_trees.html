@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Placing OTUs in reference trees &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Extension: Comparing OTU methods" href="trees/extensions/tree_comparison.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linuxintro.html">Command line bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readprocessing.html">Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otuid.html">Identifying OTUs and Generating Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trees.html">Building Phylogenetic Trees for Metagenetics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Placing OTUs in reference trees</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Placing OTUs in reference trees</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/placing_otus_in_trees.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="placing-otus-in-reference-trees">
+<span id="placing-otus-in-ref-trees"></span><h1>Placing OTUs in reference trees<a class="headerlink" href="#placing-otus-in-reference-trees" title="Permalink to this headline">¶</a></h1>
+<p>The more comprehensive mitochondrial genome dataset allows us better resolution for figuring out the deep-level relationships between our species than with the OTU data. We can use this data and tree to form a ‘backbone’, to which we add the OTUs. The backbone tree is fixed, and branches are added for the OTUs. This is often called a “constraint tree”.</p>
+<p>The first step in doing this is to align our OTUs to our mitogenome dataset. Run the following command, using the OTUs and the supermatrix of the mitochondrial genomes from the previous section.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mafft --thread <span class="m">1</span> --addfragments ​otus.fasta​ --6merpair ​supermatrix.fasta​ &gt; ​out.fasta
+</pre></div>
+</div>
+<p>Here we use mafft’s ​–addfragments argument, which you can read about <a class="reference external" href="https://mafft.cbrc.jp/alignment/software/addsequences.html">here</a>. Again, we’re using some options which make this alignment very very fast, but the accuracy might not be great.</p>
+<p>Download this alignment and have a look at it using your alignment viewer.</p>
+<ul class="simple">
+<li><p>How well have the OTUs aligned?</p></li>
+</ul>
+<p>We now build a tree using this new data, but with our existing mitogenome tree as a constraint tree. We will do this again in FastTree.</p>
+<p>First, we must convert our existing tree into a constraint alignment, as detailed in the <a class="reference external" href="http://www.microbesonline.org/fasttree/constrained.html">documentation</a> ​. You’ll notice that they supply a handy script for this conversion - we’ve already downloaded this for you, so go ahead and copy it from <code class="docutils literal notranslate"><span class="pre">/AMM/resources/phylogenetics/TreeToConstraints.pl</span></code> to your directory.</p>
+<p>You can now run the script as instructed in the documentation to convert the mitogenome tree from the previous section <a class="footnote-reference brackets" href="#f1" id="id1">1</a>.</p>
+<p>Now we can run the new tree building to place the OTUs within this tree. We add the ​-constraints option to FastTree to do this. Remember, we’re running this using the combined supermatrix you just made with mafft.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ FastTree -nt -gtr -constraints ​constraints.txt &lt; ​combinedsupermatrix.fasta &gt;​ tree.nwk
+</pre></div>
+</div>
+<p>Use both of the renaming scripts we’ve previously used to rename this tree with the genbank metadata and with the OTU classifier data. The order you use these scripts in doesn’t matter, but you should make sure to output to a new file each time - don’t try to overwrite any files.</p>
+<p>Download this tree to your computer and view it.</p>
+<ul class="simple">
+<li><p>Use your tree viewer’s search function to highlight the OTUs. Has their topology changed compared with the OTU-only tree? Is it improved?</p></li>
+<li><p>Do the classification of OTUs by MEGAN/RDP/SINTAX match with the clades they have been placed in? Are there any disagreements?</p></li>
+<li><p>Are OTUs distributed across taxonomic clades, or are they clustered within clades? What might be the reasons for these patterns?</p></li>
+<li><p>Have any OTUs been placed close to any of our novel references? Do these correspond to the matches when we BLASTed our OTUs against our barcodes?</p></li>
+<li><p>You selected your references at random from the pool available. Compare your tree with your neighbours. Have the references used affected the conclusions you draw?</p></li>
+</ul>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">perl</span> <span class="pre">TreeToConstraints.pl</span> <span class="pre">&lt;</span> <span class="pre">​mtgenometree.nwk</span> <span class="pre">​&gt;</span> <span class="pre">​constraints.txt</span></code></p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="trees/extensions/tree_comparison.html" class="btn btn-neutral float-left" title="Extension: Comparing OTU methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
