@@ -12,7 +12,12 @@ We can identify some point errors because they will alter the translation of the
 
 	$ filtertranslate.py -help
 
-* Figure out what the command is to run it using automatic reading frame detection [#f2]_. Hint: check the usage line to figure out where some of the arguments go. Don’t forget, our samples are insects.
+* Figure out what the command is to run it using automatic reading frame detection. Hint: check the usage line to figure out where some of the arguments go. Don’t forget, our samples are insects.
+
+.. admonition:: Solution
+	:class: toggle
+
+	``$ ​filtertranslate.py ​in.fasta​ 5`` ​- yup, it’s that simple!
 
 You may want to rename the automatically-named output.
 
@@ -26,4 +31,3 @@ The next step is :ref:`chimera filtering<chimera>`
 
 .. [#f1] This custom script is available on my `github <https://github.com/tjcreedy>`_. 
 		 Please let me know if you know of any established software that can do this in a similar manner!
-.. [#f2] ``$ ​filtertranslate.py ​in.fasta​ 5`` ​- yup, it’s that simple!
