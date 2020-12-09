@@ -59,9 +59,5 @@ def setup(app):
     app.add_css_file('customcss/custom.css')
 
 
-html_js_files = [
-    'js/custom.js',
-]
-
 def setup(app):
     app.add_js_file('customjs/custom.js')
