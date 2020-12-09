@@ -7,7 +7,6 @@
 .. toctree::
 	:hidden:
 
-	fundamentals/grep_command
 	extensions/cutadapt_extension
 
 Introduction
