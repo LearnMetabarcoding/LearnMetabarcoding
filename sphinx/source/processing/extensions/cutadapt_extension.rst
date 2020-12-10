@@ -23,9 +23,9 @@ In the main section, we used the ``^`` symbol to denote that our index sequences
 
 .. parsed-literal::
 	
-	1  **AACACC**\*CCAGATATGGCCTTCCCACG*\ATCC    # This is perfect
-	2  **ACACC**\*CCAGATATGGCCTTCCCACG*\ATCCG    # This is missing just one index base
-	3  T\**AACACC**\*CCAGATATGGCCTTCCCACG*\ATC    # This has an extra base before the index
+	1  **AACACC** \ *CCAGATATGGCCTTCCCACG* \ ATCC    # This is perfect
+	2  **ACACC** \ *CCAGATATGGCCTTCCCACG* \ ATCCG    # This is missing just one index base
+	3  T \ **AACACC** \ *CCAGATATGGCCTTCCCACG* \ ATC    # This has an extra base before the index
 
 Cutadapt is very flexible, and we can find these variants if we abandon the anchoring (i.e. we remove ``^`` before the indices.
 
@@ -35,16 +35,16 @@ To visualise this, we can consider a search using the index ``g=XNAACACC`` with 
 
 .. parsed-literal::
 	
-	1  **AACACC**\*CCAGATATGGCCTTCCCACG*\ATCC
+	1  **AACACC** \ *CCAGATATGGCCTTCCCACG* \ ATCC
 	 **XNAACACC**  = match!
 	
-	2  **ACACC**\*CCAGATATGGCCTTCCCACG*ATCCG
+	2  **ACACC** \ *CCAGATATGGCCTTCCCACG* \ ATCCG
 	**XNAACACC**  = match!
 	
-	3  T\**AACACC**\*CCAGATATGGCCTTCCCACG*\ATC
+	3  T \ **AACACC** \ *CCAGATATGGCCTTCCCACG* \ ATC
 	  **XNAACACC**  = match!
 	
-	4  ATG\**AACACC**\CGUTTAGCTAAACGGATTTAGAC
+	4  ATG \ **AACACC** \ CGUTTAGCTAAACGGATTTAGAC
 	    **XNAACACC** = no match, X cannot match a base!
 
 .. admonition:: Exercise
