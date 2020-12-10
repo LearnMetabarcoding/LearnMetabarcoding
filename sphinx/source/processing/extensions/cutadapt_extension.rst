@@ -13,7 +13,7 @@ Cutadapt can be error-tolerant, allowing you to permit some mismatches between y
 
 .. admonition:: Exercise
 
-	* Create two more new directories and try ​``-e`` values that allow one error or two errors, putting the outputs into those two directories. Explore the read numbers using ​``grep``
+	* Create two more new directories and try ``-e`` values that allow one error or two errors, putting the outputs into those two directories. Explore the read numbers using ``grep``
 	
 	* How do the read numbers vary? Is being more error-tolerant sensible?
 
