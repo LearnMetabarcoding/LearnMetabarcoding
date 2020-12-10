@@ -15,6 +15,7 @@ Introduction
 These metabarcoding libraries were sequenced such that 300bp of our fragment was read from each end. When we designed our primers from complete mitochondrial genome sequences, we examined the expected amplicon and we know that there should be **418bp** of sequence between the primers. Given that this is much shorter than :math:`2 * 300`, there should be overlap between the forward and reverse fragments, and we can use this to assemble the complete amplicon sequence 
 
 .. admonition:: Exercise
+
 	* You know from previous sections how much index and primer sequence was trimmed from each end. How much sequence should we have left in each direction?
 	
 	* How much should these sequences overlap?
