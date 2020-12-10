@@ -19,6 +19,11 @@ We can identify some point errors because they will alter the translation of the
 
 	``$ ​filtertranslate.py ​in.fasta​ 5`` ​- yup, it’s that simple!
 
+.. admonition:: Solution
+	:class: togglegreen
+
+	``$ ​filtertranslate.py ​in.fasta​ 5`` ​- yup, it’s that simple!	
+
 You may want to rename the automatically-named output.
 
 * Have a look at the failed file. Go to an online amino acid translator and paste in a sequence. See what the translation looks like. Can you see the stop(s)?
