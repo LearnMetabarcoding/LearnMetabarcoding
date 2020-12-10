@@ -61,12 +61,19 @@ We want to run this on all of our files, ideally without writing the command ove
 	
 	$ ls 1_demux/* | cut -d_ -f1 | sort | uniq
 
-This extracts the part of each name before the first ​_ and finds the unique ones. We can then use this as the basis of a loop:
+This extracts the part of each name before the first ​_ and finds the unique ones. We can then store this list of library names in a bash variable, and check it's contents with ``echo``
+
+.. code-block:: bash 
+	
+	$ samples=$(ls 1_demux/* | cut -d_ -f1 | sort | uniq)
+	
+	$ echo $samples
+
+We can then loop on the contents of this variable using ``for``
 
 .. code-block:: bash 
 
-	$ ls 1_demux/ | cut -d_ -f1 | sort | uniq |
-	> while read s \
+	$ for s in $samples \
 	> do \
 	> 	cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \
 	> 	-o 2_trimmed/${s}_R1.fastq -p 2_trimmed/${s}_R2.fastq --discard-untrimmed \ 
@@ -76,11 +83,21 @@ This extracts the part of each name before the first ​_ and finds the unique o
 Remember that you can write this as a single line, placing ``;`` before ``do`` and ``done``:
 
 .. code-block:: bash
-	$  ls 1_demux/ | cut -d_ -f1 | sort | uniq | while read s; do cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA -o 2_trimmed/${s}_R1.fastq -p 2_trimmed/${s}_R2.fastq --discard-untrimmed 1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq done
+	$ for s in $samples; do cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA -o 2_trimmed/${s}_R1.fastq -p 2_trimmed/${s}_R2.fastq --discard-untrimmed 1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq done
 
 The read command reads from the piped list command, and the while command works through this bit-by-bit. The ``​$s`` therefore refers to each sample name in turn - note that ``​${s}`` is used where we want to add a ​_ immediately after, otherwise bash will look for a variable called ``$s_R1``.
 
 Check your trimmed directory to make sure you have all of your files, and check back through the terminal output to make sure that you didn’t miss any errors. As always, review your read numbers.
+
+.. warning::
+	To run these loops, we generated a list of our unique sample names by listing our files and then editing the text to remove file extensions and direction information, as reprinted below.
+	
+	.. code-block:: bash 
+		
+		$ samples=$(ls 1_demux/* | cut -d_ -f1 | sort | uniq)
+	
+	If you have your own data, your file names are likely to be different and the exact code used above may not work! You will need to come up with your own version. If you have multiple underscores in your file names, but the number of underscores is consistent, you could simply tweak the number given to ``cut -f``. Otherwise, you might need to use ``sed`` to remove parts of the names, or even use ``rename`` to rename the files to something that will work.
+	
 
 Next steps
 ==========
