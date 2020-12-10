@@ -25,11 +25,11 @@ As part of the read processing we excluded possibly erroneous sequences, based o
 Getting the data
 ================
 
-If you've worked through the previous section, you should have a file named ``mbc_concat.fastq``. This single `FASTQ<fastq>` file contains amplicon reads and quality scores sorted by sample, with indices and primers trimmed and mate pairs merged.
+If you've worked through the previous section, you should have a file named ``mbc_concat.fastq``. This single :ref:`FASTQ<fastq>` file contains amplicon reads and quality scores sorted by sample, with indices and primers trimmed and mate pairs merged.
 
 We don't recommend it, but if you want to skip over the Read Processing section you can copy this file from the project data folder to your current working directory with the following command.
 
-..code-block:: bash
+.. code-block:: bash
 	
 	$ cp /AMM/resources/metabarcoding/mbc_concat.fasta
 
