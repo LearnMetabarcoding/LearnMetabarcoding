@@ -51,7 +51,7 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 
 .. admonition:: Exercise
 	
-	Use the grep command to search for the primer sequence in a file. Note that ambiguities (any base apart from ATCG) should be replaced with a ​``.`` (full stop) which is a special character in Regular Expressions meaning "any character".
+	Use the grep command to search for the primer sequence in a file. Note that ambiguities (any base apart from ATCG) should be replaced with a ``.`` (full stop) which is a special character in Regular Expressions meaning "any character".
 	
 	Try writing the command yourself before looking at the answer in the solution box below.
 	
