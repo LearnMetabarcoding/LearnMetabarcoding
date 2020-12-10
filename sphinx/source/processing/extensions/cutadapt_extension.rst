@@ -48,6 +48,7 @@ To visualise this, we can consider a search using the index ``g=XNAACACC`` with 
 	    **XNAACACC** = no match, X cannot match a base!
 
 .. admonition:: Exercise
+
 	Create another new directory, then build a cutadapt command that uses these "noninternal" indices.
 	Check the number of reads returned using grep. Do we see a boost in read counts?
 	

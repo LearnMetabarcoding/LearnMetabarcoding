@@ -25,7 +25,7 @@ Each of these libraries is actually three different metabarcoding samples. Each 
 
 The ``​cat`` command simply outputs the entire contents of the files it is given, one after the other. Here we’re using it to just output the content of one file, but look out for this command later!
 
-We can use the ``grep`` command to check for indices in a file (see :ref:`here<grep_command>` for more detail on this). Select any of the starting FASTQ files and run the following on it to search for the `AACACC` index
+We can use the ``grep`` command to check for indices in a file (see :ref:`here<grep>` for more detail on this). Select any of the starting FASTQ files and run the following on it to search for the `AACACC` index
 
 .. code-block::
 	
@@ -36,11 +36,15 @@ You should see the index sequence bolded at the beginning of a sequence. You mig
 When we did PCR, the index was part of the primers used, so that the reaction added this sequence to our amplicons when copying them. The primer binding sequences used for this metabarcoding reaction were:
 
 .. topic:: Forward(R1)
+
 .. parsed-literal::
+
 	CCNGAYATRGCNTTYCCNCG
 
 .. topic:: Reverse (R2)
+
 .. parsed-literal::
+
 	TANACYTCNGGRTGNCCRAARAAYCA
 
 Note the presence of non ATCG bases - these are ambiguities added to the primers to allow them to be less specific and bind to a greater variety of taxa. The indices are **not** shown here: they would go at the start of the primer binding sequence.
@@ -88,9 +92,11 @@ Referring to the indices.txt file, we can now construct a command that demultipl
 
 .. admonition:: Solution
 	:class: toggle
+
 	.. code-block:: bash
+
 		$ cd ../        # Change working directory to the parent of the current working directory
-		$ mkdir 1_demux`` # Create a new directory called 1_demux
+		$ mkdir 1_demux # Create a new directory called 1_demux
 
 The following commands assume that you are in the directory containing the "0_rawsequences" directory and an empty directory called "1_demux". Let's first try and demultiplex a single file. Reminder: we used the ``​\`` to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command at the beginning of the next line.
 
@@ -116,6 +122,7 @@ TODO: update this command to use internal indices.
 	:class: toggle
 	
 	.. code-block:: bash
+	
 		$ ls 1_demux/*
 		$ grep -c "^@D00" 1_demux/*
 

@@ -10,6 +10,7 @@ Introduction
 At this point we have a set of sequence reads for each sample with extraneous sequence removed and read pairs brought together. Metabarcoding works on all sequence reads from across the dataset to find OTUs, and it’s more efficient if we do the following steps with all reads compiled into one file. 
 
 .. sidebar:: Pipeline design choices
+
 	We present this step here because it allows us to separate two distinct themes: the processing of raw sequence reads into samples, in this section, and the filtering of processed sequence reads to remove errors, in the next section. However, when performing metabarcoding bioinformatics it may be more efficient to perform this task after quality filtering, since quality filtering substantially reduces the data size. We detail this alternative `here <>` TODO
 
 Performing concatenation
@@ -31,6 +32,7 @@ This command loops through all the files in the directory. For each file, the ``
 Note the ``>>`` symbol. We use this to *append* to a file, rather than overwriting it. This allows to add to it every iteration of the loop. Be careful though: the first iteration of the loop will create this file if it doesn't exist, but if it already exists it will just add to it. So if you make a mistake and need to re-run this loop, you should delete the output file (``rm ../mbc_concat.fastq``) so you don't just keep adding to one huge file.
 
 .. admonition:: Exercise
+
 	Return to the parent directory, use ``grep`` to count the number of sequences in ``​mbc_concat.fastq`` ​and view the ``​head​`` of the file.
 	
 

@@ -78,6 +78,7 @@ Not too many options. Try running PEAR on a single pair of your primer-trimmed f
 PEAR gives us some really informative information on the terminal, make sure to review it. As you’ll have seen from the helpfile, there are many different thresholds that can be applied to the merging.
 
 .. admonition:: Exercise
+
 	1. Run your command again, applying a sensible minimum overlap based on what we calculated earlier. 
 
 	2. Run your command again, trying out some different p values and quality thresholds. The former is the threshold probability of an overlap being incorrect, the latter is the threshold score for trimming off low quality read ends.
@@ -92,6 +93,7 @@ Running PEAR in a loop
 Like with cutadapt, we can run PEAR in a loop to apply it to all of our samples: again, we list our files to find our unique samples, then loop on these and use each sample name to run an iteration of PEAR. Here my command assumes your files are in a directory called 2_trimmed and you’re outputting to a directory called 3_merged - you should modify these as necessary:
 
 .. code-block:: bash 
+
 	$ samples=$(ls 2_trimmed/ | cut -d_ -f1 | sort | uniq)
 	$ for s in $samples \
 	> do \
