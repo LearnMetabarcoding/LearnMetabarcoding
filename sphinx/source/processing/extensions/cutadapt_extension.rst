@@ -12,7 +12,8 @@ Error tolerance
 Cutadapt can be error-tolerant, allowing you to permit some mismatches between your indices and the sequences. Our adapters are all at least 3 bases different, so in theory we could allow a one-base difference to try and get more reads for our samples. The relevant option is ``-e​``, which is the maximum error rate (0-1), i.e. the total proportion of errors allowed in our indices. The default, 0.1, would allow 10% errors, but since our indices are only 6 bases this rounds to 0 errors allowed.
 
 .. admonition:: Exercise
-	* Create two more new directories and try ​``-e`` values that allow one error or two errors, putting the outputs into those two directories. Explore the read numbers using ​``grep``
+
+	* Create two more new directories and try ``-e`` values that allow one error or two errors, putting the outputs into those two directories. Explore the read numbers using ``grep``
 	
 	* How do the read numbers vary? Is being more error-tolerant sensible?
 
@@ -23,9 +24,9 @@ In the main section, we used the ``^`` symbol to denote that our index sequences
 
 .. parsed-literal::
 	
-	1  **AACACC***CCAGATATGGCCTTCCCACG*ATCC    # This is perfect
-	2  **ACACC***CCAGATATGGCCTTCCCACG*ATCCG    # This is missing just one index base
-	3  T**AACACC***CCAGATATGGCCTTCCCACG*ATC    # This has an extra base before the index
+	1  **AACACC**\ *CCAGATATGGCCTTCCCACG*\ ATCC    # This is perfect
+	2  **ACACC**\ *CCAGATATGGCCTTCCCACG*\ ATCCG    # This is missing just one index base
+	3  T\ **AACACC**\ *CCAGATATGGCCTTCCCACG*\ ATC  # This has an extra base before the index
 
 Cutadapt is very flexible, and we can find these variants if we abandon the anchoring (i.e. we remove ``^`` before the indices.
 
@@ -35,19 +36,20 @@ To visualise this, we can consider a search using the index ``g=XNAACACC`` with 
 
 .. parsed-literal::
 	
-	1  **AACACC***CCAGATATGGCCTTCCCACG*ATCC
+	1  **AACACC**\ *CCAGATATGGCCTTCCCACG*\ ATCC
 	 **XNAACACC**  = match!
 	
-	2  **ACACC***CCAGATATGGCCTTCCCACG*ATCCG
+	2  **ACACC**\ *CCAGATATGGCCTTCCCACG*\ ATCCG
 	**XNAACACC**  = match!
 	
-	3  T**AACACC***CCAGATATGGCCTTCCCACG*ATC
+	3  T\ **AACACC**\ *CCAGATATGGCCTTCCCACG*\ ATC
 	  **XNAACACC**  = match!
 	
-	4  ATG**AACACC**CGUTTAGCTAAACGGATTTAGAC
+	4  ATG\ **AACACC**\ CGUTTAGCTAAACGGATTTAGAC
 	    **XNAACACC** = no match, X cannot match a base!
 
 .. admonition:: Exercise
+
 	Create another new directory, then build a cutadapt command that uses these "noninternal" indices.
 	Check the number of reads returned using grep. Do we see a boost in read counts?
 	

@@ -41,7 +41,7 @@ To enter this in the command prompt, we type the first line (excluding the ``$``
 
 Finally, the shell will ignore anything on a line after the first ``#`` symbol it encounters. This is to allow for comments, and these resources will sometimes use this to comment lines of code. For example, you could type everything after the ``$`` symbol of the following command into the terminal and run it:
 
-.. code-block::bash
+.. code-block:: bash
 
 	$ echo "hello world"  # prints "hello world"
 
@@ -67,13 +67,13 @@ Many linux commands have three standard methods for input and output, called sta
 
 The terminal is the default destination for standard output and standard error. For example, when we used the ``echo`` command above without specifying anything else, the standard output was printed to the terminal. However, we can specify that we want the standard output to be stored in a file using the ``>`` symbol.
 
-.. code-block::bash
+.. code-block:: bash
 
 	$ echo "hello world" > hello.txt
 
 When we run this, nothing is printed to the terminal, instead it is directed to a file. We can see the contents of this file using the ``cat`` command:
 
-.. code-block::bash
+.. code-block:: bash
 
 	$ cat hello.txt
 
@@ -81,13 +81,13 @@ Because we didn't specify an output location with ``>`` after the ``cat`` comman
 
 Some functions expect information to be supplied to them on standard input. For this we would use the ``<`` command. This works with ``cat`` for example:
 
-.. code-block::bash
+.. code-block:: bash
 
 	$ cat < hello.txt
 
 Often this ``<`` symbol can be omitted, but where there is abiguity about what the input is, it's useful to be able to specify. Because many functions are able to read from the standard input and output to the standard output, this gives us access to a very powerful command line ability called piping. We can chain together commands using the ``|`` symbol, taking the standard output from one command and feeding it directly into the standard input of the next command, rather than storing it in a file. For example, let's create a three-line text file, sort the lines alphabetically, then find the unique lines. Note that when we use ``echo`` to create the file, we add a ``-e``. This is an optional parameter which we use to tell ``echo`` to *evaluate* the contents of the string, converting the special character ``\n`` into newlines.
 
-.. code-block::bash
+.. code-block:: bash
 
 	$ echo -e "line2\nline1\nline2" > lines.txt
 	$ sort lines.txt > linessorted.txt
@@ -95,7 +95,7 @@ Often this ``<`` symbol can be omitted, but where there is abiguity about what t
 
 Let's view all these files
 
-.. code-block::bash
+.. code-block:: bash
 
 	$ cat lines.txt
 	$ cat linessorted.txt
@@ -103,7 +103,7 @@ Let's view all these files
 
 Now let's do all of that in one command:
 
-.. code-block::bash
+.. code-block:: bash
 
 	$ echo -e "line2\nline1\nline2" | sort | uniq > linesunique2.txt
 	$ cat linesunique2.txt

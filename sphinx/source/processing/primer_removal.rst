@@ -19,8 +19,8 @@ As well as demultiplexing, cutadapt removed the indices from our samples. You ca
 	$ sed -n '2~4p'​ file​ | while read l; do echo ${#l} ; done | sort | uniq -c
 
 .. admonition:: How this command works
-	:class: toggle
-	:class: green
+	:class: togglegreen
+
 	The ``sed`` command ​p​rints only every 4th line, starting at the 2nd. This is sent to a ``while`` loop, which reads each line and stores it in ``l`` ​. The loop outputs the number of characters in the ``l`` variable, one per line. These are then sorted into alphanumeric order, and then each unique number is counted to get the distribution. 
 
 You should see that the average sequence length has reduced by 6.
@@ -32,23 +32,31 @@ Performing primer removal
 
 This process is very similar to demultiplexing, except we only have one sequence to remove, rather than three, and we only want one output file for each input file. The power of cutadapt’s paired-file-aware approach is that again, we can filter out any mate pairs that don’t have both primers - this is definitely a mark of a sequencing error! 
 
-.. damonition:: Exercise
+.. admonition:: Exercise
+
 	First, create another new directory in our parent directory for the trimming output.
 	
 	Making sure you’re in the parent directory, try and adapt our demultiplexing command to trim the primers (the sequences are given again below) from one of the demultiplexed file pairs. You will want to add the parameter ``--discard-untrimmed`` ​. We could have added this to demultiplexing to remove all “unknown” files as well.
-	.. topic:: Forward(R1)
+	
+	**Forward(R1)**
+
 	.. parsed-literal::
+
 		CCNGAYATRGCNTTYCCNCG
-	
-	.. topic:: Reverse (R2)
+		
+	**Reverse (R2)**
+
 	.. parsed-literal::
+
 		TANACYTCNGGRTGNCCRAARAAYCA
-	
+		
 	Cutadapt is aware of ambiguous bases so it’s fine to use the primer sequences as-is. The primers should have been consecutive with the indices, so now must be at the start of the reads: thus you can use ​^ to anchor the sequence as before. You don’t need to name the primer sequences (``XX=``), and you don’t need to use ``{name}``  in the output - the file name will do. Try running  your command, if it doesn’t work, check the solution below
 
 .. admonition:: Solution
 	:class: toggle
+
 	.. code-block:: bash
+
 		$ cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \
 		> -o 2_trimmed/T11_R1.fastq -p 2_trimmed/T11_R2.fastq --discard-untrimmed \
 		> 1_demux/T11_R1.fastq 1_demux/T11_R2.fastq
@@ -83,6 +91,7 @@ We can then loop on the contents of this variable using ``for``
 Remember that you can write this as a single line, placing ``;`` before ``do`` and ``done``:
 
 .. code-block:: bash
+
 	$ for s in $samples; do cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA -o 2_trimmed/${s}_R1.fastq -p 2_trimmed/${s}_R2.fastq --discard-untrimmed 1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq done
 
 The read command reads from the piped list command, and the while command works through this bit-by-bit. The ``​$s`` therefore refers to each sample name in turn - note that ``​${s}`` is used where we want to add a ​_ immediately after, otherwise bash will look for a variable called ``$s_R1``.
@@ -90,6 +99,7 @@ The read command reads from the piped list command, and the while command works 
 Check your trimmed directory to make sure you have all of your files, and check back through the terminal output to make sure that you didn’t miss any errors. As always, review your read numbers.
 
 .. warning::
+
 	To run these loops, we generated a list of our unique sample names by listing our files and then editing the text to remove file extensions and direction information, as reprinted below.
 	
 	.. code-block:: bash 

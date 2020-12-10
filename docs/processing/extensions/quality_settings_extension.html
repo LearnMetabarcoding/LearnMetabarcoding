@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3) Pair merging" href="../pair_merging.html" />
+    <link rel="next" title="3. Pair merging" href="../pair_merging.html" />
     <link rel="prev" title="2. Primer removal" href="../primer_removal.html" /> 
 </head>
 
@@ -95,8 +95,8 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Extension: Quality Settings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../pair_merging.html">3) Pair merging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data_concat.html">4) Data concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pair_merging.html">3. Pair merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_concat.html">4. Data concatenation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">Filtering Amplicon Data</a></li>
@@ -176,16 +176,18 @@
   <div class="section" id="extension-quality-settings">
 <span id="quality-settings"></span><h1>Extension: Quality Settings<a class="headerlink" href="#extension-quality-settings" title="Permalink to this headline">¶</a></h1>
 <p>Because primers are a region on our sequence that we have some ​*a priori*​ knowledge about, this is a good opportunity for filtering sequences with errors.</p>
-<ul class="simple">
-<li><p>Try running primer trimming with the strictest settings, a 100% match in length and bases - is this sensible?</p></li>
-</ul>
-<p>Many metabarcoding pipelines trim primers by just trimming a number of bases equal to the primer length off the beginning of each read. You can do this in cutadapt using the ​-u ​option, which you would need to do for each direction separately:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cutadapt -u ​n​ -o ​out.fastq​ -i ​in.fastq
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Try running primer trimming with the strictest settings, a 100% match in length and bases - is this sensible?</p>
+</div>
+<p>Many metabarcoding pipelines trim primers by just trimming a number of bases equal to the primer length off the beginning of each read. You can do this in cutadapt using the ​``-u`` ​option, which you would need to do for each direction separately (replacing <code class="docutils literal notranslate"><span class="pre">N</span></code> with the correct primer length:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cutadapt -u ​N -o ​out.fastq​ -i ​in.fastq
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Try running this for the forward and reverse reads. If you look at the number of reads, this clearly retains more. What might be the downsides of doing it this way?</p></li>
-</ul>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Try running this command for the forward and reverse reads of sample. If you look at the number of reads, this clearly retains more. What might be the downsides of doing it this way?</p>
+</div>
 </div>
 
 
@@ -196,7 +198,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../pair_merging.html" class="btn btn-neutral float-right" title="3) Pair merging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../pair_merging.html" class="btn btn-neutral float-right" title="3. Pair merging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../primer_removal.html" class="btn btn-neutral float-left" title="2. Primer removal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

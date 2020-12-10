@@ -172,7 +172,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="loops-in-bash">
-<h1>Loops in bash<a class="headerlink" href="#loops-in-bash" title="Permalink to this headline">¶</a></h1>
+<span id="loops"></span><h1>Loops in bash<a class="headerlink" href="#loops-in-bash" title="Permalink to this headline">¶</a></h1>
 <p>Sometimes we want to run a command multiple times, for example if we’re processing many files using the same tool. This is where loops become very useful, and we will use these extensively in this resource.</p>
 <p>Loops in bash are a big topic and we’re only going to cover the basics here. For more information, you could look at some other resources:</p>
 <ul class="simple">
@@ -198,7 +198,7 @@ $ <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$f
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="k">for</span> f in <span class="nv">$files</span><span class="p">;</span> <span class="k">do</span> sed -i -e <span class="s2">&quot;/^&gt;/,s/</span>$<span class="s2">/;tag;/ </span><span class="nv">$f</span><span class="s2">; done</span>
 </pre></div>
 </div>
-<p>See how we use <code class="docutils literal notranslate"><span class="pre">;</span></code> to separate expressions in a single line.</p>
+<p>See how we use <code class="docutils literal notranslate"><span class="pre">;</span></code> to separate expressions in a single line. These aren’t needed when typing a loop out using <code class="docutils literal notranslate"><span class="pre">\</span></code>, but are required for a one-liner. When you’re writing a one-line loop, a good rule of thumb is that you put <code class="docutils literal notranslate"><span class="pre">;</span></code> between each discrete expression, and before <code class="docutils literal notranslate"><span class="pre">do</span></code> and <code class="docutils literal notranslate"><span class="pre">done</span></code>.</p>
 </div>
 <div class="section" id="while-read-loops">
 <h2>While read loops<a class="headerlink" href="#while-read-loops" title="Permalink to this headline">¶</a></h2>
@@ -223,7 +223,7 @@ $ <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$f
 </div>
 </div>
 <div class="section" id="variables-in-loops">
-<h2>Variables in loops<a class="headerlink" href="#variables-in-loops" title="Permalink to this headline">¶</a></h2>
+<span id="parameter-substitution"></span><h2>Variables in loops<a class="headerlink" href="#variables-in-loops" title="Permalink to this headline">¶</a></h2>
 <p>When we set up a loop we initialise a variable that will contain a different value for each iteration of the loop. For the for loops, we named the variable <code class="docutils literal notranslate"><span class="pre">$f</span></code>, and for the while loops we named it <code class="docutils literal notranslate"><span class="pre">$i</span></code>. The name is arbitrary, the contents is what is important. As we are often operating on many files, the variable often contains a file path and/or name, but we may want to modify this while carrying out the loop - we might want to change the file extension or the path to the file. We do this using something called bash parameter substitution, which is a very powerful way of modifying the content of a variable on the fly. We’ll cover just two methods of parameter expansion, but you can read about many more ways at <a class="reference external" href="https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html">nixCraft</a>.</p>
 <p>The basic syntax of parameter substitution is <code class="docutils literal notranslate"><span class="pre">${f</span> <span class="pre">operation}</span></code> where <code class="docutils literal notranslate"><span class="pre">f</span></code> is the name of your variable and <code class="docutils literal notranslate"><span class="pre">operation</span></code> is the alteration you want to make. Firstly, to remove text from the end of a variable, you use the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator, like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nv">i</span><span class="o">=</span><span class="s2">&quot;file.fasta&quot;</span>

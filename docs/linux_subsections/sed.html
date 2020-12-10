@@ -172,16 +172,29 @@
            <div itemprop="articleBody">
             
   <div class="section" id="the-sed-command">
-<h1>The sed command<a class="headerlink" href="#the-sed-command" title="Permalink to this headline">¶</a></h1>
+<span id="sed"></span><h1>The sed command<a class="headerlink" href="#the-sed-command" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">sed</span></code> command is another tool that uses Regular Expressions, see the page on the <code class="docutils literal notranslate"><span class="pre">grep</span></code> command for more information on these. <code class="docutils literal notranslate"><span class="pre">sed</span></code> is used for performing edits to a text file. Probably the most common use of <code class="docutils literal notranslate"><span class="pre">sed</span></code> is to perform find-and-replace type operations, but it can also be used for many other things, in particular printing only specific lines of files.</p>
 <p>For a more detailed introduction to sed, see the <a class="reference external" href="https://catonmat.net/worlds-best-introduction-to-sed">world’s best introduction to sed</a></p>
 <div class="section" id="find-replace-using-sed">
 <h2>Find-replace using sed<a class="headerlink" href="#find-replace-using-sed" title="Permalink to this headline">¶</a></h2>
 <p>Let’s create a simple text file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">echo</span> -e <span class="s2">&quot;lineA\nlineB\nlineC&quot;</span> &gt; lines.txt
+</pre></div>
+</div>
 <p>Let’s say we want to replace “line” on each line with “row”. We would use the following <code class="docutils literal notranslate"><span class="pre">sed</span></code> expression:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sed -e <span class="s2">&quot;s/line/row/&quot;</span> lines.txt &gt; rows.txt
+$ cat rows.txt
+</pre></div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">-e</span></code> option tells sed that we want to use a regular expression for editing, and the regular expression in this case takes the form <code class="docutils literal notranslate"><span class="pre">s/find/replace/</span></code>. The <code class="docutils literal notranslate"><span class="pre">s</span></code> tells <code class="docutils literal notranslate"><span class="pre">sed</span></code> that we’re doing a substitution, and the <code class="docutils literal notranslate"><span class="pre">/</span></code> characters delimit our search and replacement. As you can imagine, we could get much more complicated with the regular expressions used to specify what we want to find and how we want to replace it, but we won’t go into this here.</p>
 <p>Note that if you want to edit a file directly, rather than edit a file and send the edited version to standard output, you would use the <code class="docutils literal notranslate"><span class="pre">-i</span></code> (inplace) argument. Be careful with this: you should always test out your regular expression before running it, in case it does things you don’t intend! If you have a large file, you can use <code class="docutils literal notranslate"><span class="pre">head</span></code> to see just the first 10 lines, then pipe this to <code class="docutils literal notranslate"><span class="pre">sed</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ head file.txt <span class="p">|</span> sed -e <span class="s2">&quot;s/find/replace/&quot;</span>
+</pre></div>
+</div>
 <p>This will allow you to test out your regular expression on a subset of the file. When you’re happy, you can run it on the whole file in place:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sed -i -e <span class="s2">&quot;s/find/replace/&quot;</span> file.txt
+</pre></div>
+</div>
 <p>A final note: by default, <code class="docutils literal notranslate"><span class="pre">sed</span></code> replaces the first instance of your search string <em>per line</em>. If you want to replace every instance, use <code class="docutils literal notranslate"><span class="pre">s///g</span></code> (global).</p>
 </div>
 <div class="section" id="selecting-lines-from-a-file-with-sed">
