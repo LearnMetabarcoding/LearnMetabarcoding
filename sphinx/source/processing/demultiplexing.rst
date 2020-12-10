@@ -1,8 +1,8 @@
 .. _demultiplexing:
 
-*****************
+=================
 1. Demultiplexing
-*****************
+=================
 
 .. toctree::
 	:hidden:
@@ -35,8 +35,13 @@ You should see the index sequence bolded at the beginning of a sequence. You mig
 
 When we did PCR, the index was part of the primers used, so that the reaction added this sequence to our amplicons when copying them. The primer binding sequences used for this metabarcoding reaction were:
 
-:Forward (R1): ``CCNGAYATRGCNTTYCCNCG``
-:Reverse (R2): ``TANACYTCNGGRTGNCCRAARAAYCA``
+.. topic:: Forward(R1)
+.. parsed-literal::
+	CCNGAYATRGCNTTYCCNCG
+
+.. topic:: Reverse (R2)
+.. parsed-literal::
+	TANACYTCNGGRTGNCCRAARAAYCA
 
 Note the presence of non ATCG bases - these are ambiguities added to the primers to allow them to be less specific and bind to a greater variety of taxa. The indices are **not** shown here: they would go at the start of the primer binding sequence.
 

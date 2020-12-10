@@ -14,9 +14,15 @@ Level two heading
 .. admonition:: Exercise
 	This is an exercise and will come out blue by default
 
-..admonition:: Solution
+.. admonition:: Solution
 	:class: toggle
 	This is a solution and will come out blue by default, with the nice toggle to show content
+
+.. admonition:: How this command works
+	:class: toggle
+	:class: green
+	This will have a toggle
+
 
 .. admonition:: Note
 	:class: green
@@ -30,4 +36,18 @@ Level two heading
 	This is a tip, it's green by default so we don't need to do anything
 
 .. warning::
-	This is a warning and it's orange by default so we don't need to do anything    
+	This is a warning and it's orange by default so we don't need to do anything
+
+
+Use :guilabel:`gui label` to encompass an inline instruction, as an inline version of an exercise box.
+
+For GUI software menus, use :menuselection:`File --> Save`.
+
+For DNA sequences, use
+
+.. topic:: title if needed
+.. parsed-literal::
+	ATCG*ATGC***ATCG**
+
+
+

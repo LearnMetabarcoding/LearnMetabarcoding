@@ -37,7 +37,7 @@ The ``for`` loop essentially says "for each item in ``$files``, call that item `
 
 	$ for f in $files; do sed -i -e "/^>/,s/$/;tag;/ $f; done
 
-See how we use ``;`` to separate expressions in a single line.
+See how we use ``;`` to separate expressions in a single line. These aren't needed when typing a loop out using ``\``, but are required for a one-liner. When you're writing a one-line loop, a good rule of thumb is that you put ``;`` between each discrete expression, and before ``do`` and ``done``.
 
 -------------------------------------
 While read loops
