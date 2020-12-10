@@ -38,17 +38,17 @@ This process is very similar to demultiplexing, except we only have one sequence
 	
 	Making sure you’re in the parent directory, try and adapt our demultiplexing command to trim the primers (the sequences are given again below) from one of the demultiplexed file pairs. You will want to add the parameter ``--discard-untrimmed`` ​. We could have added this to demultiplexing to remove all “unknown” files as well.
 	
-	.. topic:: Forward(R1)
+	**Forward(R1)**
 
-		.. parsed-literal::
+	.. parsed-literal::
 
-			CCNGAYATRGCNTTYCCNCG
+		CCNGAYATRGCNTTYCCNCG
 		
-	.. topic:: Reverse (R2)
+	**Reverse (R2)**
 
-		.. parsed-literal::
+	.. parsed-literal::
 
-			TANACYTCNGGRTGNCCRAARAAYCA
+		TANACYTCNGGRTGNCCRAARAAYCA
 		
 	Cutadapt is aware of ambiguous bases so it’s fine to use the primer sequences as-is. The primers should have been consecutive with the indices, so now must be at the start of the reads: thus you can use ​^ to anchor the sequence as before. You don’t need to name the primer sequences (``XX=``), and you don’t need to use ``{name}``  in the output - the file name will do. Try running  your command, if it doesn’t work, check the solution below
 
