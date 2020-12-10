@@ -111,7 +111,7 @@ Carefully examin the following command and make sure you're clear on what each o
 
 TODO: update this command to use internal indices.
 
-.. topic:: Exercise
+.. admonition:: Exercise
 	
 	Before you check the output files, think: how many files do you expect to get out of this command?
 	
