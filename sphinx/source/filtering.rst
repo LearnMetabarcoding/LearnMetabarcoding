@@ -39,16 +39,20 @@ Sources of error
 Erroneous sequences may arise through many processes, but these can generally be organised into several main sources:
 
 .. topic:: PCR errors
-It is likely that the numerical majority of errors arise during PCR, either through errors in transcription or by the formation of chimeric fragments. The latter term is used to describe cases where DNA from different source organisms incorrectly binds together to form a DNA molecule that no longer accurately reflects the genome of any real organism. PCR errors are so frequent because of the high chance of stochastic errors in the biochemical reactions and because the exponential amplification of sequences can cause errors to propogate into many individual fragments
+
+	It is likely that the numerical majority of errors arise during PCR, either through errors in transcription or by the formation of chimeric fragments. The latter term is used to describe cases where DNA from different source organisms incorrectly binds together to form a DNA molecule that no longer accurately reflects the genome of any real organism. PCR errors are so frequent because of the high chance of stochastic errors in the biochemical reactions and because the exponential amplification of sequences can cause errors to propogate into many individual fragments
 
 .. topic:: Sequencing errors
-Sequencing errors occur when the sequencer incorrectly reads a base position.
+
+	Sequencing errors occur when the sequencer incorrectly reads a base position.
 
 .. topic:: Bioinformatic errors
-Depending on the bioinformatic processes performed, it may be that incorrect or inappropriate application of software or parameters could cause errors to arise. For example, lax settings for pair merging may cause the merging of putative mate pairs that are not truly from the same fragment, or inappropriate adapter, index or primer trimming could over-trim or under-trim bases from reads.
+
+	Depending on the bioinformatic processes performed, it may be that incorrect or inappropriate application of software or parameters could cause errors to arise. For example, lax settings for pair merging may cause the merging of putative mate pairs that are not truly from the same fragment, or inappropriate adapter, index or primer trimming could over-trim or under-trim bases from reads.
 
 .. topic:: Non-target sequences
-The use of highly degenerate primers can cause the co-amplification of DNA that is not the target of the metabarcoding research project. One source of this non-target DNA is material that has contaminated our samples. Another major source are non-target pseudogenes or NUMTs. These are analogues of the target locus that are present elsewhere in the genome of the target organism, having arisen through erroneous transposition or another method.
+
+	The use of highly degenerate primers can cause the co-amplification of DNA that is not the target of the metabarcoding research project. One source of this non-target DNA is material that has contaminated our samples. Another major source are non-target pseudogenes or NUMTs. These are analogues of the target locus that are present elsewhere in the genome of the target organism, having arisen through erroneous transposition or another method.
 
 There are many ways that we can try to remove these errors, with different levels of certainty about the approach. This section will cover several methods: these are illustrated in the table below, alongside indications of what types of errors these methods target.
 
@@ -63,9 +67,9 @@ There are many ways that we can try to remove these errors, with different level
 +-----------------------+------------+-------------------+----------------------+----------------------+
 | Denoising             |  **✓**     |  **✓**            |  **✓**               |                      |
 +-----------------------+------------+-------------------+----------------------+----------------------+
-| Point Error Filtering | **✓**     |  **✓**            |  **✓**               |  **✓**               |
+| Point Error Filtering | **✓**      |  **✓**            |  **✓**               |  **✓**               |
 +-----------------------+------------+-------------------+----------------------+----------------------+
-| Chimera Filtering     | **✓**     |                   |  **✓**               |                      |
+| Chimera Filtering     | **✓**      |                   |  **✓**               |                      |
 +-----------------------+------------+-------------------+----------------------+----------------------+
 
 Next Steps
