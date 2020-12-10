@@ -19,8 +19,7 @@ Level two heading
 	This is a solution and will come out blue by default, with the nice toggle to show content
 
 .. admonition:: How this command works
-	:class: toggle
-	:class: green
+	:class: togglegreen
 	This will have a toggle
 
 
