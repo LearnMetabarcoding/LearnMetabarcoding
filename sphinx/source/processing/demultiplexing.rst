@@ -37,15 +37,15 @@ When we did PCR, the index was part of the primers used, so that the reaction ad
 
 .. topic:: Forward(R1)
 
-.. parsed-literal::
+	.. parsed-literal::
 
-	CCNGAYATRGCNTTYCCNCG
+		CCNGAYATRGCNTTYCCNCG
 
 .. topic:: Reverse (R2)
 
-.. parsed-literal::
+	.. parsed-literal::
 
-	TANACYTCNGGRTGNCCRAARAAYCA
+		TANACYTCNGGRTGNCCRAARAAYCA
 
 Note the presence of non ATCG bases - these are ambiguities added to the primers to allow them to be less specific and bind to a greater variety of taxa. The indices are **not** shown here: they would go at the start of the primer binding sequence.
 
