@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. Point error filtering &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6. Chimera filtering" href="chimera_filtering.html" />
+    <link rel="prev" title="4. Frequency filtering / denoising" href="freq_filtering_and_denoising.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quality_filtering.html">1. Quality Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="not_filtering_dereplication.html">2. Not Filtering: Dereplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indel_filtering.html">3. Indel Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freq_filtering_and_denoising.html">4. Frequency filtering / denoising</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Point error filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chimera_filtering.html">6. Chimera filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">Identifying OTUs and Generating Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../placing_otus_in_trees.html">Placing OTUs in reference trees</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../filtering.html">Filtering Amplicon Data</a> &raquo;</li>
+        
+      <li>5. Point error filtering</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/filtering/point_error.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="point-error-filtering">
+<span id="point-error"></span><h1>5. Point error filtering<a class="headerlink" href="#point-error-filtering" title="Permalink to this headline">¶</a></h1>
+<p>Filtering by length will remove sequences that have one or more PCR/sequencer-caused insertions or one or more deletions, however in some cases these errors may cancel one another out; or alternatively, PCR or sequencing may induce the equivalent of point mutations, where a single base is misread. Similarly, noncoding gene variants such as numts or pseudogenes may actually have point mutations in comparison to the ‘true’ region.</p>
+<p>We can identify some point errors because they will alter the translation of the genetic code in such a way that it becomes meaningless - if the barcode region is a coding region, of course. The obvious error is the introduction of stop codons into the translation. By translating all of our sequences and checking for stop codons, we can easily reject these errors or variants. We use the script filtertranslate.py <a class="footnote-reference brackets" href="#f1" id="id1">1</a> for this - check the helpfile by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ filtertranslate.py -help
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Figure out what the command is to run it using automatic reading frame detection. Hint: check the usage line to figure out where some of the arguments go. Don’t forget, our samples are insects.</p></li>
+</ul>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">​filtertranslate.py</span> <span class="pre">​in.fasta​</span> <span class="pre">5</span></code> ​- yup, it’s that simple!</p>
+</div>
+<p>You may want to rename the automatically-named output.</p>
+<ul class="simple">
+<li><p>Have a look at the failed file. Go to an online amino acid translator and paste in a sequence. See what the translation looks like. Can you see the stop(s)?</p></li>
+</ul>
+<p>Other ‘point errors’ are harder to spot. Some will not affect coding at all, which is impossible to distinguish from natural variation. The majority will affect coding, but again distinguishing these natural variation is very hard. This is actually something that some denoising algorithms attempt to do, broadly, but further work on this is ongoing.</p>
+<p>The next step is <a class="reference internal" href="chimera_filtering.html#chimera"><span class="std std-ref">chimera filtering</span></a></p>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This custom script is available on my <a class="reference external" href="https://github.com/tjcreedy">github</a>.
+Please let me know if you know of any established software that can do this in a similar manner!</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="chimera_filtering.html" class="btn btn-neutral float-right" title="6. Chimera filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="freq_filtering_and_denoising.html" class="btn btn-neutral float-left" title="4. Frequency filtering / denoising" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
