@@ -1,7 +1,7 @@
 .. _otu_tree:
 
 =================================
-6) OTU trees
+6. OTU trees
 =================================
 
 Before we look at this mitogenome tree, let’s quickly build a tree for the OTUs as well, and then we can compare the two. Unlike with the references, we’re not going to align our OTUs since they’re all the same length anyway - essentially an alignment.

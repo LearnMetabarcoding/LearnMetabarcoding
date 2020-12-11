@@ -1,7 +1,7 @@
 .. _concat_alignments:
 
 =======================================
-4) Concatenating alignments
+4. Concatenating alignments
 =======================================
 
 For phylogeny we need to consolidate our genetic data into one file with all of the data for each original sequence. We concatenate the 13 gene files to form a superalignment comprising all of our sequences. This is also known as a supermatrix, since every sequence is now the same length and thus each base is a cell in a very large table, where the rows are different source specimens and the columns are base positions. It is this data that phylogenetic reconstruction will work on.
