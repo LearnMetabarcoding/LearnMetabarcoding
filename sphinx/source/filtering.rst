@@ -18,7 +18,7 @@ Filtering Amplicon Data
 Introduction
 ============
 
-In the previous section we went from raw sequence data to processed complete amplicons of our target locus. This section assumes that you've processed the raw data as described in the four parts of the :ref:`Read Processing section<readprocessing>`: if you haven't done this, you can head to that section to work through those exercises.
+In the previous section we went from raw sequence data to processed complete amplicons of our target locus. This section assumes that you've processed the raw data as described in the four parts of the :ref:`Read Processing section<read_processing>`: if you haven't done this, you can head to that section to work through those exercises.
 
 As part of the read processing we excluded possibly erroneous sequences, based on missing index or primer sequences or an inability to merge. However there likely remain many further erroneous sequences in our dataset, and the purpose of this section is to remove as many of these as possible in order to isolate only the biologically meaningful sequences
 
