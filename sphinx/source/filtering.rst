@@ -6,7 +6,6 @@ Filtering Amplicon Data
 
 .. toctree::
 	:hidden:
-	:maxdepth: 4
 
 	filtering/quality_filtering
 	filtering/not_filtering_dereplication
