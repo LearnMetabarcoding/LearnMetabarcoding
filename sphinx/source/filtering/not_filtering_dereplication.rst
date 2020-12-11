@@ -1,7 +1,7 @@
 .. _dereplication:
 
 ==========================================
-2) Not Filtering: Dereplication
+2. Not Filtering: Dereplication
 ==========================================
 
 Now that we’re down to just sequences, we can compress our dataset somewhat. This is because we should have many duplicate reads in this concatenated file due to PCR. It is important to retain our current file, because it keeps track of which reads came from which sequence, but now we are gradually preparing for finding the OTUs, which is a whole-dataset problem.

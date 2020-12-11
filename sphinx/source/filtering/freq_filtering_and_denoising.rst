@@ -1,7 +1,7 @@
 .. _denoising:
 
 ====================================
-4) Frequency filtering / denoising
+4. Frequency filtering / denoising
 ====================================
 
 Due to the use of PCR to generate metabarcoding datasets, we should generate plenty of copies of the amplicon of interest, and thus many reads - depending on sequencing depth, of course. We can therefore be relatively confident that sequences that occur at very low frequencies in the dataset are more likely to be errors.
