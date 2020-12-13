@@ -9,8 +9,8 @@ Filtering Amplicon Data
 
 	filtering/quality_filtering
 	filtering/not_filtering_dereplication
-	filtering/indel_filtering
 	filtering/freq_filtering_and_denoising
+	filtering/indel_filtering
 	filtering/point_error
 	filtering/chimera_filtering
 

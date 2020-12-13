@@ -1,7 +1,7 @@
 .. _indel_filtering:
 
 ====================================
-3. Indel Filtering
+4. Indel Filtering
 ====================================
 
 .. toctree::
@@ -9,11 +9,20 @@
 
 	extensions/more_variable_region
 
-In this case, I use the term indel to mean insertions or deletions from PCR or sequencing errors rather than natural mutations. The fundamental assumption here is that the sequenced region is sufficiently conserved that there will not be any naturally-occuring indels sequenced, because these would have been deleterious and the organism would not have survived to have been sampled.
+Introduction
+============
 
-Thus, you should think carefully about how to apply this type of filtering to your own data depending on the barcode region used. Insertions or deletions are easy to spot because they will change the length of the sequence from what is expected based on the primers. While filtering based on length primarily removes indels, it can also be used to remove other reads that are clearly erroneous for other reasons.
+In metabarcoding, we amplify a known regoin of the genome and thus we have an expectation about the length of the resulting amplicons. Insertions or deletions (indels) are changes to the DNA sequence that will affect the number of bases between two known points in the genome. While this term is commonly used to refer to real genetic mutations, we use it here to refer to insertions or deletions caused by PCR or sequencing errors. It is important to note that we cannot necessarily distinguish between true indel mutations and erroneous mutations. However, as we are operating on a protein coding sequence, we can assume that the vast majority of true indels are likely to be deleterious and therefore we would not observe these in our dataset drawn from living organisms. We can then draw conclusions about the validity of ASVs based on their length relative to the expected amplicon length. 
 
-Before we start, let’s double-check the length distribution of our reads. We can do this using a command we used before, having adapted the command for fastas (where the sequences are every other line, rather than every 4 lines):
+So, put simply, insertions or deletions are easy to spot because they will change the length of the sequence from what is expected based on the primers. While filtering based on length primarily removes indels, it can also be used to remove other reads that are clearly erroneous for other reasons.
+
+.. admonition:: Important note
+You should think carefully about how to apply this type of filtering to your own data depending on the barcode region used. Protein coding markers will have relatively little length variation, but some may still exist depending on the marker used and the taxonomic breadth of your study. On the other hand, non protein coding markers will be substantially more variable and this must be taken into account to avoid removing substantial portions of your dataset.
+
+Length distributions
+====================
+
+Before we start, let’s double-check the length distribution of our reads. Learn more about the ``sed`` command `here <sed>` - note we've adapted this command for FASTAs where the sequences are every other line, rather than every 4 lines):
 
 .. code-block:: bash 
 
@@ -33,6 +42,9 @@ VSEARCH, although it’s great in many respects, outputs files in wrapped format
 
 Use the output from this in the sed command above.
 
+Length filtering
+================
+
 If we have a very variable region, we might not want to do any filtering at all, or we may know a reasonable range of lengths within which we expect our reads to fall. There are lots of tools for length filtering; we’ll use VSEARCH again - in fact, the ``​--fastx_filter`` command again. Let’s try filtering with quite a wide range:
 
 .. code-block:: bash 
@@ -41,7 +53,20 @@ If we have a very variable region, we might not want to do any filtering at all,
 
 In this case, the region of CO1 we use is sufficiently conserved that, on balance of probabilities, any insertions or deletions are due to PCR and/or sequencing errors, and/or maybe errors with the pair merging we did, rather than natural mutations. So, if you have a strict length expectation for your reads, you can exclude any reads longer or shorter than this value.
 
-* Run the filtering again, this time allowing no variants from our target length of 418bp
+.. admonition:: Exercise
+	
+	Run the filtering again, this time allowing no variants from our target length of 418bp
 
-If you want to learn about coding regions that expect no single-base indels but is overall more variable and could have established whole codon changes then go to this :ref:`extension task<more_variable>`. 
-Alternatively, go on to the :ref:`Frequency filtering / denoising section<denoising>`.
+.. admonition:: Solution
+	:class: toggle
+	
+	.. code-block:: bash 
+	
+		$ vsearch --fastx_filter ​in.fasta --fastq_minlen 418 --fastq_maxlen 418 --fastaout out.fasta​
+
+Next Steps
+==========
+
+In our case, we have a very conserved region so we will use the output from the last command, i.e. only ASVs of 418bp long, for the next steps. Next, we will remove errors by checking the translation: `5. Point Error Filtering :ref:<point_error>`.
+
+In some cases, we may be metabarcoding a coding locus but our project includes a wide taxonomic breadth or the region is more variable. Where you might expect length variation, but only in terms of whole codons, we have to do something a little more complicated. If you want, you can try this out in this extension: `Extension: Variable length coding regions :ref:<more_variable>`. You can use either output for the next steps.
