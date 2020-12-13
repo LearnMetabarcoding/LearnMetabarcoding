@@ -21,6 +21,8 @@ Phylogenetic trees are more powerful when built with comprehensive data. Here we
 * For those with phylogenetics experience, hopefully introduce some novel techniques
 
 .. toctree::
+	:hidden:
+
 	trees/preparing_mitogenome_data
 	trees/extracting_protein_coding_genes
 	trees/aligning_protein_coding_genes

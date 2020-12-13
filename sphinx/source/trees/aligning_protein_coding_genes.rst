@@ -1,7 +1,7 @@
 .. _aligning:
 
 ======================================
-3) Aligning protein coding genes
+3. Aligning protein coding genes
 ======================================
 
 The sequences for each gene need to be aligned so that comparable regions are lined up. In phylogenetic terms, this means we need to ensure that the positions used for tree inference are homologous.

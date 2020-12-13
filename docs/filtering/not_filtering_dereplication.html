@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2) Not Filtering: Dereplication &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>2. Not Filtering: Dereplication &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3) Indel Filtering" href="indel_filtering.html" />
+    <link rel="next" title="3. Indel Filtering" href="indel_filtering.html" />
     <link rel="prev" title="Fundamentals: Phred Scores" href="fundamentals/phred_scores.html" /> 
 </head>
 
@@ -90,12 +90,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="quality_filtering.html">1) Quality Filtering</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2) Not Filtering: Dereplication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="indel_filtering.html">3) Indel Filtering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="freq_filtering_and_denoising.html">4) Frequency filtering / denoising</a></li>
-<li class="toctree-l2"><a class="reference internal" href="point_error.html">5) Point error filtering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chimera_filtering.html">6) Chimera filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quality_filtering.html">1. Quality Filtering</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Not Filtering: Dereplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indel_filtering.html">3. Indel Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freq_filtering_and_denoising.html">4. Frequency filtering / denoising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point_error.html">5. Point error filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chimera_filtering.html">6. Chimera filtering</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
@@ -150,7 +150,7 @@
         
           <li><a href="../filtering.html">Filtering Amplicon Data</a> &raquo;</li>
         
-      <li>2) Not Filtering: Dereplication</li>
+      <li>2. Not Filtering: Dereplication</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,7 +170,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="not-filtering-dereplication">
-<span id="dereplication"></span><h1>2) Not Filtering: Dereplication<a class="headerlink" href="#not-filtering-dereplication" title="Permalink to this headline">¶</a></h1>
+<span id="dereplication"></span><h1>2. Not Filtering: Dereplication<a class="headerlink" href="#not-filtering-dereplication" title="Permalink to this headline">¶</a></h1>
 <p>Now that we’re down to just sequences, we can compress our dataset somewhat. This is because we should have many duplicate reads in this concatenated file due to PCR. It is important to retain our current file, because it keeps track of which reads came from which sequence, but now we are gradually preparing for finding the OTUs, which is a whole-dataset problem.</p>
 <p>The subsequent steps are much faster if we remove these duplicates; we will record in the file headers how many copies there are of each sequence for later use.</p>
 <p>VSEARCH has a dereplication function, which we will use here:</p>
@@ -194,7 +194,7 @@ Now we can move onto the next step, <a class="reference internal" href="indel_fi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="indel_filtering.html" class="btn btn-neutral float-right" title="3) Indel Filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="indel_filtering.html" class="btn btn-neutral float-right" title="3. Indel Filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="fundamentals/phred_scores.html" class="btn btn-neutral float-left" title="Fundamentals: Phred Scores" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

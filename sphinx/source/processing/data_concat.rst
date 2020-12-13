@@ -41,6 +41,6 @@ Next Steps
 
 We have generated a master file containing all sequences from across all of our samples. These sequences still contain quality data, which will be useful for filtering in the next section.
 
-To read about the next section, we recommend starting with the `introduction to filtering amplicon data <filtering>`. 
+To read about the next section, we recommend starting with the :ref:`introduction to filtering amplicon data <filtering>`. 
 
-If you've read this before, you can skip directly to the next step: `1. Quality filtering <quality_filtering>`
+If you've read this before, you can skip directly to the next step: :ref:`1. Quality filtering <quality_filtering>`

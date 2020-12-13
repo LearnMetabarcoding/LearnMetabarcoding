@@ -1,7 +1,7 @@
 .. _indel_filtering:
 
 ====================================
-3) Indel Filtering
+3. Indel Filtering
 ====================================
 
 .. toctree::

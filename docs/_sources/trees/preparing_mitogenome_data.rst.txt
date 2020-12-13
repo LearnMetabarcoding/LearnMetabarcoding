@@ -1,7 +1,7 @@
 .. _prep_mitogenome_data:
 
 =================================
-1) Preparing mitogenome data 
+1. Preparing mitogenome data 
 =================================
 
 .. toctree::

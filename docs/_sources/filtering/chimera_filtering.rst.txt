@@ -1,7 +1,7 @@
 .. _chimera:
 
 ==================================
-6) Chimera filtering 
+6. Chimera filtering 
 ==================================
 
 You might have noticed that earlier, while running denoising, we noticed some chimeras. We left these in because we used the ``--ampout`` argument, so time to remove them.

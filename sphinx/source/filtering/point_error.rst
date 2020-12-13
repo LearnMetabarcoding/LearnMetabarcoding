@@ -1,7 +1,7 @@
 .. _point_error:
 
 ========================================
-5) Point error filtering
+5. Point error filtering
 ========================================
 
 Filtering by length will remove sequences that have one or more PCR/sequencer-caused insertions or one or more deletions, however in some cases these errors may cancel one another out; or alternatively, PCR or sequencing may induce the equivalent of point mutations, where a single base is misread. Similarly, noncoding gene variants such as numts or pseudogenes may actually have point mutations in comparison to the ‘true’ region.

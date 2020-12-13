@@ -1,7 +1,7 @@
 .. _tree_building:
 
 ================================
-5) Tree building
+5. Tree building
 ================================
 
 We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an “approximately maximum likelihood” phylogenetic tree building method, broadly similar in method to PhyML or RAxML.

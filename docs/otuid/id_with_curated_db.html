@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3) Identifiation using a curated database &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>3. Identifiation using a curated database &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4) Identification using local database" href="id_local.html" />
+    <link rel="next" title="4. Identification using local database" href="id_local.html" />
     <link rel="prev" title="Extension: MEGAN settings" href="extensions/megan_settings.html" /> 
 </head>
 
@@ -92,10 +92,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../otuid.html">Identifying OTUs and Generating Outputs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="mapping_reads.html">1) Mapping reads to OTUs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="id_with_megan.html">2) Identification using GenBank and MEGAN</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3) Identifiation using a curated database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="id_local.html">4) Identification using local database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapping_reads.html">1. Mapping reads to OTUs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_with_megan.html">2. Identification using GenBank and MEGAN</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Identifiation using a curated database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="id_local.html">4. Identification using local database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mapping_reads_to_refs.html">Extension: Mapping reads to references</a></li>
 <li class="toctree-l2"><a class="reference internal" href="id_contigs.html">Identifying contigs</a></li>
 </ul>
@@ -150,7 +150,7 @@
         
           <li><a href="../otuid.html">Identifying OTUs and Generating Outputs</a> &raquo;</li>
         
-      <li>3) Identifiation using a curated database</li>
+      <li>3. Identifiation using a curated database</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,7 +170,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id-curated">
-<span id="identifiation-using-a-curated-database"></span><h1>3) Identifiation using a curated database<a class="headerlink" href="#id-curated" title="Permalink to this headline">¶</a></h1>
+<span id="identifiation-using-a-curated-database"></span><h1>3. Identifiation using a curated database<a class="headerlink" href="#id-curated" title="Permalink to this headline">¶</a></h1>
 <p>BLAST is not fundamentally designed as a taxonomic assignment tool, and MEGAN is forced to work with BLAST’s alignment and matching summary outputs to assign taxonomy. There are other tools out there that are specifically designed for the assignment of taxonomy to anonymous sequences. Rather than comparing a sequence against a database one-by-one, these methods use k-mer approaches to place a sequence within the whole set of references. Then, they use an approach broadly analogous to MEGAN’s LCA method to probabilistically assign taxonomy, generally assigning confidence scores to different taxonomic levels. Such methods include PROTAX, SINTAX, SPINGO and RDPclassifier. It should be noted that like much of the software available for metabarcoding, these tools are often written for use on 16S. It should always be considered whether other loci may not be treated as expected by such tools.</p>
 <p>The other downside to the prior method is that GenBank is not necessarily authoritative - it is well known that many sequences available on GenBank are misidentified. This would not be an issue if we were working with a well-known taxon, but when our survey lineages are likely to be poorly covered in GenBank, yet we require a relatively detailed identification, searching against all of GenBank is likely to be less successful. Some researchers have taken sections of GenBank and curated the sequences, removing sequences that are poor quality or unlikely to be correct.</p>
 <p>One issue with using these more advanced classification tools is that they often require quite specific reference database structures. Thankfully, many curated database authors have released their databases in these formats.</p>
@@ -202,7 +202,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="id_local.html" class="btn btn-neutral float-right" title="4) Identification using local database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="id_local.html" class="btn btn-neutral float-right" title="4. Identification using local database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="extensions/megan_settings.html" class="btn btn-neutral float-left" title="Extension: MEGAN settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
