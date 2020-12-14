@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Data concatenation &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Filtering Amplicon Data" href="../filtering.html" />
+    <link rel="prev" title="Extension: Pair concatenation" href="extensions/pair_concat.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../readprocessing.html">Read processing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fastq.html">Fundamentals: FASTQ files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demultiplexing.html">1. Demultiplexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primer_removal.html">2. Primer removal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pair_merging.html">3. Pair merging</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Data concatenation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">Generating Ecological Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../placing_otus_in_trees.html">OTU Phylogenetic Placement</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../readprocessing.html">Read processing</a> &raquo;</li>
+        
+      <li>4. Data concatenation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/processing/data_concat.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-concatenation">
+<span id="data-concat"></span><h1>4. Data concatenation<a class="headerlink" href="#data-concatenation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>At this point we have a set of sequence reads for each sample with extraneous sequence removed and read pairs brought together. Metabarcoding works on all sequence reads from across the dataset to find OTUs, and it’s more efficient if we do the following steps with all reads compiled into one file.</p>
+<div class="sidebar">
+<p class="sidebar-title">Pipeline design choices</p>
+<p>We present this step here because it allows us to separate two distinct themes: the processing of raw sequence reads into samples, in this section, and the filtering of processed sequence reads to remove errors, in the next section. However, when performing metabarcoding bioinformatics it may be more efficient to perform this task after quality filtering, since quality filtering substantially reduces the data size. We detail this alternative <cite>here &lt;&gt;</cite> TODO</p>
+</div>
+</div>
+<div class="section" id="performing-concatenation">
+<h2>Performing concatenation<a class="headerlink" href="#performing-concatenation" title="Permalink to this headline">¶</a></h2>
+<p>We could simply use the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command to concatenate all the individual sample files into one big file, but then we’d lose information about what reads come from what sample and this is important later.</p>
+<p>So we add the sample name to the header of each read prior to concatenation using the following command. Before you run this, make sure you’re in the directory containing your merged sequences.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="k">for</span> f in * <span class="se">\</span>
+&gt; <span class="k">do</span> <span class="se">\ </span>                    <span class="c1"># ​↓​ the space here should be included!</span>
+&gt;       sed -e <span class="s2">&quot;s/\(^@D00.*\) .*</span>$<span class="s2">/\1;sample=</span><span class="si">${</span><span class="nv">f</span><span class="p">%.*</span><span class="si">}</span><span class="s2">;/&quot;</span> <span class="nv">$f</span> <span class="se">\</span>
+&gt;       &gt;&gt; ../mbc_concat.fastq <span class="se">\</span>
+&gt; <span class="k">done</span>
+</pre></div>
+</div>
+<p>This command loops through all the files in the directory. For each file, the <code class="docutils literal notranslate"><span class="pre">sed</span></code> command uses regular expression substitution to add a string to the end of each header line containing the sample name, and adds the entire file to the end of a single file in the parent directory called <code class="docutils literal notranslate"><span class="pre">​mbc_concat.fastq​</span></code>. See <a class="reference internal" href="../linux_subsections/sed.html#sed"><span class="std std-ref">here</span></a> to learn more about <code class="docutils literal notranslate"><span class="pre">sed</span></code>.</p>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> symbol. We use this to <em>append</em> to a file, rather than overwriting it. This allows to add to it every iteration of the loop. Be careful though: the first iteration of the loop will create this file if it doesn’t exist, but if it already exists it will just add to it. So if you make a mistake and need to re-run this loop, you should delete the output file (<code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">../mbc_concat.fastq</span></code>) so you don’t just keep adding to one huge file.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Return to the parent directory, use <code class="docutils literal notranslate"><span class="pre">grep</span></code> to count the number of sequences in <code class="docutils literal notranslate"><span class="pre">​mbc_concat.fastq</span></code> ​and view the <code class="docutils literal notranslate"><span class="pre">​head​</span></code> of the file.</p>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>We have generated a master file containing all sequences from across all of our samples. These sequences still contain quality data, which will be useful for filtering in the next section.</p>
+<p>To read about the next section, we recommend starting with the <a class="reference internal" href="../filtering.html#filtering"><span class="std std-ref">introduction to filtering amplicon data</span></a>.</p>
+<p>If you’ve read this before, you can skip directly to the next step: <a class="reference internal" href="../filtering/quality_filtering.html#quality-filtering"><span class="std std-ref">1. Quality filtering</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../filtering.html" class="btn btn-neutral float-right" title="Filtering Amplicon Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="extensions/pair_concat.html" class="btn btn-neutral float-left" title="Extension: Pair concatenation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Bayesian clustering &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Comparing OTU delimitation methods" href="comparing_otus.html" />
+    <link rel="prev" title="Linkage-based clustering" href="linkage_based.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="greedy.html">Greedy Clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linkage_based.html">Linkage-based clustering</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Bayesian clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparing_otus.html">Comparing OTU delimitation methods</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">Generating Ecological Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../placing_otus_in_trees.html">OTU Phylogenetic Placement</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../otudelim.html">OTU Delimitation</a> &raquo;</li>
+        
+      <li>Bayesian clustering</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/otudelim/bayesian.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bayesian-clustering">
+<span id="id1"></span><h1>Bayesian clustering<a class="headerlink" href="#bayesian-clustering" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>A final method for OTU delimitation is the software CROP, which was originally designed for 16S and has not been updated in a while. Nonetheless, it uses an interesting algorithm based on assuming sequences are a gaussian mixture and models the process of clustering using Markov-chain Monte Carlo simulations. This approach probably bears more similarity to greedy clustering than to SWARM, but is sufficiently different that it is interesting to compare the methods.</p>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>CROP needs every unique read for each ASV in the input dataset, it cannot read <code class="docutils literal notranslate"><span class="pre">;size=</span></code> tags. We can generate this from our input ASVs quite easily though, using the <code class="docutils literal notranslate"><span class="pre">--rereplicate</span></code> function of VSEARCH.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vsearch --rereplicate ​in.fasta​ --relabel repl --output ​out.fasta
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-crop">
+<h2>Running CROP<a class="headerlink" href="#running-crop" title="Permalink to this headline">¶</a></h2>
+<p>We then use this rereplicated FASTA file in CROP. Note it creates several outputs using <code class="docutils literal notranslate"><span class="pre">outname</span></code> as a name base.</p>
+<p>Try running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ crop -b <span class="m">40</span> -z <span class="m">400</span> -s -r <span class="m">0</span> -i ​in.fasta​ -o ​outname
+</pre></div>
+</div>
+<p>The options <code class="docutils literal notranslate"><span class="pre">-b</span></code>, <code class="docutils literal notranslate"><span class="pre">-z</span></code> and <code class="docutils literal notranslate"><span class="pre">-r</span></code> are for optimising the MCMC process. You can read more about these in their <a class="reference external" href="https://github.com/tingchenlab/CROP/wiki/THE-CROP-WIKI">documentation</a>. You can leave these alone. Option <code class="docutils literal notranslate"><span class="pre">​-s</span></code> specifies that we want the equivalent of 3% dissimilarity clustering. We could change this to <code class="docutils literal notranslate"><span class="pre">-g</span></code> which is equivalent to 5%. You can alternatively supply values to <code class="docutils literal notranslate"><span class="pre">-l</span></code> and <code class="docutils literal notranslate"><span class="pre">-u</span></code> , for example <code class="docutils literal notranslate"><span class="pre">​-l</span> <span class="pre">1</span> <span class="pre">-u</span> <span class="pre">3</span></code> , which are the lower and upper bounds of similarity levels.</p>
+<p>CROP creates a bunch of extra files, you may want to ​mv​ them to their own folder. You could create a folder for each CROP run you do and make sure you’re in that directory when you run it.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Run CROP at the 5% level using the <code class="docutils literal notranslate"><span class="pre">-g</span></code> option in place of <code class="docutils literal notranslate"><span class="pre">-s</span></code>. How does the number of OTUs change?
+Run greedy clustering at the 3% and 5% dissimilarity levels. How do the number of OTUs compare against CROP?</p>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>We’ve generated a set of OTUs using one method. If you haven’t already, try out the other two types of OTU clustering: <a class="reference internal" href="greedy.html#greedy-clustering"><span class="std std-ref">Greedy Clustering</span></a> and <a class="reference internal" href="linkage_based.html#linkage-delimitation"><span class="std std-ref">Linkage Delimitation</span></a>.</p>
+<p>Alternatively, if you’ve tried these already, the <a class="reference internal" href="comparing_otus.html#comparing-otus"><span class="std std-ref">Comparing OTU Delimitation methods</span></a> subsection outlines some ways to compare these methods and some hints for selecting a method and parameters. Once you have a final set of OTUs, you can proceed with them to the <a class="reference internal" href="../otuid.html#generating-data"><span class="std std-ref">Generating Data</span></a> section to learn about mapping your reads to your OTUs and doing taxonomic classification. Later on, we’ll use these same OTUs and try to place them onto a phylogenetic tree in the <a class="reference internal" href="../placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic Placement</span></a> section.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="comparing_otus.html" class="btn btn-neutral float-right" title="Comparing OTU delimitation methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="linkage_based.html" class="btn btn-neutral float-left" title="Linkage-based clustering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
