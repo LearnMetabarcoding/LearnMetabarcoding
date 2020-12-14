@@ -91,6 +91,7 @@ We can now use metaMATE again to output the ASVs for the selected threshold. Thi
 Run the following command, replacing the file names with the names of your files, and ``N`` with the resultindex of your selected threshold.
 
 .. code-block:: bash
+
 	$ metamate dump -A denoisedASVs.fasta -C metamateout/..._resultcache -i N -o output.fasta
 
 We're done! This FASTA contains the ASVs that result from the threshold we selected. In addition, any ASV that matched against our reference set is always included, even if it would otherwise be excluded based on the threshold, and any ASV that is the incorrect length or has stops in the translation is excluded, even if it would otherwise be included based on the threshold. We would generally recommend performing chimera filtering on this output, but otherwise this is ready to be used for analysis.

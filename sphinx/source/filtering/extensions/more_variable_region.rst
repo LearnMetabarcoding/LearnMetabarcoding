@@ -21,6 +21,7 @@ As it happens, it doesn’t seem that there are any programs out there that do t
 	:class: toggle
 	
 	We filter for each length, one at a time, and join the results into a single file.
+	
 	.. code-block:: bash
 		
 		$ vsearch --fastx_filter input.fasta --fastq_minlen 415 --fastq_maxlen 415 --fastaout output415.fasta
@@ -29,6 +30,7 @@ As it happens, it doesn’t seem that there are any programs out there that do t
 		$ cat output415.fasta output418.fasta output421.fasta > output.fasta
 	
 	Of course, we could alos do this in a loop:
+	
 	.. code-block:: bash 
 		
 		$ for l in 415 418 421 \
@@ -40,6 +42,6 @@ As it happens, it doesn’t seem that there are any programs out there that do t
 	
 	When we're running loops, we want to make sure it worked properly, so let's check the number of sequences in the relevant files:
 	
-	.. code-block:: 
+	.. code-block:: bash
 		
 		$ grep -c "^>" *ctrim.fasta

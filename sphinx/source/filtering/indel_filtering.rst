@@ -17,12 +17,13 @@ In metabarcoding, we amplify a known regoin of the genome and thus we have an ex
 So, put simply, insertions or deletions are easy to spot because they will change the length of the sequence from what is expected based on the primers. While filtering based on length primarily removes indels, it can also be used to remove other reads that are clearly erroneous for other reasons.
 
 .. admonition:: Important note
+
 You should think carefully about how to apply this type of filtering to your own data depending on the barcode region used. Protein coding markers will have relatively little length variation, but some may still exist depending on the marker used and the taxonomic breadth of your study. On the other hand, non protein coding markers will be substantially more variable and this must be taken into account to avoid removing substantial portions of your dataset.
 
 Length distributions
 ====================
 
-Before we start, let’s double-check the length distribution of our reads. Learn more about the ``sed`` command `here <sed>` - note we've adapted this command for FASTAs where the sequences are every other line, rather than every 4 lines):
+Before we start, let’s double-check the length distribution of our reads. Learn more about the ``sed`` command :ref:`here <sed>` - note we've adapted this command for FASTAs where the sequences are every other line, rather than every 4 lines):
 
 .. code-block:: bash 
 

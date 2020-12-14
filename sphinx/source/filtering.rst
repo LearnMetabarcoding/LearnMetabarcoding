@@ -13,6 +13,7 @@ Filtering Amplicon Data
 	filtering/indel_filtering
 	filtering/point_error
 	filtering/chimera_filtering
+	filtering/metamate
 
 
 Introduction

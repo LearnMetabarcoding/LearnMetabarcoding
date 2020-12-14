@@ -40,9 +40,11 @@ Check the helpfile for this script by running:
 	:class: toggle
 
 	.. code-block:: bash
+
 		$ ​filtertranslate ​-i in.fasta​ -t 5 -y separate -o output
 
 .. admonition:: Exercise
+
 	Have a look at the failed file. 
 	Go to an online amino acid translator (e.g. `here<https://web.expasy.org/translate/>`_) and paste in a sequence. Make sure to set the correct genetic code.
 	See what the translation looks like. Frame 2 is the correct frame. 
