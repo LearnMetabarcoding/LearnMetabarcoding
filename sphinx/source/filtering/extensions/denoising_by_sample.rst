@@ -9,6 +9,7 @@ Here we will denoise by each individual sample, rather than on the entire datase
 We will be using the output data from the Read Merging step. This should be a single directory containing one fastq file per sample. 
 
 .. admonition:: Exercise
+
 	1. Quality filter each fastq file using the ``vsearch --fastx_filter...`` command from the Quality Filtering section, but running individually on each sample one at a time using a bash loop.
 	
 	2. Run the dereplication command (``vsearch --derep_fulllength...``) from the Dereplication section on each sample individually using a bash loop
