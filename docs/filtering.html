@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Filtering Amplicon Data &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Quality Filtering" href="filtering/quality_filtering.html" />
+    <link rel="prev" title="4. Data concatenation" href="processing/data_concat.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="notes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linuxintro.html">Command line bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readprocessing.html">Read processing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Filtering Amplicon Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filtering/quality_filtering.html">1. Quality Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtering/not_filtering_dereplication.html">2. Not Filtering: Dereplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtering/freq_filtering_and_denoising.html">3. Frequency filtering / denoising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtering/indel_filtering.html">4. Indel Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtering/point_error.html">5. Point error filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtering/chimera_filtering.html">6. Chimera filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtering/metamate.html">Extension: Stringent ASV filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otuid.html">Generating Ecological Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trees.html">Building Phylogenetic Trees for Metagenetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="placing_otus_in_trees.html">OTU Phylogenetic Placement</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Filtering Amplicon Data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/filtering.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="filtering-amplicon-data">
+<span id="filtering"></span><h1>Filtering Amplicon Data<a class="headerlink" href="#filtering-amplicon-data" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In the previous section we went from raw sequence data to processed complete amplicons of our target locus. This section assumes that you’ve processed the raw data as described in the four parts of the <a class="reference internal" href="readprocessing.html#read-processing"><span class="std std-ref">Read Processing section</span></a>: if you haven’t done this, you can head to that section to work through those exercises.</p>
+<p>As part of the read processing we excluded possibly erroneous sequences, based on missing index or primer sequences or an inability to merge. However there likely remain many further erroneous sequences in our dataset, and the purpose of this section is to remove as many of these as possible in order to isolate only the biologically meaningful sequences</p>
+</div>
+<div class="section" id="getting-the-data">
+<h2>Getting the data<a class="headerlink" href="#getting-the-data" title="Permalink to this headline">¶</a></h2>
+<p>If you’ve worked through the previous section, you should have a file named <code class="docutils literal notranslate"><span class="pre">mbc_concat.fastq</span></code>. This single <a class="reference internal" href="processing/fastq.html#fastq"><span class="std std-ref">FASTQ</span></a> file contains amplicon reads and quality scores sorted by sample, with indices and primers trimmed and mate pairs merged.</p>
+<p>We don’t recommend it, but if you want to skip over the Read Processing section you can copy this file from the project data folder to your current working directory with the following command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp /AMM/resources/metabarcoding/mbc_concat.fasta
+</pre></div>
+</div>
+</div>
+<div class="section" id="sources-of-error">
+<h2>Sources of error<a class="headerlink" href="#sources-of-error" title="Permalink to this headline">¶</a></h2>
+<p>Erroneous sequences may arise through many processes, but these can generally be organised into several main sources:</p>
+<div class="topic">
+<p class="topic-title">PCR errors</p>
+<p>It is likely that the numerical majority of errors arise during PCR, either through errors in transcription or by the formation of chimeric fragments. The latter term is used to describe cases where DNA from different source organisms incorrectly binds together to form a DNA molecule that no longer accurately reflects the genome of any real organism. PCR errors are so frequent because of the high chance of stochastic errors in the biochemical reactions and because the exponential amplification of sequences can cause errors to propogate into many individual fragments</p>
+</div>
+<div class="topic">
+<p class="topic-title">Sequencing errors</p>
+<p>Sequencing errors occur when the sequencer incorrectly reads a base position.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Bioinformatic errors</p>
+<p>Depending on the bioinformatic processes performed, it may be that incorrect or inappropriate application of software or parameters could cause errors to arise. For example, lax settings for pair merging may cause the merging of putative mate pairs that are not truly from the same fragment, or inappropriate adapter, index or primer trimming could over-trim or under-trim bases from reads.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Non-target sequences</p>
+<p>The use of highly degenerate primers can cause the co-amplification of DNA that is not the target of the metabarcoding research project. One source of this non-target DNA is material that has contaminated our samples. Another major source are non-target pseudogenes or NUMTs. These are analogues of the target locus that are present elsewhere in the genome of the target organism, having arisen through erroneous transposition or another method.</p>
+</div>
+<p>There are many ways that we can try to remove these errors, with different levels of certainty about the approach. This section will cover several methods: these are illustrated in the table below, alongside indications of what types of errors these methods target.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 12%" />
+<col style="width: 19%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Approach</p></th>
+<th class="head"><p>PCR errors</p></th>
+<th class="head"><p>Sequencing errors</p></th>
+<th class="head"><p>Bioinformatic errors</p></th>
+<th class="head"><p>Non-target sequences</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Quality Filtering</p></td>
+<td></td>
+<td><p><strong>✓</strong></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Indel Filtering</p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Frequency Filtering</p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Denoising</p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Point Error Filtering</p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+<td><p><strong>✓</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Chimera Filtering</p></td>
+<td><p><strong>✓</strong></p></td>
+<td></td>
+<td><p><strong>✓</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve made sure you have the data (see above), you should work through the subpages in this section in order, as follows:</p>
+<ol class="arabic simple">
+<li><p>Quality Filtering</p></li>
+<li><p>Not Filtering: Dereplication</p></li>
+<li><p>Denoising</p></li>
+<li><p>Indel Filtering</p></li>
+<li><p>Point Error Filtering</p></li>
+<li><p>Chimera Filtering</p></li>
+</ol>
+<div class="green admonition">
+<p class="admonition-title">Note</p>
+<p>As in the previous section, we present each of these filtering steps separately, with separate commands, in a linear order. In practice, some of these commands could be combined together, as some software can perform multiple types of filtering at once. However we present them separately for instructional purposes, to better isolate and understand each step.</p>
+<p>Given we start with FASTQ files, it is necessary we perform quality filtering first, as this also strips out the quality data and outputs FASTA files, the required format for all of the other filtering tools. Many of the other filtering methods could be performed in any order, but denoising is most effective when performed on data that has <em>only</em> been quality filtered. This is explained in more detail on the denoising page.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="filtering/quality_filtering.html" class="btn btn-neutral float-right" title="1. Quality Filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="processing/data_concat.html" class="btn btn-neutral float-left" title="4. Data concatenation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
