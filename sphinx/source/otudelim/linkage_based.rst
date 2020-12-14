@@ -12,7 +12,7 @@ SWARM is a slightly different OTU delimitation algorithm. Rather than using a th
 Running SWARM
 =============
 
-SWARM is pretty easy to run. The main parameter is the ``-d` parameter, which specifies the number of differences to iteratively group ASVs together. This should always be an integer greater than or equal to 1. Our input contains USEARCH/VSEARCH-style ``;size=`` tags so we use the ``-z`` parameter.
+SWARM is pretty easy to run. The main parameter is the ``-d`` parameter, which specifies the number of differences to iteratively group ASVs together. This should always be an integer greater than or equal to 1. Our input contains USEARCH/VSEARCH-style ``;size=`` tags so we use the ``-z`` parameter.
 
 Run the following command to have SWARM cluster your input ASVs.
 
