@@ -11,7 +11,7 @@ Greedy clustering is the conceptually most simple method of OTU delimitation we 
 
 The similarity threshold determines how large the clusters are and how many OTUs form. The most common similarity threshold is 97% similarity, where new ASVs join a cluster if they are no more than 3% different from the centroid. This *difference* is often known as the cluster radius, and this value is often used as much as the similarity value to specify the OTUs. Note that any two ASVs within a cluster may be as much as 6% dissimilar: the key measurement is between the *centroid* and any ASV, not among ASVs, hence the use of the term "radius".
 
-Performing greedy clustering
+Running greedy clustering
 ============================
 
 While the USEARCH "UPARSE" pipeline is probably the most commonly used tool for greedy clustering, we will instead once again use VSEARCH. VSEARCH both implements exactly the same clustering algorithm as USEARCH, but also allows greater flexibility in outputs and in similarity algorithms available.
@@ -56,4 +56,4 @@ Next Steps
 
 We've generated a set of OTUs using one method. If you haven't already, try out the other two types of OTU clustering: :ref:`Linkage Delimitation <linkage_delimitation>` and :ref:`Bayesian Clustering <bayesian_clustering>`.
 
-Alternatively, if you've tried these already, select your favourite set of OTUs and proceed with them to the :ref:`Generating Data <generating_data>` section to learn about mapping your reads to your OTUs and doing taxonomic classification. Later on, we'll use these same OTUs and try to place them onto a phylogenetic tree in the :ref:`Phylogenetic Placement <phylogenetic_placement>` section.
+.. include:: conclusion.rst
