@@ -90,4 +90,4 @@ Next steps
 		
 		$ fastq_to_fasta -i ​in.fastq​ -o ​out.fasta
 
-We now have a fasta file of all of our reads. This is an important file to retain, so make sure you keep a note of it later. These reads will later be mapped to our final biological sequences to assess their occurence. Now that we have removed the quality data, we can now undertake dereplication in the next section: `2. Dereplication<dereplication>`.
+We now have a fasta file of all of our reads. This is an important file to retain, so make sure you keep a note of it later. These reads will later be mapped to our final biological sequences to assess their occurence. Now that we have removed the quality data, we can now undertake dereplication in the next section: :ref:`2. Dereplication<dereplication>`.
