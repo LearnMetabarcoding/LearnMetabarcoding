@@ -18,7 +18,7 @@ So, put simply, insertions or deletions are easy to spot because they will chang
 
 .. admonition:: Important note
 
-You should think carefully about how to apply this type of filtering to your own data depending on the barcode region used. Protein coding markers will have relatively little length variation, but some may still exist depending on the marker used and the taxonomic breadth of your study. On the other hand, non protein coding markers will be substantially more variable and this must be taken into account to avoid removing substantial portions of your dataset.
+	You should think carefully about how to apply this type of filtering to your own data depending on the barcode region used. Protein coding markers will have relatively little length variation, but some may still exist depending on the marker used and the taxonomic breadth of your study. On the other hand, non protein coding markers will be substantially more variable and this must be taken into account to avoid removing substantial portions of your dataset.
 
 Length distributions
 ====================
