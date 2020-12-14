@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Placing OTUs in reference trees &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>OTU Phylogenetic Placement &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -90,9 +90,9 @@
 <li class="toctree-l1"><a class="reference internal" href="readprocessing.html">Read processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filtering.html">Filtering Amplicon Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="otudelim.html">OTU Delimitation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="otuid.html">Identifying OTUs and Generating Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otuid.html">Generating Ecological Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trees.html">Building Phylogenetic Trees for Metagenetics</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Placing OTUs in reference trees</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OTU Phylogenetic Placement</a></li>
 </ul>
 
             
@@ -139,7 +139,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Placing OTUs in reference trees</li>
+      <li>OTU Phylogenetic Placement</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -158,8 +158,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="placing-otus-in-reference-trees">
-<span id="placing-otus-in-ref-trees"></span><h1>Placing OTUs in reference trees<a class="headerlink" href="#placing-otus-in-reference-trees" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="otu-phylogenetic-placement">
+<span id="phylogenetic-placement"></span><h1>OTU Phylogenetic Placement<a class="headerlink" href="#otu-phylogenetic-placement" title="Permalink to this headline">¶</a></h1>
 <p>The more comprehensive mitochondrial genome dataset allows us better resolution for figuring out the deep-level relationships between our species than with the OTU data. We can use this data and tree to form a ‘backbone’, to which we add the OTUs. The backbone tree is fixed, and branches are added for the OTUs. This is often called a “constraint tree”.</p>
 <p>The first step in doing this is to align our OTUs to our mitogenome dataset. Run the following command, using the OTUs and the supermatrix of the mitochondrial genomes from the previous section.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mafft --thread <span class="m">1</span> --addfragments ​otus.fasta​ --6merpair ​supermatrix.fasta​ &gt; ​out.fasta

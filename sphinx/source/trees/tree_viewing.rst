@@ -29,5 +29,5 @@ Keep the trees up. We will discuss them as a group when everyone’s at this sta
 
 If you're interested in making trees for your CROP and swarm OTUs, have a look at this :ref:`extension task<tree_comparison>`.
 
-In the next session we will be :ref:`placing OTUs in reference trees<placing_OTUs_in_ref_trees>`.
+In the next session we will be :ref:`OTU phylogenetic placement! <phylogenetic_placement>`.
 	

@@ -7,7 +7,7 @@ OTU Delimitation
 .. toctree:: 
 	:hidden:
 	
-	otudelim/3pc
+	otudelim/greedy
 	otudelim/linkage_based
 	otudelim/bayesian
 

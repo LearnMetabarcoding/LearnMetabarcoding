@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Extension: What if we have a more variable region? &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>Extension: Denoising by sample &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. Point error filtering" href="../point_error.html" />
-    <link rel="prev" title="4. Indel Filtering" href="../indel_filtering.html" /> 
+    <link rel="next" title="4. Indel Filtering" href="../indel_filtering.html" />
+    <link rel="prev" title="3. Frequency filtering / denoising" href="../freq_filtering_and_denoising.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,11 +92,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../filtering.html">Filtering Amplicon Data</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../quality_filtering.html">1. Quality Filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../not_filtering_dereplication.html">2. Not Filtering: Dereplication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../freq_filtering_and_denoising.html">3. Frequency filtering / denoising</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../indel_filtering.html">4. Indel Filtering</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Extension: What if we have a more variable region?</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../freq_filtering_and_denoising.html">3. Frequency filtering / denoising</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Extension: Denoising by sample</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../indel_filtering.html">4. Indel Filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../point_error.html">5. Point error filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chimera_filtering.html">6. Chimera filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../metamate.html">Extension: Stringent ASV filtering</a></li>
@@ -154,15 +154,15 @@
         
           <li><a href="../../filtering.html">Filtering Amplicon Data</a> &raquo;</li>
         
-          <li><a href="../indel_filtering.html">4. Indel Filtering</a> &raquo;</li>
+          <li><a href="../freq_filtering_and_denoising.html">3. Frequency filtering / denoising</a> &raquo;</li>
         
-      <li>Extension: What if we have a more variable region?</li>
+      <li>Extension: Denoising by sample</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/filtering/extensions/more_variable_region.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/filtering/extensions/denoising_by_sample.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -175,38 +175,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="extension-what-if-we-have-a-more-variable-region">
-<span id="more-variable"></span><h1>Extension: What if we have a more variable region?<a class="headerlink" href="#extension-what-if-we-have-a-more-variable-region" title="Permalink to this headline">¶</a></h1>
-<p>What if we have a coding region like CO1 where we expect no single-base indels, but overall the region is more variable (or we have a wider range of taxa) and we might see real established whole-codon insertions or deletions?</p>
+  <div class="section" id="extension-denoising-by-sample">
+<span id="denoise-by-sample"></span><h1>Extension: Denoising by sample<a class="headerlink" href="#extension-denoising-by-sample" title="Permalink to this headline">¶</a></h1>
+<p>Here we will denoise by each individual sample, rather than on the entire dataset. This requires us to go back to the data generated in an earlier step. We strongly recommend making a separate directory to perform this experimentation in, and using clear file names so you don’t get the data mixed up!</p>
+<p>We will be using the output data from the Read Merging step. This should be a single directory containing one fastq file per sample.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
-<p>First, think about how we might specify a filter for this - assuming the same target length of 418bp, what lengths might we allow?</p>
+<ol class="arabic simple">
+<li><p>Quality filter each fastq file using the <code class="docutils literal notranslate"><span class="pre">vsearch</span> <span class="pre">--fastx_filter...</span></code> command from the Quality Filtering section, but running individually on each sample one at a time using a bash loop.</p></li>
+<li><p>Run the dereplication command (<code class="docutils literal notranslate"><span class="pre">vsearch</span> <span class="pre">--derep_fulllength...</span></code>) from the Dereplication section on each sample individually using a bash loop</p></li>
+<li><p>Run the denoising command (<code class="docutils literal notranslate"><span class="pre">vsearch</span> <span class="pre">--cluster_unoise...</span></code>) from the Denoising section on each sample individually using a bash loop</p></li>
+<li><p>Concatenate the result files using <code class="docutils literal notranslate"><span class="pre">sed</span></code> in the same way as in the Data Concatenation section.</p></li>
+<li><p>Re-dereplicate the output file using the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vsearch --derep_fulllength ​in.fasta --sizein --sizeout --relabel uniq --output out.fasta
+</pre></div>
 </div>
-<p>As it happens, it doesn’t seem that there are any programs out there that do this filtering already. One way to do it is filter by each length separately, and then concatenate the results.</p>
-<div class="admonition-exercise admonition">
-<p class="admonition-title">Exercise</p>
-<p>Can you design a command or set of commands that can do this from what we’ve already covered? Bonus points if you can do it in a loop, but it’s not necessary!</p>
+<ol class="arabic simple" start="6">
+<li><p>Compare the total unique read numbers and size distributions of your output to the version produced by whole-dataset denoising</p></li>
+</ol>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>We filter for each length, one at a time, and join the results into a single file.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vsearch --fastx_filter input.fasta --fastq_minlen <span class="m">415</span> --fastq_maxlen <span class="m">415</span> --fastaout output415.fasta
-$ vsearch --fastx_filter input.fasta --fastq_minlen <span class="m">418</span> --fastq_maxlen <span class="m">418</span> --fastaout output418.fasta
-$ vsearch --fastx_filter input.fasta --fastq_minlen <span class="m">421</span> --fastq_maxlen <span class="m">421</span> --fastaout output421.fasta
-$ cat output415.fasta output418.fasta output421.fasta &gt; output.fasta
-</pre></div>
-</div>
-<p>Of course, we could alos do this in a loop:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="k">for</span> l in <span class="m">415</span> <span class="m">418</span> <span class="m">421</span> <span class="se">\</span>
-&gt; <span class="k">do</span> <span class="se">\</span>
-&gt;       vsearch --fastx_filter input.fasta --fastq_minlen <span class="nv">$l</span> <span class="se">\</span>
-&gt;       --fastq_maxlen <span class="nv">$l</span> --fastaout output_<span class="si">${</span><span class="nv">l</span><span class="si">}</span>_ctrim.fasta<span class="p">;</span> <span class="se">\</span>
-&gt; <span class="k">done</span> <span class="o">&amp;&amp;</span><span class="se">\</span>
-&gt; cat *ctrim.fasta &gt; output.fasta
-</pre></div>
-</div>
-<p>When we’re running loops, we want to make sure it worked properly, so let’s check the number of sequences in the relevant files:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -c <span class="s2">&quot;^&gt;&quot;</span> *ctrim.fasta
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>TODO
 </pre></div>
 </div>
 </div>
@@ -220,10 +211,10 @@ $ cat output415.fasta output418.fasta output421.fasta &gt; output.fasta
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../point_error.html" class="btn btn-neutral float-right" title="5. Point error filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../indel_filtering.html" class="btn btn-neutral float-right" title="4. Indel Filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../indel_filtering.html" class="btn btn-neutral float-left" title="4. Indel Filtering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../freq_filtering_and_denoising.html" class="btn btn-neutral float-left" title="3. Frequency filtering / denoising" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

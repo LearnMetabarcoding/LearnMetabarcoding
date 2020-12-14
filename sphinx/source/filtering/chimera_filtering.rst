@@ -27,6 +27,6 @@ We have completed our main filtering pipeline, and the ASVs that remain after ch
 
 If you want to learn about clustering these sequences into OTUs, you can now go on to the :ref:`OTU delimitation <otu_delim>` section.
 
-If you want to use these ASVs as they are, that is a completely legitimate approach that lets us examine population-level patterns of community ecology. You may want read the discussion and explore the alternative filtering strategy available using metaMATE, examined in this extension: :ref:`Extension: metaMATE <metamate>`. Whichever set of ASVs you use, you can use these in place of OTUs in the :ref:`Generating Data <generating_data>` and :ref:`Phylogenetic placement<placement>` sections.
+If you want to use these ASVs as they are, that is a completely legitimate approach that lets us examine population-level patterns of community ecology. You may want read the discussion and explore the alternative filtering strategy available using metaMATE, examined in this extension: :ref:`Extension: metaMATE <metamate>`. Whichever set of ASVs you use, you can use these in place of OTUs in the :ref:`Generating Data <generating_data>` and :ref:`Phylogenetic placement<phylogenetic_placement>` sections.
 
 

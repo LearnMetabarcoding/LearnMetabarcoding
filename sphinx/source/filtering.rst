@@ -13,6 +13,7 @@ Filtering Amplicon Data
 	filtering/indel_filtering
 	filtering/point_error
 	filtering/chimera_filtering
+	filtering/metamate
 
 
 Introduction
@@ -80,9 +81,9 @@ Once you've made sure you have the data (see above), you should work through the
 1. Quality Filtering
 2. Not Filtering: Dereplication
 3. Denoising
-4.
-5.
-6.
+4. Indel Filtering
+5. Point Error Filtering
+6. Chimera Filtering
 
 .. admonition:: Note
 	:class: green

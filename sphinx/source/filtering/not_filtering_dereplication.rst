@@ -38,4 +38,4 @@ For now, though, we know that there are highly likely to be errors present in ou
 Next Steps
 ==========
 
-Next we will use the "size" information (counts of occurence of each ASV in the whole dataset) as a basis to filter out possible errors through `3. Frequency Filtering :ref:<denoising>`.
+Next we will use the "size" information (counts of occurence of each ASV in the whole dataset) as a basis to filter out possible errors through :ref:`3. Frequency Filtering <denoising>`.

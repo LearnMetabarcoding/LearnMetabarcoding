@@ -81,5 +81,5 @@ Other Software
 Next Steps
 ==========
 
-You should have produced many denoised outputs while you were playing around with the thresholds. We suggest you clean these up and proceed using the output from the command given above, i.e. with ``--minsize 2 --unoise_alpha 2``. This file contains a more filtered set of ASVs than we started with, but there are still other sources of error we can address, starting with `4. Indel Filtering <indel_filtering>`.
+You should have produced many denoised outputs while you were playing around with the thresholds. We suggest you clean these up and proceed using the output from the command given above, i.e. with ``--minsize 2 --unoise_alpha 2``. This file contains a more filtered set of ASVs than we started with, but there are still other sources of error we can address, starting with :ref:`4. Indel Filtering <indel_filtering>`.
 

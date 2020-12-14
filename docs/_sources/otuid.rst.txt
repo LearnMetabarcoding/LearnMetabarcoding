@@ -1,7 +1,7 @@
-.. _otu_id:
+.. _generating_data:
 
 ==============================================
-Identifying OTUs and Generating Outputs
+Generating Ecological Data
 ==============================================
 
 ------------------------------------------
