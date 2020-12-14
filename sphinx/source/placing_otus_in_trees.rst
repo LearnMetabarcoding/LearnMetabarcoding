@@ -1,7 +1,7 @@
-.. _placing_OTUs_in_ref_trees:
+.. _phylogenetic_placement:
 
 ================================================
-Placing OTUs in reference trees
+OTU Phylogenetic Placement
 ================================================
 
 The more comprehensive mitochondrial genome dataset allows us better resolution for figuring out the deep-level relationships between our species than with the OTU data. We can use this data and tree to form a ‘backbone’, to which we add the OTUs. The backbone tree is fixed, and branches are added for the OTUs. This is often called a “constraint tree”.
