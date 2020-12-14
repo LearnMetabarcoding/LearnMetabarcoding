@@ -10,6 +10,7 @@ OTU Delimitation
 	otudelim/greedy
 	otudelim/linkage_based
 	otudelim/bayesian
+	otudelim/comparing_otus
 
 
 Introduction
