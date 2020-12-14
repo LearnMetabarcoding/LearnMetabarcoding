@@ -101,4 +101,4 @@ Next Steps
 
 You can use these ASVs to cluster into OTUs, instructions for this are in the next section: :ref:`OTU Delimitation <otu_delim>`.
 
-Alternatively, if you want to perform your analyses at the ASV level, you can use these in place of OTUs in the :ref:`Generating Data <generating_data>` and :ref:`Phylogenetic placement<placement>` sections.
+Alternatively, if you want to perform your analyses at the ASV level, you can use these in place of OTUs in the :ref:`Generating Data <generating_data>` and :ref:`Phylogenetic placement<phylogenetic_placement>` sections.
