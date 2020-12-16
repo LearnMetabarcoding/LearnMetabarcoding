@@ -29,6 +29,7 @@ Run the following command to have SWARM cluster your input ASVs.
 	:class: toggle
 	
 	:math:`418 * 0.03 ≈ 13`
+	
 	.. code-block:: bash
 		
 		$ swarm -z in.fasta -d 13 -w out.fasta

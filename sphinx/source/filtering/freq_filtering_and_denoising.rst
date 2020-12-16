@@ -25,7 +25,9 @@ We can actually do this as part of the dereplication command we just did. Try ru
 .. admonition:: Solution
 	:class: toggle
 	
-	``$ vsearch --derep_fulllength ​in.fasta​ --output ​out.fasta​ --sizeout --relabel uniq --minuniquesize 2``
+	.. code-block:: bash 
+
+		$ vsearch --derep_fulllength ​in.fasta​ --output ​out.fasta​ --sizeout --relabel uniq --minuniquesize 2
 
 This is a straightforward filter, but it doesn't take into account all of the realities of amplification and sequencing. If an error arose in the later stages of PCR, or occured when sequencing a relatively rare ASV, then it's reasonable that errors may be infrequent, but if an error arose in the early stages of PCR then it would have been amplified many times. 
 

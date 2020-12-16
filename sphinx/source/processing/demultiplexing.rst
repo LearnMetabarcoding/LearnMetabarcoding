@@ -60,8 +60,10 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 .. admonition:: Solution
 	:class: toggle
 	
-	``$ head -n 12 ​in_R1.fastq​ | grep -E "CC.GA.AT.GC.TT.CC.CG|$"``
-	``$ head -n 12 ​in_R2.fastq​ | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"``
+	.. code-block:: bash
+
+		$ head -n 12 ​in_R1.fastq​ | grep -E "CC.GA.AT.GC.TT.CC.CG|$"
+		$ head -n 12 ​in_R2.fastq​ | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"
 
 You’ll probably see that there are occasions where no index or primer is highlighted on a sequence. This means there was a sequencing error. Look closely and you’ll see that a base is missing or inserted, or just wrong.
 
@@ -146,7 +148,9 @@ You should now have lots of files in that demux directory. It’s good practice 
 .. admonition:: Solution
 	:class: toggle
 
-	``$ ​grep -c "^@D00" 1_demux/* > demuxlog.txt``
+	.. code-block:: bash
+	
+		$ ​grep -c "^@D00" 1_demux/* > demuxlog.txt
 
 Let’s get rid of the files we don’t need. You’ve doubled the amount of storage you’re using - here the files aren’t very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don’t match. You do not need to type any ​``#comments​``, or add the extra spaces - this is just to make it clearer.
 
