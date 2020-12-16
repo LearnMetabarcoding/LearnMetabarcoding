@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Greedy Clustering &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Linkage-based clustering" href="linkage_based.html" />
+    <link rel="prev" title="OTU Delimitation" href="../otudelim.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Greedy Clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linkage_based.html">Linkage-based clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bayesian.html">Bayesian clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comparing_otus.html">Comparing OTU delimitation methods</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">Generating Ecological Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../placing_otus_in_trees.html">OTU Phylogenetic Placement</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../otudelim.html">OTU Delimitation</a> &raquo;</li>
+        
+      <li>Greedy Clustering</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/otudelim/greedy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="greedy-clustering">
+<span id="id1"></span><h1>Greedy Clustering<a class="headerlink" href="#greedy-clustering" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Greedy clustering is the conceptually most simple method of OTU delimitation we will see. In this method, each ASV is examined one-by-one, starting from the most common ASV (based on the frequency of reads of that ASV stored in the <code class="docutils literal notranslate"><span class="pre">;size=</span></code> tag in the sequence headers). The first ASV always forms the centroid sequence of the first OTU; each successive ASV is compared against the current set of centroids, with the ASV joining an OTU cluster if it sufficiently similar to one of the existing centroids, or forming a new centroid if not sufficiently similar to any existing centroids. This method is called “greedy” clustering because in general it tends towards uneven clusters, with the addition of sequences to the largest cluster is preferred when there might be any ambiguity.</p>
+<p>The similarity threshold determines how large the clusters are and how many OTUs form. The most common similarity threshold is 97% similarity, where new ASVs join a cluster if they are no more than 3% different from the centroid. This <em>difference</em> is often known as the cluster radius, and this value is often used as much as the similarity value to specify the OTUs. Note that any two ASVs within a cluster may be as much as 6% dissimilar: the key measurement is between the <em>centroid</em> and any ASV, not among ASVs, hence the use of the term “radius”.</p>
+</div>
+<div class="section" id="running-greedy-clustering">
+<h2>Running greedy clustering<a class="headerlink" href="#running-greedy-clustering" title="Permalink to this headline">¶</a></h2>
+<p>While the USEARCH “UPARSE” pipeline is probably the most commonly used tool for greedy clustering, we will instead once again use VSEARCH. VSEARCH both implements exactly the same clustering algorithm as USEARCH, but also allows greater flexibility in outputs and in similarity algorithms available.</p>
+<p>The following is the basic command for 97% clustering of our ASVs, using the USEARCH algorithm:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vsearch --cluster_size ​in.fasta​ --id <span class="m">0</span>.97 --centroids ​otus_3pc.fasta​ --sizein --relabel otu
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--cluster_size</span></code> command specifies that we want to cluster based on the <code class="docutils literal notranslate"><span class="pre">size=</span></code> tags in our input FASTA. The <code class="docutils literal notranslate"><span class="pre">--centroids</span></code> argument tells VSEARCH where to output the centroid sequences, <code class="docutils literal notranslate"><span class="pre">--relabel</span></code>led as <code class="docutils literal notranslate"><span class="pre">otu001</span></code> etc.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>What happens if you modify the <code class="docutils literal notranslate"><span class="pre">--id</span></code> threshold value? Try increasing it and decreasing it.
+Can we know what is the most appropriate threshold, or is it somewhat arbitrary based loosely on our understanding of genetic variation in our taxon of interest and what seems to give the right values?</p>
+</div>
+<p>If you’re familiar with CD-HIT-EST, this is very similar. CD-HIT-EST uses a slightly different calculation of dissimilarity, which can be used by including the parameter <code class="docutils literal notranslate"><span class="pre">iddef</span> <span class="pre">0</span></code></p>
+</div>
+<div class="section" id="tracking-our-asvs">
+<h2>Tracking our ASVs<a class="headerlink" href="#tracking-our-asvs" title="Permalink to this headline">¶</a></h2>
+<p>One common question after performing clustering like this is to ask “which ASVs formed which OTUs?”. VSEARCH allows you to find this out by outputting a table recording the matches of each ASV to each cluster.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Run the above command, adding <code class="docutils literal notranslate"><span class="pre">--uc</span> <span class="pre">asv_otu.uc</span></code> to the end.
+Run <code class="docutils literal notranslate"><span class="pre">more</span> <span class="pre">asv_otu.uc</span></code> to view this table, checking the VSEARCH documentation (page 11) to see what each column means. Note that it labels the centroids (col. 2) as 0, 1, 2, etc. rather than otu1, otu2, otu3, etc.
+We can correct this a little by doing the following in bash:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -v <span class="s2">&quot;^C&quot;</span> asv_otu.uc &gt; asv_otu_edit.uc                                             <span class="c1"># Remove the cluster lines</span>
+$ cut -f2 asv_otu_edit.uc <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> l<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;otu</span><span class="k">$((</span><span class="nv">$l</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span> &gt; otus.temp    <span class="c1">#convert to the correct names</span>
+$ cut -f3-9 asv_otu_edit.uc &gt; rest.temp                                                 <span class="c1"># extract the rest of the table</span>
+$ paste otus.temp rest.temp &gt; asv_otu_edit.uc                                           <span class="c1"># join together</span>
+$ rm *.temp                                                                             <span class="c1"># clean up</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>We’ve generated a set of OTUs using one method. If you haven’t already, try out the other two types of OTU clustering: <a class="reference internal" href="linkage_based.html#linkage-delimitation"><span class="std std-ref">Linkage Delimitation</span></a> and <a class="reference internal" href="bayesian.html#bayesian-clustering"><span class="std std-ref">Bayesian Clustering</span></a>.</p>
+<p>Alternatively, if you’ve tried these already, the <a class="reference internal" href="comparing_otus.html#comparing-otus"><span class="std std-ref">Comparing OTU Delimitation methods</span></a> subsection outlines some ways to compare these methods and some hints for selecting a method and parameters. Once you have a final set of OTUs, you can proceed with them to the <a class="reference internal" href="../otuid.html#generating-data"><span class="std std-ref">Generating Data</span></a> section to learn about mapping your reads to your OTUs and doing taxonomic classification. Later on, we’ll use these same OTUs and try to place them onto a phylogenetic tree in the <a class="reference internal" href="../placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic Placement</span></a> section.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="linkage_based.html" class="btn btn-neutral float-right" title="Linkage-based clustering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../otudelim.html" class="btn btn-neutral float-left" title="OTU Delimitation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
