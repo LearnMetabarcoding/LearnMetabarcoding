@@ -15,10 +15,9 @@ Analysis of Metagenetic data for Macroecology
 	linuxintro
 	readprocessing
 	filtering
-	otudelim
+	otu_asv_read
+	building_otu_phylogeny
 	otuid
-	trees
-	placing_otus_in_trees
 
 
 

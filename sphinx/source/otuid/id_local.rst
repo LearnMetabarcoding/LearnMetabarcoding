@@ -1,8 +1,13 @@
 .. _id_local:
 
 =======================================
-4. Identification using local database 
+Reference Sets 
 =======================================
+
+.. toctree::
+	:hidden:
+
+	mapping_reads_to_refs
 
 It’s clear that global and curated databases are very useful for assigning broad taxonomy, but don’t do great identifying our OTUs to lower taxonomic levels for these sorts of samples. Usefully, we picked out some morphospecies and sequenced them separately using Sanger sequencing.
 

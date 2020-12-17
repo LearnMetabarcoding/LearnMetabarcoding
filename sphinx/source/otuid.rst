@@ -1,7 +1,7 @@
 .. _generating_data:
 
 ==========================
-Generating Ecological Data
+Identifying OTU Sequences
 ==========================
 
 Introduction
@@ -24,10 +24,8 @@ Now we have some OTUs in hand, we have two final tasks. We need to get some idea
 .. toctree::
 	:hidden:
 	
-	otuid/mapping_reads
-	otuid/id_with_megan
-	otuid/id_with_curated_db
+	otuid/database
 	otuid/id_local
-	otuid/mapping_reads_to_refs
-	otuid/id_contigs
+	otuid/phylogeny_based
+
 
