@@ -28,5 +28,4 @@ Phylogenetic trees are more powerful when built with comprehensive data. Here we
 	trees/aligning_protein_coding_genes
 	trees/concatenating_alignments
 	trees/tree_building
-	trees/otu_trees
 	trees/tree_viewing
