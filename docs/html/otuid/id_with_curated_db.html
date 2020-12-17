@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Identifiation using a curated database &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reference Sets" href="id_local.html" />
+    <link rel="prev" title="Extension: MEGAN settings" href="extensions/megan_settings.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linuxintro.html">Command line bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otu_asv_read.html">OTUs, ASVs and Read Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building_otu_phylogeny.html">Building OTU Phylogeny</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../otuid.html">Identifying OTU Sequences</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="database.html">Database Classification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="id_with_megan.html">2. Identification using GenBank and MEGAN</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3. Identifiation using a curated database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="id_local.html">Reference Sets</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../otuid.html">Identifying OTU Sequences</a> &raquo;</li>
+        
+          <li><a href="database.html">Database Classification</a> &raquo;</li>
+        
+      <li>3. Identifiation using a curated database</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/otuid/id_with_curated_db.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id-curated">
+<span id="identifiation-using-a-curated-database"></span><h1>3. Identifiation using a curated database<a class="headerlink" href="#id-curated" title="Permalink to this headline">¶</a></h1>
+<p>BLAST is not fundamentally designed as a taxonomic assignment tool, and MEGAN is forced to work with BLAST’s alignment and matching summary outputs to assign taxonomy. There are other tools out there that are specifically designed for the assignment of taxonomy to anonymous sequences. Rather than comparing a sequence against a database one-by-one, these methods use k-mer approaches to place a sequence within the whole set of references. Then, they use an approach broadly analogous to MEGAN’s LCA method to probabilistically assign taxonomy, generally assigning confidence scores to different taxonomic levels. Such methods include PROTAX, SINTAX, SPINGO and RDPclassifier. It should be noted that like much of the software available for metabarcoding, these tools are often written for use on 16S. It should always be considered whether other loci may not be treated as expected by such tools.</p>
+<p>The other downside to the prior method is that GenBank is not necessarily authoritative - it is well known that many sequences available on GenBank are misidentified. This would not be an issue if we were working with a well-known taxon, but when our survey lineages are likely to be poorly covered in GenBank, yet we require a relatively detailed identification, searching against all of GenBank is likely to be less successful. Some researchers have taken sections of GenBank and curated the sequences, removing sequences that are poor quality or unlikely to be correct.</p>
+<p>One issue with using these more advanced classification tools is that they often require quite specific reference database structures. Thankfully, many curated database authors have released their databases in these formats.</p>
+<p>For CO1, the MIDORI database (Machida, 2017, doi: 10.1038/sdata.2017.27) is a curated version of GenBank’s CO1 sequences. The authors have taken the useful step of creating a server for searching sequences against MIDORI using three of the above classifiers. You can access the server <a class="reference external" href="http://reference-midori.info/server.php">here.</a></p>
+<p>You can see that you can select a program, paste or upload your sequences, and select a database and searching parameters. We don’t want to overload their server with redundant searches, so we’ve already done this step for you. We ran the 3% OTUs against the MIDORI CO1 database using RDP and SINTAX, and you can find the resulting files in <code class="docutils literal notranslate"><span class="pre">/AMM/resources/metabarcoding/taxassign/</span></code> under the different program names. We ran SPINGO too, but its outputs require more processing to be comparable, so we’ll just consider RDP and SINTAX. Copy the files to your directory. RDP outputs two files, the “hier_outfile” is a summary and the “usga_classified” is the individual OTU taxonomies.</p>
+<p>To quickly get an idea of how many Coleoptera OTUs we have, run the following command on the SINTAX file, the RDP classified file, and the MEGAN output you uploaded:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -c “Coleoptera”
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Do the different assignment programs agree?</p></li>
+</ul>
+<p>Download these files to your computer using your FTP client and open them up in a text editor or spreadsheet software. The exact format varies, but all they output broadly similar information: the name of the OTU, some taxonomy and a confidence for each taxonomic level. They are fairly intuitive. Compare the MEGAN, RDP and SINTAX classifications for some different OTUs.</p>
+<ul class="simple">
+<li><p>Which programs provide lower-level identifications?</p></li>
+<li><p>Are species level identifications likely to be accurate?</p></li>
+<li><p>What levels of confidence are given to the order level identifications? Might this be very conservative? Why?</p></li>
+<li><p>What other taxa do we apparently have? You will see that we have some obvious non-Coleoptera OTUs, but also some OTUs that have been assigned to other Insect orders. How consistent are these identifications between methods? Are we confident that these really are not Coleoptera?</p></li>
+</ul>
+<p>Note that it’s perfectly feasible that there could have been non-Coleoptera Insect DNA in these samples.</p>
+<p>Now lets see how we would do identification with a local database in the <a class="reference internal" href="id_local.html#id-local"><span class="std std-ref">next step.</span></a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="id_local.html" class="btn btn-neutral float-right" title="Reference Sets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="extensions/megan_settings.html" class="btn btn-neutral float-left" title="Extension: MEGAN settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
