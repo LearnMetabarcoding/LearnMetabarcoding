@@ -8,7 +8,7 @@ OTUs, ASVs and Read Mapping
     :hidden:
 
     otu_asvs_readmapping/otudelim
-    otu_asvs_readmapping/mapping
+    otu_asvs_readmapping/mapping_reads
 
 Introduction
 ==============

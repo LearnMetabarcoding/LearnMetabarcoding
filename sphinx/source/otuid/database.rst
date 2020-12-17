@@ -6,7 +6,7 @@ Database Classification
     :hidden:
 
     id_with_megan
-    id_with_curated
+    id_with_curated_db
 
 
 Introduction
