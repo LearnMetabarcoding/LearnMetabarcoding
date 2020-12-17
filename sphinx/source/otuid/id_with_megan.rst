@@ -1,7 +1,7 @@
 .. _id_using_megan:
 
 ==========================================
-2. Identification using GenBank and MEGAN
+1. Identification using GenBank and MEGAN
 ==========================================
 
 .. toctree::
