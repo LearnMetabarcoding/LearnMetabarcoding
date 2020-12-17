@@ -31,12 +31,17 @@ Try running the following command:
 
 The options ``-b``, ``-z`` and ``-r`` are for optimising the MCMC process. You can read more about these in their `documentation <https://github.com/tingchenlab/CROP/wiki/THE-CROP-WIKI>`_. You can leave these alone. Option ``​-s`` specifies that we want the equivalent of 3% dissimilarity clustering. We could change this to ``-g`` which is equivalent to 5%. You can alternatively supply values to ``-l`` and ``-u`` , for example ``​-l 1 -u 3`` , which are the lower and upper bounds of similarity levels.
 
-CROP creates a bunch of extra files, you may want to ​mv​ them to their own folder. You could create a folder for each CROP run you do and make sure you’re in that directory when you run it.
+CROP creates a bunch of files, you may want to ``​mv​`` them to their own folder. You could create a folder for each CROP run you do and make sure you’re in that directory when you run it. The ``outname.cluster.fasta`` file contains the centroid sequences for each cluster, i.e. the representative OTU sequences.
 
 .. admonition:: Exercise
 	
 	Run CROP at the 5% level using the ``-g`` option in place of ``-s``. How does the number of OTUs change?
 	Run greedy clustering at the 3% and 5% dissimilarity levels. How do the number of OTUs compare against CROP?
+
+Tracking our ASVs
+=================
+
+The ``outname.cluster.list`` file that CROP produces is a text file that contains a list of the sequences included in each cluster. Run ``more outname.cluster.list`` to have a look at it. We'll return to this file later when we want to map our reads.
 
 Next Steps
 ==========

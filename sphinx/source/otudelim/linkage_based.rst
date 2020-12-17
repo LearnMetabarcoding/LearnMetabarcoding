@@ -7,7 +7,7 @@ Linkage-based clustering
 Introduction
 ============
 
-SWARM is a slightly different OTU delimitation algorithm. Rather than using a threshold that applies to all clusters like vsearch’s clustering method, it uses a local linking threshold that is based on number of differences, rather than overall dissimilarity. It assess the absolute number of differences between all pairs of ASVs, then builds a network where ASVs are nodes and the distance between nodes is the number of differences. It then interrogates this network to separate groups of ASVs with the most differences between them. One of the theoretical benefits of SWARM is that it is not affected by the abundance distribution of the input ASVs and the clusters are therefore not necessarily as uneven as in greedy clustering. The downside is that SWARM generally produces many more OTUs than greedy clustering, especially at the authors' recommended settings. Of course, this could vary considerably depending on the dataset.
+The program ``swarm`` is a slightly different OTU delimitation algorithm. Rather than using a threshold that applies to all clusters like vsearch’s clustering method, it uses a local linking threshold that is based on number of differences, rather than overall dissimilarity. It assess the absolute number of differences between all pairs of ASVs, then builds a network where ASVs are nodes and the distance between nodes is the number of differences. It then interrogates this network to separate groups of ASVs with the most differences between them. One of the theoretical benefits of ``swarm`` is that it is not affected by the abundance distribution of the input ASVs and the clusters are therefore not necessarily as uneven as in greedy clustering. The downside is that ``swarm`` generally produces many more OTUs than greedy clustering, especially at the authors' recommended settings. Of course, this could vary considerably depending on the dataset.
 
 Running SWARM
 =============
@@ -33,6 +33,28 @@ Run the following command to have SWARM cluster your input ASVs.
 	.. code-block:: bash
 		
 		$ swarm -z in.fasta -d 13 -w out.fasta
+
+Tracking our ASVs
+=================
+
+We can get ``swarm`` to output a list of ASVs that were grouped to form each OTU. You can generate this list by adding the ``-o`` option
+
+.. admonition:: Exercise
+	
+	Rerun ``swarm`` with your favourite ``-d`` value and ``-o out.txt`` (replacing ``out.txt`` with an appropriate name, of course)
+	Review this file with ``more``
+	Can you figure out a way to count the number of ASVs per OTU? Is it at all even?
+
+.. admonition:: Solution
+	:class: toggle
+	
+	.. code-block:: bash
+		
+		$ swarm -z asvs.fasta -d 1 -w swarm_otus.fasta -o swarm_asvmap.txt
+		$ more swarm_asvmap.txt
+		$ grep -n -o "uniq" swarm_asvmap.txt | cut -d: -f1 | sort | uniq -c
+	
+	Check out the page on ``grep`` for more help figuring out what this command is doing
 
 Next Steps
 ==========

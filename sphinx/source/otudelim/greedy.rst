@@ -22,7 +22,7 @@ The following is the basic command for 97% clustering of our ASVs, using the USE
 
 	$ vsearch --cluster_size ​in.fasta​ --id 0.97 --centroids ​otus_3pc.fasta​ --sizein --relabel otu
 
-The ``--cluster_size`` command specifies that we want to cluster based on the ``size=`` tags in our input FASTA. The ``--centroids`` argument tells VSEARCH where to output the centroid sequences, ``--relabel``\led as ``otu001`` etc. 
+The ``--cluster_size`` command specifies that we want to cluster based on the ``size=`` tags in our input FASTA. The ``--centroids`` argument tells VSEARCH where to output the centroid sequences, ``--relabel``\led as ``otu001`` etc.
 
 .. admonition:: Exercise
 	
@@ -38,7 +38,7 @@ One common question after performing clustering like this is to ask "which ASVs 
 
 .. admonition:: Exercise
 	
-	Run the above command, adding ``--uc asv_otu.uc`` to the end.
+	Rerun the above command, adding ``--uc asv_otu.uc`` to the end.
 	Run ``more asv_otu.uc`` to view this table, checking the VSEARCH documentation (page 11) to see what each column means. Note that it labels the centroids (col. 2) as 0, 1, 2, etc. rather than otu1, otu2, otu3, etc.
 	We can correct this a little by doing the following in bash:
 	

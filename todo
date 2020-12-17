@@ -12,8 +12,12 @@ Citations and links
 
 make sure fastq/fasta -> FASTQ/FASTA
 
-Standardise code placeholders, e.g. input.fasta
+Standardise code placeholders, e.g. input.fasta, and add a page somewhere that makes this syntax very clear.
 
 Standardise capitalisation of headings/subheadings
 
 Standardise link names
+
+Standardise program names - always use ``name``
+
+Change the copyright section
