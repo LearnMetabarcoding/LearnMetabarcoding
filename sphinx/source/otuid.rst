@@ -1,4 +1,4 @@
-.. _generating_data:
+.. _otuid:
 
 ==========================
 Identifying OTU Sequences
