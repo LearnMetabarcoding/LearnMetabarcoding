@@ -16,7 +16,7 @@ CROP needs every unique read for each ASV in the input dataset, it cannot read `
 
 .. code-block:: bash 
 
-	$ vsearch --rereplicate ​in.fasta​ --relabel repl --output ​out.fasta
+	$ vsearch --rereplicate ​in.fasta​ --output ​out.fasta
 
 Running CROP
 ============
@@ -41,7 +41,7 @@ CROP creates a bunch of files, you may want to ``​mv​`` them to their own fo
 Tracking our ASVs
 =================
 
-The ``outname.cluster.list`` file that CROP produces is a text file that contains a list of the sequences included in each cluster. Run ``more outname.cluster.list`` to have a look at it. We'll return to this file later when we want to map our reads.
+The ``outname.cluster.list`` file that CROP produces is a text file that contains a list of the sequences included in each cluster. Run ``more outname.cluster.list`` to have a look at it. You'll note that on each line, the same ASV is repeated multiple times. This is because we rereplicated our ASVs earlier, and CROP worked on these ASV reads, each of which had the same name. We'll return to this file later when we want to map our reads.
 
 Next Steps
 ==========

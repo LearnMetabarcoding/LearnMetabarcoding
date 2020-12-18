@@ -44,12 +44,21 @@ One common question after performing clustering like this is to ask "which ASVs 
 	
 	.. code-block:: bash
 		
-		$ grep -v "^C" asv_otu.uc > asv_otu_edit.uc						# Remove the cluster lines
-		$ cut -f2 asv_otu_edit.uc | while read l; do echo "otu$(($l + 1))"; done > otus.temp	#convert to the correct names
-		$ cut -f3-9 asv_otu_edit.uc > rest.temp							# extract the rest of the table
-		$ paste otus.temp rest.temp > asv_otu_edit.uc						# join together
-		$ rm *.temp										# clean up
-	
+		# Remove the cluster lines
+		$ grep -v "^C" asv_otu.uc > asv_otu_edit.temp
+		
+		# Convert to the correct names
+		$ cut -f2 asv_otu_edit.temp | while read l; do echo "otu$(($l + 1))"; done > otus.temp
+		
+		# Extract the rest of the table
+		$ cut -f3-9 asv_otu_edit.temp > rest.temp
+		
+		# Join the table parts together
+		$ paste otus.temp rest.temp > asv_otu.uc
+		
+		# Clean up
+		$ rm *.temp
+		
 
 Next Steps
 ==========
