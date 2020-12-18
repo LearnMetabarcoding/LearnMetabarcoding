@@ -13,10 +13,10 @@ On the other hand, matching with some threshold of similarity may often be inapp
 
 If this is not the case, we must use a two-stop process. First, we match reads to ASVs as we did in the previous section. Next, we use the data we generated during OTU delimitation reporting which ASVs form each OTU to reduce the ASV read map into an OTU read map, grouping together data for all of the ASVs in each OTU.
 
-Grouping ASV Read Data
-======================
+Preparing the OTU ASV lists
+===========================
 
-For this step, you will need a table of read counts per ASV per sample, as produced in the previous step, with ASVs as the rows and samples as the columns. You will also need a file that lists the set of ASVs in each OTU, as produced as part of the OTU delimitation for each of our steps. However, because the format of this was slightly different for each OTU delimitation step, we will need to process each of them first, according to the method used.
+For this step, you will need a file that lists the set of ASVs in each OTU, as produced as part of the OTU delimitation for each of our steps. However, because the format of this was slightly different for each OTU delimitation step, we will need to process each of them first, according to the method used. Note that there's no particular need to run all three of these sections, just run whichever section matches the OTU delimitation method that you chose.
 
 Greedy Clustering using VSEARCH
 -------------------------------
@@ -61,23 +61,56 @@ The following command is similar to the command for ``swarm``. We convert commas
 		done | sort | uniq \
 	done > output.tsv
 
+Joining our data
+================
 
-
-
-
-
-
-This step takes our trimmed, merged and quality filtered reads and tries to find which OTU each read belongs to. We take our reads prior to the more recent read filtering because this filtering may have removed many true but rare variants of our OTUs, or slight PCR or sequencing-induced error variants. These reads get matched to the closest OTU, but we set a similarity cut-off so that any reads that are major errors will not match to any OTU and be ignored.
-
-We are going to use our 3% clustering OTUs for this at first, using the ``​VSEARCH --usearch_global`` command to search the reads against the OTUs, and output an OTU table.
+Now we can join the output from the above to your table of read counts per ASV per sample, as produced in the previous step, with ASVs as the rows and samples as the columns. We do this using the linux ``join`` command. The first table will be our table of ASVs and OTUs: the ASVs are column two, so we specify that the join column for the first table is column two (``-1 2``). The second table is our ASV read counts table, where the join column (the column of ASV names) is column one (``-2 1``).
 
 .. code-block:: bash
+	
+	join -1 2 -2 1 <(sort ASV-OTU.tsv) ASV_read_map.tsv > output.tsv
 
-	$ vsearch --usearch_global mbc_concat.fasta -db ​otus.fasta ​-id 0.97 -uc ​mapresults.uc
+Note that we sorted the ASV-to-OTU table, this is a necessary step for ``join`` to work properly.
 
-We use the ``-id 0.97`` parameter to set a 3% similarity cutoff, which is obviously appropriate for the 3% OTUs. The algorithm finds the best match in the database for each query sequence and output this information in a ``.uc`` file, which is a tabulated output. Have a look at this file using head or cat. Each line shows the hit statistics for each input read against its best match, if it has one. You should be able to see that each read has a ``sample=`` part to the name that we added earlier to identify its source. So all we need to do now is count up the number of hits for each OTU for each sample.
+Use ``head`` to view the output file. You'll see two columns of sequence names followed by the read count data. The first column is the join column, i.e. the ASV names. The second column is the other column from the ASV-to-OTU table, i.e. the OTU centroid names. We can now get rid of the first column, the ASV names, after changing the file from space-delimited back to tab-delimited
 
-Thankfully, vsearch can do this for us. Run the command above again, but this time swap out the ``-uc out.uc`` o​ption for ``-otutabout ​out.tsv.`` Have a look at the table output using head or cat. Perfect!
+.. code-block:: bash
+	
+	sed -e "s/ /\t/g" input.tsv | cut -d2- > output.tsv
 
-If your interested in how you'd map reads to CROP and swarm OTUs, have a look at the next :ref:`extension<map_to_other_otus>`.
-Alternatively, move on to the next :ref:`section<id_using_megan>`
+You might have noticed that we've lost the header column from the ASV read map table: this is because it didn't have an ASV name in column 1 to match against the other table. No matter, we can bring it back again.
+
+.. code-block:: bash
+	
+	cat <(head -1 ASV_read_map.tsv) input.tsv > output.tsv
+
+Summing over OTUs
+=================
+
+The last issue is that we have multiple rows for each OTU, and we want to sum all occurences of all ASVs within each OTU into one row. We can do this using an R one-liner.
+
+.. code-block:: bash
+	
+	Rscript -e 'x<-read.table("input.tsv",header=T,comment.char="",sep="\t");rowsum(x[,-1],x[,1])' > output.tsv
+	
+
+This output gives the total read numbers for all ASVs within each OTU by sample.
+
+Shortcut for Greedy Clustering
+==============================
+
+In the introduction, we discussed that simply matching reads directly to OTUs is not appropriate unless the method we use to match reads to OTUs accurately reflects the method by which OTUs were initially delimited. In fact, for Greedy Clustering, this is true. Greedy clustering uses pairwise similarity to group ASVs, working in order of ASV frequency which has the effect that ties are broken by choosing the more frequent cluster. Given that the outputs are thus ordered by frequency, and that --usearch_global chooses the the first record in the database in the case of ties, we can in fact search reads directly against the OTUs **for greedy clustering only**. This uses the same command as we saw in less-strict ASV mapping:
+
+.. code-block:: bash
+	
+	$ vsearch --usearch_global reads.fasta -db ​otus_0.97.fasta ​-id 0.97 -otutabout output.tsv
+	
+
+We use the ``-id 0.97`` parameter to set a 3% similarity cutoff for OTUs that have been clustered at 97% similarity. Obviously if you had used a different similarity threshold when clustering, you'd use the same value here.
+
+This shortcut is **only** available for greedy clustering. To the best of our knowledge, the above two-step process is the most appropriate way to map reads to OTUs for other types of OTU delimitation. Hopefully we've persuaded you that to map reads using this shortcut for swarm, CROP or another method would likely give erroneous read counts. Of course, it's likely that the majority of read assignments would probably be correct, since in most cases the most similar OTU to a read is likely the appropriate read, but its the handling of outlying variants that could cause errors and ambiguities to creep in.
+
+Next Steps
+==========
+
+The output from this subsection forms the metabarcoding equivalent of a site by species table ready to be used in downstream analysis, although we would recommend some further filtering which we discuss in the :ref:`Analysing Read Maps <analysing_maps>` subsection. You may want to learn about building a phylogeny of your OTUs in the :ref:`Building OTU Phylogeny <phylogeny>` section, or taxonomically identifying and/or classifying your OTUs in the :ref:`Identifying OTU Sequences <otuid> section.
