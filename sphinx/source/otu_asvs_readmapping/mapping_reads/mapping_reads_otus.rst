@@ -113,4 +113,4 @@ This shortcut is **only** available for greedy clustering. To the best of our kn
 Next Steps
 ==========
 
-The output from this subsection forms the metabarcoding equivalent of a site by species table ready to be used in downstream analysis, although we would recommend some further filtering which we discuss in the :ref:`Analysing Read Maps <analysing_maps>` subsection. You may want to learn about building a phylogeny of your OTUs in the :ref:`Building OTU Phylogeny <phylogeny>` section, or taxonomically identifying and/or classifying your OTUs in the :ref:`Identifying OTU Sequences <otuid> section.
+The output from this subsection forms the metabarcoding equivalent of a site by species table ready to be used in downstream analysis, although we would recommend some further filtering which we discuss in the :ref:`Analysing Read Tables <analysis>` subsection. You may want to learn about building a phylogeny of your OTUs in the :ref:`Building OTU Phylogeny <phylogeny>` section, or taxonomically identifying and/or classifying your OTUs in the :ref:`Identifying OTU Sequences <otuid> section.

@@ -9,7 +9,7 @@ Mapping reads
 
     mapping_reads/mapping_reads_asvs
     mapping_reads/mapping_reads_otus
-    mapping_reads/analysing_read_maps
+    mapping_reads/analysing_read_tables
 
 Introduction
 ============
@@ -33,4 +33,4 @@ If you haven't been through the previous sections and don't have your own data, 
 Next Steps
 ==========
 
-Whether using ASVs or OTUs, you should first head to the :ref:`Mapping Reads to ASVs <mapping_reads_asvs>` subsection. You will need your FASTA of ASVs and your FASTA of reads. If you are using OTUs, you should then progress to the :ref:`Mapping Reads to OTUs <mapping_reads_otus>` subsection, which uses the data produced by the ASV subsection. Finally, the :ref:`Analysing Read Maps <analysing_maps>` subsection discusses questions around filtering the outputs from read mapping.
+Whether using ASVs or OTUs, you should first head to the :ref:`Mapping Reads to ASVs <mapping_reads_asvs>` subsection. You will need your FASTA of ASVs and your FASTA of reads. If you are using OTUs, you should then progress to the :ref:`Mapping Reads to OTUs <mapping_reads_otus>` subsection, which uses the data produced by the ASV subsection. Finally, the :ref:`Analysing Read Maps <analysis>` subsection discusses questions around filtering the outputs from read mapping.
