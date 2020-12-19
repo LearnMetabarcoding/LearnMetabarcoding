@@ -1,3 +1,5 @@
-=================================
-Phylogeny-based Classification
-=================================
+.. _phylogenetic_classification
+
+===========================
+Phylogenetic Classification
+===========================
