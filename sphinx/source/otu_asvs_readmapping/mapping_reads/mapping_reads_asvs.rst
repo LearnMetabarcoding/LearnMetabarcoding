@@ -84,6 +84,6 @@ We would not recommend using this for studies looking at ASVs only, and if it mu
 Next Steps
 ==========
 
-For working at the ASV level, the ``.tsv`` table you have produced is ready to be used in downstream analyses, although we would recommend some further filtering which we discuss in the :ref:`Analysing Read Maps <analysing_maps>` subsection. You may want to learn about building a phylogeny of your ASVs in the :ref:`Building OTU Phylogeny <phylogeny>` section, or taxonomically identifying and/or classifying your ASVs in the :ref:`Identifying OTU Sequences <otuid> section.
+For working at the ASV level, the ``.tsv`` table you have produced is ready to be used in downstream analyses, although we would recommend some further filtering which we discuss in the :ref:`Analysing Read Tables <analysis>` subsection. You may want to learn about building a phylogeny of your ASVs in the :ref:`Building OTU Phylogeny <phylogeny>` section, or taxonomically identifying and/or classifying your ASVs in the :ref:`Identifying OTU Sequences <otuid> section.
 
 For working at the OTU level, we cover how to reduce this ASV-level table you've produce to OTU level in the next subsection: :ref:`Mapping Reads to OTUs <mapping_reads_otus>`.
