@@ -14,3 +14,11 @@ Getting started
 	gettingstarted/toolbox_pipelines
 	gettingstarted/cli_bioinformatics
 
+Introduction
+============
+
+This section outlines what you need to get started using these resources and introduces the format and focuses of the self-guided course.
+
+
+
+
