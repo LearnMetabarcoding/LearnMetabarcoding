@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. Extracting protein coding genes &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>2. Extracting Protein Coding Genes &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -92,15 +92,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">Filtering Amplicon Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../otu_asv_read.html">OTUs, ASVs and Read Mapping</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a barcode tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">OTU Phylogenetic Placement</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a Barcode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">Phylogenetic Placement</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building a Mitogenome Reference Tree</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="preparing_mitogenome_data.html">1. Preparing mitogenome data</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2. Extracting protein coding genes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2. Extracting Protein Coding Genes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aligning_protein_coding_genes.html">3. Aligning protein coding genes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="concatenating_alignments.html">4. Concatenating alignments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tree_building.html">5. Tree building</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tree_viewing.html">6. Tree Viewing</a></li>
 </ul>
 </li>
 </ul>
@@ -154,9 +153,9 @@
         
           <li><a href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a> &raquo;</li>
         
-          <li><a href="../trees.html">Building Phylogenetic Trees for Metagenetics</a> &raquo;</li>
+          <li><a href="../trees.html">Building a Mitogenome Reference Tree</a> &raquo;</li>
         
-      <li>2. Extracting protein coding genes</li>
+      <li>2. Extracting Protein Coding Genes</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,29 +175,38 @@
            <div itemprop="articleBody">
             
   <div class="section" id="extracting-protein-coding-genes">
-<span id="extract-coding"></span><h1>2. Extracting protein coding genes<a class="headerlink" href="#extracting-protein-coding-genes" title="Permalink to this headline">¶</a></h1>
-<p>We are going to focus solely on protein coding genes, rather than using the full mitochondrial DNA sequence of all of our records. GenBank-format files contains data that tells us the location of all of the genes present on the DNA sequence for each entry. If you’re not familiar with this concept already, see above, because otherwise what we’re doing here will not make any sense to you.</p>
+<span id="extract-genes"></span><h1>2. Extracting Protein Coding Genes<a class="headerlink" href="#extracting-protein-coding-genes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>We are going to focus solely on protein coding genes, rather than using the full mitochondrial DNA sequence of all of our records. GenBank-format files contains data that tells us the location of all of the genes present on the DNA sequence for each entry. If you’re not familiar with this concept already, see the page on the <a class="reference internal" href="fundamentals/genbank.html#genbank"><span class="std std-ref">genbank format</span></a>, because otherwise what we’re doing here will not make any sense to you.</p>
+</div>
+<div class="section" id="extracting-genes">
+<h2>Extracting genes<a class="headerlink" href="#extracting-genes" title="Permalink to this headline">¶</a></h2>
 <p>We will use a custom script to extract the 13 mitochondrial protein coding genes from our subsetted genbank file, because it’s quick and easy. You can see the help file of this script as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ extract_genes.pl -h
 </pre></div>
 </div>
-<p>Replace the italics parts in the following command with the appropriate file and directory names and run it. Make sure you match up the arguments with the help file and understand what you’re doing here! The <em>outdir</em> will hold a file for each gene. You don’t need to create this, the script will</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ extract_genes.pl -g ​novelmt.gb genbankmt.gb ​-o ​outdir/​ -minregion <span class="m">10</span>
+<p>Replace the placeholder names in the following command with the names of the three genbank files containing the novel references, the coleoptera from GenBank and the arthropods from GenBank. Make sure you match up the arguments with the help file and understand what you’re doing here! The <code class="docutils literal notranslate"><span class="pre">outdir/</span></code> will be a directory holding a file for each gene, you should of course replace this with a sensible name. You don’t need to create this, the script will.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ extract_genes.pl -g ​input1.gb input2.gb input3.gp ​-o ​outdir/​ -minregion <span class="m">10</span>
 </pre></div>
 </div>
-<p>You may get some errors about some of the GenBank genes not having enough CDS features. Don’t worry, it’s because these files for some reason don’t have proper feature tags. We can forget about these sequences - we have plenty!</p>
-<p>Once complete, you should see thirteen files in your output folder, one for each gene. Check the number of sequences in each.</p>
-<ul class="simple">
-<li><p>Is it the same?</p></li>
-<li><p>Why might it not be the same?</p></li>
-</ul>
+<p>Once complete, you should see thirteen files in your output folder, one for each gene.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Check the number of sequences in each gene file.
+Is it the same? Why might it not be the same?</p>
+</div>
 <p>I should note that this script is a very rigid solution. There is no standard format for gene names in GenBank, so our sequences use many different variants for the same gene: e.g. cox1, co1, coi, etc. The script is hardcoded to recognise as many variants as I have seen, but if you were to use this script on your own data, it might miss a gene if it had a different name. The more common approach to this task is to manually extract the sequences using a GUI tool such as Geneious, but we have not done this for several reasons:</p>
 <ul class="simple">
 <li><p>It’s slow and boring, we prefer automated tools</p></li>
 <li><p>Geneious is not free</p></li>
 <li><p>Manual processes frequently introduce errors into sequence naming</p></li>
 </ul>
-<p>Now we can move on to <a class="reference internal" href="aligning_protein_coding_genes.html#aligning"><span class="std std-ref">aligning protein coding genes.</span></a></p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have our folder of genes, we will move on to <a class="reference internal" href="aligning_protein_coding_genes.html#aligning"><span class="std std-ref">3. Aligning Protein Coding Genes</span></a>.</p>
+</div>
 </div>
 
 

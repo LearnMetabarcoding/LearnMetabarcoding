@@ -28,7 +28,8 @@ Run the following command, making sure to replace ``raw`` with the name of the d
 Notice how we've looped on the extracted gene files, running MAFFT on each file as input and outputting the alignment as a file with the same name, but in new directory.
 
 .. admonition:: Exercise
-	While this is running, have a look at the `manual for MAFFT <https://mafft.cbrc.jp/alignment/software/manual/manual.html>`_, in particular the different methods for alignment. Think about what might be best for these genes [#f1]_.
+
+	While this is running, have a look at the `manual for MAFFT <https://mafft.cbrc.jp/alignment/software/manual/manual.html>`_, in particular the different methods for alignment. Think about what might be best for these genes.
 	
 
 .. admonition:: Solution
@@ -52,3 +53,4 @@ Next Steps
 ==========
 
 Now that we have an alignment of each of our genes, we can bring this data together by :ref:`4. Concatenating Alignments<concat_alignments>`.
+

@@ -181,7 +181,7 @@
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>CROP needs every unique read for each ASV in the input dataset, it cannot read <code class="docutils literal notranslate"><span class="pre">;size=</span></code> tags. We can generate this from our input ASVs quite easily though, using the <code class="docutils literal notranslate"><span class="pre">--rereplicate</span></code> function of VSEARCH.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vsearch --rereplicate ​in.fasta​ --relabel repl --output ​out.fasta
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vsearch --rereplicate ​in.fasta​ --output ​out.fasta
 </pre></div>
 </div>
 </div>
@@ -202,12 +202,12 @@ Run greedy clustering at the 3% and 5% dissimilarity levels. How do the number o
 </div>
 <div class="section" id="tracking-our-asvs">
 <h2>Tracking our ASVs<a class="headerlink" href="#tracking-our-asvs" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">outname.cluster.list</span></code> file that CROP produces is a text file that contains a list of the sequences included in each cluster. Run <code class="docutils literal notranslate"><span class="pre">more</span> <span class="pre">outname.cluster.list</span></code> to have a look at it. We’ll return to this file later when we want to map our reads.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">outname.cluster.list</span></code> file that CROP produces is a text file that contains a list of the sequences included in each cluster. Run <code class="docutils literal notranslate"><span class="pre">more</span> <span class="pre">outname.cluster.list</span></code> to have a look at it. You’ll note that on each line, the same ASV is repeated multiple times. This is because we rereplicated our ASVs earlier, and CROP worked on these ASV reads, each of which had the same name. We’ll return to this file later when we want to map our reads.</p>
 </div>
 <div class="section" id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>We’ve generated a set of OTUs using one method. If you haven’t already, try out the other two types of OTU clustering: <a class="reference internal" href="greedy.html#greedy-clustering"><span class="std std-ref">Greedy Clustering</span></a> and <a class="reference internal" href="linkage_based.html#linkage-delimitation"><span class="std std-ref">Linkage Delimitation</span></a>.</p>
-<p>Alternatively, if you’ve tried these already, the <a class="reference internal" href="comparing_otus.html#comparing-otus"><span class="std std-ref">Comparing OTU Delimitation methods</span></a> subsection outlines some ways to compare these methods and some hints for selecting a method and parameters. Once you have a final set of OTUs, you can proceed with them to the <a class="reference internal" href="../../otuid.html#generating-data"><span class="std std-ref">Generating Data</span></a> section to learn about mapping your reads to your OTUs and doing taxonomic classification. Later on, we’ll use these same OTUs and try to place them onto a phylogenetic tree in the <a class="reference internal" href="../../otu_phylogeny/placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic Placement</span></a> section.</p>
+<p>If you’ve now tried all three methods, the <a class="reference internal" href="comparing_otus.html#comparing-otus"><span class="std std-ref">Comparing OTU Delimitation methods</span></a> subsection outlines some ways to compare these methods and some hints for selecting a method and parameters. Once you have a final set of OTUs and an associated record of ASVs within each OTU, you can proceed with these two files to the <a class="reference internal" href="../mapping_reads.html#mapping-reads"><span class="std std-ref">Mapping Reads</span></a> section to learn about mapping your reads to your OTUs. Later on, we’ll also use the OTU sequences to generate a phylogeny of our OTUs in the <a class="reference internal" href="../../building_otu_phylogeny.html#phylogeny"><span class="std std-ref">Building OTU Phylogeny</span></a> section, and to retrieve taxonomic identifications and/or classifications for the OTU sequences in the <a class="reference internal" href="../../otuid.html#otuid"><span class="std std-ref">Identifying OTU Sequences</span></a> section.</p>
 </div>
 </div>
 

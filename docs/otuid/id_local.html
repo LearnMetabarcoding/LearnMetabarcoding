@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Reference Sets &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>Identifying OTUs with References &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Extension: Mapping reads to references" href="mapping_reads_to_refs.html" />
-    <link rel="prev" title="2. Identifiation using a curated database" href="id_with_curated_db.html" /> 
+    <link rel="prev" title="2. 2. Classification with Curated Databases" href="id_with_curated_db.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,11 +94,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../building_otu_phylogeny.html">Building OTU Phylogeny</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../otuid.html">Identifying OTU Sequences</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="database.html">Database Classification</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Reference Sets</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Identifying OTUs with References</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mapping_reads_to_refs.html">Extension: Mapping reads to references</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="phylogeny_based.html">Phylogeny-based Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phylogeny_based.html">Phylogenetic Classification</a></li>
 </ul>
 </li>
 </ul>
@@ -149,7 +149,7 @@
         
           <li><a href="../otuid.html">Identifying OTU Sequences</a> &raquo;</li>
         
-      <li>Reference Sets</li>
+      <li>Identifying OTUs with References</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,25 +168,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="reference-sets">
-<span id="id-local"></span><h1>Reference Sets<a class="headerlink" href="#reference-sets" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id-local">
+<span id="identifying-otus-with-references"></span><h1>Identifying OTUs with References<a class="headerlink" href="#id-local" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>It’s clear that global and curated databases are very useful for assigning broad taxonomy, but don’t do great identifying our OTUs to lower taxonomic levels for these sorts of samples. Usefully, we picked out some morphospecies and sequenced them separately using Sanger sequencing.</p>
-<p>These sequences are in <code class="docutils literal notranslate"><span class="pre">/AMM/references/canopy_Coleop_COX1_sI.fa</span></code>.</p>
-<p>Let’s use BLAST to search our OTUs against this fasta of references. There’s no need to copy it to our directory. Run the following BLAST command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$blastn</span>-query​otus.fasta-​subject/AMM/references/canopy_Coleop_COX1_sI.fa-outfmt <span class="m">6</span> -out ​out.txt -​ num_threads <span class="m">1</span> -evalue <span class="m">0</span>.001 -perc_identity <span class="m">97</span>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Global and curated databases are very useful for assigning broad taxonomy, but don’t do great identifying our OTUs to lower taxonomic levels for these sorts of samples. Usefully, we picked out some morphospecies and sequenced them separately using Sanger sequencing.</p>
+<p>You can download these sequences from TODO <code class="docutils literal notranslate"><span class="pre">/AMM/references/canopy_Coleop_COX1_sI.fa</span></code>.</p>
+</div>
+<div class="section" id="using-blast">
+<h2>Using BLAST<a class="headerlink" href="#using-blast" title="Permalink to this headline">¶</a></h2>
+<p>We will use BLAST to search our OTUs against this FASTA of references. There’s no need to copy it to our directory. Run the following BLAST command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$blastn</span> -query ​otus.fasta -​subject references.fasta -outfmt <span class="m">6</span> -out ​out.txt -​num_threads <span class="m">1</span> -evalue <span class="m">0</span>.001 -perc_identity <span class="m">97</span>
 </pre></div>
 </div>
 <p>Because we know that both our OTUs and our reference set are likely to all be closely related, we’re setting a strict <code class="docutils literal notranslate"><span class="pre">-evalue</span></code> and a threshold percentage identity so that we don’t simply get every OTU matching against every reference.</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">cat</span></code> to view the output file. We’re using the standard blast tabulated output (<code class="docutils literal notranslate"><span class="pre">-​</span> <span class="pre">outfmt</span> <span class="pre">6</span></code>); you can find out what the columns refer to <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK279684/">here</a>. Rather obviously, the first refers to the query sequence, the second the subject, and the third the percent identity. You can see we’ve got some clear hits for some of our OTUs!</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
 <ul class="simple">
 <li><p>Do any of our OTUs hit multiple different references? Why might this be?</p></li>
 <li><p>Do the OTUs matching Coleoptera references correspond to those assigned to Coleoptera using MEGAN?</p></li>
 <li><p>Does this give us more information about any of our OTUs compared with the global database search?</p></li>
 </ul>
-<p>You can now have a look at the next extension task on <a class="reference internal" href="mapping_reads_to_refs.html#map-to-ref"><span class="std std-ref">mapping reads to references.</span></a>
-Alternatively you can move onto the next practical section on <a class="reference internal" href="../otu_phylogeny/trees.html#trees"><span class="std std-ref">building phylogentic trees.</span></a></p>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>If you have a comprehensive reference set of barcodes for all of the species you expect to find in your metabarcoding, or at least all of the ones you’re interested in, you could actually skip a considerable proportion of the metabarcoding pipeline. This is because there’s no need to necessarily filter and delimit OTUs from scratch - you already have your “OTU” sequences and once you’ve finished processing your reads, you can simply search them against your references. You can read more about this and try it out in <a class="reference internal" href="mapping_reads_to_refs.html#map-to-ref"><span class="std std-ref">Extension: Mapping Reads to References</span></a>.</p>
+<p>A final method for generating taxonomic information will be covered in the next subsection on <a class="reference internal" href="phylogeny_based.html#phylogenetic-classification"><span class="std std-ref">Phylogenetic Classification</span></a>.</p>
+</div>
 </div>
 
 
@@ -200,7 +212,7 @@ Alternatively you can move onto the next practical section on <a class="referenc
         <a href="mapping_reads_to_refs.html" class="btn btn-neutral float-right" title="Extension: Mapping reads to references" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="id_with_curated_db.html" class="btn btn-neutral float-left" title="2. Identifiation using a curated database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="id_with_curated_db.html" class="btn btn-neutral float-left" title="2. 2. Classification with Curated Databases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

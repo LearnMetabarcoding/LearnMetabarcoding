@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Database Classification" href="otuid/database.html" />
-    <link rel="prev" title="Extension: Comparing OTU methods" href="otu_phylogeny/trees/extensions/tree_comparison.html" /> 
+    <link rel="prev" title="5. Tree building" href="otu_phylogeny/trees/tree_building.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,8 +94,8 @@
 <li class="toctree-l1"><a class="reference internal" href="building_otu_phylogeny.html">Building OTU Phylogeny</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Identifying OTU Sequences</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="otuid/database.html">Database Classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="otuid/id_local.html">Reference Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="otuid/phylogeny_based.html">Phylogeny-based Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otuid/id_local.html">Identifying OTUs with References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otuid/phylogeny_based.html">Phylogenetic Classification</a></li>
 </ul>
 </li>
 </ul>
@@ -163,19 +163,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="generating-data">
-<span id="identifying-otu-sequences"></span><h1>Identifying OTU Sequences<a class="headerlink" href="#generating-data" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>In this section, we finally bring everything together to generate the main output data from metabarcoding bioinformatics that can be analysed to answer your research questions. Now that we have a set of sequences that represent our biological units, namely OTUs, we need to answer two crucial questions:</p>
-<ol class="arabic simple">
-<li><p>Which samples contain which OTUs?</p></li>
-<li><p>What are the OTUs?</p></li>
-</ol>
-<p>This section requires data from previous sections: a unique set of OTU sequences (or ASV sequences), and a set of reads that contain information about the sample from which each read was drawn.</p>
-<p>Now we have some OTUs in hand, we have two final tasks. We need to get some idea of what OTUs are present in which sample, and we want to try and identify our OTUs to some degree. Firstly, we’ll map our individual reads against the OTUs. Secondly, we’ll try and identify them against a global database using a very broad approach, then against a local database.</p>
+  <div class="section" id="otuid">
+<span id="identifying-otu-sequences"></span><h1>Identifying OTU Sequences<a class="headerlink" href="#otuid" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In previous sections we found how to filter metabarcoding sequences to generate an ASV dataset, and how to group these into OTUs. To that point, the output sequences were anonymous - beyond an arbitrary name, we didn’t necessarily know anything about what taxa these OTUs represent, a crucial step for using metabarcoding for ecological analysis.</p>
+<p>While we may have got some anecdotal hints from the placement of our OTUs onto phylogenetic trees, in this section we will apply standardised methodologies to taxonomically classify OTUs and hopefully match them against reference sequences to identify some OTUs to the species or morphospecies level. As well as generating taxonomic classifications for OTUs, we will also explore how we can use these taxonomic classifications to filter our set of OTU sequences.</p>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>This section requires that you have a FASTA file of OTUs. As in the previous section, you could substitute ASVs for OTUs throughout this section and get the equivalent ASV-level results.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>We will look at three ways of classifying and identifying OTU sequences. These three subsections are completely independent of one another so can be tackled in any order.</p>
+<p>In the <a class="reference internal" href="otuid/database.html#database-classification"><span class="std std-ref">Database Classification</span></a> subsection, we’ll look at some methods for classifying OTU sequences against publicly available reference databases. We use these classifications to optionally filter our OTU sequences by taxonomy.</p>
+<p>In the <span class="xref std std-ref">Reference Identification</span> subsection, we’ll compare our OTU sequences against a reference set to attempt to identify some our sequences to the species or morphospecies level.</p>
+<p>Finally, in the <a class="reference internal" href="otuid/phylogeny_based.html#phylogenetic-classification"><span class="std std-ref">Phylogenetic Classification</span></a> subsection, we’ll bring in the phylogenetic tree we built in the previous section to use phylogenetic placement of OTUs alongside references to assign taxonomy. We suggest you have a look the <a class="reference internal" href="building_otu_phylogeny.html#phylogeny"><span class="std std-ref">Building OTU Phylogeny</span></a> section, particularly the <a class="reference internal" href="otu_phylogeny/placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic Placement</span></a> subsection, before this section, although starting data is available if not.</p>
 </div>
 </div>
 
@@ -190,7 +196,7 @@
         <a href="otuid/database.html" class="btn btn-neutral float-right" title="Database Classification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="otu_phylogeny/trees/extensions/tree_comparison.html" class="btn btn-neutral float-left" title="Extension: Comparing OTU methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="otu_phylogeny/trees/tree_building.html" class="btn btn-neutral float-left" title="5. Tree building" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

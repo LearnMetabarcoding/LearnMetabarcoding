@@ -25,4 +25,4 @@ As in the previous sections, we would like to stress here that the focus is on e
 Next Steps
 ==========
 
-We suggest you work through the 5 steps of this subsection one by one, starting with `Preparing Mitogenome Data <prep_mitogenome_data>`.
+We suggest you work through the 5 steps of this subsection one by one, starting with :ref:`Preparing Mitogenome Data <prep_mitogenome_data>`.

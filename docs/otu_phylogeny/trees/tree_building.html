@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6. Tree Viewing" href="tree_viewing.html" />
+    <link rel="next" title="Identifying OTU Sequences" href="../../otuid.html" />
     <link rel="prev" title="4. Concatenating alignments" href="concatenating_alignments.html" /> 
 </head>
 
@@ -92,15 +92,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">Filtering Amplicon Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../otu_asv_read.html">OTUs, ASVs and Read Mapping</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a barcode tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">OTU Phylogenetic Placement</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a Barcode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">Phylogenetic Placement</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building a Mitogenome Reference Tree</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="preparing_mitogenome_data.html">1. Preparing mitogenome data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="extracting_protein_coding_genes.html">2. Extracting protein coding genes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extracting_protein_coding_genes.html">2. Extracting Protein Coding Genes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aligning_protein_coding_genes.html">3. Aligning protein coding genes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="concatenating_alignments.html">4. Concatenating alignments</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">5. Tree building</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tree_viewing.html">6. Tree Viewing</a></li>
 </ul>
 </li>
 </ul>
@@ -154,7 +153,7 @@
         
           <li><a href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a> &raquo;</li>
         
-          <li><a href="../trees.html">Building Phylogenetic Trees for Metagenetics</a> &raquo;</li>
+          <li><a href="../trees.html">Building a Mitogenome Reference Tree</a> &raquo;</li>
         
       <li>5. Tree building</li>
     
@@ -177,20 +176,39 @@
             
   <div class="section" id="tree-building">
 <span id="id1"></span><h1>5. Tree building<a class="headerlink" href="#tree-building" title="Permalink to this headline">¶</a></h1>
-<p>We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an “approximately maximum likelihood” phylogenetic tree building method, broadly similar in method to PhyML or RAxML.</p>
-<p>Use the following command, using the output from the previous step as the input and choosing an appropriate name for your tree. The <code class="docutils literal notranslate"><span class="pre">-gtr</span></code> option tells FastTree to use the GTR+CAT model, and the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option specifies that this is DNA data.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an “approximately maximum likelihood” phylogenetic tree building method, broadly similar in method to PhyML, RAxML or IQtree.</p>
+</div>
+<div class="section" id="running-fasttree">
+<h2>Running FastTree<a class="headerlink" href="#running-fasttree" title="Permalink to this headline">¶</a></h2>
+<p>Use the following command, using the supermatrix output from the previous step as the input and choosing an appropriate name for your tree. The <code class="docutils literal notranslate"><span class="pre">-gtr</span></code> option tells FastTree to use the GTR+CAT model, and the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option specifies that this is DNA data.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ FastTree -gtr -nt &lt; ​supermatrix.fasta​ &gt; ​tree.nwk
 </pre></div>
 </div>
-<p>The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the <code class="docutils literal notranslate"><span class="pre">head</span></code> command. Each terminal in the tree has the ID of the sequence used to generate it. These code names are very useful for linking to data about our sequences, but aren’t helpful for examining the tree and interrogating its success.</p>
-<p>In this case, we’ll use a script to pull metadata from the GenBank files to do the renaming. Again, this is a custom script used to skip over tedious bits of this pipeline, it’s definitely not a required step.</p>
-<p>The script is <code class="docutils literal notranslate"><span class="pre">rename_newick_with_gb.pl</span></code>, check out the helpfile using <code class="docutils literal notranslate"><span class="pre">-h</span></code> and rename the tree with the fields you think would be useful. My suggestion is below.</p>
-<div class="toggle admonition">
-<p class="admonition-title">Suggestion</p>
-<p><code class="docutils literal notranslate"><span class="pre">rename_newick_with_gb.pl</span> <span class="pre">-g</span> <span class="pre">​novelmt.gb</span> <span class="pre">genbankmt.gb​</span> <span class="pre">-t</span> <span class="pre">​tree.nwk​</span> <span class="pre">-o</span> <span class="pre">​tree_RN.nwk​</span></code>
-<code class="docutils literal notranslate"><span class="pre">-fields</span> <span class="pre">LOCUS</span> <span class="pre">TAXONOMY</span> <span class="pre">-ntax</span> <span class="pre">6</span></code></p>
+<p>The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the <code class="docutils literal notranslate"><span class="pre">head</span></code> command. Each terminal in the tree has the ID of the sequence used to generate it.</p>
 </div>
-<p>The next stage is to <a class="reference internal" href="../otu_trees.html#otu-tree"><span class="std std-ref">build a tree for our OTUs</span></a></p>
+<div class="section" id="adding-taxonomy">
+<h2>Adding Taxonomy<a class="headerlink" href="#adding-taxonomy" title="Permalink to this headline">¶</a></h2>
+<p>The terminals of the tree are named only with the code names for their respective source sequences. We would like to add in the taxonomy so that the terminals are meaningful. There are lots of ways to do this, but our usual method is to use a custom script which takes as input the tree and a table that records the taxonomy of all of the sequences. Happily enough, we happen to have that table handy. Download this file to your working directory and run the following command:</p>
+<p>TODO</p>
+</div>
+<div class="section" id="assessing-trees">
+<h2>Assessing Trees<a class="headerlink" href="#assessing-trees" title="Permalink to this headline">¶</a></h2>
+<p>You can download the renamed tree to your computer and open it using a tree viewer such as Figtree or Dendroscope. If you’re completely new to viewing phylogenetic trees, you may want to read the page on <span class="xref std std-ref">viewing trees</span>.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Whenever we build a phylogenetic tree, we must closely inspect it to determine how well the tree building performed. Have a look at your tree for features that aren’t quite right:</p>
+<ul class="simple">
+<li><p>Check to see whether, in general, the taxonomy of your terminals matches the clade structure of the tree</p></li>
+<li><p>Check to see whether there are any very long branches. Why might these occur?</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>If you’ve been following through these steps with your own data, we would suggest also trying out a more thorough tree building program such as RAxML, IQtree, PhyML, MrBayes or BEAST. These are much slower to run with mitogenome-scale data, but are much more accurate and appropriate for building a tree for a real analysis. Once you have your tree, you can go back to the subsection on <a class="reference internal" href="../placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic Placement</span></a> to place your OTUs within your tree.</p>
+</div>
 </div>
 
 
@@ -201,7 +219,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tree_viewing.html" class="btn btn-neutral float-right" title="6. Tree Viewing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../otuid.html" class="btn btn-neutral float-right" title="Identifying OTU Sequences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="concatenating_alignments.html" class="btn btn-neutral float-left" title="4. Concatenating alignments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

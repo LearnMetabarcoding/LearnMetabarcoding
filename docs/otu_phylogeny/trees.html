@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Building Phylogenetic Trees for Metagenetics &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>Building a Mitogenome Reference Tree &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. Preparing mitogenome data" href="trees/preparing_mitogenome_data.html" />
-    <link rel="prev" title="OTU Phylogenetic Placement" href="placing_otus_in_trees.html" /> 
+    <link rel="prev" title="Phylogenetic Placement" href="placing_otus_in_trees.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,15 +92,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../otu_asv_read.html">OTUs, ASVs and Read Mapping</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../building_otu_phylogeny.html">Building OTU Phylogeny</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="otu_trees.html">Making a barcode tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="placing_otus_in_trees.html">OTU Phylogenetic Placement</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Building Phylogenetic Trees for Metagenetics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="otu_trees.html">Making a Barcode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="placing_otus_in_trees.html">Phylogenetic Placement</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Building a Mitogenome Reference Tree</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="trees/preparing_mitogenome_data.html">1. Preparing mitogenome data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="trees/extracting_protein_coding_genes.html">2. Extracting protein coding genes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trees/extracting_protein_coding_genes.html">2. Extracting Protein Coding Genes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="trees/aligning_protein_coding_genes.html">3. Aligning protein coding genes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="trees/concatenating_alignments.html">4. Concatenating alignments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="trees/tree_building.html">5. Tree building</a></li>
-<li class="toctree-l3"><a class="reference internal" href="trees/tree_viewing.html">6. Tree Viewing</a></li>
 </ul>
 </li>
 </ul>
@@ -154,7 +153,7 @@
         
           <li><a href="../building_otu_phylogeny.html">Building OTU Phylogeny</a> &raquo;</li>
         
-      <li>Building Phylogenetic Trees for Metagenetics</li>
+      <li>Building a Mitogenome Reference Tree</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,22 +172,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="building-phylogenetic-trees-for-metagenetics">
-<span id="trees"></span><h1>Building Phylogenetic Trees for Metagenetics<a class="headerlink" href="#building-phylogenetic-trees-for-metagenetics" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Mitochondrial genomes allow us to build accurate phylogenetic trees of our references. These trees can be a powerful supplement to metagenomics in many ways:</p>
-<ul class="simple">
-<li><p>Inclusion of phylogenetic relationships for analysing ecological patterns in an evolutionary context</p></li>
-<li><p>More detailed identification of anonymous OTUs through placement within an established phylogenetic tree</p></li>
-</ul>
-<p>Phylogenetic trees are more powerful when built with comprehensive data. Here we introduce a rapid and efficient pipeline for building a tree with our data. We supplement our mitogenomes with data from GenBank, then extract genes, align them, concatenate to a supermatrix and perform some fast tree building. This is not going to produce the best phylogeny! This is a general overview of the pipeline we use, the aim is to:</p>
-<ul class="simple">
-<li><p>For those without phylogenetics experience, present an introduction to outline and demystify the process of tree building</p></li>
-<li><p>For those with phylogenetics experience, hopefully introduce some novel techniques</p></li>
-</ul>
+  <div class="section" id="building-a-mitogenome-reference-tree">
+<span id="trees"></span><h1>Building a Mitogenome Reference Tree<a class="headerlink" href="#building-a-mitogenome-reference-tree" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Phylogenetic trees are more powerful when built with comprehensive data. Mitochondrial genomes allow us to build accurate phylogenetic trees from a set of reference specimens. The previous subsections have demonstrated how we can use these phylogenies; here we work through a rapid and efficient pipeline for building a mitogenome phylogeny.</p>
+<p>We will use as our data a combination of novel mitogenomes sequenced from reference specimens from the same study as our toy data, along with further data downloaded by GenBank. Data from either source alone would be suitable, but the combination makes our phylogeny more comprehensive and therefore more effective both as a backbone and to aid in later use to assign taxonomy.</p>
+<p>As in the previous sections, we would like to stress here that the focus is on exploring the possibilities and potentialities of phylogenetic metabarcoding, but a detailed exploration of phylogenetic methodologies and analysis is beyond the scope of these resources. The broad methodologies presented here cover a general outline of methods for building phylogenies, but the specific alignment and tree-building software employed has been chosen for speed and ease of use, rather than necessarily for optimal phylogenetic reconstruction.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>We suggest you work through the 5 steps of this subsection one by one, starting with <a class="reference internal" href="trees/preparing_mitogenome_data.html#prep-mitogenome-data"><span class="std std-ref">Preparing Mitogenome Data</span></a>.</p>
 </div>
 </div>
 
@@ -203,7 +199,7 @@
         <a href="trees/preparing_mitogenome_data.html" class="btn btn-neutral float-right" title="1. Preparing mitogenome data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="placing_otus_in_trees.html" class="btn btn-neutral float-left" title="OTU Phylogenetic Placement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="placing_otus_in_trees.html" class="btn btn-neutral float-left" title="Phylogenetic Placement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

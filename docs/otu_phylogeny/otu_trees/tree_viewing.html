@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Extension: MEGAN settings &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>Viewing Trees &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. 2. Classification with Curated Databases" href="../id_with_curated_db.html" />
-    <link rel="prev" title="1. Classification with GenBank &amp; MEGAN" href="../id_with_megan.html" /> 
+    <link rel="next" title="Extension: Barcode Tree with References" href="reference_otu_tree.html" />
+    <link rel="prev" title="Viewing Alignments" href="alignment_viewing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,20 +91,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">Read processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">Filtering Amplicon Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../otu_asv_read.html">OTUs, ASVs and Read Mapping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../otuid.html">Identifying OTU Sequences</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../database.html">Database Classification</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../id_with_megan.html">1. Classification with GenBank &amp; MEGAN</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Extension: MEGAN settings</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../otu_trees.html">Making a Barcode Tree</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="alignment_viewing.html">Viewing Alignments</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Viewing Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_otu_tree.html">Extension: Barcode Tree with References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tree_comparison.html">Extension: Comparing OTU methods</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../id_with_curated_db.html">2. 2. Classification with Curated Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">Phylogenetic Placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trees.html">Building a Mitogenome Reference Tree</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../id_local.html">Identifying OTUs with References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../phylogeny_based.html">Phylogenetic Classification</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../otuid.html">Identifying OTU Sequences</a></li>
 </ul>
 
             
@@ -151,19 +150,17 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../otuid.html">Identifying OTU Sequences</a> &raquo;</li>
+          <li><a href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a> &raquo;</li>
         
-          <li><a href="../database.html">Database Classification</a> &raquo;</li>
+          <li><a href="../otu_trees.html">Making a Barcode Tree</a> &raquo;</li>
         
-          <li><a href="../id_with_megan.html">1. Classification with GenBank &amp; MEGAN</a> &raquo;</li>
-        
-      <li>Extension: MEGAN settings</li>
+      <li>Viewing Trees</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/otuid/extensions/megan_settings.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/otu_phylogeny/otu_trees/tree_viewing.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -176,18 +173,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="extension-megan-settings">
-<span id="megan-settings"></span><h1>Extension: MEGAN settings<a class="headerlink" href="#extension-megan-settings" title="Permalink to this headline">¶</a></h1>
-<p>Go to ​Options &gt; Change LCA Parameters​. Let’s adjust this to only take into account close relatives by modifying the ​Min Percent Identity parameter to ignore any hits below, say, 80% similarity (i.e. ​Min Percent Identity​ = 0.80).</p>
-<ul class="simple">
-<li><p>How does this change things?</p></li>
-<li><p>Is this an appropriate selection for this dataset?</p></li>
-</ul>
-<p>Return the ​Min Percent Identity to 0.0 and this time change the ​Top Percent value to 60 and the ​LCA Algorithm to weighted. This allows taking into account many more hits for the LCA algorithm, but weights them according to their score, which is more appropriate for shorter reads. This also may work better for an understudied community that doesn’t get many close hits.</p>
-<ul class="simple">
-<li><p>How does this change the taxonomy assignments?</p></li>
-</ul>
-<p>The next section is on <a class="reference internal" href="../id_with_curated_db.html#id-curated"><span class="std std-ref">identifiction using curated databases</span></a>!</p>
+  <div class="section" id="viewing-trees">
+<span id="tree-viewing"></span><h1>Viewing Trees<a class="headerlink" href="#viewing-trees" title="Permalink to this headline">¶</a></h1>
+<p>TODO</p>
 </div>
 
 
@@ -198,10 +186,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../id_with_curated_db.html" class="btn btn-neutral float-right" title="2. 2. Classification with Curated Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="reference_otu_tree.html" class="btn btn-neutral float-right" title="Extension: Barcode Tree with References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../id_with_megan.html" class="btn btn-neutral float-left" title="1. Classification with GenBank &amp; MEGAN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="alignment_viewing.html" class="btn btn-neutral float-left" title="Viewing Alignments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

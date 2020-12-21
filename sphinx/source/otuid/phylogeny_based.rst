@@ -1,4 +1,4 @@
-.. _phylogenetic_classification
+.. _phylogenetic_classification:
 
 ===========================
 Phylogenetic Classification

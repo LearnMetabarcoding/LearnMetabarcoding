@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. Tree Viewing &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  <title>Extension: Comparing OTU methods &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Extension: Comparing OTU methods" href="extensions/tree_comparison.html" />
-    <link rel="prev" title="5. Tree building" href="tree_building.html" /> 
+    <link rel="next" title="Phylogenetic Placement" href="../placing_otus_in_trees.html" />
+    <link rel="prev" title="Extension: Barcode Tree with References" href="reference_otu_tree.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,20 +92,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">Filtering Amplicon Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../otu_asv_read.html">OTUs, ASVs and Read Mapping</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a barcode tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">OTU Phylogenetic Placement</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building Phylogenetic Trees for Metagenetics</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="preparing_mitogenome_data.html">1. Preparing mitogenome data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="extracting_protein_coding_genes.html">2. Extracting protein coding genes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="aligning_protein_coding_genes.html">3. Aligning protein coding genes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="concatenating_alignments.html">4. Concatenating alignments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tree_building.html">5. Tree building</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">6. Tree Viewing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="extensions/tree_comparison.html">Extension: Comparing OTU methods</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../otu_trees.html">Making a Barcode Tree</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="alignment_viewing.html">Viewing Alignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tree_viewing.html">Viewing Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_otu_tree.html">Extension: Barcode Tree with References</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Extension: Comparing OTU methods</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">Phylogenetic Placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../trees.html">Building a Mitogenome Reference Tree</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../otuid.html">Identifying OTU Sequences</a></li>
@@ -157,15 +152,15 @@
         
           <li><a href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a> &raquo;</li>
         
-          <li><a href="../trees.html">Building Phylogenetic Trees for Metagenetics</a> &raquo;</li>
+          <li><a href="../otu_trees.html">Making a Barcode Tree</a> &raquo;</li>
         
-      <li>6. Tree Viewing</li>
+      <li>Extension: Comparing OTU methods</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/otu_phylogeny/trees/tree_viewing.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/otu_phylogeny/otu_trees/tree_comparison.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -178,23 +173,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tree-viewing">
-<span id="id1"></span><h1>6. Tree Viewing<a class="headerlink" href="#tree-viewing" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="section" id="extension-comparing-otu-methods">
+<span id="otu-comparison-tree"></span><h1>Extension: Comparing OTU methods<a class="headerlink" href="#extension-comparing-otu-methods" title="Permalink to this headline">¶</a></h1>
+<p>Now that we’ve learned a quick method of building trees, we can use this knowledge to compare our OTUs from different methods.</p>
+<p>First, let’s create a folder for this little side project, just to be organised</p>
+<p>Second, we need to create copies of our OTU files with names added to the headers in order to differentiate OTUs from different methods. For each OTU file, run the following command, replacing method with a description of the method used to create OTUS, e.g. “greedy97pc” (text or numbers only, no spaces or other characters!):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sed -e <span class="s2">&quot;s/\(^&gt;.*</span>$<span class="s2">\)/\1method/&quot;</span> file &gt; newfolder/file
+</pre></div>
 </div>
-<p>Download both of these trees to your computer and open them using FigTree, Dendroscope or similar to view the tree.</p>
-<p>We know these trees aren’t going to be perfect because we’ve used a very fast method to get here, without tweaking alignments or tree-building methods. This is a good chance to look for features of trees that aren’t quite right:</p>
-<ul class="simple">
-<li><p>Check to see whether, in general, the taxonomy of your terminals matches the clade structure of the tree</p></li>
-<li><p>Check to see whether there are very long branches</p></li>
-<li><p>Are there any very long branches? Why might this be?</p></li>
-<li><p>Are the OTUs placed as expected based on the taxonomic assignments?</p></li>
-</ul>
-<p>Are there substantial differences between the trees? Which looks better?</p>
-<p>Remember, the taxonomic assignments of the OTUs are not certain, so we shouldn’t really base our assessment of this tree’s accuracy on them.</p>
-<p>Keep the trees up. We will discuss them as a group when everyone’s at this stage.</p>
-<p>If you’re interested in making trees for your CROP and swarm OTUs, have a look at this <a class="reference internal" href="extensions/tree_comparison.html#tree-comparison"><span class="std std-ref">extension task</span></a>.</p>
-<p>In the next session we will be <a class="reference internal" href="../placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">OTU phylogenetic placement!</span></a>.</p>
+<p>Next, concatenate these OTU files into one file - you’ll need to be inside your new folder for this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cat * &gt; allotus.fasta
+</pre></div>
+</div>
+<p>You can now run FastTree on this file and look at how different OTUs match up.</p>
 </div>
 
 
@@ -205,10 +196,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="extensions/tree_comparison.html" class="btn btn-neutral float-right" title="Extension: Comparing OTU methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../placing_otus_in_trees.html" class="btn btn-neutral float-right" title="Phylogenetic Placement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tree_building.html" class="btn btn-neutral float-left" title="5. Tree building" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="reference_otu_tree.html" class="btn btn-neutral float-left" title="Extension: Barcode Tree with References" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

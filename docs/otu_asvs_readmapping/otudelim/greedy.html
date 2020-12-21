@@ -202,11 +202,20 @@ Can we know what is the most appropriate threshold, or is it somewhat arbitrary 
 <p>Rerun the above command, adding <code class="docutils literal notranslate"><span class="pre">--uc</span> <span class="pre">asv_otu.uc</span></code> to the end.
 Run <code class="docutils literal notranslate"><span class="pre">more</span> <span class="pre">asv_otu.uc</span></code> to view this table, checking the VSEARCH documentation (page 11) to see what each column means. Note that it labels the centroids (col. 2) as 0, 1, 2, etc. rather than otu1, otu2, otu3, etc.
 We can correct this a little by doing the following in bash:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ grep -v <span class="s2">&quot;^C&quot;</span> asv_otu.uc &gt; asv_otu_edit.uc                                             <span class="c1"># Remove the cluster lines</span>
-$ cut -f2 asv_otu_edit.uc <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> l<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;otu</span><span class="k">$((</span><span class="nv">$l</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span> &gt; otus.temp    <span class="c1">#convert to the correct names</span>
-$ cut -f3-9 asv_otu_edit.uc &gt; rest.temp                                                 <span class="c1"># extract the rest of the table</span>
-$ paste otus.temp rest.temp &gt; asv_otu_edit.uc                                           <span class="c1"># join together</span>
-$ rm *.temp                                                                             <span class="c1"># clean up</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove the cluster lines</span>
+$ grep -v <span class="s2">&quot;^C&quot;</span> asv_otu.uc &gt; asv_otu_edit.temp
+
+<span class="c1"># Convert to the correct names</span>
+$ cut -f2 asv_otu_edit.temp <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> l<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;otu</span><span class="k">$((</span><span class="nv">$l</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span> &gt; otus.temp
+
+<span class="c1"># Extract the rest of the table</span>
+$ cut -f3-9 asv_otu_edit.temp &gt; rest.temp
+
+<span class="c1"># Join the table parts together</span>
+$ paste otus.temp rest.temp &gt; asv_otu.uc
+
+<span class="c1"># Clean up</span>
+$ rm *.temp
 </pre></div>
 </div>
 </div>
@@ -214,7 +223,7 @@ $ rm *.temp                                                                     
 <div class="section" id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>We’ve generated a set of OTUs using one method. If you haven’t already, try out the other two types of OTU clustering: <a class="reference internal" href="linkage_based.html#linkage-delimitation"><span class="std std-ref">Linkage Delimitation</span></a> and <a class="reference internal" href="bayesian.html#bayesian-clustering"><span class="std std-ref">Bayesian Clustering</span></a>.</p>
-<p>Alternatively, if you’ve tried these already, the <a class="reference internal" href="comparing_otus.html#comparing-otus"><span class="std std-ref">Comparing OTU Delimitation methods</span></a> subsection outlines some ways to compare these methods and some hints for selecting a method and parameters. Once you have a final set of OTUs, you can proceed with them to the <a class="reference internal" href="../../otuid.html#generating-data"><span class="std std-ref">Generating Data</span></a> section to learn about mapping your reads to your OTUs and doing taxonomic classification. Later on, we’ll use these same OTUs and try to place them onto a phylogenetic tree in the <a class="reference internal" href="../../otu_phylogeny/placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic Placement</span></a> section.</p>
+<p>If you’ve now tried all three methods, the <a class="reference internal" href="comparing_otus.html#comparing-otus"><span class="std std-ref">Comparing OTU Delimitation methods</span></a> subsection outlines some ways to compare these methods and some hints for selecting a method and parameters. Once you have a final set of OTUs and an associated record of ASVs within each OTU, you can proceed with these two files to the <a class="reference internal" href="../mapping_reads.html#mapping-reads"><span class="std std-ref">Mapping Reads</span></a> section to learn about mapping your reads to your OTUs. Later on, we’ll also use the OTU sequences to generate a phylogeny of our OTUs in the <a class="reference internal" href="../../building_otu_phylogeny.html#phylogeny"><span class="std std-ref">Building OTU Phylogeny</span></a> section, and to retrieve taxonomic identifications and/or classifications for the OTU sequences in the <a class="reference internal" href="../../otuid.html#otuid"><span class="std std-ref">Identifying OTU Sequences</span></a> section.</p>
 </div>
 </div>
 
