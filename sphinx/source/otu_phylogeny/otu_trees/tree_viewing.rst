@@ -1,6 +1,6 @@
 .. _tree_viewing:
 
-.. role:: greenitalics
+.. role:: greenitalic
 
 =============
 Viewing Trees
@@ -13,4 +13,4 @@ In this subsection we will look at how you can view phylogentic trees using the 
 
 .. parsed-literal::
 
-    :greenitalics:`# this is a comment`
+    :greenitalic:`# this is a comment`
