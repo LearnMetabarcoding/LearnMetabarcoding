@@ -1,31 +1,55 @@
-Introductory main page, with signposting to different sections
+Priority
+========
 
-Introductory section, including subpages
-	Setting up the linux server
-	Getting the data
+Landing page draft done and online
 
-Linux CLI section
+All pages created and website structure finished
 
-Subheadings, signposting
+Content
+=======
 
-Citations and links
+Finish off software list
 
-make sure fastq/fasta -> FASTQ/FASTA
+Each section main page to have data instructions
 
-Standardise code placeholders, e.g. input.fasta, and add a page somewhere that makes this syntax very clear.
+Do phylogenetic classification content
 
-Standardise capitalisation of headings/subheadings
+Do getting started intro page
 
-Standardise link names
+Do cloud servers page
 
-Standardise program names - always use ``name``
+Do viewing alignments and viewing phylogenies pages @liam
 
-Change the copyright section
+Update internal links throughout
 
-Do the alignment viewing and tree viewing sections of OTU tree building
+Add paper citations throughout
 
-Collect data, organise and upload
 
-Change all references to "toy dataset" to "example dataset"
+Data
+====
 
-On each page, a summary of the software and data required for this step.
+Initialise and organise a repo for the course data
+
+Data should be in directories by 5 major sections
+
+
+
+Standardisation
+===============
+
+Apply parsed-literal to all code blocks, apply classes for inputs and comments, remove $ and >
+
+All headings should be sentence case
+
+Every tutorial in the 5 main sections should start with an introduction and end with a next steps section
+
+Most tutorials should have a data and software section, outlining the data required and linking to the software used.
+
+fastq/fasta -> FASTQ/FASTA
+
+Any names of linux base tools, i.e. sed, grep, etc should be presented in ``monospaced`` font.
+
+Any other software should be presented in **boldface**, following capitalisation of the software author
+
+All references to "toy dataset" to "example dataset"
+
