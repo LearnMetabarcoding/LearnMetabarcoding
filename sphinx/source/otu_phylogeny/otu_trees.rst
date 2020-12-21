@@ -8,8 +8,8 @@ Making a Barcode Tree
 	:hidden:
 	
 	otu_trees/reference_otu_tree
-	otu_trees/alignment_viewing
 	otu_trees/tree_comparison
+	otu_trees/alignment_viewing
 	otu_trees/tree_viewing
 
 Introduction
