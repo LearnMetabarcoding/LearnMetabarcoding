@@ -22,3 +22,6 @@ Translating your alignment
 
 You can also translate your alignment by pressing the fourth button on the top row of AliView. This will add more options to the top bar including two dropdown menus. 
 The furthest right drop down menu is for selecting the correct genetic code for your taxa. The one to the left of this is so you can change your reading frame. 
+
+Next steps
+============

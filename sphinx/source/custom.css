@@ -41,3 +41,8 @@
 .togglegreen .admonition-title.open:after {
     content: " ▲";
 }
+
+.greenitalic {
+    color: green;
+    font-style: italic;
+}
