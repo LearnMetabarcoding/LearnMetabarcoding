@@ -53,3 +53,7 @@ Next Steps
 ==========
 
 Now that we have an alignment of each of our genes, we can bring this data together by :ref:`4. Concatenating Alignments<concat_alignments>`.
+
+.. rubric:: Footnotes:
+
+[#f1]_
