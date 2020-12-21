@@ -1,4 +1,4 @@
-.. _OTU_ASV_read_mapping:
+.. _otu_asv_read_mapping:
 
 ===========================
 OTUs, ASVs and Read Mapping
