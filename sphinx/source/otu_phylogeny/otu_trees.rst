@@ -7,10 +7,11 @@ Making a Barcode Tree
 .. toctree::
 	:hidden:
 	
-	otu_trees/reference_otu_tree
-	otu_trees/tree_comparison
 	otu_trees/alignment_viewing
 	otu_trees/tree_viewing
+	otu_trees/reference_otu_tree
+	otu_trees/tree_comparison
+	
 
 Introduction
 ============
