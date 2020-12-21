@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Analysis of Metagenetic data for Macroecology'
+project = 'Bioinformatic Methods for Biodiversity Metabarcoding'
 copyright = '2020, The Vogler Lab'
 author = 'The Vogler Lab'
 
