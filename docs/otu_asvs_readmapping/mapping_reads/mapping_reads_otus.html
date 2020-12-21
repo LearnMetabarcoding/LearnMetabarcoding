@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mapping reads to OTUs &mdash; Analysis of Metagenetic data for Macroecology  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Analysing Read Tables" href="analysing_read_tables.html" />
+    <link rel="prev" title="Mapping reads to ASVs" href="mapping_reads_asvs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Analysis of Metagenetic data for Macroecology
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../notes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linuxintro.html">Command line bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../otu_asv_read.html">OTUs, ASVs and Read Mapping</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../mapping_reads.html">Mapping reads</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mapping_reads_asvs.html">Mapping reads to ASVs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mapping reads to OTUs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysing_read_tables.html">Analysing Read Tables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../otuid.html">Identifying OTU Sequences</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Analysis of Metagenetic data for Macroecology</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../otu_asv_read.html">OTUs, ASVs and Read Mapping</a> &raquo;</li>
+        
+          <li><a href="../mapping_reads.html">Mapping reads</a> &raquo;</li>
+        
+      <li>Mapping reads to OTUs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/otu_asvs_readmapping/mapping_reads/mapping_reads_otus.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mapping-reads-to-otus">
+<span id="mapping-reads-otus"></span><h1>Mapping reads to OTUs<a class="headerlink" href="#mapping-reads-to-otus" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>At first glance, we might assume that it is as straightforward to match reads to OTUs as it is to match reads  to ASVs. However, with ASVs, the sequence of an ASV represents 100% of the variation of that ASV, so we can perform strict exact matching with confidence and even less strict matching with some confidence. On the other hand, the representative sequence of an OTU does not represent all possible variation within an OTU. So exact matching of reads to OTU sequences will leave a large proportion of reads unmatched, many of which will be the reads corresponding to valid ASVs that formed part of an OTU, but did not become that OTU’s representative sequence.</p>
+<p>On the other hand, matching with some threshold of similarity may often be inappropriate for OTUs, because not only might the threshold not be the same, the computation of similarity performed by the matching may not be equivalent to the algorithm used to group OTUs. In the previous section, we used an unambiguous similarity threshold within <code class="docutils literal notranslate"><span class="pre">--usearch_global</span></code> to assign reads to ASVs, and using the same threshold to assign reads to OTUs would only be appropriate <em>if the same method was used to group ASVs into OTUs</em>.</p>
+<p>If this is not the case, we must use a two-stop process. First, we match reads to ASVs as we did in the previous section. Next, we use the data we generated during OTU delimitation reporting which ASVs form each OTU to reduce the ASV read map into an OTU read map, grouping together data for all of the ASVs in each OTU.</p>
+</div>
+<div class="section" id="preparing-the-otu-asv-lists">
+<h2>Preparing the OTU ASV lists<a class="headerlink" href="#preparing-the-otu-asv-lists" title="Permalink to this headline">¶</a></h2>
+<p>For this step, you will need a file that lists the set of ASVs in each OTU, as produced as part of the OTU delimitation for each of our steps. However, because the format of this was slightly different for each OTU delimitation step, we will need to process each of them first, according to the method used. Note that there’s no particular need to run all three of these sections, just run whichever section matches the OTU delimitation method that you chose.</p>
+<div class="section" id="greedy-clustering-using-vsearch">
+<h3>Greedy Clustering using VSEARCH<a class="headerlink" href="#greedy-clustering-using-vsearch" title="Permalink to this headline">¶</a></h3>
+<p>Here our list takes the form of a table, so it’s already almost in the format we want, we just need to drop the hit statistics and strip the <code class="docutils literal notranslate"><span class="pre">;size=</span></code> tags</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cut -f1,8 input.uc <span class="p">|</span> sed -e <span class="s2">&quot;s/;size.*</span>$<span class="s2">//&quot;</span> &gt; output.tsv
+</pre></div>
+</div>
+</div>
+<div class="section" id="linkage-delimitation-using-swarm">
+<h3>Linkage Delimitation using <code class="docutils literal notranslate"><span class="pre">swarm</span></code><a class="headerlink" href="#linkage-delimitation-using-swarm" title="Permalink to this headline">¶</a></h3>
+<p>Here each line of the file is a list of ASVs in one OTU, with the centroid sequence being the first ASV name. The following command strips out the <code class="docutils literal notranslate"><span class="pre">size=</span></code> tags then converts into a table by looping through each line one by one, storing the first item in each line, then looping through the items in a line to generate the output.</p>
+</div>
+<div class="section" id="bayesian-delimitation-using-crop">
+<h3>Bayesian Delimitation using CROP<a class="headerlink" href="#bayesian-delimitation-using-crop" title="Permalink to this headline">¶</a></h3>
+<p>The file output by CROP is similar to that output by swarm. The first item on each line is the name of the centroid sequence, which is followed by a tab then a list of all the ASV reads forming that OTU. Remember, CROP worked on ASV reads, i.e. one sequence for each ASV for each read it had in the original dataset. So we will see duplicated ASV names within OTUs. We don’t need to strip out <code class="docutils literal notranslate"><span class="pre">;size=</span></code> tags though!
+The following command is similar to the command for <code class="docutils literal notranslate"><span class="pre">swarm</span></code>. We convert commas to spaces, then loop through the table in the same way, this time instead of using a single variable <code class="docutils literal notranslate"><span class="pre">$l</span></code> for a line we use two, because we’ve specified that the Input File should be Separated by tab (<code class="docutils literal notranslate"><span class="pre">IFS=$'\t'</span></code>). We generate a line for each ASV read as we did before, but this time we pipe this into a <code class="docutils literal notranslate"><span class="pre">sort</span></code> then find the <code class="docutils literal notranslate"><span class="pre">uniq</span></code> lines to strip out those duplicates.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sed -e <span class="s2">&quot;s/,/ /g&quot;</span> input.list <span class="p">|</span> <span class="se">\</span>
+<span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span><span class="s1">$&#39;\t&#39;</span> <span class="nb">read</span> -r n l <span class="se">\</span>
+<span class="k">do</span> <span class="se">\</span>
+        <span class="k">for</span> a in <span class="nv">$l</span> <span class="se">\</span>
+        <span class="k">do</span> <span class="se">\</span>
+                 <span class="nb">echo</span> -e <span class="s2">&quot;</span><span class="nv">$n</span><span class="s2">\t</span><span class="nv">$a</span><span class="s2">&quot;</span> <span class="se">\</span>
+        <span class="k">done</span> <span class="p">|</span> sort <span class="p">|</span> uniq <span class="se">\</span>
+<span class="k">done</span> &gt; output.tsv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="joining-our-data">
+<h2>Joining our data<a class="headerlink" href="#joining-our-data" title="Permalink to this headline">¶</a></h2>
+<p>Now we can join the output from the above to your table of read counts per ASV per sample, as produced in the previous step, with ASVs as the rows and samples as the columns. We do this using the linux <code class="docutils literal notranslate"><span class="pre">join</span></code> command. The first table will be our table of ASVs and OTUs: the ASVs are column two, so we specify that the join column for the first table is column two (<code class="docutils literal notranslate"><span class="pre">-1</span> <span class="pre">2</span></code>). The second table is our ASV read counts table, where the join column (the column of ASV names) is column one (<code class="docutils literal notranslate"><span class="pre">-2</span> <span class="pre">1</span></code>).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>join -1 <span class="m">2</span> -2 <span class="m">1</span> &lt;<span class="o">(</span>sort ASV-OTU.tsv<span class="o">)</span> ASV_read_map.tsv &gt; output.tsv
+</pre></div>
+</div>
+<p>Note that we sorted the ASV-to-OTU table, this is a necessary step for <code class="docutils literal notranslate"><span class="pre">join</span></code> to work properly.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">head</span></code> to view the output file. You’ll see two columns of sequence names followed by the read count data. The first column is the join column, i.e. the ASV names. The second column is the other column from the ASV-to-OTU table, i.e. the OTU centroid names. We can now get rid of the first column, the ASV names, after changing the file from space-delimited back to tab-delimited</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sed -e <span class="s2">&quot;s/ /\t/g&quot;</span> input.tsv <span class="p">|</span> cut -d2- &gt; output.tsv
+</pre></div>
+</div>
+<p>You might have noticed that we’ve lost the header column from the ASV read map table: this is because it didn’t have an ASV name in column 1 to match against the other table. No matter, we can bring it back again.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat &lt;<span class="o">(</span>head -1 ASV_read_map.tsv<span class="o">)</span> input.tsv &gt; output.tsv
+</pre></div>
+</div>
+</div>
+<div class="section" id="summing-over-otus">
+<h2>Summing over OTUs<a class="headerlink" href="#summing-over-otus" title="Permalink to this headline">¶</a></h2>
+<p>The last issue is that we have multiple rows for each OTU, and we want to sum all occurences of all ASVs within each OTU into one row. We can do this using an R one-liner.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Rscript -e <span class="s1">&#39;x&lt;-read.table(&quot;input.tsv&quot;,header=T,comment.char=&quot;&quot;,sep=&quot;\t&quot;);rowsum(x[,-1],x[,1])&#39;</span> &gt; output.tsv
+</pre></div>
+</div>
+<p>This output gives the total read numbers for all ASVs within each OTU by sample.</p>
+</div>
+<div class="section" id="shortcut-for-greedy-clustering">
+<h2>Shortcut for Greedy Clustering<a class="headerlink" href="#shortcut-for-greedy-clustering" title="Permalink to this headline">¶</a></h2>
+<p>In the introduction, we discussed that simply matching reads directly to OTUs is not appropriate unless the method we use to match reads to OTUs accurately reflects the method by which OTUs were initially delimited. In fact, for Greedy Clustering, this is true. Greedy clustering uses pairwise similarity to group ASVs, working in order of ASV frequency which has the effect that ties are broken by choosing the more frequent cluster. Given that the outputs are thus ordered by frequency, and that –usearch_global chooses the the first record in the database in the case of ties, we can in fact search reads directly against the OTUs <strong>for greedy clustering only</strong>. This uses the same command as we saw in less-strict ASV mapping:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vsearch --usearch_global reads.fasta -db ​otus_0.97.fasta ​-id <span class="m">0</span>.97 -otutabout output.tsv
+</pre></div>
+</div>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">-id</span> <span class="pre">0.97</span></code> parameter to set a 3% similarity cutoff for OTUs that have been clustered at 97% similarity. Obviously if you had used a different similarity threshold when clustering, you’d use the same value here.</p>
+<p>This shortcut is <strong>only</strong> available for greedy clustering. To the best of our knowledge, the above two-step process is the most appropriate way to map reads to OTUs for other types of OTU delimitation. Hopefully we’ve persuaded you that to map reads using this shortcut for swarm, CROP or another method would likely give erroneous read counts. Of course, it’s likely that the majority of read assignments would probably be correct, since in most cases the most similar OTU to a read is likely the appropriate read, but its the handling of outlying variants that could cause errors and ambiguities to creep in.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>The output from this subsection forms the metabarcoding equivalent of a site by species table ready to be used in downstream analysis, although we would recommend some further filtering which we discuss in the <a class="reference internal" href="analysing_read_tables.html#analysis"><span class="std std-ref">Analysing Read Tables</span></a> subsection. You may want to learn about building a phylogeny of your OTUs in the <a class="reference internal" href="../../building_otu_phylogeny.html#phylogeny"><span class="std std-ref">Building OTU Phylogeny</span></a> section, or taxonomically identifying and/or classifying your OTUs in the :ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>Identifying OTU Sequences &lt;otuid&gt; section.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="analysing_read_tables.html" class="btn btn-neutral float-right" title="Analysing Read Tables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mapping_reads_asvs.html" class="btn btn-neutral float-left" title="Mapping reads to ASVs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
