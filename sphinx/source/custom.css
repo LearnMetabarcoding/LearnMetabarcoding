@@ -42,12 +42,12 @@
     content: " ▲";
 }
 
-.greenitalic {
+.comment {
     color: green;
     font-style: italic;
 }
-.redbold {
-    color: red;
+.var {
+    color: blue;
     font-weight: bold;
 }
 
