@@ -25,3 +25,7 @@ The furthest right drop down menu is for selecting the correct genetic code for 
 
 Next steps
 ============
+
+If you haven't already you can check out the viewing trees :ref:`page <tree_viewing>`. You can also check out the :ref:`Barcode Tree with References <reference_otu_tree>` extension or the :ref:`OTU Comparison Tree <otu_comparison_tree>` extension.
+
+Alternatively, you can proceed to the next subsection, :ref:`Phylogenetic Placement. <phylogenetic_placement>`

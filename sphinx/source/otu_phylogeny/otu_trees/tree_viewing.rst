@@ -21,4 +21,11 @@ Rerooting a tree in Dendroscope
 ================================
 
 To reroute a tree you in Dendroscope you must first select the route. To do this navigate to :menuselection:`Select --> Select Root` and then select the root with your cursor. 
-Then to reroot your tree navigate to :menuselection:`Edit --> Reroot`
+Then to reroot your tree navigate to :menuselection:`Edit --> Reroot` and your tree will be rerooted. 
+
+Next steps
+===========
+
+If you haven't already you can check out the viewing alignments :ref:`page <alignment_viewing>`. You can also check out the :ref:`Barcode Tree with References <reference_otu_tree>` extension or the :ref:`OTU Comparison Tree <otu_comparison_tree>` extension.
+
+Alternatively, you can proceed to the next subsection, :ref:`Phylogenetic Placement. <phylogenetic_placement>`

@@ -46,6 +46,11 @@
     color: green;
     font-style: italic;
 }
+.redbold {
+    color: red;
+    font-weight: bold;
+}
+
 div[role=contentinfo] {
 	visibility: hidden;
 	position: relative;
@@ -56,5 +61,5 @@ div[role=contentinfo]:after {
 	position: absolute;
 	top: 0;
 	left: 0;
-	content: "The content of this site is licensed under the";
+	content: "The content of this site is licensed under the Creative Commons Attribution ShareAlike 4.0 License";
 }
