@@ -6,6 +6,7 @@ Identifying OTUs with References
 
 .. toctree::
 	:hidden:
+	
 	mapping_reads_to_refs
 
 Introduction

@@ -1,4 +1,4 @@
-.. _reference_otu_tree
+.. _reference_otu_tree:
 
 =======================================
 Extension: Barcode Tree with References

@@ -67,7 +67,8 @@ Comparing Classifications
 	* What levels of confidence are given to the order level identifications? Might this be very conservative? Why?
 	
 	* What other taxa do we apparently have? 
-	You will see that we have some obvious non-Coleoptera OTUs, but also some OTUs that have been assigned to other Insect orders. How consistent are these identifications between methods? Are we confident that these really are not Coleoptera? Note that it’s perfectly feasible that there could have been non-Coleoptera Insect DNA in these samples.
+
+You will see that we have some obvious non-Coleoptera OTUs, but also some OTUs that have been assigned to other Insect orders. How consistent are these identifications between methods? Are we confident that these really are not Coleoptera? Note that it’s perfectly feasible that there could have been non-Coleoptera Insect DNA in these samples.
 
 Classification is only as good as the database and the method used. We tend to find considerable variation between different methods, and it's hard to decide which is correct. Generally, we would advise treating classifications conservatively, and if using a method that assigns confidence, only accept high confidence classifications. 
 
