@@ -1,6 +1,5 @@
 .. _tree_viewing:
 
-.. role:: greenitalic
 
 =============
 Viewing Trees
