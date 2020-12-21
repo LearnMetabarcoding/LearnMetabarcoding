@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building OTU Phylogeny &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Making a Barcode Tree" href="otu_phylogeny/otu_trees.html" />
+    <link rel="prev" title="Analysing Read Tables" href="otu_asvs_readmapping/mapping_reads/analysing_read_tables.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readprocessing.html">Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filtering.html">Filtering Amplicon Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otu_asv_read.html">OTUs, ASVs and Read Mapping</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Building OTU Phylogeny</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="otu_phylogeny/otu_trees.html">Making a Barcode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otu_phylogeny/placing_otus_in_trees.html">Phylogenetic Placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otu_phylogeny/trees.html">Building a Mitogenome Reference Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="otuid.html">Identifying OTU Sequences</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Building OTU Phylogeny</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/building_otu_phylogeny.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-otu-phylogeny">
+<span id="phylogeny"></span><h1>Building OTU Phylogeny<a class="headerlink" href="#building-otu-phylogeny" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>One of the major benefits of metabarcoding over traditional methods of elucidating ecological community structure is that as part of identifying taxonomic units, we automatically acquire DNA sequences for each of our taxonomic units. This allows us to use these OTU sequences to construct phylogenetic trees for our meta-community, paving the way for analyses that go beyond just community composition into phylodiversity and phylogeography. As well as providing more detailed information about the relationships among our OTUs, phylogeny can help to better understand what our OTUs are in terms of taxonomy and evolutionary placement, potentially informing us about traits and other evolutionary properties.</p>
+<div class="green admonition">
+<p class="admonition-title">Note</p>
+<p>In this section we will talk only about OTUs, but if you wanted to work at the ASV level you could simply use ASV sequences in place of OTU sequences. So whenever you see OTU in this section, you can simply replace this with ASV for equivalent results.</p>
+</div>
+</div>
+<div class="section" id="building-a-phylogeny">
+<h2>Building a Phylogeny<a class="headerlink" href="#building-a-phylogeny" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we will look at two ways to build a phylogeny with your OTUs. We would like to stress here that the focus is on exploring the possibilities and potentialities of phylogenetic metabarcoding, but a detailed exploration of phylogenetic methodologies and analysis is beyond the scope of these resources. The broad methodologies presented here cover a general outline of methods for building phylogenies, but the specific alignment and tree-building software employed has been chosen for speed and ease of use, rather than necessarily for optimal phylogenetic reconstruction.</p>
+<p>First, we will look at direct phylogenetic reconstruction based solely on your OTU sequences in the <a class="reference internal" href="otu_phylogeny/otu_trees.html#otu-tree"><span class="std std-ref">Making a Barcode Tree</span></a> subsection.</p>
+<p>Second, we will look at how you can add your OTUs to an existing phylogeny based on full mitochondrial genomes to greatly improve accuracy of your resulting tree in the <a class="reference internal" href="otu_phylogeny/placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic Placement</span></a> subsection.</p>
+<p>The third section takes a small detour to work through a pipeline for building a mitochondrial genome tree from freely available data for cases where you don’t necessarily have this data already to hand. See the <a class="reference internal" href="otu_phylogeny/trees.html#trees"><span class="std std-ref">Building a Mitogenome Tree</span></a> subsection.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>We suggest you start with the <a class="reference internal" href="otu_phylogeny/otu_trees.html#otu-tree"><span class="std std-ref">Making a Barcode Tree</span></a> subsection and follow the subsections in order, although each is standalone and does not require the outputs from a previous step. For this section, you need a FASTA file containing a set of OTU centroid sequences.</p>
+<p>If you have your own data, we suggest nonetheless following these subsections with the available toy data first, as it is small enough to rapidly produce outputs and get you familiar with the steps. Then you may wish to build your own mitogenome tree with reference data suitable for your project (following <a class="reference internal" href="otu_phylogeny/trees.html#trees"><span class="std std-ref">Building a Mitogenome Reference Tree</span></a>) then place your OTUs on this tree (following <a class="reference internal" href="otu_phylogeny/placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic Placement</span></a>)</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="otu_phylogeny/otu_trees.html" class="btn btn-neutral float-right" title="Making a Barcode Tree" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="otu_asvs_readmapping/mapping_reads/analysing_read_tables.html" class="btn btn-neutral float-left" title="Analysing Read Tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

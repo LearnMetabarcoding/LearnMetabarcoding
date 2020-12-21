@@ -1,0 +1,65 @@
+.toggle {
+    background: none repeat scroll 0 0 #e7f2fa;
+}
+
+.toggle .admonition-title {
+    display: block;
+    clear: both;
+}
+
+.toggle .admonition-title:after {
+    content: " ▼";
+}
+
+.toggle .admonition-title.open:after {
+    content: " ▲";
+}
+
+.green {
+    background: none repeat scroll 0 0 #e7f2fa;
+}
+
+.green .admonition-title {
+    display: block;
+    clear: both;
+    background-color: green;
+}
+.togglegreen {
+    background: none repeat scroll 0 0 #e7f2fa;
+}
+
+.togglegreen .admonition-title {
+    display: block;
+    clear: both;
+    background-color: green;
+}
+
+.togglegreen .admonition-title:after {
+    content: " ▼";
+}
+
+.togglegreen .admonition-title.open:after {
+    content: " ▲";
+}
+
+.greenitalic {
+    color: green;
+    font-style: italic;
+}
+.redbold {
+    color: red;
+    font-weight: bold;
+}
+
+div[role=contentinfo] {
+	visibility: hidden;
+	position: relative;
+}
+
+div[role=contentinfo]:after {
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "The content of this site is licensed under the Creative Commons Attribution ShareAlike 4.0 License";
+}
