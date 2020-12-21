@@ -41,8 +41,8 @@ In conclusion, we recommend the following steps be performed to further filter t
 2. Convert read counts under a threshold proportion of reads per sample to 0
 3. Convert singleton read counts to 0
 4. Standardise read counts either through
-	5. Rarefaction to a target read count, removing samples with reads below this target.
-	6. Calculation of expected ASV/OTU richness per sample, removing samples with observed richness less than a threshold proportion of expected. 
+5. Rarefaction to a target read count, removing samples with reads below this target.
+6. Calculation of expected ASV/OTU richness per sample, removing samples with observed richness less than a threshold proportion of expected. 
 7. Convert all read counts to presence-absence (i.e. any values >1 changed to 1)
 
 The majority of these steps are relatively straightforward to perform in R.

@@ -29,7 +29,7 @@ In this section, we will look at two ways to build a phylogeny with your OTUs. W
 
 First, we will look at direct phylogenetic reconstruction based solely on your OTU sequences in the :ref:`Making a Barcode Tree <otu_tree>` subsection. 
 
-Second, we will look at how you can add your OTUs to an existing phylogeny based on full mitochondrial genomes to greatly improve accuracy of your resulting tree in the :ref:``Phylogenetic Placement <phylogenetic_placement>` subsection.
+Second, we will look at how you can add your OTUs to an existing phylogeny based on full mitochondrial genomes to greatly improve accuracy of your resulting tree in the :ref:`Phylogenetic Placement <phylogenetic_placement>` subsection.
 
 The third section takes a small detour to work through a pipeline for building a mitochondrial genome tree from freely available data for cases where you don't necessarily have this data already to hand. See the :ref:`Building a Mitogenome Tree <trees>` subsection.
 
@@ -38,4 +38,4 @@ Next Steps
 
 We suggest you start with the :ref:`Making a Barcode Tree <otu_tree>` subsection and follow the subsections in order, although each is standalone and does not require the outputs from a previous step. For this section, you need a FASTA file containing a set of OTU centroid sequences.
 
-If you have your own data, we suggest nonetheless following these subsections with the available toy data first, as it is small enough to rapidly produce outputs and get you familiar with the steps. Then you may wish to build your own mitogenome tree with reference data suitable for your project (following :ref:`Building a Mitogenome Reference Tree <trees>`) then place your OTUs on this tree (following :ref:``Phylogenetic Placement <phylogenetic_placement>`)
+If you have your own data, we suggest nonetheless following these subsections with the available toy data first, as it is small enough to rapidly produce outputs and get you familiar with the steps. Then you may wish to build your own mitogenome tree with reference data suitable for your project (following :ref:`Building a Mitogenome Reference Tree <trees>`) then place your OTUs on this tree (following :ref:`Phylogenetic Placement <phylogenetic_placement>`)

@@ -33,6 +33,7 @@ Linkage Delimitation using ``swarm``
 Here each line of the file is a list of ASVs in one OTU, with the centroid sequence being the first ASV name. The following command strips out the ``size=`` tags then converts into a table by looping through each line one by one, storing the first item in each line, then looping through the items in a line to generate the output.
 
 .. code-block:: bash
+
 	sed -e "s/;size=[^ ]*//g" input.tsv | \
 	sed -e "s/;size=[^ ]*//g" asv_otus_linkage_d13.tsv | \
 	while read l \
@@ -113,4 +114,4 @@ This shortcut is **only** available for greedy clustering. To the best of our kn
 Next Steps
 ==========
 
-The output from this subsection forms the metabarcoding equivalent of a site by species table ready to be used in downstream analysis, although we would recommend some further filtering which we discuss in the :ref:`Analysing Read Tables <analysis>` subsection. You may want to learn about building a phylogeny of your OTUs in the :ref:`Building OTU Phylogeny <phylogeny>` section, or taxonomically identifying and/or classifying your OTUs in the :ref:`Identifying OTU Sequences <otuid> section.
+The output from this subsection forms the metabarcoding equivalent of a site by species table ready to be used in downstream analysis, although we would recommend some further filtering which we discuss in the :ref:`Analysing Read Tables <analysis>` subsection. You may want to learn about building a phylogeny of your OTUs in the :ref:`Building OTU Phylogeny <phylogeny>` section, or taxonomically identifying and/or classifying your OTUs in the :ref:`Identifying OTU Sequences <otuid>` section.
