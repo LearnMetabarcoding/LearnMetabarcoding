@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Extension: Denoising by sample &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4. Indel Filtering" href="../indel_filtering.html" />
+    <link rel="prev" title="3. Frequency filtering / denoising" href="../freq_filtering_and_denoising.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../filtering.html">Filtering Amplicon Data</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../quality_filtering.html">1. Quality Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../not_filtering_dereplication.html">2. Not Filtering: Dereplication</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../freq_filtering_and_denoising.html">3. Frequency filtering / denoising</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Extension: Denoising by sample</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../indel_filtering.html">4. Indel Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../point_error.html">5. Point error filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chimera_filtering.html">6. Chimera filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metamate.html">Extension: Stringent ASV filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../otu_asv_read.html">OTUs, ASVs and Read Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../building_otu_phylogeny.html">Building OTU Phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../otuid.html">Identifying OTU Sequences</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../filtering.html">Filtering Amplicon Data</a> &raquo;</li>
+        
+          <li><a href="../freq_filtering_and_denoising.html">3. Frequency filtering / denoising</a> &raquo;</li>
+        
+      <li>Extension: Denoising by sample</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/filtering/extensions/denoising_by_sample.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="extension-denoising-by-sample">
+<span id="denoise-by-sample"></span><h1>Extension: Denoising by sample<a class="headerlink" href="#extension-denoising-by-sample" title="Permalink to this headline">¶</a></h1>
+<p>Here we will denoise by each individual sample, rather than on the entire dataset. This requires us to go back to the data generated in an earlier step. We strongly recommend making a separate directory to perform this experimentation in, and using clear file names so you don’t get the data mixed up!</p>
+<p>We will be using the output data from the Read Merging step. This should be a single directory containing one fastq file per sample.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<ol class="arabic simple">
+<li><p>Quality filter each fastq file using the <code class="docutils literal notranslate"><span class="pre">vsearch</span> <span class="pre">--fastx_filter...</span></code> command from the Quality Filtering section, but running individually on each sample one at a time using a bash loop.</p></li>
+<li><p>Run the dereplication command (<code class="docutils literal notranslate"><span class="pre">vsearch</span> <span class="pre">--derep_fulllength...</span></code>) from the Dereplication section on each sample individually using a bash loop</p></li>
+<li><p>Run the denoising command (<code class="docutils literal notranslate"><span class="pre">vsearch</span> <span class="pre">--cluster_unoise...</span></code>) from the Denoising section on each sample individually using a bash loop</p></li>
+<li><p>Concatenate the result files using <code class="docutils literal notranslate"><span class="pre">sed</span></code> in the same way as in the Data Concatenation section.</p></li>
+<li><p>Re-dereplicate the output file using the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vsearch --derep_fulllength ​in.fasta --sizein --sizeout --relabel uniq --output out.fasta
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Compare the total unique read numbers and size distributions of your output to the version produced by whole-dataset denoising</p></li>
+</ol>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>TODO
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../indel_filtering.html" class="btn btn-neutral float-right" title="4. Indel Filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../freq_filtering_and_denoising.html" class="btn btn-neutral float-left" title="3. Frequency filtering / denoising" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>The content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
