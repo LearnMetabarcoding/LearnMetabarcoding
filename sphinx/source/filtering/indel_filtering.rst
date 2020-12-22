@@ -68,6 +68,6 @@ In this case, the region of CO1 we use is sufficiently conserved that, on balanc
 Next Steps
 ==========
 
-In our case, we have a very conserved region so we will use the output from the last command, i.e. only ASVs of 418bp long, for the next steps. Next, we will remove errors by checking the translation: :ref:`5. Point Error Filtering :ref:<point_error>`.
+In our case, we have a very conserved region so we will use the output from the last command, i.e. only ASVs of 418bp long, for the next steps. Next, we will remove errors by checking the translation: :ref:`5. Point Error Filtering <point_error>`.
 
 In some cases, we may be metabarcoding a coding locus but our project includes a wide taxonomic breadth or the region is more variable. Where you might expect length variation, but only in terms of whole codons, we have to do something a little more complicated. If you want, you can try this out in this extension: :ref:`Extension: Variable length coding regions <more_variable>`. You can use either output for the next steps.

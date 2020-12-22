@@ -77,4 +77,4 @@ Next Steps
 
 Of course, the ideal situation would be that you have a reference set of barcode sequences for all possible species in your dataset. In the next subsection, we will look at how to match your OTUs to a reference set: :ref:`Reference Sets <id_local>`.
 
-An alternative approach to classification uses phylogenetics to assign taxonomy based on phylogenetic placement. We look at one method to do this in the `Phylogenetic Classification <phylogenetic_classification>` subsection.
+An alternative approach to classification uses phylogenetics to assign taxonomy based on phylogenetic placement. We look at one method to do this in the :ref:`Phylogenetic Classification <phylogenetic_classification>` subsection.

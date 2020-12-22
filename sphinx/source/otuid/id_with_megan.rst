@@ -74,7 +74,7 @@ Each circle on the tree is one or more OTUs that have been assigned to a node. T
 	
 	* Do you think algorithm is always correct?
 
-To output the taxonomic assignment for all of the OTUs for use in analysis, we need to select all of the nodes. You can do this by going to :menuselection:`​Select --> All Nodes`​. Then go to :menuselection:`​File --> Export --> Text (CSV) Format​`. For the :menuselection:`Choose data to export:` field, select ​:menuselection:`readName_to_taxonPath​`, click OK and select your output location. This generates a comma-separated table with the OTU name and full NCBI taxon path of the assigned node.
+To output the taxonomic assignment for all of the OTUs for use in analysis, we need to select all of the nodes. You can do this by going to :menuselection:`Select --> All Nodes`​. Then go to :menuselection:`File --> Export --> Text (CSV) Format`. For the :menuselection:`Choose data to export:` field, select ​:menuselection:`readName_to_taxonPath`, click OK and select your output location. This generates a comma-separated table with the OTU name and full NCBI taxon path of the assigned node.
 
 Next Steps
 ==========
@@ -83,4 +83,4 @@ The major downside to this method is that it relies on GenBank being a) comprehe
 
 These impact of these issues can be somewhat ameliorated with careful tweaking of some of the LCA settings. If you want to experiment with different LCA settings in MEGAN, you could look at the :ref:`Extension: MEGAN LCA parameters <megan_settings>`
 
-To deal with the accuracy issue, you could use a curated database. These are usually subsets of GenBank that have carefully checked the accuracy of the taxonomy for a subset of sequences, usually based on a specific locus. We look at how to use one of these, with a variety of different classification methods, in the next subsection: :ref: `2. Classification with Curated Databases <id_curated>`.
+To deal with the accuracy issue, you could use a curated database. These are usually subsets of GenBank that have carefully checked the accuracy of the taxonomy for a subset of sequences, usually based on a specific locus. We look at how to use one of these, with a variety of different classification methods, in the next subsection: :ref:`2. Classification with Curated Databases <id_curated>`.

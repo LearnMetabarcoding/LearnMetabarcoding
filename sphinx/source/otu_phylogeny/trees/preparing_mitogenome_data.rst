@@ -37,4 +37,4 @@ You can download these two files to your working directory. TODO
 Next Steps
 ==========
 
-Now we should have three genbank-format files. The next step is to :ref:`2. Extract Protein Coding Genes<extract_coding>`.
+Now we should have three genbank-format files. The next step is to :ref:`2. Extract Protein Coding Genes <extract_coding>`.
