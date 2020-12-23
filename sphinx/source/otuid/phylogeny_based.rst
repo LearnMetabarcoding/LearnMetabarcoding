@@ -25,7 +25,7 @@ You will also need two R scripts TODO
 Approaches
 ==========
 
-This task has two main steps. First we must place OTUs onto a phylogenetic tree. We cover one way of doing this in the :ref:`Phylogenetic Placement <phylogenetic_placement>` subsection. The second step involves parsing the taxonomy of the references and inferring the taxonomy of the OTUs. We do this with some custom R scripts, because we find this option is the most flexible. Here we will use these R scripts as standalone tools, but if you're familiar with R we suggest you open up the scripts and see what they're doing. The key function within these scripts is the ```nodelabel.phylo`` function from geiger <https://www.rdocumentation.org/packages/geiger/versions/2.0.7/topics/nodelabel.phylo>`_, which does the work of assigning taxonomy to the internal nodes of the tree based on the tips.
+This task has two main steps. First we must place OTUs onto a phylogenetic tree. We cover one way of doing this in the :ref:`Phylogenetic Placement <phylogenetic_placement>` subsection. The second step involves parsing the taxonomy of the references and inferring the taxonomy of the OTUs. We do this with some custom R scripts, because we find this option is the most flexible. Here we will use these R scripts as standalone tools, but if you're familiar with R we suggest you open up the scripts and see what they're doing. The key function within these scripts is the ``nodelabel.phylo`` function from geiger `<https://www.rdocumentation.org/packages/geiger/versions/2.0.7/topics/nodelabel.phylo>`_, which does the work of assigning taxonomy to the internal nodes of the tree based on the tips.
 
 
 Taxonomising the tree
