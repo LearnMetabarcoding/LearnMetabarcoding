@@ -30,6 +30,7 @@ The following commands install some general purpose Linux tools and libraries.
 
 
 .. _cutadapt:
+
 Cutadapt
 --------
 
@@ -40,10 +41,11 @@ Versatile adapter sequence removal. `Documentation <https://cutadapt.readthedocs
 	sudo -H python3 -m pip install cutadapt
 
 .. _mafft:
+
 MAFFT
 -----
 
-Sequence alignment. `Website <https://mafft.cbrc.jp/alignment/software/>`_
+Sequence alignment. `Website  <https://mafft.cbrc.jp/alignment/software/>`_
 
 .. parsed-literal::
 	
@@ -51,6 +53,7 @@ Sequence alignment. `Website <https://mafft.cbrc.jp/alignment/software/>`_
 	sudo apt install /usr/local/deb/mafft_7.475-1_amd64.deb
 
 .. _alan:
+
 ALAN
 ----
 
@@ -62,10 +65,11 @@ Commandline alignment viewer. `Github <https://github.com/mpdunne/alan>`_
 	sudo chmod a+x /usr/local/bin/alan
 
 .. _fastqc:
+
 FastQC
 ------
 
-Raw sequence quality assessment. `Website <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
+Raw sequence quality assessment. `Website   <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
 
 .. parsed-literal::
 	
@@ -76,10 +80,11 @@ Raw sequence quality assessment. `Website <https://www.bioinformatics.babraham.a
 	sudo ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc
 
 .. _fastqe:
+
 FastqE
 ------
 
-Fun commandline quality assessment. `Website <https://fastqe.com/>`_
+Fun commandline quality assessment. `Website    <https://fastqe.com/>`_
 
 .. parsed-literal::
 	
@@ -87,10 +92,11 @@ Fun commandline quality assessment. `Website <https://fastqe.com/>`_
 
 
 .. _pear:
+
 PEAR
 ----
 
-Paired end read merger. `Website <http://www.exelixis-lab.org/pear>`_
+Paired end read merger. `Website     <http://www.exelixis-lab.org/pear>`_
 You must sign up for a PEAR academic licence and you will receive an email with a link to download the installation files. The command here assumes you've downloaded the file to your home directory.
 
 .. parsed-literal::
@@ -105,6 +111,7 @@ You must sign up for a PEAR academic licence and you will receive an email with 
 	sudo cp man/pear.1.gz /usr/share/man/man1/
 
 .. _pairfq:
+
 Pairfq
 ------
 
@@ -116,7 +123,9 @@ Pairfq
 	sudo curl -sL cpanmin.us | sudo perl - git://github.com/sestaton/Pairfq.git
 
 # Fastx toolkit
+
 .. _fastx_toolkit:
+
 FASTX Toolkit
 -------------
 
@@ -147,6 +156,7 @@ Various handy tools for dealing with FASTA and FASTQ files. A little out of date
 
 
 .. _vsearch:
+
 VSEARCH
 -------
 
@@ -168,6 +178,7 @@ Open-source implementation of USEARCH with more versatility.
 	cd ../
 
 .. _metamate:
+
 metaMATE
 --------
 
@@ -177,6 +188,7 @@ metaMATE
 	sudo -H python3 -m pip install metaMATE
 
 .. _swarm:
+
 swarm
 -----
 
@@ -195,6 +207,7 @@ swarm
 	sudo mv swarm.1.gz /usr/share/man/man1/
 
 .. _crop:
+
 CROP
 ----
 
@@ -210,6 +223,7 @@ CROP
 	sudo ln -s /usr/local/src/CROP/CROPLinux /usr/local/bin/crop
 
 .. _blast:
+
 BLAST
 -----
 
@@ -222,6 +236,7 @@ BLAST
 	sudo cp ncbi-blast-${BLAST_VERSION}+/bin/* /usr/local/bin/
 
 .. _catfasta2phyml:
+
 catfasta2phyml
 --------------
 
@@ -231,6 +246,7 @@ catfasta2phyml
 	sudo chmod a+x /usr/local/bin/catfasta2phyml.pl
 
 .. _fasttree:
+
 FastTree
 --------
 
