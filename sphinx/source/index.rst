@@ -28,7 +28,7 @@ Page tree
 =========
 
 .. toctree::
-	:maxdepth: 2
+	:titlesonly:
 	
 	gettingstarted
 	readprocessing
