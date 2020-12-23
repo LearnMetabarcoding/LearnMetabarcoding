@@ -177,7 +177,7 @@ Open-source implementation of USEARCH with more versatility.
 	sudo make install
 	cd ../
 
-.. _metamate:
+.. _metamate_install:
 
 metaMATE
 --------

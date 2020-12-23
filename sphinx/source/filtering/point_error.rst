@@ -11,6 +11,11 @@ Filtering by length will remove sequences that have one or more PCR/sequencer-ca
 
 We can identify some point errors because they will alter the translation of the genetic code in such a way that it becomes meaningless - if the barcode region is a coding region, of course. The obvious error is the introduction of stop codons into the translation. By translating all of our sequences and checking for stop codons, we can easily reject these errors or variants. 
 
+.. admonition:: Software and data
+	:class: green
+
+	This page uses metaMATE software. If you haven't installed metaMATE yet see instructions :ref:`here <metamate_install>`
+
 Filtering by translation
 ========================
 
