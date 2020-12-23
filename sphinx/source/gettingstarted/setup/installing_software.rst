@@ -39,7 +39,7 @@ Versatile adapter sequence removal. `Documentation <https://cutadapt.readthedocs
 	
 	sudo -H python3 -m pip install cutadapt
 
-.. _mafft::
+.. _mafft:
 MAFFT
 -----
 
@@ -50,7 +50,7 @@ Sequence alignment. `Website <https://mafft.cbrc.jp/alignment/software/>`_
 	sudo wget -P /usr/local/deb/ https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb
 	sudo apt install /usr/local/deb/mafft_7.475-1_amd64.deb
 
-.. _alan::
+.. _alan:
 ALAN
 ----
 
@@ -104,7 +104,7 @@ You must sign up for a PEAR academic licence and you will receive an email with 
 	sudo gzip man/pear.1
 	sudo cp man/pear.1.gz /usr/share/man/man1/
 
-.. _pairfq
+.. _pairfq:
 Pairfq
 ------
 
