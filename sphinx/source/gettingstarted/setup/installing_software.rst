@@ -69,7 +69,7 @@ Commandline alignment viewer. `Github <https://github.com/mpdunne/alan>`_
 FastQC
 ------
 
-Raw sequence quality assessment. `Website   <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
+Raw sequence quality assessment. `Website <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
 
 .. parsed-literal::
 	
@@ -84,7 +84,7 @@ Raw sequence quality assessment. `Website   <https://www.bioinformatics.babraham
 FastqE
 ------
 
-Fun commandline quality assessment. `Website    <https://fastqe.com/>`_
+Fun commandline quality assessment. `Website <https://fastqe.com/>`_
 
 .. parsed-literal::
 	
@@ -96,7 +96,7 @@ Fun commandline quality assessment. `Website    <https://fastqe.com/>`_
 PEAR
 ----
 
-Paired end read merger. `Website     <http://www.exelixis-lab.org/pear>`_
+Paired end read merger. `Website <http://www.exelixis-lab.org/pear>`_
 You must sign up for a PEAR academic licence and you will receive an email with a link to download the installation files. The command here assumes you've downloaded the file to your home directory.
 
 .. parsed-literal::
