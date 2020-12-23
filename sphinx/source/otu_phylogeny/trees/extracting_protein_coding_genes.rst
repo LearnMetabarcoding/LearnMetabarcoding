@@ -9,6 +9,11 @@ Introduction
 
 We are going to focus solely on protein coding genes, rather than using the full mitochondrial DNA sequence of all of our records. GenBank-format files contains data that tells us the location of all of the genes present on the DNA sequence for each entry. If you’re not familiar with this concept already, see the page on the :ref:`genbank format <genbank>`, because otherwise what we’re doing here will not make any sense to you.
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses a custom script.
+
 Extracting genes
 ================
 

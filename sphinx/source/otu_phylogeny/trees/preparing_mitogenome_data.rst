@@ -14,6 +14,11 @@ Introduction
 
 In this subsection, we will collect and consolidate our mitogenome data from multiple sources. 
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses data downloaded from GenBank.
+
 Novel Reference Mitogenomes
 ===========================
 

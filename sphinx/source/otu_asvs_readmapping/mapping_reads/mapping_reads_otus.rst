@@ -13,6 +13,11 @@ On the other hand, matching with some threshold of similarity may often be inapp
 
 If this is not the case, we must use a two-stop process. First, we match reads to ASVs as we did in the previous section. Next, we use the data we generated during OTU delimitation reporting which ASVs form each OTU to reduce the ASV read map into an OTU read map, grouping together data for all of the ASVs in each OTU.
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses VSEARCH. Instuctions on installing VSEARCH are found :ref:`here. <vsearch>`
+
 Preparing the OTU ASV lists
 ===========================
 

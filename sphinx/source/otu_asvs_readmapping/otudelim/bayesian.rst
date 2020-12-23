@@ -9,6 +9,11 @@ Introduction
 
 A final method for OTU delimitation is the software CROP, which was originally designed for 16S and has not been updated in a while. Nonetheless, it uses an interesting algorithm based on assuming sequences are a gaussian mixture and models the process of clustering using Markov-chain Monte Carlo simulations. This approach probably bears more similarity to greedy clustering than to SWARM, but is sufficiently different that it is interesting to compare the methods.
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses the software CROP. Instructions on installing CROP can be seen :ref:`here. <crop>`
+
 Getting Started
 ===============
 

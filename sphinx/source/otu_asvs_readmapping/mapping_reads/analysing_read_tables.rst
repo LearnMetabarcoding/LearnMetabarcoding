@@ -9,6 +9,7 @@ Introduction
 
 Detailed guidance for cleaning and analysing read tables is beyond the scope of these resources, but we want to give you a broad introduction to the problems and some pointers for how to deal with them. The previous subsections detail how we can generate a reads table that records the number of reads for each of a set of ASVs or OTUs in each of a collection of samples. This table is analagous to the classic community matrix of community ecology, and is the community output from metabarcoding. However, while we have done our best to clean our sequence data to remove errors in the set of ASVs, there may well remain erroneous records within this community data table. Just because an ASV or OTU is valid for the entire dataset, does not mean that the individual counts per sample of that ASV or OTU necessarily accurately reflect biological reality.
 
+
 Remaining Sources of Error
 ==========================
 

@@ -9,6 +9,11 @@ Introduction
 
 The sequences for each gene need to be aligned so that comparable regions are lined up. In phylogenetic terms, this means we need to ensure that the positions used for tree inference are homologous. 
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses mafft. Instructions on how to install mafft can be found :ref:`here. <mafft>`
+
 Running alignment
 =================
 
