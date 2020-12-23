@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Extension: Stringent ASV filtering &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OTUs, ASVs and Read Mapping" href="../otu_asv_read.html" />
+    <link rel="prev" title="6. Chimera filtering" href="chimera_filtering.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">Read processing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../filtering.html">Filtering Amplicon Data</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quality_filtering.html">1. Quality Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="not_filtering_dereplication.html">2. Not Filtering: Dereplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freq_filtering_and_denoising.html">3. Frequency filtering / denoising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="indel_filtering.html">4. Indel Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point_error.html">5. Point error filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chimera_filtering.html">6. Chimera filtering</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Extension: Stringent ASV filtering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finding-metamate-results">Finding metaMATE Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#analysing-metamate-results">Analysing metaMATE results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#implementing-thresholds">Implementing Thresholds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../filtering.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filtering.html#getting-the-data">Getting the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filtering.html#sources-of-error">Sources of error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filtering.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../otu_asv_read.html">OTUs, ASVs and Read Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building_otu_phylogeny.html">Building OTU Phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">Identifying OTU Sequences</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../filtering.html">Filtering Amplicon Data</a> &raquo;</li>
+        
+      <li>Extension: Stringent ASV filtering</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/filtering/metamate.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="extension-stringent-asv-filtering">
+<span id="metamate"></span><h1>Extension: Stringent ASV filtering<a class="headerlink" href="#extension-stringent-asv-filtering" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>When we wish to use ASVs for ecological analyses at the level of populations, we may need greater confidence in the accuracy of our ASVs than compared with cases where we intend to cluster these ASVs to species. Firstly, our sampling must have been deep enough to capture not just sufficient species richness but sufficient haplotype richness to answer our research questions. Secondly, we must be confident that our error filtering has not only removed highly divergent errors that might have caused false OTUs, but also removed minor errors that would have otherwise been absorbed into OTUs.</p>
+<p>In this extension we will look at an alternative pipeline that builds upon the standard pipeline presented elsewhere to more stringently filter ASVs. This pipeline is not exclusively for studies exploring ASV patterns, the more conservative filtering of ASVs will also improve OTU results as well.</p>
+<p>This pipeline is centred around the tool metaMATE, which performs so-called “Multidimensional Abundance Threshold Evaluation”. This means that it bases its filtering on ASV frequencies, but it calculates frequencies based on multiple strategies, and then evaluates many different threshold values to generate data from which the ideal filtering strategy can be determined. A key part of this evaluation is validation, where metaMATE independently checks the ASVs to determine if any are clearly valid or invalid, using this control group to evaluate the effect of different abundance calculation and threshold strategies.</p>
+<p>In the spirit of openness, we should be clear that metaMATE was developed by many of the same people who authored these resources. We think it’s a pretty good method for more stringent and careful filtering of ASVs, but of course we might be biased! To be fair, there aren’t any other methods as detailed as this, but if you’re thinking of using metaMATE in your bioinformatic pipeline, you should not do so just because we present it here, but after ensuring you know what it does and concluding that it is the most appropriate tool for your data.</p>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>We will use as input our denoised dataset, prior to any length or translation filtering. This dataset has been reduced in size by performing denoising, but still has some errors that we can use for validation of non-authentic ASVs. Create a new directory and put a copy of your denoised ASVs into that directory.</p>
+<p>To find some validated authentic ASVs, we will use a reference set of barcode sequences from some species we know are present in our metabarcoding dataset. You can copy this reference set from the data files into your metaMATE directory with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cp ..
+TODO
+</pre></div>
+</div>
+<p>Next we must determine metaMATE’s threshold specification. This is a description of all of the thresholds that metaMATE should test. Unlike in the first part of our frequency filtering section, where we applied one threshold, metaMATE can apply many thousands of thresholds, varying either the value of the threshold or the grouping of ASVs on which it’s performed. We will use three threshold binning strategies, as follows:
+1. The absolute number of reads of an ASV in the dataset as a whole
+2. The proportion of reads of an ASV in each of the samples in which it occurs
+3. The proportion of reads of an ASV within the clade in which it occurs in each of the samples in which it occurs</p>
+<p>We can specify these by typing the following into a text document:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">total</span><span class="p">;</span> <span class="n">n</span><span class="p">;</span> <span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="o">-</span><span class="mi">20</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span><span class="mi">25</span><span class="o">-</span><span class="mi">50</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="o">-</span><span class="mi">100</span><span class="o">/</span><span class="mi">5</span><span class="p">]</span>
+<span class="o">+</span>
+<span class="p">[</span><span class="n">library</span><span class="p">;</span> <span class="n">p</span><span class="p">;</span> <span class="mf">0.00025</span><span class="p">,</span><span class="mf">0.0005</span><span class="o">-</span><span class="mf">0.007</span><span class="o">/</span><span class="mi">14</span><span class="p">,</span><span class="mf">0.008</span><span class="o">-</span><span class="mf">0.01</span><span class="o">/</span><span class="mi">3</span><span class="p">]</span>
+<span class="o">+</span>
+<span class="p">[</span><span class="n">library</span><span class="o">|</span><span class="n">clade</span><span class="p">;</span> <span class="n">p</span><span class="p">;</span> <span class="mf">0.001</span><span class="p">,</span><span class="mf">0.0025</span><span class="p">,</span><span class="mf">0.005</span><span class="o">-</span><span class="mf">0.065</span><span class="o">/</span><span class="mi">13</span><span class="p">,</span><span class="mf">0.075</span><span class="p">,</span><span class="mf">0.09</span><span class="p">,</span><span class="mf">0.1</span><span class="o">-</span><span class="mf">0.4</span><span class="o">/</span><span class="mi">7</span><span class="p">,</span><span class="mf">0.5</span><span class="o">-</span><span class="mf">0.9</span><span class="o">/</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The first command tells metaMATE to filter ASVs by total frequency with <span class="math notranslate nohighlight">\(5 + 8 + 10 + 5 = 28\)</span> different thresholds: 5 values from 1-5, 8 values from 6-20, 10 values from 25-50 and 5 values from 60-100. This is just a shorthand way of typing <code class="docutils literal notranslate"><span class="pre">1,2,3,4,5,6,8,10,12,14,16,18,20,25,30,35,40,45,50,60,70,80,90,100</span></code>!. The <code class="docutils literal notranslate"><span class="pre">n</span></code> denotes actual values of frequency, whereas on later lines the <code class="docutils literal notranslate"><span class="pre">p</span></code> denotes proportional values, relative to the total number of reads in the given category. So for the second command, we have 18 thresholds, the first being “reject an ASV if it is less than 0.025% of all reads of all ASVS in every sample in which that ASV occurs”, with each iteration increasing that percentage up to 1%. Finally, the last command does something similar, but instead of comparing against the total number of reads in a sample, looks at the total number of reads from ASVs in the same clade as the ASV in question.</p>
+<p>This is complicated at first, but is quite straightforward once you get your head around it. Create a text document in your metaMATE directory with the above 5 lines - don’t forget the <code class="docutils literal notranslate"><span class="pre">+</span></code> symbol!</p>
+<p>The last thing to do to get ready is to copy over the fasta file containing all of your concatenated reads. We need this to calculate the read numbers. This would have been the output of the Data Concatenation section.</p>
+</div>
+<div class="section" id="finding-metamate-results">
+<h2>Finding metaMATE Results<a class="headerlink" href="#finding-metamate-results" title="Permalink to this headline">¶</a></h2>
+<p>We run metaMATE specifying the path to these three files, as well as a few other settings.</p>
+<p>Run the following code, obviously swapping the names of the files for whatever your file names are.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metaMATE find <span class="se">\</span>
+&gt; -A denoisedASVs.fasta -L concatenatedReads.fasta <span class="se">\</span>
+&gt; -S specifications.txt -R references.fasta <span class="se">\</span>
+&gt; --expectedlength <span class="m">418</span> --percentvar <span class="m">0</span> <span class="se">\</span>
+&gt; --table <span class="m">5</span> <span class="se">\</span>
+&gt; -o metamateout
+</pre></div>
+</div>
+<p>You might notice that we’re specifying some information about the length and translation of our ASVs. This is because internally, metaMATE performs the length and translation filtering that we’ve performed ourselves in previous sections. It does this in order to identify some of the ASVs as <em>a priori</em> errors. It also searches the ASVs against the reference to idetnify some of the ASVs as <em>a priori</em> valid.</p>
+<p>The output of metaMATE will be several files in the <code class="docutils literal notranslate"><span class="pre">metamateout/</span></code> directory. You will have a file ending in <code class="docutils literal notranslate"><span class="pre">_results.csv</span></code>. This is a table that you should download and open on your computer using Excel or another spreadsheet program.</p>
+</div>
+<div class="section" id="analysing-metamate-results">
+<h2>Analysing metaMATE results<a class="headerlink" href="#analysing-metamate-results" title="Permalink to this headline">¶</a></h2>
+<p>This table gives a detailed report of the result of every single filtering threshold you applied. The first few columns give the filtering terms, and the rows give their threshold values. If you look across the table, you can see that there are lots of columns giving counts of ASVs. If you’re interested, you can read about what all of these are in <a class="reference external" href="https://github.com/tjcreedy/metamate#results-find-only">the metaMATE documentation</a>, but we’ll concentrate on two values. We want to know for each of our threshold values, what proportion of our known valid ASVs (those matching our reference) were retained, and what proportion of our known invalid ASVs (those of an incorrect length or containing stops) were rejected. These columns are “verifiedauthentic_retained_p” and “verifiednonauthentic_rejected_p”.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Filter and sort the table to try and find the highest values of valid retention and invalid rejection. Feel free to use whatever software you are most comfortable handling data in.
+Is there an obvious best case, or is it always a trade off? You could pick a threshold and plot it on the x axis with “verifiedauthentic_retained_p” and “verifiednonauthentic_rejected_p” as series on the y axis.
+Which do you think is more important: rejecting erroneous ASVs or keeping valid ASVs?</p>
+</div>
+<p>There aren’t always clear answers to these questions, it must come down to whatever is most suitable for your research. This is the main way in which metaMATE is different: it doesn’t just spit out an answer, instead its purpose is to evaluate lots of different threshold values and present you with the summary data to determine which threshold is most appropriate for your question.</p>
+<p>Select a threshold that you think is the best compromise between retaining authentic ASVs and rejecting nonauthentic ASVs. The first column is called “resultindex”, and contains a unique value for each threshold. Find the resultindex for your selected threshold.</p>
+</div>
+<div class="section" id="implementing-thresholds">
+<h2>Implementing Thresholds<a class="headerlink" href="#implementing-thresholds" title="Permalink to this headline">¶</a></h2>
+<p>We can now use metaMATE again to output the ASVs for the selected threshold. This is much more simple than before. We need two input files: the same set of denoised ASVs as we used for the <code class="docutils literal notranslate"><span class="pre">metamate</span> <span class="pre">find</span></code> command, and the file ending <code class="docutils literal notranslate"><span class="pre">_resultcache</span></code> in the <code class="docutils literal notranslate"><span class="pre">metamateout</span></code> directory.</p>
+<p>Run the following command, replacing the file names with the names of your files, and <code class="docutils literal notranslate"><span class="pre">N</span></code> with the resultindex of your selected threshold.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ metamate dump -A denoisedASVs.fasta -C metamateout/..._resultcache -i N -o output.fasta
+</pre></div>
+</div>
+<p>We’re done! This FASTA contains the ASVs that result from the threshold we selected. In addition, any ASV that matched against our reference set is always included, even if it would otherwise be excluded based on the threshold, and any ASV that is the incorrect length or has stops in the translation is excluded, even if it would otherwise be included based on the threshold. We would generally recommend performing chimera filtering on this output, but otherwise this is ready to be used for analysis.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>You can use these ASVs to cluster into OTUs, instructions for this are in the next section: <a class="reference internal" href="../otu_asvs_readmapping/otudelim.html#otu-delim"><span class="std std-ref">OTU Delimitation</span></a>.</p>
+<p>Alternatively, if you want to perform your analyses at the ASV level, you can use these in place of OTUs in the <span class="xref std std-ref">Generating Data</span> and <a class="reference internal" href="../otu_phylogeny/placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic placement</span></a> sections.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../otu_asv_read.html" class="btn btn-neutral float-right" title="OTUs, ASVs and Read Mapping" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="chimera_filtering.html" class="btn btn-neutral float-left" title="6. Chimera filtering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>The content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
