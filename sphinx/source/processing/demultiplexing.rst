@@ -14,6 +14,11 @@ Introduction
 
 There are many ways in which metabarcoding libraries may be sequenced. We are going to work here with a library preparation pipeline that involved indexing amplicons during initial PCR, such that each sample had a different 6-base index within a library. Once sequenced, we need to use these index sequences to separate out different samples. This process is called ​**demultiplexing​**. In this case, the amplicons were sequenced using paired-end sequencing, meaning the two ends of each fragment were read, working inwards. We have eight sequence files received from our sequencing facility, one for each read direction for each of four libraries.
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses the Cutadapt software. If you've yet to install this see :ref:`here. <cutadapt>` 
+
 Primers and indices
 ===================
 

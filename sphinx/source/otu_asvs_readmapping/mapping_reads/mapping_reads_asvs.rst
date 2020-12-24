@@ -9,6 +9,11 @@ Introduction
 
 Finding all exact copies of a single ASV in a dataset of reads is relatively straightforward, and there are tools available to automatically count up the copies and generate a nice table. However, as we discarded a lot of unique sequences as likely erroneous through our :ref:`Filtering <filtering>` pipeline, a lot of reads will not be assigned to an ASV. If we are being strict, this is absolutely fine, as these reads are after all probably erroneous. However, these errors likely represent an erroneous version of a true ASV, and thus their presence in a sample may be meaningful as long as we can accurately assign them to the correct ASV - of course, therein likes the problem. In this subsection, we will first perform a strict assignment of reads to our ASVs, generating a tabular record of ASV occurence by sample. We will then review a slightly less strict alternative.
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses VSEARCH. Instuctions on installing VSEARCH are found :ref:`here. <vsearch>`
+
 Input Data
 ==========
 

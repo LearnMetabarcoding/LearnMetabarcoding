@@ -36,6 +36,11 @@ These metabarcoding libraries were sequenced such that 300bp of our fragment was
 
 The overlap between our reads is definitely enough to be able to confidently assemble each pair together, and each pair of the primer-trimmed files can now become one.
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses fastqc, fastqe and PEAR. If you have not installed these yet see here: :ref:`fastqe <fastqe>` , :ref:`fastQC <fastqc>` and :ref:`PEAR. <pear>`
+
 Sequence quality
 ================
 
@@ -113,6 +118,7 @@ Make sure to review those terminal outputs! Then list the contents of your merge
 The ``&&`` here runs both commands on this line one after the other. We could use ``;`` instead, but ``&&`` only runs the second command if the first one succeeds. This is important because the ``rename`` command uses regular expressions to remove the "assembled followed by a full stop" part from any files with that in the name. If we hadn't removed any files with "unassembled" in the name, then that would have renamed them too!
 
 .. sidebar:: Alternatives to PEAR
+
 	Read merging is a very important and very sensitive step in the pipeline, so it is important to select software that is sufficiently feature-rich and has been developed with careful consideration to the problem. 
 	
 	We use PEAR because it's a standalone read merging tool with a probabilistic approach to the merging task, and it works well for our data. However, it can sometimes be a little temperamental if your reads aren't precisely paired up or if you have any extraneous very short reads present in your data. Usually in these cases it just fails with a vague error - which isn't great but is better than doing something wrong.

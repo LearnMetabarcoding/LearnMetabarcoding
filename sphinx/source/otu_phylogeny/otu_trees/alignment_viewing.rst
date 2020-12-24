@@ -8,7 +8,11 @@ Introduction
 ===============
 
 This subsection focuses on how to view an alignment in the free software AliView. If you already are familiar with AliView or another alignment viewer software then feel free to skip this section.
-AliView can be downloaded `here. <https://ormbunkar.se/aliview/>`_ 
+
+.. admonition:: Software and data
+    :class: green
+
+    This section uses the program AliView. AliView can be downloaded `here. <https://ormbunkar.se/aliview/>`_ 
 
 Viewing alignment in AliView
 ==============================

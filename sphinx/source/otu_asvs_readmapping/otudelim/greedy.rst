@@ -11,6 +11,11 @@ Greedy clustering is the conceptually most simple method of OTU delimitation we 
 
 The similarity threshold determines how large the clusters are and how many OTUs form. The most common similarity threshold is 97% similarity, where new ASVs join a cluster if they are no more than 3% different from the centroid. This *difference* is often known as the cluster radius, and this value is often used as much as the similarity value to specify the OTUs. Note that any two ASVs within a cluster may be as much as 6% dissimilar: the key measurement is between the *centroid* and any ASV, not among ASVs, hence the use of the term "radius".
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses VSEARCH. Instuctions on installing VSEARCH are found :ref:`here. <vsearch>`
+
 Running greedy clustering
 ============================
 

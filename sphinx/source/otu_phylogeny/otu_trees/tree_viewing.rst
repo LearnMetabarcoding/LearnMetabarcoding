@@ -8,8 +8,11 @@ Introduction
 =============
 
 In this subsection we will look at how you can view phylogentic trees using the free software Dendroscope. If you are familiar with Dendroscope or a similar software feel free to skip this section. 
-You can download Dendroscope from `here <https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/>`_
 
+.. admonition:: Software and data
+    :class: green
+
+    This section uses the software Dendroscope. You can download Dendroscope from `here <https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/>`_
 
 Viewing tree in Dendroscope
 ============================

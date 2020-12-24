@@ -24,6 +24,12 @@ All three are commonly used in amplicon filtering.
 
 With paired amplicons, we know that the end of the read is likely to be lower quality; however, we have already merged our pairs with the result that if our reads have any low-quality portions, it's the *middle* of the read, so selective trimming at this point is not a viable strategy. Excluding reads entirely based on quality is a more conservative approach and is generally suggested here.
 
+.. admonition:: Software and data
+	:class: green 
+
+	This section uses teh fastx_toolkit. If you've not installed this see instructions :ref:`here. <fastx_toolkit>` 
+	This section also uses VSEARCH. Instuctions on installing VSEARCH are found :ref:`here. <vsearch>`
+
 Quality Threshold Filtering
 ===========================
 

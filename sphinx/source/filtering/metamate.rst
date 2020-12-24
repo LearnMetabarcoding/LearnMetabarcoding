@@ -15,6 +15,12 @@ This pipeline is centred around the tool metaMATE, which performs so-called "Mul
 
 In the spirit of openness, we should be clear that metaMATE was developed by many of the same people who authored these resources. We think it's a pretty good method for more stringent and careful filtering of ASVs, but of course we might be biased! To be fair, there aren't any other methods as detailed as this, but if you're thinking of using metaMATE in your bioinformatic pipeline, you should not do so just because we present it here, but after ensuring you know what it does and concluding that it is the most appropriate tool for your data.
 
+.. admonition:: Software and data
+	:class: green
+
+	This page uses metaMATE software. If you haven't installed metaMATE yet see instructions :ref:`here <metamate_install>`
+
+
 Getting started
 ===============
 

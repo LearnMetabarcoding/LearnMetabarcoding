@@ -175,7 +175,7 @@
             
   <div class="section" id="software-installation">
 <span id="installing-software"></span><h1>Software installation<a class="headerlink" href="#software-installation" title="Permalink to this headline">¶</a></h1>
-<p>Here we detail how to install all Linux command-line software used in these resources. Note that if you are setting up a server from scratch, for example if you are using a <span class="xref std std-ref">cloud server</span>, you should also ensure that you perform any necessary administration tasks and install and configure any necessary security software you need.</p>
+<p>Here we detail how to install all Linux command-line software used in these resources. Note that if you are setting up a server from scratch, for example if you are using a <a class="reference internal" href="cloud_servers.html#cloud-servers"><span class="std std-ref">cloud server</span></a>, you should also ensure that you perform any necessary administration tasks and install and configure any necessary security software you need.</p>
 <p>These commands are written for Ubuntu Linux. They will probably work fine on any Ubuntu or Debian machine, and on most Linux machines with the appropriate package manager changes.</p>
 <p>We supply these instructions with absolutely no guarantee or warranty. If you break a machine following these instructions, it’s not our fault. If you fail to properly secure a cloud server and have it compromised and used to spam people or launch crippling viruses, it’s not our fault. If in doubt, seek expert advice.</p>
 <p>These commands use the most recent software versions as of December 2020, but in some cases use hard URLs to the most recent version that should be updated.</p>
@@ -194,15 +194,15 @@
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">bioperl</span> <span class="n">libdbd</span><span class="o">-</span><span class="n">sqlite3</span><span class="o">-</span><span class="n">perl</span> <span class="n">libjson</span><span class="o">-</span><span class="n">perl</span> <span class="n">perl</span><span class="o">-</span><span class="n">doc</span> <span class="n">python3</span><span class="o">-</span><span class="n">biopython</span> <span class="n">python</span><span class="o">-</span><span class="n">scipy</span> <span class="n">libarray</span><span class="o">-</span><span class="n">utils</span><span class="o">-</span><span class="n">perl</span> <span class="o">-</span><span class="n">y</span>
 </pre></div>
 </div>
-<div class="section" id="id1">
-<h3>Cutadapt<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="cutadapt">
+<span id="id1"></span><h3>Cutadapt<a class="headerlink" href="#cutadapt" title="Permalink to this headline">¶</a></h3>
 <p>Versatile adapter sequence removal. <a class="reference external" href="https://cutadapt.readthedocs.io/en/stable/">Documentation</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">H</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">cutadapt</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="mafft">
-<h3>MAFFT<a class="headerlink" href="#mafft" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3>MAFFT<a class="headerlink" href="#mafft" title="Permalink to this headline">¶</a></h3>
 <p>Sequence alignment. <a class="reference external" href="https://mafft.cbrc.jp/alignment/software/">Website</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">wget</span> <span class="o">-</span><span class="n">P</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">deb</span><span class="o">/</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mafft</span><span class="o">.</span><span class="n">cbrc</span><span class="o">.</span><span class="n">jp</span><span class="o">/</span><span class="n">alignment</span><span class="o">/</span><span class="n">software</span><span class="o">/</span><span class="n">mafft_7</span><span class="o">.</span><span class="mi">475</span><span class="o">-</span><span class="mi">1</span><span class="n">_amd64</span><span class="o">.</span><span class="n">deb</span>
 <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">deb</span><span class="o">/</span><span class="n">mafft_7</span><span class="o">.</span><span class="mi">475</span><span class="o">-</span><span class="mi">1</span><span class="n">_amd64</span><span class="o">.</span><span class="n">deb</span>
@@ -210,15 +210,15 @@
 </div>
 </div>
 <div class="section" id="alan">
-<h3>ALAN<a class="headerlink" href="#alan" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h3>ALAN<a class="headerlink" href="#alan" title="Permalink to this headline">¶</a></h3>
 <p>Commandline alignment viewer. <a class="reference external" href="https://github.com/mpdunne/alan">Github</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">wget</span> <span class="o">-</span><span class="n">P</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mpdunne</span><span class="o">/</span><span class="n">alan</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">alan</span>
 <span class="n">sudo</span> <span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">alan</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h3>FastQC<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fastqc">
+<span id="id4"></span><h3>FastQC<a class="headerlink" href="#fastqc" title="Permalink to this headline">¶</a></h3>
 <p>Raw sequence quality assessment. <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">Website</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span>
 <span class="n">sudo</span> <span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">bioinformatics</span><span class="o">.</span><span class="n">babraham</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">fastqc</span><span class="o">/</span><span class="n">fastqc_v0</span><span class="o">.</span><span class="mf">11.9</span><span class="o">.</span><span class="n">zip</span>
@@ -228,15 +228,15 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>FastqE<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fastqe">
+<span id="id6"></span><h3>FastqE<a class="headerlink" href="#fastqe" title="Permalink to this headline">¶</a></h3>
 <p>Fun commandline quality assessment. <a class="reference external" href="https://fastqe.com/">Website</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">H</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">fastqe</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h3>PEAR<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="pear">
+<span id="id8"></span><h3>PEAR<a class="headerlink" href="#pear" title="Permalink to this headline">¶</a></h3>
 <p>Paired end read merger. <a class="reference external" href="http://www.exelixis-lab.org/pear">Website</a>
 You must sign up for a PEAR academic licence and you will receive an email with a link to download the installation files. The command here assumes you’ve downloaded the file to your home directory.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span>
@@ -250,15 +250,15 @@ You must sign up for a PEAR academic licence and you will receive an email with 
 </div>
 </div>
 <div class="section" id="pairfq">
-<h3>Pairfq<a class="headerlink" href="#pairfq" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3>Pairfq<a class="headerlink" href="#pairfq" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">libdbd</span><span class="o">-</span><span class="n">sqlite3</span><span class="o">-</span><span class="n">perl</span>  <span class="c1"># (installed above)</span>
 <span class="n">sudo</span> <span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="n">cpanmin</span><span class="o">.</span><span class="n">us</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">perl</span> <span class="o">-</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sestaton</span><span class="o">/</span><span class="n">Pairfq</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
-<p># Fastx toolkit
-.. _fastx_toolkit:
-FASTX Toolkit
-————-</p>
+<p># Fastx toolkit</p>
+</div>
+<div class="section" id="fastx-toolkit">
+<span id="id11"></span><h3>FASTX Toolkit<a class="headerlink" href="#fastx-toolkit" title="Permalink to this headline">¶</a></h3>
 <p>Various handy tools for dealing with FASTA and FASTQ files. A little out of date though, requires patching to work in modern Ubuntu (all done in the below commands).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span>
 
@@ -283,8 +283,8 @@ FASTX Toolkit
 </pre></div>
 </div>
 </div>
-<div class="section" id="id8">
-<h3>VSEARCH<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="vsearch">
+<span id="id12"></span><h3>VSEARCH<a class="headerlink" href="#vsearch" title="Permalink to this headline">¶</a></h3>
 <p>Open-source implementation of USEARCH with more versatility.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">autoconf</span> <span class="n">groff</span> <span class="c1"># (installed above)</span>
 
@@ -301,14 +301,14 @@ FASTX Toolkit
 </pre></div>
 </div>
 </div>
-<div class="section" id="id9">
-<h3>metaMATE<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="metamate">
+<span id="id13"></span><h3>metaMATE<a class="headerlink" href="#metamate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">H</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">metaMATE</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id10">
-<h3>swarm<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="swarm">
+<span id="id14"></span><h3>swarm<a class="headerlink" href="#swarm" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span>
 
 <span class="n">sudo</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">torognes</span><span class="o">/</span><span class="n">swarm</span><span class="o">.</span><span class="n">git</span>
@@ -322,8 +322,8 @@ FASTX Toolkit
 </pre></div>
 </div>
 </div>
-<div class="section" id="id11">
-<h3>CROP<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="crop">
+<span id="id15"></span><h3>CROP<a class="headerlink" href="#crop" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">libgsl</span><span class="o">-</span><span class="n">dev</span> <span class="c1"># (installed above)</span>
 
 <span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span>
@@ -335,8 +335,8 @@ FASTX Toolkit
 </pre></div>
 </div>
 </div>
-<div class="section" id="id12">
-<h3>BLAST<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="blast">
+<span id="id16"></span><h3>BLAST<a class="headerlink" href="#blast" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd /usr/local/src/
 
 BLAST_VERSION=&quot;2.9.0&quot; # Change as appropriate
@@ -346,15 +346,15 @@ sudo cp ncbi-blast-${BLAST_VERSION}+/bin/* /usr/local/bin/
 </pre></div>
 </div>
 </div>
-<div class="section" id="id13">
-<h3>catfasta2phyml<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="catfasta2phyml">
+<span id="id17"></span><h3>catfasta2phyml<a class="headerlink" href="#catfasta2phyml" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">wget</span> <span class="o">-</span><span class="n">P</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nylander</span><span class="o">/</span><span class="n">catfasta2phyml</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">catfasta2phyml</span><span class="o">.</span><span class="n">pl</span>
 <span class="n">sudo</span> <span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">catfasta2phyml</span><span class="o">.</span><span class="n">pl</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id14">
-<h3>FastTree<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="fasttree">
+<span id="id18"></span><h3>FastTree<a class="headerlink" href="#fasttree" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span>
 <span class="n">sudo</span> <span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">microbesonline</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">fasttree</span><span class="o">/</span><span class="n">FastTree</span>
 <span class="n">sudo</span> <span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">microbesonline</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">fasttree</span><span class="o">/</span><span class="n">FastTreeMP</span>

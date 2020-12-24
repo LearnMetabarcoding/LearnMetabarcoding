@@ -27,6 +27,11 @@ You should see that the average sequence length has reduced by 6.
 
 We can also use cutadapt to remove primers. Unlike indices, which are not valid DNA sequences but artificial sequences we added, primer regions reflect real DNA sequence data. However, because we used degenerate primers, we cannot be certain that the amplified region of the primer sequence is exactly identical to that region on our source DNA, because primers do not always bind perfectly. So this region must be discarded.
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses the Cutadapt software. If you've yet to install this see :ref:`here. <cutadapt>`
+
 Performing primer removal
 =========================
 

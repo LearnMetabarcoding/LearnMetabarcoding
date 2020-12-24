@@ -9,6 +9,11 @@ Introduction
 
 The program ``swarm`` is a slightly different OTU delimitation algorithm. Rather than using a threshold that applies to all clusters like vsearch’s clustering method, it uses a local linking threshold that is based on number of differences, rather than overall dissimilarity. It assess the absolute number of differences between all pairs of ASVs, then builds a network where ASVs are nodes and the distance between nodes is the number of differences. It then interrogates this network to separate groups of ASVs with the most differences between them. One of the theoretical benefits of ``swarm`` is that it is not affected by the abundance distribution of the input ASVs and the clusters are therefore not necessarily as uneven as in greedy clustering. The downside is that ``swarm`` generally produces many more OTUs than greedy clustering, especially at the authors' recommended settings. Of course, this could vary considerably depending on the dataset.
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses the program swarm. Instructions on how to install swarm can be seen :ref:`here. <swarm>`
+
 Running SWARM
 =============
 

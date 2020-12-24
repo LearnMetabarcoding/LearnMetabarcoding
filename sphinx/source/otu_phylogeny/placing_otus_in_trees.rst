@@ -11,6 +11,11 @@ In the previous section we built a *de novo* phylogenetic tree from our OTU sequ
 
 The most important point to remember here is that we must have genetic data for all of the terminals of the existing tree, and at least some of that genetic data should cover the same region of the genome as our metabarcoding marker. Ideally, all of the terminals of the existing tree would have sequence data for our metabarcoding region, but often we have incomplete datasets. This is not the end of the world: the phylogenetic algorithm is able to take account of this missing data and estimate the placement of a new sequence based on its similarity to the sequences with data, and given that incomplete sequences will correspond to other parts of other reference sequences, pairwise distances can be inferred anyway.
 
+.. admonition:: Software and data
+	:class: green
+
+	This section uses mafft and FastTree. Instructions on installing these are found here: :ref:`mafft <mafft>` and :ref:`FastTree <fasttree>`
+
 Getting Started
 ===============
 

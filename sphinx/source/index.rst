@@ -1,4 +1,5 @@
 .. _index:
+
 ====================================================
 Bioinformatic Methods for Biodiversity Metabarcoding
 ====================================================
@@ -27,6 +28,7 @@ Page tree
 =========
 
 .. toctree::
+	:titlesonly:
 	
 	gettingstarted
 	readprocessing

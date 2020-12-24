@@ -9,6 +9,11 @@ Introduction
 
 We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an "approximately maximum likelihood" phylogenetic tree building method, broadly similar in method to PhyML, RAxML or IQtree.
 
+.. admonition:: Software and data
+	:class: green 
+
+	This section uses the tree building software FastTree. Instuctions on how to install FastTree can be found :ref:`here. <fasttree>`
+
 Running FastTree
 ================
 

@@ -1,4 +1,4 @@
-.. _cloud_servers
+.. _cloud_servers:
 
 =============
 Cloud servers

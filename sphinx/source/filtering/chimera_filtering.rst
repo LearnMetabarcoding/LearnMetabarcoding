@@ -9,6 +9,11 @@ Introduction
 
 Chimeras generally arise during PCR when two strands of DNA that are not in fact the correct mirrors of one another become annealed together. This can create ASVs where different parts of the sequence come from different true sources. We remove these with a clever algorithm, UCHIME denovo, that put simply, searches all of the ASVs against one another, looking for subregions that match, not just matches over the complete length of the ASVs. Where a sequence has two or more parts that match to two or more different ASVs *that are more common*, this sequence is thought to likely be a chimera. Like UNOISE, This algorithm, is implemented in both the USEARCH and VSEARCH software (see the :ref:<denoising section `denoise`> for a discussion about USEARCH and VSEARCH.
 
+.. admonition:: Software and data
+	:class: green 
+
+	This section uses VSEARCH. Instuctions on installing VSEARCH are found :ref:`here. <vsearch>`
+
 Performing Chimera Filtering
 ============================
 

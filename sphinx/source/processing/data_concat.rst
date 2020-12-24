@@ -9,9 +9,15 @@ Introduction
 
 At this point we have a set of sequence reads for each sample with extraneous sequence removed and read pairs brought together. Metabarcoding works on all sequence reads from across the dataset to find OTUs, and it’s more efficient if we do the following steps with all reads compiled into one file. 
 
+.. admonition:: Software and data
+	:class: green
+
+	TODO
+	
 .. sidebar:: Pipeline design choices
 
 	We present this step here because it allows us to separate two distinct themes: the processing of raw sequence reads into samples, in this section, and the filtering of processed sequence reads to remove errors, in the next section. However, when performing metabarcoding bioinformatics it may be more efficient to perform this task after quality filtering, since quality filtering substantially reduces the data size. We detail this alternative `here <>` TODO
+
 
 Performing concatenation
 ========================

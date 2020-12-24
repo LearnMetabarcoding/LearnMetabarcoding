@@ -11,6 +11,11 @@ Our concatenated FASTA file contains all putatively valid reads for our project.
 
 From now on, the main purpose is to find these unique sequences and filter out those that may be erroneous. For now, we ignore the source of these sequences; the dataset is considered as a whole with (largely) no reference to the individual samples. There is no need for this filtering process to be performed on many thousands of reads if lots of them are identical; better to dereplicate and reduce our data size to speed up what are generally quite computationally intensive tasks.
 
+.. admonition:: Software and data
+	:class: green 
+
+	This section uses VSEARCH. Instuctions on installing VSEARCH are found :ref:`here. <vsearch>`
+
 Performing Dereplication
 ========================
 
