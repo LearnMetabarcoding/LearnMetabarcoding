@@ -12,11 +12,11 @@
 Introduction
 ============
 
-As well as demultiplexing, cutadapt removed the indices from our samples. You can check this using the grep command from the previous section. Alternatively, you can use the following command to explore the length distribution of the sequences. Run this on a pre- and post- demultiplexed file.
+As well as demultiplexing, **cutadapt** removed the indices from our samples. You can check this using the ``grep`` command from the previous subsection. Alternatively, you can use the following command to explore the length distribution of the sequences. Run this on a pre- and post- demultiplexed file.
 
 .. code-block:: bash
 
-	$ sed -n '2~4p'​ file​ | while read l; do echo ${#l} ; done | sort | uniq -c
+	sed -n '2~4p'​ :var:`input.fastq​` | while read l; do echo ${#l} ; done | sort | uniq -c
 
 .. admonition:: How this command works
 	:class: togglegreen
@@ -27,10 +27,13 @@ You should see that the average sequence length has reduced by 6.
 
 We can also use cutadapt to remove primers. Unlike indices, which are not valid DNA sequences but artificial sequences we added, primer regions reflect real DNA sequence data. However, because we used degenerate primers, we cannot be certain that the amplified region of the primer sequence is exactly identical to that region on our source DNA, because primers do not always bind perfectly. So this region must be discarded.
 
-.. admonition:: Software and data
+.. admonition:: Data and software
 	:class: green
 
-	This section uses the Cutadapt software. If you've yet to install this see :ref:`here. <cutadapt>`
+	The input data for this section is the folder of demultiplexed reads by sample generated in :ref:`the previous subsection<demultiplexing>`
+	TODO link
+	
+	This tutorial uses the :ref:`**cutadapt** software<cutadapt>`.
 
 Performing primer removal
 =========================
