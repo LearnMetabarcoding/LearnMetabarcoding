@@ -1,10 +1,3 @@
-Priority
-========
-
-Landing page draft done and online
-
-All pages created and website structure finished
-
 Content
 =======
 
@@ -25,6 +18,8 @@ Update internal links throughout
 Add paper citations throughout
 
 Phylogenetic placement - mention other phylogenetic software backbone approaches, pplacer, others?
+
+Add something about file/folder naming conventions to a page
 
 
 Data
@@ -54,4 +49,13 @@ Any names of linux base tools, i.e. sed, grep, etc should be presented in ``mono
 Any other software should be presented in **boldface**, following capitalisation of the software author
 
 All references to "toy dataset" to "example dataset"
+
+Specifics
+=========
+
+Add rm command to unix basics to remove example files
+
+Grep page: switch to AAGAGG, add link to a fastq (Lib1_R1.fastq) and a fasta (?) for testing
+
+Loops - have some example data (some fastas?). Correct commands
 
