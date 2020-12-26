@@ -25,6 +25,11 @@ Add something about file/folder naming conventions to a page
 Data
 ====
 
+Add a page in the root for data and a data directory
+
+For each of the 5 sections, add a zipped directory into the data/ directory with all necessary data.
+
+
 Initialise and organise a repo for the course data
 
 Data should be in directories by 5 major sections

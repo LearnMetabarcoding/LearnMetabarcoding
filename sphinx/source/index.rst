@@ -31,6 +31,7 @@ Page tree
 	:titlesonly:
 	
 	gettingstarted
+	data
 	readprocessing
 	filtering
 	otu_asv_read
