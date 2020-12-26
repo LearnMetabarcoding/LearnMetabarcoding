@@ -27,13 +27,9 @@ Data
 
 Add a page in the root for data and a data directory
 
-For each of the 5 sections, add a zipped directory into the data/ directory with all necessary data.
+For each of the 5 sections, add a zipped directory into the data/ directory with all necessary data - do this as part of the make script, zipping the directories in data_source to the sphinx/docs/data directory.
 
-
-Initialise and organise a repo for the course data
-
-Data should be in directories by 5 major sections
-
+Data done? for section A.
 
 
 Standardisation

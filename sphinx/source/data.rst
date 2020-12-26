@@ -8,7 +8,7 @@ Introduction
 ============
 
 In 2014 and 2015, we sampled arthropod communities from the canopies of rainforest trees in Cusuco National Park, Honduras. These samples were processed at the Natural History Museum, London, where we homogenised the samples and carried out metabarcoding amplification for a 418bp section of the CO1 Folmer "barcode" region. These were sequenced on an Illumina HiSeq using a 2x300bp read metric.
-
+e
 We have taken a few of these samples and modified them to reduce their size while preserving realistic sequence variation and errors. These samples form the example dataset we provide for you to use as you work through the different sections of these resources.
 
 Getting the data
@@ -24,26 +24,28 @@ There are two possible ways you can acquire the data:
 Data URLs
 =========
 
+
+.. _sectionAdata:
 Section A: Read processing
 --------------------------
 
 
-
+.. _sectionBdata:
 Section B: Filtering amplicon data
 ----------------------------------
 
 
-
+.. _sectionCdata:
 Section C: ASVs, OTUs and read mapping
 --------------------------------------
 
 
-
+.. _sectionDdata:
 Section D: Building OTU phylogeny
 ---------------------------------
 
 
-
+.. _sectionEdata:
 Section E: Identifying OTU sequences
 ------------------------------------
 

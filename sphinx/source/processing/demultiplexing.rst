@@ -14,13 +14,26 @@ Introduction
 
 There are many ways in which metabarcoding libraries may be sequenced. We are going to work here with a library preparation pipeline that involved indexing amplicons during initial PCR, such that each sample had a different 6-base index within a library. Once sequenced, we need to use these index sequences to separate out different samples. This process is called ​**demultiplexing​**. In this case, the amplicons were sequenced using paired-end sequencing, meaning the two ends of each fragment were read, working inwards. We have eight sequence files received from our sequencing facility, one for each read direction for each of four libraries.
 
+.. admonition:: I don't have multiplexed data!
+	:class: togglegreen
+	
+	If you are following along with your own data, this step only applies if the sequence files you have contain data from multiple samples. Generally this happens if you multiplex your samples together during first-round PCR as well as the multiplexing that happens as part of library preparation. The sequencer generally demultiplexes library preparation multiplexing, so if you did *not* multiplex during first round PCR, you can probably skip this step and go straight to :ref:`2. Primer removal<primer_removal>`
+
 .. admonition:: Data and software 
 	:class: green
 	
-	TODO: data link. Specify that we should be inside the 0_rawsequences directory.
+	This tutorial works on raw FASTQ-format sequence data that contains indices at the beginning of the reads. The example data for this can be found in the ``0_rawsequences`` directory within the :ref:`sectionA archive<sectionAdata>`. You should copy this directory over to your working directory as follows:
+	
+	.. parsed-literal::
+		
+		cp -r :var:`path/to/exampledata/sectionA/0_rawsequences/ ./
+		
+	
+	If you are completely new to sequence data, you might at this point want to :ref:`review the FASTQ format <fastq>`
 	
 	This tutorial uses the :ref:`**cutadapt** software<cutadapt>`.
 	
+
 
 Primers and indices
 ===================
@@ -105,7 +118,7 @@ Referring to the indices.txt file, we can now construct a command that demultipl
 
 The following commands assume that you are in the directory containing the ``0_rawsequences`` directory and an empty directory called ``1_demux``. Let's first try and demultiplex a single file. Reminder: we used the ``​\`` to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command at the beginning of the next line.
 
-Carefully examine the following command and make sure you're clear on what each of the arguments is doing. Then, run the command and inspect the terminal output and make sure you understand what it's saying.
+Carefully examine the following command and make sure you're clear on what each of the arguments is doing. Then, run the command and inspect the terminal output and make sure you understand what it's saying. Note that unless you have used a different directory name or directory layout, you should just be able to copy and run this command as-is without changing anything.
 
 .. parsed-literal::
 
@@ -134,7 +147,6 @@ Are there more files than expected? This is because the command has looked for a
 	
 	Some researchers use all of these different combinations to efficiently apply few indices to identify many many different samples. However, this makes it much harder to spot errors. We don't have any valid sequences that use different forward and reverse indices, yet the demultiplexer has found many: these are errors in the sequencing. The sequencer has mistakenly associated some reads as the same fragment when they aren’t - they actually come from two different samples, hence some files with two different sample names. And in some cases, no index can be found on one or both of a paired read, probably due to a sequencing error. These are marked as unknown. 
 
-
 Happily, all of these errors are in a distinct minority, and the majority of reads have been allocated to files for our samples. If we had used all 9 combinations, we wouldn't have been able to spot many of these errors!
 
 If you add all of the read counts up, you’ll notice we’re missing some reads from our original files: these had no mate pair and were completely discarded.
@@ -148,7 +160,7 @@ If you add all of the read counts up, you’ll notice we’re missing some reads
 Cleaning up
 ===========
 
-You should now have lots of files in that demux directory. It’s good practice to keep track of how demultiplexing performed: you could put the output of a grep command into a file to keep a record (see solution box below if you're not sure how to do this). 
+You should now have lots of files in your output directory. It’s good practice to keep track of how demultiplexing performed: you could put the output of a grep command into a file to keep a record (see solution box below if you're not sure how to do this). 
 
 .. admonition:: Solution
 	:class: toggle
@@ -191,4 +203,4 @@ We have generated a set of paired files, each containing the forward or reverse 
 
 If you'd like to explore more **cutadapt** parameters, you there are some further cutadapt exercises :ref:`here<cutadapt_extension>`, but this isn't necessary for the next step.
 
-Next we remove the primers from the sequences in these files: :ref:`2. Primer Removal.<primer_removal>`
+Next we remove the primers from the sequences in these files: :ref:`2. Primer removal.<primer_removal>`

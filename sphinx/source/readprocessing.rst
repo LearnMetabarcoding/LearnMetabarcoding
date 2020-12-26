@@ -1,7 +1,7 @@
 .. _read_processing:
 
 ==========================================
-Read processing
+A: Read processing
 ==========================================
 
 .. toctree::
@@ -13,22 +13,21 @@ Read processing
         processing/pair_merging
         processing/data_concat
 
-------------------------------------------
 Introduction
-------------------------------------------
+============
 
 Read processing is our name for the low-level steps required to process raw sequence reads as they would be received from a sequencer. You can think of these steps as like the compilation of data from field notes into a spreadsheet: we use contextual information to organise the data, remove extraneous information, bring together data that belongs in the same place and correct or remove any errors in data organisation. We call this low-level because many of these steps are conceptually simple and not necessarily exclusively metabarcoding-focused. Nonetheless, these processes are crucial to successful metabarcoding, as inappropriate choice of software or parameters here may have substantial impacts on the later results.
 
+.. admonition:: Data
+	
+	You can download a zip archive of the data for all of the tutorials in this section `here <sectionAdata>`. Unzip this to a convenient location.
 
-TODO: data section, rawsequences directory
-
--------------------------------------------
 Next steps
--------------------------------------------
+==========
 
-If you are completely new to sequence data, you might want to :ref:`review the FASTQ format <fastq>`. Otherwise, you should work through the subpages in this section, as follows:
+If you want to follow through the course step-by-step, you should work through the tutorials in this section as follows:
 
-1. :ref:`Demultiplexing <demultiplexing>`: the separation of data from different samples that was sequenced together
+1. :ref:`Demultiplexing <demultiplexing>`: the separation of data from different samples that was sequenced together.
 2. :ref:`Primer removal <primer_removal>`: trimming these sequences from our reads
 3. :ref:`Pair merging <pair_merging>`: the joining of overlapping paired end sequences (see also pair concatenation if paired end sequences don't overlap)
 4. :ref:`Data concatenation <data_concat>`: Bringing all the data together

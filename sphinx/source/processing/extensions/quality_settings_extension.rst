@@ -4,6 +4,8 @@
 Extension: Quality Settings
 ================================
 
+This extension follows on from the tutorial on :ref:`primer removal <primer_removal>` using the same data and software.
+
 Because primers are a region on our sequence that we have some ​*a priori*​ knowledge about, this is a good opportunity for filtering sequences with errors.
 
 .. admonition:: Exercise
@@ -14,7 +16,7 @@ Many metabarcoding pipelines trim primers by just trimming a number of bases equ
 
 .. code-block:: bash 
 
-	$ cutadapt -u ​N -o ​out.fastq​ -i ​in.fastq
+	cutadapt -u :var:`​N` -o :var:`​out.fastq​` -i :var:`​in.fastq`
 
 .. admonition:: Exercise
 

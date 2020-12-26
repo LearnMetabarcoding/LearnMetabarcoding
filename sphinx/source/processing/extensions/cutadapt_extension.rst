@@ -6,6 +6,8 @@ Extension: Cutadapt parameters
 
 **Cutadapt** has a lot more parameters for searching. Here are some of them that you might use to optimise returning as many reads as possible while still removing any errors.
 
+This extension follows on from the tutorial on :ref:`demultiplexing<demultiplexing>` using the same data and software.
+
 Error tolerance
 ===============
 

@@ -1,39 +1,53 @@
 .. _fastq:
 
-====================================
+=========================
 Fundamentals: FASTQ files
-====================================
+=========================
 
-This page reviews a few basic points about sequence file structure and how to explore these files using the command line. If you have experience working with FASTQ files you can move onto the :ref:`demultiplexing section<demultiplexing>`. The commands here assume that your current working directory is the directory into which you copied the starting data. 
+Introduction
+============
+
+This page reviews a few basic points about sequence file structure and how to explore these files using the command line. If you have experience working with FASTQ files you may want to move straight onto the :ref:`demultiplexing section<demultiplexing>`. 
+
+.. admonition:: Data and software
+
+	This tutorial works on raw FASTQ-format sequence data that contains indices at the beginning of the reads. The example data for this can be found in the ``0_rawsequences`` directory within the :ref:`sectionA archive<sectionAdata>`. If you haven't already, you should copy this directory over to your working directory as follows:
+	
+	.. parsed-literal::
+	
+		cp -r :var:`path/to/exampledata/sectionA/0_rawsequences/ ./
+	
+	No specific software is required; this tutorial will use only standard Linux functions
+
+Exploring FASTQ files
+=====================
 
 Change into the directory containing the starting data and list its contents, showing sizes:
 
-.. code-block:: bash
+.. parsed-literal::
 
-	$ cd 0_rawsequences/
-
-	$ ls -lh
+	cd 0_rawsequences/
+	ls -lh
 
 We can see how many lines in each file using the word count function, specifying we want the number of lines:
 
-.. code-block:: bash
+.. parsed-literal::
 
-	$ wc -l *.fastq
+	wc -l *.fastq
 
 The ​``*.fastq`` here means we want all of the files ending in ``.fastq`` in the directory. We could replace this with a single file name if we just wanted to count the lines of a single file.
 
+.. parsed-literal::
 
-.. code-block:: bash
-
-	$ head -n 10 ​file
+	head -n 10 ​file
 
 You will see the FASTQ format comprising header, sequence and quality scores. A useful point to note is the structure of the file header, specifically that it starts with ``@D00``. If the structure of this file is completely new to you, take a few minutes to read the first section on the `FASTQ wikipedia page <https://en.wikipedia.org/wiki/FASTQ_format>`_.
 
 To get specific lines from a file, use the sed function:
 
-.. code-block:: bash 
+.. parsed-literal:: 
 
-	$ sed -n '4,8p' ​file     # prints lines 4-8
+	sed -n '4,8p' ​file     # prints lines 4-8
 
 Use this to have a look at some files.
 
@@ -41,17 +55,17 @@ Note that the R1 and R2 files from the same library have the same read headers, 
 
 We can use the ``grep -c`` function to count the number of sequences in a file (again, replace file with the name of one of the files):
 
-.. code-block:: bash
+.. parsed-literal::
 
-	$ grep -c "^@D00" ​file
+	grep -c "^@D00" ​file
 
 If you want to learn more about grep, see :ref:`here<grep>`.
 
 Like the ​wc -l function above, we can run grep on all of our files at once to get the total read numbers for each of our libraries:
 
-.. code-block:: bash 
+.. parsed-literal:: 
 
-	$ grep -c "^@D00" *.fastq
+	grep -c "^@D00" *.fastq
 
 We can see that we’re dealing with about 9000 reads per library.
 
