@@ -1,14 +1,14 @@
-.. _otu_asv_read_mapping:
+.. _asv_otu_readmap:
 
 ===========================
-OTUs, ASVs and Read Mapping
+C: ASVs, OTUs and read mapping
 ===========================
 
 .. toctree:: 
     :hidden:
 
-    otu_asvs_readmapping/otudelim
-    otu_asvs_readmapping/mapping_reads
+    asv_otu_readmap/otudelim
+    asv_otu_readmap/mapping_reads
 
 Introduction
 ============
@@ -19,7 +19,15 @@ In this section, we will first examine some ways to group ASVs into Operational 
 
 In the second subsection, :ref:`Mapping Reads <mapping_reads>` we will look at how to bring our final set of biological sequences, be they ASVs or OTUs, together with the sample-level read dataset in order to generate read mapping tables, the record of the number of reads for each biological sequence in each of your samples. This data is the primary output of metabarcoding and can be used in place of classic site-by-species tables for downstream ecological analysis. 
 
-OTUs or ASVs?
+.. admonition:: Data
+	
+	The starting point for this section is a FASTA file comprising ASVs, that is to say unique sequences with errors removed. These sequences must have ``;size=`` tags in the sequence headers to denote the abundance of each sequence in the dataset. You will also need a FASTA file of all reads in your dataset, with sample names in the read headers. 
+	
+	If you worked through :ref:`the previous section<filtering>`, these data were produced by the :ref:`chimera filtering<chimera_filtering>` and :ref:`quality filtering<quality_filtering>` tutorials respectively.
+	
+	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section `here <sectionCdata>`. Unzip this to a convenient location.
+
+ASVs or OTUS?
 =============
 
 In early metabarcoding studies, these ASVs were always grouped together into Operational Taxonomic Units (OTUs), that were treated as equivalent to species. This grouping process aimed to perform two tasks simultaneously: the removal of intra-specific variation to get species-level taxonomic units, and the removal of any remaining erroneous sequences. As new filtering methods have become available, and our ability to remove erroneous sequences has improved, the latter task has dwindled in relevance and while OTU grouping is still widely used, the error rate of ASVs has decreased to the point that we may be able to analyse the haplotype-level dataset with confidence, allowing the exploration of population-level patterns and processes alongside studying the community level. The choice of using ASVs or OTUs largely depends on your research questions and it may well be that both may be appropriate for different aspects of your research.
@@ -29,12 +37,12 @@ There are three main points that you should keep in mind if continuing at the AS
 2. You may need significantly deeper sampling to adequately capture a sufficiently representative set of ASVs for your study than for OTUs. This will depend a lot on your research question, study community and study taxon.
 3. Similarly, you may need significantly deeper sampling to recover representative numbers of reads per ASV per sample in order to generate a realistic picture of ASV distribution across your samples, than for OTUs. Again this will depend on research question, study community and study taxon.
 
-.. _OTU_ASV_read_mapping_nextsteps:
+.. _ASV_OTU_read_mapping_nextsteps:
 
 Next Steps
 ==========
 
-To find out how to group your ASVs into groups, head to the :ref:`OTU Delimitation <otudelim>` subsection. You will need a FASTA of ASVs, i.e. unique sequences, with your chosen level of error filtering, and with ``;size=`` tags in the sequence headers. If you have run through the :ref:`Filtering <filtering>` section with our toy dataset, the final output from the last step is what you need. If you only want to try this section and you don't have your own data, you can download the equivalent file to test with from XXXXX.
+To find out how to group your ASVs into groups, head to the :ref:`OTU Delimitation <otudelim>` subsection.
 
-If you have done OTU delimitation or want to work with ASVs, you can jump to the :ref:`Mapping Reads <mapping_reads>` subsection. You will need a FASTA file of OTU sequences or of ASV sequences as described above. You will also need a FASTA file containing all reads from your project, with ``;sample=XXX`` tags in the read headers detailing the source of each read. If you've followed the :ref:`Filtering <filtering>` section, this would be the final output from the :ref:`Quality Filtering <quality_filtering>` subsection.
+If you have done OTU delimitation or want to work with ASVs, you can jump to the :ref:`Mapping reads <mapping_reads>` subsection, where we look at how to generate data recording the number of reads per ASV or OTU per sample.
 
