@@ -27,6 +27,7 @@ As well as generating approximately species-level taxonomic units, grouping ASVs
 	If you worked through :ref:`the previous section<filtering>`, these data were produced by the :ref:`chimera filtering<chimera_filtering>`tutorial.
 	
 	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section `here <sectionCdata>`. Unzip this to a convenient location.
+	
 
 
 Delimitation methods
@@ -50,7 +51,7 @@ We will look at three methods of OTU delimitation commonly used in metabarcoding
 1. :ref:`Greedy clustering<greedy_clustering>` is by far the most common method for OTU delimitation, generally at the 3% similarity level.
 2. :ref:`Linkage delimitation<linkage_delimitation` works by building a linkage graph of ASVs and breaking this into OTUs
 3. :ref:`Bayesian clustering<bayesian_clustering>` uses a bayesian similarity approach to group ASVs into OTUs
-4. :ref:`Species delimitation<bptp_delim>` uses a phylogenetics-based approach to group ASVs.
+4. :ref:`Phylogenetic delimitation<bptp_delim>` borrows from species delimitation methods in barcoding and uses a phylogenetics-based approach to group ASVs.
 
 For each step, we will generate OTU sequences and a record of which ASVs were grouped into which OTUs. Once you've learned about some different methods, you may want to read about how to :ref:`Compare OTU delimitation methods <comparing_otus>`. This is largely an exercise in exploring data, and doesn't have any specific outputs aside from helping you choose which set of OTUs to accept.
 
