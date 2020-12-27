@@ -129,7 +129,7 @@ Pairfq
 FASTX Toolkit
 -------------
 
-Various handy tools for dealing with FASTA and FASTQ files. A little out of date though, requires patching to work in modern Ubuntu (all done in the below commands).
+Various handy tools for dealing with FASTA and FASTQ files. A little out of date though, requires patching to work in modern Ubuntu (all done in the below commands). `Website<http://hannonlab.cshl.edu/fastx_toolkit/index.html>`_ 
 
 .. parsed-literal::
 	
@@ -161,6 +161,7 @@ VSEARCH
 -------
 
 Open-source implementation of USEARCH with more versatility.
+VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. We’ll see other tools from this useful package later; you can read the documentation `here. <https://github.com/torognes/vsearch>`_
 
 .. parsed-literal::
 	

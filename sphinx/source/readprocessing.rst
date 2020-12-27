@@ -1,17 +1,17 @@
 .. _read_processing:
 
-==========================================
+==================
 A: Read processing
-==========================================
+==================
 
 .. toctree::
 	:hidden:
 	
-        processing/fastq
-        processing/demultiplexing
-        processing/primer_removal
-        processing/pair_merging
-        processing/data_concat
+	processing/fastq
+	processing/demultiplexing
+	processing/primer_removal
+	processing/pair_merging
+	processing/data_concat
 
 Introduction
 ============
@@ -28,9 +28,9 @@ Next steps
 If you want to follow through the course step-by-step, you should work through the tutorials in this section as follows:
 
 1. :ref:`Demultiplexing <demultiplexing>`: the separation of data from different samples that was sequenced together.
-2. :ref:`Primer removal <primer_removal>`: trimming these sequences from our reads
-3. :ref:`Pair merging <pair_merging>`: the joining of overlapping paired end sequences (see also pair concatenation if paired end sequences don't overlap)
-4. :ref:`Data concatenation <data_concat>`: Bringing all the data together
+2. :ref:`Primer removal <primer_removal>`: trimming primer sequences from our reads
+3. :ref:`Pair merging <pair_merging>`: the joining of overlapping paired end reads (see also :ref:`pair concatenation<pair_concatenation>` if paired end sequences don't overlap)
+4. :ref:`Data concatenation <data_concat>`: bringing all the data together
 
 .. admonition:: Note
 	:class: green

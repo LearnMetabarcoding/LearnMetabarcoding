@@ -39,7 +39,7 @@ The overlap between our reads is definitely enough to be able to confidently ass
 .. admonition:: Data and software
 	:class: green
 	
-	The input data for this section is a directory of FASTQ format file pairs, one pair per sample, with no index or primer sequences. If you're following along step-by-step, this was produced in :ref:`the previous tutorial<primer_removal>`. Alternatively, the ``2_trimmed`` directory within the :ref:`sectionA archive<sectionAdata>` can be used as example data.
+	The input data for this tutorial is a directory of FASTQ format file pairs, one pair per sample, with no index or primer sequences. If you're following along step-by-step, this was produced in :ref:`the previous tutorial<primer_removal>`. Alternatively, the ``2_trimmed`` directory within the :ref:`sectionA archive<sectionAdata>` can be used as example data.
 	
 	This tutorial uses the :ref:`**fastQC** <fastqc>`, :ref:`**fastqe** <fastqe>` and :ref:`**PEAR**<pear>` software.
 
