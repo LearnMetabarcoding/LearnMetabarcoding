@@ -1,0 +1,80 @@
+uniq1;size=2148 uniq19;size=215 uniq43;size=123 uniq47;size=112 uniq50;size=107 uniq55;size=97 uniq56;size=96 uniq278;size=5
+uniq2;size=1523
+uniq3;size=679 uniq29;size=173 uniq31;size=160 uniq46;size=112 uniq59;size=90 uniq107;size=28 uniq113;size=26
+uniq4;size=569
+uniq5;size=455
+uniq6;size=434
+uniq7;size=416
+uniq8;size=364 uniq9;size=363
+uniq10;size=347
+uniq11;size=342 uniq118;size=22
+uniq12;size=329 uniq61;size=87 uniq103;size=30
+uniq13;size=257
+uniq14;size=254 uniq85;size=41
+uniq15;size=250 uniq18;size=219 uniq22;size=182 uniq36;size=142 uniq42;size=124 uniq64;size=76 uniq249;size=5
+uniq16;size=249
+uniq17;size=230
+uniq20;size=202
+uniq21;size=198 uniq33;size=147 uniq87;size=39 uniq184;size=8
+uniq23;size=181 uniq188;size=8
+uniq24;size=178
+uniq25;size=178 uniq54;size=98 uniq133;size=19 uniq153;size=13 uniq209;size=7
+uniq26;size=177 uniq88;size=38 uniq96;size=32 uniq255;size=5
+uniq27;size=177 uniq51;size=106 uniq95;size=33 uniq204;size=7 uniq343;size=4
+uniq28;size=173
+uniq32;size=151 uniq101;size=31 uniq105;size=29
+uniq34;size=146
+uniq35;size=143 uniq38;size=131
+uniq37;size=135
+uniq39;size=131 uniq116;size=23
+uniq40;size=129 uniq52;size=103 uniq71;size=61 uniq75;size=57 uniq78;size=50 uniq86;size=40 uniq99;size=32 uniq117;size=23 uniq128;size=20 uniq132;size=20 uniq143;size=14 uniq146;size=14 uniq147;size=14 uniq175;size=9 uniq216;size=7 uniq219;size=6 uniq223;size=6 uniq285;size=5 uniq379;size=4 uniq424;size=4
+uniq41;size=128
+uniq44;size=122 uniq81;size=46 uniq97;size=32 uniq124;size=21 uniq140;size=16 uniq165;size=10 uniq190;size=8
+uniq45;size=121
+uniq48;size=111
+uniq49;size=110
+uniq53;size=102
+uniq57;size=95
+uniq58;size=90 uniq60;size=89
+uniq62;size=81
+uniq66;size=73 uniq76;size=56 uniq82;size=44 uniq83;size=42 uniq84;size=42 uniq112;size=26 uniq119;size=22 uniq120;size=22 uniq123;size=21 uniq126;size=21 uniq131;size=20 uniq136;size=17 uniq151;size=13 uniq152;size=13 uniq155;size=12 uniq167;size=10 uniq199;size=7 uniq279;size=5 uniq110;size=27 uniq154;size=13 uniq163;size=11 uniq166;size=10 uniq177;size=9 uniq191;size=8 uniq271;size=5 uniq274;size=5
+uniq67;size=66 uniq74;size=57 uniq89;size=38 uniq115;size=25
+uniq68;size=63
+uniq70;size=62
+uniq72;size=61
+uniq73;size=60 uniq108;size=28
+uniq77;size=55
+uniq79;size=48
+uniq80;size=46
+uniq91;size=35 uniq148;size=14
+uniq93;size=34
+uniq94;size=33 uniq98;size=32 uniq114;size=25 uniq134;size=17 uniq137;size=17 uniq139;size=17 uniq144;size=14 uniq150;size=14 uniq162;size=11
+uniq100;size=32
+uniq102;size=31
+uniq104;size=30 uniq176;size=9
+uniq109;size=27
+uniq111;size=27 uniq159;size=11
+uniq127;size=20
+uniq129;size=20
+uniq135;size=17
+uniq157;size=12 uniq194;size=8 uniq296;size=5
+uniq160;size=11
+uniq168;size=10
+uniq171;size=9
+uniq172;size=9 uniq208;size=7
+uniq174;size=9
+uniq185;size=8 uniq365;size=4
+uniq197;size=7
+uniq215;size=7
+uniq224;size=6
+uniq230;size=6
+uniq247;size=5
+uniq254;size=5
+uniq259;size=5
+uniq261;size=5
+uniq267;size=5
+uniq287;size=5
+uniq314;size=4 uniq404;size=4
+uniq325;size=4
+uniq363;size=4
+uniq364;size=4
