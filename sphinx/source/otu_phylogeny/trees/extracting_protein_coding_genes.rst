@@ -27,7 +27,7 @@ Replace the placeholder names in the following command with the names of the thr
 
 .. code-block:: bash
 
-	$ extract_genes.pl -g ​input1.gb input2.gb input3.gp ​-o ​outdir/​ -minregion 10
+	$ extract_genes.pl -g ​input1.gb input2.gb input3.gp ​-out ​outdir/​ -k -regiontypes CDS
 
 Once complete, you should see thirteen files in your output folder, one for each gene. 
 
@@ -39,9 +39,7 @@ Once complete, you should see thirteen files in your output folder, one for each
 I should note that this script is a very rigid solution. There is no standard format for gene names in GenBank, so our sequences use many different variants for the same gene: e.g. cox1, co1, coi, etc. The script is hardcoded to recognise as many variants as I have seen, but if you were to use this script on your own data, it might miss a gene if it had a different name. The more common approach to this task is to manually extract the sequences using a GUI tool such as Geneious, but we have not done this for several reasons:
 
 * It’s slow and boring, we prefer automated tools
-
 * Geneious is not free
-
 * Manual processes frequently introduce errors into sequence naming
 
 Next Steps
