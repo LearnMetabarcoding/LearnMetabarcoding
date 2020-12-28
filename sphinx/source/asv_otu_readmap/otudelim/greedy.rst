@@ -53,16 +53,16 @@ One common question after performing clustering like this is to ask "which ASVs 
 	.. parsed-literal::
 		
 		# Remove the cluster lines
-		grep -v "^C" asv_otu.uc > asv_otu_edit.temp
+		grep -v "^C" :var:`input.uc` > asvgroups.temp
 		
 		# Convert to the correct names
-		cut -f2 asv_otu_edit.temp | while read l; do echo "otu$(($l + 1))"; done > otus.temp
+		cut -f2 asvgroups.temp | while read l; do echo "otu$(($l + 1))"; done > otus.temp
 		
 		# Extract the rest of the table
-		cut -f3-9 asv_otu_edit.temp > rest.temp
+		cut -f3-9 asvgroups.temp > rest.temp
 		
 		# Join the table parts together
-		paste otus.temp rest.temp > asv_otu.uc
+		paste otus.temp rest.temp > :var:`output.uc`
 		
 		# Clean up
 		rm *.temp

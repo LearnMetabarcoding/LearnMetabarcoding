@@ -17,10 +17,10 @@ We've reviewed 3 different methods of delimiting OTUs, all of which had a range 
 	Alternatively, you can use the following file pairs from the :ref:`sectionC archive<sectionCdata>` as example data:
 	
 	TODO
-	* Greedy clustering: ``.fasta`` and ``.uc``
-	* Linkage delimitation: ``.fasta`` and ``.txt``
-	* Bayesian clustering: ``.fasta`` and ``.txt``
-	* Phylogenetic delimitation: ``.fasta`` and ``.txt``
+	* Greedy clustering: ``otus_greedy_0.97.fasta`` and ``asvgroups_greedy_0.97.uc``
+	* Linkage delimitation: ``otus_linkage_13.fasta`` and ``asvgroups_linkage_13.txt``
+	* Bayesian clustering: ``otus_crop_s.fasta`` and ``otus_crop_s.list``
+	* Phylogenetic delimitation: ``otus_bPTP.fasta`` and ``asvgroups_bPTP.txt``
 	
 	This tutorial uses the :ref:`**VSEARCH**<vsearch>` software.
 	

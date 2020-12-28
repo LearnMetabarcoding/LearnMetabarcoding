@@ -26,7 +26,7 @@ Preparing the OTU ASV lists
 
 For this step, you will need a file that lists the set of ASVs in each OTU, as produced as part of the OTU delimitation for each of our steps. However, because the format of this was slightly different for each OTU delimitation step, we will need to process each of them first, according to the method used. Note that there's no particular need to run all three of these sections, just run whichever section matches the OTU delimitation method that you chose.
 
-Greedy Clustering using VSEARCH
+Greedy clustering using VSEARCH
 -------------------------------
 
 Here our list takes the form of a table, so it's already almost in the format we want, we just need to drop the hit statistics and strip the ``;size=`` tags
@@ -35,7 +35,7 @@ Here our list takes the form of a table, so it's already almost in the format we
 	
 	cut -f1,8 :var:`input.uc` | sed -e "s/;size.*$//" > :var:`output.tsv`
 
-Linkage Delimitation using swarm
+Linkage delimitation using swarm
 --------------------------------
 
 Here each line of the file is a list of ASVs in one OTU, with the centroid sequence being the first ASV name. The following command strips out the ``size=`` tags then converts into a table by looping through each line one by one, storing the first item in each line, then looping through the items in a line to generate the output.
@@ -52,7 +52,7 @@ Here each line of the file is a list of ASVs in one OTU, with the centroid seque
 		done;
 	done > :var:`output.tsv`
 
-Bayesian Delimitation using CROP
+Bayesian delimitation using CROP
 --------------------------------
 
 The file output by **CROP** is similar to that output by swarm. The first item on each line is the name of the centroid sequence, which is followed by a tab then a list of all the ASV reads forming that OTU. Remember, **CROP** worked on ASV reads, i.e. one sequence for each ASV for each read it had in the original dataset. So we will see duplicated ASV names within OTUs. We don't need to strip out ``;size=`` tags though!
@@ -69,6 +69,11 @@ The following command is similar to the command for **swarm**. We convert commas
 			 echo -e "$n\t$a";
 		done | sort | uniq;
 	done > :var:`output.tsv`
+
+Extension: Phylogenetic delimitation using bPTP
+-----------------------------------------------
+
+If you also tried out using **bPTP** for OTU delimitation, when we re-processed the output for **bPTP** we actually made it into the same format as for **swarm**. So you can use exactly the same code as for the **swarm** ASV grouping file, above.
 
 Joining our data
 ================
