@@ -38,13 +38,13 @@ If you're following along step-by-step, we'll be working on a set of FASTQ files
 
 To run the following command, your working directory should be the directory containing the sequences you want to concatenate, namely the directory of FASTQ files that have indices and primers removed, and pairs merged.
 
-:guilabel:`Run the following command, making sure to replace ``output.fastq`` with a sensible name
+:guilabel:`Run the following command, making sure to replace ``output.fastq`` with a sensible name`
 
 .. parsed-literal::
 
-	for f in *;
+	for f in \*;
 	do                       # ​↓​ the space here should be included!
-		sed -e "s/\(^@D00.*\) .*$/\1;sample=${f%.*};/" $f \
+		sed -e "s/\\(^@D00.\*\\) .\*$/\\1;sample=${f%.\*};/" $f \\
 		>> ../:var:`output.fastq`;
 	done
 
@@ -68,9 +68,9 @@ If you instead have a directory of FASTAs, the command is pretty much the same, 
 
 .. parsed-literal::
 
-	for f in *;
+	for f in \*;
 	do                    # ​↓​ the space here should be included!
-		sed -e "s/\(^>.*\) .*$/\1;sample=${f%.*};/" $f \
+		sed -e "s/\\(^>.\*\\) .\*$/\\1;sample=${f%.\*};/" $f \\
 		>> ../:var:`output.fasta`;
 	done
 

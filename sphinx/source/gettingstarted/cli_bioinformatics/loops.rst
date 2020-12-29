@@ -49,7 +49,7 @@ A ``while`` loop is largely the same as a ``for`` loop. If you looked at the res
 
 .. parsed-literal::
 
-	echo -e "ATCGCA\nTAACGA\nTACAGA\nATTCAT" > indices.txt
+	echo -e "ATCGCA\\nTAACGA\\nTACAGA\\nATTCAT" > indices.txt
 
 Say as above we have a directory called ``inputs`` with five fasta files in it, and we want to search all files for each of these indices, returning a count of the times they were matched. This is the command we used
 
@@ -57,20 +57,20 @@ Say as above we have a directory called ``inputs`` with five fasta files in it, 
 
 	while read i;
 	do
-		grep -c "$i" inputs/*.fasta;
+		grep -c "$i" inputs/\*.fasta;
 	done < indices.txt
 
 Again, there's a one-liner format.
 
 .. parsed-literal::
 
-	while read i; do grep -c "$i" inputs/*.fasta; done < indices.txt
+	while read i; do grep -c "$i" inputs/\*.fasta; done < indices.txt
 
 Notice that we use the ``<`` symbol to set indices.txt as the standard input. As the ``while read`` syntax operates on the standard input, we can also use ``while`` loops on data we've piped from previous commands. Imagine we wanted to add a ``T`` base to the end of every input index before we search them: one way of doing this is as follows:
 
 .. parsed-literal::
 
-	sed -e "s/$/T/" indices.txt | while read i; do grep -c "$i" inputs/*.fasta; done
+	sed -e "s/$/T/" indices.txt | while read i; do grep -c "$i" inputs/\*.fasta; done
 
 .. _parameter-substitution:
 
@@ -93,7 +93,7 @@ If you run the above lines, you should see that the file extension has been remo
 .. parsed-literal::
 
 	i="file.fasta"
-	o=${i%.*}
+	o=${i%.\*}
 	echo "$o"
 
 Alternatively, we might want to remove a directory name from the front of the text. We do this using the ``#`` symbol:
@@ -101,7 +101,7 @@ Alternatively, we might want to remove a directory name from the front of the te
 .. parsed-literal::
 
 	i="directory/file.fastq"
-	o=${i#*/}
+	o=${i#\*/}
 	echo "$o"
 
 Notice how we used a wildcard character rather than removing the directory?
@@ -110,7 +110,7 @@ We can chain these together to make very flexible loops. For example, imagine we
 
 .. parsed-literal::
 
-	for f in raw/*;                # Loop through the contents of raw/
+	for f in raw/\*;                # Loop through the contents of raw/
 	do
 		o=${f%.fastq};           # Remove the .fastq file extension
 		o=${o#raw/};             # Remove the directory

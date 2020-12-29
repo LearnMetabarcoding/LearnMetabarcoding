@@ -28,7 +28,7 @@ Sometimes in these resources we will ask you to run a command that is quite long
 
 .. parsed-literal::
 
-	echo \
+	echo \\
 	"hello world"
 
 To enter this in the command prompt, we type the first line (excluding the ``$``) and then press Enter after typing the ``\`` symbol. This symbol at the end of the command tells the shell that we want to continue typing the same command on the next line. The prompt will change to a ``>``. We then type the second line, *excluding the* ``>`` *symbol*. 
@@ -87,7 +87,7 @@ Often this ``<`` symbol can be omitted, but where there is abiguity about what t
 
 .. parsed-literal::
 
-	echo -e "line2\nline1\nline2" > lines.txt
+	echo -e "line2\\nline1\\nline2" > lines.txt
 	sort lines.txt > linessorted.txt
 	uniq linessorted.txt > linesunique.txt
 
@@ -103,7 +103,7 @@ Now let's do all of that in one command:
 
 .. parsed-literal::
 
-	echo -e "line2\nline1\nline2" | sort | uniq > linesunique2.txt
+	echo -e "line2\\nline1\\nline2" | sort | uniq > linesunique2.txt
 	cat linesunique2.txt
 
 This is obviously a very trivial example, but we will use this a lot.

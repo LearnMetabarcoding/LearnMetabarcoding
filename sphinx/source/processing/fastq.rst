@@ -33,7 +33,7 @@ We can see how many lines in each file using the word count function, specifying
 
 .. parsed-literal::
 
-	wc -l *.fastq
+	wc -l \*.fastq
 
 The ​``*.fastq`` here means we want all of the files ending in ``.fastq`` in the directory. We could replace this with a single file name if we just wanted to count the lines of a single file.
 
@@ -65,7 +65,7 @@ Like the ​wc -l function above, we can run grep on all of our files at once to
 
 .. parsed-literal:: 
 
-	grep -c "^@D00" *.fastq
+	grep -c "^@D00" \*.fastq
 
 We can see that we’re dealing with about 9000 reads per library.
 

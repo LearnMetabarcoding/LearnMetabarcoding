@@ -66,10 +66,10 @@ To visualise this, we can consider a search using the index ``g=XNAACACC`` with 
 	
 	.. parsed-literal::
 		
-		cutadapt -g T4=XNAAGAGG -g T9=XNAATCGC -g T11=XNAGCTAC \
-		-G T4=XNAAGAGG -G T9=XNAATCGC -G T11=XNAGCTAC \
-		-O 5 \
-		-o 1_demux/{name1}-{name2}_R1.fastq -p 1_demux/{name1}-{name2}_R2.fastq \
+		cutadapt -g T4=XNAAGAGG -g T9=XNAATCGC -g T11=XNAGCTAC \\
+		-G T4=XNAAGAGG -G T9=XNAATCGC -G T11=XNAGCTAC \\
+		-O 5 \\
+		-o 1_demux/{name1}-{name2}_R1.fastq -p 1_demux/{name1}-{name2}_R2.fastq \\
 		0_rawsequences/Lib1_R1.fastq 0_rawsequences/Lib1_R2.fastq
 
 Tradeoffs

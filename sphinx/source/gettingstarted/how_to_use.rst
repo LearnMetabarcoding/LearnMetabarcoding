@@ -66,6 +66,7 @@ As part of a tutorial, we will suggest you run a command, design a command yours
 	Alternatively it might suggest you read a helpfile or manual to design a command, sometimes suggesting you use a certain argument such as ``--a``. 
 	
 	You might also find that an exercise box contains a complete command that we suggest you run, such as:
+	
 	.. parsed-literal::
 		
 		sed -e "/^>/,s/-//g" :var:`input.fasta` > :var:`output.fasta`

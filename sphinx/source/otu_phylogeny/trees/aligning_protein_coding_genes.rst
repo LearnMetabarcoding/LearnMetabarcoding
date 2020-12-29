@@ -25,9 +25,9 @@ Run the following command, making sure to replace ``raw`` with the name of the d
 
 .. code-block:: bash 
 
-	$ for f in ​dir​/* \
-	> do \
-	> 	mafft --thread 1 --retree 2 --maxiterate 0 $f >​ new/​${f#*/} \
+	$ for f in ​dir​/\* \\
+	> do \\
+	> 	mafft --thread 1 --retree 2 --maxiterate 0 $f >​ new/​${f#\*/} \\
 	> done
 
 Notice how we've looped on the extracted gene files, running MAFFT on each file as input and outputting the alignment as a file with the same name, but in new directory.

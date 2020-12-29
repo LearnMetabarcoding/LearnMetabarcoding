@@ -42,13 +42,13 @@ This simple tool alows us to remove any reads that contain any bases with a qual
 
 .. parsed-literal::
 
-	fastq_quality_filter -v -q 13 -p 100 -i ​:var:`input.fastq​` -o :var:`​output.fastq`
+	fastq_quality_filter -v -q 13 -p 100 -i ​:var:`input.fastq` -o :var:`output.fastq`
 
 We can additionally specify a proportion of the bases that must meet our threshold using ``-p``. Following is another command that will keep only reads where 60% or more of the bases have a quality score equal to or greater than 30 (p = 0.001):
 
 .. parsed-literal::
 	
-	fastq_quality_filter -v -q 30 -p 60 -i ​:var:`input.fastq​` -o :var:`​output.fastq`
+	fastq_quality_filter -v -q 30 -p 60 -i ​:var:`input.fastq` -o :var:`output.fastq`
 
 .. admonition:: Exercise
 	
@@ -65,13 +65,13 @@ Given that the quality scores are just a set of probabilities, we can calculate 
 
 .. parsed-literal::
 	
-	vsearch --fastx_filter :var:`​input.fastq​` --fastq_maxee 1 --fastaout ​:var:`output.fasta`
+	vsearch --fastx_filter :var:`input.fastq` --fastq_maxee 1 --fastaout ​:var:`output.fasta`
 
 As you can imagine, the longer the read, the higher the chance that there is at least one error, simply by chance alone. So instead of basing our threshold on the total number of expected errors, we could base our threshold on the rate of errors. The following command will exclude any reads with more than 0.1 expected errors per base: 
 
 .. parsed-literal::
 	
-	vsearch --fastx_filter ​:var:`input.fastq​` --fastq_maxee_rate 0.1 --fastaout ​:var:`output.fasta`
+	vsearch --fastx_filter ​:var:`input.fastq` --fastq_maxee_rate 0.1 --fastaout ​:var:`output.fasta`
 
 Choosing quality filtering thresholds
 =====================================
@@ -101,7 +101,7 @@ Next steps
 	
 	.. parsed-literal::
 		
-		fastq_to_fasta -i ​:var:`input.fastq​` -o :var:`​output.fasta`
+		fastq_to_fasta -i ​:var:`input.fastq` -o :var:`output.fasta`
 
 We now have a FASTA file of all of our reads. This is an important file to retain, so make sure you keep a note of it. These reads will later be mapped to our final biological sequences to assess their occurence. Now that we have removed the quality data, we can now undertake dereplication in the next section: :ref:`2. Dereplication<dereplication>`.
 

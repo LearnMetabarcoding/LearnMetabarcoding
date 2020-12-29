@@ -23,13 +23,13 @@ Second, we need to create copies of our OTU files with names added to the header
 
 .. parsed-literal::
 
-	sed -e "s/\(^>.*$\)/\1:var:`method`/" :var:`input.fasta` > :var:`newdirectory/output.fasta`
+	sed -e "s/\\(^>.\*$\\)/\\1:var:`method`/" :var:`input.fasta` > :var:`newdirectory/output.fasta`
 
 Next, concatenate these OTU files into one file - you’ll need to be inside your new directory for this:
 
 .. parsed-literal::
 
-	cat *.fasta > :var:`output.fasta`
+	cat \*.fasta > :var:`output.fasta`
 
 .. admonition:: Exercise
 	

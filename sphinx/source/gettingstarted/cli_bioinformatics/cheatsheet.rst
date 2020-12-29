@@ -25,7 +25,7 @@ This can be really annoying for quick and easy command line bash bioinformatics,
 
 .. parsed-literal::
 	
-	perl -pe '$. > 1 and /^>/ ? print "\n" : chomp' input.fasta > output.fasta
+	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' input.fasta > output.fasta
 
 This command is great because it can easily be used within a pipe.
 
@@ -61,7 +61,7 @@ The FASTA file must be unwrapped - if it's not, you could add the perl one-liner
 
 .. parsed-literal::
 
-	perl -pe '$. > 1 and /^>/ ? print "\n" : chomp' input.fasta | 
+	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' input.fasta | 
 	sed -e "/^>/d" -e "s/-//g" | awk '{ print length }' > lengths.txt
 
 What to with these lengths? Well, we can get a rough idea of the distribution by counting the number of each unique length:
@@ -78,7 +78,7 @@ Or we could use an R one-liner to count the mean and standard deviation
 
 	sed -e "/^>/d" -e "s/-//g" input.fasta | 
 	awk '{ print length }' | 
-	Rscript -e 'd<-scan("stdin", quiet=TRUE);print(c(round(mean(d),0), round(100 * mean(c(mean(d)-min(d),max(d)-mean(d)))/mean(d), 1)));'
+	Rscript -e 'd<-scan("stdin", quiet=TRUE);print(c(round(mean(d),0), round(100 \* mean(c(mean(d)-min(d),max(d)-mean(d)))/mean(d), 1)));'
 
 ---------------------------------
 Generating a random FASTA
@@ -88,7 +88,7 @@ Sometimes we want some dummy data to test on. This command makes 30 sequences, e
 
 .. parsed-literal::
 
-	paste -d '\n' <(for i in {01..30}; do echo ">seq$i"; done) <( cat /dev/urandom | tr -dc 'ATCG' | fold -w 300 | head -n 30 )
+	paste -d '\\n' <(for i in {01..30}; do echo ">seq$i"; done) <( cat /dev/urandom | tr -dc 'ATCG' | fold -w 300 | head -n 30 )
 
 ---------------------------------
 Get the headers of a FASTA
@@ -99,7 +99,7 @@ There are two ways to do this:
 .. parsed-literal::
 
 	grep "^>" input.fasta | sed -e "s/>//" > headers.txt
-	grep -oP "(?<=^>).*$" > headers.txt
+	grep -oP "(?<=^>).\*$" > headers.txt
 
 The second one uses a fancy Regular Expression term called a "positive lookbehind".
 
@@ -155,6 +155,6 @@ Some commands I use a lot, but are a little fiddly to write, so I save them unde
 
 .. parsed-literal::
 
-	echo "alias unwrap=\"perl -pe '$. > 1 and /^>/ ? print \"\n\" : chomp'\"" >> ~/.bashrc
+	echo "alias unwrap=\\"perl -pe '$. > 1 and /^>/ ? print \\"\\n\\" : chomp'\\"" >> ~/.bashrc
 
 The ``>>`` is very important: don't use a single ``>``. You might need to change ``.bashrc`` to ``.bash_profile`` or something else depending on your system.

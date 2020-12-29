@@ -102,10 +102,10 @@ Like with **cutadapt** in the :ref:`previous tutorial<primer_removal>`, we can r
 
 .. parsed-literal::
 
-	samples=$(ls :var:`input`/ | cut -d_ -f1 | sort | uniq)
+	samples=$(ls :var:`input`/ | cut -d\_ -f1 | sort | uniq)
 	for s in $samples;
 	do
-		pear -f :var:`input`/${s}_R1.fastq -r :var:`input`/${s}_R2.fastq \
+		pear -f :var:`input`/${s}_R1.fastq -r :var:`input`/${s}_R2.fastq \\
 		-o :var:`output`/$s -q :var:`N` -v :var:`N`;
 	done
 
@@ -114,7 +114,7 @@ Make sure to review those terminal outputs! Then :guilabel:`list the contents of
 .. parsed-literal::
 
 	cd :var:`output/`
-	rm *discarded* *unassembled* && rename -e "s/assembled\.//" *
+	rm \*discarded\* \*unassembled\* && rename -e "s/assembled\\.//" \*
 	cd ../
 
 The ``&&`` here runs both commands on this line one after the other. We could use ``;`` instead, but ``&&`` only runs the second command if the first one succeeds. This is important because the ``rename`` command uses regular expressions to remove the "assembled followed by a full stop" part from any files with that in the name. If we hadn't removed any files with "unassembled" in the name, then that would have renamed them too!

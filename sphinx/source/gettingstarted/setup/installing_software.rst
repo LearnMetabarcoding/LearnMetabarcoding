@@ -234,7 +234,7 @@ BLAST
 	BLAST_VERSION="2.9.0" # Change as appropriate
 	sudo wget "ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${BLAST_VERSION}/ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz"
 	sudo tar -zxf ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz
-	sudo cp ncbi-blast-${BLAST_VERSION}+/bin/* /usr/local/bin/
+	sudo cp ncbi-blast-${BLAST_VERSION}+/bin/\* /usr/local/bin/
 
 .. _catfasta2phyml:
 
@@ -256,5 +256,5 @@ FastTree
 	cd /usr/local/bin/
 	sudo wget http://www.microbesonline.org/fasttree/FastTree
 	sudo wget http://www.microbesonline.org/fasttree/FastTreeMP
-	sudo chmod a+x FastTree*
+	sudo chmod a+x FastTree\*
 

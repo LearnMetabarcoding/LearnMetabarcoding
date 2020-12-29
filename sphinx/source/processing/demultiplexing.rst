@@ -33,7 +33,7 @@ There are many ways in which metabarcoding libraries may be sequenced. We are go
 	
 	If you are completely new to sequence data, you might at this point want to :ref:`review the FASTQ format <fastq>`
 	
-	This tutorial uses the :ref:`**cutadapt** software<cutadapt>`.
+	This tutorial uses the :ref:`cutadapt software<cutadapt>`.
 	
 
 
@@ -125,9 +125,9 @@ Carefully examine the following command and make sure you're clear on what each 
 
 .. parsed-literal::
 
-	cutadapt -g T4=^AAGAGG -g T9=^AATCGC -g T11=^AGCTAC \
-	-G T4=^AAGAGG -G T9=^AATCGC -G T11=^AGCTAC \
-	-o 1_demux/{name1}-{name2}_R1.fastq -p 1_demux/{name1}-{name2}_R2.fastq \
+	cutadapt -g T4=^AAGAGG -g T9=^AATCGC -g T11=^AGCTAC \\
+	-G T4=^AAGAGG -G T9=^AATCGC -G T11=^AGCTAC \\
+	-o 1_demux/{name1}-{name2}_R1.fastq -p 1_demux/{name1}-{name2}_R2.fastq \\
 	0_rawsequences/Lib1_R1.fastq 0_rawsequences/Lib1_R2.fastq
 
 .. admonition:: Exercise
@@ -140,8 +140,8 @@ Carefully examine the following command and make sure you're clear on what each 
 	
 	.. parsed-literal:: bash
 	
-		$ ls 1_demux/*
-		$ grep -c "^@D00" 1_demux/*
+		$ ls 1_demux/\*
+		$ grep -c "^@D00" 1_demux/\*
 
 Are there more files than expected? This is because the command has looked for all adapter combinations. When we have 3 different forward indices and 3 different reverse indices, there are 9 different combinations possible. Add on top of this that there are 6 possibilites where only a forward *or* a reverse index is used, plus the possibility where *no* indices are used. Hence you should have 16 file pairs.
 
@@ -170,7 +170,7 @@ You should now have lots of files in your output directory. It’s good practice
 
 	.. parsed-literal::
 	
-		​grep -c "^@D00" 1_demux/* > :var:`output.txt`
+		​grep -c "^@D00" 1_demux/\* > :var:`output.txt`
 
 Let’s get rid of the files we don’t need. You’ve doubled the amount of storage you’re using - here the files aren’t very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don’t match. You do not need to type any ​``#comments​``, or add the extra spaces - this is just to make it clearer.
 
@@ -178,14 +178,14 @@ Let’s get rid of the files we don’t need. You’ve doubled the amount of sto
 
 	for f in *;			# loop through files
 	do
-		s1=${f%-*};
-		s2=${f%_*};		# extract sample names
-		s2=${s2#*-};
+		s1=${f%-\*};
+		s2=${f%_\*};		# extract sample names
+		s2=${s2#\*-};
 		if [ $s1 != $s2 ];	# check if different
 		then
 			rm $f;		# delete if different
 		else
-			mv $f ${f#*-};	# keep if same, removing first part of name
+			mv $f ${f#\*-};	# keep if same, removing first part of name
 		fi; 			# end if clause
 	done 				# end loop 
 
@@ -195,7 +195,7 @@ Finally, to remove the files beginning with ``unknown``, run:
 
 .. parsed-literal::
 
-	rm unknown*
+	rm unknown\*
 
 These files contain the sequences for which no index was identified - we’re not interested in keeping them.
 
