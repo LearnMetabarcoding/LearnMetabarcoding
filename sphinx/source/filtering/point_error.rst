@@ -18,7 +18,7 @@ We can identify some point errors because they will alter the translation of the
 	
 	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced in :ref:`the previous tutorial<indel_filtering>`. Alternatively, the file ``7_mbc_indelfil.fasta`` within the :ref:`sectionB archive<sectionBdata>` can be used as example data.
 	
-	This tutorial uses an accessory function, **filtertranslate**, from the :ref:`metaMATE<metaMATE_install>` software.
+	This tutorial uses an accessory function, **filtertranslate**, from the :ref:`metaMATE <metaMATE_install>` software.
 
 Filtering by translation
 ========================
@@ -59,7 +59,7 @@ Other 'point errors' that do not cause stops are harder to spot. Some will not a
 Alternatives
 ============
 
-The tool **filtertranslate** is part of the :ref:**metaMATE**<metaMATE_install> software, which we wrote. In general, in these resources we aim to use the most popular tools, not just what we think is best, and avoid evangelising our own solutions. However, we haven't yet found another piece of software that so simply performs translation filtering, so here we use one of our own tools. You can find more about the main functionality of **metaMATE** :ref:`in a later extension tutorial<metamate>`.
+The tool **filtertranslate** is part of the :ref:`metaMATE <metaMATE_install>` software, which we wrote. In general, in these resources we aim to use the most popular tools, not just what we think is best, and avoid evangelising our own solutions. However, we haven't yet found another piece of software that so simply performs translation filtering, so here we use one of our own tools. You can find more about the main functionality of **metaMATE** :ref:`in a later extension tutorial<metamate>`.
 
 Most commonly, we see other metabarcoders either performing this step manually, by translating the sequences in some GUI sequence viewer like Geneious and manually checking for stops, or by using `MACSE <https://bioweb.supagro.inra.fr/macse/>`_. MACSE is a very neat piece of software that performs alignment of nucleotide sequences against references using the translation, and is very good at finding frameshift errors. However it is a little complex to use and most seriously is not very efficient, scaling very poorly for larger amplicon datasets.
 

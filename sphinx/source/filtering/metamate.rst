@@ -30,7 +30,7 @@ In the spirit of openness, we should be clear that **metaMATE** was developed by
 	
 	The reference sequences can be found in the file ``canopy_Coleop_CO1_barcodes.fasta`` in the :ref:`sectionB archive<sectionBdata>`. The specifications file will be generated during the tutorial.
 	
-	This tutorial uses the :ref:`**metaMATE** <metamate_install>` software.
+	This tutorial uses the :ref:`metaMATE <metamate_install>` software.
 
 
 Getting started
@@ -70,11 +70,11 @@ Run the following code, obviously swapping the names of the files for whatever y
 
 .. parsed-literal::
 	
-	metaMATE find \
-	-A :var:`denoisedASVs.fasta` -L :var:`concatenatedReads.fasta` \
-	-S :var:`specifications.txt` -R :var:`references.fasta` \
-	--expectedlength 418 --percentvar 0 \
-	--table 5 \
+	metaMATE find \\
+	-A :var:`denoisedASVs.fasta` -L :var:`concatenatedReads.fasta` \\
+	-S :var:`specifications.txt` -R :var:`references.fasta` \\
+	--expectedlength 418 --percentvar 0 \\
+	--table 5 \\
 	-o :var:`metamateout`
 
 You might notice that we're specifying some information about the length and translation of our ASVs. This is because internally, **metaMATE** performs the length and translation filtering that we've performed ourselves in previous tutorials. It does this in order to identify some of the ASVs as *a priori* errors. It also searches the ASVs against the reference to idetnify some of the ASVs as *a priori* valid. 

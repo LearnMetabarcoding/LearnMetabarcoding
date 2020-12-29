@@ -31,12 +31,12 @@ With paired amplicons, we know that the end of the read is likely to be lower qu
 	
 	The input data for this tutorial is a FASTQ file comprising all of the reads in your dataset, with the source sample for each read noted in the read's header. If you worked through :ref:`the previous section<read_processing>`, this was produced during the :ref:`concatenation<data_concat>` tutorial. Alternatively, the file ``4_mbc_concat.fastq`` file within the :ref:`sectionB archive<sectionBdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**fastx_toolkit** <fastx_toolkit>` and :ref:`**VSEARCH**<vsearch>` software.
+	This tutorial uses the :ref:`fastx_toolkit <fastx_toolkit>` and :ref:`VSEARCH <vsearch>` software.
 
 Quality threshold filtering
 ===========================
 
-For basic fastq filtering based on minimum score, we will use **fastq_quality_filter** from the :ref:`**fastx_toolkit** <fastx_toolkit>` package.
+For basic fastq filtering based on minimum score, we will use **fastq_quality_filter** from the :ref:`fastx_toolkit <fastx_toolkit>` package.
 
 This simple tool alows us to remove any reads that contain any bases with a quality score lower than the threshold we set. For example, let's keep only reads where 100% of the bases have a quality score greater than or equal to 13 (the equivalent of a 0.05 probability that that base is incorrect). The ``-v`` option reports the results to terminal for us. As always, replace ``input.fastq`` with the name of the file you're filtering (see the Data and software box above) and ``output.fasta`` with a sensible name to call the output.
 
@@ -115,7 +115,7 @@ We now have a FASTA file of all of our reads. This is an important file to retai
 	.. parsed-literal::
 		
 		mkdir :var:`output`
-		samples=$(ls :var:`input`/ | cut -d_ -f1 | sort | uniq)
+		samples=$(ls :var:`input`/ | cut -d\_ -f1 | sort | uniq)
 		for s in $samples;
 		do
 			vsearch --fastx_filter :var:`input`/$s.fastq --fastq_maxee 1 --fastaout :var:`output`/$s.fasta;

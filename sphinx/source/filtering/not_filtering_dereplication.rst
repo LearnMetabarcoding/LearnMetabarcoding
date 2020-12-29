@@ -16,7 +16,7 @@ From now on, the main purpose is to find these unique sequences and filter out t
 	
 	The input data for this tutorial is a FASTA file comprising all of the reads in your dataset. If you're following along step-by-step, this was produced :ref:`the previous tutorial<quality_filtering>`. Alternatively, the file ``4_mbc_concat.fasta`` within the :ref:`sectionB archive<sectionBdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**VSEARCH**<vsearch>` software.
+	This tutorial uses the :ref:`VSEARCH <vsearch>` software.
 	
 
 Performing dereplication

@@ -22,7 +22,7 @@ Due to the use of PCR to generate metabarcoding datasets, we should generate ple
 	
 	The input data for this tutorial is a FASTA file comprising all of the unique sequences (ASVs) in your dataset. If you're following along step-by-step, this was produced in :ref:`the previous tutorial <dereplication>`. Alternatively, the file ``5_mbc_derep.fasta`` within the :ref:`sectionB archive <sectionBdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**VSEARCH** <vsearch>` software.
+	This tutorial uses the :ref:`VSEARCH <vsearch>` software.
 	
 
 Simple frequency filtering
@@ -56,7 +56,7 @@ The key parameter here is the alpha parameter, which determines the threshold le
 	
 	.. parsed-literal::
 		
-		grep -oP "(?<=size=).*$" ​:var:`input.fasta​` sort | uniq -c
+		grep -oP "(?<=size=).\*$" ​:var:`input.fasta​` sort | uniq -c
 	
 	In the output of this command, the second column is the count of reads, and the first column is the count of these counts. So for example, if a row says ``24 12``, there are 24 ASVs that have 12 reads each.
 

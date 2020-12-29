@@ -27,7 +27,7 @@ So, put simply, insertions or deletions are easy to spot because they will chang
 	
 	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced in :ref:`the previous tutorial<denoising>`. Alternatively, the file ``6_mbc_denoise.fasta`` within the :ref:`sectionB archive<sectionBdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**VSEARCH**<vsearch>` software.
+	This tutorial uses the :ref:`VSEARCH <vsearch>` software.
 
 Length distributions
 ====================
@@ -48,7 +48,7 @@ Oh dear, what’s happened to our reads? Check the first 10 lines of the fasta:
 
 .. parsed-literal::
 
-	perl -pe '$. > 1 and /^>/ ? print "\n" : chomp' :var:​`input.fasta` > ​:var:`output.fasta`
+	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' :var:​`input.fasta` > ​:var:`output.fasta`
 
 Use the output from this in the ``sed`` command above to check the *real* length distribution of our reads.
 

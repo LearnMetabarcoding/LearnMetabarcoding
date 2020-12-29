@@ -15,7 +15,7 @@ Chimeras generally arise during PCR when two strands of DNA that are not in fact
 	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced in :ref:`the previous tutorial <point_error>`. Alternatively, the file ``8_mbc_transpass.fasta`` within the :ref:`sectionB archive <sectionBdata>` can be used as example data.
 	
 	
-	This tutorial uses the :ref:`**VSEARCH** <vsearch>` software.
+	This tutorial uses the :ref:`VSEARCH <vsearch>` software.
 	
 
 Performing chimera filtering
