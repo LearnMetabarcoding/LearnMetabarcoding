@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Concatenating alignments &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Tree building" href="tree_building.html" />
+    <link rel="prev" title="3. Aligning protein coding genes" href="aligning_protein_coding_genes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a Barcode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">Phylogenetic Placement</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building a Mitogenome Reference Tree</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="preparing_mitogenome_data.html">1. Preparing mitogenome data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extracting_protein_coding_genes.html">2. Extracting Protein Coding Genes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aligning_protein_coding_genes.html">3. Aligning protein coding genes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4. Concatenating alignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tree_building.html">5. Tree building</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../otuid.html">Identifying OTU Sequences</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a> &raquo;</li>
+        
+          <li><a href="../trees.html">Building a Mitogenome Reference Tree</a> &raquo;</li>
+        
+      <li>4. Concatenating alignments</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/otu_phylogeny/trees/concatenating_alignments.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="concatenating-alignments">
+<span id="concat-alignments"></span><h1>4. Concatenating alignments<a class="headerlink" href="#concatenating-alignments" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>For phylogeny we need to consolidate our genetic data into one file with all of the data for each original sequence. We concatenate the 13 gene files to form a superalignment comprising all of our sequences. This is also known as a supermatrix, since every sequence is now the same length and thus each base is a cell in a very large table, where the rows are different source specimens and the columns are base positions. It is this data that phylogenetic reconstruction will work on.</p>
+<div class="green admonition">
+<p class="admonition-title">Software and data</p>
+<p>This section uses the catfasta2phyml.pl script. Instructions on how to install this can be found <a class="reference internal" href="../../gettingstarted/setup/installing_software.html#catfasta2phyml"><span class="std std-ref">here.</span></a></p>
+</div>
+</div>
+<div class="section" id="performing-concatenation">
+<h2>Performing Concatenation<a class="headerlink" href="#performing-concatenation" title="Permalink to this headline">¶</a></h2>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">catfasta2phyml.pl</span></code> command to concatenate the aligned files into a supermatrix.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>As always, check out the helpfile before running. We want to force concatenation of all files even when number of taxa differ, and we want to output a fasta.</p>
+<p>See if you can figure out the command, then run it.</p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ catfasta2phyml.pl -c -fasta genes_aligned/* &gt; supermatrix.fasta
+</pre></div>
+</div>
+<p>This will print the partitions to the terminal. If we want to save them as a file, we can run the below code. Note that we subsequently print them to the terminal: this is because if we have any errors, they will also be printed to the <code class="docutils literal notranslate"><span class="pre">partitions.txt</span></code> file so we want to check that out to ensure our command ran OK.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ catfasta2phyml.pl -c -fasta genes_aligned/* &gt; supermatrix.fasta <span class="m">2</span>&gt; partitions.txt
+$ cat partitions.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have a supermatrix, we can finally move onto <a class="reference internal" href="tree_building.html#tree-building"><span class="std std-ref">5 Tree Building</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tree_building.html" class="btn btn-neutral float-right" title="5. Tree building" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aligning_protein_coding_genes.html" class="btn btn-neutral float-left" title="3. Aligning protein coding genes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
