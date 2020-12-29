@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>C: ASVs, OTUs and read mapping &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="OTU Delimitation" href="asv_otu_readmap/otudelim.html" />
+    <link rel="prev" title="Extension: Stringent ASV filtering" href="filtering/metamate.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">C: ASVs, OTUs and read mapping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="asv_otu_readmap/otudelim.html">OTU Delimitation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="asv_otu_readmap/mapping_reads.html">Mapping reads</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otuid.html">Identifying OTU Sequences</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>C: ASVs, OTUs and read mapping</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/asv_otu_readmap.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c-asvs-otus-and-read-mapping">
+<span id="asv-otu-readmap"></span><h1>C: ASVs, OTUs and read mapping<a class="headerlink" href="#c-asvs-otus-and-read-mapping" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The previous sections have seen you process sequence data from raw reads to a set of unique sequences, ASVs, that ideally represent all of the unique true biological sequences from our locus of interest. Thus these ASVs ideally represent the set of haplotypes present in our samples. These ASVs encompass both intra- and inter-specific variation, and may possibly still contain some errors.</p>
+<p>In this section, we will first examine some ways to group ASVs into Operational Taxonomic Units, a process by which ASVs are assigned to OTU groups, and a sequence from one of these ASVs is chosen to represent the whole group. This is covered in the <cite>OTU Delimitation &lt;otudelim&gt;</cite> subsection.</p>
+<p>In the second subsection, <a class="reference internal" href="asv_otu_readmap/mapping_reads.html#mapping-reads"><span class="std std-ref">Mapping Reads</span></a> we will look at how to bring our final set of biological sequences, be they ASVs or OTUs, together with the sample-level read dataset in order to generate read mapping tables, the record of the number of reads for each biological sequence in each of your samples. This data is the primary output of metabarcoding and can be used in place of classic site-by-species tables for downstream ecological analysis.</p>
+<div class="admonition-data admonition">
+<p class="admonition-title">Data</p>
+<p>The starting point for this section is a FASTA file comprising ASVs, that is to say unique sequences with errors removed. These sequences must have <code class="docutils literal notranslate"><span class="pre">;size=</span></code> tags in the sequence headers to denote the abundance of each sequence in the dataset. You will also need a FASTA file of all reads in your dataset, with sample names in the read headers.</p>
+<p>If you worked through <a class="reference internal" href="filtering.html#filtering"><span class="std std-ref">the previous section</span></a>, these data were produced by the <a class="reference internal" href="filtering/chimera_filtering.html#chimera"><span class="std std-ref">chimera filtering</span></a> and <a class="reference internal" href="filtering/quality_filtering.html#quality-filtering"><span class="std std-ref">quality filtering</span></a> tutorials respectively.</p>
+<p>If you didn’t work through the previous section, you can download a zip archive of the data for all of the tutorials in this section <cite>here &lt;sectionCdata&gt;</cite>. Unzip this to a convenient location.</p>
+</div>
+</div>
+<div class="section" id="asvs-or-otus">
+<h2>ASVs or OTUS?<a class="headerlink" href="#asvs-or-otus" title="Permalink to this headline">¶</a></h2>
+<p>In early metabarcoding studies, these ASVs were always grouped together into Operational Taxonomic Units (OTUs), that were treated as equivalent to species. This grouping process aimed to perform two tasks simultaneously: the removal of intra-specific variation to get species-level taxonomic units, and the removal of any remaining erroneous sequences. As new filtering methods have become available, and our ability to remove erroneous sequences has improved, the latter task has dwindled in relevance and while OTU grouping is still widely used, the error rate of ASVs has decreased to the point that we may be able to analyse the haplotype-level dataset with confidence, allowing the exploration of population-level patterns and processes alongside studying the community level. The choice of using ASVs or OTUs largely depends on your research questions and it may well be that both may be appropriate for different aspects of your research.</p>
+<p>There are three main points that you should keep in mind if continuing at the ASV level:
+1. ASVs are much more sensitive to any errors remaining in your dataset, whereas OTUs will collapse and ignore errors that represent only small variations from real sequences.
+2. You may need significantly deeper sampling to adequately capture a sufficiently representative set of ASVs for your study than for OTUs. This will depend a lot on your research question, study community and study taxon.
+3. Similarly, you may need significantly deeper sampling to recover representative numbers of reads per ASV per sample in order to generate a realistic picture of ASV distribution across your samples, than for OTUs. Again this will depend on research question, study community and study taxon.</p>
+</div>
+<div class="section" id="next-steps">
+<span id="asv-otu-read-mapping-nextsteps"></span><h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>To find out how to group your ASVs into groups, head to the <a class="reference internal" href="asv_otu_readmap/otudelim.html#otu-delim"><span class="std std-ref">OTU Delimitation</span></a> subsection.</p>
+<p>If you have done OTU delimitation or want to work with ASVs, you can jump to the <a class="reference internal" href="asv_otu_readmap/mapping_reads.html#mapping-reads"><span class="std std-ref">Mapping reads</span></a> subsection, where we look at how to generate data recording the number of reads per ASV or OTU per sample.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="asv_otu_readmap/otudelim.html" class="btn btn-neutral float-right" title="OTU Delimitation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="filtering/metamate.html" class="btn btn-neutral float-left" title="Extension: Stringent ASV filtering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
