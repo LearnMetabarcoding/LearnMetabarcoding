@@ -1,5 +1,7 @@
 .. _phylogenetic_placement:
 
+.. role:: var
+
 ======================
 Phylogenetic Placement
 ======================
@@ -21,7 +23,7 @@ The most important point to remember here is that we must have genetic data for 
 	
 	If you're using your own data, you would need to acquire a published phylogeny, or build one yourself. You can review how to do the latter in the :ref:`Building a mitogenome reference tree<trees>`, although we'd suggest you try this tutorial with the example data first to understand the context.
 	
-	This tutorial uses the :ref:`**MAFFT**<mafft>` and :ref:`**FastTree**<software>`, as well as the :ref:`XXXX<>` script TODO. You should also have an alignment viewer, such as **Aliview**, and a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
+	This tutorial uses the :ref:`**MAFFT** <mafft>` and :ref:`**FastTree** <fasttree>` software, as well as the :ref:`XXXX<>` script TODO. You should also have an alignment viewer, such as **Aliview**, and a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
 	
 
 Getting started
@@ -38,7 +40,7 @@ The first step is to align our OTUs to our reference mitogenome dataset. Run the
 
 	mafft --thread 1 --addfragments ​:var:`otus.fasta`​ --6merpair :var:`​supermatrix.fasta​` > ​:var:`output.fasta`
 
-Here we use **MAFFT**`s ​``--addfragments`` argument, which you can read about `here <https://mafft.cbrc.jp/alignment/software/addsequences.html>`_. Again, we’re using some options which make this alignment very very fast, but the accuracy might not be great.
+Here we use **MAFFT**'s ​``--addfragments`` argument, which you can read about `here <https://mafft.cbrc.jp/alignment/software/addsequences.html>`_. Again, we’re using some options which make this alignment very very fast, but the accuracy might not be great.
 
 .. admonition:: Exercise
 	
@@ -77,9 +79,9 @@ Now we can run the new tree building to place the OTUs within the reference. We 
 Finally, we just need to add the taxonomy onto the tree for our reference sequences using the **XX** script, as follows:
 
 .. parsed-literal::
-	
-	
 
+	script
+	
 
 .. admonition:: Exercise
 	

@@ -129,7 +129,7 @@ Pairfq
 FASTX Toolkit
 -------------
 
-Various handy tools for dealing with FASTA and FASTQ files. A little out of date though, requires patching to work in modern Ubuntu (all done in the below commands). `Website<http://hannonlab.cshl.edu/fastx_toolkit/index.html>`_ 
+Various handy tools for dealing with FASTA and FASTQ files. A little out of date though, requires patching to work in modern Ubuntu (all done in the below commands). `Website <http://hannonlab.cshl.edu/fastx_toolkit/index.html>`_ 
 
 .. parsed-literal::
 	

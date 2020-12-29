@@ -1,5 +1,7 @@
 .. _data_concat:
 
+.. role:: var
+
 =====================
 4. Data concatenation
 =====================

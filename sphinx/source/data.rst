@@ -26,26 +26,31 @@ Data URLs
 
 
 .. _sectionAdata:
+
 Section A: Read processing
 --------------------------
 
 
 .. _sectionBdata:
+
 Section B: Filtering amplicon data
 ----------------------------------
 
 
 .. _sectionCdata:
+
 Section C: ASVs, OTUs and read mapping
 --------------------------------------
 
 
 .. _sectionDdata:
+
 Section D: Building OTU phylogeny
 ---------------------------------
 
 
 .. _sectionEdata:
+
 Section E: Identifying OTU sequences
 ------------------------------------
 

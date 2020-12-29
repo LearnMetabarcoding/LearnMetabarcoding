@@ -34,7 +34,7 @@ We will look at three ways of classifying and identifying OTU sequences. These t
 
 In the :ref:`Database Classification <database_classification>` subsection, we'll look at some methods for classifying OTU sequences against publicly available reference databases. We use these classifications to optionally filter our OTU sequences by taxonomy.
 
-In the :ref:`Reference Identification <reference_identification>` subsection, we'll compare our OTU sequences against a reference set to attempt to identify some our sequences to the species or morphospecies level.
+In the :ref:`Reference Identification <id_local>` subsection, we'll compare our OTU sequences against a reference set to attempt to identify some our sequences to the species or morphospecies level.
 
 Finally, in the :ref:`Phylogenetic Classification <phylogenetic_classification>` subsection, we'll bring in the phylogenetic tree we built in the previous section to use phylogenetic placement of OTUs alongside references to assign taxonomy. We suggest you have a look the :ref:`Building OTU Phylogeny <phylogeny>` section, particularly the :ref:`Phylogenetic Placement <phylogenetic_placement>` subsection, before this section, although starting data is available if not.
 

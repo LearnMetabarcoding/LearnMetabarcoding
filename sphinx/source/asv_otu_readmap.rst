@@ -1,8 +1,8 @@
 .. _asv_otu_readmap:
 
-===========================
+===============================
 C: ASVs, OTUs and read mapping
-===========================
+===============================
 
 .. toctree:: 
     :hidden:
@@ -23,7 +23,7 @@ In the second subsection, :ref:`Mapping Reads <mapping_reads>` we will look at h
 	
 	The starting point for this section is a FASTA file comprising ASVs, that is to say unique sequences with errors removed. These sequences must have ``;size=`` tags in the sequence headers to denote the abundance of each sequence in the dataset. You will also need a FASTA file of all reads in your dataset, with sample names in the read headers. 
 	
-	If you worked through :ref:`the previous section<filtering>`, these data were produced by the :ref:`chimera filtering<chimera_filtering>` and :ref:`quality filtering<quality_filtering>` tutorials respectively.
+	If you worked through :ref:`the previous section <filtering>`, these data were produced by the :ref:`chimera filtering <chimera>` and :ref:`quality filtering <quality_filtering>` tutorials respectively.
 	
 	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section `here <sectionCdata>`. Unzip this to a convenient location.
 
@@ -42,7 +42,7 @@ There are three main points that you should keep in mind if continuing at the AS
 Next Steps
 ==========
 
-To find out how to group your ASVs into groups, head to the :ref:`OTU Delimitation <otudelim>` subsection.
+To find out how to group your ASVs into groups, head to the :ref:`OTU Delimitation <otu_delim>` subsection.
 
 If you have done OTU delimitation or want to work with ASVs, you can jump to the :ref:`Mapping reads <mapping_reads>` subsection, where we look at how to generate data recording the number of reads per ASV or OTU per sample.
 

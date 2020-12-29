@@ -1,5 +1,7 @@
 .. _greedy_clustering:
 
+.. role:: var
+
 =================
 Greedy Clustering
 =================
@@ -14,7 +16,7 @@ The similarity threshold determines how large the clusters are and how many OTUs
 .. admonition:: Data and software
 	:class: green
 	
-	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section<chimera_filtering>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive<sectionCdata>` can be used as example data.
+	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section <chimera>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive <sectionCdata>` can be used as example data.
 	
 	This tutorial uses the :ref:`**VSEARCH**<vsearch>` software.
 	
@@ -37,7 +39,7 @@ The ``--cluster_size`` function specifies that we want to cluster based on the `
 	* What happens if you modify the ``--id`` threshold value? Try increasing it and decreasing it, changing the name of your output file as appropriate.
 	* Can we know what is the most appropriate threshold, or is it somewhat arbitrary based loosely on our understanding of genetic variation in our taxon of interest and what seems to give the right values?
 
-If you’re familiar with `**CD-HIT-EST**<http://weizhongli-lab.org/cd-hit/>`_, this is very similar. **CD-HIT-EST** uses a slightly different calculation of dissimilarity, which can be used by including the parameter ``--iddef 0`` 
+If you’re familiar with `**CD-HIT-EST** <http://weizhongli-lab.org/cd-hit/>`_ , this is very similar. **CD-HIT-EST** uses a slightly different calculation of dissimilarity, which can be used by including the parameter ``--iddef 0`` 
 
 Tracking our ASVs
 =================
@@ -71,6 +73,6 @@ One common question after performing clustering like this is to ask "which ASVs 
 Next Steps
 ==========
 
-We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`linkage delimitation <linkage_delimitation>` or :ref:`bayesian clustering <bayesian_clustering>`. You could optionally also look at the :ref:`extension: phylogenetic delimitation<bptp_delimitation>`.
+We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`linkage delimitation <linkage_delimitation>` or :ref:`bayesian clustering <bayesian_clustering>`. You could optionally also look at the :ref:`extension: phylogenetic delimitation <bptp_delim>`.
 
 .. include:: conclusion.rst

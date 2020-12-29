@@ -1,5 +1,7 @@
 .. _denoising:
 
+.. role:: var
+
 ====================================
 3. Frequency filtering / denoising
 ====================================
@@ -18,9 +20,9 @@ Due to the use of PCR to generate metabarcoding datasets, we should generate ple
 .. admonition:: Software and data
 	:class: green 
 	
-	The input data for this tutorial is a FASTA file comprising all of the unique sequences (ASVs) in your dataset. If you're following along step-by-step, this was produced in :ref:`the previous tutorial<dereplication>`. Alternatively, the file ``5_mbc_derep.fasta`` within the :ref:`sectionB archive<sectionBdata>` can be used as example data.
+	The input data for this tutorial is a FASTA file comprising all of the unique sequences (ASVs) in your dataset. If you're following along step-by-step, this was produced in :ref:`the previous tutorial <dereplication>`. Alternatively, the file ``5_mbc_derep.fasta`` within the :ref:`sectionB archive <sectionBdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**VSEARCH**<vsearch>` software.
+	This tutorial uses the :ref:`**VSEARCH** <vsearch>` software.
 	
 
 Simple frequency filtering
@@ -38,7 +40,7 @@ This is a straightforward filter, but it doesn't take into account all of the re
 Denoising
 =========
 
-A much more sophisticated approach to filtering errors is denoising. Denoising algorithms use read frequency and sequence composition to infer likely sequencing errors. ASVs are compared against one another and frequency thresholds are applied relative to counts of similar (but more common) ASVs. Instead of doing the size filtering as part of dereplication, we will instead do it as part of a denoising command. We will use the `**UNOISE3**<https://drive5.com/usearch/manual/unoise_algo.html>`_ algorithm, implemented again in **VSEARCH**. :guilabel:`Run the following command`, remembering to replace ``input.fasta`` with the input data (see the software and data box above) and ``output.fasta`` with a sensible name.
+A much more sophisticated approach to filtering errors is denoising. Denoising algorithms use read frequency and sequence composition to infer likely sequencing errors. ASVs are compared against one another and frequency thresholds are applied relative to counts of similar (but more common) ASVs. Instead of doing the size filtering as part of dereplication, we will instead do it as part of a denoising command. We will use the `**UNOISE3** <https://drive5.com/usearch/manual/unoise_algo.html>`_ algorithm, implemented again in **VSEARCH**. :guilabel:`Run the following command`, remembering to replace ``input.fasta`` with the input data (see the software and data box above) and ``output.fasta`` with a sensible name.
 
 .. parsed-literal::
 
@@ -85,7 +87,7 @@ The standard usage of **UNOISE** works on the entire dataset, thus considers the
 Other software
 --------------
 
-`**BFC** <https://github.com/lh3/bfc>`_ is a fairly common denoiser, often used more in the genomic sequencing realm than in amplicon sequencing, but it is occasionally used in metabarcoding. `**dada2** <https://benjjneb.github.io/dada2/index.html>`_ has recently gained in popularity among metabarcoders. Both of these algorithms work on an earlier stage of the pipeline, on the reads including quality data. In our experience, these algorithms tend to be much more strict than **UNOISE**, which may well be appropriate for some questions. We're not exploring them here because their approach wraps up many of the steps we're learning one-by-one, thereby skipping over a lot of the points we try to illustrate in these resources. However, we certainly do not recommend against them; **dada2** has `an excellent tutorial<https://benjjneb.github.io/dada2/tutorial.html>`_ that in our experience is straightforward to follow and produces reasonable outputs, albeit conservative. We would note that if you try out **dada2** for a coding region such as CO1, length and translation filtering should be performed on the denoised outputs.
+`**BFC** <https://github.com/lh3/bfc>`_ is a fairly common denoiser, often used more in the genomic sequencing realm than in amplicon sequencing, but it is occasionally used in metabarcoding. `**dada2** <https://benjjneb.github.io/dada2/index.html>`_ has recently gained in popularity among metabarcoders. Both of these algorithms work on an earlier stage of the pipeline, on the reads including quality data. In our experience, these algorithms tend to be much more strict than **UNOISE**, which may well be appropriate for some questions. We're not exploring them here because their approach wraps up many of the steps we're learning one-by-one, thereby skipping over a lot of the points we try to illustrate in these resources. However, we certainly do not recommend against them; **dada2** has `an excellent tutorial <https://benjjneb.github.io/dada2/tutorial.html>`_ that in our experience is straightforward to follow and produces reasonable outputs, albeit conservative. We would note that if you try out **dada2** for a coding region such as CO1, length and translation filtering should be performed on the denoised outputs.
 
 Next steps
 ==========

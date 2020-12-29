@@ -1,5 +1,7 @@
 .. _pair_merging:
 
+.. role:: var
+
 ==================================
 3. Pair merging
 ==================================
@@ -94,7 +96,7 @@ I generally set the quality threshold (``-q``)for trimming low quality ends to 2
 Clean up your experimentation by removing the output files
 
 Running **PEAR** in a loop
-======================
+===========================
 
 Like with **cutadapt** in the :ref:`previous tutorial<primer_removal>`, we can run **PEAR** in a loop to apply it to all of our samples: again, we list our files to find our unique samples, then loop on these and use each sample name to run an iteration of **PEAR**. Make sure to replace ``input`` and ``output`` with the names of the directory holding your input (index- and primer- trimmed sequences) and to which you want to hold your merged sequences respectively:
 
@@ -123,7 +125,7 @@ The ``&&`` here runs both commands on this line one after the other. We could us
 	
 	We use **PEAR** because it's a standalone read merging tool with a probabilistic approach to the merging task, and it works well for our data. However, it can sometimes be a little temperamental if your reads aren't precisely paired up or if you have any extraneous very short reads present in your data. Usually in these cases it just fails with a vague error - which isn't great but is better than doing something wrong.
 	
-	An alternative to pair is the **fastq_mergepairs** tool within the **VSEARCH** and **USEARCH** packages. This has slightly fewer options but is very widely used. Another tool frequently used is `**FLASH**<http://ccb.jhu.edu/software/FLASH/>`_
+	An alternative to pair is the **fastq_mergepairs** tool within the **VSEARCH** and **USEARCH** packages. This has slightly fewer options but is very widely used. Another tool frequently used is `**FLASH** <http://ccb.jhu.edu/software/FLASH/>`_
 
 Sequence loss
 =============

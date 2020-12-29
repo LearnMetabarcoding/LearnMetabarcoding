@@ -1,5 +1,7 @@
 .. _otu_tree:
 
+.. role:: var
+
 =====================
 Making a Barcode Tree
 =====================
@@ -20,9 +22,9 @@ Our OTUs can directly be used to make a phylogenetic tree, as they are all seque
 
 .. admonition:: Data and software
 	
-	The input data for this tutorial is a FASTA file comprising the sequences you want to create a phylogeny from. If you're following along step-by-step, you can use one of your OTU outputs from :ref:`the OTU delimitation tutorials<otu_delim>`, or your ASVs produced in :ref:`the filtering section<filtering>`. Alternatively, the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionD archive<sectionDdata>` can be used as example data.
+	The input data for this tutorial is a FASTA file comprising the sequences you want to create a phylogeny from. If you're following along step-by-step, you can use one of your OTU outputs from :ref:`the OTU delimitation tutorials<otu_delim>`, or your ASVs produced in :ref:`the filtering section<filtering>`. Alternatively, the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionD archive <sectionDdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**MAFFT**<mafft>` and :ref:`**FastTree**<software>`. You should also have an alignment viewer, such as **Aliview**, and a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
+	This tutorial uses the :ref:`**MAFFT** <mafft>` and :ref:`**FastTree** <fasttree>` software. You should also have an alignment viewer, such as **Aliview**, and a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
 
 Alignment
 =========
@@ -39,10 +41,10 @@ Where we have a coding locus with a very strict length expectation, such as in t
 .. admonition:: Exercise
 	
 	* Download your input sequences and your alignment to your personal computer.
-	* Open each file in the software Aliview, or your preferred alignment viewer. If you're completely new to viewing alignments, you may want to read the page on :ref:`viewing alignments <viewing_alignments>`. 
+	* Open each file in the software Aliview, or your preferred alignment viewer. If you're completely new to viewing alignments, you may want to read the page on :ref:`viewing alignments <alignment_viewing>`. 
 	* You should see no gaps in your input sequences, but some gaps in your aligned sequences. 
-	*How accurate does the alignment appear to be - is it very gappy or only slightly. 
-	*In general, are the aligned sequences consistent?
+	* How accurate does the alignment appear to be - is it very gappy or only slightly. 
+	* In general, are the aligned sequences consistent?
 
 Building a tree
 ===============
@@ -56,7 +58,7 @@ We will build a tree of our OTUs using **FastTree**. We are using **FastTree** b
 
 The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the ``head`` command. Each terminal in the tree has the ID of the sequence used to generate it.
 
-You can download this tree to your computer and open it using a tree viewer such as **Figtree** or **Dendroscope**. If you're completely new to viewing phylogenetic trees, you may want to read the page on :ref:`viewing trees <tree-viewing>`.
+You can download this tree to your computer and open it using a tree viewer such as **Figtree** or **Dendroscope**. If you're completely new to viewing phylogenetic trees, you may want to read the page on :ref:`viewing trees <tree_viewing>`.
 
 It is hard to assess the accuracy of these trees with anonymous sequences, but we can get some idea by looking at the bootstrap values of the nodes. These tell us how many times this clade was recovered as a monophyletic clade in 100 random permutations of the tree building algorithm. A higher value suggests that a clade is more accurate, while a lower value suggest that a clade may have been grouped together inaccurately.
 

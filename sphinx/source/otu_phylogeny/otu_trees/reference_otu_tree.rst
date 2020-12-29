@@ -15,7 +15,7 @@ Another way to assess accuracy of a tree is to add in some sequences with known 
 	
 	You will also need a set of reference barcode sequences and a taxonomy table corresponding to those sequences. If you're using the example dataset, the files XXXXX and XXXXX within the :ref:`sectionD archive<sectionDdata>` can be used as example data. If using your own data, you would need to generate this yourself, although you might find these files useful to see what format you need.
 	
-	This extension uses the :ref:`**MAFFT**<mafft>` and :ref:`**FastTree**<software>`, as well as the XXXX script. TODO
+	This extension uses the :ref:`**MAFFT** <mafft>` and :ref:`**FastTree** <fasttree>` software, as well as the XXXX script. TODO
 	
 
 .. admonition:: Exercise
@@ -24,7 +24,9 @@ Another way to assess accuracy of a tree is to add in some sequences with known 
 	* These barcodes vary in length, so we have no choice but to perform alignment. Run MAFFT on your concatenate OTUs and references, using the command in :ref:`the previous tutorial<otu_tree>`.
 	* Build a tree with your alignment using FastTree, as shown in the previous tutorial
 	* Use the following command to add the taxonomy from your taxonomy table onto your tree:
+	
 	TODO
+	
 	.. parsed-literal::
 		
 		Rscript

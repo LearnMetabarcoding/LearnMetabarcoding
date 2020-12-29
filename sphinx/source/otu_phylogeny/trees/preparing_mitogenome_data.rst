@@ -17,6 +17,7 @@ In this subsection, we will collect and consolidate our mitogenome data from mul
 .. admonition:: Software and data
 	:class: green
 	
+	software and data.
 	
 
 Novel Reference Mitogenomes
@@ -42,4 +43,4 @@ We have already searched GenBank and downloaded data for the Coleoptera and sele
 Next Steps
 ==========
 
-Now we should have three genbank-format files. The next step is to :ref:`2. Extract Protein Coding Genes <extract_coding>`.
+Now we should have three genbank-format files. The next step is to :ref:`2. Extract Protein Coding Genes <extract_genes>`.

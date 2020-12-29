@@ -35,7 +35,7 @@ TODO
 Assessing Trees
 ===============
 
-You can download the renamed tree to your computer and open it using a tree viewer such as Figtree or Dendroscope. If you're completely new to viewing phylogenetic trees, you may want to read the page on :ref:`viewing trees <tree-viewing>`.
+You can download the renamed tree to your computer and open it using a tree viewer such as Figtree or Dendroscope. If you're completely new to viewing phylogenetic trees, you may want to read the page on :ref:`viewing trees <tree_viewing>`.
 
 .. admonition:: Exercise
 	

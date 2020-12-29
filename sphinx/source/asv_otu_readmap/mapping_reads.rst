@@ -23,7 +23,7 @@ As our ASVs represent unique sequences in our dataset, we will first map all of 
 	
 	The starting point for this section will depend on whether you're working at the OTU or ASV level.
 	
-	If working with ASVs only, you will need a FASTA file of unique ASV sequences and a FASTA file of all reads in your dataset. If you worked through :ref:`the previous section<filtering>`, these data were produced by the :ref:`chimera filtering<chimera_filtering>` and :ref:`quality filtering<quality_filtering>` tutorials respectively. 
+	If working with ASVs only, you will need a FASTA file of unique ASV sequences and a FASTA file of all reads in your dataset. If you worked through :ref:`the previous section<filtering>`, these data were produced by the :ref:`chimera filtering<chimera>` and :ref:`quality filtering<quality_filtering>` tutorials respectively. 
 	
 	If you are working with OTUs, then you will need both of the above files, and also a FASTA file of your OTU sequence  and a file recording the assignment of ASVs to OTUs as produced by your OTU delimitation method of choice.
 	

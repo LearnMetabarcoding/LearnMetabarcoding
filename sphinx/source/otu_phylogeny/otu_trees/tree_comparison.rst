@@ -1,5 +1,7 @@
 .. _otu_comparison_tree:
 
+.. role:: var
+
 ================================
 Extension: Comparing OTU methods
 ================================

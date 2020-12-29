@@ -1,5 +1,7 @@
 .. _linkage_delimitation:
 
+.. role:: var
+
 ========================
 Linkage-based clustering
 ========================
@@ -12,9 +14,9 @@ The program **swarm** is a slightly different OTU delimitation algorithm. Rather
 .. admonition:: Data and software
 	:class: green
 	
-	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section<chimera_filtering>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive<sectionCdata>` can be used as example data.
+	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section <chimera>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive <sectionCdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**swarm**<swarm>` software.
+	This tutorial uses the :ref:`**swarm** <swarm>` software.
 
 Running swarm
 =============
@@ -61,14 +63,14 @@ We can get **swarm** to output a list of ASVs that were grouped to form each OTU
 	
 	.. parsed-literal::
 		
-		swarm -z :var:`input.fasta`` -d 1 -w :var:`output.fasta` -o :var:`output.txt`
+		swarm -z :var:`input.fasta` -d 1 -w :var:`output.fasta` -o :var:`output.txt`
 		
 		grep -n -o "uniq" :var:`input.txt` | cut -d: -f1 | sort | uniq -c
 	
-	Check out the page on :ref:```grep``<grep>` for more help figuring out what this command is doing
+	Check out the page on :ref:`grep <grep>` for more help figuring out what this command is doing
 
 Next Steps
 ==========
-We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`greedy clustering <greedy_clustering>` or :ref:`bayesian clustering <bayesian_clustering>`. You could optionally also look at the :ref:`extension: phylogenetic delimitation<bptp_delimitation>`.
+We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`greedy clustering <greedy_clustering>` or :ref:`bayesian clustering <bayesian_clustering>`. You could optionally also look at the :ref:`extension: phylogenetic delimitation<bptp_delim>`.
 
 .. include:: conclusion.rst

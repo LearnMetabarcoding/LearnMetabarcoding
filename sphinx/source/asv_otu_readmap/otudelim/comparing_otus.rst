@@ -1,5 +1,7 @@
 .. _comparing_otus:
 
+.. role:: var
+
 ==================================
 Comparing OTU delimitation methods
 ==================================

@@ -1,5 +1,7 @@
 .. _mapping_reads_asvs:
 
+.. role:: var
+
 =================================
 Mapping reads to ASVs
 =================================

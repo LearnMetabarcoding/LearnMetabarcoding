@@ -1,5 +1,7 @@
 .. _more_variable:
 
+.. role:: var
+
 ==================================================
 Extension: What if we have a more variable region?
 ==================================================

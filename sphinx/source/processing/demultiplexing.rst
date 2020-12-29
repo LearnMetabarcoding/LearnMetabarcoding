@@ -1,5 +1,7 @@
 .. _demultiplexing:
 
+.. role:: var
+
 =================
 1. Demultiplexing
 =================
@@ -26,7 +28,7 @@ There are many ways in which metabarcoding libraries may be sequenced. We are go
 	
 	.. parsed-literal::
 		
-		cp -r :var:`path/to/exampledata/sectionA/0_rawsequences/ ./
+		cp -r :var:`path/to/exampledata/sectionA/0_rawsequences/ ./`
 		
 	
 	If you are completely new to sequence data, you might at this point want to :ref:`review the FASTQ format <fastq>`
@@ -74,6 +76,7 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 	
 	* Use the grep command to search for the primer sequence in a file. Note that ambiguities (any base apart from ATCG) should be replaced with a ``.`` (full stop) which is a special character in Regular Expressions meaning "any character".
 	* Look at a few different libraries, both forward and reverse, both index and primer.
+	
 	If you get stuck, look at the solution below.
 
 .. admonition:: Solution
@@ -81,8 +84,8 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 	
 	.. parsed-literal::
 
-		head -n 24 ​:var:`input_R1.fastq`​ | grep -E "CC.GA.AT.GC.TT.CC.CG|$"
-		head -n 24 ​:var:`input_R2.fastq`​ | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"
+		head -n 24 ​:var:`input_R1.fastq` | grep -E "CC.GA.AT.GC.TT.CC.CG|$"
+		head -n 24 ​:var:`input_R2.fastq` | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"
 
 You’ll probably see that there are occasions where no index or primer is highlighted on a sequence. This means there was a sequencing error. Look closely and you’ll see that a base is missing or inserted, or just wrong.
 
@@ -129,7 +132,7 @@ Carefully examine the following command and make sure you're clear on what each 
 
 .. admonition:: Exercise
 	
-	*Before you check the output files, think: how many files do you expect to get out of this command?
+	* Before you check the output files, think: how many files do you expect to get out of this command?
 	* List the files in the demux directory, and run the grep command to see the read numbers per file. Check the solution below if you're not sure how to do this.
 
 .. admonition:: Solution

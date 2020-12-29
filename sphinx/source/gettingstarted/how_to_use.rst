@@ -1,5 +1,7 @@
 .. _how_to_use:
 
+.. role:: var
+
 ==========================
 How to use these resources
 ==========================
@@ -59,7 +61,7 @@ As part of a tutorial, we will suggest you run a command, design a command yours
 
 .. admonition:: Exercise
 	
-	An exercise box might ask a question about the output of a command you've just run, perhaps suggesting you using a :ref:`basic Linux function` such as ``head`` to interrogate the output data somehow.
+	An exercise box might ask a question about the output of a command you've just run, perhaps suggesting you using a :ref:`basic Linux function <basic_unix>` such as ``head`` to interrogate the output data somehow.
 	
 	Alternatively it might suggest you read a helpfile or manual to design a command, sometimes suggesting you use a certain argument such as ``--a``. 
 	

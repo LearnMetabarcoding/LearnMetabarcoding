@@ -1,5 +1,7 @@
 .. _mapping_reads_otus:
 
+.. role:: var
+
 =====================================
 Mapping reads to OTUs
 =====================================
@@ -16,7 +18,7 @@ If this is not the case, we must use a two-step process. First, we match reads t
 .. admonition:: Data and software
 	:class: green
 	
-	The input data for this tutorial is a FASTA file comprising OTU sequences, a text file listing the ASVs grouped into each OTU, and a tab-delimited table recording reads per ASV per sample. If you're following along step-by-step, the first two files will have been produced by the :ref:`OTU delimitation<otudelim>` method of your choice. The third file will have been produced in the previous tutorial, `Mapping reads to ASVs<mapping_reads_asvs>`. Alternatively, the files ``otus_greedy_0.97.fasta``, TODOTODO and TODOTODO within the :ref:`sectionC archive<sectionCdata>` can be used as example data.
+	The input data for this tutorial is a FASTA file comprising OTU sequences, a text file listing the ASVs grouped into each OTU, and a tab-delimited table recording reads per ASV per sample. If you're following along step-by-step, the first two files will have been produced by the :ref:`OTU delimitation <otu_delim>` method of your choice. The third file will have been produced in the previous tutorial, `Mapping reads to ASVs<mapping_reads_asvs>`. Alternatively, the files ``otus_greedy_0.97.fasta``, TODOTODO and TODOTODO within the :ref:`sectionC archive<sectionCdata>` can be used as example data.
 	
 	This tutorial uses the :ref:`**VSEARCH**<vsearch>` software.
 	

@@ -1,5 +1,7 @@
 .. _bptp_delim:
 
+.. role:: var
+
 ====================================
 Extension: Phylogenetic delimitation
 ====================================
@@ -8,13 +10,12 @@ Introduction
 ============
 
 
-
 .. admonition:: Data and software
 	:class: green
 	
-	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section<chimera_filtering>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive<sectionCdata>` can be used as example data.
+	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section<chimera>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive <sectionCdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**FastTree**<fasttree>` and :ref:`**bPTP**<bptp>` software.
+	This tutorial uses the :ref:`**FastTree** <fasttree>` and :ref:`**bPTP** <bptp>` software.
 
 Real datasets
 =============
@@ -22,7 +23,7 @@ Real datasets
 Software for species delimitation of sequences is much more resource-intensive than the methods for OTU delimitation we've already seen. Our example dataset is small enough that we can run this on the whole dataset, but many real life datasets might be too large. The best way to utilise phylogenetic delimitation in your pipeline may be to use it as validation for choosing another OTU delimitation method and threshold. In this case, we would suggest the following process:
 
 1. Run OTU delimitation
-2. Build a phylogenetic tree of your OTUs (see :ref:`section D: OTU phylogeny<phylogeny>`)
+2. Build a phylogenetic tree of your OTUs (see :ref:`section D: OTU phylogeny <phylogeny>`)
 3. Identify one or more clades on the tree with around 20-50 OTUs
 4. For each clade, find the ASVs that form these OTUs.
 5. For each set of ASVs, build a phylogenetic tree and run phylogenetic delimitation

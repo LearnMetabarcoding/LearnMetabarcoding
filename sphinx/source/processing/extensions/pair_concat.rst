@@ -1,5 +1,7 @@
 .. _pair_concatenation:
 
+.. role:: var
+
 ========================================
 Extension: Pair concatenation
 ========================================
@@ -64,7 +66,7 @@ Re-pairing mates
 	
 	.. parsed-literal:: 
 	
-		pairfq makepairs -f ​:var:`input_R1.fastq` -r :var:`​input_R2.fastq` -fp :var:​`output_R1.fastq` -rp :var:`output_R2.fastq` -fs ​:var:`output_R1_unpaired.fastq​ -rs :var:`​output_R2_unpaired.fastq`
+		pairfq makepairs -f ​:var:`input_R1.fastq` -r :var:`​input_R2.fastq` -fp :var:​`output_R1.fastq` -rp :var:`output_R2.fastq` -fs ​:var:`output_R1_unpaired.fastq​ -rs` :var:`​output_R2_unpaired.fastq`
 	
 	As always, use ``grep`` to check output file read numbers. 
 
@@ -88,6 +90,6 @@ This won't work! The problem is thatThen run **PEAR** again to concatenate the m
 Next steps
 ==========
 
-If you have lots of time and you're very interested, you could at this point run the simulated trimming, re-pairing and stitching on the rest of the files, creating a parallel dataset of concatenated short reads. Later, after completing sections A, B and C you could then come back to these and work through the rest of the tutorials. Compare how these sequences behave in the future steps, particularly :ref:`chimera filtering<chimera_filtering>` and :ref:`OTU delimitation<otu_delim>`.
+If you have lots of time and you're very interested, you could at this point run the simulated trimming, re-pairing and stitching on the rest of the files, creating a parallel dataset of concatenated short reads. Later, after completing sections A, B and C you could then come back to these and work through the rest of the tutorials. Compare how these sequences behave in the future steps, particularly :ref:`chimera filtering <chimera>` and :ref:`OTU delimitation<otu_delim>`.
 
 Alternatively, we'd suggest deleting or archiving the files created in this step, to avoid clutting up your working directories, then proceeding with the next tutorial, :ref:`4. Data concatenation<data_concat>`, which uses the merged files from the :ref:`3. Pair merging<pair_merging>` tutorial.

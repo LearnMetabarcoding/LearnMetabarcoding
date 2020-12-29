@@ -1,5 +1,7 @@
 .. _denoise_by_sample:
 
+.. role:: var
+
 ==============================
 Extension: Denoising by sample
 ==============================

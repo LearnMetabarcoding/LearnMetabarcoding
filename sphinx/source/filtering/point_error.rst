@@ -1,5 +1,7 @@
 .. _point_error:
 
+.. role:: var
+
 ========================================
 5. Point error filtering
 ========================================
@@ -31,7 +33,9 @@ Check the helpfile for this script by running:
 .. admonition:: Exercise
 	
 	* Figure out what the command is to run ``filtertranslate`` with all of the following options:
+
 	1. using automatic reading frame detection
+
 	2. outputting both succeeding and failing sequences in separate files
 	
 	* Hint: check the usage line to figure out where some of the arguments go. Don’t forget, our samples are arthropods.

@@ -1,5 +1,7 @@
 .. _bayesian_clustering:
 
+.. role:: var
+
 =========================
 Bayesian clustering
 =========================
@@ -12,9 +14,9 @@ The software **CROP** was originally designed for 16S and has not been updated i
 .. admonition:: Data and software
 	:class: green
 	
-	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section<chimera_filtering>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive<sectionCdata>` can be used as example data.
+	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section <chimera>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive <sectionCdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**VSEARCH**<vsearch>` and :ref:`**CROP**<crop>` software.
+	This tutorial uses the :ref:`**VSEARCH** <vsearch>` and :ref:`**CROP** <crop>` software.
 	
 
 Getting Started
@@ -57,6 +59,6 @@ The ``outname.cluster.list`` file that **CROP** produces is a text file that con
 Next Steps
 ==========
 
-We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`linkage delimitation <linkage_delimitation>` or :ref:`greedy clustering <greedy_clustering>`. You could optionally also look at the :ref:`extension: phylogenetic delimitation<bptp_delimitation>`.
+We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`linkage delimitation <linkage_delimitation>` or :ref:`greedy clustering <greedy_clustering>`. You could optionally also look at the :ref:`extension: phylogenetic delimitation <bptp_delim>`.
 .. include:: conclusion.rst
 
