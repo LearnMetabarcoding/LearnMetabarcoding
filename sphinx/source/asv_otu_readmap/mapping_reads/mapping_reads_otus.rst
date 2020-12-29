@@ -44,13 +44,13 @@ Here each line of the file is a list of ASVs in one OTU, with the centroid seque
 
 .. parsed-literal::
 	
-	sed -e "s/;size=[^ ]*//g" :var:`input.tsv` |
+	sed -e "s/;size=[^ ]\*//g" :var:`input.tsv` |
 	while read l;
 	do
-		n=${l%% *};
+		n=${l%% \*};
 		for a in $l;
 		do
-			echo -e "$n\t$a";
+			echo -e "$n\\t$a";
 		done;
 	done > :var:`output.tsv`
 
@@ -64,11 +64,11 @@ The following command is similar to the command for **swarm**. We convert commas
 .. parsed-literal::
 	
 	sed -e "s/,/ /g" :var:`input.list` |
-	while IFS=$'\t' read -r n l;
+	while IFS=$'\\t' read -r n l;
 	do
 		for a in $l;
 		do
-			 echo -e "$n\t$a";
+			 echo -e "$n\\t$a";
 		done | sort | uniq;
 	done > :var:`output.tsv`
 
@@ -92,7 +92,7 @@ Use ``head`` to view the output file. You'll see two columns of sequence names f
 
 .. parsed-literal::
 	
-	sed -e "s/ /\t/g" :var:`input.tsv` | cut -d2- > :var:`output.tsv`
+	sed -e "s/ /\\t/g" :var:`input.tsv` | cut -d2- > :var:`output.tsv`
 
 You might have noticed that we've lost the header column from the ASV read map table: this is because it didn't have an ASV name in column 1 to match against the other table. No matter, we can bring it back again.
 
@@ -107,7 +107,7 @@ The last issue is that we have multiple rows for each OTU, and we want to sum al
 
 .. parsed-literal::
 	
-	Rscript -e 'x<-read.table(":var:`input.tsv`",header=T,comment.char="",sep="\t");rowsum(x[,-1],x[,1])' > :var:`output.tsv`
+	Rscript -e 'x<-read.table(":var:`input.tsv`",header=T,comment.char="",sep="\\t");rowsum(x[,-1],x[,1])' > :var:`output.tsv`
 	
 
 This output gives the total read numbers for all ASVs within each OTU by sample.
