@@ -34,7 +34,7 @@ We can also use **cutadapt** to remove primers. Unlike indices, which are not va
 
 	The input data for this section is a directory of FASTQ format file pairs, one pair per sample, with primer sequences at (or near) the beginning of each read. If you're following along step-by-step, this was produced in :ref:`the previous tutorial<demultiplexing>`. Alternatively, the ``1_demux`` directory within the :ref:`sectionA archive<sectionAdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**cutadapt** software<cutadapt>`.
+	This tutorial uses the :ref:`cutadapt software <cutadapt>`.
 
 Performing primer removal
 =========================
@@ -68,8 +68,8 @@ This process is very similar to demultiplexing, except we only have one sequence
 	
 	.. parsed-literal::
 
-		cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \
-		-o :var:`output`/T11_R1.fastq -p :var:`output`/T11_R2.fastq --discard-untrimmed \
+		cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \\
+		-o :var:`output`/T11_R1.fastq -p :var:`output`/T11_R2.fastq --discard-untrimmed \\
 		1_demux/T11_R1.fastq 1_demux/T11_R2.fastq
 
 Make sure to look over the output from **cutadapt** because this is very informative. You’ll notice now that some errors are being allowed, since these sequences are longer and so the default 10% allows 2 errors in these primers. Additionally you’ll notice that unlike with the indices, the length of sequence removed has varied slightly. We’ll come back to this.
@@ -78,13 +78,13 @@ We want to run this on all of our files, ideally without writing the command ove
 
 .. parsed-literal:: 
 	
-	ls 1_demux/ | cut -d_ -f1 | sort | uniq
+	ls 1_demux/ | cut -d\_ -f1 | sort | uniq
 
 This extracts the part of each name before the first ​``_`` and finds the unique ones. We can then store this list of library names in a bash variable, and check it's contents with ``echo``:
 
 .. parsed-literal:: 
 	
-	samples=$(ls 1_demux/ | cut -d_ -f1 | sort | uniq)
+	samples=$(ls 1_demux/ | cut -d\_ -f1 | sort | uniq)
 	echo $samples
 
 We can then loop on the contents of this variable using ``for``
@@ -93,9 +93,9 @@ We can then loop on the contents of this variable using ``for``
 
 	for s in $samples;
 	do
-		cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \
-		-o :var:`output`/${s}_R1.fastq -p :var:`output`/${s}_R2.fastq --discard-untrimmed \
-		1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq\
+		cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \\
+		-o :var:`output`/${s}_R1.fastq -p :var:`output`/${s}_R2.fastq --discard-untrimmed \\
+		1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq \\
 	done
 
 Remember that you can write this as a single line without the ``\`` if you want:
@@ -114,7 +114,7 @@ Check your trimmed directory to make sure you have all of your files, and check 
 	
 	.. parsed-literal:: 
 		
-		samples=$(ls 1_demux/ | cut -d_ -f1 | sort | uniq)
+		samples=$(ls 1_demux/ | cut -d\_ -f1 | sort | uniq)
 	
 	If you have your own data, your file names are likely to be different and the exact code used above may not work! You will need to come up with your own version. If you have multiple underscores in your file names, but the number of underscores is consistent, you could simply tweak the number given to ``cut -f``. Otherwise, you might need to use ``sed`` to remove parts of the names, or even use ``rename`` to rename the files to something that will work.
 	
