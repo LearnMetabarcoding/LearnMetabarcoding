@@ -16,7 +16,7 @@ The program **swarm** is a slightly different OTU delimitation algorithm. Rather
 	
 	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section <chimera>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive <sectionCdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**swarm** <swarm>` software.
+	This tutorial uses the :ref:`swarm <swarm>` software.
 
 Running swarm
 =============

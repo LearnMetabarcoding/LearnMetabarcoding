@@ -15,7 +15,7 @@ Here we will denoise by each individual sample, rather than on the entire datase
 	
 	The input data for this tutorial is a directory containing one FASTQ or FASTA file per sample. If you've been following along step-by-step, this is the data produced in the :ref:`pair merging<pair_merging>` tutorial in the previous section. Alternatively, the ``3_merged`` directory within the :ref:`sectionA archive<sectionAdata>` can be used as example data.
 	
-	This extension uses the :ref:`**VSEARCH**<vsearch>` software.
+	This extension uses the :ref:`VSEARCH <vsearch>` software.
 
 Denoising by sample
 ===================

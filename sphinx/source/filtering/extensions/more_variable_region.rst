@@ -39,12 +39,12 @@ As it happens, it doesn’t seem that there are any programs out there that do t
 		for l in 415 418 421;
 		do
 			vsearch --fastx_filter :var:`input.fasta` --fastq_minlen $l \
-			--fastq_maxlen $l --fastaout output_${l}_ctrim.fasta;
+			--fastq_maxlen $l --fastaout output/_${l}_ctrim.fasta;
 		done &&
-		cat *ctrim.fasta > :var:`output.fasta`
+		cat \*ctrim.fasta > :var:`output.fasta`
 	
 	When we're running loops, we want to make sure it worked properly, so let's check the number of sequences in the relevant files:
 	
 	.. parsed-literal::
 		
-		grep -c "^>" *ctrim.fasta
+		grep -c "^>" \*ctrim.fasta

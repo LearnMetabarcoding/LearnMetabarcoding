@@ -24,7 +24,7 @@ We've reviewed 3 different methods of delimiting OTUs, all of which had a range 
 	* Bayesian clustering: ``otus_crop_s.fasta`` and ``otus_crop_s.list``
 	* Phylogenetic delimitation: ``otus_bPTP.fasta`` and ``asvgroups_bPTP.txt``
 	
-	This tutorial uses the :ref:`**VSEARCH**<vsearch>` software.
+	This tutorial uses the :ref:`VSEARCH <vsearch>` software.
 	
 
 Getting Started
@@ -41,9 +41,9 @@ First, concatenate all of your OTUs. You might notice we're using a similar meth
 
 .. parsed-literal::
 	
-	for f in :var:`delim_outputs`/*;
+	for f in :var:`delim_outputs`/\*;
 	do
-		n=${f#*/};
+		n=${f#\*/};
 		n=${n%.fasta};
 		sed -e "/^>/,s/$/;sample=$n/" $f >> :var:`output.fasta`;
 	 done

@@ -128,7 +128,7 @@ Finally, let's filter our ASVs to get only the OTU representative sequences. See
 
 .. parsed-literal::
 	
-	perl -pe '$. > 1 and /^>/ ? print "\n" : chomp' :var:`asvs.fasta` |
+	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' :var:`asvs.fasta` |
 	grep --no-group-separator -A1 -Ff :var:`representativeASVs.txt` <() > :var:`output.fasta`
 
 The output file here is analogous to the OTU files generated in the other OTU delimitation methods

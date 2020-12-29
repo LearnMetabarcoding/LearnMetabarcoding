@@ -18,7 +18,7 @@ The similarity threshold determines how large the clusters are and how many OTUs
 	
 	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section <chimera>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive <sectionCdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**VSEARCH**<vsearch>` software.
+	This tutorial uses the :ref:`VSEARCH <vsearch>` software.
 	
 
 Running greedy clustering
@@ -67,7 +67,7 @@ One common question after performing clustering like this is to ask "which ASVs 
 		paste otus.temp rest.temp > :var:`output.uc`
 		
 		# Clean up
-		rm *.temp
+		rm \*.temp
 		
 
 Next Steps
