@@ -122,6 +122,6 @@ This can be written in a condensed, one-line format as follows:
 
 .. parsed-literal::
 
-	for f in raw/\\*; do o=${f%.\\*}; convert --input $f --output "converted/${o#raw/}.fastq"; done
+	for f in raw/\*; do o=${f%.\*}; convert --input $f --output "converted/${o#raw/}.fastq"; done
 
 Notice how we did the second parameter expansion within another command, rather than by itself.
