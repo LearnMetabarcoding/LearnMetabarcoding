@@ -23,7 +23,7 @@ The most important point to remember here is that we must have genetic data for 
 	
 	If you're using your own data, you would need to acquire a published phylogeny, or build one yourself. You can review how to do the latter in the :ref:`Building a mitogenome reference tree<trees>`, although we'd suggest you try this tutorial with the example data first to understand the context.
 	
-	This tutorial uses the :ref:`**MAFFT** <mafft>` and :ref:`**FastTree** <fasttree>` software, as well as the :ref:`XXXX<>` script TODO. You should also have an alignment viewer, such as **Aliview**, and a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
+	This tutorial uses the :ref:`MAFFT <mafft>` and :ref:`FastTree <fasttree>` software, as well as the :ref:`XXXX<>` script TODO. You should also have an alignment viewer, such as **Aliview**, and a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
 	
 
 Getting started

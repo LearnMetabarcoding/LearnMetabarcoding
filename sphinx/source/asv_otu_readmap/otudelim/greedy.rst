@@ -49,7 +49,7 @@ One common question after performing clustering like this is to ask "which ASVs 
 .. admonition:: Exercise
 	
 	* Rerun the above command, adding ``--uc output.uc`` to the end (we suggest changing ``output.uc`` to a sensible name that also reflects the method and threshold.
-	* Run ``more`` on the ``.uc`` file to view this table, checking the `**VSEARCH** documentation<https://github.com/torognes/vsearch#getting-help>`_ (page 11) to see what each column means. 
+	* Run ``more`` on the ``.uc`` file to view this table, checking the `VSEARCH documentation <https://github.com/torognes/vsearch#getting-help>`_ (page 11) to see what each column means. 
 	* Note that it labels the centroids (columnh 2) as 0, 1, 2, etc. rather than otu1, otu2, otu3, etc. We can correct this a little by doing the following:
 	
 	.. parsed-literal::

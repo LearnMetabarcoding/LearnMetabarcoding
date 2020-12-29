@@ -26,7 +26,7 @@ As well as generating approximately species-level taxonomic units, grouping ASVs
 	
 	The starting point for this section is a FASTA file comprising ASVs, that is to say unique sequences with errors removed. These sequences must have ``;size=`` tags in the sequence headers to denote the abundance of each sequence in the dataset.
 	
-	If you worked through :ref:`the previous section <filtering>`, these data were produced by the :ref:`chimera filtering <chimera_filtering>` tutorial.
+	If you worked through :ref:`the previous section <filtering>`, these data were produced by the :ref:`chimera filtering <chimera>` tutorial.
 	
 	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section `here <sectionCdata>`. Unzip this to a convenient location.
 	

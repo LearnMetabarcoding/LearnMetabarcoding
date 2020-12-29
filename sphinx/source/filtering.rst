@@ -87,7 +87,7 @@ If you want to follow through the course step-by-step, you should work through t
 3. :ref:`Denoising<denoising>`: the removal of putative "noise" error sequences
 4. :ref:`Indel filtering<indel_filtering>`: the removal of remaining insertion or deletion errors leading to length variants
 5. :ref:`Point error filtering<point_error>`: the removal of remaining point errors leading to translation variants
-6. :ref:`Chimera filtering<chimera_filtering>`: the removal of chimeric sequences
+6. :ref:`Chimera filtering<chimera>`: the removal of chimeric sequences
 
 .. admonition:: Note
 	:class: green

@@ -176,7 +176,7 @@ Let’s get rid of the files we don’t need. You’ve doubled the amount of sto
 
 .. parsed-literal::
 
-	for f in *;			# loop through files
+	for f in \*;			# loop through files
 	do
 		s1=${f%-\*};
 		s2=${f%_\*};		# extract sample names
