@@ -38,7 +38,7 @@ As it happens, it doesn’t seem that there are any programs out there that do t
 		
 		for l in 415 418 421;
 		do
-			vsearch --fastx_filter :var:`input.fasta` --fastq_minlen $l \
+			vsearch --fastx_filter :var:`input.fasta` --fastq_minlen $l \\
 			--fastq_maxlen $l --fastaout output_${l}_ctrim.fasta;
 		done &&
 		cat \*ctrim.fasta > :var:`output.fasta`
