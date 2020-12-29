@@ -24,7 +24,7 @@ Our OTUs can directly be used to make a phylogenetic tree, as they are all seque
 	
 	The input data for this tutorial is a FASTA file comprising the sequences you want to create a phylogeny from. If you're following along step-by-step, you can use one of your OTU outputs from :ref:`the OTU delimitation tutorials<otu_delim>`, or your ASVs produced in :ref:`the filtering section<filtering>`. Alternatively, the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionD archive <sectionDdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**MAFFT** <mafft>` and :ref:`**FastTree** <fasttree>` software. You should also have an alignment viewer, such as **Aliview**, and a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
+	This tutorial uses the :ref:`MAFFT <mafft>` and :ref:`FastTree <fasttree>` software. You should also have an alignment viewer, such as **Aliview**, and a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
 
 Alignment
 =========
