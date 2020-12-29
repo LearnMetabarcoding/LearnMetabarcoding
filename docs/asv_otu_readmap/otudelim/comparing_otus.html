@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Comparing OTU delimitation methods &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mapping reads" href="../mapping_reads.html" />
+    <link rel="prev" title="Extension: Phylogenetic delimitation" href="bptp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="greedy.html">Greedy Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linkage.html">Linkage-based clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bayesian.html">Bayesian clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bptp.html">Extension: Phylogenetic delimitation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Comparing OTU delimitation methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mapping_reads.html">Mapping reads</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../otuid.html">Identifying OTU Sequences</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a> &raquo;</li>
+        
+          <li><a href="../otudelim.html">OTU Delimitation</a> &raquo;</li>
+        
+      <li>Comparing OTU delimitation methods</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/asv_otu_readmap/otudelim/comparing_otus.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="comparing-otu-delimitation-methods">
+<span id="comparing-otus"></span><h1>Comparing OTU delimitation methods<a class="headerlink" href="#comparing-otu-delimitation-methods" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>We’ve reviewed 3 different methods of delimiting OTUs, all of which had a range of parameter values that could be applied, so we could have generated a lot of different outcomes. Selecting between these is not straightforward, but can be substantially aided by a clear understanding not only of how many OTUs a given method and parameter set generate, but also what specific sequences are generated by different methods. Here we’ll briefly cover one way you can get to this information, and then we’ll discuss how you might go about choosing the which OTU delimitation method and parameters to use for your own project</p>
+<div class="green admonition">
+<p class="admonition-title">Data and software</p>
+<p>This tutorial requires that you’ve performed OTU delimitation at least twice, using different methods and/or thresholds, and that for each OTU delimitation you have a FASTA file of OTUs and a text file recording ASV assignment to OTUs. If you’re following along step-by-step, these would have been produced in any of the other tutorials in this subsection.</p>
+<p>Alternatively, you can use the following file pairs from the <a class="reference internal" href="../../data.html#sectioncdata"><span class="std std-ref">sectionC archive</span></a> as example data:</p>
+<p>TODO
+* Greedy clustering: <code class="docutils literal notranslate"><span class="pre">otus_greedy_0.97.fasta</span></code> and <code class="docutils literal notranslate"><span class="pre">asvgroups_greedy_0.97.uc</span></code>
+* Linkage delimitation: <code class="docutils literal notranslate"><span class="pre">otus_linkage_13.fasta</span></code> and <code class="docutils literal notranslate"><span class="pre">asvgroups_linkage_13.txt</span></code>
+* Bayesian clustering: <code class="docutils literal notranslate"><span class="pre">otus_crop_s.fasta</span></code> and <code class="docutils literal notranslate"><span class="pre">otus_crop_s.list</span></code>
+* Phylogenetic delimitation: <code class="docutils literal notranslate"><span class="pre">otus_bPTP.fasta</span></code> and <code class="docutils literal notranslate"><span class="pre">asvgroups_bPTP.txt</span></code></p>
+<p>This tutorial uses the <a class="reference internal" href="../../gettingstarted/setup/installing_software.html#vsearch"><span class="std std-ref">**VSEARCH**</span></a> software.</p>
+</div>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>Create a new directory and place copies of all of the FASTA files you want to compare, and only these FASTA files, into this directory. I’m going to assume you’ve called this directory <code class="docutils literal notranslate"><span class="pre">delim_outputs/</span></code>.</p>
+</div>
+<div class="section" id="mapping-asvs-to-otus">
+<h2>Mapping ASVs to OTUs<a class="headerlink" href="#mapping-asvs-to-otus" title="Permalink to this headline">¶</a></h2>
+<p>We will merge all OTUs into a single file, then search the ASVs against this file. This will give us a table showing which ASVs were used as OTU centroids for each method/parameter.</p>
+<p>First, concatenate all of your OTUs. You might notice we’re using a similar method to earlier in the pipeline - this is a great example of where we can find tools in our toolbox that we already understand and apply them to new use cases.</p>
+<pre class="literal-block">for f in <span class="var">delim_outputs</span>/<em>;
+do
+        n=${f#</em>/};
+        n=${n%.fasta};
+        sed -e &quot;/^&gt;/,s/$/;sample=$n/&quot; $f &gt;&gt; <span class="var">output.fasta</span>;
+ done</pre>
+<p>Next, we map these OTUs to the ASVs. This should be the ASV file that you used as the input for all of the OTU delimitation runs you did.</p>
+<pre class="literal-block">vsearch --search_exact <span class="var">concatenatedOTUs.fasta</span> --db <span class="var">asvs.fasta</span> --otutabout <span class="var">output.tsv</span></pre>
+<p>Here we simply search each of the OTU sequences against the ASVs to find which ASV each OTU is based upon. This is known as the OTU centroid sequence, even though not all of the methods necessarily use a centroid-based approach. Think of it as the “representative” sequence for an OTU, it’s generally the most frequent and/or the sequence that is closest to the “average” ASV in an OTU.</p>
+<p>You can now download this table and see which ASVs formed OTU centroids for which method and parameter combination. This isn’t the complete picture, of course, because it doesn’t record which ASVs merged into which OTUs for each different method, but it gives a broad overview of how similar different OTU methods are in terms of the OTUs they produce. If you wanted to look more closely at which ASVs formed each OTU in each different method, that’s possible but beyond the scope of these resources. We’d suggest mapping ASVs to OTUs as described within the different methods, and then bringing all of that data together with this table in R.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<ul class="simple">
+<li><p>How does the number of OTUs and composition of centroid sequences vary between methods.</p></li>
+<li><p>Are there any patterns you can identify?</p></li>
+<li><p>Do the approximately equivalent parameter settings between methods produce similar results? I.e. 97% similarity for greedy clustering, 13 differences for SWARM and <code class="docutils literal notranslate"><span class="pre">-s</span></code> for bayesian delimitation are approximately equivalent.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="selecting-methods-and-parameters">
+<h2>Selecting methods and parameters<a class="headerlink" href="#selecting-methods-and-parameters" title="Permalink to this headline">¶</a></h2>
+<p>There is rarely an easy choice of which method or parameter to use. Generally, we’d recommend four steps you can take to make a decision:</p>
+<ol class="arabic simple">
+<li><p>Read the documentation and any papers about the algorithm carefuly and try to get a good understanding of how it works, what its assumptions are and what the authors recommend or intend. If you know its assumptions, you can compare this with your dataset and this may guide you. Remember that the authors didn’t necessarily design the method with your exact kind of data in mind, so their recommendations may not necessarily be valid for you.</p></li>
+<li><p>Read other papers that perform metabarcoding for similar research questions and/or similar taxonomic groups as your project, and see what they choose and why. If in doubt, going with the consensus is generally the most justifiable choice, but you should make it carefully: there is no guarantee that other authors have thought of all possibilities, and there’s a risk that a single method becomes the consensus simply because everyone else is using it</p></li>
+<li><p>Try out different options! Hopefully we’ve shown you that it is possible to check lots of different methods and parameters and it is not too difficult to compare and contrast a) the number of OTUs and b) the centroid sequences selected. While this doesn’t necessarily help you make a final choice, you may find that multiple methods and/or parameters produce the same or very similar results, and this can help you narrow things down</p></li>
+<li><p>Use positive controls. If you’re still in the earlier stages of your planning, you could make sure to include one or more positive control samples of known composition, ideally with a diversity similar to your study samples. Then, when you get to the OTU delimitation stage you can experiment to see what delimitation method gives you the number of OTUs you expect for this sample.</p></li>
+</ol>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Choose a set of OTUs that you think looks reasonable. If you’re stumped, just go with the consensus: the majority of metabarcoders use 97% similarity greedy clustering. Alternatively, if you think this whole OTU delimitation thing is clearly arbitrary and artificial, well, there’s certainly a trend towards this sort of thinking: you could just use the ASVs (just remember from now on we’ll be referring to OTUs only). Whichever you choose, make sure you clearly name this file so you can find it later.</p>
+<p>In the next subsection, we’re going to look at how you can generate the ecological data you’ve been waiting for, by finding how many reads of each OTU are present in each sample, and by trying some methods for taxonomic classification and identification of OTUs. This is in the <a class="reference internal" href="../mapping_reads.html#mapping-reads"><span class="std std-ref">mapping reads</span></a> subsection.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mapping_reads.html" class="btn btn-neutral float-right" title="Mapping reads" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bptp.html" class="btn btn-neutral float-left" title="Extension: Phylogenetic delimitation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
