@@ -16,7 +16,7 @@ Finding all exact copies of a single ASV in a dataset of reads is relatively str
 	
 	The input data for this tutorial is two FASTA files, one containing all reads in your dataset and one comprising just filtered unique sequences (ASVs). If you're following along step-by-step, these were produced in the :ref:`quality filtering <quality_filtering>` and at the end of the :ref:`filtering <filtering>` section respectively. Alternatively, the files ``4_mbc_concat.fasta`` (reads) and ``9_mbc_final.fasta`` (ASVs) within the :ref:`sectionC archive<sectionCdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**VSEARCH**<vsearch>` software.
+	This tutorial uses the :ref:`VSEARCH <vsearch>` software.
 
 Reads data
 ==========

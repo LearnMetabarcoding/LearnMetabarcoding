@@ -15,7 +15,7 @@ Introduction
 	
 	The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you're following along step-by-step, this was produced at the end of :ref:`the previous section<chimera>`. Alternatively, the file ``9_mbc_final.fasta`` within the :ref:`sectionC archive <sectionCdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**FastTree** <fasttree>` and :ref:`**bPTP** <bptp>` software.
+	This tutorial uses the :ref:`FastTree <fasttree>` and :ref:`bPTP <bptp>` software.
 
 Real datasets
 =============
@@ -27,7 +27,7 @@ Software for species delimitation of sequences is much more resource-intensive t
 3. Identify one or more clades on the tree with around 20-50 OTUs
 4. For each clade, find the ASVs that form these OTUs.
 5. For each set of ASVs, build a phylogenetic tree and run phylogenetic delimitation
-6. :ref:`Compare the OTU delimitations between the methods<comparing_otus>`
+6. :ref:`Compare the OTU delimitations between the methods <comparing_otus>`
 
 Here we will just do step 5.
 
@@ -40,7 +40,7 @@ First we must strip out our ``;size=`` annotations, as these often cause issues 
 
 .. parsed-literal::
 	
-	sed -e "s/;size=.*$//" :var:`input.fasta` > :var:`output.fasta`
+	sed -e "s/;size=.\*$//" :var:`input.fasta` > :var:`output.fasta`
 
 :guilabel:`Now run FastTree; your input file should be the output from the ``sed`` command`.
 
