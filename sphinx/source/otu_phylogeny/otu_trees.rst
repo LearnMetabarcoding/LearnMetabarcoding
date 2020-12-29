@@ -21,6 +21,7 @@ Introduction
 Our OTUs can directly be used to make a phylogenetic tree, as they are all sequences of the same locus. This tree may not be very accurate, because there is relatively little data: for example, our example dataset only has 418 bases. On the other hand, building a phylogeny for short sequences is relatively fast for many many sequences, while building a phylogeny of much longer sequences could be much slower.
 
 .. admonition:: Data and software
+	:class: green
 	
 	The input data for this tutorial is a FASTA file comprising the sequences you want to create a phylogeny from. If you're following along step-by-step, you can use one of your OTU outputs from :ref:`the OTU delimitation tutorials<otu_delim>`, or your ASVs produced in :ref:`the filtering section<filtering>`. Alternatively, the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionD archive <sectionDdata>` can be used as example data.
 	

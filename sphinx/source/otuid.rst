@@ -1,9 +1,8 @@
 .. _otuid:
 
-=========================
-Identifying OTU Sequences
-=========================
-
+============================
+E: Identifying OTU sequences
+============================
 
 .. toctree::
 	:hidden:
@@ -12,8 +11,10 @@ Identifying OTU Sequences
 	otuid/id_local
 	otuid/phylogeny_based
 
-
-
+.. admonition:: Note
+	:class: green
+	
+	In this section we will talk only about OTUs, but if you wanted to work at the ASV level you could simply use ASV sequences in place of OTU sequences. So whenever you see OTU in this section, you can simply replace this with ASV for equivalent results.
 
 Introduction
 ============
@@ -22,10 +23,13 @@ In previous sections we found how to filter metabarcoding sequences to generate 
 
 While we may have got some anecdotal hints from the placement of our OTUs onto phylogenetic trees, in this section we will apply standardised methodologies to taxonomically classify OTUs and hopefully match them against reference sequences to identify some OTUs to the species or morphospecies level. As well as generating taxonomic classifications for OTUs, we will also explore how we can use these taxonomic classifications to filter our set of OTU sequences.
 
-Getting Started
-===============
+.. admonition:: Data
+	:class: green
+	
+	The starting point for this section is a FASTA file of sequences that you want to find out taxonomic information for, i.e. ASVs or OTUs. For some tutorials, you will also need some reference sequences. If you worked through the previous sections, the ASV or OTU data were produced during :ref:`filtering<filtering>` or :ref:`OTU delimitation<otu_delim>`. 
+	
+	You can download a zip archive of example data for all of the tutorials in this section `here <sectionEdata>`, including unidentified sequences and reference sequences.
 
-This section requires that you have a FASTA file of OTUs. As in the previous section, you could substitute ASVs for OTUs throughout this section and get the equivalent ASV-level results.
 
 Next Steps
 ==========

@@ -22,10 +22,11 @@ Introduction
 One of the major benefits of metabarcoding over traditional methods of elucidating ecological community structure is that as part of identifying taxonomic units, we automatically acquire DNA sequences for each of our taxonomic units. This allows us to use these OTU sequences to construct phylogenetic trees for our meta-community, paving the way for analyses that go beyond just community composition into phylodiversity and phylogeography. As well as providing more detailed information about the relationships among our OTUs, phylogeny can help to better understand what our OTUs are in terms of taxonomy and evolutionary placement, potentially informing us about traits and other evolutionary properties.
 
 .. admonition:: Data
+	:class: green
 	
 	The starting point for this section is a FASTA file of sequences from which you want to build a phylogeny, i.e. ASVs or OTUs. If you worked through the previous sections, these data were produced during :ref:`filtering<filtering>` or :ref:`OTU delimitation<otu_delim>`. Alternatively, you can find some example data in the zip archive linked below.
 	
-	If you follow through the tutorials in this section using the example data, you will also need some reference data. You can download a zip archive of the data for all of the tutorials in this section `here <sectionDdata>`. Unzip this to a convenient location.
+	If you follow through the tutorials in this section using the example data, you will also need some reference data. You can download a zip archive of example data for all of the tutorials in this section `here <sectionDdata>`. Unzip this to a convenient location.
 	
 
 Building a phylogeny
