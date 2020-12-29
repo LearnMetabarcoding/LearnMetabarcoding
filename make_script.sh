@@ -16,5 +16,5 @@ cd data_source/
 for d in *; do zip -r ../docs/data/${d}.zip $d; done
 cd ../
 ####################
-git add docs/*
+git add docs
 git commit -am "Auto-commit of new html version"
