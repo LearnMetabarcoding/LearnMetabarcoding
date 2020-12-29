@@ -105,7 +105,7 @@ The following command loops through the lines of the reformatted partition summa
 	
 	while read l;
 	do
-		grep -Ff <(echo -e "${l// /;\\n}") :var:`sortedASVs.fasta` |
+		grep -Ff <(echo -e "${l// /;\\\n}") :var:`sortedASVs.fasta` |
 		head -1 | sed -e "s/>//" ;
 	done < :var:`reformattedpartitionsummary.txt` > :var:`output.txt`
 
