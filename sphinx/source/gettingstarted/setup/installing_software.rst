@@ -115,7 +115,7 @@ You must sign up for a PEAR academic licence and you will receive an email with 
 Pairfq
 ------
 
-
+Ensures paired read files are syncronised. `Website <https://github.com/sestaton/Pairfq>`_
 
 .. parsed-literal::
 	
@@ -154,14 +154,12 @@ Various handy tools for dealing with FASTA and FASTQ files. A little out of date
 	sudo make install
 	cd ../
 
-
 .. _vsearch:
 
 VSEARCH
 -------
 
-Open-source implementation of USEARCH with more versatility.
-VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. We’ll see other tools from this useful package later; you can read the documentation `here. <https://github.com/torognes/vsearch>`_
+Open-source implementation of USEARCH with more versatility. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. `Website. <https://github.com/torognes/vsearch>`_
 
 .. parsed-literal::
 	
@@ -183,6 +181,7 @@ VSEARCH is a software package specifically designed for metabarcoding, based on 
 metaMATE
 --------
 
+Tool for exploring detailed read frequency filtering thresholds. `Website.<https://github.com/tjcreedy/metaMATE>`_
 
 .. parsed-literal::
 	
@@ -192,6 +191,8 @@ metaMATE
 
 swarm
 -----
+
+Linkage-based OTU delimitation. `Website. <https://github.com/torognes/swarm`_
 
 .. parsed-literal::
 	
@@ -212,6 +213,8 @@ swarm
 CROP
 ----
 
+Bayesian OTU delimitation. `Website. <https://github.com/tingchenlab/CROP>`_
+
 .. parsed-literal::
 	
 	sudo apt install libgsl-dev # (installed above)
@@ -223,33 +226,46 @@ CROP
 	sudo make
 	sudo ln -s /usr/local/src/CROP/CROPLinux /usr/local/bin/crop
 
+.. _bPTP:
+
+bPTP
+----
+
+Bayesian phylogeny-based species delimitation. `Website. <https://github.com/zhangjiajie/PTP
+
+.. parsed-literal::
+	
+	cd /usr/local/src
+	sudo git clone https://github.com/zhangjiajie/PTP
+	cd PTP
+	sudo -H python3 -m pip install -r requirements.txt
+	cd /PTP/bin
+	for f in *.py; do sed -i "1s/python$/python3/" $f; done
+	sudo ln -s /usr/local/src/PTP/bin/bPTP.py /usr/local/bin/bPTP
+	sudo ln -s /usr/local/src/PTP/bin/PTP.py /usr/local/bin/PTP
+
+
 .. _blast:
 
 BLAST
 -----
 
+Widely used sequence searching software. `Documentation. <https://www.ncbi.nlm.nih.gov/books/NBK279690/>`_
+
 .. parsed-literal::
 	cd /usr/local/src/
 	
-	BLAST_VERSION="2.9.0" # Change as appropriate
+	BLAST_VERSION="2.11.0" # Change as appropriate
 	sudo wget "ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${BLAST_VERSION}/ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz"
 	sudo tar -zxf ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz
 	sudo cp ncbi-blast-${BLAST_VERSION}+/bin/\* /usr/local/bin/
-
-.. _catfasta2phyml:
-
-catfasta2phyml
---------------
-
-.. parsed-literal::
-	
-	sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
-	sudo chmod a+x /usr/local/bin/catfasta2phyml.pl
 
 .. _fasttree:
 
 FastTree
 --------
+
+Fast maximum likelihood phylogenetic inference. `Website <http://www.microbesonline.org/fasttree/>`_
 
 .. parsed-literal::
 	
@@ -257,4 +273,66 @@ FastTree
 	sudo wget http://www.microbesonline.org/fasttree/FastTree
 	sudo wget http://www.microbesonline.org/fasttree/FastTreeMP
 	sudo chmod a+x FastTree\*
+
+.. _catfasta2phyml:
+
+catfasta2phyml
+--------------
+
+Script for concatenating alignments into a supermatrix. `Website. <https://github.com/nylander/catfasta2phyml>`_
+
+.. parsed-literal::
+	
+	sudo wget -O /usr/local/bin/ https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
+	sudo chmod a+x /usr/local/bin/catfasta2phyml.pl
+
+Installation not necessary: you could simply download it to your working directory and run it using ``perl``:
+
+.. parsed-literal::
+	
+	wget /usr/local/bin/ https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
+	perl catfasta2phyml.pl
+
+.. _extract_genes:
+
+extract_genes
+-------------
+
+Script for extracting individual gene sequences from GenBank files. `Website. <https://github.com/tjcreedy/biotools>`_
+
+.. parsed-literal::
+	
+	sudo wget -O /usr/local/bin/ https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
+	sudo chmod a+x /usr/local/bin/extract_genes.pl
+
+Installation not necessary: you coul simply download it to your working directory and run it using ``perl``:
+
+.. parsed-literal::
+	
+	wget https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
+	perl extract_genes.pl
+
+.. _phylostuff:
+
+phylostuff
+----------
+
+A set of scripts for doing things to phylogenies, including relabelling and inferring taxonomy. `Website <https://github.com/tjcreedy/phylostuff>`_
+
+.. parsed-literal::
+	
+	cd /usr/local/src
+	sudo rm -rf phylostuff
+	sudo git clone https://github.com/tjcreedy/phylostuff.git
+	cd phylostuff
+	find -maxdepth 1 -executable -type f | cut -c3- | while read l; do sudo ln -s /usr/local/src/phylostuff/$l /usr/local/bin/$l; done
+	
+
+Installation not necessary: you could simply download the script you want to your working directory and run it using ``Rscript``, for example with **phylabel**:
+
+.. parsed-literal::
+	
+	wget https://raw.githubusercontent.com/tjcreedy/phylostuff/master/phylabel.R
+	Rscript phylabel.R
+	
 

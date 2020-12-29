@@ -11,8 +11,10 @@ For phylogeny we need to consolidate our genetic data into one file with all of 
 
 .. admonition:: Software and data
 	:class: green
-
-	This section uses the catfasta2phyml.pl script. Instructions on how to install this can be found :ref:`here. <catfasta2phyml>`
+	
+	The input data for this tutorial is a directory of gene alignments in FASTA format, as produced in the :ref:`previous tutorial<aligning>`.
+	
+	This section uses the :ref:`catfasta2phyml.pl<catfasta2phyml>` script.
 
 Performing Concatenation
 ========================
@@ -21,23 +23,24 @@ We use the ``catfasta2phyml.pl`` command to concatenate the aligned files into a
 
 .. admonition:: Exercise
 	
-	As always, check out the helpfile before running. We want to force concatenation of all files even when number of taxa differ, and we want to output a fasta. 
-	
-	See if you can figure out the command, then run it.
+	* As always, check out the helpfile before running. We want to force concatenation of all files even when number of taxa differ, and we want to output a fasta. 
+	* See if you can figure out the command, then run it.
 
 .. admonition:: Solution
 	:class: toggle
 	
-	.. code-block:: bash
+	``dir`` should of course be replaced with the name of the directory containing your alignments, and ``supermatrix.fasta`` with a sensible name.
+	
+	.. parsed-literal::
 		
-		$ catfasta2phyml.pl -c -fasta genes_aligned/* > supermatrix.fasta
+		catfasta2phyml.pl -c -fasta :var:`dir`/* > :var:`supermatrix.fasta`
 	
 	This will print the partitions to the terminal. If we want to save them as a file, we can run the below code. Note that we subsequently print them to the terminal: this is because if we have any errors, they will also be printed to the ``partitions.txt`` file so we want to check that out to ensure our command ran OK.
 	
-	.. code-block:: bash
+	.. parsed-literal::
 		
-		$ catfasta2phyml.pl -c -fasta genes_aligned/* > supermatrix.fasta 2> partitions.txt
-		$ cat partitions.txt
+		catfasta2phyml.pl -c -fasta :var:`dir`/* > :var:`supermatrix.fasta` 2> :var:`partitions.txt`
+		cat :var:`partitions.txt`
 	
 
 Next Steps

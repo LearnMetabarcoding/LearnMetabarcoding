@@ -19,11 +19,14 @@ The most important point to remember here is that we must have genetic data for 
 	
 	The input data for this tutorial is a FASTA file comprising the sequences you want to place on a phylogeny, and data for the phylogeny itself. The phylogeny data should comprise of 1. the final alignment/supermatrix in FASTA format, 2. the tree in newick format and 3. a table of taxonomy for the sequences on the tree.
 	
-	If you're following along step-by-step, for the sequences to place you can use one of your OTU outputs from :ref:`the OTU delimitation tutorials<otu_delim>`, or your ASVs produced in :ref:`the filtering section<filtering>`. Alternatively, the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionD archive<sectionDdata>` can be used as example data. For the phylogeny, you should use the files TODO XXXX XXXX, and XXXXX within the :ref:`sectionD archive<sectionDdata>`
+	If you're following along step-by-step, for the sequences to place you can use one of your OTU outputs from :ref:`the OTU delimitation tutorials<otu_delim>`, or your ASVs produced in :ref:`the filtering section<filtering>`. Alternatively, the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionD archive<sectionDdata>` can be used as example data. For the phylogeny, you should use the following files within the :ref:`sectionD archive<sectionDdata>`:
+	1. ``supermatrix_GB_CCCP.fasta``
+	2. ``phylogeny_GB_CCCP.tre``
+	3. ``taxonomy_GB_CCCP.csv``
 	
 	If you're using your own data, you would need to acquire a published phylogeny, or build one yourself. You can review how to do the latter in the :ref:`Building a mitogenome reference tree<trees>`, although we'd suggest you try this tutorial with the example data first to understand the context.
 	
-	This tutorial uses the :ref:`MAFFT <mafft>` and :ref:`FastTree <fasttree>` software, as well as the :ref:`XXXX<>` script TODO. You should also have an alignment viewer, such as **Aliview**, and a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
+	This tutorial uses the :ref:`MAFFT <mafft>` and :ref:`FastTree <fasttree>` software, as well as the :ref:`phylabel.R<phylostuff>` script. You should also have an alignment viewer, such as **Aliview**, and a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
 	
 
 Getting started
@@ -76,11 +79,11 @@ Now we can run the new tree building to place the OTUs within the reference. We 
 	
 	FastTree -nt -gtr -constraints :var:`​constraints.txt` < ​:var:`combinedsupermatrix.fasta` >​ :var:`output.tre`
 
-Finally, we just need to add the taxonomy onto the tree for our reference sequences using the **XX** script, as follows:
+Finally, we just need to add the taxonomy onto the tree for our reference sequences using the **phylabel.R** script, as follows:
 
 .. parsed-literal::
-
-	script
+	
+	phylabel.R -p :var:`input.tre` -r -t :var:`taxonomy.csv`  -o :var:`output.tre`
 	
 
 .. admonition:: Exercise
