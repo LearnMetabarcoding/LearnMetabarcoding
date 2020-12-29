@@ -30,11 +30,14 @@ Data URLs
 Section A: Read processing
 --------------------------
 
+`http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionA.zip <http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionA.zip>`_
 
 .. _sectionBdata:
 
 Section B: Filtering amplicon data
 ----------------------------------
+
+`http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionB.zip <http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionB.zip>`_
 
 
 .. _sectionCdata:
@@ -42,11 +45,15 @@ Section B: Filtering amplicon data
 Section C: ASVs, OTUs and read mapping
 --------------------------------------
 
+`http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionC.zip <http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionC.zip>`_
+
 
 .. _sectionDdata:
 
 Section D: Building OTU phylogeny
 ---------------------------------
+
+`http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionD.zip <http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionD.zip>`_
 
 
 .. _sectionEdata:
