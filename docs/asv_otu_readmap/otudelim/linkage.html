@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Linkage-based clustering &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bayesian clustering" href="bayesian.html" />
+    <link rel="prev" title="Greedy Clustering" href="greedy.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="greedy.html">Greedy Clustering</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Linkage-based clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bayesian.html">Bayesian clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bptp.html">Extension: Phylogenetic delimitation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comparing_otus.html">Comparing OTU delimitation methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mapping_reads.html">Mapping reads</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../otuid.html">E: Identifying OTU sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contactus.html">Contact us</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a> &raquo;</li>
+        
+          <li><a href="../otudelim.html">OTU Delimitation</a> &raquo;</li>
+        
+      <li>Linkage-based clustering</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/asv_otu_readmap/otudelim/linkage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linkage-based-clustering">
+<span id="linkage-delimitation"></span><h1>Linkage-based clustering<a class="headerlink" href="#linkage-based-clustering" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The program <strong>swarm</strong> is a slightly different OTU delimitation algorithm. Rather than using a threshold that applies to all clusters like <strong>VSEARCH</strong>’s clustering method, it uses a local linking threshold that is based on number of differences, rather than overall dissimilarity. It assess the absolute number of differences between all pairs of ASVs, then builds a network where ASVs are nodes and the distance between nodes is the number of differences. It then interrogates this network to separate groups of ASVs with the most differences between them. One of the theoretical benefits of <strong>swarm</strong> is that it is not affected by the abundance distribution of the input ASVs and the clusters are therefore not necessarily as uneven as in greedy clustering. The downside is that <strong>swarm</strong> generally produces many more OTUs than greedy clustering, especially at the authors’ recommended settings. Of course, this could vary considerably depending on the dataset.</p>
+<div class="green admonition">
+<p class="admonition-title">Data and software</p>
+<p>The input data for this tutorial is a FASTA file comprising unique sequences (ASVs). If you’re following along step-by-step, this was produced at the end of <a class="reference internal" href="../../filtering/chimera_filtering.html#chimera"><span class="std std-ref">the previous section</span></a>. Alternatively, the file <code class="docutils literal notranslate"><span class="pre">9_mbc_final.fasta</span></code> within the <a class="reference internal" href="../../data.html#sectioncdata"><span class="std std-ref">sectionC archive</span></a> can be used as example data.</p>
+<p>This tutorial uses the <a class="reference internal" href="../../gettingstarted/setup/installing_software.html#swarm"><span class="std std-ref">swarm</span></a> software.</p>
+</div>
+</div>
+<div class="section" id="running-swarm">
+<h2>Running swarm<a class="headerlink" href="#running-swarm" title="Permalink to this headline">¶</a></h2>
+<p><strong>Swarm</strong> is pretty easy to run. The main parameter is <code class="docutils literal notranslate"><span class="pre">-d</span></code>, which specifies the number of differences to iteratively group ASVs together. This should always be an integer greater than or equal to 1. Our input contains <code class="docutils literal notranslate"><span class="pre">;size=</span></code> tags so we use the <code class="docutils literal notranslate"><span class="pre">-z</span></code> parameter.</p>
+<p><span class="guilabel">Run the following command to have **swarm** cluster your input ASVs</span>.</p>
+<pre class="literal-block">swarm ​-z ​:var:<cite>input.fasta</cite> -d 1 -w <span class="var">​output.fasta</span></pre>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<ul class="simple">
+<li><p>What happens if you run with higher <code class="docutils literal notranslate"><span class="pre">-d</span></code> values?</p></li>
+<li><p>Are higher values more or less strict?</p></li>
+<li><p>While the algorithm is quite different from greedy clustering, we can calculate the number of differences that 3% dissimilarity equates to given our amplicon is 418bp (the solution is below if you can’t figure it out).</p></li>
+<li><p>Run swarm using this value for <code class="docutils literal notranslate"><span class="pre">-d</span></code>. How does the number of OTUs differ?</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<p><span class="math notranslate nohighlight">\(418 * 0.03 ≈ 13\)</span></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>swarm -z :var:<span class="sb">`</span>input.fasta<span class="sb">`</span> -d <span class="m">13</span> -w :var:<span class="sb">`</span>output.fasta<span class="sb">`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tracking-our-asvs">
+<h2>Tracking our ASVs<a class="headerlink" href="#tracking-our-asvs" title="Permalink to this headline">¶</a></h2>
+<p>We can get <strong>swarm</strong> to output a list of ASVs that were grouped to form each OTU. You can generate this list by adding the <code class="docutils literal notranslate"><span class="pre">-o</span></code> option</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<ul class="simple">
+<li><p>Rerun <strong>swarm</strong> with your favourite <code class="docutils literal notranslate"><span class="pre">-d</span></code> value and <code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">output.txt</span></code> (replacing <code class="docutils literal notranslate"><span class="pre">output.txt</span></code> with an appropriate name, of course)</p></li>
+<li><p>Review this file with <code class="docutils literal notranslate"><span class="pre">more</span></code></p></li>
+<li><p>Can you figure out a way to count the number of ASVs per OTU?</p></li>
+<li><p>Is it even?</p></li>
+</ul>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Solution</p>
+<pre class="literal-block">swarm -z <span class="var">input.fasta</span> -d 1 -w <span class="var">output.fasta</span> -o <span class="var">output.txt</span>
+
+grep -n -o &quot;uniq&quot; <span class="var">input.txt</span> | cut -d: -f1 | sort | uniq -c</pre>
+<p>Check out the page on <a class="reference internal" href="../../gettingstarted/cli_bioinformatics/grep.html#grep"><span class="std std-ref">grep</span></a> for more help figuring out what this command is doing</p>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>We’ve generated a set of OTUs using one method. If you haven’t already, try out other types of OTU clustering: <a class="reference internal" href="greedy.html#greedy-clustering"><span class="std std-ref">greedy clustering</span></a> or <a class="reference internal" href="bayesian.html#bayesian-clustering"><span class="std std-ref">bayesian clustering</span></a>. You could optionally also look at the <a class="reference internal" href="bptp.html#bptp-delim"><span class="std std-ref">extension: phylogenetic delimitation</span></a>.</p>
+<p>If you’ve now tried all of the methods, the <a class="reference internal" href="comparing_otus.html#comparing-otus"><span class="std std-ref">comparing OTU delimitation methods</span></a> tutorial outlines some ways to compare these methods and some hints for selecting a method and parameters.</p>
+<p>Once you have a final set of OTUs and an associated record of ASVs within each OTU, you can proceed with these two files to the <a class="reference internal" href="../mapping_reads.html#mapping-reads"><span class="std std-ref">mapping reads</span></a> subsection to learn about mapping your reads to your OTUs. Later on, we’ll also use the OTU sequences to generate a phylogeny of our OTUs in the <a class="reference internal" href="../../building_otu_phylogeny.html#phylogeny"><span class="std std-ref">Building OTU phylogeny</span></a> section, and to retrieve taxonomic identifications and/or classifications for the OTU sequences in the <a class="reference internal" href="../../otuid.html#otuid"><span class="std std-ref">Identifying OTU sequences</span></a> section.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bayesian.html" class="btn btn-neutral float-right" title="Bayesian clustering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="greedy.html" class="btn btn-neutral float-left" title="Greedy Clustering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
