@@ -8,9 +8,9 @@ If you are new to using the command line, and need to make substantial changes t
 
 To create a document using nano you simply type ``nano`` followed by the name you would like to give the file. For example:
 
-.. code-block:: bash 
+.. parsed-literal::
 
-	$ nano example.txt
+	nano example.txt
 
 Creating a file using the above command will open the text editor and your terminal will look something like the image below. 
 
@@ -23,9 +23,9 @@ You can now type whatever you need into this file. To save the file you press ``
 
 To open an existing file you type ``nano`` followed by the file name.
 
-.. code-block:: bash 
+.. parsed-literal::
 
-	$ nano filename
+	nano filename
 
 It will show a similar screen to the image above but with all the text that file contains displayed. You can then go ahead and edit the document. 
 
