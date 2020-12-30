@@ -1,5 +1,7 @@
 .. _unix_cli:
 
+.. role:: comment
+
 ======================================
 UNIX command line
 ======================================
@@ -31,7 +33,7 @@ Sometimes in these resources we will ask you to run a command that is quite long
 	echo \\
 	"hello world"
 
-To enter this in the command prompt, we type the first line (excluding the ``$``) and then press Enter after typing the ``\`` symbol. This symbol at the end of the command tells the shell that we want to continue typing the same command on the next line. The prompt will change to a ``>``. We then type the second line, *excluding the* ``>`` *symbol*. 
+To enter this in the command prompt, we type the first line and then press Enter after typing the ``\`` symbol. This symbol at the end of the command tells the shell that we want to continue typing the same command on the next line. The prompt will change to a ``>``. We then type the second line. 
 
 You don't need to enter the ``\`` symbol to start a new line if you use a character that unambiguously tells Linux that you're not finished. For example, if you open a parethesis or a quotation mark, as we saw above. Alternatively, if you're running multiple commands one after the other you can separate them using ``;`` or by using pipes (see below). If you end a line with ``;`` or ``|`` then press Enter (Return), Linux will assume you have more to add and so will start a new line with the ``>`` prompt, rather than immediately running your command.
 
@@ -45,7 +47,7 @@ Finally, the shell will ignore anything on a line after the first ``#`` symbol i
 
 The output would be identical to the first command on this page.
 
-.. note:: We suggest that the best way to learn is to type out the commands as they are shown in these resources. This might cause you more errors, but it gives you a chance to learn from them. If you copy and paste, you should do so line by line for multiline commands, in order to ensure that you always remove the ``$`` or ``>`` at the beginning of any lines.
+.. note:: We suggest that the best way to learn is to type out the commands as they are shown in these resources. This might cause you more errors, but it gives you a chance to learn from them. If you copy and paste, you should do so line by line for multiline commands, in order to ensure that you avoid formatting errors. 
 
 --------------------------------
 Working directories and paths
@@ -116,8 +118,8 @@ If presented with a new function that you have no idea how to use, don't panic! 
 
 .. parsed-literal::
 
-	man ​fastqc​      # Returns a scrollable manual if it exists
-	fastqc​ -h       # Outputs a text summary of the function's options
-	​fastqc​ --help   # Same as above
+	man ​fastqc​      :comment:`# Returns a scrollable manual if it exists`
+	fastqc​ -h       :comment:`# Outputs a text summary of the function's options`
+	​fastqc​ --help   :comment:`# Same as above`
 
 If these don't help you figure out how to use the tool (which is understandable, sometimes they're very brief!), try searching google. There are lots of people out there who've probably tried to figure out the tool before. The trick is including the right search terms. Be specific, but not too specific, and include important context. For example, I might search "linux command line how to use echo", or "bash print text to terminal echo", or "terminal write string ubuntu".

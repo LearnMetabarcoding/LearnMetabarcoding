@@ -1,5 +1,7 @@
 .. _remote_access:
 
+.. role:: var
+
 ======================================
 Accessing linux servers
 ======================================
@@ -12,9 +14,9 @@ Using teminal in MacOS
 
 If you are using a mac then connecting to a server is simple using an SSH (secure shell). Open your terminal application (if you haven't used this before you can access it by using spotlight search or by navigating to the application using launchpad). You then type an SSH command which looks like this: 
 
-.. code-block:: bash
+.. parsed-literal:: 
 
-	$ ssh username@server_address
+	ssh :var:`username@server_address`
 
 You will need to replace the username in the above command with your username for the server. You'll also need to replace the server_address with the actual address of the server you are connecting to. If it is your first time connecting it will ask you if you trust the server then will usually ask you for a password. 
 
@@ -25,9 +27,9 @@ Using windows subsystem for linux
 If you are running an upto date version of windows then you can use the windows subsystem for linux (WSL) to connect to the remote server. To get WSL up and running you can follow the documentation on `microsofts site. <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_
 You should then be able to connect to your remote server using SSH as below: 
 
-.. code-block:: bash
+.. parsed-literal:: 
 
-	$ ssh username@server_address
+	ssh :var:`username@server_address`
 
 
 You will need to replace the username in the above command with your username for the server. You'll also need to replace the server_address with the actual address of the server you are connecting to. If it is your first time connecting it will ask you if you trust the server then will usually ask you for a password. 
@@ -56,13 +58,13 @@ An example of using ``scp`` to transfer a file from your local machine to a serv
 
 	scp :var:`filename` :var:`username@server_address:/path/`
 
-You type `scp` followed by the file name (if you are not in the directory the file is in you will need to write the whole file path) followed by your `username@server_address` followed by a colon then the path (from the root) to where you want the copy to go in the destination server. If you don't know what the path is that you need to type in, remember, you can use pwd in the directory you want to send the file to and this will return the path of that directory. 
+You type ``scp`` followed by the file name (if you are not in the directory the file is in you will need to write the whole file path) followed by your `username@server_address` followed by a colon then the path (from the root) to where you want the copy to go in the destination server. If you don't know what the path is that you need to type in, remember, you can use pwd in the directory you want to send the file to and this will return the path of that directory. 
 
 To transfer from the server to your local machine you simply swap the order of your file paths i.e. server address and filepath then local file path. 
 
 .. warning::
 
-	The scp command is always given from your local machines terminal.
+	The ``scp`` command is always given from your local machines terminal.
 
 -----------------------
 Using WinSCP on windows
