@@ -1,5 +1,7 @@
 .. _loops:
 
+.. role:: comment
+
 ==================================
 Loops in bash
 ==================================
@@ -15,7 +17,7 @@ Loops in bash are a big topic and we're only going to cover the basics here. For
 For loops
 -----------------------------------
 
-We use a ``for`` loop when we have a predefined list contained in a variable. For example, say I have a directory called ``inputs`` with five fasta files in it. You could create a variable containing a list of these files as follows:
+We use a ``for`` loop when we have a predefined list contained in a variable. For example, say I have a directory called ``inputs`` with five FASTA files in it. You could create a variable containing a list of these files as follows:
 
 .. parsed-literal::
 	
@@ -51,7 +53,7 @@ A ``while`` loop is largely the same as a ``for`` loop. If you looked at the res
 
 	echo -e "ATCGCA\\nTAACGA\\nTACAGA\\nATTCAT" > indices.txt
 
-Say as above we have a directory called ``inputs`` with five fasta files in it, and we want to search all files for each of these indices, returning a count of the times they were matched. This is the command we used
+Say as above we have a directory called ``inputs`` with five FASTA files in it, and we want to search all files for each of these indices, returning a count of the times they were matched. This is the command we used
 
 .. parsed-literal::
 
@@ -110,11 +112,11 @@ We can chain these together to make very flexible loops. For example, imagine we
 
 .. parsed-literal::
 
-	for f in raw/\*;                # Loop through the contents of raw/
+	for f in raw/\*;             :comment:`# Loop through the contents of raw/`
 	do
-		o=${f%.fastq};           # Remove the .fastq file extension
-		o=${o#raw/};             # Remove the directory
-		o="converted/$o.fasta";  # Add the new directory and file extension
+		o=${f%.fastq};           :comment:`# Remove the .fastq file extension`
+		o=${o#raw/};             :comment:`# Remove the directory`
+		o="converted/$o.fasta";  :comment:`# Add the new directory and file extension`
 		convert --input $f --output "$o";
 	done
 
