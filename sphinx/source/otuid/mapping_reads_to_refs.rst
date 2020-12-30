@@ -8,7 +8,7 @@ If we were only interested in the species for which we have reference sequences,
 
 .. admonition:: Data and software
 	
-	This tutorial requires as input a FASTA file of trimmed, merged and quality filtered reads, and a FASTA file of reference sequences. If you're following along step-by-step, we produced the former back in the :ref:`quality trimming<quality_trimming>` tutorial. Alternatively, the files ``4_mbc_concat.fasta`` and ``references_CCCPbarcodes.fasta`` within the :ref:`sectionE archive <sectionEdata>` can be used as example data.
+	This tutorial requires as input a FASTA file of trimmed, merged and quality filtered reads, and a FASTA file of reference sequences. If you're following along step-by-step, we produced the former back in the :ref:`quality trimming <quality_filtering>` tutorial. Alternatively, the files ``4_mbc_concat.fasta`` and ``references_CCCPbarcodes.fasta`` within the :ref:`sectionE archive <sectionEdata>` can be used as example data.
 	
 	This tutorial uses the :ref:`BLAST<blast>` and :ref:`VSEARCH<vsearch>` software.
 
