@@ -43,7 +43,7 @@ Finally, the shell will ignore anything on a line after the first ``#`` symbol i
 
 .. parsed-literal::
 
-	echo "hello world"  # prints "hello world"
+	echo "hello world"  :comment:`# prints "hello world"`
 
 The output would be identical to the first command on this page.
 
