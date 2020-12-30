@@ -231,7 +231,7 @@ Bayesian OTU delimitation. `Website. <https://github.com/tingchenlab/CROP>`_
 bPTP
 ----
 
-Bayesian phylogeny-based species delimitation. `Website. <https://github.com/zhangjiajie/PTP`_
+Bayesian phylogeny-based species delimitation. `Website. <https://github.com/zhangjiajie/PTP>`_
 
 .. parsed-literal::
 	
