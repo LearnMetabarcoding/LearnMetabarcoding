@@ -59,7 +59,7 @@ Comparing Classifications
 	
 	.. parsed-literal:: 
 	
-		$ grep -c “Coleoptera”
+		grep -c “Coleoptera”
 	
 	* Do the different assignment programs agree?
 	

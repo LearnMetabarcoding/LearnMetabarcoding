@@ -24,11 +24,11 @@ First, make a directory to store your aligned genes.
 
 Run the following command, making sure to replace ``raw`` with the name of the directory you extracted your genes into in the last step, and ​``new​`` with the name of your new directory:
 
-.. code-block:: bash 
+.. parsed-literal::
 
-	for f in ​:var:`raw`/\*;
+	for f in :var:`raw`/\*;
 	do
-		mafft --thread 1 --retree 2 --maxiterate 0 $f >​ :var:`new`/​${f#\*/};
+		mafft --thread 1 --retree 2 --maxiterate 0 $f > :var:`new`/​${f#\*/};
 	done
 
 Notice how we've looped on the extracted gene files, running MAFFT on each file as input and outputting the alignment as a file with the same name, but in new directory.
@@ -47,6 +47,7 @@ Notice how we've looped on the extracted gene files, running MAFFT on each file 
 .. admonition:: Exercise
 
 	Once alignment is complete, pick one of your alignments and download it to your computer. Use an alignment viewer, such as AliView, to open the alignment. If you're new to viewing alignments, see :ref:`here <alignment_viewing>` for an introduction.
+	
 	* How does it look? Is the reading frame maintained?
 	* Are all of the start and stop codons present and complete for all sequences, are they at the beginning or end of the sequences, and are they aligned properly? What might it mean if they aren’t?
 	* Are there any sequences that look very out of place. If there were, what could this mean?

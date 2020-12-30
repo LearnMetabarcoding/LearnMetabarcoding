@@ -28,7 +28,7 @@ While we may have got some anecdotal hints from the placement of our OTUs onto p
 	
 	The starting point for this section is a FASTA file of sequences that you want to find out taxonomic information for, i.e. ASVs or OTUs. For some tutorials, you will also need some reference sequences. If you worked through the previous sections, the ASV or OTU data were produced during :ref:`filtering<filtering>` or :ref:`OTU delimitation<otu_delim>`. 
 	
-	You can download a zip archive of example data for all of the tutorials in this section `here <sectionEdata>`, including unidentified sequences and reference sequences.
+	You can download a zip archive of example data for all of the tutorials in this section :ref:`here <sectionEdata>`, including unidentified sequences and reference sequences.
 
 
 Next Steps

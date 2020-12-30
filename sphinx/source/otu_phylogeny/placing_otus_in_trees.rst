@@ -20,6 +20,7 @@ The most important point to remember here is that we must have genetic data for 
 	The input data for this tutorial is a FASTA file comprising the sequences you want to place on a phylogeny, and data for the phylogeny itself. The phylogeny data should comprise of 1. the final alignment/supermatrix in FASTA format, 2. the tree in newick format and 3. a table of taxonomy for the sequences on the tree.
 	
 	If you're following along step-by-step, for the sequences to place you can use one of your OTU outputs from :ref:`the OTU delimitation tutorials<otu_delim>`, or your ASVs produced in :ref:`the filtering section<filtering>`. Alternatively, the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionD archive<sectionDdata>` can be used as example data. For the phylogeny, you should use the following files within the :ref:`sectionD archive<sectionDdata>`:
+	
 	1. ``supermatrix_GB_CCCP.fasta``
 	2. ``phylogeny_GB_CCCP.tre``
 	3. ``taxonomy_GB_CCCP.csv``
@@ -41,7 +42,7 @@ The first step is to align our OTUs to our reference mitogenome dataset. Run the
 
 .. parsed-literal::
 
-	mafft --thread 1 --addfragments ​:var:`otus.fasta`​ --6merpair :var:`​supermatrix.fasta​` > ​:var:`output.fasta`
+	mafft --thread 1 --addfragments :var:`otus.fasta` --6merpair :var:`supermatrix.fasta` > :var:`output.fasta`
 
 Here we use **MAFFT**'s ​``--addfragments`` argument, which you can read about `here <https://mafft.cbrc.jp/alignment/software/addsequences.html>`_. Again, we’re using some options which make this alignment very very fast, but the accuracy might not be great.
 
@@ -68,7 +69,7 @@ For **FastTree**, we must convert our existing tree into a constraint alignment,
 	.. parsed-literal::
 		
 		wget http://www.microbesonline.org/fasttree/TreeToConstraints.pl
-		perl TreeToConstraints.pl < ​:var:`reference.tre` ​> :var:`​constraints.txt`
+		perl TreeToConstraints.pl < :var:`reference.tre` ​> :var:`constraints.txt`
 
 Building the tree
 =================
@@ -77,7 +78,7 @@ Now we can run the new tree building to place the OTUs within the reference. We 
 
 .. parsed-literal::
 	
-	FastTree -nt -gtr -constraints :var:`​constraints.txt` < ​:var:`combinedsupermatrix.fasta` >​ :var:`output.tre`
+	FastTree -nt -gtr -constraints :var:`constraints.txt` < :var:`combinedsupermatrix.fasta` > :var:`output.tre`
 
 Finally, we just need to add the taxonomy onto the tree for our reference sequences using the **phylabel.R** script, as follows:
 

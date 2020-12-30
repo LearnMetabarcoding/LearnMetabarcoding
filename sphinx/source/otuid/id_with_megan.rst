@@ -32,13 +32,13 @@ Running **BLAST** is fairly straightforward, although there are a lot of options
 
 .. parsed-literal::
 	
-	blastn -db :var:`path/to/`blastdb/nt -query ​:var:`input.fasta` -outfmt 5 -out ​:var:`output.xml` -evalue 0.001
+	blastn -db :var:`path/to/`blastdb/nt -query :var:`input.fasta` -outfmt 5 -out :var:`output.xml` -evalue 0.001
 
 This command generates a very large XML file containing the full record of all the alignments BLAST has found for our OTUs. You should transfer this to your personal computer for the next step, but to save bandwidth, let's first compress the xml using zip:
 
 .. parsed-literal::
 
-	zip ​:var:`file.xml.zip` :var:`file.xml`
+	zip :var:`file.xml.zip` :var:`file.xml`
 
 Using your FTP client, or whatever file transfer method you like, transfer the zipped XML file to your computer and extract it.
 
@@ -62,15 +62,16 @@ Once **MEGAN** has finished you should see a reduced version of the taxonomy tre
 
 :guilabel:`Are all the OTUs Coleoptera?`
 
-Each circle on the tree is one or more OTUs that have been assigned to a node. The larger the circle, the more OTUs have been assigned to that node. If you click on a node, you’ll see two values. ​:menuselection:`Assigned` is the number of OTUs assigned to that node, :menuselection:`Summed` is the number of OTUs assigned to that node and all child nodes. If you ​right click on a node and click :menuselection:`Inspect`, you can see more details about that node and the OTU(s) assigned to it, as well as all the BLAST information. The greyed out BLAST hits are those that aren’t taken into account in the LCA analysis.
+Each circle on the tree is one or more OTUs that have been assigned to a node. The larger the circle, the more OTUs have been assigned to that node. If you click on a node, you’ll see two values. :menuselection:`Assigned` is the number of OTUs assigned to that node, :menuselection:`Summed` is the number of OTUs assigned to that node and all child nodes. If you ​right click on a node and click :menuselection:`Inspect`, you can see more details about that node and the OTU(s) assigned to it, as well as all the BLAST information. The greyed out BLAST hits are those that aren’t taken into account in the LCA analysis.
 
 .. admonition:: Exercise
 	
 	You’ll notice that many OTUs have been assigned to internal nodes (i.e. not species). :menuselection:`Inspect` some of these.
+	
 	* Why do you think the algorithm has assigned them to internal nodes?
 	* Do you think algorithm is always correct?
 
-To output the taxonomic assignment for all of the OTUs for use in analysis, we need to select all of the nodes. You can do this by going to :menuselection:`Select --> All Nodes`​. Then go to :menuselection:`File --> Export --> Text (CSV) Format`. For the :menuselection:`Choose data to export:` field, select ​:menuselection:`readName_to_taxonPath`, click OK and select your output location. This generates a comma-separated table with the OTU name and full NCBI taxon path of the assigned node. 
+To output the taxonomic assignment for all of the OTUs for use in analysis, we need to select all of the nodes. You can do this by going to :menuselection:`Select --> All Nodes`. Then go to :menuselection:`File --> Export --> Text (CSV) Format`. For the :menuselection:`Choose data to export:` field, select :menuselection:`readName_to_taxonPath`, click OK and select your output location. This generates a comma-separated table with the OTU name and full NCBI taxon path of the assigned node. 
 
 Next Steps
 ==========

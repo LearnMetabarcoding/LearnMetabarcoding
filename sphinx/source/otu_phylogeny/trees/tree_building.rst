@@ -23,7 +23,7 @@ Use the following command, using the supermatrix output from the previous step a
 
 .. parsed-literal::
 
-	FastTree -gtr -nt < ​:var:`input.fasta​` > :var:`​tree.nwk`
+	FastTree -gtr -nt < :var:`input.fasta` > :var:`​tree.nwk`
 
 The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the ``head`` command. Each terminal in the tree has the ID of the sequence used to generate it. 
 

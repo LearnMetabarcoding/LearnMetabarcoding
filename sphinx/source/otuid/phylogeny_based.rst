@@ -60,13 +60,13 @@ Inferring OTU classification
 
 Now that we have our taxonomised tree, we can infer the OTU classification. This is performed with another R script, **treedentify**, and the logic here is very straightforward: the script looks at the parent nodes of each OTU, and assigns the OTU the taxonomy of the most recent parent node with any taxonomy.
 
-.. A slight complexity here: these tools only know what we tell them. If you took a random tip in the taxonomised tree and looked at all of its parent nodes, you'll see that only some of the taxonomy is present. We might be missing order-level or even family-level taxonomy if our phylogeny doesn't closely match the taxonomy, even if we have an ancestral node with a genus-level identification. However, if we can infer that an OTU belongs to a genus, it of course also belongs to the corresponding family, order, etc, and we want that information! 
+.. note:: A slight complexity here: these tools only know what we tell them. If you took a random tip in the taxonomised tree and looked at all of its parent nodes, you'll see that only some of the taxonomy is present. We might be missing order-level or even family-level taxonomy if our phylogeny doesn't closely match the taxonomy, even if we have an ancestral node with a genus-level identification. However, if we can infer that an OTU belongs to a genus, it of course also belongs to the corresponding family, order, etc, and we want that information! 
 
 Run this as follows. We suggest you use as ``input.tre`` the first taxonomised tree you generated, without strict taxonomisation.
 
 .. parsed-literal::
 	
-	treedentify.R -p :var:`input.tre` -e ^otu -u -o `output.csv`
+	treedentify.R -p :var:`input.tre` -e ^otu -u -o :var:`output.csv`
 	
 
 The ``-e`` argument tells **treedentify** that we want to classify any tips beginning with ``otu``. You might want to swap this for ``uniq`` or something else if your OTU or ASV sequences have different names. The ``-u`` argument tells **treedentify** to check NCBI to get the complete taxonomy of any matches. 
