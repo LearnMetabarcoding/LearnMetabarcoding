@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Making a Barcode Tree &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Viewing alignments" href="otu_trees/alignment_viewing.html" />
+    <link rel="prev" title="D: Building OTU phylogeny" href="../building_otu_phylogeny.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../building_otu_phylogeny.html">D: Building OTU phylogeny</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Making a Barcode Tree</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="otu_trees/alignment_viewing.html">Viewing alignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="otu_trees/tree_viewing.html">Viewing Trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="otu_trees/reference_otu_tree.html">Extension: Barcode Tree with References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="otu_trees/tree_comparison.html">Extension: Comparing OTU methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="placing_otus_in_trees.html">Phylogenetic Placement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trees.html">Building a Mitogenome Reference Tree</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">E: Identifying OTU sequences</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../building_otu_phylogeny.html">D: Building OTU phylogeny</a> &raquo;</li>
+        
+      <li>Making a Barcode Tree</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/otu_phylogeny/otu_trees.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="making-a-barcode-tree">
+<span id="otu-tree"></span><h1>Making a Barcode Tree<a class="headerlink" href="#making-a-barcode-tree" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Our OTUs can directly be used to make a phylogenetic tree, as they are all sequences of the same locus. This tree may not be very accurate, because there is relatively little data: for example, our example dataset only has 418 bases. On the other hand, building a phylogeny for short sequences is relatively fast for many many sequences, while building a phylogeny of much longer sequences could be much slower.</p>
+<div class="green admonition">
+<p class="admonition-title">Data and software</p>
+<p>The input data for this tutorial is a FASTA file comprising the sequences you want to create a phylogeny from. If you’re following along step-by-step, you can use one of your OTU outputs from <a class="reference internal" href="../asv_otu_readmap/otudelim.html#otu-delim"><span class="std std-ref">the OTU delimitation tutorials</span></a>, or your ASVs produced in <a class="reference internal" href="../filtering.html#filtering"><span class="std std-ref">the filtering section</span></a>. Alternatively, the file <code class="docutils literal notranslate"><span class="pre">otus_greedy_0.97.fasta</span></code> within the <a class="reference internal" href="../data.html#sectionddata"><span class="std std-ref">sectionD archive</span></a> can be used as example data.</p>
+<p>This tutorial uses the <a class="reference internal" href="../gettingstarted/setup/installing_software.html#mafft"><span class="std std-ref">MAFFT</span></a> and <a class="reference internal" href="../gettingstarted/setup/installing_software.html#fasttree"><span class="std std-ref">FastTree</span></a> software. You should also have an alignment viewer, such as <strong>Aliview</strong>, and a tree viewer, such as <strong>FigTree</strong> or <strong>Dendroscope</strong>, installed on your personal computer.</p>
+</div>
+</div>
+<div class="section" id="alignment">
+<h2>Alignment<a class="headerlink" href="#alignment" title="Permalink to this headline">¶</a></h2>
+<p>The first stage of any tree building is to align the sequences so that homologous bases are lined up with one another. There are many alignment programs, perhaps the three most commonly used are <strong>Clustal</strong>, <strong>MUSCLE</strong> and <strong>MAFFT</strong>. We will use <strong>MAFFT</strong> because it is straightforward to use, fast, and generally very accurate. We will perform a global alignment using the accurate INS-i algorithm:</p>
+<pre class="literal-block">mafft --thread 1 --globalpair -- maxiterate 1000 <span class="var">input.fasta</span> &gt; <span class="var">output.fasta</span></pre>
+<p>Where we have a coding locus with a very strict length expectation, such as in the example data where all sequences are 418bp, we can choose to skip this step, because the sequences are already in some form of alignment.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<ul class="simple">
+<li><p>Download your input sequences and your alignment to your personal computer.</p></li>
+<li><p>Open each file in the software Aliview, or your preferred alignment viewer. If you’re completely new to viewing alignments, you may want to read the page on <a class="reference internal" href="otu_trees/alignment_viewing.html#alignment-viewing"><span class="std std-ref">viewing alignments</span></a>.</p></li>
+<li><p>You should see no gaps in your input sequences, but some gaps in your aligned sequences.</p></li>
+<li><p>How accurate does the alignment appear to be - is it very gappy or only slightly.</p></li>
+<li><p>In general, are the aligned sequences consistent?</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="building-a-tree">
+<h2>Building a tree<a class="headerlink" href="#building-a-tree" title="Permalink to this headline">¶</a></h2>
+<p>We will build a tree of our OTUs using <strong>FastTree</strong>. We are using <strong>FastTree</strong> because it’s fast, not because it’s necessarily highly accurate, although it generally does pretty well. The command to use to build this tree is below. The <code class="docutils literal notranslate"><span class="pre">-gtr</span></code> option tells FastTree to use the GTR+CAT model, and the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option specifies that this is DNA data.</p>
+<pre class="literal-block">FastTree -gtr -nt &lt; <span class="var">input.fasta</span> &gt; <span class="var">output.tre</span></pre>
+<p>The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the <code class="docutils literal notranslate"><span class="pre">head</span></code> command. Each terminal in the tree has the ID of the sequence used to generate it.</p>
+<p>You can download this tree to your computer and open it using a tree viewer such as <strong>Figtree</strong> or <strong>Dendroscope</strong>. If you’re completely new to viewing phylogenetic trees, you may want to read the page on <a class="reference internal" href="otu_trees/tree_viewing.html#tree-viewing"><span class="std std-ref">viewing trees</span></a>.</p>
+<p>It is hard to assess the accuracy of these trees with anonymous sequences, but we can get some idea by looking at the bootstrap values of the nodes. These tell us how many times this clade was recovered as a monophyletic clade in 100 random permutations of the tree building algorithm. A higher value suggests that a clade is more accurate, while a lower value suggest that a clade may have been grouped together inaccurately.</p>
+<p>Another method to assess accuracy is to look at the distribution of branch lengths. If there are many long branches, this suggests that the phylogenetic reconstruction had a poor time trying to place the sequences at the end of these branches.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<ul class="simple">
+<li><p>Build a tree using both your unaligned OTU sequences and the aligned OTU sequences. Download the trees to your computer and view them.</p></li>
+<li><p>How do they compare? Select some monophyletic clades of OTUs from one tree and see if the same sets of OTUs each come out as monophyletic clades in the other tree.</p></li>
+<li><p>How do the bootstrap values of the two trees compare? Overall, does either of the trees appear very accurate.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>One way to improve our ability to assess the accuracy of a tree built with anonymous sequences is to add in known sequences of the same barcode region. If you’d like to try this out, see the <a class="reference internal" href="otu_trees/reference_otu_tree.html#reference-otu-tree"><span class="std std-ref">Barcode tree with references</span></a> extension. We can also use trees to compare the OTU sequences generated by different methods. If you like to see how, see the <a class="reference internal" href="otu_trees/tree_comparison.html#otu-comparison-tree"><span class="std std-ref">OTU comparison tree</span></a> extension.</p>
+<p>Alternatively, you can proceed to the next subsection, <a class="reference internal" href="placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic placement</span></a>, where we will use reference trees rather than just reference sequences.</p>
+<div class="green admonition">
+<p class="admonition-title">Note</p>
+<p>Remember: when performing these steps on a real dataset, we would strongly advise trying some different alignment algorithms and possibly even manually correcting your alignments to get the best dataset for phylogenetics. If using the <strong>MAFFT</strong> command above, you should probably increase the <code class="docutils literal notranslate"><span class="pre">--thread</span></code> argument to better suit your data, otherwise it’ll take a long time to run! We would also recommend using alternative phylogenetics software, such as <strong>RAxML</strong>, <strong>IQtree</strong> or <strong>MrBayes</strong> which are generally more accurate, but much slower.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="otu_trees/alignment_viewing.html" class="btn btn-neutral float-right" title="Viewing alignments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../building_otu_phylogeny.html" class="btn btn-neutral float-left" title="D: Building OTU phylogeny" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
