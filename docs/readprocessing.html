@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A: Read processing &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Fundamentals: FASTQ files" href="processing/fastq.html" />
+    <link rel="prev" title="Example data" href="data.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Example data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">A: Read processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="processing/fastq.html">Fundamentals: FASTQ files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processing/demultiplexing.html">1. Demultiplexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processing/primer_removal.html">2. Primer removal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processing/pair_merging.html">3. Pair merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processing/data_concat.html">4. Data concatenation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="otuid.html">E: Identifying OTU sequences</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>A: Read processing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/readprocessing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="a-read-processing">
+<span id="read-processing"></span><h1>A: Read processing<a class="headerlink" href="#a-read-processing" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Read processing is our name for the low-level steps required to process raw sequence reads as they would be received from a sequencer. You can think of these steps as like the compilation of data from field notes into a spreadsheet: we use contextual information to organise the data, remove extraneous information, bring together data that belongs in the same place and correct or remove any errors in data organisation. We call this low-level because many of these steps are conceptually simple and not necessarily exclusively metabarcoding-focused. Nonetheless, these processes are crucial to successful metabarcoding, as inappropriate choice of software or parameters here may have substantial impacts on the later results.</p>
+<div class="admonition-data admonition">
+<p class="admonition-title">Data</p>
+<p>You can download a zip archive of the data for all of the tutorials in this section <cite>here &lt;sectionAdata&gt;</cite>. Unzip this to a convenient location.</p>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>If you want to follow through the course step-by-step, you should work through the tutorials in this section as follows:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="processing/demultiplexing.html#demultiplexing"><span class="std std-ref">Demultiplexing</span></a>: the separation of data from different samples that was sequenced together.</p></li>
+<li><p><a class="reference internal" href="processing/primer_removal.html#primer-removal"><span class="std std-ref">Primer removal</span></a>: trimming primer sequences from our reads</p></li>
+<li><p><a class="reference internal" href="processing/pair_merging.html#pair-merging"><span class="std std-ref">Pair merging</span></a>: the joining of overlapping paired end reads (see also <a class="reference internal" href="processing/extensions/pair_concat.html#pair-concatenation"><span class="std std-ref">pair concatenation</span></a> if paired end sequences don’t overlap)</p></li>
+<li><p><a class="reference internal" href="processing/data_concat.html#data-concat"><span class="std std-ref">Data concatenation</span></a>: bringing all the data together</p></li>
+</ol>
+<div class="green admonition">
+<p class="admonition-title">Note</p>
+<p>The first three steps in this section could be performed in any order. We structure them in this order for a few reasons. Firstly, pair merging is a computationally intensive task, so by employing this last of the three we get a small speedup by not having to process any reads rejected in the previous steps. Secondly, demultiplexing separates out samples that may belong to different projects and may not need to be processed together, so it makes sense to do this first.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="processing/fastq.html" class="btn btn-neutral float-right" title="Fundamentals: FASTQ files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data.html" class="btn btn-neutral float-left" title="Example data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
