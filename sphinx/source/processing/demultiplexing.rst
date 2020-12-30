@@ -2,6 +2,7 @@
 
 .. role:: var
 
+.. role:: comment 
 =================
 1. Demultiplexing
 =================
@@ -116,8 +117,8 @@ Referring to the indices.txt file, we can now construct a command that demultipl
 
 	.. parsed-literal::
 
-		cd ../        # Change working directory to the parent of the current working directory
-		mkdir 1_demux # Create a new directory called 1_demux
+		cd ../        :comment:`# Change working directory to the parent of the current working directory`
+		mkdir 1_demux :comment:`# Create a new directory called 1_demux`
 
 The following commands assume that you are in the directory containing the ``0_rawsequences`` directory and an empty directory called ``1_demux``. Let's first try and demultiplex a single file. Reminder: we used the ``​\`` to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command at the beginning of the next line.
 
@@ -176,18 +177,18 @@ Let’s get rid of the files we don’t need. You’ve doubled the amount of sto
 
 .. parsed-literal::
 
-	for f in \*;			# loop through files
+	for f in \*;			:comment:`# loop through files`
 	do
 		s1=${f%-\*};
-		s2=${f%_\*};		# extract sample names
+		s2=${f%_\*};		:comment:`# extract sample names`
 		s2=${s2#\*-};
-		if [ $s1 != $s2 ];	# check if different
+		if [ $s1 != $s2 ];	:comment:`# check if different`
 		then
-			rm $f;		# delete if different
+			rm $f;		:comment:`# delete if different`
 		else
-			mv $f ${f#\*-};	# keep if same, removing first part of name
-		fi; 			# end if clause
-	done 				# end loop 
+			mv $f ${f#\*-};	:comment:`# keep if same, removing first part of name`
+		fi; 			:comment:`# end if clause`
+	done 				:comment:`# end loop`
 
 This isn’t a crucial bioinformatics step, it’s just to tidy things up. You don’t need to understand everything about this command, although the loop syntax is going to crop up frequently. If you're keen to try and figure this out, you might want to review the page on :ref:`loops in bash<loops>`, making sure to read about :ref:`parameter substitution<parameter-substitution>`
 

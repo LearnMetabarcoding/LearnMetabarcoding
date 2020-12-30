@@ -21,7 +21,7 @@ A lot of software outputs wrapped FASTA files, where sequence lines are truncate
 	ACGCGCTGAAAAGCAGACTTTTTACACG
 	CGCGTAAACAACGC
 
-This can be really annoying for quick and easy command line bash bioinformatics, because the number of lines for each sequence is unpredictable. The following perl one-liner, from `this biostars answer <https://www.biostars.org/p/9262/#118460>`_, easily unwraps a fasta file:
+This can be really annoying for quick and easy command line bash bioinformatics, because the number of lines for each sequence is unpredictable. The following perl one-liner, from `this biostars answer <https://www.biostars.org/p/9262/#118460>`_, easily unwraps a FASTA file:
 
 .. parsed-literal::
 	
@@ -133,7 +133,7 @@ The functions ``awk`` or ``grep`` do the searching, while ``cut`` extracts the f
 Extract sequence by header
 --------------------------------
 
-Say we have a list of sequence headers in headers.txt and we want only those sequences from a larger (unwrapped!) fasta called sequences.fasta.
+Say we have a list of sequence headers in headers.txt and we want only those sequences from a larger (unwrapped!) FASTA called sequences.fasta.
 
 .. parsed-literal::
 

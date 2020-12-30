@@ -20,7 +20,7 @@ Read processing is our name for the low-level steps required to process raw sequ
 
 .. admonition:: Data
 	
-	You can download a zip archive of the data for all of the tutorials in this section `here <sectionAdata>`. Unzip this to a convenient location.
+	You can download a zip archive of the data for all of the tutorials in this section :ref:`here <sectionAdata>`. Unzip this to a convenient location.
 
 Next steps
 ==========

@@ -1,5 +1,7 @@
 .. _data:
 
+.. role:: comment
+
 ============
 Example data
 ============
@@ -61,7 +63,7 @@ Section D: Building OTU phylogeny
 Section E: Identifying OTU sequences
 ------------------------------------
 
-
+`http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionE.zip <http://learnmetabarcoding.github.io/LearnMetabarcoding/data/sectionE.zip>`_
 
 Downloading the data in Linux
 =============================
@@ -85,7 +87,7 @@ We suggest actually working through the tutorials in a separate directory, so as
 
 .. parsed-literal::
 	
-	cd ../  # Return up to the main directory
+	cd ../  :comment:`# Return up to the main directory`
 	mkdir tutorialwork
 	cd tutorialwork
 	cp -r ../exampledata/SectionA/0_rawsequences/ ./
