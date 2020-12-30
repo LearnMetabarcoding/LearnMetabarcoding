@@ -27,7 +27,7 @@ Running swarm
 
 .. parsed-literal::
 
-	swarm ​-z ​:var:`input.fasta` -d 1 -w :var:`​output.fasta`
+	swarm ​-z :var:`input.fasta` -d 1 -w :var:`output.fasta`
 
 .. admonition:: Exercise
 	

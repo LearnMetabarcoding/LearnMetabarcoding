@@ -32,7 +32,7 @@ It is very important that the FASTA of read sequences contains a record of which
 	>readsequence3;sample=sample2
 	ACGCCACGCAGTAGCAGACGACGA
 
-The read names themselves (``readsequenceN`` in the example) are irrelevant, and the sample names can be any string as long as it doesn't contain ``;`` or ``=`` and is unique for each unique sample. Note that there can be a ``;`` after the sample name. See the :ref:``Data Concatenation <data_concat>`` tutorial for more information.
+The read names themselves (``readsequenceN`` in the example) are irrelevant, and the sample names can be any string as long as it doesn't contain ``;`` or ``=`` and is unique for each unique sample. Note that there can be a ``;`` after the sample name. See the :ref:`Data Concatenation <data_concat>` tutorial for more information.
 
 Strict Mapping
 ==============
@@ -46,7 +46,7 @@ This process is conceptually straightforward: we search the reads FASTA against 
 
 **VSEARCH** will print a record of how many reads found a match. The ``.tsv`` file extension just reminds you that the output is a Tab Separated Variables file, but this is just a specific layout of plain text so like all of our other files we can view it on the command line using ``cat`` or ``more``. However, it may have very long rows and thus be too messy to make sense. You can view a subset of it using the following command:
 
-.. code-block:: bash
+.. parsed-literal::
 	
 	head -10 :var:`input.tsv` | cut -f1-10
 	

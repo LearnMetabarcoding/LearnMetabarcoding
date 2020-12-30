@@ -28,7 +28,7 @@ Dereplication is a pretty straightforward task - there are very few parameters t
 
 .. parsed-literal::
 	
-	vsearch --derep_fulllength ​:var:`input.fasta` --output :var:`output.fasta` --sizeout --relabel uniq
+	vsearch --derep_fulllength :var:`input.fasta` --output :var:`output.fasta` --sizeout --relabel uniq
 
 .. admonition:: Exercise
 	

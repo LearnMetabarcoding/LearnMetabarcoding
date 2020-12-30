@@ -34,7 +34,7 @@ Denoising by sample
 	
 	.. parsed-literal::
 		
-		vsearch --derep_fulllength ​:var:`input.fasta` --sizein --sizeout --relabel uniq --output :var:`output.fasta`
+		vsearch --derep_fulllength :var:`input.fasta` --sizein --sizeout --relabel uniq --output :var:`output.fasta`
 	
 	6. Compare the total unique read numbers and size distributions of your output to the version produced by whole-dataset denoising
 

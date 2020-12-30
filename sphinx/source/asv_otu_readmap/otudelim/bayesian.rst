@@ -26,7 +26,7 @@ Getting Started
 
 .. parsed-literal::
 
-	vsearch --rereplicate ​:ref:`input.fasta​` --output ​:ref:`output`.fasta
+	vsearch --rereplicate :var:`input.fasta` --output ​:var:`output.fasta`
 
 Running CROP
 ============
@@ -37,7 +37,7 @@ Try running the following command:
 
 .. parsed-literal::
 
-	crop -b 40 -z 400 -s -r 0 -i ​:ref:`input.fasta​` -o :var:`output`
+	crop -b 40 -z 400 -s -r 0 -i :ref:`input.fasta` -o :var:`output`
 
 The options ``-b``, ``-z`` and ``-r`` are for optimising the MCMC process. You can read more about these in their `documentation <https://github.com/tingchenlab/CROP/wiki/THE-CROP-WIKI>`_. You can probably leave them alone unless you're really interested. 
 
@@ -60,5 +60,6 @@ Next Steps
 ==========
 
 We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`linkage delimitation <linkage_delimitation>` or :ref:`greedy clustering <greedy_clustering>`. You could optionally also look at the :ref:`extension: phylogenetic delimitation <bptp_delim>`.
+
 .. include:: conclusion.rst
 

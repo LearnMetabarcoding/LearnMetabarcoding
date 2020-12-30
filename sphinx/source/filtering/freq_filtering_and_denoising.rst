@@ -44,7 +44,7 @@ A much more sophisticated approach to filtering errors is denoising. Denoising a
 
 .. parsed-literal::
 
-	vsearch --cluster_unoise :var:`​input.fasta`​ --minsize 2 --unoise_alpha 2 --centroids :var:`output.fasta`
+	vsearch --cluster_unoise :var:`​input.fasta` --minsize 2 --unoise_alpha 2 --centroids :var:`output.fasta`
 
 The key parameter here is the alpha parameter, which determines the threshold level of dissimilarity between frequent and infrequent reads for exclusion of infrequent reads. Note that we’re using a less conservative minsize threshold than the default of 8 because of the smaller size of this toy dataset. 
 
@@ -56,7 +56,7 @@ The key parameter here is the alpha parameter, which determines the threshold le
 	
 	.. parsed-literal::
 		
-		grep -oP "(?<=size=).\*$" ​:var:`input.fasta​` sort | uniq -c
+		grep -oP "(?<=size=).\*$" :var:`input.fasta` sort | uniq -c
 	
 	In the output of this command, the second column is the count of reads, and the first column is the count of these counts. So for example, if a row says ``24 12``, there are 24 ASVs that have 12 reads each.
 
@@ -87,7 +87,7 @@ The standard usage of **UNOISE** works on the entire dataset, thus considers the
 Other software
 --------------
 
-`**BFC** <https://github.com/lh3/bfc>`_ is a fairly common denoiser, often used more in the genomic sequencing realm than in amplicon sequencing, but it is occasionally used in metabarcoding. `**dada2** <https://benjjneb.github.io/dada2/index.html>`_ has recently gained in popularity among metabarcoders. Both of these algorithms work on an earlier stage of the pipeline, on the reads including quality data. In our experience, these algorithms tend to be much more strict than **UNOISE**, which may well be appropriate for some questions. We're not exploring them here because their approach wraps up many of the steps we're learning one-by-one, thereby skipping over a lot of the points we try to illustrate in these resources. However, we certainly do not recommend against them; **dada2** has `an excellent tutorial <https://benjjneb.github.io/dada2/tutorial.html>`_ that in our experience is straightforward to follow and produces reasonable outputs, albeit conservative. We would note that if you try out **dada2** for a coding region such as CO1, length and translation filtering should be performed on the denoised outputs.
+`BFC <https://github.com/lh3/bfc>`_ is a fairly common denoiser, often used more in the genomic sequencing realm than in amplicon sequencing, but it is occasionally used in metabarcoding. `dada2 <https://benjjneb.github.io/dada2/index.html>`_ has recently gained in popularity among metabarcoders. Both of these algorithms work on an earlier stage of the pipeline, on the reads including quality data. In our experience, these algorithms tend to be much more strict than **UNOISE**, which may well be appropriate for some questions. We're not exploring them here because their approach wraps up many of the steps we're learning one-by-one, thereby skipping over a lot of the points we try to illustrate in these resources. However, we certainly do not recommend against them; **dada2** has `an excellent tutorial <https://benjjneb.github.io/dada2/tutorial.html>`_ that in our experience is straightforward to follow and produces reasonable outputs, albeit conservative. We would note that if you try out **dada2** for a coding region such as CO1, length and translation filtering should be performed on the denoised outputs.
 
 Next steps
 ==========

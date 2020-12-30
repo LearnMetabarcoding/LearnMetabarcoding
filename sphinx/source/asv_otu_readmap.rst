@@ -15,7 +15,7 @@ Introduction
 
 The previous sections have seen you process sequence data from raw reads to a set of unique sequences, ASVs, that ideally represent all of the unique true biological sequences from our locus of interest. Thus these ASVs ideally represent the set of haplotypes present in our samples. These ASVs encompass both intra- and inter-specific variation, and may possibly still contain some errors.
 
-In this section, we will first examine some ways to group ASVs into Operational Taxonomic Units, a process by which ASVs are assigned to OTU groups, and a sequence from one of these ASVs is chosen to represent the whole group. This is covered in the `OTU Delimitation <otudelim>` subsection.
+In this section, we will first examine some ways to group ASVs into Operational Taxonomic Units, a process by which ASVs are assigned to OTU groups, and a sequence from one of these ASVs is chosen to represent the whole group. This is covered in the :ref:`OTU Delimitation <otu_delim>` subsection.
 
 In the second subsection, :ref:`Mapping Reads <mapping_reads>` we will look at how to bring our final set of biological sequences, be they ASVs or OTUs, together with the sample-level read dataset in order to generate read mapping tables, the record of the number of reads for each biological sequence in each of your samples. This data is the primary output of metabarcoding and can be used in place of classic site-by-species tables for downstream ecological analysis. 
 

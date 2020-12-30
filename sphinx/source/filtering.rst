@@ -29,7 +29,7 @@ As part of the read processing we excluded possibly erroneous sequences, based o
 	
 	If you worked through :ref:`the previous section<read_processing>`, this was produced during the :ref:`concatenation<data_concat>` tutorial.
 	
-	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section `here <sectionBdata>`. Unzip this to a convenient location.
+	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section :ref:`here <sectionBdata>`. Unzip this to a convenient location.
 
 Sources of error
 ================

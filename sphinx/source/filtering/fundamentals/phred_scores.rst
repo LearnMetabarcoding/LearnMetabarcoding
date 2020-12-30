@@ -4,7 +4,7 @@
 Fundamentals: Phred Scores
 ==========================
 
-We have seen that the strings of letters in fastq files stand for quality values, but what do these values actually mean? Phred scores are not just some arbitrary values. They are actually logarithmically related to the probability of a base calling error. Given a phred score :math:`S`, the probability of the base being incorrect :math:`P` is:
+We have seen that the strings of letters in FASTQ files stand for quality values, but what do these values actually mean? Phred scores are not just some arbitrary values. They are actually logarithmically related to the probability of a base calling error. Given a phred score :math:`S`, the probability of the base being incorrect :math:`P` is:
 
 .. math:: 
 
@@ -16,7 +16,7 @@ Given this knowledge, we can use the Phred scores to calculate the number of exp
 
 .. admonition:: Exercise
 
-	Given the below fastq, convert the phred scores to probabilities (look up the :math:`S` values for each character on the fastq wikipedia page), then calculate the number of expected errors.
+	Given the below FASTQ, convert the phred scores to probabilities (look up the :math:`S` values for each character on the FASTQ wikipedia page), then calculate the number of expected errors.
 
 	.. parsed-literal::
 		

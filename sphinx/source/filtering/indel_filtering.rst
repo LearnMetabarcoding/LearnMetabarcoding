@@ -48,7 +48,7 @@ Oh dear, what’s happened to our reads? Check the first 10 lines of the fasta:
 
 .. parsed-literal::
 
-	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' :var:​`input.fasta` > ​:var:`output.fasta`
+	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' :var:`input.fasta` > :var:`output.fasta`
 
 Use the output from this in the ``sed`` command above to check the *real* length distribution of our reads.
 
@@ -59,7 +59,7 @@ If we have a very variable region, we might not want to do any filtering at all,
 
 .. parsed-literal::
 
-	vsearch --fastx_filter ​:var:`input.fasta` --fastq_minlen 400 --fastq_maxlen 440 --fastaout :var:`output.fasta​`
+	vsearch --fastx_filter :var:`input.fasta` --fastq_minlen 400 --fastq_maxlen 440 --fastaout :var:`output.fasta​`
 
 In this case, the region of CO1 we use is sufficiently conserved that, on balance of probabilities, any insertions or deletions are due to PCR and/or sequencing errors, and/or maybe errors with the pair merging we did, rather than natural mutations. So, if you have a strict length expectation for your reads, you can exclude any reads longer or shorter than this value.
 
@@ -72,7 +72,7 @@ In this case, the region of CO1 we use is sufficiently conserved that, on balanc
 	
 	.. parsed-literal::
 	
-		vsearch --fastx_filter ​:var:`input.fasta` --fastq_minlen 418 --fastq_maxlen 418 --fastaout :var:`output.fasta​`
+		vsearch --fastx_filter :var:`input.fasta` --fastq_minlen 418 --fastq_maxlen 418 --fastaout :var:`output.fasta​`
 
 Next Steps
 ==========

@@ -25,7 +25,7 @@ For a complex algorithm, chimera filtering is very easy to implement, as it does
 
 .. parsed-literal::
 
-	vsearch --uchime3_denovo ​:var:`input.fasta​` --nonchimeras ​:var:`output.fasta`
+	vsearch --uchime3_denovo :var:`input.fasta` --nonchimeras :var:`output.fasta`
 
 It’s that simple, and in the vast majority of cases this will work really well. There is an alternate version of UCHIME that compares against a reference collection rather than doing *de novo* detection against other ASVs in the dataset. This version may be much more accurate, since rather than assuming that the more frequent ASV is the correct one, it has a set of known correct sequences. However, it requires a very comprehensive reference set, which is rarely possible in metabarcoding. Generally, the assumption that more frequent ASVs are more likely to be correct holds true, and the *de novo* approach is completely fine.
 

@@ -16,7 +16,7 @@ At this point we have a set of sequence reads for each sample with extraneous se
 	
 	The input data for this section is a directory of FASTQ (or FASTA) format files, one per sample, with primer and index sequences removed and mate pairs merged or concatenated. If you're following along step-by-step, this was produced in :ref:`the previous tutorial<pair_merging>`. Alternatively, the ``3_merged`` directory within the :ref:`sectionA archive<sectionAdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`**cutadapt** software<cutadapt>`
+	This tutorial uses the :ref:`cutadapt software. <cutadapt>`
 	
 
 .. admonition:: Note
@@ -81,4 +81,4 @@ Next Steps
 
 We have generated a master file containing all sequences from across all of our samples. These sequences still contain quality data, which will be useful for filtering in the next section.
 
-If you're following along step-by-step, we recommend heading to the next section: :ref:` B. Filtering amplicons <filtering>`. 
+If you're following along step-by-step, we recommend heading to the next section: :ref:`B. Filtering amplicons <filtering>`. 

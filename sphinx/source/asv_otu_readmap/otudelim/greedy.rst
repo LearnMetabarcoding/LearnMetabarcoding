@@ -2,6 +2,8 @@
 
 .. role:: var
 
+.. role:: comment
+
 =================
 Greedy Clustering
 =================
@@ -30,7 +32,7 @@ The following is the basic command for 97% clustering of our ASVs, using the **U
 
 .. parsed-literal::
 
-	vsearch --cluster_size :var:`​input.fasta​` --id 0.97 --centroids ​:var:`output.fasta` --sizein --relabel otu
+	vsearch --cluster_size :var:`input.fasta` --id 0.97 --centroids :var:`output.fasta` --sizein --relabel otu
 
 The ``--cluster_size`` function specifies that we want to cluster based on the ``size=`` tags in our input FASTA. The ``--centroids`` argument tells VSEARCH where to output the centroid sequences, ``--relabel``\led as ``otu001`` etc.
 
@@ -39,7 +41,7 @@ The ``--cluster_size`` function specifies that we want to cluster based on the `
 	* What happens if you modify the ``--id`` threshold value? Try increasing it and decreasing it, changing the name of your output file as appropriate.
 	* Can we know what is the most appropriate threshold, or is it somewhat arbitrary based loosely on our understanding of genetic variation in our taxon of interest and what seems to give the right values?
 
-If you’re familiar with `**CD-HIT-EST** <http://weizhongli-lab.org/cd-hit/>`_ , this is very similar. **CD-HIT-EST** uses a slightly different calculation of dissimilarity, which can be used by including the parameter ``--iddef 0`` 
+If you’re familiar with `CD-HIT-EST <http://weizhongli-lab.org/cd-hit/>`_ , this is very similar. **CD-HIT-EST** uses a slightly different calculation of dissimilarity, which can be used by including the parameter ``--iddef 0`` 
 
 Tracking our ASVs
 =================
@@ -54,19 +56,19 @@ One common question after performing clustering like this is to ask "which ASVs 
 	
 	.. parsed-literal::
 		
-		# Remove the cluster lines
+		:comment:`# Remove the cluster lines`
 		grep -v "^C" :var:`input.uc` > asvgroups.temp
 		
-		# Convert to the correct names
+		:comment:`# Convert to the correct names`
 		cut -f2 asvgroups.temp | while read l; do echo "otu$(($l + 1))"; done > otus.temp
 		
-		# Extract the rest of the table
+		:comment:`# Extract the rest of the table`
 		cut -f3-9 asvgroups.temp > rest.temp
 		
-		# Join the table parts together
+		:comment:`# Join the table parts together`
 		paste otus.temp rest.temp > :var:`output.uc`
 		
-		# Clean up
+		:comment:`# Clean up`
 		rm \*.temp
 		
 

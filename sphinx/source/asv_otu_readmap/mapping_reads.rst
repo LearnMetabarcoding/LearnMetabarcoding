@@ -27,7 +27,7 @@ As our ASVs represent unique sequences in our dataset, we will first map all of 
 	
 	If you are working with OTUs, then you will need both of the above files, and also a FASTA file of your OTU sequence  and a file recording the assignment of ASVs to OTUs as produced by your OTU delimitation method of choice.
 	
-	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section `here <sectionCdata>`. Unzip this to a convenient location.
+	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section :ref:`here <sectionCdata>`. Unzip this to a convenient location.
 
 Next Steps
 ==========

@@ -16,13 +16,13 @@ What happens if our fragment length is so much longer than our read length that 
 
 	This extension follows on from the tutorial on :ref:`pair merging <pair_merging>` using the same starting data and software.
 	
-	We will also use `**cutadapt**<cutadapt>` and `**pairfq**<pairfq>`.
+	We will also use :ref:`cutadapt <cutadapt>` and :ref:`pairfq <pairfq>`.
 
 
 Simulation
 ==========
 
-We will use the same starting data as from the :ref:`pair merging <pair_merging>` tutorial; that is, a set of paired fastq files, one pair per sample. We can apply **cutadapt** to remove 150bp from the 3’ end of each read for a pair of files (see the :ref:`demultiplexing<demultiplexing>` and/or :ref:`primer removal <primer_removal>` tutorials for more about **cutadapt**). First, create a folder for this experiment (mine is called ``trimmed_150``). Next, run the following commands, selecting the file pair from a single sample as the inputs.
+We will use the same starting data as from the :ref:`pair merging <pair_merging>` tutorial; that is, a set of paired FASTQ files, one pair per sample. We can apply **cutadapt** to remove 150bp from the 3’ end of each read for a pair of files (see the :ref:`demultiplexing<demultiplexing>` and/or :ref:`primer removal <primer_removal>` tutorials for more about **cutadapt**). First, create a folder for this experiment (mine is called ``trimmed_150``). Next, run the following commands, selecting the file pair from a single sample as the inputs.
 
 .. parsed-literal:: 
 
@@ -53,7 +53,7 @@ We know the end with the primer is the accurate end, so we trim bases from the o
 
 .. parsed-literal:: 
 
-	cutadapt -l :var:`N`​ -m :var:`N`​ -o ​:var:`output.fastq​` :var:`​input.fastq`
+	cutadapt -l :var:`N` -m :var:`N` -o :var:`output.fastq` :var:`input.fastq`
 
 Re-pairing mates
 ================
@@ -66,7 +66,7 @@ Re-pairing mates
 	
 	.. parsed-literal:: 
 	
-		pairfq makepairs -f ​:var:`input_R1.fastq` -r :var:`​input_R2.fastq` -fp :var:​`output_R1.fastq` -rp :var:`output_R2.fastq` -fs ​:var:`output_R1_unpaired.fastq​ -rs` :var:`​output_R2_unpaired.fastq`
+		pairfq makepairs -f ​:var:`input_R1.fastq` -r :var:`input_R2.fastq` -fp :var:​`output_R1.fastq` -rp :var:`output_R2.fastq` -fs ​:var:`output_R1_unpaired.fastq​ -rs` :var:`​output_R2_unpaired.fastq`
 	
 	As always, use ``grep`` to check output file read numbers. 
 
@@ -77,7 +77,7 @@ Stitching
 
 .. parsed-literal:: 
 
-	pear -i -f ​:var:`input_R1.fastq​` -r :var:`​input_R2.fastq` -​ o ​:var:`outname`
+	pear -i -f :var:`input_R1.fastq` -r :var:`input_R2.fastq` -o :var:`outname`
 
 This won't work! The problem is thatThen run **PEAR** again to concatenate the mate pairs, as in the previous command but now using the outputs from **pairfq**.
 	

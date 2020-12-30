@@ -28,7 +28,7 @@ As well as generating approximately species-level taxonomic units, grouping ASVs
 	
 	If you worked through :ref:`the previous section <filtering>`, these data were produced by the :ref:`chimera filtering <chimera>` tutorial.
 	
-	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section `here <sectionCdata>`. Unzip this to a convenient location.
+	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section :ref:`here <sectionCdata>`. Unzip this to a convenient location.
 	
 
 

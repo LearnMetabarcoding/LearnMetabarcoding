@@ -2,6 +2,8 @@
 
 .. role:: var
 
+.. role:: comment
+
 ====================================
 Extension: Phylogenetic delimitation
 ====================================
@@ -85,10 +87,10 @@ First let's reformat the ``PTPhSupportPartition.txt`` file a little bit. We want
 
 .. parsed-literal::
 	
-	# find only lines starting with space, the lists
+	:comment:`# find only lines starting with space, the lists`
 	grep "^ " :var:`input.txt` | 
 	
-	# remove the spaces and then replace commas with spaces
+	:comment:`# remove the spaces and then replace commas with spaces`
 	sed -e "s/ //g" -e "s/,/ /g" > :var:`output.txt`
 	
 

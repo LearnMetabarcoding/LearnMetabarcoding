@@ -1,12 +1,14 @@
 .. _cutadapt_extension:
 
+.. role:: comment
+
 ==============================
 Extension: Cutadapt parameters
 ==============================
 
 **Cutadapt** has a lot more parameters for searching. Here are some of them that you might use to optimise returning as many reads as possible while still removing any errors.
 
-This extension follows on from the tutorial on :ref:`demultiplexing<demultiplexing>` using the same data and software.
+This extension follows on from the tutorial on :ref:`demultiplexing <demultiplexing>` using the same data and software.
 
 Error tolerance
 ===============
@@ -28,9 +30,9 @@ In the main section, we used the ``^`` symbol to denote that our index sequences
 .. parsed-literal::
 	
 	key: **INDEX**\ *PRIMER*\ SEQUENCE
-	1  **AACACC**\ *CCAGATATGGCCTTCCCACG*\ ATCC    # This is perfect
-	2  **ACACC**\ *CCAGATATGGCCTTCCCACG*\ ATCCG    # This is missing just one index base
-	3  T\ **AACACC**\ *CCAGATATGGCCTTCCCACG*\ ATC    # This has an extra base before the index
+	1  **AACACC**\ *CCAGATATGGCCTTCCCACG*\ ATCC    :comment:`# This is perfect`
+	2  **ACACC**\ *CCAGATATGGCCTTCCCACG*\ ATCCG    :comment:`# This is missing just one index base`
+	3  T\ **AACACC**\ *CCAGATATGGCCTTCCCACG*\ ATC    :comment:`# This has an extra base before the index`
 
 **Cutadapt** is very flexible, and we can find these variants if we abandon the anchoring (i.e. we remove ``^`` before the indices). 
 
