@@ -12,7 +12,7 @@ We can now use our supermatrix to build a phylogeny. Here we will be using FastT
 .. admonition:: Data and software
 	:class: green 
 	
-	The input data for this tutorial is a supermatrix of a set of sequences for which you want to build a phylogeny, and a table of taxonomy for those sequences. If you're following along step-by-step, the supermatrix was produced in :ref:`the previous tutorial<concat_alignments>`. The file ``taxonomy_GB_CCCP.csv`` within the :ref:`sectionD archive` is the corresponding taxonomy table.
+	The input data for this tutorial is a supermatrix of a set of sequences for which you want to build a phylogeny, and a table of taxonomy for those sequences. If you're following along step-by-step, the supermatrix was produced in :ref:`the previous tutorial<concat_alignments>`. The file ``taxonomy_GB_CCCP.csv`` within the :ref:`sectionD archive <sectionDdata>` is the corresponding taxonomy table.
 	
 	This tutorial uses the :ref:`FastTree <fasttree>` software, as well as the :ref:`phylabel.R<phylostuff>` script. You should also have a tree viewer, such as **FigTree** or **Dendroscope**, installed on your personal computer.
 

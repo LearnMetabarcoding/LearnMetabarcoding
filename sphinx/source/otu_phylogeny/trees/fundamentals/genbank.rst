@@ -24,7 +24,7 @@ We are asking for any sequences with Coleoptera in the Organism field, from the 
 
 .. admonition:: Exercise
 	
-	We will download all of these as a GenBank file - click on the :guilabel:`​Send to:`​ link and select as follows:
+	We will download all of these as a GenBank file - click on the :guilabel:`Send to:` link and select as follows:
 
 	.. image:: genbank_screenshot.png
 		:align: center

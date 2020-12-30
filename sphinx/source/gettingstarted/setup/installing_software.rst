@@ -181,7 +181,7 @@ Open-source implementation of USEARCH with more versatility. VSEARCH is a softwa
 metaMATE
 --------
 
-Tool for exploring detailed read frequency filtering thresholds. `Website.<https://github.com/tjcreedy/metaMATE>`_
+Tool for exploring detailed read frequency filtering thresholds. `Website. <https://github.com/tjcreedy/metaMATE>`_
 
 .. parsed-literal::
 	
@@ -192,7 +192,7 @@ Tool for exploring detailed read frequency filtering thresholds. `Website.<https
 swarm
 -----
 
-Linkage-based OTU delimitation. `Website. <https://github.com/torognes/swarm`_
+Linkage-based OTU delimitation. `Website. <https://github.com/torognes/swarm>`_
 
 .. parsed-literal::
 	
@@ -231,7 +231,7 @@ Bayesian OTU delimitation. `Website. <https://github.com/tingchenlab/CROP>`_
 bPTP
 ----
 
-Bayesian phylogeny-based species delimitation. `Website. <https://github.com/zhangjiajie/PTP
+Bayesian phylogeny-based species delimitation. `Website. <https://github.com/zhangjiajie/PTP`_
 
 .. parsed-literal::
 	
@@ -240,7 +240,7 @@ Bayesian phylogeny-based species delimitation. `Website. <https://github.com/zha
 	cd PTP
 	sudo -H python3 -m pip install -r requirements.txt
 	cd /PTP/bin
-	for f in *.py; do sed -i "1s/python$/python3/" $f; done
+	for f in \*.py; do sed -i "1s/python$/python3/" $f; done
 	sudo ln -s /usr/local/src/PTP/bin/bPTP.py /usr/local/bin/bPTP
 	sudo ln -s /usr/local/src/PTP/bin/PTP.py /usr/local/bin/PTP
 

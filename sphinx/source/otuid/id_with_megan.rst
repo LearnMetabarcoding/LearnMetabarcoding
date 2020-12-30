@@ -12,7 +12,7 @@
 Introduction
 ============
 
-One of the most straightforward automated ways of assigning taxonomy to OTUs is to **BLAST** the OTUs against the GenBank nucleotide database. GenBank is the largest database of publicly accessible sequence data in the world and by looking at the hits we get, we may be able to draw some conclusions about the taxonomy of a sequence. You can `search sequences online<https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome>`_, but a much more efficient way is to download a copy of GenBank to your local machine and use the **BLAST** command line software.
+One of the most straightforward automated ways of assigning taxonomy to OTUs is to **BLAST** the OTUs against the GenBank nucleotide database. GenBank is the largest database of publicly accessible sequence data in the world and by looking at the hits we get, we may be able to draw some conclusions about the taxonomy of a sequence. You can `search sequences online <https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome>`_, but a much more efficient way is to download a copy of GenBank to your local machine and use the **BLAST** command line software.
 
 While we could simply look at the hits we get from a **BLAST** search to estimate taxonomy, this wouldn't be very consistent. A standardised way is to process the results using a Lowest Common Ancestor algorithm. This process looks at the taxonomy of all of the results for a single sequence and estimates what taxon is the most likely Lowest Common Ancestor for all of the results, assigning the sequence that taxon. This is implemented in the program **MEGAN**.
 
@@ -23,16 +23,16 @@ While we could simply look at the hits we get from a **BLAST** search to estimat
 	
 	You will also need a local copy of the GenBank nucleotide (nt) database. If you're working with your own data, you can find out how to download this `here <ftp://ftp.ncbi.nlm.nih.gov/blast/documents/blastdb.html>`_. If you are working with the example data, we have created a mini version of the nt database designed to rapidly produce results *for this dataset only*. This is in the directory ``blastdb`` within the :ref:`sectionD archive <sectionDdata>`.
 	
-	This tutorial uses the :ref:`BLAST<blast>` software. You should also have the software `MEGAN<https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/megan6/>`_ installed on your personal computer.
+	This tutorial uses the :ref:`BLAST<blast>` software. You should also have the software `MEGAN <https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/megan6/>`_ installed on your personal computer.
 
 Running BLAST
 =============
 
-Running **BLAST** is fairly straightforward, although there are a lot of options, some of which are fairly obscure. Be sure to check out the `documentation<https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_>`_ at some point. We will use the following **BLAST** command to search our sequences against a local copy of the GenBank nt database (see the Data and software box above for details of acquiring this database). :guilabel:`Run this command, making sure to specify the correct path to the ``blastdb`` directory and replacing the other file names with the name of your OTU sequences and a sensible output name.
+Running **BLAST** is fairly straightforward, although there are a lot of options, some of which are fairly obscure. Be sure to check out the `documentation <https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_>`_ at some point. We will use the following **BLAST** command to search our sequences against a local copy of the GenBank nt database (see the Data and software box above for details of acquiring this database). :guilabel:`Run this command, making sure to specify the correct path to the ``blastdb`` directory and replacing the other file names with the name of your OTU sequences and a sensible output name.`
 
 .. parsed-literal::
 	
-	blastn -db :var:`path/to/`blastdb/nt -query ​:var:`input.fasta​` -outfmt 5 -out ​:var:`output.xml`​ -evalue 0.001
+	blastn -db :var:`path/to/`blastdb/nt -query ​:var:`input.fasta` -outfmt 5 -out ​:var:`output.xml` -evalue 0.001
 
 This command generates a very large XML file containing the full record of all the alignments BLAST has found for our OTUs. You should transfer this to your personal computer for the next step, but to save bandwidth, let's first compress the xml using zip:
 
