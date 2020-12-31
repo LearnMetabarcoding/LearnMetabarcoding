@@ -15,6 +15,7 @@ Introduction
 Global and curated databases are very useful for assigning broad taxonomy, but don't do great identifying our OTUs to lower taxonomic levels for these sorts of samples. Depending on your study, it's often very useful to generate your own set of high-accuracy reference sequences based on a reference set of specimens. Obviously the feasibility of this depends on the richness of your study community and how cryptic your study taxa is. 
 
 .. admonition:: Data and software
+	:class: green
 	
 	The input data to this tutorial is a FASTA file of sequences that you want to classify, and a FASTA file of sequences corresponding to known reference specimens. If you've been following along step-by-step, you can classify the ASVs or OTUs you produced in previous sections. Alternatively, the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionE archive <sectionEdata>` can be used as example data. For reference data, the files ``references_CCCPbarcodes.fasta`` and ``taxonomy_CCCPbarcodes.csv`` from the same archive can be used as example data.
 	
