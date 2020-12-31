@@ -10,6 +10,7 @@ Introduction
 This page reviews a few basic points about sequence file structure and how to explore these files using the command line. If you have experience working with FASTQ files you may want to move straight onto the :ref:`demultiplexing section<demultiplexing>`. 
 
 .. admonition:: Data and software
+	:class: green
 
 	This tutorial works on raw FASTQ-format sequence data that contains indices at the beginning of the reads. The example data for this can be found in the ``0_rawsequences`` directory within the :ref:`sectionA archive<sectionAdata>`. If you haven't already, you should copy this directory over to your working directory as follows:
 	
