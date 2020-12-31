@@ -73,7 +73,7 @@ The process here is almost identical to the above, except we allow matches of le
 
 	If you choose to use this method you should be aware that while it will give you more reads per ASV overall, using non-exact matches has a higher probability of generating incorrect matches, i.e. reporting a read for an ASV in a sample that is not correct. If this is the first step of read mapping for OTUs, this is less of an issue because two very similar ASVs are likely to be grouped into the same OTU anyway, but when working with ASVs only, then these errors could impact the validity of later analyses.
 
-The following command matches reads to ASVs with 99.5% similarity. Over a 418 bp amplicon as we are using in our toy dataset, this allows for 2 differences between read and ASV. Remember that our reads aren't length-filtered, so these differences could be insertions or deletions as well as point differences.
+The following command matches reads to ASVs with 99.5% similarity. Over a 418 bp amplicon as we are using in our example dataset, this allows for 2 differences between read and ASV. Remember that our reads aren't length-filtered, so these differences could be insertions or deletions as well as point differences.
 
 .. parsed-literal::
 	

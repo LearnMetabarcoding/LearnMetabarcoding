@@ -46,7 +46,7 @@ A much more sophisticated approach to filtering errors is denoising. Denoising a
 
 	vsearch --cluster_unoise :var:`​input.fasta` --minsize 2 --unoise_alpha 2 --centroids :var:`output.fasta`
 
-The key parameter here is the alpha parameter, which determines the threshold level of dissimilarity between frequent and infrequent reads for exclusion of infrequent reads. Note that we’re using a less conservative minsize threshold than the default of 8 because of the smaller size of this toy dataset. 
+The key parameter here is the alpha parameter, which determines the threshold level of dissimilarity between frequent and infrequent reads for exclusion of infrequent reads. Note that we’re using a less conservative minsize threshold than the default of 8 because of the smaller size of this example dataset. 
 
 .. admonition:: Exercise
 	
