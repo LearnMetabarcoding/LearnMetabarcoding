@@ -19,6 +19,7 @@ Introduction
 Read processing is our name for the low-level steps required to process raw sequence reads as they would be received from a sequencer. You can think of these steps as like the compilation of data from field notes into a spreadsheet: we use contextual information to organise the data, remove extraneous information, bring together data that belongs in the same place and correct or remove any errors in data organisation. We call this low-level because many of these steps are conceptually simple and not necessarily exclusively metabarcoding-focused. Nonetheless, these processes are crucial to successful metabarcoding, as inappropriate choice of software or parameters here may have substantial impacts on the later results.
 
 .. admonition:: Data
+	:class: green
 	
 	You can download a zip archive of the data for all of the tutorials in this section :ref:`here <sectionAdata>`. Unzip this to a convenient location.
 

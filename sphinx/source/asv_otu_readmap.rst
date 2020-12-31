@@ -20,6 +20,7 @@ In this section, we will first examine some ways to group ASVs into Operational 
 In the second subsection, :ref:`Mapping Reads <mapping_reads>` we will look at how to bring our final set of biological sequences, be they ASVs or OTUs, together with the sample-level read dataset in order to generate read mapping tables, the record of the number of reads for each biological sequence in each of your samples. This data is the primary output of metabarcoding and can be used in place of classic site-by-species tables for downstream ecological analysis. 
 
 .. admonition:: Data
+    :class: green
 	
 	The starting point for this section is a FASTA file comprising ASVs, that is to say unique sequences with errors removed. These sequences must have ``;size=`` tags in the sequence headers to denote the abundance of each sequence in the dataset. You will also need a FASTA file of all reads in your dataset, with sample names in the read headers. 
 	

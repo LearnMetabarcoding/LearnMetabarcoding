@@ -12,6 +12,7 @@ Introduction
 Here we will denoise by each individual sample, rather than on the entire dataset. This requires us to go back to the data generated in an earlier tutorial. We strongly recommend making a separate directory to perform this experimentation in, and using clear file names so you don't get the data mixed up!
 
 .. admonition:: Data and software
+	:class: green
 	
 	The input data for this tutorial is a directory containing one FASTQ or FASTA file per sample. If you've been following along step-by-step, this is the data produced in the :ref:`pair merging<pair_merging>` tutorial in the previous section. Alternatively, the ``3_merged`` directory within the :ref:`sectionA archive<sectionAdata>` can be used as example data.
 	

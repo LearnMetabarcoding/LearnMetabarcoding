@@ -10,6 +10,7 @@ Introduction
 Another way to assess accuracy of a tree is to add in some sequences with known taxonomy, to see if the phylogeny matches this taxonomy. If you had a reference set of barcodes for some of the species in your study, and/or you downloaded some barcodes for taxa of interest in your study, you could align these together with your OTUs and then build the tree. This would also allow you to root the tree properly.
 
 .. admonition:: Data and software
+	:class: green
 	
 	The input data for this extension is a FASTA file of sequences, such as the OTU sequences you used for :ref:`the previous tutorial<otu_tree>`. 
 	

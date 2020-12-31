@@ -24,6 +24,7 @@ Introduction
 As part of the read processing we excluded possibly erroneous sequences, based on missing index or primer sequences or an inability to merge. However there likely remain many further erroneous sequences in our dataset, and the purpose of this section is to remove as many of these as possible in order to isolate only the biologically meaningful sequences.
 
 .. admonition:: Data
+	:class: green
 	
 	The starting point for this section is a FASTQ file comprising all of the reads in your dataset, with the source sample for each read noted in the read's header.
 	

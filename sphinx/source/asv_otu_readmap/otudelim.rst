@@ -23,6 +23,7 @@ We have our filtered ASVs, ideally representing all of the true biological seque
 As well as generating approximately species-level taxonomic units, grouping ASVs into OTUs is also a method for removing errors. While we hope that our filtering has been stringent enough to remove all erroneous sequences, the chances are that it is not. However, small variations from true haplotypes will generally get grouped in with the true haplotype, thus slight errors will not be found in the OTU sequences. The downside of course is that we also remove a large proportion of the *real* variation among our ASVs, the true intra-specific variation in our dataset.
 
 .. admonition:: Data
+	:class: green
 	
 	The starting point for this section is a FASTA file comprising ASVs, that is to say unique sequences with errors removed. These sequences must have ``;size=`` tags in the sequence headers to denote the abundance of each sequence in the dataset.
 	
