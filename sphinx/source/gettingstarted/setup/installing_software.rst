@@ -1,5 +1,7 @@
 .. _installing_software:
 
+.. role:: comment
+
 =====================
 Software installation
 =====================
@@ -18,14 +20,14 @@ Setup
 The following commands install some general purpose Linux tools and libraries. 
 .. parsed-literal::
 	
-	# Setup directories
+	:comment:`# Setup directories`
 	sudo mkdir /usr/local/deb/
 	
-	# Install general tools
+	:comment:`# Install general tools`
 	sudo apt update && sudo apt upgrade -y
 	sudo apt install build-essential pkg-config autoconf python3-pip unzip groff libgsl-dev rename default-jre zip -y
 	
-	# Install programming languages and language modules
+	:comment:`# Install programming languages and language modules`
 	sudo apt install bioperl libdbd-sqlite3-perl libjson-perl perl-doc python3-biopython python-scipy libarray-utils-perl -y
 
 
@@ -103,7 +105,7 @@ You must sign up for a PEAR academic licence and you will receive an email with 
 	
 	
 	cd /usr/local/src/
-	sudo cp ~/pear-0.9.11-linux-x86_64.tar.gz ./   # Change the source path if necessary
+	sudo cp ~/pear-0.9.11-linux-x86_64.tar.gz ./   :comment:`# Change the source path if necessary`
 	sudo tar -xzf pear-0.9.11-linux-x86_64.tar.gz
 	cd pear-0.9.11-linux-x86_64
 	sudo cp bin/pear /usr/local/bin/
@@ -119,7 +121,7 @@ Ensures paired read files are syncronised. `Website <https://github.com/sestaton
 
 .. parsed-literal::
 	
-	sudo apt install libdbd-sqlite3-perl  # (installed above)
+	sudo apt install libdbd-sqlite3-perl  :comment:`# (installed above)`
 	sudo curl -sL cpanmin.us | sudo perl - git://github.com/sestaton/Pairfq.git
 
 # Fastx toolkit
@@ -163,7 +165,7 @@ Open-source implementation of USEARCH with more versatility. VSEARCH is a softwa
 
 .. parsed-literal::
 	
-	sudo apt install autoconf groff # (installed above)
+	sudo apt install autoconf groff :comment:`# (installed above)`
 	
 	cd /usr/local/src
 	
@@ -217,7 +219,7 @@ Bayesian OTU delimitation. `Website. <https://github.com/tingchenlab/CROP>`_
 
 .. parsed-literal::
 	
-	sudo apt install libgsl-dev # (installed above)
+	sudo apt install libgsl-dev :comment:`# (installed above)`
 	
 	cd /usr/local/src
 	
@@ -255,7 +257,7 @@ Widely used sequence searching software. `Documentation. <https://www.ncbi.nlm.n
 .. parsed-literal::
 	cd /usr/local/src/
 	
-	BLAST_VERSION="2.11.0" # Change as appropriate
+	BLAST_VERSION="2.11.0" :comment:`# Change as appropriate`
 	sudo wget "ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${BLAST_VERSION}/ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz"
 	sudo tar -zxf ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz
 	sudo cp ncbi-blast-${BLAST_VERSION}+/bin/\* /usr/local/bin/

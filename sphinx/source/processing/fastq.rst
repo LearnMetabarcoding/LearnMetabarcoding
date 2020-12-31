@@ -65,7 +65,7 @@ Like the ​wc -l function above, we can run grep on all of our files at once to
 
 .. parsed-literal:: 
 
-	grep -c "^@D00" \*.fastq
+	grep -c "^\@D00" \*.fastq
 
 We can see that we’re dealing with about 9000 reads per library.
 
