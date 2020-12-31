@@ -35,7 +35,7 @@ We can see how many lines in each file using the word count function, specifying
 
 	wc -l \*.fastq
 
-The ​:code:`\* \.fastq` here means we want all of the files ending in ``.fastq`` in the directory. We could replace this with a single file name if we just wanted to count the lines of a single file.
+The :code:`*.fastq` here means we want all of the files ending in ``.fastq`` in the directory. We could replace this with a single file name if we just wanted to count the lines of a single file.
 
 .. parsed-literal::
 
