@@ -45,6 +45,15 @@ Once the topic and software is introduced, the tutorial will suggest running a c
 
 You would enter everything in this box. You would then press Enter (Return) to run the command. If this is very new to you, you might want to check out the :ref:`UNIX command line introduction <unix_cli>`, which has more information.
 
+Sometimes in these resources we will ask you to run a command that is quite long, and to help you read it easily we will present the command broken over multiple lines. It will look like this:
+
+.. parsed-literal::
+
+	echo \\
+	"hello world"
+
+To enter this in the command prompt, we type the first line and then press Enter after typing the ``\`` symbol. This symbol at the end of the command tells the shell that we want to continue typing the same command on the next line. The prompt will change to a ``>``.
+
 We will frequently suggest commands that contain placeholder values that need to be edited before running. The following command has placeholder values:
 
 .. parsed-literal::
