@@ -21,7 +21,7 @@ We provide the data in five zip archives, one for each section. Each section's d
 
 There are two possible ways you can acquire the data:
 
-1. Download the data using the links below to your personal computer, then if you're using a remote server for your bioinformatics you can transfer the files using FTP or another transfer protocol
+1. Download the data using the links below to your personal computer, then if you're using a remote server for your bioinformatics you can transfer the files using FTP or another transfer protocol (see the page on :ref:`remote access <remote_access>` for help if you need it).
 2. Copy the links below and use the ``wget`` or ``curl`` commands in Linux to download the file directly to the server you're using, as shown in the example below.
 
 Data URLs

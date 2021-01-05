@@ -26,7 +26,7 @@ Our method
 
 Each pipeline is in its own directory, named clearly with the pipeline name and a date (in ISO format, i.e. 2020-12-25, for easier sorting)
 
-Each pipeline directory contains a ``commands.txt file`` that lists the commands used to generate the files in that directory (see below)
+Each pipeline directory contains a ``commands.txt`` file that lists the commands used to generate the files in that directory (see below)
 
 When a step draws on or creates multiple files that should be treated as a group, these are always in their own directory and that directory is treated as if it's a complete file for naming purposes. The files within successive directories never change their names unless they are split up or merged together.
 
