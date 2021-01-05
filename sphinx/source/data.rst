@@ -9,7 +9,9 @@ Example data
 Introduction
 ============
 
-In 2014 and 2015, we sampled arthropod communities from the canopies of rainforest trees in Cusuco National Park, Honduras. These samples were processed at the Natural History Museum, London, where we homogenised the samples and carried out metabarcoding amplification for a 418bp section of the CO1 Folmer "barcode" region. These were sequenced on an Illumina HiSeq using a 2x300bp read metric.
+In 2014 and 2015, we sampled arthropod communities from the canopies of rainforest trees in Cusuco National Park, Honduras. These samples were processed at the Natural History Museum, London, where we homogenised the samples and carried out metabarcoding amplification for a 418bp section of the CO1 Folmer "barcode" region. These were sequenced on an Illumina HiSeq using a 2x300bp read metric [#]_.
+
+
 We have taken a few of these samples and modified them to reduce their size while preserving realistic sequence variation and errors. These samples form the example dataset we provide for you to use as you work through the different sections of these resources.
 
 Getting the data
@@ -91,3 +93,4 @@ We suggest actually working through the tutorials in a separate directory, so as
 	cd tutorialwork
 	cp -r ../exampledata/sectionA/0_rawsequences/ ./
 
+.. [#] The methods are described in detail in Creedy, T. J., Ng, W. S., & Vogler, A. P. (2019). Toward accurate species‐level metabarcoding of arthropod communities from the tropical forest canopy. Ecology and evolution, 9(6), 3105-3116. https://doi.org/10.1002/ece3.4839
