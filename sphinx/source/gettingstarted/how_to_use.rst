@@ -70,7 +70,9 @@ The ``N`` and the ``output.fasta`` of this command are formatted differently to 
 
 Don't worry, we'll try to make it really clear what file you should use and how to figure out what number to use. Placeholder file names will often be ``input`` or ``output``, but sometimes we'll use different names, generally where there is more than one input.
 
-As we just did, we may often refer to code within text, such as this: ``head``. Generally this is a reference to a command or part of a command, and we don't necessarily expect you to run exactly the code written as is. For example, we might refer to a specific argument, such as ``-n``, with this special code formatting to make clear we're talking about part of a command. Sometimes, we might suggest you use a common Linux function, such as ``head``, ``more``, ``grep``, etc, by referring to it like this rather than making a code box, suggesting that you figure out the necessary command yourself. See :ref:`here <basic_unix>` for some more information about Linux commands.
+As we just did, we may often refer to code within text, such as this: ``head``. Generally this is a reference to a command or part of a command, and we don't necessarily expect you to run exactly the code written as is. For example, we might refer to a specific argument, such as ``-n``, with this special code formatting to make clear we're talking about part of a command. Sometimes, we might suggest you use a common Linux function, such as ``head``, ``more``, ``grep``, etc, by referring to it like this rather than making a code box, suggesting that you figure out the necessary command yourself. See :ref:`here <basic_unix>` for some more information about Linux commands. 
+
+We will also refer to files and directories on your bioinformatics machine using this notation, such as ``Lib1_R1.fastq`` or ``0_rawsequences/``.
 
 Exercises
 ---------
