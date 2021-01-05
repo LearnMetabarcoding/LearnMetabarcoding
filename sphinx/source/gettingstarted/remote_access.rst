@@ -92,5 +92,9 @@ Follow the steps below:
 1. Open FileZilla
 2. Enter the server address in Host field
 3. Enter your username and password in the correct fields
-4. Press quick connect
-5. You can now drag and drop files between your local machine and the server
+4. Enter 22 in the Port field
+5. Press quick connect
+6. You can now drag and drop files between your local machine and the server
+
+.. image:: filezilla.png
+	:align: center 
