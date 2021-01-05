@@ -188,24 +188,24 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>user@server:~/file/path$
 </pre></div>
 </div>
-<p>When you see this <code class="docutils literal notranslate"><span class="pre">$</span></code> sign, this means the shell is expecting a new command. Whenever we suggest a command to enter, it assumes that your prompt is showing the <code class="docutils literal notranslate"><span class="pre">$</span></code>. If your command prompt is ever a different symbol, such as <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, this probably means that the shell is waiting for you to finish a command you’ve previously entered. This functionality allows you to write commands over multiple lines if they’re very long. However, it’s easy to accidentally enter this mode if you fail to close a parenthesis (<code class="docutils literal notranslate"><span class="pre">()</span></code>) or quotation marks <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> in a command, then try to run it.</p>
+<p>When you see this <code class="docutils literal notranslate"><span class="pre">$</span></code> sign, this means the shell is expecting a new command. Whenever we suggest a command to enter, it assumes that your prompt is showing the <code class="docutils literal notranslate"><span class="pre">$</span></code>. If your command prompt is ever a different symbol, such as <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, this probably means that the shell is waiting for you to finish a command you’ve previously entered. This functionality allows you to write commands over multiple lines if they’re very long. However, it’s easy to accidentally enter this mode if you fail to close a parenthesis <code class="docutils literal notranslate"><span class="pre">()</span></code> or quotation marks <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> in a command, then try to run it.</p>
 <p>Try running the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;hello</span>
 </pre></div>
 </div>
-<p>You should be met with a <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbol. Finish the command by typing <code class="docutils literal notranslate"><span class="pre">world&quot;</span></code> and pressing Enter.</p>
+<p>You should be met with a <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbol. Finish the command by typing <code class="docutils literal notranslate"><span class="pre">world&quot;</span></code> and pressing Enter (Return). You should see a line saying <code class="docutils literal notranslate"><span class="pre">hello</span> <span class="pre">world</span></code> and then a new prompt, ending with <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p>
 <p>Sometimes in these resources we will ask you to run a command that is quite long, and to help you read it easily we will present the command broken over multiple lines. It will look like this:</p>
 <pre class="literal-block">echo \
 &quot;hello world&quot;</pre>
 <p>To enter this in the command prompt, we type the first line and then press Enter after typing the <code class="docutils literal notranslate"><span class="pre">\</span></code> symbol. This symbol at the end of the command tells the shell that we want to continue typing the same command on the next line. The prompt will change to a <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>. We then type the second line.</p>
 <p>You don’t need to enter the <code class="docutils literal notranslate"><span class="pre">\</span></code> symbol to start a new line if you use a character that unambiguously tells Linux that you’re not finished. For example, if you open a parethesis or a quotation mark, as we saw above. Alternatively, if you’re running multiple commands one after the other you can separate them using <code class="docutils literal notranslate"><span class="pre">;</span></code> or by using pipes (see below). If you end a line with <code class="docutils literal notranslate"><span class="pre">;</span></code> or <code class="docutils literal notranslate"><span class="pre">|</span></code> then press Enter (Return), Linux will assume you have more to add and so will start a new line with the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> prompt, rather than immediately running your command.</p>
-<p>If you ever get to a situation where you have accidentally forgotten to close a parethesis or quotation, or you’ve used <code class="docutils literal notranslate"><span class="pre">;</span></code> or <code class="docutils literal notranslate"><span class="pre">|</span></code> at the end of a line accidentally, and the prompt has changed to <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> when you don’t mean it to, you can cancel your current command by pressing <span class="guilabel">Ctrl + C</span> (or <span class="guilabel">Cmd + C</span> on Mac). You can then press the up arrow key to get to your previous command to edit it.</p>
-<p>Finally, the shell will ignore anything on a line after the first <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol it encounters. This is to allow for comments, and these resources will sometimes use this to comment lines of code. For example, you could type everything after the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol of the following command into the terminal and run it:</p>
+<p>If you ever get to a situation where you have accidentally forgotten to close a parethesis or quotation, or you’ve used <code class="docutils literal notranslate"><span class="pre">;</span></code> or <code class="docutils literal notranslate"><span class="pre">|</span></code> at the end of a line accidentally, and the prompt has changed to <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> when you don’t mean it to, you can cancel your current command by pressing <span class="menuselection">Ctrl + C</span> (or <span class="menuselection">Cmd + C</span> on Mac). You can then press the up arrow key to get to your previous command to edit it.</p>
+<p>Finally, the shell will ignore anything on a line after the first <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol it encounters. This is to allow for comments, and these resources will sometimes use this to comment lines of code. For example, you could type everything in the following command into the terminal and run it:</p>
 <pre class="literal-block">echo &quot;hello world&quot;  <span class="comment"># prints &quot;hello world&quot;</span></pre>
 <p>The output would be identical to the first command on this page.</p>
-<div class="admonition note">
+<div class="green admonition">
 <p class="admonition-title">Note</p>
-<p>We suggest that the best way to learn is to type out the commands as they are shown in these resources. This might cause you more errors, but it gives you a chance to learn from them. If you copy and paste, you should do so line by line for multiline commands, in order to ensure that you avoid formatting errors.</p>
+<p>We suggest that the best way to learn is to type out the commands as they are shown in these resources, rather than copy-pasting, but it’s up to you. You should always remember to replace placeholders in any commands we give.</p>
 </div>
 </div>
 <div class="section" id="working-directories-and-paths">
@@ -244,14 +244,14 @@ uniq linessorted.txt &gt; linesunique.txt</pre>
 <pre class="literal-block">echo -e &quot;line2\nline1\nline2&quot; | sort | uniq &gt; linesunique2.txt
 cat linesunique2.txt</pre>
 <p>This is obviously a very trivial example, but we will use this a lot.</p>
-</div>
 <div class="section" id="learning-about-programs">
-<h2>Learning about programs<a class="headerlink" href="#learning-about-programs" title="Permalink to this headline">¶</a></h2>
+<h3>Learning about programs<a class="headerlink" href="#learning-about-programs" title="Permalink to this headline">¶</a></h3>
 <p>If presented with a new function that you have no idea how to use, don’t panic! There are lots of resources to help you understand them. The vast majority of functions should have some sort of help file. For example, these are the different ways you could find help for the <code class="docutils literal notranslate"><span class="pre">echo</span></code> function:</p>
-<pre class="literal-block">man ​fastqc​      <span class="comment"># Returns a scrollable manual if it exists</span>
-fastqc​ -h       <span class="comment"># Outputs a text summary of the function's options</span>
-​fastqc​ --help   <span class="comment"># Same as above</span></pre>
+<pre class="literal-block">man ​echo      <span class="comment"># Returns a scrollable manual if it exists</span>
+echo --help   <span class="comment"># Outputs a text summary of the function's options</span></pre>
+<p>Many programs also let you use <code class="docutils literal notranslate"><span class="pre">-h</span></code> instead of <code class="docutils literal notranslate"><span class="pre">--help</span></code>.</p>
 <p>If these don’t help you figure out how to use the tool (which is understandable, sometimes they’re very brief!), try searching google. There are lots of people out there who’ve probably tried to figure out the tool before. The trick is including the right search terms. Be specific, but not too specific, and include important context. For example, I might search “linux command line how to use echo”, or “bash print text to terminal echo”, or “terminal write string ubuntu”.</p>
+</div>
 </div>
 </div>
 
