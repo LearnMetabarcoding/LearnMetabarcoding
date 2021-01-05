@@ -31,6 +31,7 @@ Page tree
 
 .. toctree::
 	:titlesonly:
+	:includehidden:
 	:maxdepth: 3
 	
 	gettingstarted
