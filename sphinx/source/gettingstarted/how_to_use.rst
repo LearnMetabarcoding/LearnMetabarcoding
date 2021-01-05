@@ -43,7 +43,7 @@ Once the topic and software is introduced, the tutorial will suggest running a c
 	echo "hello world"
 	
 
-You would enter everything in this box. You would then press Enter (Return) to run the command. If this is very new to you, you might want to check out the :ref:`UNIX command line introduction <unix_cli>`, which has more information.
+Whenever you see this, it is a command that we suggest you run and to do so you would type everything in this box into your terminal, then press Enter (Return). If this is very new to you, you might want to check out the :ref:`UNIX command line introduction <unix_cli>`, which has more information.
 
 Sometimes in these resources we will ask you to run a command that is quite long, and to help you read it easily we will present the command broken over multiple lines. It will look like this:
 
@@ -77,7 +77,7 @@ We will also refer to files and directories on your bioinformatics machine using
 Exercises
 ---------
 
-As part of a tutorial, we will suggest you run a command, design a command yourself, or ask you questions about the data to help guide your learning. Suggestions of something you should do be formatted like this: :guilabel:`Run this command:`, or placed in an exercise box like the below.
+As part of a tutorial, we will suggest you design a command yourself, or ask you questions about the data to help guide your learning. Short exercises will be formatted like this: :guilabel:`How many lines does the file have?`, and longer ones placed in a box like the below.
 
 .. admonition:: Exercise
 	
