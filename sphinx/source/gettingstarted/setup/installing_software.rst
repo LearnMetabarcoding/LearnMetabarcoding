@@ -96,7 +96,7 @@ Installation not necessary: you could simply download it to your working directo
 
 .. parsed-literal::
 	
-	wget /usr/local/bin/ https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
+	wget /usr/local/bin/ \https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
 	perl catfasta2phyml.pl
 
 
@@ -112,7 +112,7 @@ Bayesian OTU delimitation, github `here <https://github.com/tingchenlab/CROP>`_.
 	sudo apt install libgsl-dev :comment:`# (installed above)`
 	
 	cd /usr/local/src
-	sudo git clone https://github.com/zhangjiajie/PTP
+	sudo git clone \https://github.com/zhangjiajie/PTP
 	cd PTP
 	sudo -H python3 -m pip install -r requirements.txt
 	sudo -H python3 -m pip install python-nexus
@@ -141,14 +141,14 @@ Script for extracting individual gene sequences from GenBank files, github `here
 
 .. parsed-literal::
 	
-	sudo wget -O /usr/local/bin/ https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
+	sudo wget -O /usr/local/bin/ \https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
 	sudo chmod a+x /usr/local/bin/extract_genes.pl
 
 Installation not necessary: you coul simply download it to your working directory and run it using ``perl``:
 
 .. parsed-literal::
 	
-	wget https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
+	wget \https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
 	perl extract_genes.pl
 
 
@@ -162,8 +162,8 @@ Fast maximum likelihood phylogenetic inference, website `here <http://www.microb
 .. parsed-literal::
 	
 	cd /usr/local/bin/
-	sudo wget http://www.microbesonline.org/fasttree/FastTree
-	sudo wget http://www.microbesonline.org/fasttree/FastTreeMP
+	sudo wget \http://www.microbesonline.org/fasttree/FastTree
+	sudo wget \http://www.microbesonline.org/fasttree/FastTreeMP
 	sudo chmod a+x FastTree\*
 
 
@@ -177,7 +177,7 @@ Raw sequence quality assessment, website `here <https://www.bioinformatics.babra
 .. parsed-literal::
 	
 	cd /usr/local/src/ 
-	sudo wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.9.zip
+	sudo wget \https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.9.zip
 	sudo unzip fastqc_v0.11.9.zip
 	sudo chmod a+x FastQC/fastqc
 	sudo ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc
@@ -194,7 +194,7 @@ Various handy tools for dealing with FASTA and FASTQ files. A little out of date
 	
 	cd /usr/local/src/
 	
-	sudo wget https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
+	sudo wget \https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
 	sudo tar -xzf libgtextutils-0.7.tar.gz
 	cd libgtextutils-0.7
 	sudo sed -i '47s/input_stream/static_cast<bool>(input_stream)/' src/gtextutils/text_line_reader.cpp
@@ -203,10 +203,10 @@ Various handy tools for dealing with FASTA and FASTQ files. A little out of date
 	sudo make install
 	cd ../
 	
-	sudo wget https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2
+	sudo wget \https://github.com/agordon/fastx_toolkit/releases/download/0.0.14/fastx_toolkit-0.0.14.tar.bz2
 	sudo tar -xjf fastx_toolkit-0.0.14.tar.bz2
 	cd fastx_toolkit-0.0.14
-	sudo wget https://github.com/agordon/fastx_toolkit/files/1182724/fastx-toolkit-gcc7-patch.txt
+	sudo wget \https://github.com/agordon/fastx_toolkit/files/1182724/fastx-toolkit-gcc7-patch.txt
 	sudo patch -p1 < fastx-toolkit-gcc7-patch.txt
 	sudo ./configure
 	sudo make
@@ -223,7 +223,7 @@ Sequence alignment software, website `here <https://mafft.cbrc.jp/alignment/soft
 
 .. parsed-literal::
 	
-	sudo wget -P /usr/local/deb/ https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb
+	sudo wget -P /usr/local/deb/ \https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb
 	sudo apt install /usr/local/deb/mafft_7.475-1_amd64.deb
 
 
@@ -237,7 +237,7 @@ Tool for exploring detailed read frequency filtering thresholds, github `here <h
 .. parsed-literal::
 	
 	sudo -H python3 -m pip install metaMATE
-	sudo Rscript -e "install.packages(c('getopt', 'ape', 'fastcluster'), repos = 'https://cloud.r-project.org')"
+	sudo Rscript -e "install.packages(c('getopt', 'ape', 'fastcluster'), repos = '\https://cloud.r-project.org')"
 
 
 .. _pairfq:
@@ -250,7 +250,7 @@ Ensures paired read files are syncronised, github `here <https://github.com/sest
 .. parsed-literal::
 	
 	sudo apt install libdbd-sqlite3-perl  :comment:`# (installed above)`
-	sudo curl -sL cpanmin.us | sudo perl - git://github.com/sestaton/Pairfq.git
+	sudo curl -sL cpanmin.us | sudo perl - \git://github.com/sestaton/Pairfq.git
 
 
 .. _pear:
@@ -282,7 +282,7 @@ Versatile data handling language, website `here <https://cran.r-project.org>`_.
 	
 	sudo apt install apt-transport-https
 	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-	sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
+	sudo add-apt-repository 'deb \https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
 	sudo apt install r-base
 
 
@@ -298,7 +298,7 @@ Linkage-based OTU delimitation, github `here <https://github.com/torognes/swarm>
 	
 	cd /usr/local/src
 
-	sudo git clone https://github.com/torognes/swarm.git
+	sudo git clone \https://github.com/torognes/swarm.git
 	cd swarm/
 	sudo make
 	sudo cp bin/swarm /usr/local/bin/
@@ -321,7 +321,7 @@ Open-source implementation of USEARCH with more versatility. VSEARCH is a softwa
 	
 	cd /usr/local/src
 	
-	sudo wget https://github.com/torognes/vsearch/archive/v2.15.1.tar.gz
+	sudo wget \https://github.com/torognes/vsearch/archive/v2.15.1.tar.gz
 	sudo tar xzf v2.15.1.tar.gz
 	cd vsearch-2.15.1
 	sudo ./autogen.sh
@@ -343,7 +343,7 @@ Requires :ref:`R<r>`.
 	
 	cd /usr/local/src
 	sudo rm -r phylostuff
-	sudo git clone https://github.com/tjcreedy/phylostuff.git
+	sudo git clone \https://github.com/tjcreedy/phylostuff.git
 	cd phylostuff
 	sudo ./install.sh
 
@@ -351,7 +351,7 @@ Installation not necessary: you could simply download the script you want to you
 
 .. parsed-literal::
 	
-	wget https://raw.githubusercontent.com/tjcreedy/phylostuff/master/phylabel.R
+	wget \https://raw.githubusercontent.com/tjcreedy/phylostuff/master/phylabel.R
 	Rscript phylabel.R
 	
 
