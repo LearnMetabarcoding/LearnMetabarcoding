@@ -43,7 +43,7 @@ Once the topic and software is introduced, the tutorial will suggest running a c
 	echo "hello world"
 	
 
-You would enter everything in this box. You would then press Enter (Return) to run the command. If this is very new to you, you might want to check out the :ref:`UNIX command line introduction <unix_cli>`, which has more information.
+Whenever you see this, it is a command that we suggest you run and to do so you would type everything in this box into your terminal, then press Enter (Return). If this is very new to you, you might want to check out the :ref:`UNIX command line introduction <unix_cli>`, which has more information.
 
 Sometimes in these resources we will ask you to run a command that is quite long, and to help you read it easily we will present the command broken over multiple lines. It will look like this:
 
@@ -70,12 +70,14 @@ The ``N`` and the ``output.fasta`` of this command are formatted differently to 
 
 Don't worry, we'll try to make it really clear what file you should use and how to figure out what number to use. Placeholder file names will often be ``input`` or ``output``, but sometimes we'll use different names, generally where there is more than one input.
 
-As we just did, we may often refer to code within text, such as this: ``head``. Generally this is a reference to a command or part of a command, and we don't necessarily expect you to run exactly the code written as is. For example, we might refer to a specific argument, such as ``-n``, with this special code formatting to make clear we're talking about part of a command. Sometimes, we might suggest you use a common Linux function, such as ``head``, ``more``, ``grep``, etc, by referring to it like this rather than making a code box, suggesting that you figure out the necessary command yourself. See :ref:`here <basic_unix>` for some more information about Linux commands.
+As we just did, we may often refer to code within text, such as this: ``head``. Generally this is a reference to a command or part of a command, and we don't necessarily expect you to run exactly the code written as is. For example, we might refer to a specific argument, such as ``-n``, with this special code formatting to make clear we're talking about part of a command. Sometimes, we might suggest you use a common Linux function, such as ``head``, ``more``, ``grep``, etc, by referring to it like this rather than making a code box, suggesting that you figure out the necessary command yourself. See :ref:`here <basic_unix>` for some more information about Linux commands. 
+
+We will also refer to files and directories on your bioinformatics machine using this notation, such as ``Lib1_R1.fastq`` or ``0_rawsequences/``.
 
 Exercises
 ---------
 
-As part of a tutorial, we will suggest you run a command, design a command yourself, or ask you questions about the data to help guide your learning. Suggestions of something you should do be formatted like this: :guilabel:`Run this command:`, or placed in an exercise box like the below.
+As part of a tutorial, we will suggest you design a command yourself, or ask you questions about the data to help guide your learning. Short exercises will be formatted like this: :guilabel:`How many lines does the file have?`, and longer ones placed in a box like the below.
 
 .. admonition:: Exercise
 	

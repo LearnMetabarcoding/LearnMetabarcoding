@@ -94,7 +94,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../cli_bioinformatics.html">Command line bioinformatics</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="UNIX_cmd_line.html">UNIX command line</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basic_UNIX.html">Basic UNIX commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nano.html">Using Nano to edit documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nano.html">Using nano to edit documents</a></li>
 <li class="toctree-l3"><a class="reference internal" href="grep.html">The grep command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sed.html">The sed command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="loops.html">Loops in bash</a></li>
@@ -198,7 +198,7 @@
 <div class="section" id="our-method">
 <h3>Our method<a class="headerlink" href="#our-method" title="Permalink to this headline">¶</a></h3>
 <p>Each pipeline is in its own directory, named clearly with the pipeline name and a date (in ISO format, i.e. 2020-12-25, for easier sorting)</p>
-<p>Each pipeline directory contains a <code class="docutils literal notranslate"><span class="pre">commands.txt</span> <span class="pre">file</span></code> that lists the commands used to generate the files in that directory (see below)</p>
+<p>Each pipeline directory contains a <code class="docutils literal notranslate"><span class="pre">commands.txt</span></code> file that lists the commands used to generate the files in that directory (see below)</p>
 <p>When a step draws on or creates multiple files that should be treated as a group, these are always in their own directory and that directory is treated as if it’s a complete file for naming purposes. The files within successive directories never change their names unless they are split up or merged together.</p>
 <p>Each file or directory of files is named using a serial number at the beginning of the file, which increments for each step that modifies the composition or format of the data at that step.</p>
 <p>So, for example, the starting example data is a set of FASTQ files with the name of the sequencing library. These are placed in a directory called <code class="docutils literal notranslate"><span class="pre">0_rawsequences/</span></code>. When these are demultiplexed, we call the output directory <code class="docutils literal notranslate"><span class="pre">1_demux/</span></code> to show that this is the next set of data in order, and that the step used to produce them was demultiplexing.</p>

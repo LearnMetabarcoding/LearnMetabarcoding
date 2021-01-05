@@ -94,7 +94,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../cli_bioinformatics.html">Command line bioinformatics</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="UNIX_cmd_line.html">UNIX command line</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basic_UNIX.html">Basic UNIX commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nano.html">Using Nano to edit documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nano.html">Using nano to edit documents</a></li>
 <li class="toctree-l3"><a class="reference internal" href="grep.html">The grep command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sed.html">The sed command</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Loops in bash</a></li>
@@ -196,15 +196,15 @@ echo &quot;$files&quot;
 </pre></div>
 </div>
 <p>Note how we list the directory, then enclose that command in <code class="docutils literal notranslate"><span class="pre">$()</span></code>. This allows us to create the variable <code class="docutils literal notranslate"><span class="pre">$files</span></code> containing the output of the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command. We can check what that variable contains by <code class="docutils literal notranslate"><span class="pre">echo</span></code> ing it.</p>
-<p>Now we run a simple <code class="docutils literal notranslate"><span class="pre">for</span></code> loop where we run <code class="docutils literal notranslate"><span class="pre">sed</span></code> on each file. The sed expression adds “;tag;” to the end of each header line (i.e. lines beginning with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>).</p>
+<p>Now we run a simple <code class="docutils literal notranslate"><span class="pre">for</span></code> loop where we run <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code> on each file. This reports the number of lines in the file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in $files;
 do
-        sed -i -e &quot;/^&gt;/,s/$/;tag;/&quot; inputs/$f;
+        wc -l $f;
 done
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop essentially says “for each item in <code class="docutils literal notranslate"><span class="pre">$files</span></code>, call that item <code class="docutils literal notranslate"><span class="pre">f</span></code> and do the following to it”. The <code class="docutils literal notranslate"><span class="pre">do</span></code> and <code class="docutils literal notranslate"><span class="pre">done</span></code> terms surround the expression(s) to be run within the loop. Did you notice how we were able to write this command over multiple lines without using the <code class="docutils literal notranslate"><span class="pre">\</span></code> to separate lines? This is because the <code class="docutils literal notranslate"><span class="pre">;</span></code> symbol and the special <code class="docutils literal notranslate"><span class="pre">do</span></code> keyword also signal to bash that we haven’t finished our command yet, so we don’t need the <code class="docutils literal notranslate"><span class="pre">\</span></code>. We can also run the loop in a more compact form:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in $files; do sed -i -e &quot;/^&gt;/,s/$/;tag;/ $f; done
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in $files; do wc -l $f; done
 </pre></div>
 </div>
 <p>See how we use <code class="docutils literal notranslate"><span class="pre">;</span></code> to separate expressions in a single line, in exactly the same way we did for the multiline loop.</p>

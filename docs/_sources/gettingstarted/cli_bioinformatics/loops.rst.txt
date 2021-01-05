@@ -26,20 +26,20 @@ We use a ``for`` loop when we have a predefined list contained in a variable. Fo
 
 Note how we list the directory, then enclose that command in ``$()``. This allows us to create the variable ``$files`` containing the output of the ``ls`` command. We can check what that variable contains by ``echo`` ing it.
 
-Now we run a simple ``for`` loop where we run ``sed`` on each file. The sed expression adds ";tag;" to the end of each header line (i.e. lines beginning with ``>``).
+Now we run a simple ``for`` loop where we run ``wc -l`` on each file. This reports the number of lines in the file.
 
 .. parsed-literal::
 
 	for f in $files;
 	do 
-		sed -i -e "/^>/,s/$/;tag;/" inputs/$f;
+		wc -l $f;
 	done
 
 The ``for`` loop essentially says "for each item in ``$files``, call that item ``f`` and do the following to it". The ``do`` and ``done`` terms surround the expression(s) to be run within the loop. Did you notice how we were able to write this command over multiple lines without using the ``\`` to separate lines? This is because the ``;`` symbol and the special ``do`` keyword also signal to bash that we haven't finished our command yet, so we don't need the ``\``. We can also run the loop in a more compact form:
 
 .. parsed-literal::
 
-	for f in $files; do sed -i -e "/^>/,s/$/;tag;/ $f; done
+	for f in $files; do wc -l $f; done
 
 See how we use ``;`` to separate expressions in a single line, in exactly the same way we did for the multiline loop.
 
