@@ -43,7 +43,7 @@ The overlap between our reads is definitely enough to be able to confidently ass
 	
 	The input data for this tutorial is a directory of FASTQ format file pairs, one pair per sample, with no index or primer sequences. If you're following along step-by-step, this was produced in :ref:`the previous tutorial<primer_removal>`. Alternatively, the ``2_trimmed`` directory within the :ref:`sectionA archive<sectionAdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`fastQC <fastqc>`, :ref:`fastqe <fastqe>` and :ref:`PEAR <pear>` software.
+	This tutorial uses the :ref:`fastQC <fastqc>` and :ref:`PEAR <pear>` software.
 
 Sequence quality
 ================
@@ -58,11 +58,6 @@ One very popular option is to use the program **FastQC**. You can run it on a si
 
 You can view the output of **FastQC** by using your FTP software (e.g. FileZilla) to access the server, navigating to the directory in which you ran **FastQC** and opening the ``.html`` file with the same name as your file. There are lots of useful graphs, but the first one is key here.
 
-If you don’t want to have to use your FTP software, one fun way of checking a file’s quality with output on the command line is **fastqe**:
-
-.. parsed-literal::
-
-	fastqe --bin ​in.fastq
 
 The ends away from the primer are the parts that the merging algorithm is attempting to match, and you’ll notice these tend to be lower quality. This leads to two considerations:
 
