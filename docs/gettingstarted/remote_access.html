@@ -170,31 +170,33 @@
             
   <div class="section" id="accessing-linux-servers">
 <span id="remote-access"></span><h1>Accessing linux servers<a class="headerlink" href="#accessing-linux-servers" title="Permalink to this headline">¶</a></h1>
-<p>If you have access to a remote linux server this section covers how to connect to it remotely. Depending on the operating system you are running and the version of this operating system there is a few different ways of doing this. Look at the appropriate section below for your operating system.</p>
-<div class="section" id="using-teminal-in-macos">
-<h2>Using teminal in MacOS<a class="headerlink" href="#using-teminal-in-macos" title="Permalink to this headline">¶</a></h2>
-<p>If you are using a mac then connecting to a server is simple using an SSH (secure shell). Open your terminal application (if you haven’t used this before you can access it by using spotlight search or by navigating to the application using launchpad). You then type an SSH command which looks like this:</p>
+<p>If you have access to a remote Linux server this page covers how to connect to it remotely from your personal computer. Depending on the operating system (OS) and OS version of your personal computer, there are a few different ways of doing this. Note that this assumes that you are accessing your remote server directly and authenticating via password. If your institution or VPS provider uses intermediate authentication servers or key-based authentication, you should follow the instructions provided by them.</p>
+<p>If you are attending the <strong>Theory and practice in metabarcoding for biodiversity</strong> workshop 7th - 13th January 2021, these instructions apply to you! The server IP address will be shared with you separately.</p>
+<div class="section" id="connecting-via-ssh">
+<h2>Connecting via SSH<a class="headerlink" href="#connecting-via-ssh" title="Permalink to this headline">¶</a></h2>
+<p>We use SSH (Secure SHell) to send commands to the remote server and receive basic information in return, using the <a class="reference internal" href="cli_bioinformatics.html#cli-bioinformatics"><span class="std std-ref">command line interface</span></a>.</p>
+<div class="section" id="using-terminal-in-macos-or-linux">
+<h3>Using terminal in MacOS or Linux<a class="headerlink" href="#using-terminal-in-macos-or-linux" title="Permalink to this headline">¶</a></h3>
+<p>You can use the native terminal application available on any Mac or Linux machine. In Mac, if you haven’t used this before you can access it by using spotlight to search for “Terminal” or by navigating to the “Terminal” application using launchpad. On Linux starting a terminal using your GUI will vary depending on your distribution, but you can generally launch a terminal by pressing <span class="menuselection">Ctrl + Alt + T</span>.</p>
+<p>Once you have a terminal open, you then type an SSH command which looks like this:</p>
 <pre class="literal-block">ssh <span class="var">username&#64;server_address</span></pre>
-<p>You will need to replace the username in the above command with your username for the server. You’ll also need to replace the server_address with the actual address of the server you are connecting to. If it is your first time connecting it will ask you if you trust the server then will usually ask you for a password.</p>
+<p>You will need to replace the <code class="docutils literal notranslate"><span class="pre">username</span></code> in the above command with your username for the server. You’ll also need to replace the <code class="docutils literal notranslate"><span class="pre">server_address</span></code> with the actual address of the server you are connecting to. If it is your first time connecting it will ask you if you trust the server, then will usually ask you for a password.</p>
+</div>
+<div class="section" id="using-putty-in-windows">
+<h3>Using PuTTY in Windows<a class="headerlink" href="#using-putty-in-windows" title="Permalink to this headline">¶</a></h3>
+<p>If you are running Windows you can use a program called <a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a>, an SSH client for windows. Once you have installed PuTTY, open it and type the server address in the <span class="menuselection">host name</span> field. Then click <span class="menuselection">open</span>. This will then bring up the login screen. Enter your credentials and it will give you access to the server.</p>
 </div>
 <div class="section" id="using-windows-subsystem-for-linux">
-<h2>Using windows subsystem for linux<a class="headerlink" href="#using-windows-subsystem-for-linux" title="Permalink to this headline">¶</a></h2>
-<p>If you are running an upto date version of windows then you can use the windows subsystem for linux (WSL) to connect to the remote server. To get WSL up and running you can follow the documentation on <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">microsofts site.</a>
-You should then be able to connect to your remote server using SSH as below:</p>
-<pre class="literal-block">ssh <span class="var">username&#64;server_address</span></pre>
-<p>You will need to replace the username in the above command with your username for the server. You’ll also need to replace the server_address with the actual address of the server you are connecting to. If it is your first time connecting it will ask you if you trust the server then will usually ask you for a password.</p>
+<h3>Using Windows Subsystem for Linux<a class="headerlink" href="#using-windows-subsystem-for-linux" title="Permalink to this headline">¶</a></h3>
+<p>If you are running Windows 10, then an alternative to PuTTY is the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about">Windows Subsystem for Linux (WSL)</a>, which allows you to effectively install a Linux operating system inside your Windows operating system. It is perhaps overkill to install a complete operating system simply to use SSH, but if you do decide to do this, once you have your Linux subsystem running you should follow the instructions above for using terminal in MacOS or Linux</p>
 </div>
-<div class="section" id="using-putty-in-older-windows-os">
-<h2>Using PuTTY in older windows OS<a class="headerlink" href="#using-putty-in-older-windows-os" title="Permalink to this headline">¶</a></h2>
-<p>If you are running an older windows OS that doesn’t support WSL then you can use a program called PuTTY which is an SSH client for windows. Open PuTTY and type the server address in the host name field. Then click open. This will then bring up the login screen. Enter your credentials and it will give you access to the server.</p>
 </div>
 <div class="section" id="transferring-files-between-local-machine-and-server">
 <h2>Transferring files between local machine and server<a class="headerlink" href="#transferring-files-between-local-machine-and-server" title="Permalink to this headline">¶</a></h2>
 <p>There will be instances where you need to transfer files between your machine and a remote server. There are different ways to do this depending on your operating system and preferences.</p>
-</div>
 <div class="section" id="using-the-scp-command-in-the-terminal-in-linux-or-macos">
-<h2>Using the scp command in the terminal in Linux or macOS<a class="headerlink" href="#using-the-scp-command-in-the-terminal-in-linux-or-macos" title="Permalink to this headline">¶</a></h2>
-<p>If you are running macOS or Linux you can transfer files from local machine to server using the <code class="docutils literal notranslate"><span class="pre">scp</span></code> command in the terminal.</p>
+<h3>Using the scp command in the terminal in Linux or MacOS<a class="headerlink" href="#using-the-scp-command-in-the-terminal-in-linux-or-macos" title="Permalink to this headline">¶</a></h3>
+<p>If you are running MacOS or Linux you can transfer files from local machine to server using the <code class="docutils literal notranslate"><span class="pre">scp</span></code> command in the terminal.</p>
 <p>An example of using <code class="docutils literal notranslate"><span class="pre">scp</span></code> to transfer a file from your local machine to a server is below:</p>
 <pre class="literal-block">scp <span class="var">filename</span> <span class="var">username&#64;server_address:/path/</span></pre>
 <p>You type <code class="docutils literal notranslate"><span class="pre">scp</span></code> followed by the file name (if you are not in the directory the file is in you will need to write the whole file path) followed by your <cite>username&#64;server_address</cite> followed by a colon then the path (from the root) to where you want the copy to go in the destination server. If you don’t know what the path is that you need to type in, remember, you can use pwd in the directory you want to send the file to and this will return the path of that directory.</p>
@@ -204,9 +206,12 @@ You should then be able to connect to your remote server using SSH as below:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">scp</span></code> command is always given from your local machines terminal.</p>
 </div>
 </div>
-<div class="section" id="using-winscp-on-windows">
-<h2>Using WinSCP on windows<a class="headerlink" href="#using-winscp-on-windows" title="Permalink to this headline">¶</a></h2>
-<p>Windows users can use an application called WinSCP to transfer files. It comes with the advantage of having a GUI so you can drag and drop files rather than typing out commands.</p>
+<div class="section" id="using-ftp-software">
+<h3>Using FTP software<a class="headerlink" href="#using-ftp-software" title="Permalink to this headline">¶</a></h3>
+<p>FTP software comes with the advantage of having a GUI so you can drag and drop files rather than typing out commands.</p>
+<div class="section" id="winscp-windows">
+<h4>WinSCP (Windows)<a class="headerlink" href="#winscp-windows" title="Permalink to this headline">¶</a></h4>
+<p>Windows users can use an application called WinSCP to transfer files.</p>
 <p>Follow the below steps to set up WinSCP:</p>
 <ol class="arabic simple">
 <li><p>Change the file protocol drop down menu to SCP</p></li>
@@ -217,9 +222,8 @@ You should then be able to connect to your remote server using SSH as below:</p>
 <li><p>You can now drag and drop files between your local machine and the server</p></li>
 </ol>
 </div>
-<div class="section" id="using-a-ftp-client-in-macos">
-<h2>Using a FTP client in macOS<a class="headerlink" href="#using-a-ftp-client-in-macos" title="Permalink to this headline">¶</a></h2>
-<p>If you are using macOS and would rather use a GUI application there are a few to choose from such as FileZilla or Cyberduck. The instructions below are for FileZilla but they are all fairly similar.</p>
+<div class="section" id="filezilla-windows-macos-linux">
+<h4>FileZilla (Windows, MacOS, Linux)<a class="headerlink" href="#filezilla-windows-macos-linux" title="Permalink to this headline">¶</a></h4>
 <p>Follow the steps below:</p>
 <ol class="arabic simple">
 <li><p>Open FileZilla</p></li>
@@ -228,6 +232,8 @@ You should then be able to connect to your remote server using SSH as below:</p>
 <li><p>Press quick connect</p></li>
 <li><p>You can now drag and drop files between your local machine and the server</p></li>
 </ol>
+</div>
+</div>
 </div>
 </div>
 

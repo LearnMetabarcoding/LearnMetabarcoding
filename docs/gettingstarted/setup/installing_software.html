@@ -183,7 +183,7 @@
 <p>These commands use the most recent software versions as of December 2020, where the code points to a specific version you should make sure to look up the most recent version and edit accordingly.</p>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
-<p>The following commands install some general purpose Linux tools and libraries.</p>
+<p>The following commands install some general purpose Linux tools and libraries that are required for installing one or more software tools in detailed below.</p>
 <pre class="literal-block"><span class="comment"># Set up directories</span>
 sudo mkdir /usr/local/deb/
 
@@ -192,7 +192,11 @@ sudo apt update &amp;&amp; sudo apt upgrade -y
 sudo apt install build-essential pkg-config autoconf python3-pip unzip groff libgsl-dev rename default-jre zip -y
 
 <span class="comment"># Install programming languages and language modules</span>
-sudo apt install bioperl libdbd-sqlite3-perl libjson-perl perl-doc python3-biopython python-scipy libarray-utils-perl -y</pre>
+sudo apt install bioperl libdbd-sqlite3-perl libjson-perl perl-doc libarray-utils-perl -y</pre>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You should make sure to run all of the above commands before installing any software in this section.</p>
+</div>
 <div class="section" id="alan">
 <span id="id1"></span><h3>ALAN<a class="headerlink" href="#alan" title="Permalink to this headline">¶</a></h3>
 <p>Commandline alignment viewer, github <a class="reference external" href="https://github.com/mpdunne/alan">here</a>.</p>

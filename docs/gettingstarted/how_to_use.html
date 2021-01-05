@@ -188,6 +188,7 @@
 <p class="admonition-title">Data and software</p>
 <p>This box will tell you what data you will need to perform the steps detailed in this tutorial, and the software you will need installed.</p>
 </div>
+<p>The name of software or software packages will always be in <strong>bold</strong>.</p>
 </div>
 <div class="section" id="commands-and-code">
 <h3>Commands and code<a class="headerlink" href="#commands-and-code" title="Permalink to this headline">¶</a></h3>
@@ -197,24 +198,30 @@
 </div>
 <p>You would enter everything in this box. You would then press Enter (Return) to run the command. If this is very new to you, you might want to check out the <a class="reference internal" href="cli_bioinformatics/UNIX_cmd_line.html#unix-cli"><span class="std std-ref">UNIX command line introduction</span></a>, which has more information.</p>
 <p>We will frequently suggest commands that contain placeholder values that need to be edited before running. The following command has placeholder values:</p>
-<pre class="literal-block">head -n <span class="var">N</span> sequences.fasta &gt; <span class="var">output.txt</span></pre>
-<p>Before you run this command, you would replace <code class="docutils literal notranslate"><span class="pre">N</span></code> with a number and <code class="docutils literal notranslate"><span class="pre">output.txt</span></code> with the file path of a specific file. Don’t worry, we’ll try to make it really clear what file you should use and how to figure out what number to use. Placeholder file names will often be <code class="docutils literal notranslate"><span class="pre">input</span></code> or <code class="docutils literal notranslate"><span class="pre">output</span></code>, but sometimes we’ll use different names, generally where there is more than one input. Placeholders will always be formatted to make it clear what should be changed, and they should always be changed before running the command.</p>
-<p>As in the previous paragraph, we may often refer to code within text, such as this: <code class="docutils literal notranslate"><span class="pre">head</span></code>. Generally this is a reference to a command or part of a command, and we don’t necessarily expect you to run exactly the code written as is. For example, we might refer to a specific argument, such as <code class="docutils literal notranslate"><span class="pre">-n</span></code>, with this special code formatting to make clear we’re talking about part of a command. Sometimes, we might suggest you use a common Linux function, such as <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">more</span></code>, <code class="docutils literal notranslate"><span class="pre">grep</span></code>, etc, by referring to it like this rather than making a code box, suggesting that you figure out the necessary command yourself. See <a class="reference internal" href="cli_bioinformatics/basic_UNIX.html#basic-unix"><span class="std std-ref">here</span></a> for some more information about Linux commands.</p>
+<pre class="literal-block">head -n <span class="var">N</span> sequences.fasta &gt; <span class="var">output.fasta</span></pre>
+<p>The <code class="docutils literal notranslate"><span class="pre">N</span></code> and the <code class="docutils literal notranslate"><span class="pre">output.fasta</span></code> of this command are formatted differently to show that these are placeholders, and so before you run this command, you <strong>must</strong> replace <code class="docutils literal notranslate"><span class="pre">N</span></code> with a number and <code class="docutils literal notranslate"><span class="pre">output.fasta</span></code> with the file path of a specific file. So you might decide to show <code class="docutils literal notranslate"><span class="pre">10</span></code> lines and call your output <code class="docutils literal notranslate"><span class="pre">firstten.fasta</span></code>. So you would actually run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="n">sequences</span><span class="o">.</span><span class="n">fasta</span> <span class="o">&gt;</span> <span class="n">firstten</span><span class="o">.</span><span class="n">fasta</span>
+</pre></div>
+</div>
+<p>Don’t worry, we’ll try to make it really clear what file you should use and how to figure out what number to use. Placeholder file names will often be <code class="docutils literal notranslate"><span class="pre">input</span></code> or <code class="docutils literal notranslate"><span class="pre">output</span></code>, but sometimes we’ll use different names, generally where there is more than one input.</p>
+<p>As we just did, we may often refer to code within text, such as this: <code class="docutils literal notranslate"><span class="pre">head</span></code>. Generally this is a reference to a command or part of a command, and we don’t necessarily expect you to run exactly the code written as is. For example, we might refer to a specific argument, such as <code class="docutils literal notranslate"><span class="pre">-n</span></code>, with this special code formatting to make clear we’re talking about part of a command. Sometimes, we might suggest you use a common Linux function, such as <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">more</span></code>, <code class="docutils literal notranslate"><span class="pre">grep</span></code>, etc, by referring to it like this rather than making a code box, suggesting that you figure out the necessary command yourself. See <a class="reference internal" href="cli_bioinformatics/basic_UNIX.html#basic-unix"><span class="std std-ref">here</span></a> for some more information about Linux commands.</p>
 </div>
 <div class="section" id="exercises">
 <h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
 <p>As part of a tutorial, we will suggest you run a command, design a command yourself, or ask you questions about the data to help guide your learning. Suggestions of something you should do be formatted like this: <span class="guilabel">Run this command:</span>, or placed in an exercise box like the below.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
-<p>An exercise box might ask a question about the output of a command you’ve just run, perhaps suggesting you using a <a class="reference internal" href="cli_bioinformatics/basic_UNIX.html#basic-unix"><span class="std std-ref">basic Linux function</span></a> such as <code class="docutils literal notranslate"><span class="pre">head</span></code> to interrogate the output data somehow.</p>
-<p>Alternatively it might suggest you read a helpfile or manual to design a command, sometimes suggesting you use a certain argument such as <code class="docutils literal notranslate"><span class="pre">--a</span></code>.</p>
-<p>You might also find that an exercise box contains a complete command that we suggest you run, such as:</p>
+<ul class="simple">
+<li><p>An exercise box might ask a question about the output of a command you’ve just run, perhaps suggesting you using a <a class="reference internal" href="cli_bioinformatics/basic_UNIX.html#basic-unix"><span class="std std-ref">basic Linux function</span></a> such as <code class="docutils literal notranslate"><span class="pre">head</span></code> to interrogate the output data somehow.</p></li>
+<li><p>Alternatively it might suggest you read a helpfile or manual to design a command, sometimes suggesting you use a certain argument such as <code class="docutils literal notranslate"><span class="pre">--a</span></code>.</p></li>
+<li><p>You might also find that an exercise box contains a complete command that we suggest you run, such as:</p></li>
+</ul>
 <pre class="literal-block">sed -e &quot;/^&gt;/,s/-//g&quot; <span class="var">input.fasta</span> &gt; <span class="var">output.fasta</span></pre>
 </div>
 </div>
 <div class="section" id="solutions">
 <h3>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h3>
-<p>When we ask you to figure out how to design a command yourself, because we’re nice people we’ll give you the solution in a hidden box like the below:</p>
+<p>When we ask you to figure out how to design a command yourself, because we’re nice people we’ll usually give you the solution in a hidden box like the below:</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <pre class="literal-block">grep -c &quot;^&gt;&quot; <span class="var">input.fasta</span></pre>
@@ -222,8 +229,8 @@
 </div>
 <div class="section" id="next-steps">
 <h3>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h3>
-<p>Most tutorials will end with a “Next steps section” that summarises the data you’ve generated in that tutorial and gives you some options of some tutorials that cover topics building on this data.</p>
-<p>You will also see <span class="guilabel">Previous</span> and <span class="guilabel">Next</span> buttons at the end of each page. These work through the pages exactly in the order given in the navigation panel on the left, and while the <span class="guilabel">Next</span> page will often be our suggested next step, they don’t take account of other options. They will also send you to “Fundamentals” or “Extension” pages where these are present, but these are never required for moving on through the pipeline.</p>
+<p>Most tutorials will end with a “Next steps” paragraph that summarises the data you’ve generated in that tutorial and gives you some options of some tutorials that cover topics building on this data.</p>
+<p>You will also see <span class="guilabel">Previous</span> and <span class="guilabel">Next</span> buttons at the end of each page. These work through the pages exactly in the order given in the navigation panel on the left, and while the <span class="guilabel">Next</span> page will often be our suggested next step, they don’t take account of other options. They will also send you to “Fundamentals” or “Extension” pages where these are present, but these are never required for moving on through the course.</p>
 </div>
 </div>
 </div>

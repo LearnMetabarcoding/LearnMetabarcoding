@@ -17,7 +17,7 @@ These commands use the most recent software versions as of December 2020, where 
 Setup
 =====
 
-The following commands install some general purpose Linux tools and libraries. 
+The following commands install some general purpose Linux tools and libraries that are required for installing one or more software tools in detailed below.
 
 .. parsed-literal::
 	
@@ -29,7 +29,11 @@ The following commands install some general purpose Linux tools and libraries.
 	sudo apt install build-essential pkg-config autoconf python3-pip unzip groff libgsl-dev rename default-jre zip -y
 	
 	:comment:`# Install programming languages and language modules`
-	sudo apt install bioperl libdbd-sqlite3-perl libjson-perl perl-doc python3-biopython python-scipy libarray-utils-perl -y
+	sudo apt install bioperl libdbd-sqlite3-perl libjson-perl perl-doc libarray-utils-perl -y
+
+.. warning::
+	
+	You should make sure to run all of the above commands before installing any software in this section.
 
 
 .. _alan:
