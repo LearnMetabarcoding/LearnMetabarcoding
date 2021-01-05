@@ -17,19 +17,25 @@ These commands use the most recent software versions as of December 2020, where 
 Setup
 =====
 
-The following commands install some general purpose Linux tools and libraries that are required for installing one or more software tools in detailed below.
+The following commands install some general purpose Linux tools and some libraries that are required for installing one or more software tools detailed below.
 
 .. parsed-literal::
 	
 	:comment:`# Set up directories`
 	sudo mkdir /usr/local/deb/
 	
-	:comment:`# Install general tools`
+	:comment:`# Update installed packages`
 	sudo apt update && sudo apt upgrade -y
-	sudo apt install build-essential pkg-config autoconf python3-pip unzip groff libgsl-dev rename default-jre zip -y
 	
-	:comment:`# Install programming languages and language modules`
-	sudo apt install bioperl libdbd-sqlite3-perl libjson-perl perl-doc libarray-utils-perl -y
+	:comment:`# Install some useful tools`
+	sudo apt install rename zip unzip -y
+	
+	:comment:`# Install tools for building source packages`
+	sudo apt install build-essential pkg-config autoconf -y
+	
+	:comment:`# Install useful language packages`
+	sudo apt install python3-pip perl-doc default-jre -y
+
 
 .. warning::
 	
@@ -113,7 +119,7 @@ Bayesian OTU delimitation, github `here <https://github.com/tingchenlab/CROP>`_.
 
 .. parsed-literal::
 	
-	sudo apt install libgsl-dev :comment:`# (installed above)`
+	sudo apt install libgsl-dev
 	
 	cd /usr/local/src
 	sudo git clone \https://github.com/zhangjiajie/PTP
@@ -144,6 +150,8 @@ extract_genes
 Script for extracting individual gene sequences from GenBank files, github `here <https://github.com/tjcreedy/biotools>`_.
 
 .. parsed-literal::
+	
+	sudo apt install bioperl libarray-utils-perl
 	
 	sudo wget -O /usr/local/bin/ \https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
 	sudo chmod a+x /usr/local/bin/extract_genes.pl
@@ -253,7 +261,8 @@ Ensures paired read files are syncronised, github `here <https://github.com/sest
 
 .. parsed-literal::
 	
-	sudo apt install libdbd-sqlite3-perl  :comment:`# (installed above)`
+	sudo apt install libdbd-sqlite3-perl
+	
 	sudo curl -sL cpanmin.us | sudo perl - \git://github.com/sestaton/Pairfq.git
 
 
@@ -273,6 +282,24 @@ Paired end read merger, website `here <http://www.exelixis-lab.org/pear>`_. You 
 	sudo cp bin/pear /usr/local/bin/
 	sudo gzip man/pear.1
 	sudo cp man/pear.1.gz /usr/share/man/man1/
+
+
+.. _phylostuff:
+
+phylostuff
+----------
+
+A set of scripts for doing stuff with phylogenies, including relabelling and inferring taxonomy. Github `here <https://github.com/tjcreedy/phylostuff>`_. Requires :ref:`R<r>`.
+
+.. parsed-literal::
+	sudo apt install libxml2-dev libssl-dev libcurl4-openssl-dev
+	
+	cd /usr/local/src
+	sudo git clone \https://github.com/tjcreedy/phylostuff.git
+	cd phylostuff
+	sudo ./install.sh
+
+Or just open them in Rstudio and use them as a guide!
 
 
 .. _r:
@@ -321,7 +348,7 @@ Open-source implementation of USEARCH with more versatility. VSEARCH is a softwa
 
 .. parsed-literal::
 	
-	sudo apt install autoconf groff :comment:`# (installed above)`
+	sudo apt install autoconf groff
 	
 	cd /usr/local/src
 	
@@ -333,31 +360,4 @@ Open-source implementation of USEARCH with more versatility. VSEARCH is a softwa
 	sudo make
 	sudo make install
 	cd ../
-
-
-.. _phylostuff:
-
-phylostuff
-----------
-
-A set of scripts for doing stuff with phylogenies, including relabelling and inferring taxonomy. Github `here <https://github.com/tjcreedy/phylostuff>`_.
-Requires :ref:`R<r>`.
-
-.. parsed-literal::
-	
-	cd /usr/local/src
-	sudo rm -r phylostuff
-	sudo git clone \https://github.com/tjcreedy/phylostuff.git
-	cd phylostuff
-	sudo ./install.sh
-
-Installation not necessary: you could simply download the script you want to your working directory and run it using ``Rscript``, for example with **phylabel**:
-
-.. parsed-literal::
-	
-	wget \https://raw.githubusercontent.com/tjcreedy/phylostuff/master/phylabel.R
-	Rscript phylabel.R
-	
-
-Or just open them in Rstudio and use them as a guide!
 
