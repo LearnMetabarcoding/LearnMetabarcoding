@@ -21,7 +21,7 @@ The following commands install some general purpose Linux tools and libraries.
 
 .. parsed-literal::
 	
-	:comment:`# Setup directories`
+	:comment:`# Set up directories`
 	sudo mkdir /usr/local/deb/
 	
 	:comment:`# Install general tools`
@@ -31,7 +31,6 @@ The following commands install some general purpose Linux tools and libraries.
 	:comment:`# Install programming languages and language modules`
 	sudo apt install bioperl libdbd-sqlite3-perl libjson-perl perl-doc python3-biopython python-scipy libarray-utils-perl -y
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _alan:
 
@@ -45,7 +44,6 @@ Commandline alignment viewer. `Github. <https://github.com/mpdunne/alan>`_
 	sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/mpdunne/alan/master/alan
 	sudo chmod a+x /usr/local/bin/alan
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _blast:
 
@@ -62,7 +60,6 @@ Widely used sequence searching software. `Documentation. <https://www.ncbi.nlm.n
 	sudo tar -zxf ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz
 	sudo cp ncbi-blast-${BLAST_VERSION}+/bin/\* /usr/local/bin/
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _bPTP:
 
@@ -82,7 +79,6 @@ Bayesian phylogeny-based species delimitation. `Website. <https://github.com/zha
 	sudo ln -s /usr/local/src/PTP/bin/bPTP.py /usr/local/bin/bPTP
 	sudo ln -s /usr/local/src/PTP/bin/PTP.py /usr/local/bin/PTP
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _catfasta2phyml:
 
@@ -103,7 +99,6 @@ Installation not necessary: you could simply download it to your working directo
 	wget /usr/local/bin/ https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
 	perl catfasta2phyml.pl
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _crop:
 
@@ -124,7 +119,6 @@ Bayesian OTU delimitation. `Github. <https://github.com/tingchenlab/CROP>`_
 	sudo sed -i "1s/python$/python3/" bin/bPTP.py
 	sudo ln -s /usr/local/src/PTP/bin/bPTP.py /usr/local/bin/bPTP
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _cutadapt:
 
@@ -137,7 +131,6 @@ Versatile adapter sequence removal. `Documentation. <https://cutadapt.readthedoc
 	
 	sudo -H python3 -m pip install cutadapt
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _extract_genes:
 
@@ -158,7 +151,6 @@ Installation not necessary: you coul simply download it to your working director
 	wget https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
 	perl extract_genes.pl
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _fasttree:
 
@@ -174,7 +166,6 @@ Fast maximum likelihood phylogenetic inference. `Website. <http://www.microbeson
 	sudo wget http://www.microbesonline.org/fasttree/FastTreeMP
 	sudo chmod a+x FastTree\*
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _fastqc:
 
@@ -191,7 +182,6 @@ Raw sequence quality assessment. `Website. <https://www.bioinformatics.babraham.
 	sudo chmod a+x FastQC/fastqc
 	sudo ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _fastx_toolkit:
 
@@ -223,7 +213,6 @@ Various handy tools for dealing with FASTA and FASTQ files. A little out of date
 	sudo make install
 	cd ../
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _mafft:
 
@@ -237,7 +226,6 @@ Sequence alignment. `Website. <https://mafft.cbrc.jp/alignment/software/>`_
 	sudo wget -P /usr/local/deb/ https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb
 	sudo apt install /usr/local/deb/mafft_7.475-1_amd64.deb
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _metamate_install:
 
@@ -253,7 +241,6 @@ Requires :ref:`BLAST<blast>`, :ref:`MAFFT<mafft>` and :ref:`R<r>`
 	sudo -H python3 -m pip install metaMATE
 	sudo Rscript -e "install.packages(c('getopt', 'ape', 'fastcluster'), repos = 'https://cloud.r-project.org')"
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _pairfq:
 
@@ -267,7 +254,6 @@ Ensures paired read files are syncronised. `Github. <https://github.com/sestaton
 	sudo apt install libdbd-sqlite3-perl  :comment:`# (installed above)`
 	sudo curl -sL cpanmin.us | sudo perl - git://github.com/sestaton/Pairfq.git
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _pear:
 
@@ -287,7 +273,6 @@ You must sign up for a PEAR academic licence and you will receive an email with 
 	sudo gzip man/pear.1
 	sudo cp man/pear.1.gz /usr/share/man/man1/
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _r:
 
@@ -303,7 +288,6 @@ Versatile data handling language. `Website. <https://cran.r-project.org>`_
 	sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
 	sudo apt install r-base
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _swarm:
 
@@ -326,7 +310,6 @@ Linkage-based OTU delimitation. `Github. <https://github.com/torognes/swarm>`_
 	gzip -c /usr/local/src/man/swarm.1 > swarm.1.gz
 	sudo mv swarm.1.gz /usr/share/man/man1/
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _vsearch:
 
@@ -350,7 +333,6 @@ Open-source implementation of USEARCH with more versatility. VSEARCH is a softwa
 	sudo make install
 	cd ../
 
-..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 .. _phylostuff:
 
