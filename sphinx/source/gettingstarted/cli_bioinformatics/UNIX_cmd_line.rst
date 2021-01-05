@@ -6,9 +6,8 @@
 UNIX command line
 ======================================
 
---------------------------------
 The command prompt
---------------------------------
+==================
 
 Whether you are using SSH to access a remote linux server, using Terminal on a Mac or Windows Linux subsystem, you will be presented with a window of text awaiting your command. Depending on the computer and how it is configured, this exact nature of the promt will vary, but most commonly it will say your username, machine name and/or current directory, followed by a ``$`` sign, like this:
 
@@ -16,7 +15,7 @@ Whether you are using SSH to access a remote linux server, using Terminal on a M
 
 	user@server:~/file/path$
 
-When you see this ``$`` sign, this means the shell is expecting a new command. Whenever we suggest a command to enter, it assumes that your prompt is showing the ``$``. If your command prompt is ever a different symbol, such as ``>``, this probably means that the shell is waiting for you to finish a command you've previously entered. This functionality allows you to write commands over multiple lines if they're very long. However, it's easy to accidentally enter this mode if you fail to close a parenthesis (``()``) or quotation marks ``"`` in a command, then try to run it.
+When you see this ``$`` sign, this means the shell is expecting a new command. Whenever we suggest a command to enter, it assumes that your prompt is showing the ``$``. If your command prompt is ever a different symbol, such as ``>``, this probably means that the shell is waiting for you to finish a command you've previously entered. This functionality allows you to write commands over multiple lines if they're very long. However, it's easy to accidentally enter this mode if you fail to close a parenthesis ``()`` or quotation marks ``"`` in a command, then try to run it.
 
 Try running the following:
 
@@ -24,7 +23,7 @@ Try running the following:
 
 	echo "hello
 
-You should be met with a ``>`` symbol. Finish the command by typing ``world"`` and pressing Enter.
+You should be met with a ``>`` symbol. Finish the command by typing ``world"`` and pressing Enter (Return). You should see a line saying ``hello world`` and then a new prompt, ending with ``$``.
 
 Sometimes in these resources we will ask you to run a command that is quite long, and to help you read it easily we will present the command broken over multiple lines. It will look like this:
 
@@ -37,9 +36,9 @@ To enter this in the command prompt, we type the first line and then press Enter
 
 You don't need to enter the ``\`` symbol to start a new line if you use a character that unambiguously tells Linux that you're not finished. For example, if you open a parethesis or a quotation mark, as we saw above. Alternatively, if you're running multiple commands one after the other you can separate them using ``;`` or by using pipes (see below). If you end a line with ``;`` or ``|`` then press Enter (Return), Linux will assume you have more to add and so will start a new line with the ``>`` prompt, rather than immediately running your command.
 
-If you ever get to a situation where you have accidentally forgotten to close a parethesis or quotation, or you've used ``;`` or ``|`` at the end of a line accidentally, and the prompt has changed to ``>`` when you don't mean it to, you can cancel your current command by pressing :guilabel:`Ctrl + C` (or :guilabel:`Cmd + C` on Mac). You can then press the up arrow key to get to your previous command to edit it.
+If you ever get to a situation where you have accidentally forgotten to close a parethesis or quotation, or you've used ``;`` or ``|`` at the end of a line accidentally, and the prompt has changed to ``>`` when you don't mean it to, you can cancel your current command by pressing :menuselection:`Ctrl + C` (or :menuselection:`Cmd + C` on Mac). You can then press the up arrow key to get to your previous command to edit it.
 
-Finally, the shell will ignore anything on a line after the first ``#`` symbol it encounters. This is to allow for comments, and these resources will sometimes use this to comment lines of code. For example, you could type everything after the ``$`` symbol of the following command into the terminal and run it:
+Finally, the shell will ignore anything on a line after the first ``#`` symbol it encounters. This is to allow for comments, and these resources will sometimes use this to comment lines of code. For example, you could type everything in the following command into the terminal and run it:
 
 .. parsed-literal::
 
@@ -47,11 +46,13 @@ Finally, the shell will ignore anything on a line after the first ``#`` symbol i
 
 The output would be identical to the first command on this page.
 
-.. note:: We suggest that the best way to learn is to type out the commands as they are shown in these resources. This might cause you more errors, but it gives you a chance to learn from them. If you copy and paste, you should do so line by line for multiline commands, in order to ensure that you avoid formatting errors. 
+.. admonition:: Note
+	:class: green
+	
+	We suggest that the best way to learn is to type out the commands as they are shown in these resources, rather than copy-pasting, but it's up to you. You should always remember to replace placeholders in any commands we give.
 
---------------------------------
 Working directories and paths
---------------------------------
+=============================
 
 When you use a graphical file explorer, like Explorer on Windows or Finder on Mac, you are always in a directory (folder), and can move between directories. It's exactly the same on the command line, at any point in time you are always within some directory or another. The directory you're currently in is known as the *working directory*, and just like with a graphical explorer you can easily move to a different *working directory* using the change directory ``cd`` command. 
 
@@ -59,9 +60,8 @@ Unless you say otherwise, any command you run will look for any files you specif
 
 You can see examples of these commands on the :ref:`basic UNIX commands<basic_UNIX>` page.
 
---------------------------------
 Input/output and pipes
---------------------------------
+======================
 
 Many linux commands have three standard methods for input and output, called standard input (or STDIN), standard output (STDOUT) and standard error (STDERR). This standardised communication framework allows us to chain commands together, called piping.
 
@@ -118,8 +118,9 @@ If presented with a new function that you have no idea how to use, don't panic! 
 
 .. parsed-literal::
 
-	man ​fastqc​      :comment:`# Returns a scrollable manual if it exists`
-	fastqc​ -h       :comment:`# Outputs a text summary of the function's options`
-	​fastqc​ --help   :comment:`# Same as above`
+	man ​echo      :comment:`# Returns a scrollable manual if it exists`
+	echo --help   :comment:`# Outputs a text summary of the function's options`
+
+Many programs also let you use ``-h`` instead of ``--help``. 
 
 If these don't help you figure out how to use the tool (which is understandable, sometimes they're very brief!), try searching google. There are lots of people out there who've probably tried to figure out the tool before. The trick is including the right search terms. Be specific, but not too specific, and include important context. For example, I might search "linux command line how to use echo", or "bash print text to terminal echo", or "terminal write string ubuntu".
