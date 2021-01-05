@@ -9,7 +9,7 @@
 Introduction
 ============
 
-Filtering by length will remove sequences that have one or more PCR/sequencer-caused insertions or one or more deletions, however in some cases these errors may cancel one another out; or alternatively, PCR or sequencing may induce the equivalent of point mutations, where a single base is misread. Similarly, noncoding gene variants such as numts or pseudogenes may actually have point mutations in comparison to the 'true' region.
+Filtering by length will remove sequences that have one or more PCR/sequencer-caused insertions or one or more deletions, however in some cases these errors may cancel one another out; or alternatively, PCR or sequencing may induce the equivalent of point mutations, where a single base is misread. Similarly, noncoding gene variants such as NUMTs or pseudogenes may actually have point mutations in comparison to the 'true' region.
 
 We can identify some point errors because they will alter the translation of the genetic code in such a way that it becomes meaningless - if the barcode region is a coding region, of course. The obvious error is the introduction of stop codons into the translation. By translating all of our sequences and checking for stop codons, we can easily reject these errors or variants. 
 
@@ -56,12 +56,11 @@ Check the helpfile for this script by running:
 
 Other 'point errors' that do not cause stops are harder to spot. Some will not affect coding at all, which is impossible to distinguish from natural variation. The majority will affect coding, but again distinguishing these from natural variation is very hard. One possibility is to look at the structure of the translated protein and see if it's realistic, but there aren't currently any tools that can do this...
 
-Alternatives
-============
-
-The tool **filtertranslate** is part of the :ref:`metaMATE <metaMATE_install>` software, which we wrote. In general, in these resources we aim to use the most popular tools, not just what we think is best, and avoid evangelising our own solutions. However, we haven't yet found another piece of software that so simply performs translation filtering, so here we use one of our own tools. You can find more about the main functionality of **metaMATE** :ref:`in a later extension tutorial<metamate>`.
-
-Most commonly, we see other metabarcoders either performing this step manually, by translating the sequences in some GUI sequence viewer like Geneious and manually checking for stops, or by using `MACSE <https://bioweb.supagro.inra.fr/macse/>`_. MACSE is a very neat piece of software that performs alignment of nucleotide sequences against references using the translation, and is very good at finding frameshift errors. However it is a little complex to use and most seriously is not very efficient, scaling very poorly for larger amplicon datasets.
+.. sidebar:: Alternatives
+	
+	The tool **filtertranslate** is part of the :ref:`metaMATE <metaMATE_install>` software, which we wrote. In general, in these resources we aim to use the most popular tools, not just what we think is best, and avoid evangelising our own solutions. However, we haven't yet found another piece of software that so simply performs translation filtering, so here we use one of our own tools. You can find more about the main functionality of **metaMATE** :ref:`in a later extension tutorial<metamate>`.
+	
+	Most commonly, we see other metabarcoders either performing this step manually, by translating the sequences in some GUI sequence viewer like Geneious and manually checking for stops, or by using `MACSE <https://bioweb.supagro.inra.fr/macse/>`_. MACSE is a very neat piece of software that performs alignment of nucleotide sequences against references using the translation, and is very good at finding frameshift errors. However it's somewhat complicated to implement and most seriously is not very efficient, scaling very poorly for larger amplicon datasets.
 
 Next steps
 ==========

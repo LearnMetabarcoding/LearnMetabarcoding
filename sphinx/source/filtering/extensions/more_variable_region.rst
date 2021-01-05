@@ -32,7 +32,7 @@ As it happens, it doesn’t seem that there are any programs out there that do t
 		vsearch --fastx_filter :var:`input.fasta` --fastq_minlen 421 --fastq_maxlen 421 --fastaout output421.fasta
 		cat output415.fasta output418.fasta output421.fasta > :var:`output.fasta`
 	
-	Of course, we could alos do this in a loop:
+	Of course, we could also do this in a loop:
 	
 	.. parsed-literal::
 		

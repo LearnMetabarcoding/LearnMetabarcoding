@@ -21,7 +21,7 @@ Read processing is our name for the low-level steps required to process raw sequ
 .. admonition:: Data
 	:class: green
 	
-	You can download a zip archive of the data for all of the tutorials in this section :ref:`here <sectionAdata>`. Unzip this to a convenient location.
+	The starting point for this section is set of FASTQ files comprising raw sequence reads. If you want to use our example data, you can download a zip archive of the data for all of the tutorials in this section :ref:`here <sectionAdata>`. Unzip this to a convenient location.
 
 Next steps
 ==========

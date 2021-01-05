@@ -16,7 +16,7 @@ At this point we have a set of sequence reads for each sample with extraneous se
 	
 	The input data for this section is a directory of FASTQ (or FASTA) format files, one per sample, with primer and index sequences removed and mate pairs merged or concatenated. If you're following along step-by-step, this was produced in :ref:`the previous tutorial<pair_merging>`. Alternatively, the ``3_merged`` directory within the :ref:`sectionA archive<sectionAdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`cutadapt software. <cutadapt>`
+	This tutorial uses the :ref:`cutadapt <cutadapt>` software.
 	
 
 .. admonition:: Note
@@ -38,7 +38,7 @@ If you're following along step-by-step, we'll be working on a set of FASTQ files
 
 To run the following command, your working directory should be the directory containing the sequences you want to concatenate, namely the directory of FASTQ files that have indices and primers removed, and pairs merged.
 
-:guilabel:`Run the following command, making sure to replace ``output.fastq`` with a sensible name`
+Run the following command, making sure to replace ``output.fastq`` with a sensible name:
 
 .. parsed-literal::
 

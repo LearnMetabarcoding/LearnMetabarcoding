@@ -14,7 +14,7 @@
 Introduction
 ============
 
-In metabarcoding, we amplify a known regoin of the genome and thus we have an expectation about the length of the resulting amplicons. Insertions or deletions (indels) are changes to the DNA sequence that will affect the number of bases between two known points in the genome. While this term is commonly used to refer to real genetic mutations, we use it here to refer to insertions or deletions caused by PCR or sequencing errors. It is important to note that we cannot necessarily distinguish between true indel mutations and erroneous mutations. However, as we are operating on a protein coding sequence, we can assume that the vast majority of true indels are likely to be deleterious and therefore we would not observe these in our dataset drawn from living organisms. We can then draw conclusions about the validity of ASVs based on their length relative to the expected amplicon length. 
+In metabarcoding, we amplify a known region of the genome and thus we have an expectation about the length of the resulting amplicons. Insertions or deletions (indels) are changes to the DNA sequence that will affect the number of bases between two known points in the genome. While this term is commonly used to refer to real genetic mutations, we use it here to refer to insertions or deletions caused by PCR or sequencing errors. It is important to note that we cannot necessarily distinguish between true indel mutations and erroneous mutations. However, as in our example data we are operating on a protein coding sequence, we can assume that the vast majority of true indels are likely to be deleterious and therefore we would not observe these in our dataset drawn from living organisms. We can then draw conclusions about the validity of ASVs based on their length relative to the expected amplicon length. 
 
 So, put simply, insertions or deletions are easy to spot because they will change the length of the sequence from what is expected based on the primers. While filtering based on length primarily removes indels, it can also be used to remove other reads that are clearly erroneous for other reasons.
 
@@ -44,13 +44,13 @@ Oh dear, what’s happened to our reads? Check the first 10 lines of the fasta:
 
 	head -n 10 ​file
 
-**VSEARCH**, although it’s great in many respects, outputs files in wrapped format, which means it starts a new line after 80 sequence characters. While this is nicer to look at, this is a pain for using quick-and-easy tools to summarise data on the Linux command line. :guilabel:`So we must run a quick command first to unwrap this data`:
+**VSEARCH**, although it’s great in many respects, outputs files in wrapped format, which means it starts a new line after 80 sequence characters. While this is nicer to look at, this is a pain for using quick-and-easy tools to summarise data on the Linux command line. So we must run a quick command first to unwrap this data:
 
 .. parsed-literal::
 
 	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' :var:`input.fasta` > :var:`output.fasta`
 
-Use the output from this in the ``sed`` command above to check the *real* length distribution of our reads.
+:guilabel:`Use the output from this in the ``sed`` command above to check the *real* length distribution of our reads.`
 
 Length filtering
 ================

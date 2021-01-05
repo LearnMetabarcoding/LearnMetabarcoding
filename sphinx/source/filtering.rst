@@ -40,12 +40,12 @@ Erroneous sequences may arise through many processes, but these can generally be
 PCR errors
 ----------
 
-It is likely that the numerical majority of errors arise during PCR, either through errors in transcription or by the formation of chimeric fragments. The latter term is used to describe cases where DNA from different source organisms incorrectly binds together to form a DNA molecule that no longer accurately reflects the genome of any real organism. PCR errors are so frequent because of the high chance of stochastic errors in the biochemical reactions and because the exponential amplification of sequences can cause errors to propogate into many individual fragments
+It is likely that the numerical majority of errors arise during PCR, either through errors in transcription or by the formation of chimeric fragments. The latter term is used to describe cases where DNA from different source organisms incorrectly binds together to form a DNA molecule that no longer accurately reflects the genome of any real organism. PCR errors are so frequent because of the high chance of stochastic errors in the biochemical reactions and because the exponential amplification of sequences can cause errors to propogate into many individual fragments.
 
 Sequencing errors
 -----------------
 
-Sequencing errors occur when the sequencer incorrectly reads a base position.
+Next generation sequencers are great at getting lots of data, but they are nowhere near perfect at accurately reading sequences, as you probably know. Sequencing errors occur when the sequencer incorrectly reads a base position, misses a base or reads a base that doesn't exist. This could be a single isolated error in a sequence, happen repeatedly throughout a sequence or tend to happen more in some areas of a sequence than another. For example, Illumina sequencers tend to be less accurate towards the end of reads. Usefully, there are methods sequencers can use to assess how certain they are about a base call (i.e. deciding whether a single base is ``A``, ``T``, ``C`` or ``G``, and these probabilities can be used for filtering. However, missing bases or incorrectly adding bases (which tends to happen when there are regions of a single repeated base) is harder to know about.
 
 Bioinformatic errors
 --------------------
@@ -62,21 +62,22 @@ Removing errors
 
 There are many ways that we can try to remove these errors, with different levels of certainty about the approach. This section will cover several methods: these are illustrated in the table below, alongside indications of what types of errors these methods target.
 
-+-----------------------+------------+-------------------+----------------------+----------------------+
-| Approach              | PCR errors | Sequencing errors | Bioinformatic errors | Non-target sequences |
-+=======================+============+===================+======================+======================+
-| Quality Filtering     |            | **✓**             |                      |                      |
-+-----------------------+------------+-------------------+----------------------+----------------------+
-| Indel Filtering       |  **✓**     |  **✓**            |  **✓**               |  **✓**               |
-+-----------------------+------------+-------------------+----------------------+----------------------+
-| Frequency Filtering   |  **✓**     |  **✓**            |  **✓**               |  **✓**               |
-+-----------------------+------------+-------------------+----------------------+----------------------+
-| Denoising             |  **✓**     |  **✓**            |  **✓**               |                      |
-+-----------------------+------------+-------------------+----------------------+----------------------+
-| Point Error Filtering | **✓**      |  **✓**            |  **✓**               |  **✓**               |
-+-----------------------+------------+-------------------+----------------------+----------------------+
-| Chimera Filtering     | **✓**      |                   |  **✓**               |                      |
-+-----------------------+------------+-------------------+----------------------+----------------------+
++-----------------------+-------+-----------+---------------+----------------------+
+|                       | Errors                                                | 
+| Approach              | PCR   | Sequencing | Bioinformatic | Non-target sequences |
++=======================+=======+============+===============+======================+
+| Quality filtering     |       | **✓**      |               |                      |
++-----------------------+-------+------------+---------------+----------------------+
+| Indel filtering       | **✓** | **✓**      | **✓**         |  **✓**               |
++-----------------------+-------+------------+---------------+----------------------+
+| Frequency filtering   | **✓** | **✓**      | **✓**         |  **✓**               |
++-----------------------+-------+------------+---------------+----------------------+
+| Denoising             | **✓** | **✓**      | **✓**         |                      |
++-----------------------+-------+------------+---------------+----------------------+
+| Point error filtering | **✓** | **✓**      | **✓**         |  **✓**               |
++-----------------------+-------+------------+---------------+----------------------+
+| Chimera filtering     | **✓** |            | **✓**         |                      |
++-----------------------+-------+------------+---------------+----------------------+
 
 Next Steps
 ==========

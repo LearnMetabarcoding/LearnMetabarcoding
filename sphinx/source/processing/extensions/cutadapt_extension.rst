@@ -8,7 +8,9 @@ Extension: Cutadapt parameters
 
 **Cutadapt** has a lot more parameters for searching. Here are some of them that you might use to optimise returning as many reads as possible while still removing any errors.
 
-This extension follows on from the tutorial on :ref:`demultiplexing <demultiplexing>` using the same data and software.
+.. admonition:: Data and software
+	
+	This extension follows on from the tutorial on :ref:`demultiplexing <demultiplexing>` using the same data and software.
 
 Error tolerance
 ===============
@@ -25,7 +27,7 @@ Error tolerance
 Variable index location
 =======================
 
-In the main section, we used the ``^`` symbol to denote that our index sequences must be exactly at the start of a read. However, sequencing errors may mean that this might not be the case. There may be extraneous bases before the index sequence, or some of the bases may be missing. Of course, if too many bases are missing it will no longer be identifiable, but as we discussed above, 5 out of 6 correct bases would still allow us to identify the correct index. Consider the following hypothetical reads:
+In the main section, we used the ``^`` symbol to denote that our index sequences must be exactly at the start of a read. However, sequencing errors may mean that this might not be the case. There may be extraneous bases before the index sequence, or some of the bases may be missing. Of course, if too many bases are missing it will no longer be identifiable, but as we discussed above, 5 out of 6 correct bases would still allow us to identify the correct index. Consider the following hypothetical reads (don't run this):
 
 .. parsed-literal::
 	
@@ -40,7 +42,7 @@ To cope with the truncated index (example 2 above), we can set the minimum overl
 
 But wait, we've removed index anchoring, so now it'll *also* find any sequence motifs within the read that match the index - that's not good! Never fear. We can add a special character, ``X`` to the beginning of our indices to make them "noninternal". Within cutadapt, the ``X`` base is the opposite of ``N``: where ``N`` is anything, ``X`` is nothing - ``X`` should never match a base, and therefore the index cannot match anything within the read. 
 
-To visualise this, we can consider a search using the index ``g=XNAACACC`` with ``-O 5``:
+To visualise this, we can consider a search using the index ``g=XNAACACC`` with ``-O 5`` (don't run this):
 
 .. parsed-literal::
 	
@@ -78,3 +80,8 @@ Tradeoffs
 =========
 
 Changing the error rate, minimum overlap and/or using noninternal indices (rather than anchored indices) generally increases the number of reads we get, but these may allow more errors to creep in. As always with bioinformatics, it's a trade-off between having highly accurate data or having as much data as possible. There is no right answer, you should consider what variation you consider to be reasonable within valid data, and which is more important: highly accurate data with possible missing information, or complete data with some inaccuracies.
+
+Next Steps
+==========
+
+If you're following step-by-step with the example data, we suggest you delete or archive the files you created here as this was just to explore a bit, and use the outputs from the main :ref:`demultiplexing <demultiplexing>` tutorial. But if you really want, you could run **cutadapt** using these modified parameters on all of the raw sequence files and continue with those outputs.

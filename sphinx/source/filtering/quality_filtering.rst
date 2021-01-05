@@ -84,13 +84,7 @@ Choosing quality filtering thresholds
 
 Which quality filtering parameter to pick? Well, it depends partly on the nature of the data, partly on the aim of your filtering, and partly on what feels right to you.
 
-.. admonition:: Our opinion
-	:class: green
-	
-	In our opinion, filtering based on the number of expected errors makes sense: there is a logical basis for the selection of the threshold, the removal of reads based on their overall likelihood of error, not some relatively arbitrary threshold of minimum quality score. While obviously this value increases with the length of the read, so could be argued isn't a comparable value between different fragment lengths, my argument would be that it’s a reflection of the reality of sequencing, and that no matter how long my fragment is, we don’t want any errors. So we generally filter using ``​--fastq_maxee 1`` . If we suspect from later examination that we still have a lot of sequencing errors, we’ll reduce this to ``--fastq_maxee 0.5``. If in the very rare case we're simply not getting enough sequences returned, we might loosen this to ``-​-fastq_maxee 1.5`` or even ``2``,​ but generally this data isn't really trustworthy.
-
-Next steps
-==========
+In our opinion, filtering based on the number of expected errors makes sense: there is a logical basis for the selection of the threshold, the removal of reads based on their overall likelihood of error, not some relatively arbitrary threshold of minimum quality score. While obviously this value increases with the length of the read, so could be argued isn't a comparable value between different fragment lengths, my argument would be that it’s a reflection of the reality of sequencing, and that no matter how long my fragment is, we don’t want any errors. So we generally filter using ``​--fastq_maxee 1`` . If we suspect from later examination that we still have a lot of sequencing errors, we’ll reduce this to ``--fastq_maxee 0.5``. If in the very rare case we're simply not getting enough sequences returned, we might loosen this to ``-​-fastq_maxee 1.5`` or even ``2``,​ but generally this data isn't really trustworthy.
 
 .. admonition:: Exercise
 	
@@ -103,14 +97,17 @@ Next steps
 		
 		fastq_to_fasta -i :var:`input.fastq` -o :var:`output.fasta`
 
+Next steps
+==========
+
 We now have a FASTA file of all of our reads. This is an important file to retain, so make sure you keep a note of it. These reads will later be mapped to our final biological sequences to assess their occurence. Now that we have removed the quality data, we can now undertake dereplication in the next section: :ref:`2. Dereplication<dereplication>`.
 
-
 .. admonition:: Note
+	:class: green
 	
-	Here we present quality filtering after :ref:`concatenation<data_concat>` because it allows us to separate two distinct themes: the processing of raw sequence reads into samples, in section A, and the filtering of processed sequence reads to remove errors, in the section B. 
+	Here we present quality filtering after :ref:`concatenation<data_concat>` because it allows us to separate two distinct themes: the processing of raw sequence reads into samples, in section A, and the filtering of processed sequence reads to remove errors, in section B. 
 	
-	However, when performing metabarcoding bioinformatics it may be more efficient to perform this quality filtering earlier, as it substantially reduces the data size. If you wanted to do this, you'd need to run quality filtering in a loop on all of your individual sample files. For example, if you wanted to quality filter your :ref:`primer-trimmed<primer_removal>` using vsearch, you'd run the following, replacing ``input`` with the name of the directory containing the files you want to quality filter, and ``output`` with the sensible name of a directory to place the filtered files in.
+	However, when performing metabarcoding bioinformatics it may be more efficient to perform this quality filtering earlier, as it substantially reduces the data size. If you wanted to do this, you'd need to run quality filtering in a loop on all of your individual sample files. For example, if you wanted to quality filter your :ref:`primer-trimmed<primer_removal>` using **VSEARCH**, you'd run the following, replacing ``input`` with the name of the directory containing the files you want to quality filter, and ``output`` with the sensible name of a directory to place the filtered files in.
 	
 	.. parsed-literal::
 		

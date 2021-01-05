@@ -21,6 +21,7 @@ In the spirit of openness, we should be clear that **metaMATE** was developed by
 	:class: green
 	
 	The **metaMATE** software requires quite a bit of input data:
+	
 	1. A FASTA or FASTQ of all reads in the dataset
 	2. A FASTA of denoised unique sequences (ASVs)
 	3. A FASTA of reference sequences
@@ -55,7 +56,7 @@ We can specify these by typing the following into a text document:
 	+
 	[library|clade; p; 0.001,0.0025,0.005-0.065/13,0.075,0.09,0.1-0.4/7,0.5-0.9/5]
 
-The first command tells **metaMATE** to filter ASVs by total frequency with :math:`5 + 8 + 10 + 5 = 28` different thresholds: 5 values from 1-5, 8 values from 6-20, 10 values from 25-50 and 5 values from 60-100. This is just a shorthand way of typing ``1,2,3,4,5,6,8,10,12,14,16,18,20,25,30,35,40,45,50,60,70,80,90,100``!. The ``n`` denotes actual values of frequency, whereas on later lines the ``p`` denotes proportional values, relative to the total number of reads in the given category. So for the second command, we have 18 thresholds, the first being "reject an ASV if it is less than 0.025% of all reads of all ASVS in every sample in which that ASV occurs", with each iteration increasing that percentage up to 1%. Finally, the last command does something similar, but instead of comparing against the total number of reads in a sample, looks at the total number of reads from ASVs in the same clade as the ASV in question. 
+The first command tells **metaMATE** to filter ASVs by total frequency with 5 + 8 + 10 + 5 = 28 different thresholds: 5 values from 1-5, 8 values from 6-20, 10 values from 25-50 and 5 values from 60-100. This is just a shorthand way of typing ``1,2,3,4,5,6,8,10,12,14,16,18,20,25,30,35,40,45,50,60,70,80,90,100``! The ``n`` denotes actual values of frequency, whereas on later lines the ``p`` denotes proportional values, relative to the total number of reads in the given category. So for the second command, we have 18 thresholds, the first being "reject an ASV if it is less than 0.025% of all reads of all ASVS in every sample in which that ASV occurs", with each iteration increasing that percentage up to 1%. Finally, the last command does something similar, but instead of comparing against the total number of reads in a sample, looks at the total number of reads from ASVs in the same clade as the ASV in question. 
 
 This is complicated at first, but is quite straightforward once you get your head around it. Create a text document in your **metaMATE** directory with the above 5 lines - don't forget the ``+`` symbol!
 
@@ -66,7 +67,7 @@ Finding metaMATE results
 
 We run **metaMATE** specifying the path to these four files, as well as a few other settings.
 
-Run the following code, obviously swapping the names of the files for whatever your file names are.
+Run the following code, obviously swapping the names of the files for whatever your file names are. ``metamateout`` should be the name of a directory into which you want to place the results - **metaMATE** will create this if it doesn't exist.
 
 .. parsed-literal::
 	
@@ -96,10 +97,10 @@ There aren't always clear answers to these questions, it must come down to whate
 
 Select a threshold that you think is the best compromise between retaining authentic ASVs and rejecting nonauthentic ASVs. The first column is called "resultindex", and contains a unique value for each threshold. :guilabel:`Find the resultindex for your selected threshold.`
 
-Implementing Thresholds
+Implementing thresholds
 =======================
 
-We can now use metaMATE again to output the ASVs for the selected threshold. This is much more simple than before. We need two input files: the same set of denoised ASVs as we used for the ``metaMATE** find`` command, and the file ending ``_resultcache`` in the output directory. 
+We can now use metaMATE again to output the ASVs for the selected threshold. This is much more simple than before. We need two input files: the same set of denoised ASVs as we used for the ``metaMATE find`` command, and the file ending ``_resultcache`` in the output directory. 
 
 Run the following command, replacing the file names with the names of your files, and ``N`` with the resultindex of your selected threshold.
 

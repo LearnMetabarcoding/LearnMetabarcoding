@@ -16,7 +16,7 @@ What happens if our fragment length is so much longer than our read length that 
 
 	This extension follows on from the tutorial on :ref:`pair merging <pair_merging>` using the same starting data and software.
 	
-	We will also use :ref:`cutadapt <cutadapt>` and :ref:`pairfq <pairfq>`.
+	We will also use the :ref:`cutadapt <cutadapt>` and :ref:`pairfq <pairfq>` software.
 
 
 Simulation

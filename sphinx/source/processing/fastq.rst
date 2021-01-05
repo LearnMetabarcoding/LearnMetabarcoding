@@ -1,5 +1,7 @@
 .. _fastq:
 
+.. role:: comment
+
 =========================
 Fundamentals: FASTQ files
 =========================
@@ -12,45 +14,43 @@ This page reviews a few basic points about sequence file structure and how to ex
 .. admonition:: Data and software
 	:class: green
 
-	This tutorial works on raw FASTQ-format sequence data that contains indices at the beginning of the reads. The example data for this can be found in the ``0_rawsequences`` directory within the :ref:`sectionA archive<sectionAdata>`. If you haven't already, you should copy this directory over to your working directory as follows:
+	This tutorial works with FASTQ format sequence data that contains indices at the beginning of the reads. The example data for this can be found in the ``0_rawsequences`` directory within the :ref:`sectionA archive<sectionAdata>`. If you haven't already, you should copy this directory over to your working directory as follows:
 	
 	.. parsed-literal::
 	
 		cp -r :var:`path/to/exampledata/sectionA/0_rawsequences/ ./`
-	
-	No specific software is required; this tutorial will use only standard Linux functions
 
 Exploring FASTQ files
 =====================
 
-Change into the directory containing the starting data and list its contents, showing sizes:
+Run the following to change into the directory containing the starting data and list its contents, showing sizes.
 
 .. parsed-literal::
 
 	cd 0_rawsequences/
 	ls -lh
 
-We can see how many lines in each file using the word count function, specifying we want the number of lines:
+We can see how many lines in each file using the word count ``wc`` function, specifying we want the number of lines:
 
 .. parsed-literal::
 
 	wc -l \*.fastq
 
-The :code:`*.fastq` here means we want all of the files ending in ``.fastq`` in the directory. We could replace this with a single file name if we just wanted to count the lines of a single file.
+The :code:`*.fastq` here means we want all of the files ending in ``.fastq`` in the directory. We could replace this with a single file name if we just wanted to count the lines of a single file. Replace ``file`` in the following command with the name of a single FASTQ file.
 
 .. parsed-literal::
 
-	head -n 10 ​file
+	head -n 10 :var:`​file`
 
 You will see the FASTQ format comprising header, sequence and quality scores. A useful point to note is the structure of the file header, specifically that it starts with ``@D00``. If the structure of this file is completely new to you, take a few minutes to read the first section on the `FASTQ wikipedia page <https://en.wikipedia.org/wiki/FASTQ_format>`_.
 
-To get specific lines from a file, use the sed function:
+To get specific lines from a file, use the ``sed`` function:
 
 .. parsed-literal:: 
 
-	sed -n '4,8p' ​file     # prints lines 4-8
+	sed -n '4,8p' :var:`​file`     :comment:`# prints lines 4-8`
 
-Use this to have a look at some files.
+:guilabel:`Use this to have a look at some different files`
 
 Note that the R1 and R2 files from the same library have the same read headers, apart from a 1 or 2 in the second part of the name. Reads with the same header were read from the same location on the sequencer, so they are assumed to be the forward and reverse read of the same fragment - these are called **​mate pairs**. It’s important to ensure that both the forward and reverse read for each fragment are always kept present and in the same relative location in the paired files ("in sync") for some future processes.
 
@@ -58,11 +58,11 @@ We can use the ``grep -c`` function to count the number of sequences in a file (
 
 .. parsed-literal::
 
-	grep -c "^@D00" ​file
+	grep -c "^@D00" ​:var:`file`
 
-If you want to learn more about grep, see :ref:`here<grep>`.
+If you want to learn more about ``grep``, see :ref:`here<grep>`.
 
-Like the ​wc -l function above, we can run grep on all of our files at once to get the total read numbers for each of our libraries:
+Like the ``​wc -l`` function above, we can run ``grep`` on all of our files at once to get the total read numbers for each of our libraries:
 
 .. parsed-literal:: 
 
@@ -70,6 +70,6 @@ Like the ​wc -l function above, we can run grep on all of our files at once to
 
 We can see that we’re dealing with about 9000 reads per library.
 
-.. topic:: Questions
+.. admonition:: Exercise
 
-	Do all the libraries have the same R1 and R2 read numbers?
+	* Do all the libraries have the same R1 and R2 read numbers?

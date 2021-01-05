@@ -14,7 +14,7 @@
 Introduction
 ============
 
-When performing demultiplexing, **cutadapt** removed the indices from our samples. You can check this using the ``grep`` command from the previous tutorial. Alternatively, you can use the following command to explore the length distribution of the sequences. Run this on a pre- and post- demultiplexed file.
+When performing demultiplexing, **cutadapt** removed the indices from our samples. You can check this using the ``grep`` command from the previous tutorial. Alternatively, you can use the following command to explore the length distribution of the sequences. Run this twice, on a raw sequence FASTQ file and demultiplexed FASTQ file.
 
 .. parsed-literal::
 
@@ -34,12 +34,12 @@ We can also use **cutadapt** to remove primers. Unlike indices, which are not va
 
 	The input data for this section is a directory of FASTQ format file pairs, one pair per sample, with primer sequences at (or near) the beginning of each read. If you're following along step-by-step, this was produced in :ref:`the previous tutorial<demultiplexing>`. Alternatively, the ``1_demux`` directory within the :ref:`sectionA archive<sectionAdata>` can be used as example data.
 	
-	This tutorial uses the :ref:`cutadapt software <cutadapt>`.
+	This tutorial uses the :ref:`cutadapt <cutadapt>` software.
 
 Performing primer removal
 =========================
 
-This process is very similar to demultiplexing, except we only have one sequence to remove, rather than three, and we only want one output file for each input file. The power of **cutadapt**'s paired-file-aware approach is that again, we can filter out any mate pairs that don’t have both primers - this is definitely a mark of a sequencing error! 
+This process is very similar to demultiplexing, except we only have one sequence to remove, rather than three, and we only want one output file for each input file. The power of **cutadapt**'s paired-file-aware approach is that again, we can filter out any mate pairs that don’t have both primers - this is probably a mark of a sequencing error! 
 
 .. admonition:: Exercise
 
@@ -78,13 +78,13 @@ We want to run this on all of our files, ideally without writing the command ove
 
 .. parsed-literal:: 
 	
-	ls 1_demux/ | cut -d\_ -f1 | sort | uniq
+	ls :var:`1_demux`/ | cut -d\_ -f1 | sort | uniq
 
 This extracts the part of each name before the first ``_`` and finds the unique ones. We can then store this list of library names in a bash variable, and check it's contents with ``echo``:
 
 .. parsed-literal:: 
 	
-	samples=$(ls 1_demux/ | cut -d\_ -f1 | sort | uniq)
+	samples=$(ls :var:`1_demux`/ | cut -d\_ -f1 | sort | uniq)
 	echo $samples
 
 We can then loop on the contents of this variable using ``for``
@@ -98,13 +98,7 @@ We can then loop on the contents of this variable using ``for``
 		1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq ;
 	done
 
-Remember that you can write this as a single line without the ``\`` if you want:
-
-.. parsed-literal::
-
-	for s in $samples; do cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA -o :var:`output`/${s}_R1.fastq -p :var:`output`/${s}_R2.fastq --discard-untrimmed 1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq; done
-
-The read command reads from the piped list command, and the while command works through this bit-by-bit. The ``​$s`` therefore refers to each sample name in turn - note that ``​${s}`` is used where we want to add a ​_ immediately after, otherwise bash will look for a variable called ``$s_R1``.
+The for loop works through the items in the variable ``$samples``, assigning them one-by-one to ``$s``. The ``​$s`` therefore refers to each sample name in turn - note that ``​${s}`` is used where we want to add a ​_ immediately after, otherwise bash will look for a variable called ``$s_R1``.
 
 Check your trimmed directory to make sure you have all of your files, and check back through the terminal output to make sure that you didn’t miss any errors. As always, review your read numbers.
 
@@ -116,7 +110,7 @@ Check your trimmed directory to make sure you have all of your files, and check 
 		
 		samples=$(ls 1_demux/ | cut -d\_ -f1 | sort | uniq)
 	
-	If you have your own data, your file names are likely to be different and the exact code used above may not work! You will need to come up with your own version. If you have multiple underscores in your file names, but the number of underscores is consistent, you could simply tweak the number given to ``cut -f``. Otherwise, you might need to use ``sed`` to remove parts of the names, or even use ``rename`` to rename the files to something that will work.
+	If you have your own data, your file names are likely to be different and the exact code used above may not work! You will need to come up with your own version. If you have multiple underscores in your file names, but the number of underscores is consistent, you could simply tweak the number given to ``cut -f``. Otherwise, you might need to use ``sed`` to remove parts of the names, or even use ``rename`` to batch rename the files to something that will work.
 	
 
 Next steps

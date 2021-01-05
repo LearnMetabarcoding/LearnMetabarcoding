@@ -16,7 +16,7 @@
 Introduction
 ============
 
-There are many ways in which metabarcoding libraries may be sequenced. We are going to work here with a library preparation pipeline that involved indexing amplicons during initial PCR, such that each sample had a different 6-base index within a library. Once sequenced, we need to use these index sequences to separate out different samples. This process is called **demultiplexing**. In this case, the amplicons were sequenced using paired-end sequencing, meaning the two ends of each fragment were read, working inwards. We have eight sequence files received from our sequencing facility, one for each read direction for each of four libraries.
+There are many ways in which metabarcoding libraries may be sequenced. If you are using the example data, we are going to work here with a library preparation pipeline that involved indexing amplicons during initial PCR, such that each sample had a different 6-base index within a library. Once sequenced, we need to use these index sequences to separate out different samples. This process is called **demultiplexing**. In this case, the amplicons were sequenced using paired-end sequencing, meaning the two ends of each fragment were read, working inwards. We have eight sequence files received from our sequencing facility, one for each read direction for each of four libraries.
 
 .. admonition:: I don't have multiplexed data!
 	:class: togglegreen
@@ -26,7 +26,7 @@ There are many ways in which metabarcoding libraries may be sequenced. We are go
 .. admonition:: Data and software 
 	:class: green
 	
-	This tutorial works on raw FASTQ-format sequence data that contains indices at the beginning of the reads. The example data for this can be found in the ``0_rawsequences`` directory within the :ref:`sectionA archive<sectionAdata>`. You should copy this directory over to your working directory as follows:
+	This tutorial works with raw FASTQ-format sequence data that contains indices at the beginning of the reads. The example data for this can be found in the ``0_rawsequences`` directory within the :ref:`sectionA archive<sectionAdata>`. You should copy this directory over to your working directory as follows:
 	
 	.. parsed-literal::
 		
@@ -35,22 +35,23 @@ There are many ways in which metabarcoding libraries may be sequenced. We are go
 	
 	If you are completely new to sequence data, you might at this point want to :ref:`review the FASTQ format <fastq>`
 	
-	This tutorial uses the :ref:`cutadapt software<cutadapt>`.
+	This tutorial uses the :ref:`cutadapt <cutadapt>` software.
 	
 
 
 Primers and indices
 ===================
 
-Each of these libraries is actually three different metabarcoding samples. Each sample within each library was amplified with a different 6-base index. You can see these indices in the indices.txt file:
+Each of these libraries is actually three different metabarcoding samples. Each sample within each library was amplified with a different 6-base index. You can see these indices in the ``indices.txt`` file within the ``0_rawsequences/`` directory. First, change into the ``0_rawsequences/`` directory and then view the file:
 
 .. parsed-literal::
 	
+	cd 0_rawsequences/
 	cat indices.txt
 
-The ``​cat`` command simply outputs the entire contents of the files it is given, one after the other. Here we’re using it to just output the content of one file, but look out for this command later!
+The ``​cat`` command simply outputs the entire contents of the files it is given, one after the other. Here we're using it to just output the content of one file, but look out for this command later!
 
-We can use the ``grep`` command to check for indices in a file (see :ref:`here<grep>` for more detail on this). Select any of the starting FASTQ files and run the following on it to search for the `AACACC` index
+We can use the ``grep`` command to check for indices in a file (see :ref:`here<grep>` for more detail on this). Select any of the starting FASTQ files and run the following on it to search for the ``AAGAGG`` index
 
 .. parsed-literal::
 	
@@ -58,7 +59,7 @@ We can use the ``grep`` command to check for indices in a file (see :ref:`here<g
 
 You should see the index sequence bolded at the beginning of a sequence. You might also see it elsewhere in sequences - it's such a short base sequence it's completely possible that real sequence reads contain this motif. If you see no bolded text, try a different FASTQ file.
 
-When we did PCR, the index was part of the primers used, so that the reaction added this sequence to our amplicons when copying them. The primer binding sequences used for this metabarcoding reaction were:
+When we did PCR, the index was part of the primers used, so that the reaction added this sequence to our amplicons when copying them. The primer binding sequences used for this metabarcoding reaction were (don't run these!):
 
 .. topic:: Forward(R1)
 
@@ -89,29 +90,31 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 		head -n 24 :var:`input_R1.fastq` | grep -E "CC.GA.AT.GC.TT.CC.CG|$"
 		head -n 24 :var:`input_R2.fastq` | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"
 
-You’ll probably see that there are occasions where no index or primer is highlighted on a sequence. This means there was a sequencing error. Look closely and you’ll see that a base is missing or inserted, or just wrong.
+You'll probably see that there are occasions where no index or primer is highlighted on a sequence. This means there was a sequencing error. Look closely and you'll see that a base is missing or inserted, or just wrong.
 
 Demultiplexing
 ==============
 
-We want to split each of these libraries up by index into a separate pair of files for each of the 12 samples, and remove the index sequences. We will do this using the tool :ref:`cutadapt <cutadapt>`. This versatile tool allows separating files by index and removal of these indices and primers. It can allow for some error in the index sequence, and can keep read pairs in sync (more on this later).
+We want to split each of these libraries up by index into a separate pair of files for each of the 12 samples, and remove the index sequences. We will do this using the tool **cutadapt**. This versatile tool allows separating files by index and removal of these indices and primers. It can allow for some error in the index sequence, and can keep read pairs in sync (more on this later).
 
-As ever with a new tool, first cast your eye over the help, either online or buy running: 
+As ever with a new tool, first cast your eye over the help, either online or by running: 
 
 .. parsed-literal::
 	
 	cutadapt --help
 
-It’s quite long, but at least read the first section. It’s helpful to think about exactly what our data is and what we want to do:
+It's quite long, but at least read the first section. It's helpful to think about exactly what our data is and what we want to do:
 
 * We have paired data
 * Our indices are at the beginning of the reads
-* We have multiple indices (cutadapt calls them ‘adapters’)
+* We have multiple indices (cutadapt calls them 'adapters')
 * We want to output a different file for each index
 
-**Cutadapt** has settings for all of these situations. It will allow reading two files as input, and will ensure that pairs of reads in these files are kept in sync. Indices at the beginning of reads are specified using ``-g`` ( ``​-G`` for the second file of reads), we can specify these multiple times, and name different adapters. We also specify that the adapters are right at the beginning, with no gaps, using a ``^`` symbol. We can specify that we want output files depending on the combination of adapters found using the ``​-o`` and ``​-p`` options for the first and second files respectively.
+**Cutadapt** has settings for all of these situations. It will allow reading two files as input, and will ensure that pairs of reads in these files are kept in sync. Indices at the beginning of reads are specified using ``-g`` (or ``​-G`` for the second file of reads), we can specify these multiple times, and name different adapters. We also specify that the adapters are right at the beginning, with no gaps, using a ``^`` symbol. We can specify that we want output files depending on the combination of adapters found using the ``​-o`` and ``​-p`` options for the first and second files respectively.
 
-Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1. To avoid a mess of files, I strongly suggest returning up to the parent directory and creating a new directory. Call this something appropriate. If you're unsure how to do this check the solution box below.
+Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1. 
+
+To avoid a mess of files, :guilabel:`make sure you're in the to the parent directory, then create a new directory`. Call this new directory something appropriate. If you're unsure how to do this check the solution box below.
 
 .. admonition:: Solution
 	:class: toggle
@@ -121,9 +124,9 @@ Referring to the indices.txt file, we can now construct a command that demultipl
 		cd ../        :comment:`# Change working directory to the parent of the current working directory`
 		mkdir 1_demux :comment:`# Create a new directory called 1_demux`
 
-The following commands assume that you are in the directory containing the ``0_rawsequences`` directory and an empty directory called ``1_demux``. Let's first try and demultiplex a single file. Reminder: we used the ``​\`` to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command at the beginning of the next line.
+The following commands assume that you are in the directory that contains the ``0_rawsequences`` directory and an empty directory called ``1_demux``. Let's first try and demultiplex a single file. :guilabel:`Carefully examine the following command and look at the help file to make sure you're clear on what each of the arguments is doing`.
 
-Carefully examine the following command and make sure you're clear on what each of the arguments is doing. Then, run the command and inspect the terminal output and make sure you understand what it's saying. Note that unless you have used a different directory name or directory layout, you should just be able to copy and run this command as-is without changing anything.
+Then, type in the command. Reminder: we used the ``​\`` to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command all in one long line (without pressing Enter until you're done). Finally, run the command and inspect the terminal output and make sure you understand what it's saying. Note that if you didn't call your directory ``1_demux``, you should change those parts of the command.
 
 .. parsed-literal::
 
@@ -150,11 +153,11 @@ Are there more files than expected? This is because the command has looked for a
 .. admonition:: Note
 	:class: green
 	
-	Some researchers use all of these different combinations to efficiently apply few indices to identify many many different samples. However, this makes it much harder to spot errors. We don't have any valid sequences that use different forward and reverse indices, yet the demultiplexer has found many: these are errors in the sequencing. The sequencer has mistakenly associated some reads as the same fragment when they aren’t - they actually come from two different samples, hence some files with two different sample names. And in some cases, no index can be found on one or both of a paired read, probably due to a sequencing error. These are marked as unknown. 
+	Some researchers use all of these different combinations to efficiently apply few indices to identify many many different samples. However, this makes it much harder to spot errors. We don't have any valid sequences that use different forward and reverse indices, yet the demultiplexer has found many: these are errors in the sequencing. The sequencer has mistakenly associated some reads as the same fragment when they aren't - they actually come from two different samples, hence some files with two different sample names. And in some cases, no index can be found on one or both of a paired read, probably due to a sequencing error. These are marked as unknown. 
 
 Happily, all of these errors are in a distinct minority, and the majority of reads have been allocated to files for our samples. If we had used all 9 combinations, we wouldn't have been able to spot many of these errors!
 
-If you add all of the read counts up, you’ll notice we’re missing some reads from our original files: these had no mate pair and were completely discarded.
+If you add all of the read counts up, you'll notice we're missing some reads from our original files: these had no mate pair and were completely discarded.
 
 .. admonition:: Exercise
 	
@@ -165,7 +168,7 @@ If you add all of the read counts up, you’ll notice we’re missing some reads
 Cleaning up
 ===========
 
-You should now have lots of files in your output directory. It’s good practice to keep track of how demultiplexing performed: you could put the output of a grep command into a file to keep a record (see solution box below if you're not sure how to do this). 
+You should now have lots of files in your output directory. It's good practice to keep track of how demultiplexing performed: you could :guilabel:`try to write a command that saves the output of your previos grep command into a file` to keep a record (see the solution box below if you're not sure how to do this). 
 
 .. admonition:: Solution
 	:class: toggle
@@ -174,7 +177,7 @@ You should now have lots of files in your output directory. It’s good practice
 	
 		​grep -c "^\@D00" 1_demux/\* > :var:`output.txt`
 
-Let’s get rid of the files we don’t need. You’ve doubled the amount of storage you’re using - here the files aren’t very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don’t match. You do not need to type any ``#comments``, or add the extra spaces - this is just to make it clearer.
+Let's get rid of the files we don't need. You've doubled the amount of storage you're using - here the files aren't very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don't match. You do not need to type any ``#comments``, or add the extra spaces - this is just to make it clearer.
 
 .. parsed-literal::
 
@@ -191,7 +194,7 @@ Let’s get rid of the files we don’t need. You’ve doubled the amount of sto
 		fi; 			:comment:`# end if clause`
 	done 				:comment:`# end loop`
 
-This isn’t a crucial bioinformatics step, it’s just to tidy things up. You don’t need to understand everything about this command, although the loop syntax is going to crop up frequently. If you're keen to try and figure this out, you might want to review the page on :ref:`loops in bash<loops>`, making sure to read about :ref:`parameter substitution<parameter-substitution>`
+This isn't a crucial bioinformatics step, it's just to tidy things up. You don't need to understand everything about this command, although the loop syntax is going to crop up frequently. If you're keen to try and figure this out, you might want to review the page on :ref:`loops in bash<loops>`, making sure to read about :ref:`parameter substitution<parameter-substitution>`
 
 Finally, to remove the files beginning with ``unknown``, run:
 
@@ -199,7 +202,7 @@ Finally, to remove the files beginning with ``unknown``, run:
 
 	rm unknown\*
 
-These files contain the sequences for which no index was identified - we’re not interested in keeping them.
+These files contain the sequences for which no index was identified - we're not interested in keeping them.
 
 Next steps
 ==========
