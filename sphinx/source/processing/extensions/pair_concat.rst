@@ -66,7 +66,7 @@ Re-pairing mates
 	
 	.. parsed-literal:: 
 	
-		pairfq makepairs -f ​:var:`input_R1.fastq` -r :var:`input_R2.fastq` -fp :var:​`output_R1.fastq` -rp :var:`output_R2.fastq` -fs ​:var:`output_R1_unpaired.fastq​ -rs` :var:`​output_R2_unpaired.fastq`
+		pairfq makepairs -f :var:`input_R1.fastq` -r :var:`input_R2.fastq` -fp :var:`output_R1.fastq` -rp :var:`output_R2.fastq` -fs ​:var:`output_R1_unpaired.fastq -rs` :var:`​output_R2_unpaired.fastq`
 	
 	As always, use ``grep`` to check output file read numbers. 
 

@@ -125,7 +125,7 @@ The ``&&`` here runs both commands on this line one after the other. We could us
 	
 	We use **PEAR** because it's a standalone read merging tool with a probabilistic approach to the merging task, and it works well for our data. However, it can sometimes be a little temperamental if your reads aren't precisely paired up or if you have any extraneous very short reads present in your data. Usually in these cases it just fails with a vague error - which isn't great but is better than doing something wrong.
 	
-	An alternative to pair is the **fastq_mergepairs** tool within the **VSEARCH** and **USEARCH** packages. This has slightly fewer options but is very widely used. Another tool frequently used is `**FLASH** <http://ccb.jhu.edu/software/FLASH/>`_
+	An alternative to pair is the **fastq_mergepairs** tool within the **VSEARCH** and **USEARCH** packages. This has slightly fewer options but is very widely used. Another tool frequently used is `FLASH <http://ccb.jhu.edu/software/FLASH/>`_
 
 Sequence loss
 =============

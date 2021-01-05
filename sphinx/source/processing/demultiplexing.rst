@@ -16,7 +16,7 @@
 Introduction
 ============
 
-There are many ways in which metabarcoding libraries may be sequenced. We are going to work here with a library preparation pipeline that involved indexing amplicons during initial PCR, such that each sample had a different 6-base index within a library. Once sequenced, we need to use these index sequences to separate out different samples. This process is called ​**demultiplexing​**. In this case, the amplicons were sequenced using paired-end sequencing, meaning the two ends of each fragment were read, working inwards. We have eight sequence files received from our sequencing facility, one for each read direction for each of four libraries.
+There are many ways in which metabarcoding libraries may be sequenced. We are going to work here with a library preparation pipeline that involved indexing amplicons during initial PCR, such that each sample had a different 6-base index within a library. Once sequenced, we need to use these index sequences to separate out different samples. This process is called **demultiplexing**. In this case, the amplicons were sequenced using paired-end sequencing, meaning the two ends of each fragment were read, working inwards. We have eight sequence files received from our sequencing facility, one for each read direction for each of four libraries.
 
 .. admonition:: I don't have multiplexed data!
 	:class: togglegreen
@@ -86,8 +86,8 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 	
 	.. parsed-literal::
 
-		head -n 24 ​:var:`input_R1.fastq` | grep -E "CC.GA.AT.GC.TT.CC.CG|$"
-		head -n 24 ​:var:`input_R2.fastq` | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"
+		head -n 24 :var:`input_R1.fastq` | grep -E "CC.GA.AT.GC.TT.CC.CG|$"
+		head -n 24 :var:`input_R2.fastq` | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"
 
 You’ll probably see that there are occasions where no index or primer is highlighted on a sequence. This means there was a sequencing error. Look closely and you’ll see that a base is missing or inserted, or just wrong.
 
@@ -140,10 +140,10 @@ Carefully examine the following command and make sure you're clear on what each 
 .. admonition:: Solution
 	:class: toggle
 	
-	.. parsed-literal:: bash
+	.. parsed-literal:: 
 	
-		$ ls 1_demux/\*
-		$ grep -c "^@D00" 1_demux/\*
+		ls 1_demux/\*
+		grep -c "^@D00" 1_demux/\*
 
 Are there more files than expected? This is because the command has looked for all adapter combinations. When we have 3 different forward indices and 3 different reverse indices, there are 9 different combinations possible. Add on top of this that there are 6 possibilites where only a forward *or* a reverse index is used, plus the possibility where *no* indices are used. Hence you should have 16 file pairs.
 
@@ -172,9 +172,9 @@ You should now have lots of files in your output directory. It’s good practice
 
 	.. parsed-literal::
 	
-		​grep -c "^@D00" 1_demux/\* > :var:`output.txt`
+		​grep -c "^\@D00" 1_demux/\* > :var:`output.txt`
 
-Let’s get rid of the files we don’t need. You’ve doubled the amount of storage you’re using - here the files aren’t very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don’t match. You do not need to type any ​``#comments​``, or add the extra spaces - this is just to make it clearer.
+Let’s get rid of the files we don’t need. You’ve doubled the amount of storage you’re using - here the files aren’t very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don’t match. You do not need to type any ``#comments``, or add the extra spaces - this is just to make it clearer.
 
 .. parsed-literal::
 

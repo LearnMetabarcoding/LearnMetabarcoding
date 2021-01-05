@@ -16,7 +16,7 @@ Many metabarcoding pipelines trim primers by just trimming a number of bases equ
 
 .. code-block:: bash 
 
-	cutadapt -u :var:`​N` -o :var:`​out.fastq​` -i :var:`​in.fastq`
+	cutadapt -u :var:`N` -o :var:`out.fastq` -i :var:`in.fastq`
 
 .. admonition:: Exercise
 

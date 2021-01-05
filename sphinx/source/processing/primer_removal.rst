@@ -80,7 +80,7 @@ We want to run this on all of our files, ideally without writing the command ove
 	
 	ls 1_demux/ | cut -d\_ -f1 | sort | uniq
 
-This extracts the part of each name before the first ​``_`` and finds the unique ones. We can then store this list of library names in a bash variable, and check it's contents with ``echo``:
+This extracts the part of each name before the first ``_`` and finds the unique ones. We can then store this list of library names in a bash variable, and check it's contents with ``echo``:
 
 .. parsed-literal:: 
 	
@@ -95,14 +95,14 @@ We can then loop on the contents of this variable using ``for``
 	do
 		cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \\
 		-o :var:`output`/${s}_R1.fastq -p :var:`output`/${s}_R2.fastq --discard-untrimmed \\
-		1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq \\
+		1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq ;
 	done
 
 Remember that you can write this as a single line without the ``\`` if you want:
 
 .. parsed-literal::
 
-	for s in $samples; do cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA -o :var:`output`/${s}_R1.fastq -p :var:`output`/${s}_R2.fastq --discard-untrimmed 1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq done
+	for s in $samples; do cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA -o :var:`output`/${s}_R1.fastq -p :var:`output`/${s}_R2.fastq --discard-untrimmed 1_demux/${s}_R1.fastq 1_demux/${s}_R2.fastq; done
 
 The read command reads from the piped list command, and the while command works through this bit-by-bit. The ``​$s`` therefore refers to each sample name in turn - note that ``​${s}`` is used where we want to add a ​_ immediately after, otherwise bash will look for a variable called ``$s_R1``.
 
