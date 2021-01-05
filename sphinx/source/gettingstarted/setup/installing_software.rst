@@ -56,7 +56,7 @@ Widely used sequence searching software, documentation and installation instruct
 	cd /usr/local/src/
 	
 	BLAST_VERSION="2.11.0" :comment:`# Change as appropriate`
-	sudo wget "ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${BLAST_VERSION}/ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz"
+	sudo wget "\ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${BLAST_VERSION}/ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz"
 	sudo tar -zxf ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz
 	sudo cp ncbi-blast-${BLAST_VERSION}+/bin/\* /usr/local/bin/
 
@@ -71,7 +71,7 @@ Bayesian phylogeny-based species delimitation, github `here <https://github.com/
 .. parsed-literal::
 	
 	cd /usr/local/src
-	sudo git clone https://github.com/zhangjiajie/PTP
+	sudo git clone \https://github.com/zhangjiajie/PTP
 	cd PTP
 	sudo -H python3 -m pip install -r requirements.txt
 	cd /PTP/bin
@@ -89,7 +89,7 @@ Script for concatenating alignments into a supermatrix, github `here <https://gi
 
 .. parsed-literal::
 	
-	sudo wget -O /usr/local/bin/ https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
+	sudo wget -O /usr/local/bin/ \https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
 	sudo chmod a+x /usr/local/bin/catfasta2phyml.pl
 
 Installation not necessary: you could simply download it to your working directory and run it using ``perl``:
