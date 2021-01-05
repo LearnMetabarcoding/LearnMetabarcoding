@@ -21,13 +21,8 @@ Search google for beginner's tutorials for your chosen provider, which will help
 Setting up
 ==========
 
-Once you have your server running, you will need to log into it using SSH. We have some general instructions for this :ref:`here <remote_access>`, but there will be variations depending on the provider, so we suggest you look for a tutorial for your specific provider and the operating system of your personal computer, e.g. "SSH access to azure VPS from mac OS". If you're completely new to the linux command line environment, you might want to check out some :ref:`introductory help <unix_cli>`. Once you have accessed the server, you should ensure that you configure any administration and security software and settings - again, search for a tutorial for your specific provider, for example "set up digital ocean firewall and user accounts".
+Once you have your server running, you will need to log into it using SSH. We have :ref:`some general instructions for this <remote_access>`, but there will be variations depending on the provider, so we suggest you look for a tutorial for your specific provider and the operating system of your personal computer, e.g. "SSH access to azure VPS from mac OS". If you're completely new to the Linux command line environment, you might want to check out some :ref:`introductory help <unix_cli>`. Once you have accessed the server, you should ensure that you configure any administration and security software and settings - again, search for a tutorial for your specific provider, for example "set up digital ocean firewall and user accounts".
 
-You can then go ahead and install the software you will need for bioinformatics. You can either just install all the software as detailed on :ref:`the software page <installing_software>`, or you can just go ahead and start working through these resources and install software as you need it: each tutorial clearly states which software is required and links to the relevant installation instructions.
+You can then go ahead and install the software you will need for bioinformatics. You can either just install all of the software as detailed on :ref:`the software page <installing_software>`, or you can just go ahead and start working through these resources and install software as you need it: each tutorial clearly states which software is required and links to the relevant installation instructions.
 
 Finally, you will want to send your data to the server. You can do this by downloading it directly from your sequencing provider's website or FTP server using ``wget`` or ``ftp``. Alternatively you can upload it from your personal computer using :ref:`FTP software <remote_access>`.
-
-Next steps
-==========
-
-Once you have the server up and running, you can continue reading through the :ref:`Getting Started <gettingstarted>` section, then when you feel ready you can start on the tutorials with the :ref:`Read processing <read_processing>` section.
