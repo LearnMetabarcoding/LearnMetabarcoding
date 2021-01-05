@@ -14,7 +14,7 @@ If you are attending the **Theory and practice in metabarcoding for biodiversity
 Connecting via SSH
 ==================
 
-We use SSH (Secure SHell) to send commands to the remote server and receive basic information in return, using the :ref:`command line interface <cli_bioinformatics>`.
+We use SSH (Secure SHell) to send commands to the remote server and receive basic information in return, using the :ref:`command line interface <cli_bioinformatics>`. When you log into a server for the first time it will ask you to reset your password. Once you have done so it will automatically log you out. You will then need to log back in using your new password. 
 
 Using terminal in MacOS or Linux
 --------------------------------
@@ -32,13 +32,15 @@ You will need to replace the ``username`` in the above command with your usernam
 Using PuTTY in Windows
 ----------------------
 
-If you are running Windows you can use a program called `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_, an SSH client for windows. Once you have installed PuTTY, open it and type the server address in the :menuselection:`host name` field. Then click :menuselection:`open`. This will then bring up the login screen. Enter your credentials and it will give you access to the server. 
+If you are running Windows you can use a program called `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_, an SSH client for windows. Once you have installed PuTTY, open it and type the server address in the :menuselection:`host name` field (see below screenshot). Then click :menuselection:`open`. This will then bring up the login screen. Enter your credentials and it will give you access to the server. 
+
+.. image:: putty.png
+	:align: center 
 
 Using Windows Subsystem for Linux
 ---------------------------------
 
 If you are running Windows 10, then an alternative to PuTTY is the `Windows Subsystem for Linux (WSL) <https://docs.microsoft.com/en-us/windows/wsl/about>`_, which allows you to effectively install a Linux operating system inside your Windows operating system. It is perhaps overkill to install a complete operating system simply to use SSH, but if you do decide to do this, once you have your Linux subsystem running you should follow the instructions above for using terminal in MacOS or Linux
-
 
 Transferring files between local machine and server
 ===================================================
@@ -83,6 +85,8 @@ Follow the below steps to set up WinSCP:
 5. Click through the remaining prompts
 6. You can now drag and drop files between your local machine and the server
 
+.. image:: winscp.png
+	:align: center
 
 FileZilla (Windows, MacOS, Linux)
 .................................
@@ -94,7 +98,8 @@ Follow the steps below (see screenshot if unsure where to enter information):
 3. Enter your username and password in the correct fields
 4. Enter 22 in the Port field
 5. Press quick connect
-6. You can now drag and drop files between your local machine and the server
+6. Click through remaining prompts
+7. You can now drag and drop files between your local machine and the server
 
 .. image:: filezilla.png
 	:align: center 
