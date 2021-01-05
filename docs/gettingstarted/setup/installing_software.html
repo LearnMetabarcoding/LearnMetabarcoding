@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Software installation &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Accessing linux servers" href="../remote_access.html" />
+    <link rel="prev" title="Using your own machine" href="using_your_own_machine.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../gettingstarted.html">Getting started</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../setup.html">Setting up a bioinformatics machine</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cloud_servers.html">Cloud servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using_your_own_machine.html">Using your own machine</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Software installation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../remote_access.html">Accessing linux servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how_to_use.html">How to use these resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolbox_pipelines.html">The bioinformatics toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli_bioinformatics.html">Command line bioinformatics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../otuid.html">E: Identifying OTU sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contactus.html">Contact us</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../gettingstarted.html">Getting started</a> &raquo;</li>
+        
+          <li><a href="../setup.html">Setting up a bioinformatics machine</a> &raquo;</li>
+        
+      <li>Software installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/gettingstarted/setup/installing_software.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="software-installation">
+<span id="installing-software"></span><h1>Software installation<a class="headerlink" href="#software-installation" title="Permalink to this headline">¶</a></h1>
+<p>Here we detail how to install all Linux command-line software used in these resources. Note that if you are setting up a server from scratch, for example if you are using a <a class="reference internal" href="cloud_servers.html#cloud-servers"><span class="std std-ref">cloud server</span></a>, you should also ensure that you perform any necessary administration tasks and install and configure any necessary security software you need.</p>
+<p>These commands are written for Ubuntu Linux. They will probably work fine on any Ubuntu or Debian machine, and on most Linux machines with the appropriate package manager changes.</p>
+<p>We supply these instructions with absolutely no guarantee or warranty. If you break a machine following these instructions, it’s not our fault. If you fail to properly secure a cloud server and have it compromised and used to spam people or launch crippling viruses, it’s not our fault. If in doubt, seek expert advice.</p>
+<p>These commands use the most recent software versions as of December 2020, where the code points to a specific version you should make sure to look up the most recent version and edit accordingly.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>The following commands install some general purpose Linux tools and libraries.</p>
+<pre class="literal-block"><span class="comment"># Setup directories</span>
+sudo mkdir /usr/local/deb/
+
+<span class="comment"># Install general tools</span>
+sudo apt update &amp;&amp; sudo apt upgrade -y
+sudo apt install build-essential pkg-config autoconf python3-pip unzip groff libgsl-dev rename default-jre zip -y
+
+<span class="comment"># Install programming languages and language modules</span>
+sudo apt install bioperl libdbd-sqlite3-perl libjson-perl perl-doc python3-biopython python-scipy libarray-utils-perl -y</pre>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+<div class="section" id="alan">
+<span id="id1"></span><h3>ALAN<a class="headerlink" href="#alan" title="Permalink to this headline">¶</a></h3>
+<p>Commandline alignment viewer. <a class="reference external" href="https://github.com/mpdunne/alan">Github.</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">wget</span> <span class="o">-</span><span class="n">P</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mpdunne</span><span class="o">/</span><span class="n">alan</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">alan</span>
+<span class="n">sudo</span> <span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">alan</span>
+</pre></div>
+</div>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="blast">
+<span id="id2"></span><h3>BLAST<a class="headerlink" href="#blast" title="Permalink to this headline">¶</a></h3>
+<p>Widely used sequence searching software. <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK279690/">Documentation.</a></p>
+<pre class="literal-block">cd /usr/local/src/
+
+BLAST_VERSION=&quot;2.11.0&quot; <span class="comment"># Change as appropriate</span>
+sudo wget &quot;<a class="reference external" href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+">ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+</a>/${BLAST_VERSION}/ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz&quot;
+sudo tar -zxf ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz
+sudo cp ncbi-blast-${BLAST_VERSION}+/bin/* /usr/local/bin/</pre>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="bptp">
+<span id="id3"></span><h3>bPTP<a class="headerlink" href="#bptp" title="Permalink to this headline">¶</a></h3>
+<p>Bayesian phylogeny-based species delimitation. <a class="reference external" href="https://github.com/zhangjiajie/PTP">Website.</a></p>
+<pre class="literal-block">cd /usr/local/src
+sudo git clone <a class="reference external" href="https://github.com/zhangjiajie/PTP">https://github.com/zhangjiajie/PTP</a>
+cd PTP
+sudo -H python3 -m pip install -r requirements.txt
+cd /PTP/bin
+for f in *.py; do sed -i &quot;1s/python$/python3/&quot; $f; done
+sudo ln -s /usr/local/src/PTP/bin/bPTP.py /usr/local/bin/bPTP
+sudo ln -s /usr/local/src/PTP/bin/PTP.py /usr/local/bin/PTP</pre>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="catfasta2phyml">
+<span id="id4"></span><h3>catfasta2phyml<a class="headerlink" href="#catfasta2phyml" title="Permalink to this headline">¶</a></h3>
+<p>Script for concatenating alignments into a supermatrix. <a class="reference external" href="https://github.com/nylander/catfasta2phyml">Website.</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">wget</span> <span class="o">-</span><span class="n">O</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nylander</span><span class="o">/</span><span class="n">catfasta2phyml</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">catfasta2phyml</span><span class="o">.</span><span class="n">pl</span>
+<span class="n">sudo</span> <span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">catfasta2phyml</span><span class="o">.</span><span class="n">pl</span>
+</pre></div>
+</div>
+<p>Installation not necessary: you could simply download it to your working directory and run it using <code class="docutils literal notranslate"><span class="pre">perl</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nylander</span><span class="o">/</span><span class="n">catfasta2phyml</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">catfasta2phyml</span><span class="o">.</span><span class="n">pl</span>
+<span class="n">perl</span> <span class="n">catfasta2phyml</span><span class="o">.</span><span class="n">pl</span>
+</pre></div>
+</div>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="crop">
+<span id="id6"></span><h3>CROP<a class="headerlink" href="#crop" title="Permalink to this headline">¶</a></h3>
+<p>Bayesian OTU delimitation. <a class="reference external" href="https://github.com/tingchenlab/CROP">Github.</a></p>
+<pre class="literal-block">sudo apt install libgsl-dev <span class="comment"># (installed above)</span>
+
+cd /usr/local/src
+sudo git clone <a class="reference external" href="https://github.com/zhangjiajie/PTP">https://github.com/zhangjiajie/PTP</a>
+cd PTP
+sudo -H python3 -m pip install -r requirements.txt
+sudo -H python3 -m pip install python-nexus
+sudo sed -i &quot;1s/python$/python3/&quot; bin/bPTP.py
+sudo ln -s /usr/local/src/PTP/bin/bPTP.py /usr/local/bin/bPTP</pre>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="cutadapt">
+<span id="id8"></span><h3>Cutadapt<a class="headerlink" href="#cutadapt" title="Permalink to this headline">¶</a></h3>
+<p>Versatile adapter sequence removal. <a class="reference external" href="https://cutadapt.readthedocs.io/en/stable/">Documentation.</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">H</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">cutadapt</span>
+</pre></div>
+</div>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="extract-genes">
+<span id="id10"></span><h3>extract_genes<a class="headerlink" href="#extract-genes" title="Permalink to this headline">¶</a></h3>
+<p>Script for extracting individual gene sequences from GenBank files. <a class="reference external" href="https://github.com/tjcreedy/biotools">Github.</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">wget</span> <span class="o">-</span><span class="n">O</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tjcreedy</span><span class="o">/</span><span class="n">biotools</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">extract_genes</span><span class="o">.</span><span class="n">pl</span>
+<span class="n">sudo</span> <span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">extract_genes</span><span class="o">.</span><span class="n">pl</span>
+</pre></div>
+</div>
+<p>Installation not necessary: you coul simply download it to your working directory and run it using <code class="docutils literal notranslate"><span class="pre">perl</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tjcreedy</span><span class="o">/</span><span class="n">biotools</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">extract_genes</span><span class="o">.</span><span class="n">pl</span>
+<span class="n">perl</span> <span class="n">extract_genes</span><span class="o">.</span><span class="n">pl</span>
+</pre></div>
+</div>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="fasttree">
+<span id="id12"></span><h3>FastTree<a class="headerlink" href="#fasttree" title="Permalink to this headline">¶</a></h3>
+<p>Fast maximum likelihood phylogenetic inference. <a class="reference external" href="http://www.microbesonline.org/fasttree/">Website.</a></p>
+<pre class="literal-block">cd /usr/local/bin/
+sudo wget <a class="reference external" href="http://www.microbesonline.org/fasttree/FastTree">http://www.microbesonline.org/fasttree/FastTree</a>
+sudo wget <a class="reference external" href="http://www.microbesonline.org/fasttree/FastTreeMP">http://www.microbesonline.org/fasttree/FastTreeMP</a>
+sudo chmod a+x FastTree*</pre>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="fastqc">
+<span id="id14"></span><h3>FastQC<a class="headerlink" href="#fastqc" title="Permalink to this headline">¶</a></h3>
+<p>Raw sequence quality assessment. <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">Website.</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span>
+<span class="n">sudo</span> <span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">bioinformatics</span><span class="o">.</span><span class="n">babraham</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">fastqc</span><span class="o">/</span><span class="n">fastqc_v0</span><span class="o">.</span><span class="mf">11.9</span><span class="o">.</span><span class="n">zip</span>
+<span class="n">sudo</span> <span class="n">unzip</span> <span class="n">fastqc_v0</span><span class="o">.</span><span class="mf">11.9</span><span class="o">.</span><span class="n">zip</span>
+<span class="n">sudo</span> <span class="n">chmod</span> <span class="n">a</span><span class="o">+</span><span class="n">x</span> <span class="n">FastQC</span><span class="o">/</span><span class="n">fastqc</span>
+<span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">FastQC</span><span class="o">/</span><span class="n">fastqc</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">fastqc</span>
+</pre></div>
+</div>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="fastx-toolkit">
+<span id="id16"></span><h3>FASTX Toolkit<a class="headerlink" href="#fastx-toolkit" title="Permalink to this headline">¶</a></h3>
+<p>Various handy tools for dealing with FASTA and FASTQ files. A little out of date though, requires patching to work in modern Ubuntu (all done in the below commands). <a class="reference external" href="http://hannonlab.cshl.edu/fastx_toolkit/index.html">Website.</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span>
+
+<span class="n">sudo</span> <span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">agordon</span><span class="o">/</span><span class="n">libgtextutils</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="mf">0.7</span><span class="o">/</span><span class="n">libgtextutils</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">sudo</span> <span class="n">tar</span> <span class="o">-</span><span class="n">xzf</span> <span class="n">libgtextutils</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">cd</span> <span class="n">libgtextutils</span><span class="o">-</span><span class="mf">0.7</span>
+<span class="n">sudo</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s1">&#39;47s/input_stream/static_cast&lt;bool&gt;(input_stream)/&#39;</span> <span class="n">src</span><span class="o">/</span><span class="n">gtextutils</span><span class="o">/</span><span class="n">text_line_reader</span><span class="o">.</span><span class="n">cpp</span>
+<span class="n">sudo</span> <span class="o">./</span><span class="n">configure</span>
+<span class="n">sudo</span> <span class="n">make</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+<span class="n">cd</span> <span class="o">../</span>
+
+<span class="n">sudo</span> <span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">agordon</span><span class="o">/</span><span class="n">fastx_toolkit</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="n">download</span><span class="o">/</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">14</span><span class="o">/</span><span class="n">fastx_toolkit</span><span class="o">-</span><span class="mf">0.0</span><span class="o">.</span><span class="mf">14.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="n">sudo</span> <span class="n">tar</span> <span class="o">-</span><span class="n">xjf</span> <span class="n">fastx_toolkit</span><span class="o">-</span><span class="mf">0.0</span><span class="o">.</span><span class="mf">14.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="n">cd</span> <span class="n">fastx_toolkit</span><span class="o">-</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">14</span>
+<span class="n">sudo</span> <span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">agordon</span><span class="o">/</span><span class="n">fastx_toolkit</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="mi">1182724</span><span class="o">/</span><span class="n">fastx</span><span class="o">-</span><span class="n">toolkit</span><span class="o">-</span><span class="n">gcc7</span><span class="o">-</span><span class="n">patch</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">sudo</span> <span class="n">patch</span> <span class="o">-</span><span class="n">p1</span> <span class="o">&lt;</span> <span class="n">fastx</span><span class="o">-</span><span class="n">toolkit</span><span class="o">-</span><span class="n">gcc7</span><span class="o">-</span><span class="n">patch</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">sudo</span> <span class="o">./</span><span class="n">configure</span>
+<span class="n">sudo</span> <span class="n">make</span>
+<span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+<span class="n">cd</span> <span class="o">../</span>
+</pre></div>
+</div>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="mafft">
+<span id="id18"></span><h3>MAFFT<a class="headerlink" href="#mafft" title="Permalink to this headline">¶</a></h3>
+<p>Sequence alignment. <a class="reference external" href="https://mafft.cbrc.jp/alignment/software/">Website.</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">wget</span> <span class="o">-</span><span class="n">P</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">deb</span><span class="o">/</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mafft</span><span class="o">.</span><span class="n">cbrc</span><span class="o">.</span><span class="n">jp</span><span class="o">/</span><span class="n">alignment</span><span class="o">/</span><span class="n">software</span><span class="o">/</span><span class="n">mafft_7</span><span class="o">.</span><span class="mi">475</span><span class="o">-</span><span class="mi">1</span><span class="n">_amd64</span><span class="o">.</span><span class="n">deb</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">deb</span><span class="o">/</span><span class="n">mafft_7</span><span class="o">.</span><span class="mi">475</span><span class="o">-</span><span class="mi">1</span><span class="n">_amd64</span><span class="o">.</span><span class="n">deb</span>
+</pre></div>
+</div>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="metamate">
+<span id="metamate-install"></span><h3>metaMATE<a class="headerlink" href="#metamate" title="Permalink to this headline">¶</a></h3>
+<p>Tool for exploring detailed read frequency filtering thresholds. <a class="reference external" href="https://github.com/tjcreedy/metaMATE">Github.</a>
+Requires <a class="reference internal" href="#blast"><span class="std std-ref">BLAST</span></a>, <a class="reference internal" href="#mafft"><span class="std std-ref">MAFFT</span></a> and <a class="reference internal" href="#r"><span class="std std-ref">R</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">H</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">metaMATE</span>
+<span class="n">sudo</span> <span class="n">Rscript</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;install.packages(c(&#39;getopt&#39;, &#39;ape&#39;, &#39;fastcluster&#39;), repos = &#39;https://cloud.r-project.org&#39;)&quot;</span>
+</pre></div>
+</div>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="pairfq">
+<span id="id21"></span><h3>Pairfq<a class="headerlink" href="#pairfq" title="Permalink to this headline">¶</a></h3>
+<p>Ensures paired read files are syncronised. <a class="reference external" href="https://github.com/sestaton/Pairfq">Github.</a></p>
+<pre class="literal-block">sudo apt install libdbd-sqlite3-perl  <span class="comment"># (installed above)</span>
+sudo curl -sL cpanmin.us | sudo perl - git://github.com/sestaton/Pairfq.git</pre>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="pear">
+<span id="id23"></span><h3>PEAR<a class="headerlink" href="#pear" title="Permalink to this headline">¶</a></h3>
+<p>Paired end read merger. <a class="reference external" href="http://www.exelixis-lab.org/pear">Website.</a>
+You must sign up for a PEAR academic licence and you will receive an email with a link to download the installation files. The command here assumes you’ve downloaded the file to your home directory.</p>
+<pre class="literal-block">cd /usr/local/src/
+sudo cp ~/pear-0.9.11-linux-x86_64.tar.gz ./   <span class="comment"># Change the source path if necessary</span>
+sudo tar -xzf pear-0.9.11-linux-x86_64.tar.gz
+cd pear-0.9.11-linux-x86_64
+sudo cp bin/pear /usr/local/bin/
+sudo gzip man/pear.1
+sudo cp man/pear.1.gz /usr/share/man/man1/</pre>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="r">
+<span id="id25"></span><h3>R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h3>
+<p>Versatile data handling language. <a href="#id32"><span class="problematic" id="id33">`Website. &lt;https://cran.r-project.org/`_</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">apt</span><span class="o">-</span><span class="n">transport</span><span class="o">-</span><span class="n">https</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">keyserver</span><span class="o">.</span><span class="n">ubuntu</span><span class="o">.</span><span class="n">com</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> <span class="n">E298A3A825C0D65DFD57CBB651716619E084DAB9</span>
+<span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="s1">&#39;deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/&#39;</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">r</span><span class="o">-</span><span class="n">base</span>
+</pre></div>
+</div>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="swarm">
+<span id="id26"></span><h3>swarm<a class="headerlink" href="#swarm" title="Permalink to this headline">¶</a></h3>
+<p>Linkage-based OTU delimitation. <a class="reference external" href="https://github.com/torognes/swarm">Github.</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span>
+
+<span class="n">sudo</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">torognes</span><span class="o">/</span><span class="n">swarm</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">swarm</span><span class="o">/</span>
+<span class="n">sudo</span> <span class="n">make</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="nb">bin</span><span class="o">/</span><span class="n">swarm</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span>
+
+<span class="n">cd</span> <span class="o">~/</span>
+<span class="n">gzip</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">man</span><span class="o">/</span><span class="n">swarm</span><span class="o">.</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="n">swarm</span><span class="o">.</span><span class="mf">1.</span><span class="n">gz</span>
+<span class="n">sudo</span> <span class="n">mv</span> <span class="n">swarm</span><span class="o">.</span><span class="mf">1.</span><span class="n">gz</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">man</span><span class="o">/</span><span class="n">man1</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="vsearch">
+<span id="id28"></span><h3>VSEARCH<a class="headerlink" href="#vsearch" title="Permalink to this headline">¶</a></h3>
+<p>Open-source implementation of USEARCH with more versatility. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. <a class="reference external" href="https://github.com/torognes/vsearch">Github.</a></p>
+<pre class="literal-block">sudo apt install autoconf groff <span class="comment"># (installed above)</span>
+
+cd /usr/local/src
+
+sudo wget <a class="reference external" href="https://github.com/torognes/vsearch/archive/v2.15.1.tar.gz">https://github.com/torognes/vsearch/archive/v2.15.1.tar.gz</a>
+sudo tar xzf v2.15.1.tar.gz
+cd vsearch-2.15.1
+sudo ./autogen.sh
+sudo ./configure
+sudo make
+sudo make install
+cd ../</pre>
+<p>..#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#</p>
+</div>
+<div class="section" id="phylostuff">
+<span id="id30"></span><h3>phylostuff<a class="headerlink" href="#phylostuff" title="Permalink to this headline">¶</a></h3>
+<p>A set of scripts for doing stuff to phylogenies, including relabelling and inferring taxonomy. <a class="reference external" href="https://github.com/tjcreedy/phylostuff">Github.</a>
+Requires <a class="reference internal" href="#r"><span class="std std-ref">R</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">src</span>
+<span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="n">phylostuff</span>
+<span class="n">sudo</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tjcreedy</span><span class="o">/</span><span class="n">phylostuff</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">phylostuff</span>
+<span class="n">sudo</span> <span class="o">./</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Installation not necessary: you could simply download the script you want to your working directory and run it using <code class="docutils literal notranslate"><span class="pre">Rscript</span></code>, for example with <strong>phylabel</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tjcreedy</span><span class="o">/</span><span class="n">phylostuff</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">phylabel</span><span class="o">.</span><span class="n">R</span>
+<span class="n">Rscript</span> <span class="n">phylabel</span><span class="o">.</span><span class="n">R</span>
+</pre></div>
+</div>
+<p>Or just open them in Rstudio and use them as a guide!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../remote_access.html" class="btn btn-neutral float-right" title="Accessing linux servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="using_your_own_machine.html" class="btn btn-neutral float-left" title="Using your own machine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
