@@ -18,7 +18,7 @@ Resource structure
 
 These resources are structured into sections, accessible through the links on the left. 
 
-We suggest you start with the :ref:`Getting started <gettingstarted>` section, which will cover the computational requirements of the course and outline in more detail how best to use the tutorials. This section also has a :ref:`reference section <cli_bioinformatics>` for hints and tips for those new to the Linux commandline environment.
+We suggest you start with the :ref:`Getting started <gettingstarted>` section, which will cover the computational requirements of the course and outline in more detail how best to use the tutorials. This section also has a :ref:`reference section <cli_bioinformatics>` for hints and tips for those new to the Linux commandline environment. Even if you're an experienced bioinformatician and just want to get going, we suggest you read at least the :ref:`How to use these resources <how_to_use>` to familiarise yourself with the format of the tutorials.
 
 If you want to use our example dataset, you should then have a look at the :ref:`Example data <data>` section, which provides instructions on how to download this data.
 
@@ -31,6 +31,7 @@ Page tree
 
 .. toctree::
 	:titlesonly:
+	:maxdepth: 3
 	
 	gettingstarted
 	data
