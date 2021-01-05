@@ -32,7 +32,7 @@ You will need to replace the ``username`` in the above command with your usernam
 Using PuTTY in Windows
 ----------------------
 
-If you are running Windows you can use a program called `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_, an SSH client for windows. Once you have installed PuTTY, open it and type the server address in the :menuselection:`host name` field (see below screenshot). Then click :menuselection:`open`. This will then bring up the login screen. Enter your credentials and it will give you access to the server. 
+If you are running Windows you can use a program called `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_, an SSH client for windows. Once you have installed PuTTY, open it and type the server address in the :menuselection:`host name` field (see below screenshot). Then click :menuselection:`open`. This will then bring up the login screen. Enter your credentials and click through any remaning prompts and it will give you access to the server. 
 
 .. image:: putty.png
 	:align: center 
