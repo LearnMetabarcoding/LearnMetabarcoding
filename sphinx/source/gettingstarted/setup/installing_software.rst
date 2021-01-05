@@ -109,7 +109,7 @@ Installation not necessary: you could simply download it to your working directo
 CROP
 ----
 
-Bayesian OTU delimitation. `Github<https://github.com/tingchenlab/CROP>`_
+Bayesian OTU delimitation. `Github. <https://github.com/tingchenlab/CROP>`_
 
 .. parsed-literal::
 	
@@ -130,7 +130,7 @@ Bayesian OTU delimitation. `Github<https://github.com/tingchenlab/CROP>`_
 Cutadapt
 --------
 
-Versatile adapter sequence removal. `Documentation<https://cutadapt.readthedocs.io/en/stable/>`_
+Versatile adapter sequence removal. `Documentation. <https://cutadapt.readthedocs.io/en/stable/>`_
 
 .. parsed-literal::
 	
@@ -143,7 +143,7 @@ Versatile adapter sequence removal. `Documentation<https://cutadapt.readthedocs.
 extract_genes
 -------------
 
-Script for extracting individual gene sequences from GenBank files. `Github<https://github.com/tjcreedy/biotools>`_
+Script for extracting individual gene sequences from GenBank files. `Github. <https://github.com/tjcreedy/biotools>`_
 
 .. parsed-literal::
 	
@@ -164,7 +164,7 @@ Installation not necessary: you coul simply download it to your working director
 FastTree
 --------
 
-Fast maximum likelihood phylogenetic inference. `Website<http://www.microbesonline.org/fasttree/>`_
+Fast maximum likelihood phylogenetic inference. `Website. <http://www.microbesonline.org/fasttree/>`_
 
 .. parsed-literal::
 	
@@ -180,7 +180,7 @@ Fast maximum likelihood phylogenetic inference. `Website<http://www.microbesonli
 FastQC
 ------
 
-Raw sequence quality assessment. `Website<https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
+Raw sequence quality assessment. `Website. <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
 
 .. parsed-literal::
 	
@@ -229,7 +229,7 @@ Various handy tools for dealing with FASTA and FASTQ files. A little out of date
 MAFFT
 -----
 
-Sequence alignment. `Website<https://mafft.cbrc.jp/alignment/software/>`_
+Sequence alignment. `Website. <https://mafft.cbrc.jp/alignment/software/>`_
 
 .. parsed-literal::
 	
@@ -243,7 +243,7 @@ Sequence alignment. `Website<https://mafft.cbrc.jp/alignment/software/>`_
 metaMATE
 --------
 
-Tool for exploring detailed read frequency filtering thresholds. `Github<https://github.com/tjcreedy/metaMATE>`_
+Tool for exploring detailed read frequency filtering thresholds. `Github. <https://github.com/tjcreedy/metaMATE>`_
 Requires :ref:`BLAST<blast>`, :ref:`MAFFT<mafft>` and :ref:`R<r>`
 
 
@@ -259,7 +259,7 @@ Requires :ref:`BLAST<blast>`, :ref:`MAFFT<mafft>` and :ref:`R<r>`
 Pairfq
 ------
 
-Ensures paired read files are syncronised. `Github<https://github.com/sestaton/Pairfq>`_
+Ensures paired read files are syncronised. `Github. <https://github.com/sestaton/Pairfq>`_
 
 .. parsed-literal::
 	
@@ -273,7 +273,7 @@ Ensures paired read files are syncronised. `Github<https://github.com/sestaton/P
 PEAR
 ----
 
-Paired end read merger. `Website<http://www.exelixis-lab.org/pear>`_
+Paired end read merger. `Website. <http://www.exelixis-lab.org/pear>`_
 You must sign up for a PEAR academic licence and you will receive an email with a link to download the installation files. The command here assumes you've downloaded the file to your home directory.
 
 .. parsed-literal::
@@ -293,7 +293,7 @@ You must sign up for a PEAR academic licence and you will receive an email with 
 R
 -
 
-Versatile data handling language. `Website<https://cran.r-project.org/`_
+Versatile data handling language. `Website. <https://cran.r-project.org/`_
 
 .. parsed-literal::
 	
@@ -309,7 +309,7 @@ Versatile data handling language. `Website<https://cran.r-project.org/`_
 swarm
 -----
 
-Linkage-based OTU delimitation. `Github<https://github.com/torognes/swarm>`_
+Linkage-based OTU delimitation. `Github. <https://github.com/torognes/swarm>`_
 
 .. parsed-literal::
 	
@@ -332,7 +332,7 @@ Linkage-based OTU delimitation. `Github<https://github.com/torognes/swarm>`_
 VSEARCH
 -------
 
-Open-source implementation of USEARCH with more versatility. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. `Github<https://github.com/torognes/vsearch>`_
+Open-source implementation of USEARCH with more versatility. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. `Github. <https://github.com/torognes/vsearch>`_
 
 .. parsed-literal::
 	
@@ -356,7 +356,7 @@ Open-source implementation of USEARCH with more versatility. VSEARCH is a softwa
 phylostuff
 ----------
 
-A set of scripts for doing stuff to phylogenies, including relabelling and inferring taxonomy. `Github<https://github.com/tjcreedy/phylostuff>`_
+A set of scripts for doing stuff to phylogenies, including relabelling and inferring taxonomy. `Github. <https://github.com/tjcreedy/phylostuff>`_
 Requires :ref:`R<r>`.
 
 .. parsed-literal::
