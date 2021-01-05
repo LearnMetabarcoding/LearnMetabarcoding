@@ -41,7 +41,7 @@ Commandline alignment viewer, github `here <https://github.com/mpdunne/alan>`_.
 
 .. parsed-literal::
 	
-	sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/mpdunne/alan/master/alan
+	sudo wget -P /usr/local/bin/ \https://raw.githubusercontent.com/mpdunne/alan/master/alan
 	sudo chmod a+x /usr/local/bin/alan
 
 
@@ -313,7 +313,7 @@ Linkage-based OTU delimitation, github `here <https://github.com/torognes/swarm>
 VSEARCH
 -------
 
-Open-source implementation of USEARCH with more versatility. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. Github `here <https://github.com/torognes/vsearch>`_`
+Open-source implementation of USEARCH with more versatility. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. Github `here <https://github.com/torognes/vsearch>`_.
 
 .. parsed-literal::
 	
