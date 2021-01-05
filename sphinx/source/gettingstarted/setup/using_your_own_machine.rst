@@ -15,13 +15,11 @@ If you don't already use Linux, it is completely free and open source, it is wid
 Mac OS
 ======
 
-Like Linux, Mac OS is based on UNIX and runs a very similar fundamental architecture. This means that a lot of command line software will run on Mac OS, although you may find that you need to use different commands to install software, and some programs may not work at all. 
-
-TODO: any notes on installing software on mac
+Like Linux, Mac OS is based on UNIX and runs a very similar fundamental architecture. This means that a lot of command line software will run on Mac OS, although you may find that you need to use different commands to install software, and some programs may not work at all. If this is something you want to try, we suggest you start with learning about `homebrew <https://brew.sh/>`_, a package manager for Mac, and then try to :ref:`install software <installing_software>` using ``brew`` instead of ``apt``. However we doubt all software will install smoothly.
 
 Windows
 =======
 
-Windows is a completely different operating system to UNIX-based systems and it is not possible to install most of the command line software in the native Windows environment. However, Microsoft has recently released the Linux Subsystem for Windows, which creates a kind of virtual computer within Windows that runs Linux. Once installed and activated, you may be able to use this to install the software needed and run bioinformatics commands, although it may not work perfectly.
+Windows is a completely different operating system to UNIX-based systems and it is not possible to install most of the command line software in the native Windows environment. However, Microsoft has recently released the `Linux Subsystem for Windows <https://docs.microsoft.com/en-us/windows/wsl/about>`_, which creates a kind of virtual computer within Windows that runs Linux. Once installed and activated, you may be able to use this to install the software needed and run bioinformatics commands, although it may not work perfectly.
 
 
