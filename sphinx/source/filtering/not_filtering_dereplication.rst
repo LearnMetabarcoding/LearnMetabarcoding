@@ -24,7 +24,7 @@ From now on, the main purpose is to find these unique sequences and filter out t
 Performing dereplication
 ========================
 
-Dereplication is a pretty straightforward task - there are very few parameters to worry about. Therefore choosing a tool for dereplication has few considerations, and is often a matter of convenience. We will use the dereplication function within **VSEARCH**, because we already **VSEARCH** installed for other steps.
+Dereplication is a pretty straightforward task - there are very few parameters to worry about. Therefore choosing a tool for dereplication has few considerations, and is often a matter of convenience. We will use the dereplication function within **VSEARCH**, because we already have **VSEARCH** installed for other steps.
 
 .. parsed-literal::
 	
