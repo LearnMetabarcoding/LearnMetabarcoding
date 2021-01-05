@@ -294,7 +294,7 @@ You must sign up for a PEAR academic licence and you will receive an email with 
 R
 -
 
-Versatile data handling language. `Website. <https://cran.r-project.org/`_
+Versatile data handling language. `Website. <https://cran.r-project.org>`_
 
 .. parsed-literal::
 	
