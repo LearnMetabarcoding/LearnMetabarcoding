@@ -87,7 +87,7 @@ Follow the below steps to set up WinSCP:
 FileZilla (Windows, MacOS, Linux)
 .................................
 
-Follow the steps below:
+Follow the steps below (see screenshot if unsure where to enter information):
 
 1. Open FileZilla
 2. Enter the server address in Host field
