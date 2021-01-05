@@ -26,7 +26,7 @@ In the second subsection, :ref:`Mapping Reads <mapping_reads>` we will look at h
 	
 	If you worked through :ref:`the previous section <filtering>`, these data were produced by the :ref:`chimera filtering <chimera>` and :ref:`quality filtering <quality_filtering>` tutorials respectively.
 	
-	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section `here <sectionCdata>`. Unzip this to a convenient location.
+	If you didn't work through the previous section, you can download a zip archive of the data for all of the tutorials in this section :ref:`here <sectionCdata>`. Unzip this to a convenient location.
 
 ASVs or OTUS?
 =============
@@ -34,6 +34,7 @@ ASVs or OTUS?
 In early metabarcoding studies, these ASVs were always grouped together into Operational Taxonomic Units (OTUs), that were treated as equivalent to species. This grouping process aimed to perform two tasks simultaneously: the removal of intra-specific variation to get species-level taxonomic units, and the removal of any remaining erroneous sequences. As new filtering methods have become available, and our ability to remove erroneous sequences has improved, the latter task has dwindled in relevance and while OTU grouping is still widely used, the error rate of ASVs has decreased to the point that we may be able to analyse the haplotype-level dataset with confidence, allowing the exploration of population-level patterns and processes alongside studying the community level. The choice of using ASVs or OTUs largely depends on your research questions and it may well be that both may be appropriate for different aspects of your research.
 
 There are three main points that you should keep in mind if continuing at the ASV level:
+
 1. ASVs are much more sensitive to any errors remaining in your dataset, whereas OTUs will collapse and ignore errors that represent only small variations from real sequences.
 2. You may need significantly deeper sampling to adequately capture a sufficiently representative set of ASVs for your study than for OTUs. This will depend a lot on your research question, study community and study taxon.
 3. Similarly, you may need significantly deeper sampling to recover representative numbers of reads per ASV per sample in order to generate a realistic picture of ASV distribution across your samples, than for OTUs. Again this will depend on research question, study community and study taxon.

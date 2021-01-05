@@ -59,7 +59,7 @@ We can additionally specify a proportion of the bases that must meet our thresho
 Quality rate filtering
 ======================
 
-Rather than setting per-base quality thresholds, another approach is to analyse all of the error probabilities for a read and calculate the overall probability of the read having errors. For this, we will use the **fastx_filter** function from the :ref:`**VSEARCH**<vsearch>` package for filtering by expected error and expected error rate. 
+Rather than setting per-base quality thresholds, another approach is to analyse all of the error probabilities for a read and calculate the overall probability of the read having errors. For this, we will use the **fastx_filter** function from the :ref:`VSEARCH <vsearch>` package for filtering by expected error and expected error rate. 
 
 Given that the quality scores are just a set of probabilities, we can calculate the expected number of errors in the read as a whole. The following command will exclude any reads that have one or more expected errors. Note the difference with the previous section: we don't necessarily ascertain if any particular base is incorrect, we simply calculate how many bases would, on average, be incorrect on a read with this set of quality scores.
 

@@ -20,10 +20,10 @@ Given this knowledge, we can use the Phred scores to calculate the number of exp
 
 	.. parsed-literal::
 		
-		@sequence1
+		\@sequence1
 		AGTACTGCGC
 		+
-		@EB>9:7/.(&
+		\@EB>9:7/.(&
 
 .. admonition:: Solution
 	:class: toggle

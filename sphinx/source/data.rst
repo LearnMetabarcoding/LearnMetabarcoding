@@ -10,7 +10,6 @@ Introduction
 ============
 
 In 2014 and 2015, we sampled arthropod communities from the canopies of rainforest trees in Cusuco National Park, Honduras. These samples were processed at the Natural History Museum, London, where we homogenised the samples and carried out metabarcoding amplification for a 418bp section of the CO1 Folmer "barcode" region. These were sequenced on an Illumina HiSeq using a 2x300bp read metric.
-e
 We have taken a few of these samples and modified them to reduce their size while preserving realistic sequence variation and errors. These samples form the example dataset we provide for you to use as you work through the different sections of these resources.
 
 Getting the data
@@ -80,8 +79,8 @@ Download the data, unzip it and list the contents
 .. parsed-literal::
 	
 	wget URL
-	unzip SectionA.zip
-	ls SectionA
+	unzip sectionA.zip
+	ls sectionA
 
 We suggest actually working through the tutorials in a separate directory, so as to keep the example data from getting mixed up with the data that you produce. For example, you might decide to work through the tutorials in a directory called ``tutorialwork``. The below code shows how you would set this up and copy over the data for the very first tutorial. Note that the first data is a directory of files, so we use ``cp -r``.
 
@@ -90,5 +89,5 @@ We suggest actually working through the tutorials in a separate directory, so as
 	cd ../  :comment:`# Return up to the main directory`
 	mkdir tutorialwork
 	cd tutorialwork
-	cp -r ../exampledata/SectionA/0_rawsequences/ ./
+	cp -r ../exampledata/sectionA/0_rawsequences/ ./
 

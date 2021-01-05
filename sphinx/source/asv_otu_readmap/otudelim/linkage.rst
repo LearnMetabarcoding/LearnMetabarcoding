@@ -23,7 +23,7 @@ Running swarm
 
 **Swarm** is pretty easy to run. The main parameter is ``-d``, which specifies the number of differences to iteratively group ASVs together. This should always be an integer greater than or equal to 1. Our input contains ``;size=`` tags so we use the ``-z`` parameter.
 
-:guilabel:`Run the following command to have **swarm** cluster your input ASVs`.
+:guilabel:`Run the following command to have swarm cluster your input ASVs`.
 
 .. parsed-literal::
 
@@ -41,7 +41,7 @@ Running swarm
 	
 	:math:`418 * 0.03 ≈ 13`
 	
-	.. code-block:: bash
+	.. parsed-literal::
 		
 		swarm -z :var:`input.fasta` -d 13 -w :var:`output.fasta`
 	

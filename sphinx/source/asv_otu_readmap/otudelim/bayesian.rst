@@ -26,7 +26,7 @@ Getting Started
 
 .. parsed-literal::
 
-	vsearch --rereplicate :var:`input.fasta` --output ​:var:`output.fasta`
+	vsearch --rereplicate :var:`input.fasta` --output :var:`output.fasta`
 
 Running CROP
 ============

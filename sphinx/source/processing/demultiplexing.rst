@@ -94,7 +94,7 @@ You’ll probably see that there are occasions where no index or primer is highl
 Demultiplexing
 ==============
 
-We want to split each of these libraries up by index into a separate pair of files for each of the 12 samples, and remove the index sequences. We will do this using the tool :ref:`**cutadapt** <cutadapt>`. This versatile tool allows separating files by index and removal of these indices and primers. It can allow for some error in the index sequence, and can keep read pairs in sync (more on this later).
+We want to split each of these libraries up by index into a separate pair of files for each of the 12 samples, and remove the index sequences. We will do this using the tool :ref:`cutadapt <cutadapt>`. This versatile tool allows separating files by index and removal of these indices and primers. It can allow for some error in the index sequence, and can keep read pairs in sync (more on this later).
 
 As ever with a new tool, first cast your eye over the help, either online or buy running: 
 
@@ -109,7 +109,7 @@ It’s quite long, but at least read the first section. It’s helpful to think 
 * We have multiple indices (cutadapt calls them ‘adapters’)
 * We want to output a different file for each index
 
-**Cutadapt** has settings for all of these situations. It will allow reading two files as input, and will ensure that pairs of reads in these files are kept in sync. Indices at the beginning of reads are specified using ``-g`` ( ``​-G`` for the second file of reads), we can specify these multiple times, and name give different adapters. We also specify that the adapters are right at the beginning, with no gaps, using a ``^`` symbol. We can specify that we want output files depending on the combination of adapters found using the ``​-o`` and ``​-p`` options for the first and second files respectively.
+**Cutadapt** has settings for all of these situations. It will allow reading two files as input, and will ensure that pairs of reads in these files are kept in sync. Indices at the beginning of reads are specified using ``-g`` ( ``​-G`` for the second file of reads), we can specify these multiple times, and name different adapters. We also specify that the adapters are right at the beginning, with no gaps, using a ``^`` symbol. We can specify that we want output files depending on the combination of adapters found using the ``​-o`` and ``​-p`` options for the first and second files respectively.
 
 Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1. To avoid a mess of files, I strongly suggest returning up to the parent directory and creating a new directory. Call this something appropriate. If you're unsure how to do this check the solution box below.
 
@@ -143,7 +143,7 @@ Carefully examine the following command and make sure you're clear on what each 
 	.. parsed-literal:: 
 	
 		ls 1_demux/\*
-		grep -c "^@D00" 1_demux/\*
+		grep -c "^\@D00" 1_demux/\*
 
 Are there more files than expected? This is because the command has looked for all adapter combinations. When we have 3 different forward indices and 3 different reverse indices, there are 9 different combinations possible. Add on top of this that there are 6 possibilites where only a forward *or* a reverse index is used, plus the possibility where *no* indices are used. Hence you should have 16 file pairs.
 

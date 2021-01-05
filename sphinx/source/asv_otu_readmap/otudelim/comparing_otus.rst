@@ -45,7 +45,7 @@ First, concatenate all of your OTUs. You might notice we're using a similar meth
 	do
 		n=${f#\*/};
 		n=${n%.fasta};
-		sed -e "/^>/,s/$/;sample=$n/" $f >> :var:`output.fasta`;
+		sed -e "/^>/s/$/;sample=$n/" $f >> :var:`output.fasta`;
 	 done
 
 Next, we map these OTUs to the ASVs. This should be the ASV file that you used as the input for all of the OTU delimitation runs you did.

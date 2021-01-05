@@ -44,7 +44,7 @@ To run the following command, your working directory should be the directory con
 
 	for f in \*;
 	do                       # ​↓​ the space here should be included!
-		sed -e "s/\\(^@D00.\*\\) .\*$/\\1;sample=${f%.\*};/" $f \\
+		sed -e "s/\\(^\@D00.\*\\) .\*$/\\1;sample=${f%.\*};/" $f \\
 		>> ../:var:`output.fastq`;
 	done
 
@@ -69,7 +69,7 @@ If you instead have a directory of FASTAs, the command is pretty much the same, 
 .. parsed-literal::
 
 	for f in \*;
-	do                    # ​↓​ the space here should be included!
+	do                     # ​↓​ the space here should be included!
 		sed -e "s/\\(^>.\*\\) .\*$/\\1;sample=${f%.\*};/" $f \\
 		>> ../:var:`output.fasta`;
 	done

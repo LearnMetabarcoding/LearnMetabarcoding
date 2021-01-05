@@ -40,7 +40,7 @@ This is a straightforward filter, but it doesn't take into account all of the re
 Denoising
 =========
 
-A much more sophisticated approach to filtering errors is denoising. Denoising algorithms use read frequency and sequence composition to infer likely sequencing errors. ASVs are compared against one another and frequency thresholds are applied relative to counts of similar (but more common) ASVs. Instead of doing the size filtering as part of dereplication, we will instead do it as part of a denoising command. We will use the `**UNOISE3** <https://drive5.com/usearch/manual/unoise_algo.html>`_ algorithm, implemented again in **VSEARCH**. :guilabel:`Run the following command`, remembering to replace ``input.fasta`` with the input data (see the software and data box above) and ``output.fasta`` with a sensible name.
+A much more sophisticated approach to filtering errors is denoising. Denoising algorithms use read frequency and sequence composition to infer likely sequencing errors. ASVs are compared against one another and frequency thresholds are applied relative to counts of similar (but more common) ASVs. Instead of doing the size filtering as part of dereplication, we will instead do it as part of a denoising command. We will use the `UNOISE3 <https://drive5.com/usearch/manual/unoise_algo.html>`_ algorithm, implemented again in **VSEARCH**. :guilabel:`Run the following command`, remembering to replace ``input.fasta`` with the input data (see the software and data box above) and ``output.fasta`` with a sensible name.
 
 .. parsed-literal::
 
@@ -56,7 +56,7 @@ The key parameter here is the alpha parameter, which determines the threshold le
 	
 	.. parsed-literal::
 		
-		grep -oP "(?<=size=).\*$" :var:`input.fasta` sort | uniq -c
+		grep -oP "(?<=size=).\*$" :var:`input.fasta` | sort | uniq -c
 	
 	In the output of this command, the second column is the count of reads, and the first column is the count of these counts. So for example, if a row says ``24 12``, there are 24 ASVs that have 12 reads each.
 
@@ -82,7 +82,7 @@ We should recognise that Robert Edgar, the author of **USEARCH** and **UNOISE**,
 Denoising by sample
 -------------------
 
-The standard usage of **UNOISE** works on the entire dataset, thus considers the frequency of ASVs relative to one another over the entire dataset. However, individual samples within a dataset are rarely evenly sequenced, therefore some ASVs may be rarer because they occur in undersequenced samples, not because they are errors. It may be more appropriate to denoise on the level of individual samples. If you'd like to try this out, you can try out this extension: `Extension: Denoising by sample <denoise_by_sample>`. Note it may take a little while so you may choose to come back to this later.
+The standard usage of **UNOISE** works on the entire dataset, thus considers the frequency of ASVs relative to one another over the entire dataset. However, individual samples within a dataset are rarely evenly sequenced, therefore some ASVs may be rarer because they occur in undersequenced samples, not because they are errors. It may be more appropriate to denoise on the level of individual samples. If you'd like to try this out, you can try out this extension: :ref:`Extension: Denoising by sample <denoise_by_sample>`. Note it may take a little while so you may choose to come back to this later.
 
 Other software
 --------------
