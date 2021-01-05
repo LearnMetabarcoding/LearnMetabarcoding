@@ -37,7 +37,7 @@ The following commands install some general purpose Linux tools and libraries.
 ALAN
 ----
 
-Commandline alignment viewer. `Github. <https://github.com/mpdunne/alan>`_
+Commandline alignment viewer, github `here <https://github.com/mpdunne/alan>`_.
 
 .. parsed-literal::
 	
@@ -50,7 +50,7 @@ Commandline alignment viewer. `Github. <https://github.com/mpdunne/alan>`_
 BLAST
 -----
 
-Widely used sequence searching software. `Documentation. <https://www.ncbi.nlm.nih.gov/books/NBK279690/>`_
+Widely used sequence searching software, documentation and installation instructions `here <https://www.ncbi.nlm.nih.gov/books/NBK279690/>`_.
 
 .. parsed-literal::
 	cd /usr/local/src/
@@ -66,7 +66,7 @@ Widely used sequence searching software. `Documentation. <https://www.ncbi.nlm.n
 bPTP
 ----
 
-Bayesian phylogeny-based species delimitation. `Website. <https://github.com/zhangjiajie/PTP>`_
+Bayesian phylogeny-based species delimitation, github `here <https://github.com/zhangjiajie/PTP>`_.
 
 .. parsed-literal::
 	
@@ -85,7 +85,7 @@ Bayesian phylogeny-based species delimitation. `Website. <https://github.com/zha
 catfasta2phyml
 --------------
 
-Script for concatenating alignments into a supermatrix. `Website. <https://github.com/nylander/catfasta2phyml>`_
+Script for concatenating alignments into a supermatrix, github `here <https://github.com/nylander/catfasta2phyml>`_.
 
 .. parsed-literal::
 	
@@ -105,7 +105,7 @@ Installation not necessary: you could simply download it to your working directo
 CROP
 ----
 
-Bayesian OTU delimitation. `Github. <https://github.com/tingchenlab/CROP>`_
+Bayesian OTU delimitation, github `here <https://github.com/tingchenlab/CROP>`_.
 
 .. parsed-literal::
 	
@@ -125,7 +125,7 @@ Bayesian OTU delimitation. `Github. <https://github.com/tingchenlab/CROP>`_
 Cutadapt
 --------
 
-Versatile adapter sequence removal. `Documentation. <https://cutadapt.readthedocs.io/en/stable/>`_
+Versatile adapter sequence removal, documentation `here <https://cutadapt.readthedocs.io/en/stable/>`_.
 
 .. parsed-literal::
 	
@@ -137,7 +137,7 @@ Versatile adapter sequence removal. `Documentation. <https://cutadapt.readthedoc
 extract_genes
 -------------
 
-Script for extracting individual gene sequences from GenBank files. `Github. <https://github.com/tjcreedy/biotools>`_
+Script for extracting individual gene sequences from GenBank files, github `here <https://github.com/tjcreedy/biotools>`_.
 
 .. parsed-literal::
 	
@@ -157,7 +157,7 @@ Installation not necessary: you coul simply download it to your working director
 FastTree
 --------
 
-Fast maximum likelihood phylogenetic inference. `Website. <http://www.microbesonline.org/fasttree/>`_
+Fast maximum likelihood phylogenetic inference, website `here <http://www.microbesonline.org/fasttree/>`_.
 
 .. parsed-literal::
 	
@@ -172,7 +172,7 @@ Fast maximum likelihood phylogenetic inference. `Website. <http://www.microbeson
 FastQC
 ------
 
-Raw sequence quality assessment. `Website. <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
+Raw sequence quality assessment, website `here <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_.
 
 .. parsed-literal::
 	
@@ -188,7 +188,7 @@ Raw sequence quality assessment. `Website. <https://www.bioinformatics.babraham.
 FASTX Toolkit
 -------------
 
-Various handy tools for dealing with FASTA and FASTQ files. A little out of date though, requires patching to work in modern Ubuntu (all done in the below commands). `Website. <http://hannonlab.cshl.edu/fastx_toolkit/index.html>`_ 
+Various handy tools for dealing with FASTA and FASTQ files. A little out of date though, requires patching to work in modern Ubuntu (all done in the below commands). Website `here <http://hannonlab.cshl.edu/fastx_toolkit/index.html>`_.
 
 .. parsed-literal::
 	
@@ -219,7 +219,7 @@ Various handy tools for dealing with FASTA and FASTQ files. A little out of date
 MAFFT
 -----
 
-Sequence alignment. `Website. <https://mafft.cbrc.jp/alignment/software/>`_
+Sequence alignment software, website `here <https://mafft.cbrc.jp/alignment/software/>`_.
 
 .. parsed-literal::
 	
@@ -232,9 +232,7 @@ Sequence alignment. `Website. <https://mafft.cbrc.jp/alignment/software/>`_
 metaMATE
 --------
 
-Tool for exploring detailed read frequency filtering thresholds. `Github. <https://github.com/tjcreedy/metaMATE>`_
-Requires :ref:`BLAST<blast>`, :ref:`MAFFT<mafft>` and :ref:`R<r>`
-
+Tool for exploring detailed read frequency filtering thresholds, github `here <https://github.com/tjcreedy/metaMATE>`_. Requires :ref:`BLAST<blast>`, :ref:`MAFFT<mafft>` and :ref:`R<r>`
 
 .. parsed-literal::
 	
@@ -247,7 +245,7 @@ Requires :ref:`BLAST<blast>`, :ref:`MAFFT<mafft>` and :ref:`R<r>`
 Pairfq
 ------
 
-Ensures paired read files are syncronised. `Github. <https://github.com/sestaton/Pairfq>`_
+Ensures paired read files are syncronised, github `here <https://github.com/sestaton/Pairfq>`_.
 
 .. parsed-literal::
 	
@@ -260,8 +258,7 @@ Ensures paired read files are syncronised. `Github. <https://github.com/sestaton
 PEAR
 ----
 
-Paired end read merger. `Website. <http://www.exelixis-lab.org/pear>`_
-You must sign up for a PEAR academic licence and you will receive an email with a link to download the installation files. The command here assumes you've downloaded the file to your home directory.
+Paired end read merger, website `here <http://www.exelixis-lab.org/pear>`_. You must sign up for a PEAR academic licence on that website and you will receive an email with a link to download the installation files. The command here assumes you've downloaded the file to your home directory.
 
 .. parsed-literal::
 	
@@ -279,7 +276,7 @@ You must sign up for a PEAR academic licence and you will receive an email with 
 R
 -
 
-Versatile data handling language. `Website. <https://cran.r-project.org>`_
+Versatile data handling language, website `here <https://cran.r-project.org>`_.
 
 .. parsed-literal::
 	
@@ -294,7 +291,7 @@ Versatile data handling language. `Website. <https://cran.r-project.org>`_
 swarm
 -----
 
-Linkage-based OTU delimitation. `Github. <https://github.com/torognes/swarm>`_
+Linkage-based OTU delimitation, github `here <https://github.com/torognes/swarm>`_.
 
 .. parsed-literal::
 	
@@ -316,7 +313,7 @@ Linkage-based OTU delimitation. `Github. <https://github.com/torognes/swarm>`_
 VSEARCH
 -------
 
-Open-source implementation of USEARCH with more versatility. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. `Github. <https://github.com/torognes/vsearch>`_
+Open-source implementation of USEARCH with more versatility. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. Github `here <https://github.com/torognes/vsearch>`_`
 
 .. parsed-literal::
 	
@@ -339,7 +336,7 @@ Open-source implementation of USEARCH with more versatility. VSEARCH is a softwa
 phylostuff
 ----------
 
-A set of scripts for doing stuff to phylogenies, including relabelling and inferring taxonomy. `Github. <https://github.com/tjcreedy/phylostuff>`_
+A set of scripts for doing stuff with phylogenies, including relabelling and inferring taxonomy. Github `here <https://github.com/tjcreedy/phylostuff>`_.
 Requires :ref:`R<r>`.
 
 .. parsed-literal::
