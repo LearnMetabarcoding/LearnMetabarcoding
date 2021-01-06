@@ -1,6 +1,6 @@
 .. _cheatsheet:
 
-.. _role:: var
+.. role:: var
 
 =================================
 Cheatsheet of useful commands

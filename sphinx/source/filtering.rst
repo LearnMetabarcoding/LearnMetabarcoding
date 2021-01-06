@@ -62,8 +62,8 @@ Removing errors
 
 There are many ways that we can try to remove these errors, with different levels of certainty about the approach. This section will cover several methods: these are illustrated in the table below, alongside indications of what types of errors these methods target.
 
-+-----------------------+-------+-----------+---------------+----------------------+
-|                       | Errors                                                | 
++-----------------------+-------+------------+---------------+----------------------+
+|                       | Errors                                                    | 
 | Approach              | PCR   | Sequencing | Bioinformatic | Non-target sequences |
 +=======================+=======+============+===============+======================+
 | Quality filtering     |       | **✓**      |               |                      |
