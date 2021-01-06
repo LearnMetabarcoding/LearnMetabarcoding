@@ -45,7 +45,7 @@ Run the following command, making sure to replace ``output.fastq`` with a sensib
 .. parsed-literal::
 
 	for f in \*;
-	do                         :comment:`# ↓ the space here should be included!`
+	do                          :comment:`# ↓ the space here should be included!`
 		sed -e "s/\\(^\@D00.\*\\) .\*$/\\1;sample=${f%.\*};/" $f \\
 		>> ../:var:`output.fastq`;
 	done
