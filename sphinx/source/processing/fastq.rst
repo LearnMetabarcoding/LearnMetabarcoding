@@ -20,7 +20,7 @@ This page reviews a few basic points about sequence file structure and how to ex
 	
 	.. parsed-literal::
 	
-		cp -r :var:`path/to/exampledata/sectionA/0_rawsequences/ ./`
+		cp -r :var:`path/to`\/exampledata/sectionA/0_rawsequences/ ./
 
 Exploring FASTQ files
 =====================

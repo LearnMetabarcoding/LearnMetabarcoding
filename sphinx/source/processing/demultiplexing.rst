@@ -30,7 +30,7 @@ There are many ways in which metabarcoding libraries may be sequenced. If you ar
 	
 	.. parsed-literal::
 		
-		cp -r :var:`path/to/exampledata/sectionA/0_rawsequences/ ./`
+		cp -r :var:`path/to`\/exampledata/sectionA/0_rawsequences/ ./
 		
 	
 	If you are completely new to sequence data, you might at this point want to :ref:`review the FASTQ format <fastq>`
