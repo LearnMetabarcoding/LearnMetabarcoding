@@ -64,7 +64,7 @@ There are many ways that we can try to remove these errors, with different level
 
 +-----------------------+-------+------------+---------------+----------------------+
 |                       | Errors                             |                      |
-|                       +-------+------------+---------------+----------------------+
+|                       +-------+------------+---------------+                      |
 | Approach              | PCR   | Sequencing | Bioinformatic | Non-target sequences |
 +=======================+=======+============+===============+======================+
 | Quality filtering     |       | **✓**      |               |                      |
