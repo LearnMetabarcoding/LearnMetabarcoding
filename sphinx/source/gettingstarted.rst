@@ -22,7 +22,7 @@ You will need access to a computer with a UNIX command line interface to perform
 
 If your bioinformatics machine is a remote server, we provide some general instructions on how to communicate with this server in the :ref:`Accessing linux servers <remote_access>` page.
 
-The ::ref:`How to use these resources <how_to_use>` page gives an overview of the format we will use in all of the tutorials in these resources, so it is important to make sure you read this carefully before you start on the tutorials.
+The :ref:`How to use these resources <how_to_use>` page gives an overview of the format we will use in all of the tutorials in these resources, so it is important to make sure you read this carefully before you start on the tutorials.
 
 You might want to read a short discussion about :ref:`The bioinformatics toolbox <toolbox_pipelines>` about our philosophy when it comes to pipelines, packages and choosing software. 
 
