@@ -55,7 +55,7 @@ Comparing Classifications
 
 .. admonition:: Exercise
 	
-	To quickly get an idea of how many Coleoptera OTUs we have, run the following command on the **SINTAX*** file, the RDP classified file, and the MEGAN output you uploaded:
+	To quickly get an idea of how many Coleoptera OTUs we have, run the following command on the **SINTAX** file, the RDP classified file, and the MEGAN output you uploaded:
 	
 	.. parsed-literal:: 
 	

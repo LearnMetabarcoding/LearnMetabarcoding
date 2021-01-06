@@ -18,7 +18,7 @@ The optimal classification may then be best achieved through a combination of br
 .. admonition:: Data and software
 	:class: green
 	
-	The input data for this tutorial is a phylogenetic tree with query sequences (i.e. OTUs) placed among a set of references with known taxonomy. You will also need a table recording taxonomy for these references. If you have been following along step-by-step, you can use the phylogenetic tree you produced in the `placing OTUs in trees<phylogenetic_placement>` tutorial, and the corresponding taxonomy table. Alternatively, the files ``phylogeny_GB_CCCP_otus_greedy_0.97.tre`` and ``taxonomy_GB_CCCP.csv`` within the :ref:`sectionE archive <sectionEdata>` can be used as example data.
+	The input data for this tutorial is a phylogenetic tree with query sequences (i.e. OTUs) placed among a set of references with known taxonomy. You will also need a table recording taxonomy for these references. If you have been following along step-by-step, you can use the phylogenetic tree you produced in the :ref:`placing OTUs in trees<phylogenetic_placement>` tutorial, and the corresponding taxonomy table. Alternatively, the files ``phylogeny_GB_CCCP_otus_greedy_0.97.tre`` and ``taxonomy_GB_CCCP.csv`` within the :ref:`sectionE archive <sectionEdata>` can be used as example data.
 	
 	This tutorial uses the :ref:`phylabel.R<phylostuff>` and :ref:`treedentify.R<phylostuff>` scripts.
 
