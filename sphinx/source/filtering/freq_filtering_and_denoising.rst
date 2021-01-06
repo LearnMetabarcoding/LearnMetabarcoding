@@ -52,6 +52,7 @@ The key parameter here is the alpha parameter, which determines the threshold le
 	
 	* How does the number of sequences filtered by this command compare with the output of the simple abundance threshold run before?
 	* What is the effect on the number of sequences and size distribution of those sequences of varying the alpha parameter?
+	
 	You can get the size distribution by running:
 	
 	.. parsed-literal::
