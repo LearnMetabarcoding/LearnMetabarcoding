@@ -42,7 +42,7 @@ The :code:`*.fastq` here means we want all of the files ending in ``.fastq`` in 
 
 .. parsed-literal::
 
-	head -n 10 :var:`​file`
+	head -n 10 :var:`file`
 
 You will see the FASTQ format comprising header, sequence and quality scores. A useful point to note is the structure of the file header, specifically that it starts with ``@D00``. If the structure of this file is completely new to you, take a few minutes to read the first section on the `FASTQ wikipedia page <https://en.wikipedia.org/wiki/FASTQ_format>`_.
 
@@ -60,7 +60,7 @@ We can use the ``grep -c`` function to count the number of sequences in a file (
 
 .. parsed-literal::
 
-	grep -c "^@D00" ​:var:`file`
+	grep -c "^\@D00" :var:`file`
 
 If you want to learn more about ``grep``, see :ref:`here<grep>`.
 

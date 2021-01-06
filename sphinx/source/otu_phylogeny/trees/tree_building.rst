@@ -34,7 +34,7 @@ The terminals of the tree are named only with the code names for their respectiv
 
 .. parsed-literal::
 	
-	phylabel.R -p :var:`input.tre` -r -t :var:`taxonomy.csv`  -o :var:`output.tre`
+	phylabel.R -p :var:`input.tre` -r -y :var:`taxonomy.csv`  -o :var:`output.tre`
 	
 
 Assessing Trees

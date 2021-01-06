@@ -36,7 +36,7 @@ First, we must assign taxonomy to the tree. We do this with the ``phylabel.R`` s
 
 .. parsed-literal::
 	
-	phylabel.R -p :var:`input.tre` -x -t :var:`taxonomy.csv` -o :var:`output.tre`
+	phylabel.R -p :var:`input.tre` -x -y :var:`taxonomy.csv` -o :var:`output.tre`
 	
 
 .. admonition:: Exercise
