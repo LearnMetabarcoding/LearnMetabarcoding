@@ -58,7 +58,7 @@ An example of using ``scp`` to transfer a file from your local machine to a serv
 
 	scp :var:`filename` :var:`username@server_address:/path/`
 
-You type ``scp`` followed by the file name (if you are not in the directory the file is in you will need to write the whole file path) followed by your `username@server_address` followed by a colon then the path (from the root) to where you want the copy to go in the destination server. If you don't know what the path is that you need to type in, remember, you can use pwd in the directory you want to send the file to and this will return the path of that directory. 
+You type ``scp`` followed by the file name (if you are not in the directory the file is in you will need to write the whole file path) followed by your ``username@server_address`` followed by a colon then the path (from the root) to where you want the copy to go in the destination server. If you don't know what the path is that you need to type in, remember, you can use pwd in the directory you want to send the file to and this will return the path of that directory. 
 
 To transfer from the server to your local machine you simply swap the order of your file paths i.e. server address and filepath then local file path. 
 
