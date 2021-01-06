@@ -51,12 +51,12 @@ Open up **MEGAN**. It usually takes a little while to open because it has to loa
 
 **MEGAN** works through each OTU and find the location on the NCBI taxonomy tree for each GenBank sequence the OTU had a hit against. It then uses the LCA algorithm to assign taxonomy to each OTU.
 
-Once **MEGAN** has opened and loaded the tree, you should see a very high-level cladogram of living organisms. This is the entire NCBI taxonomy. To map the OTU BLAST data onto this, you need to load the XML. Go to ​:menuselection:`File --> Import From BLAST​`. In the Files tab of the window that appears, use the button to the right of the first box to browse to and select your XML file. **MEGAN** will automatically fill the third box. It should look something like this:
+Once **MEGAN** has opened and loaded the tree, you should see a very high-level cladogram of living organisms. This is the entire NCBI taxonomy. To map the OTU BLAST data onto this, you need to load the XML. Go to :menuselection:`File --> Import From BLAST`. In the Files tab of the window that appears, use the button to the right of the first box to browse to and select your XML file. **MEGAN** will automatically fill the third box. It should look something like this:
 
 .. image:: megan_screenshot.png
 	:align: center
 
-Go to the ​:menuselection:`LCA Params` tab at the top. Here you will see the parameters that **MEGAN** uses when assigning taxonomy using its lowest common ancestor algorithm. For now we'll leave these as default and just press :menuselection:`Apply​`. It will take a little while to process your BLAST results (longer if you have a large dataset and/or increased the number of hits returned in your **BLAST** command.
+Go to the :menuselection:`LCA Params` tab at the top. Here you will see the parameters that **MEGAN** uses when assigning taxonomy using its lowest common ancestor algorithm. For now we'll leave these as default and just press :menuselection:`Apply`. It will take a little while to process your BLAST results (longer if you have a large dataset and/or increased the number of hits returned in your **BLAST** command.
 
 Once **MEGAN** has finished you should see a reduced version of the taxonomy tree. It may not be very detailed: at the top bar, select :menuselection:`Rank` and choose :menuselection:`Species`. Have a look at the tree.
 
