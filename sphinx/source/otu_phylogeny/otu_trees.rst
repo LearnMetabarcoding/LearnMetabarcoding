@@ -34,7 +34,7 @@ The first stage of any tree building is to align the sequences so that homologou
 
 .. parsed-literal::
 	
-	mafft --thread 1 --globalpair -- maxiterate 1000 :var:`input.fasta` > :var:`output.fasta`
+	mafft --thread 1 --globalpair --maxiterate 1000 :var:`input.fasta` > :var:`output.fasta`
 	
 
 Where we have a coding locus with a very strict length expectation, such as in the example data where all sequences are 418bp, we can choose to skip this step, because the sequences are already in some form of alignment.
