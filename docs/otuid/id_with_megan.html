@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Classification with GenBank &amp; MEGAN &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extension: MEGAN settings" href="extensions/megan_settings.html" />
+    <link rel="prev" title="Database Classification" href="database.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../otuid.html">E: Identifying OTU sequences</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="database.html">Database Classification</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1. Classification with GenBank &amp; MEGAN</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extensions/megan_settings.html">Extension: MEGAN settings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="id_with_curated_db.html">2. Classification with Curated Databases</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="id_local.html">Identifying OTUs with References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phylogeny_based.html">Phylogenetic Classification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contactus.html">Contact us</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../otuid.html">E: Identifying OTU sequences</a> &raquo;</li>
+        
+          <li><a href="database.html">Database Classification</a> &raquo;</li>
+        
+      <li>1. Classification with GenBank &amp; MEGAN</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/otuid/id_with_megan.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="classification-with-genbank-megan">
+<span id="id-using-megan"></span><h1>1. Classification with GenBank &amp; MEGAN<a class="headerlink" href="#classification-with-genbank-megan" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>One of the most straightforward automated ways of assigning taxonomy to OTUs is to <strong>BLAST</strong> the OTUs against the GenBank nucleotide database. GenBank is the largest database of publicly accessible sequence data in the world and by looking at the hits we get, we may be able to draw some conclusions about the taxonomy of a sequence. You can <a class="reference external" href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&amp;PAGE_TYPE=BlastSearch&amp;LINK_LOC=blasthome">search sequences online</a>, but a much more efficient way is to download a copy of GenBank to your local machine and use the <strong>BLAST</strong> command line software.</p>
+<p>While we could simply look at the hits we get from a <strong>BLAST</strong> search to estimate taxonomy, this wouldn’t be very consistent. A standardised way is to process the results using a Lowest Common Ancestor algorithm. This process looks at the taxonomy of all of the results for a single sequence and estimates what taxon is the most likely Lowest Common Ancestor for all of the results, assigning the sequence that taxon. This is implemented in the program <strong>MEGAN</strong>.</p>
+<div class="green admonition">
+<p class="admonition-title">Data and software</p>
+<p>The input data to this tutorial is a FASTA file of sequences that you want to classify. If you’ve been following along step-by-step, you can use ASVs or OTUs you produced in previous sections. Alternatively, you can use the file <code class="docutils literal notranslate"><span class="pre">otus_greedy_0.97.fasta</span></code> within the <a class="reference internal" href="../data.html#sectionddata"><span class="std std-ref">sectionD archive</span></a> can be used as example data.</p>
+<p>You will also need a local copy of the GenBank nucleotide (nt) database. If you’re working with your own data, you can find out how to download this <a class="reference external" href="ftp://ftp.ncbi.nlm.nih.gov/blast/documents/blastdb.html">here</a>. If you are working with the example data, we have created a mini version of the nt database designed to rapidly produce results <em>for this dataset only</em>. This is in the directory <code class="docutils literal notranslate"><span class="pre">blastdb</span></code> within the <a class="reference internal" href="../data.html#sectionddata"><span class="std std-ref">sectionD archive</span></a>.</p>
+<p>This tutorial uses the <a class="reference internal" href="../gettingstarted/setup/installing_software.html#blast"><span class="std std-ref">BLAST</span></a> software. You should also have the software <a class="reference external" href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/megan6/">MEGAN</a> installed on your personal computer.</p>
+</div>
+</div>
+<div class="section" id="running-blast">
+<h2>Running BLAST<a class="headerlink" href="#running-blast" title="Permalink to this headline">¶</a></h2>
+<p>Running <strong>BLAST</strong> is fairly straightforward, although there are a lot of options, some of which are fairly obscure. Be sure to check out the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_">documentation</a> at some point. We will use the following <strong>BLAST</strong> command to search our sequences against a local copy of the GenBank nt database (see the Data and software box above for details of acquiring this database). <span class="guilabel">Run this command, making sure to specify the correct path to the blastdb directory and replacing the other file names with the name of your OTU sequences and a sensible output name.</span></p>
+<pre class="literal-block">blastn -db <span class="var">path/to/</span>blastdb/nt -query <span class="var">input.fasta</span> -outfmt 5 -out <span class="var">output.xml</span> -evalue 0.001</pre>
+<p>This command generates a very large XML file containing the full record of all the alignments BLAST has found for our OTUs. You should transfer this to your personal computer for the next step, but to save bandwidth, let’s first compress the xml using zip:</p>
+<pre class="literal-block">zip <span class="var">file.xml.zip</span> <span class="var">file.xml</span></pre>
+<p>Using your FTP client, or whatever file transfer method you like, transfer the zipped XML file to your computer and extract it.</p>
+</div>
+<div class="section" id="running-megan">
+<h2>Running MEGAN<a class="headerlink" href="#running-megan" title="Permalink to this headline">¶</a></h2>
+<p>We will use <strong>MEGAN</strong> to parse the BLAST results and assign taxonomy to our OTUs. This is one of many algorithms out there for doing this - we introduce it here because it has a handy GUI interface and you’re probably bored of looking at the terminal.</p>
+<p>Open up <strong>MEGAN</strong>. It usually takes a little while to open because it has to load the entire NCBI taxonomy into memory and display it. I bet you miss the efficiency of the terminal already.</p>
+<p><strong>MEGAN</strong> works through each OTU and find the location on the NCBI taxonomy tree for each GenBank sequence the OTU had a hit against. It then uses the LCA algorithm to assign taxonomy to each OTU.</p>
+<p>Once <strong>MEGAN</strong> has opened and loaded the tree, you should see a very high-level cladogram of living organisms. This is the entire NCBI taxonomy. To map the OTU BLAST data onto this, you need to load the XML. Go to ​:menuselection:<cite>File –&gt; Import From BLAST​</cite>. In the Files tab of the window that appears, use the button to the right of the first box to browse to and select your XML file. <strong>MEGAN</strong> will automatically fill the third box. It should look something like this:</p>
+<img alt="../_images/megan_screenshot.png" class="align-center" src="../_images/megan_screenshot.png" />
+<p>Go to the ​:menuselection:<cite>LCA Params</cite> tab at the top. Here you will see the parameters that <strong>MEGAN</strong> uses when assigning taxonomy using its lowest common ancestor algorithm. For now we’ll leave these as default and just press <span class="menuselection">Apply​</span>. It will take a little while to process your BLAST results (longer if you have a large dataset and/or increased the number of hits returned in your <strong>BLAST</strong> command.</p>
+<p>Once <strong>MEGAN</strong> has finished you should see a reduced version of the taxonomy tree. It may not be very detailed: at the top bar, select <span class="menuselection">Rank</span> and choose <span class="menuselection">Species</span>. Have a look at the tree.</p>
+<p><span class="guilabel">Are all the OTUs Coleoptera?</span></p>
+<p>Each circle on the tree is one or more OTUs that have been assigned to a node. The larger the circle, the more OTUs have been assigned to that node. If you click on a node, you’ll see two values. <span class="menuselection">Assigned</span> is the number of OTUs assigned to that node, <span class="menuselection">Summed</span> is the number of OTUs assigned to that node and all child nodes. If you ​right click on a node and click <span class="menuselection">Inspect</span>, you can see more details about that node and the OTU(s) assigned to it, as well as all the BLAST information. The greyed out BLAST hits are those that aren’t taken into account in the LCA analysis.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>You’ll notice that many OTUs have been assigned to internal nodes (i.e. not species). <span class="menuselection">Inspect</span> some of these.</p>
+<ul class="simple">
+<li><p>Why do you think the algorithm has assigned them to internal nodes?</p></li>
+<li><p>Do you think algorithm is always correct?</p></li>
+</ul>
+</div>
+<p>To output the taxonomic assignment for all of the OTUs for use in analysis, we need to select all of the nodes. You can do this by going to <span class="menuselection">Select ‣ All Nodes</span>. Then go to <span class="menuselection">File ‣ Export ‣ Text (CSV) Format</span>. For the <span class="menuselection">Choose data to export:</span> field, select <span class="menuselection">readName_to_taxonPath</span>, click OK and select your output location. This generates a comma-separated table with the OTU name and full NCBI taxon path of the assigned node.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>The major downside to this method is that it relies on GenBank being a) comprehensive and b) accurate. Some OTUs may be able to be classified to family or genus level if that family or genus is well represented in GenBank (for the locus we’re using) and the identifications of the sequences on GenBank are both accurate and complete to the necessary taxonomic level. However, many other OTUs may not be able to be classified below the class or order level if there are insufficient close sequences available to match to, or if the available sequences are incorrectly identified or identified only to the class or order level.</p>
+<p>These impact of these issues can be somewhat ameliorated with careful tweaking of some of the LCA settings. If you want to experiment with different LCA settings in MEGAN, you could look at the <a class="reference internal" href="extensions/megan_settings.html#megan-settings"><span class="std std-ref">Extension: MEGAN LCA parameters</span></a></p>
+<p>To deal with the accuracy issue, you could use a curated database. These are usually subsets of GenBank that have carefully checked the accuracy of the taxonomy for a subset of sequences, usually based on a specific locus. We look at how to use one of these, with a variety of different classification methods, in the next tutorial: <a class="reference internal" href="id_with_curated_db.html#id-curated"><span class="std std-ref">2. Classification with curated databases</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="extensions/megan_settings.html" class="btn btn-neutral float-right" title="Extension: MEGAN settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="database.html" class="btn btn-neutral float-left" title="Database Classification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
