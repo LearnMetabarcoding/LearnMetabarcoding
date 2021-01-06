@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic UNIX commands &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using nano to edit documents" href="nano.html" />
+    <link rel="prev" title="UNIX command line" href="UNIX_cmd_line.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../gettingstarted.html">Getting started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up a bioinformatics machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote_access.html">Accessing linux servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how_to_use.html">How to use these resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolbox_pipelines.html">The bioinformatics toolbox</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../cli_bioinformatics.html">Command line bioinformatics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="UNIX_cmd_line.html">UNIX command line</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Basic UNIX commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nano.html">Using nano to edit documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="grep.html">The grep command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sed.html">The sed command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loops.html">Loops in bash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cheatsheet.html">Cheatsheet of useful commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="keeping_organised.html">Keeping your data organised</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../otuid.html">E: Identifying OTU sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contactus.html">Contact us</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../gettingstarted.html">Getting started</a> &raquo;</li>
+        
+          <li><a href="../cli_bioinformatics.html">Command line bioinformatics</a> &raquo;</li>
+        
+      <li>Basic UNIX commands</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/gettingstarted/cli_bioinformatics/basic_UNIX.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-unix-commands">
+<span id="basic-unix"></span><h1>Basic UNIX commands<a class="headerlink" href="#basic-unix-commands" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="some-commonly-used-commands">
+<h2>Some commonly used commands<a class="headerlink" href="#some-commonly-used-commands" title="Permalink to this headline">¶</a></h2>
+<p>The following are some basic commands you might use to navigate around and manipulate files on a linux computer using the command line interface. You can read more about some of these commands below.</p>
+<p>Print the current working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+</pre></div>
+</div>
+<p>Make a new directory ​called <code class="docutils literal notranslate"><span class="pre">dir​</span></code> inside the working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir ​./dir
+</pre></div>
+</div>
+<p>Change working directory to a directory named to ​dir​ that is inside the working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ​./dir
+</pre></div>
+</div>
+<p>Change working directory to the parent of the working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span>
+</pre></div>
+</div>
+<p>Show the contents of the working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+<p>Show the contents in an ordered list with file sizes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">lh</span>
+</pre></div>
+</div>
+<p>Create a blank file called <code class="docutils literal notranslate"><span class="pre">fileA</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">fileA</span>
+</pre></div>
+</div>
+<p>Move <code class="docutils literal notranslate"><span class="pre">​fileA</span></code> ​to the parent of the working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileA</span> <span class="o">../</span>
+</pre></div>
+</div>
+<p>Copy ​``fileA​`` from the parent of the working directory to the working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">../</span><span class="n">fileA</span> <span class="o">./</span>
+</pre></div>
+</div>
+<p>Rename ​``fileA``​ to <code class="docutils literal notranslate"><span class="pre">​fileB</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileA</span> <span class="n">fileB</span>
+</pre></div>
+</div>
+<p>Delete <code class="docutils literal notranslate"><span class="pre">fileA</span></code> (be careful!)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="n">fileA</span>
+</pre></div>
+</div>
+<p>Delete an empty directory called <code class="docutils literal notranslate"><span class="pre">dirA</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">d</span> <span class="n">dirA</span>
+</pre></div>
+</div>
+<p>Move all files starting with ​``file``​ in the current directory to directory ​``dir``</p>
+<pre class="literal-block">mv file* ./dir</pre>
+<p>Delete all files ending with ​``.fasta`` ​(be really careful!)`</p>
+<pre class="literal-block">rm *.fasta</pre>
+<p>Delete the directory called <code class="docutils literal notranslate"><span class="pre">dirA</span></code> and its contents (be extremely careful!)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">dirA</span>
+</pre></div>
+</div>
+<p>Display first 10 lines of <code class="docutils literal notranslate"><span class="pre">​fileB</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>head ​fileB
+</pre></div>
+</div>
+<p>Display first 20 lines of ​``fileB``</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>head -n 20 ​fileB
+</pre></div>
+</div>
+<p>Display ​``fileB`` ​in a scrollable format (press <span class="menuselection">q</span> to quit)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>more ​fileB
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-detailed-examples-for-beginners">
+<h2>More detailed examples for beginners<a class="headerlink" href="#more-detailed-examples-for-beginners" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="navigating-a-linux-system">
+<h3>Navigating a linux system<a class="headerlink" href="#navigating-a-linux-system" title="Permalink to this headline">¶</a></h3>
+<p>To check where you are in a system you type in <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and press Enter (Return). This will show you your current working directory.
+If you need to change directory you can type <code class="docutils literal notranslate"><span class="pre">cd</span></code> followed by the path of the directory you want.</p>
+<pre class="literal-block">cd <span class="var">path/to/directory</span></pre>
+<p>If you need to create a new directory you can use the <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> command followed by what name you want to give the new directory.</p>
+<pre class="literal-block">mkdir <span class="var">new_directory</span></pre>
+</div>
+<div class="section" id="creating-a-file">
+<h3>Creating a file<a class="headerlink" href="#creating-a-file" title="Permalink to this headline">¶</a></h3>
+<p>To create a file you can either use commands <code class="docutils literal notranslate"><span class="pre">echo</span></code> or <code class="docutils literal notranslate"><span class="pre">touch</span></code>, or the nano text editor (described in a later section).
+To create an empty file you can use the <code class="docutils literal notranslate"><span class="pre">touch</span></code> command followed by the name you want to save the empty file under.</p>
+<pre class="literal-block">touch <span class="var">filename</span></pre>
+<p>To create a file that has certain contents you can use <code class="docutils literal notranslate"><span class="pre">echo</span></code> or <code class="docutils literal notranslate"><span class="pre">nano</span></code>.
+Lets say you want a file that contains the text “this is a file” and you wanted to name that file <code class="docutils literal notranslate"><span class="pre">fileA.txt</span></code>.
+You would do this as shown below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;this is a file&quot;</span> <span class="o">&gt;</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>If you want to create a text file with multiple lines of text from the terminal it will be easier to use nano (see later section).</p>
+</div>
+<div class="section" id="copying-files">
+<h3>Copying files<a class="headerlink" href="#copying-files" title="Permalink to this headline">¶</a></h3>
+<p>You might want to copy a file under a different name so you can edit it but still keep the original.
+To do this we can us the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command. Type <code class="docutils literal notranslate"><span class="pre">cp</span></code> followed by the name of the file you want to copy then the name you want to give the copy.
+Lets say we wanted to make a copy of <code class="docutils literal notranslate"><span class="pre">fileA.txt</span></code> named <code class="docutils literal notranslate"><span class="pre">fileB.txt</span></code>. The block below shows us how we would do this.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span> <span class="n">fileB</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>You can also copy a file into a different directory by putting the target directory path as the second argument followed by a <code class="docutils literal notranslate"><span class="pre">/</span></code> and the name you want the copy to be saved under.
+For example, if we wanted to copy <code class="docutils literal notranslate"><span class="pre">fileA.txt</span></code> to a directory named <code class="docutils literal notranslate"><span class="pre">dirB</span></code> that was in our current parent directory and name the copy <code class="docutils literal notranslate"><span class="pre">fileB.txt</span></code>, we would run the below command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span> <span class="o">../</span><span class="n">dirB</span><span class="o">/</span><span class="n">fileB</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="moving-files">
+<h3>Moving files<a class="headerlink" href="#moving-files" title="Permalink to this headline">¶</a></h3>
+<p>If you want to move a file into a different directory without copying it you can use the <code class="docutils literal notranslate"><span class="pre">mv</span></code> command. You type <code class="docutils literal notranslate"><span class="pre">mv</span></code> followed by the name of the file you would like to move then the target directory path. Lets say we want to move a file named <code class="docutils literal notranslate"><span class="pre">fileC.txt</span></code> into a directory named <code class="docutils literal notranslate"><span class="pre">dirB</span></code> which is contained within our current parent directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileC</span><span class="o">.</span><span class="n">txt</span> <span class="o">../</span><span class="n">dirB</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="renaming-files">
+<h3>Renaming files<a class="headerlink" href="#renaming-files" title="Permalink to this headline">¶</a></h3>
+<p>The simplest way to rename files is to use the <code class="docutils literal notranslate"><span class="pre">mv</span></code> command. This might seem strange, but think of the path of a file as being simply a longer version of the file name. Thus moving files between directories is essentially just a matter of changing their name. So you can rename a file by “moving” it to another file name. So say you wanted to change the name of <code class="docutils literal notranslate"><span class="pre">fileA.txt</span></code> to <code class="docutils literal notranslate"><span class="pre">fileD.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span> <span class="n">fileD</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>It’s that simple!</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nano.html" class="btn btn-neutral float-right" title="Using nano to edit documents" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="UNIX_cmd_line.html" class="btn btn-neutral float-left" title="UNIX command line" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
