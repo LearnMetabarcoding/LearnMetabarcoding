@@ -12,6 +12,7 @@ The ``grep`` command is a very powerful tool for searching and subsetting a text
 	:class: green
 	
 	Learning Regular Expressions in detail is beyond the scope of these resources, but there are plenty of great tutorials on the web.
+	
 	* `RegexOne <https://regexone.com/>`_ provides a great interactive tutorial for learning the basics of Regular Expressions
 	* `regular-expressions.info <https://www.regular-expressions.info/>`_ is a good reference site to look up particular expressions
 	* `regex101.com <https://regex101.com/>`_ is a really handy tool to test your RegEx
