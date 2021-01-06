@@ -5,7 +5,7 @@
 .. role:: comment
 
 =================
-Greedy Clustering
+Greedy clustering
 =================
 
 Introduction
@@ -28,7 +28,7 @@ Running greedy clustering
 
 While the **USEARCH** **UPARSE** pipeline is probably the most commonly used tool for greedy clustering, we will instead once again use **VSEARCH**. **VSEARCH** implements exactly the same clustering algorithm as **USEARCH**, but also allows greater flexibility in outputs and in similarity algorithms available.
 
-The following is the basic command for 97% clustering of our ASVs, using the **USEARCH** algorithm. :guilabel:`Run this command, using your ASVs as input and making sure to use a sensible name for the output file.` We would suggest including in your output file name the method and the threshold parameter (e.g. ``otus_greedy_0.97.fasta``)
+The following is the basic command for 97% clustering of our ASVs, using the **USEARCH** algorithm. Run this command, using your ASVs as input and making sure to use a sensible name for the output file. We would suggest including in your output file name the method and the threshold parameter (e.g. ``otus_greedy_0.97.fasta``)
 
 .. parsed-literal::
 

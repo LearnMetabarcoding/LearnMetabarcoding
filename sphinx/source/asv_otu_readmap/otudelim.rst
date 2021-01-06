@@ -3,7 +3,7 @@
 .. role:: var
 
 ================
-OTU Delimitation
+OTU delimitation
 ================
 
 .. toctree:: 
@@ -18,7 +18,7 @@ OTU Delimitation
 Introduction
 ============
 
-We have our filtered ASVs, ideally representing all of the true biological sequences (aka haplotypes) present in our samples. However, these encompass both intra- and inter-specific variation and we want data that is comparable to species-level ecological data. Therefore, we can try to collapse the intra-specific variation while maintaining inter-specific variation. We will try several different methods for doing this, and compare them.
+After processing reads and filtering we get a set of ASVs that, ideally, represent all of the true biological sequences (aka haplotypes) present in our samples. However, these encompass both intra- and inter-specific variation and we often want data that is comparable to species-level ecological data. Therefore, we can try to collapse the intra-specific variation while maintaining inter-specific variation. We will try several different methods for doing this, and compare them.
 
 As well as generating approximately species-level taxonomic units, grouping ASVs into OTUs is also a method for removing errors. While we hope that our filtering has been stringent enough to remove all erroneous sequences, the chances are that it is not. However, small variations from true haplotypes will generally get grouped in with the true haplotype, thus slight errors will not be found in the OTU sequences. The downside of course is that we also remove a large proportion of the *real* variation among our ASVs, the true intra-specific variation in our dataset.
 
@@ -58,4 +58,4 @@ We will look at three methods of OTU delimitation commonly used in metabarcoding
 
 For each step, we will generate OTU sequences and a record of which ASVs were grouped into which OTUs. Once you've learned about some different methods, you may want to read about how to :ref:`Compare OTU delimitation methods <comparing_otus>`. This is largely an exercise in exploring data, and doesn't have any specific outputs aside from helping you choose which set of OTUs to accept.
 
-Once you have a final set of OTUs, and the associated record of ASVs within each OTU, you can move on to the :ref:`Mapping Reads <mapping_reads>` subsection.
+Once you have a final set of OTUs, and the associated record of ASVs within each OTU, you can move on to the :ref:`Mapping reads <mapping_reads>` tutorials.
