@@ -18,7 +18,7 @@ Because primers are a region on our sequence that we have some *a priori* knowle
 
 Many metabarcoding pipelines trim primers by just trimming a number of bases equal to the primer length off the beginning of each read. You can do this in cutadapt using the ​``-u`` ​option, which you would need to do for each direction separately (replacing ``N`` with the correct primer length:
 
-.. code-block:: bash 
+.. parsed-literal::
 
 	cutadapt -u :var:`N` -o :var:`out.fastq` -i :var:`in.fastq`
 
