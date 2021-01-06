@@ -71,7 +71,7 @@ If you instead have a directory of FASTAs, the command is pretty much the same, 
 .. parsed-literal::
 
 	for f in \*;
-	do                     :comment:`# ↓ the space here should be included!`
+	do                      :comment:`# ↓ the space here should be included!`
 		sed -e "s/\\(^>.\*\\) .\*$/\\1;sample=${f%.\*};/" $f \\
 		>> ../:var:`output.fasta`;
 	done
