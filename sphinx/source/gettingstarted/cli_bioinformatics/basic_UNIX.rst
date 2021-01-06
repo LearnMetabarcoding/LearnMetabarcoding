@@ -91,7 +91,7 @@ Move all files starting with ``file`` in the current directory to directory ``di
 	
 	mv file\* ./dir
 
-Delete all files ending with ``\.fasta`` (be really careful!)
+Delete all files ending with ``.fasta`` (be really careful!)
 
 .. parsed-literal::
 	
