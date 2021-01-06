@@ -2,6 +2,8 @@
 
 .. role:: comment
 
+.. role:: var
+
 =========================
 Fundamentals: FASTQ files
 =========================
@@ -68,7 +70,7 @@ Like the ``​wc -l`` function above, we can run ``grep`` on all of our files at
 
 	grep -c "^\@D00" \*.fastq
 
-We can see that we’re dealing with about 9000 reads per library.
+We can see that we're dealing with about 10,000 - 12,000 reads per library.
 
 .. admonition:: Exercise
 
