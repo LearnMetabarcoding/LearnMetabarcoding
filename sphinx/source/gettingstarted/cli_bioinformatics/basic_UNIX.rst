@@ -55,19 +55,19 @@ Create a blank file called ``fileA``
 	
 	touch fileA
 
-Move ``​fileA`` ​to the parent of the working directory
+Move ``fileA`` ​to the parent of the working directory
 
 .. parsed-literal::
 	
 	mv fileA ../
 
-Copy ​``fileA​`` from the parent of the working directory to the working directory
+Copy ``fileA`` from the parent of the working directory to the working directory
 
 .. parsed-literal::
 	
 	cp ../fileA ./
 
-Rename ​``fileA``​ to ``​fileB``
+Rename ``fileA`` to ``fileB``
 
 .. parsed-literal::
 	
@@ -85,13 +85,13 @@ Delete an empty directory called ``dirA``
 	
 	rm -d dirA
 
-Move all files starting with ​``file``​ in the current directory to directory ​``dir``
+Move all files starting with ``file`` in the current directory to directory ``dir``
 
 .. parsed-literal::
 	
 	mv file\* ./dir
 
-Delete all files ending with ​``.fasta`` ​(be really careful!)`
+Delete all files ending with ``\.fasta`` (be really careful!)
 
 .. parsed-literal::
 	
@@ -103,19 +103,19 @@ Delete the directory called ``dirA`` and its contents (be extremely careful!)
 	
 	rm -rf dirA
 
-Display first 10 lines of ``​fileB``
+Display first 10 lines of ``fileB``
 
 .. parsed-literal::
 	
 	head ​fileB
 
-Display first 20 lines of ​``fileB``
+Display first 20 lines of ``fileB``
 
 .. parsed-literal::
 	
 	head -n 20 ​fileB
 
-Display ​``fileB`` ​in a scrollable format (press :menuselection:`q` to quit)
+Display ``fileB`` in a scrollable format (press :menuselection:`q` to quit)
 
 .. parsed-literal::
 	
