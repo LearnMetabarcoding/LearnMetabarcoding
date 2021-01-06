@@ -22,7 +22,7 @@ Running alignment
 We will do a quick alignment using **MAFFT** for each gene, using the FFT-NS-2 method. This is a fast, but less-accurate method.
 First, make a directory to store your aligned genes.
 
-Run the following command, making sure to replace ``raw`` with the name of the directory you extracted your genes into in the last step, and ​``new​`` with the name of your new directory:
+Run the following command, making sure to replace ``raw`` with the name of the directory you extracted your genes into in the last step, and ``new`` with the name of your new directory:
 
 .. parsed-literal::
 

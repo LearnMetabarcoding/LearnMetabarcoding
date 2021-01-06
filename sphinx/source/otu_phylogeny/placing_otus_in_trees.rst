@@ -44,7 +44,7 @@ The first step is to align our OTUs to our reference mitogenome dataset. Run the
 
 	mafft --thread 1 --addfragments :var:`otus.fasta` --6merpair :var:`supermatrix.fasta` > :var:`output.fasta`
 
-Here we use **MAFFT**'s ​``--addfragments`` argument, which you can read about `here <https://mafft.cbrc.jp/alignment/software/addsequences.html>`_. Again, we’re using some options which make this alignment very very fast, but the accuracy might not be great.
+Here we use **MAFFT**'s ``--addfragments`` argument, which you can read about `here <https://mafft.cbrc.jp/alignment/software/addsequences.html>`_. Again, we’re using some options which make this alignment very very fast, but the accuracy might not be great.
 
 .. admonition:: Exercise
 	
@@ -68,7 +68,7 @@ For **FastTree**, we must convert our existing tree into a constraint alignment,
 	
 	.. parsed-literal::
 		
-		wget http://www.microbesonline.org/fasttree/TreeToConstraints.pl
+		wget \http://www.microbesonline.org/fasttree/TreeToConstraints.pl
 		perl TreeToConstraints.pl < :var:`reference.tre` ​> :var:`constraints.txt`
 
 Building the tree
@@ -84,7 +84,7 @@ Finally, we just need to add the taxonomy onto the tree for our reference sequen
 
 .. parsed-literal::
 	
-	phylabel.R -p :var:`input.tre` -r -t :var:`taxonomy.csv`  -o :var:`output.tre`
+	phylabel.R -p :var:`input.tre` -r -y :var:`taxonomy.csv`  -o :var:`output.tre`
 	
 
 .. admonition:: Exercise
