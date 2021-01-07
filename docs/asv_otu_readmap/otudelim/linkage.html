@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Linkage-based clustering &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  <title>Linkage-based delimitation &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
   
 
   
@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Bayesian clustering" href="bayesian.html" />
-    <link rel="prev" title="Greedy Clustering" href="greedy.html" /> 
+    <link rel="prev" title="Greedy clustering" href="greedy.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,9 +91,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">A: Read processing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../otudelim.html">OTU Delimitation</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="greedy.html">Greedy Clustering</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Linkage-based clustering</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../otudelim.html">OTU delimitation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="greedy.html">Greedy clustering</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Linkage-based delimitation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bayesian.html">Bayesian clustering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bptp.html">Extension: Phylogenetic delimitation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comparing_otus.html">Comparing OTU delimitation methods</a></li>
@@ -153,9 +153,9 @@
         
           <li><a href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a> &raquo;</li>
         
-          <li><a href="../otudelim.html">OTU Delimitation</a> &raquo;</li>
+          <li><a href="../otudelim.html">OTU delimitation</a> &raquo;</li>
         
-      <li>Linkage-based clustering</li>
+      <li>Linkage-based delimitation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,8 +174,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="linkage-based-clustering">
-<span id="linkage-delimitation"></span><h1>Linkage-based clustering<a class="headerlink" href="#linkage-based-clustering" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="linkage-based-delimitation">
+<span id="linkage-delimitation"></span><h1>Linkage-based delimitation<a class="headerlink" href="#linkage-based-delimitation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The program <strong>swarm</strong> is a slightly different OTU delimitation algorithm. Rather than using a threshold that applies to all clusters like <strong>VSEARCH</strong>’s clustering method, it uses a local linking threshold that is based on number of differences, rather than overall dissimilarity. It assess the absolute number of differences between all pairs of ASVs, then builds a network where ASVs are nodes and the distance between nodes is the number of differences. It then interrogates this network to separate groups of ASVs with the most differences between them. One of the theoretical benefits of <strong>swarm</strong> is that it is not affected by the abundance distribution of the input ASVs and the clusters are therefore not necessarily as uneven as in greedy clustering. The downside is that <strong>swarm</strong> generally produces many more OTUs than greedy clustering, especially at the authors’ recommended settings. Of course, this could vary considerably depending on the dataset.</p>
@@ -188,7 +188,7 @@
 <div class="section" id="running-swarm">
 <h2>Running swarm<a class="headerlink" href="#running-swarm" title="Permalink to this headline">¶</a></h2>
 <p><strong>Swarm</strong> is pretty easy to run. The main parameter is <code class="docutils literal notranslate"><span class="pre">-d</span></code>, which specifies the number of differences to iteratively group ASVs together. This should always be an integer greater than or equal to 1. Our input contains <code class="docutils literal notranslate"><span class="pre">;size=</span></code> tags so we use the <code class="docutils literal notranslate"><span class="pre">-z</span></code> parameter.</p>
-<p><span class="guilabel">Run the following command to have swarm cluster your input ASVs</span>.</p>
+<p>Run the following command to have swarm cluster your input ASVs.</p>
 <pre class="literal-block">swarm ​-z <span class="var">input.fasta</span> -d 1 -w <span class="var">output.fasta</span></pre>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
@@ -201,7 +201,7 @@
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p><span class="math notranslate nohighlight">\(418 * 0.03 ≈ 13\)</span></p>
+<p>418 * 0.03 ≈ 13</p>
 <pre class="literal-block">swarm -z <span class="var">input.fasta</span> -d 13 -w <span class="var">output.fasta</span></pre>
 </div>
 </div>
@@ -244,7 +244,7 @@ grep -n -o &quot;uniq&quot; <span class="var">input.txt</span> | cut -d: -f1 | s
         <a href="bayesian.html" class="btn btn-neutral float-right" title="Bayesian clustering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="greedy.html" class="btn btn-neutral float-left" title="Greedy Clustering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="greedy.html" class="btn btn-neutral float-left" title="Greedy clustering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

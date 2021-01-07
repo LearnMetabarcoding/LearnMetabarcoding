@@ -41,13 +41,13 @@ Degap an alignment (i.e. de-align):
 
 .. parsed-literal::
 
-	sed -e "/^[^>]/,s/-//g" :var:`input.fasta` > :var:`output.fasta`
+	sed -e "/^[^>]/s/-//g" :var:`input.fasta` > :var:`output.fasta`
 
 Replace any ambiguities with ``N``:
 
 .. parsed-literal::
 
-	sed -e "/^[^>]/,s/[YRWSKMDVHBX]/N/g" :var:`input.fasta` > :var:`output.fasta`
+	sed -e "/^[^>]/s/[YRWSKMDVHBX]/N/g" :var:`input.fasta` > :var:`output.fasta`
 
 ---------------------------------
 Getting sequence lengths

@@ -202,9 +202,9 @@
 <h2>Replacing bases<a class="headerlink" href="#replacing-bases" title="Permalink to this headline">¶</a></h2>
 <p>You may sometimes have sequence data that isn’t quite appropriate for a piece of software, for example you have an alignment but the software won’t accept it, or you have ambiguity codes but the software only accepts <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">T</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">G</span></code> or <code class="docutils literal notranslate"><span class="pre">N</span></code>. You can use <code class="docutils literal notranslate"><span class="pre">sed</span></code> to remove or replace all offending bases, but you must be careful only to do so on non-header lines - you don’t want to edit your sequence headers by accident! We do this by adding a line specifier, <code class="docutils literal notranslate"><span class="pre">/^[^&gt;]/,</span></code> before the substitution command. This specifies that we want to only operate on lines that do not start with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</p>
 <p>Degap an alignment (i.e. de-align):</p>
-<pre class="literal-block">sed -e &quot;/^[^&gt;]/,s/-//g&quot; <span class="var">input.fasta</span> &gt; <span class="var">output.fasta</span></pre>
+<pre class="literal-block">sed -e &quot;/^[^&gt;]/s/-//g&quot; <span class="var">input.fasta</span> &gt; <span class="var">output.fasta</span></pre>
 <p>Replace any ambiguities with <code class="docutils literal notranslate"><span class="pre">N</span></code>:</p>
-<pre class="literal-block">sed -e &quot;/^[^&gt;]/,s/[YRWSKMDVHBX]/N/g&quot; <span class="var">input.fasta</span> &gt; <span class="var">output.fasta</span></pre>
+<pre class="literal-block">sed -e &quot;/^[^&gt;]/s/[YRWSKMDVHBX]/N/g&quot; <span class="var">input.fasta</span> &gt; <span class="var">output.fasta</span></pre>
 </div>
 <div class="section" id="getting-sequence-lengths">
 <h2>Getting sequence lengths<a class="headerlink" href="#getting-sequence-lengths" title="Permalink to this headline">¶</a></h2>

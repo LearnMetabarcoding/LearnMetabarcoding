@@ -2,9 +2,9 @@
 
 .. role:: var
 
-========================
-Linkage-based clustering
-========================
+==========================
+Linkage-based delimitation
+==========================
 
 Introduction
 ============
@@ -23,7 +23,7 @@ Running swarm
 
 **Swarm** is pretty easy to run. The main parameter is ``-d``, which specifies the number of differences to iteratively group ASVs together. This should always be an integer greater than or equal to 1. Our input contains ``;size=`` tags so we use the ``-z`` parameter.
 
-:guilabel:`Run the following command to have swarm cluster your input ASVs`.
+Run the following command to have swarm cluster your input ASVs.
 
 .. parsed-literal::
 
@@ -39,7 +39,7 @@ Running swarm
 .. admonition:: Solution
 	:class: toggle
 	
-	:math:`418 * 0.03 ≈ 13`
+	418 * 0.03 ≈ 13
 	
 	.. parsed-literal::
 		

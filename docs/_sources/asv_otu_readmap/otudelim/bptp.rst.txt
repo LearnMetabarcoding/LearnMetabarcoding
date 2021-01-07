@@ -38,13 +38,13 @@ Building a tree
 
 The first thing to do is build a phylogenetic tree of our ASVs. We do this using the **FastTree**. This is a quick and dirty approach, we'll revisit building OTU phylogeneny in more detail in the :ref:`Building OTU phylogeny<phylogeny>` section.
 
-First we must strip out our ``;size=`` annotations, as these often cause issues in newick-format trees. :guilabel:`Run the following command, replacing ``input.fasta`` with the name of your ASV file`.
+First we must strip out our ``;size=`` annotations, as these often cause issues in newick-format trees. Run the following command, replacing ``input.fasta`` with the name of your ASV file.
 
 .. parsed-literal::
 	
 	sed -e "s/;size=.\*$//" :var:`input.fasta` > :var:`output.fasta`
 
-:guilabel:`Now run FastTree; your input file should be the output from the ``sed`` command`.
+Now run FastTree; your input file should be the output from the ``sed`` command.
 
 .. parsed-literal::
 	
@@ -83,7 +83,7 @@ Picking OTUs
 
 Like other methods, bPTP has grouped together ASV sequences into groups we can call OTUs. However, unlike other methods it hasn't automatically selected a representative sequence for each OTU. Depending on your application, this might not matter. However, many downstream applications such as taxonomic classification require OTU sequences, so we need to select representative sequences after the fact. We will do this based on abundance - for each OTU group we will use the most common ASV as the representative sequence.
 
-First let's reformat the ``PTPhSupportPartition.txt`` file a little bit. We want to just extract out the lists of ASVs, dropping all other lines. We then change the lists to space-delimited to make it easier to handle. :guilabel:`Run the following command:`
+First let's reformat the ``PTPhSupportPartition.txt`` file a little bit. We want to just extract out the lists of ASVs, dropping all other lines. We then change the lists to space-delimited to make it easier to handle. Run the following command:
 
 .. parsed-literal::
 	
@@ -101,7 +101,7 @@ Then, for each line we're going to find the ASV with the largest size. This is a
 	vsearch --sortbysize :var:`input.fasta` --output :var:`output.fasta`
 	
 
-The following command loops through the lines of the reformatted partition summary text file that we just created. For each line, it converts the space-separated list of ASVs into a multi-line string, then searches for those ASVs in the sorted ASVs FASTA we just created. Because this is sorted by size, the most frequent ASV will be the first hit, so we take the first line, remove the ``>`` at the beginning of the line and output this to a file. :guilabel:`Run this command`.
+The following command loops through the lines of the reformatted partition summary text file that we just created. For each line, it converts the space-separated list of ASVs into a multi-line string, then searches for those ASVs in the sorted ASVs FASTA we just created. Because this is sorted by size, the most frequent ASV will be the first hit, so we take the first line, remove the ``>`` at the beginning of the line and output this to a file. Run this command.
 
 .. parsed-literal::
 	
