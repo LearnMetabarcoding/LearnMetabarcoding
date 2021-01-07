@@ -29,7 +29,7 @@ In the spirit of openness, we should be clear that **metaMATE** was developed by
 	
 	If you're following along step-by-step, the first two files were produced in the :ref:`quality filtering<quality_filtering>` and :ref:`denoising<denoising>` tutorials respectively. Alternatively, the files ``4_mbc_concat.fasta`` and ``6_mbc_denoise.fasta`` within the :ref:`sectionB archive<sectionBdata>` can be used as example data.
 	
-	The reference sequences can be found in the file ``canopy_Coleop_CO1_barcodes.fasta`` in the :ref:`sectionB archive<sectionBdata>`. The specifications file will be generated during the tutorial.
+	The reference sequences can be found in the file ``references_CCCPbarcodes.fasta`` in the :ref:`sectionB archive<sectionBdata>`. The specifications file will be generated during the tutorial.
 	
 	This tutorial uses the :ref:`metaMATE <metamate_install>` software.
 
