@@ -175,7 +175,7 @@ You should now have lots of files in your output directory. It's good practice t
 
 	.. parsed-literal::
 	
-		​grep -c "^\@D00" 1_demux/\* > :var:`output.txt`
+		grep -c "^\@D00" 1_demux/\* > :var:`output.txt`
 
 Let's get rid of the files we don't need. You've doubled the amount of storage you're using - here the files aren't very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don't match. You do not need to type any ``#comments``, or add the extra spaces - this is just to make it clearer.
 
