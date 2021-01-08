@@ -36,7 +36,6 @@ We then use this rereplicated FASTA file in **CROP**. Note it creates several ou
 Try running the following command:
 
 .. parsed-literal::
-	:class: background
 
 	crop -b 40 -z 400 -s -r 0 -i :var:`input.fasta` -o :var:`output`
 

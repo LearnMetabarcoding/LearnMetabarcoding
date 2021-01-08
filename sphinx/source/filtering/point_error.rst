@@ -45,7 +45,7 @@ Check the helpfile for this script by running:
 
 	.. parsed-literal::
 
-		​filtertranslate ​-i :var:`input.fasta​` -t 5 -y separate -o :var:`output`
+		filtertranslate ​-i :var:`input.fasta` -t 5 -y separate -o :var:`output`
 
 .. admonition:: Exercise
 
