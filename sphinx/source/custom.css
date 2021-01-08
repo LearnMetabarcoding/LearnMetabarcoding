@@ -64,6 +64,6 @@ div[role=contentinfo]:after {
 	content: "";
 }
 
-.background pre.literal-block{
+.background .rst-content div[class^="highlight"], .rst-content pre.literal-block {
     background-color: green;
 }
