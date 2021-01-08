@@ -124,15 +124,19 @@ The ``&&`` here runs both commands on this line one after the other. We could us
 	
 	An alternative to **PEAR** is the **fastq_mergepairs** tool within the **VSEARCH** and **USEARCH** packages. This has slightly fewer options but is very widely used. Another tool frequently used is `FLASH <http://ccb.jhu.edu/software/FLASH/>`_
 
-Sequence loss
-=============
+Sequence loss and threshold choice
+==================================
 
-You may have noticed that we lose a large number of sequences here. This is completely normal: we must be very strict at the pair merging step to ensure that: 
+You may have noticed that we lose a large number of sequences here. This is completely normal - we must be very strict at the pair merging step to ensure that: 
 
 1. We correctly merge a true read pair so as not to generate spurious sequence or erroneously remove sequence
 2. We do not incorrectly merge a false read pair causing a chimeric sequence
 
-We achieve this by using strict quality and overlap settings, and thus the quality of your sequence data will play a large role in the extent to which sequences, and indeed complete samples, may be lost at this stage. However, as always, the strictness of the parameters we choose should be guided by our research question and context. For example, if you have a comprehensive reference set for your target species, you could perhaps be more lax here, as you can filter out errors later on by strict comparison to your references. Generally though, the most rigourous approach is to be as conservative in your settings as you can.
+We achieve this by using strict quality and overlap settings, and thus the quality of your sequence data will play a large role in the extent to which sequences, and indeed complete samples, may be lost at this stage. However, as always, the strictness of the parameters we choose should be guided by our data, research question and context. For example, if you have a comprehensive reference set for your target species, you could perhaps be more lax here, as you can filter out errors later on by strict comparison to your references. Similarly, if your target region was more variable, you might need to be more relaxed in the minimum overlap: you should calculate how much overlap you will have for your longest expected amplicon sequences, then base the threshold on these. However, the smaller the minimum overlap, the more chance that bad read pairs get falsely combined just because they happen to overlap a little.  One option when you have variable sequences is that you could use the ``-n`` and ``-m`` arguments to set the minimum and maximum length of the merged sequence respectively - this gives a little more control, but doesn't avoid the issue completely. 
+
+As we'll see when we get to the :ref:`quality filtering <quality_filtering>` tutorial in section B, picking quality thresholds is generally based on what confidence you want to have, not on any a priori property or expectation of the data. The value of 26 we give here is our rule of thumb, but you may want to use something different because you want to have a different level of confidence. Remember, this quality threshold is used to trim the poor-quality ends of the reads before merging to remove data that might prevent correct merging - it has no impact on deciding whether a merge is correct or not (you'd want to look at the ``-p`` argument for that).
+
+Generally, the most rigorous approach is to be as conservative in your settings as you can.
 
 Next Steps
 ==========
