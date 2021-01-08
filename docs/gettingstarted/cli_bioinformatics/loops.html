@@ -208,6 +208,17 @@ done
 </pre></div>
 </div>
 <p>See how we use <code class="docutils literal notranslate"><span class="pre">;</span></code> to separate expressions in a single line, in exactly the same way we did for the multiline loop.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The terminal of Mac OS works slightly differently, and you can’t use this method of looping over a variable containing multiple lines. Instead, you can swap out for a while loop:
+.. parsed-literal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>while read -r f;
+do
+        wc -l $f;
+done &lt;&lt;&lt; $files
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="while-read-loops">
 <h2>While read loops<a class="headerlink" href="#while-read-loops" title="Permalink to this headline">¶</a></h2>

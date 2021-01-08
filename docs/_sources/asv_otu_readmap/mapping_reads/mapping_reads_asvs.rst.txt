@@ -32,9 +32,9 @@ It is very important that the FASTA of read sequences contains a record of which
 	>readsequence3;sample=sample2
 	ACGCCACGCAGTAGCAGACGACGA
 
-The read names themselves (``readsequenceN`` in the example) are irrelevant, and the sample names can be any string as long as it doesn't contain ``;`` or ``=`` and is unique for each unique sample. Note that there can be a ``;`` after the sample name. See the :ref:`Data Concatenation <data_concat>` tutorial for more information.
+The read names themselves (``readsequenceN`` in the example) are irrelevant, and the sample names can be any string as long as it doesn't contain ``;`` or ``=`` and is unique for each unique sample. Note that there can be a ``;`` after the sample name. See the :ref:`Data concatenation <data_concat>` tutorial for more information.
 
-Strict Mapping
+Strict mapping
 ==============
 
 This process is conceptually straightforward: we search the reads FASTA against the ASVs looking for exact matches, and then for each exact match check the sample that read came from and tally the number of reads for each sample for each ASV. This is all done in a single step using a specific output format within the VSEARCH ``--search_exact`` command, as follows. Make sure you use your real file names!
@@ -64,7 +64,7 @@ Note that the file will say ``OTU ID:`` in the first cell, obviously here we act
 
 You will have observed that a substantial proportion of all of your reads were not mapped at all, as expected. If we want to try and assign these reads to ASVs, we can try to map less strictly.
 
-Less Strict Mapping
+Less strict mapping
 ===================
 
 The process here is almost identical to the above, except we allow matches of less than 100%. We are using **VSEARCH** again, because we know that when multiple matches are found for a query (read) in our database (ASVs), it will select the closest match (by similarity). You could do a similar process using **BLAST** or any other sequence matching algorithm, but now that we permit non-exact matches, there will be cases where a read matches multiple ASVs and you must be very very confident that the program you use selects 1. one and only one match for each read and 2. the best match for each read. For example, BLAST using ``-max_target_seqs`` does not necessarily select the best match, just the first one (TODO FOOTNOTE).
@@ -90,7 +90,7 @@ You should see an increase in the number of reads mapped using this method compa
 
 We would not recommend using this for studies looking at ASVs only, and if it must be employed then use a similarity value of at least 99% if not more. If working with OTUs, then you may be a little more relaxed, but the similarity value should never exceed approximately equivalent to the similarity value used in OTU clustering, and as a rough rule of thumb should probably be less than half of this value. I.e. if you performed 97% greedy clustering, the similarity value for your read mapping should probably be 98.5% or above. 
 
-Next Steps
+Next steps
 ==========
 
 For working at the ASV level, the ``.tsv`` table you have produced is ready to be used in downstream analyses, although we would recommend some further filtering which we discuss in the :ref:`Analysing read tables <analysis>` tutorial. You may want to learn about building a phylogeny of your ASVs in the :ref:`Building OTU phylogeny <phylogeny>` section, or taxonomically identifying and/or classifying your ASVs in the :ref:`Identifying OTU sequences <otuid>` section.

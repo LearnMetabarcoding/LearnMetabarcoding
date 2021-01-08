@@ -46,7 +46,7 @@ OTU delimitation vs species delimitation
 One thing to remember is that while OTU delimitation methods were built with the broad aim of finding species-like units, they must be suitable for handling large amplicon datasets. In barcoding, researchers often also want to group sequences into species, but usually have smaller datasets and a greater need for high fidelity. As such, analagous "species" delimitation methods have been developed that are based on our understanding of the evolutionary processes and patterns that form species. These methods are usually quite computationally intensive for the size of datasets usually encountered in metabarcoding, hence why they are rarely if ever used for metabarcoding. However, sometimes it may be useful as a sanity check to test a subset of our dataset using these methods.
 
 
-Next Steps
+Next steps
 ==========
 
 We will look at three methods of OTU delimitation commonly used in metabarcoding, and one method of species delimitation commonly used in barcoding studies as an extension. You can work through these tutorials in any order.

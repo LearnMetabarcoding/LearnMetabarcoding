@@ -95,7 +95,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../mapping_reads.html">Mapping reads</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Mapping reads to ASVs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mapping_reads_otus.html">Mapping reads to OTUs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="analysing_read_tables.html">Analysing Read Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysing_read_tables.html">Analysing read tables</a></li>
 </ul>
 </li>
 </ul>
@@ -194,10 +194,10 @@
 <span class="n">ACGCCACGCAGTAGCAGACGACGA</span>
 </pre></div>
 </div>
-<p>The read names themselves (<code class="docutils literal notranslate"><span class="pre">readsequenceN</span></code> in the example) are irrelevant, and the sample names can be any string as long as it doesn’t contain <code class="docutils literal notranslate"><span class="pre">;</span></code> or <code class="docutils literal notranslate"><span class="pre">=</span></code> and is unique for each unique sample. Note that there can be a <code class="docutils literal notranslate"><span class="pre">;</span></code> after the sample name. See the <a class="reference internal" href="../../processing/data_concat.html#data-concat"><span class="std std-ref">Data Concatenation</span></a> tutorial for more information.</p>
+<p>The read names themselves (<code class="docutils literal notranslate"><span class="pre">readsequenceN</span></code> in the example) are irrelevant, and the sample names can be any string as long as it doesn’t contain <code class="docutils literal notranslate"><span class="pre">;</span></code> or <code class="docutils literal notranslate"><span class="pre">=</span></code> and is unique for each unique sample. Note that there can be a <code class="docutils literal notranslate"><span class="pre">;</span></code> after the sample name. See the <a class="reference internal" href="../../processing/data_concat.html#data-concat"><span class="std std-ref">Data concatenation</span></a> tutorial for more information.</p>
 </div>
 <div class="section" id="strict-mapping">
-<h2>Strict Mapping<a class="headerlink" href="#strict-mapping" title="Permalink to this headline">¶</a></h2>
+<h2>Strict mapping<a class="headerlink" href="#strict-mapping" title="Permalink to this headline">¶</a></h2>
 <p>This process is conceptually straightforward: we search the reads FASTA against the ASVs looking for exact matches, and then for each exact match check the sample that read came from and tally the number of reads for each sample for each ASV. This is all done in a single step using a specific output format within the VSEARCH <code class="docutils literal notranslate"><span class="pre">--search_exact</span></code> command, as follows. Make sure you use your real file names!</p>
 <pre class="literal-block">vsearch --search_exact <span class="var">reads.fasta</span> -db <span class="var">asvs.fasta</span> -otutabout <span class="var">output.tsv</span></pre>
 <p><strong>VSEARCH</strong> will print a record of how many reads found a match. The <code class="docutils literal notranslate"><span class="pre">.tsv</span></code> file extension just reminds you that the output is a Tab Separated Variables file, but this is just a specific layout of plain text so like all of our other files we can view it on the command line using <code class="docutils literal notranslate"><span class="pre">cat</span></code> or <code class="docutils literal notranslate"><span class="pre">more</span></code>. However, it may have very long rows and thus be too messy to make sense. You can view a subset of it using the following command:</p>
@@ -215,7 +215,7 @@
 <p>You will have observed that a substantial proportion of all of your reads were not mapped at all, as expected. If we want to try and assign these reads to ASVs, we can try to map less strictly.</p>
 </div>
 <div class="section" id="less-strict-mapping">
-<h2>Less Strict Mapping<a class="headerlink" href="#less-strict-mapping" title="Permalink to this headline">¶</a></h2>
+<h2>Less strict mapping<a class="headerlink" href="#less-strict-mapping" title="Permalink to this headline">¶</a></h2>
 <p>The process here is almost identical to the above, except we allow matches of less than 100%. We are using <strong>VSEARCH</strong> again, because we know that when multiple matches are found for a query (read) in our database (ASVs), it will select the closest match (by similarity). You could do a similar process using <strong>BLAST</strong> or any other sequence matching algorithm, but now that we permit non-exact matches, there will be cases where a read matches multiple ASVs and you must be very very confident that the program you use selects 1. one and only one match for each read and 2. the best match for each read. For example, BLAST using <code class="docutils literal notranslate"><span class="pre">-max_target_seqs</span></code> does not necessarily select the best match, just the first one (TODO FOOTNOTE).</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -235,7 +235,7 @@
 <p>We would not recommend using this for studies looking at ASVs only, and if it must be employed then use a similarity value of at least 99% if not more. If working with OTUs, then you may be a little more relaxed, but the similarity value should never exceed approximately equivalent to the similarity value used in OTU clustering, and as a rough rule of thumb should probably be less than half of this value. I.e. if you performed 97% greedy clustering, the similarity value for your read mapping should probably be 98.5% or above.</p>
 </div>
 <div class="section" id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>For working at the ASV level, the <code class="docutils literal notranslate"><span class="pre">.tsv</span></code> table you have produced is ready to be used in downstream analyses, although we would recommend some further filtering which we discuss in the <a class="reference internal" href="analysing_read_tables.html#analysis"><span class="std std-ref">Analysing read tables</span></a> tutorial. You may want to learn about building a phylogeny of your ASVs in the <a class="reference internal" href="../../building_otu_phylogeny.html#phylogeny"><span class="std std-ref">Building OTU phylogeny</span></a> section, or taxonomically identifying and/or classifying your ASVs in the <a class="reference internal" href="../../otuid.html#otuid"><span class="std std-ref">Identifying OTU sequences</span></a> section.</p>
 <p>For working at the OTU level, we cover how to reduce this ASV-level table you’ve produce to OTU level in the next subsection: <a class="reference internal" href="mapping_reads_otus.html#mapping-reads-otus"><span class="std std-ref">Mapping reads to OTUs</span></a>.</p>
 </div>

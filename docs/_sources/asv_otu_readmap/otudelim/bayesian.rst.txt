@@ -19,7 +19,7 @@ The software **CROP** was originally designed for 16S and has not been updated i
 	This tutorial uses the :ref:`VSEARCH <vsearch>` and :ref:`CROP <crop>` software.
 	
 
-Getting Started
+Getting started
 ===============
 
 **CROP** needs every unique read for each ASV in the input dataset, it cannot read ``;size=`` tags. We can generate this from our input ASVs quite easily though, using the ``--rereplicate`` function of **VSEARCH**.
@@ -56,7 +56,7 @@ Tracking our ASVs
 
 The ``outname.cluster.list`` file that **CROP** produces is a text file that contains a list of the sequences included in each cluster. Run ``more`` to have a look at it. You'll note that on each line, the same ASV is repeated multiple times. This is because we rereplicated our ASVs earlier, and CROP worked on these ASV reads, each of which had the same name. We'll return to this file later when we want to map our reads.
 
-Next Steps
+Next steps
 ==========
 
 We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`linkage delimitation <linkage_delimitation>` or :ref:`greedy clustering <greedy_clustering>`. You could optionally also look at the :ref:`extension: phylogenetic delimitation <bptp_delim>`.

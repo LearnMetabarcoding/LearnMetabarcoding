@@ -290,7 +290,7 @@ grep -c &quot;^&#64;D00&quot; 1_demux/*</pre>
 <p>You should now have lots of files in your output directory. It’s good practice to keep track of how demultiplexing performed: you could <span class="guilabel">try to write a command that saves the output of your previos grep command into a file</span> to keep a record (see the solution box below if you’re not sure how to do this).</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<pre class="literal-block">​grep -c &quot;^&#64;D00&quot; 1_demux/* &gt; <span class="var">output.txt</span></pre>
+<pre class="literal-block">grep -c &quot;^&#64;D00&quot; 1_demux/* &gt; <span class="var">output.txt</span></pre>
 </div>
 <p>Let’s get rid of the files we don’t need. You’ve doubled the amount of storage you’re using - here the files aren’t very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don’t match. You do not need to type any <code class="docutils literal notranslate"><span class="pre">#comments</span></code>, or add the extra spaces - this is just to make it clearer.</p>
 <pre class="literal-block">for f in *;                    <span class="comment"># loop through files</span>

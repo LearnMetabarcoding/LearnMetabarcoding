@@ -72,7 +72,7 @@ The following command is similar to the command for **swarm**. We convert commas
 		done | sort | uniq;
 	done > :var:`output.tsv`
 
-Extension: Phylogenetic delimitation using bPTP
+Extension: phylogenetic delimitation using bPTP
 -----------------------------------------------
 
 If you also tried out using **bPTP** for OTU delimitation, when we re-processed the output for **bPTP** we actually made it into the same format as for **swarm**. So you can use exactly the same code as for the **swarm** ASV grouping file, above.
@@ -126,7 +126,7 @@ We use the ``-id 0.97`` parameter to set a 3% similarity cutoff for OTUs that ha
 
 This shortcut is **only** available for greedy clustering. To the best of our knowledge, the above two-step process is the most appropriate way to map reads to OTUs for other types of OTU delimitation. Hopefully we've persuaded you that to map reads using this shortcut for **swarm**, **CROP** or another method would likely give erroneous read counts. Of course, it's likely that the majority of read assignments would probably be correct, since in most cases the most similar OTU to a read is likely the appropriate read, but its the handling of outlying variants that could cause errors and ambiguities to creep in.
 
-Next Steps
+Next steps
 ==========
 
 The output from this subsection forms the metabarcoding equivalent of a site by species table ready to be used in downstream analysis, although we would recommend some further filtering which we discuss in the :ref:`Analysing read tables <analysis>` subsection. 

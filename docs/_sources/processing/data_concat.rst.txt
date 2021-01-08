@@ -78,7 +78,7 @@ If you instead have a directory of FASTAs, the command is pretty much the same, 
 
 :guilabel:`Can you spot the difference?`
 
-Next Steps
+Next steps
 ==========
 
 We have generated a master file containing all sequences from across all of our samples. These sequences still contain quality data, which will be useful for filtering in the next section.

@@ -43,6 +43,17 @@ The ``for`` loop essentially says "for each item in ``$files``, call that item `
 
 See how we use ``;`` to separate expressions in a single line, in exactly the same way we did for the multiline loop.
 
+.. warning::
+	
+	The terminal of Mac OS works slightly differently, and you can't use this method of looping over a variable containing multiple lines. Instead, you can swap out for a while loop:
+	.. parsed-literal::
+		
+		while read -r f;
+		do
+			wc -l $f;
+		done <<< $files
+	
+
 -------------------------------------
 While read loops
 -------------------------------------

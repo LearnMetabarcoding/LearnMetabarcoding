@@ -192,11 +192,11 @@
 </div>
 </div>
 <div class="section" id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
 <p>Create a new directory and place copies of all of the FASTA files you want to compare, and only these FASTA files, into this directory. I’m going to assume you’ve called this directory <code class="docutils literal notranslate"><span class="pre">delim_outputs/</span></code>.</p>
 </div>
-<div class="section" id="mapping-asvs-to-otus">
-<h2>Mapping ASVs to OTUs<a class="headerlink" href="#mapping-asvs-to-otus" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tracking-asvs-to-otus">
+<h2>Tracking ASVs to OTUs<a class="headerlink" href="#tracking-asvs-to-otus" title="Permalink to this headline">¶</a></h2>
 <p>We will merge all OTUs into a single file, then search the ASVs against this file. This will give us a table showing which ASVs were used as OTU centroids for each method/parameter.</p>
 <p>First, concatenate all of your OTUs. You might notice we’re using a similar method to earlier in the pipeline - this is a great example of where we can find tools in our toolbox that we already understand and apply them to new use cases.</p>
 <pre class="literal-block">for f in <span class="var">delim_outputs</span>/*;

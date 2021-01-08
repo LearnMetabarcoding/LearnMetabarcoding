@@ -23,7 +23,7 @@ Running swarm
 
 **Swarm** is pretty easy to run. The main parameter is ``-d``, which specifies the number of differences to iteratively group ASVs together. This should always be an integer greater than or equal to 1. Our input contains ``;size=`` tags so we use the ``-z`` parameter.
 
-Run the following command to have swarm cluster your input ASVs.
+Run the following command to have **swarm** cluster your input ASVs.
 
 .. parsed-literal::
 
@@ -33,7 +33,7 @@ Run the following command to have swarm cluster your input ASVs.
 	
 	* What happens if you run with higher ``-d`` values?
 	* Are higher values more or less strict?
-	* While the algorithm is quite different from greedy clustering, we can calculate the number of differences that 3% dissimilarity equates to given our amplicon is 418bp (the solution is below if you can't figure it out).
+	* While the algorithm is quite different from greedy clustering, given our amplicon is 418bp we can calculate the number of differences that is equivalent to 3% dissimilarity. Try to do this, then check the solution below.
 	* Run swarm using this value for ``-d``. How does the number of OTUs differ?
 
 .. admonition:: Solution
@@ -69,7 +69,7 @@ We can get **swarm** to output a list of ASVs that were grouped to form each OTU
 	
 	Check out the page on :ref:`grep <grep>` for more help figuring out what this command is doing
 
-Next Steps
+Next steps
 ==========
 We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`greedy clustering <greedy_clustering>` or :ref:`bayesian clustering <bayesian_clustering>`. You could optionally also look at the :ref:`extension: phylogenetic delimitation<bptp_delim>`.
 
