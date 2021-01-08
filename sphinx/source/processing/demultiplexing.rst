@@ -103,7 +103,7 @@ As ever with a new tool, first cast your eye over the help, either online or by 
 	
 	cutadapt --help
 
-It's quite long, but at least read the first section. It's helpful to think about exactly what our data is and what we want to do:
+It's quite long, but at least read the first section to get acquainted with it. Don't worry, we're going to give you a command shortly, but before we do it's helpful to think about exactly what our data is and what we want to do:
 
 * We have paired data
 * Our indices are at the beginning of the reads
@@ -111,8 +111,6 @@ It's quite long, but at least read the first section. It's helpful to think abou
 * We want to output a different file for each index
 
 **Cutadapt** has settings for all of these situations. It will allow reading two files as input, and will ensure that pairs of reads in these files are kept in sync. Indices at the beginning of reads are specified using ``-g`` (or ``​-G`` for the second file of reads), we can specify these multiple times, and name different adapters. We also specify that the adapters are right at the beginning, with no gaps, using a ``^`` symbol. We can specify that we want output files depending on the combination of adapters found using the ``​-o`` and ``​-p`` options for the first and second files respectively.
-
-Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1. 
 
 To avoid a mess of files, :guilabel:`make sure you're in the to the parent directory, then create a new directory`. Call this new directory something appropriate. If you're unsure how to do this check the solution box below.
 
@@ -124,7 +122,7 @@ To avoid a mess of files, :guilabel:`make sure you're in the to the parent direc
 		cd ../        :comment:`# Change working directory to the parent of the current working directory`
 		mkdir 1_demux :comment:`# Create a new directory called 1_demux`
 
-The following commands assume that you are in the directory that contains the ``0_rawsequences`` directory and an empty directory called ``1_demux``. Let's first try and demultiplex a single file. :guilabel:`Carefully examine the following command and look at the help file to make sure you're clear on what each of the arguments is doing`.
+Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1. The following commands assume that you are in the directory that contains the ``0_rawsequences`` directory and an empty directory called ``1_demux``. Let's first try and demultiplex a single file. :guilabel:`Carefully examine the following command and look at the help file to make sure you're clear on what each of the arguments is doing`.
 
 Then, type in the command. Reminder: we used the ``​\`` to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command all in one long line (without pressing Enter until you're done). Finally, run the command and inspect the terminal output and make sure you understand what it's saying. Note that if you didn't call your directory ``1_demux``, you should change those parts of the command.
 
