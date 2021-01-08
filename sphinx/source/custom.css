@@ -63,3 +63,7 @@ div[role=contentinfo]:after {
 	left: 0;
 	content: "";
 }
+
+.background .rst-content pre.literal-block{
+    background-color: burlywood;
+}

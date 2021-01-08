@@ -33,7 +33,7 @@ Getting started
 Create a new directory and place copies of all of the FASTA files you want to compare, and only these FASTA files, into this directory. I'm going to assume you've called this directory ``delim_outputs/``.
 
 Tracking ASVs to OTUs
-====================
+=====================
 
 We will merge all OTUs into a single file, then search the ASVs against this file. This will give us a table showing which ASVs were used as OTU centroids for each method/parameter. 
 
