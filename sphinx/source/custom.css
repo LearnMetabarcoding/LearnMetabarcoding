@@ -64,6 +64,6 @@ div[role=contentinfo]:after {
 	content: "";
 }
 
-.background .literal-block{
+.background pre.literal-block{
     background-color: green;
 }
