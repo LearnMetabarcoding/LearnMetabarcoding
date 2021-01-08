@@ -65,5 +65,5 @@ div[role=contentinfo]:after {
 }
 
 .background {
-    background-color: green;
+    background: none repeat scroll 0 0 cadetblue;
 }
