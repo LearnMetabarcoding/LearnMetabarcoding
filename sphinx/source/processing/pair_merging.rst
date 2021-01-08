@@ -138,7 +138,7 @@ As we'll see when we get to the :ref:`quality filtering <quality_filtering>` tut
 
 Generally, the most rigorous approach is to be as conservative in your settings as you can.
 
-Next Steps
+Next steps
 ==========
 
 We've generated complete amplicon sequence reads now, so we're getting close to being done with read processing.

@@ -74,7 +74,7 @@ In this case, the region of CO1 we use is sufficiently conserved that, on balanc
 	
 		vsearch --fastx_filter :var:`input.fasta` --fastq_minlen 418 --fastq_maxlen 418 --fastaout :var:`output.fasta​`
 
-Next Steps
+Next steps
 ==========
 
 In our case, we have a very conserved region so we will use the output from the last command, i.e. only ASVs of 418bp long, for the next steps. Next, we will remove errors by checking the translation: :ref:`5. Point error filtering <point_error>`.

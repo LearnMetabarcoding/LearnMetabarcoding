@@ -145,7 +145,7 @@ The output file here is analogous to the OTU files generated in the other OTU de
 	We have performed a species delimitation method on what may only be a subsample of the true variation within the real species of our dataset. Thus there may not be enough data of both within-species and between-species variation for the **bPTP** algorithm to efficiently distinguish species groups. One way we could improve on this is to add more sequences in that we have *a priori* knowledge about. We could go to GenBank, search for some well-studied species that are closely related to our metabarcoded community and that have many haplotypes available, download them and add them to our ASVs.
 
 
-Next Steps
+Next steps
 ==========
 
 We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`greedy clustering <greedy_clustering>`, :ref:`linkage delimitation <linkage_delimitation>` or :ref:`bayesian clustering <bayesian_clustering>`.

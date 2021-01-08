@@ -29,7 +29,7 @@ For a complex algorithm, chimera filtering is very easy to implement, as it does
 
 It’s that simple, and in the vast majority of cases this will work really well. There is an alternate version of **UCHIME** that compares against a reference collection rather than doing *de novo* detection against other ASVs in the dataset. This version may be much more accurate, since rather than assuming that the more frequent ASV is the correct one, it has a set of known correct sequences. However, it requires a very comprehensive reference set, which is rarely possible in metabarcoding. Generally, the assumption that more frequent ASVs are more likely to be correct holds true, and the *de novo* approach is completely fine.
 
-Next Steps
+Next steps
 ==========
 
 We have completed our main filtering pipeline, and the ASVs that remain after chimera filtering are our best estimates of the true biological sequences in our dataset. We will be using this file for many of the other sections, so make sure you name it clearly so you can get to it later.

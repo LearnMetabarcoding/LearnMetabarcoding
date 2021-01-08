@@ -72,7 +72,7 @@ One common question after performing clustering like this is to ask "which ASVs 
 		rm \*.temp
 		
 
-Next Steps
+Next steps
 ==========
 
 We've generated a set of OTUs using one method. If you haven't already, try out other types of OTU clustering: :ref:`linkage delimitation <linkage_delimitation>` or :ref:`bayesian clustering <bayesian_clustering>`. You could optionally also look at the :ref:`extension: phylogenetic delimitation <bptp_delim>`.

@@ -45,7 +45,7 @@ At this point, we have a set of unique amplicon sequences recovered from our met
 
 For now, though, we know that there are highly likely to be errors present in our ASVs, so the next steps will try different methods to remove these errors and increase the proportion of our ASVs that are true biological sequences of our locus of interest.
 
-Next Steps
+Next steps
 ==========
 
 Next we will use the "size" information (counts of occurence of each ASV in the whole dataset) as a basis to filter out possible errors through :ref:`3. Frequency filtering <denoising>`.
