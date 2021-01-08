@@ -58,9 +58,9 @@ Other 'point errors' that do not cause stops are harder to spot. Some will not a
 
 .. sidebar:: Alternatives
 	
-	The tool **filtertranslate** is part of the :ref:`metaMATE <metaMATE_install>` software, which we wrote. In general, in these resources we aim to use the most popular tools, not just what we think is best, and avoid evangelising our own solutions. However, we haven't yet found another piece of software that so simply performs translation filtering, so here we use one of our own tools. You can find more about the main functionality of **metaMATE** :ref:`in a later extension tutorial<metamate>`.
+	The tool **filtertranslate** is part of the :ref:`metaMATE <metaMATE_install>` software, which you can find more about :ref:`in a later extension tutorial<metamate>`. This is a tool we wrote, but we don't know of any other software that performs simple translation filtering like this.
 	
-	Most commonly, we see other metabarcoders either performing this step manually, by translating the sequences in some GUI sequence viewer like Geneious and manually checking for stops, or by using `MACSE <https://bioweb.supagro.inra.fr/macse/>`_. MACSE is a very neat piece of software that performs alignment of nucleotide sequences against references using the translation, and is very good at finding frameshift errors. However it's somewhat complicated to implement and most seriously is not very efficient, scaling very poorly for larger amplicon datasets.
+	Most commonly, we see other metabarcoders either performing this step manually, by translating the sequences in some GUI sequence viewer like Geneious and manually checking for stops, or by using `MACSE <https://bioweb.supagro.inra.fr/macse/>`_. MACSE is a very neat piece of software that performs alignment of nucleotide sequences against references using the translation, and is very good at finding frameshifts. However it's somewhat complicated to implement and most seriously is not very efficient, scaling very poorly for larger amplicon datasets.
 
 Next steps
 ==========
