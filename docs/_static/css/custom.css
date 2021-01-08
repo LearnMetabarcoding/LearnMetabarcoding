@@ -1,0 +1,69 @@
+.toggle {
+    background: none repeat scroll 0 0 #e7f2fa;
+}
+
+.toggle .admonition-title {
+    display: block;
+    clear: both;
+}
+
+.toggle .admonition-title:after {
+    content: " ▼";
+}
+
+.toggle .admonition-title.open:after {
+    content: " ▲";
+}
+
+.green {
+    background: none repeat scroll 0 0 #e7f2fa;
+}
+
+.green .admonition-title {
+    display: block;
+    clear: both;
+    background-color: green;
+}
+.togglegreen {
+    background: none repeat scroll 0 0 #e7f2fa;
+}
+
+.togglegreen .admonition-title {
+    display: block;
+    clear: both;
+    background-color: green;
+}
+
+.togglegreen .admonition-title:after {
+    content: " ▼";
+}
+
+.togglegreen .admonition-title.open:after {
+    content: " ▲";
+}
+
+.comment {
+    color: green;
+    font-style: italic;
+}
+.var {
+    color: blue;
+    font-weight: bold;
+}
+
+div[role=contentinfo] {
+	visibility: hidden;
+	position: relative;
+}
+
+div[role=contentinfo]:after {
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+}
+
+.background .rst-content pre.literal-block{
+    background-color: burlywood;
+}
