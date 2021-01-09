@@ -25,6 +25,6 @@ In these tutorials, we will look at several different methods for taxonomic clas
 Next steps
 ==========
 
-First, we will look at classification using a global public database, GenBank, and parsing this classification in :ref:`Classification with Genbank & MEGAN <id_with_megan>`. 
+First, we will look at classification using a global public database, GenBank, and parsing this classification in :ref:`Classification with Genbank & MEGAN <id_using_megan>`. 
 
-Next we will look at classification with a curated database, and a variety of algorithms that can be applied to curated databeses in :ref:`Classification with curated databases <id_with_curated_db>`.
+Next we will look at classification with a curated database, and a variety of algorithms that can be applied to curated databeses in :ref:`Classification with curated databases <id_curated>`.
