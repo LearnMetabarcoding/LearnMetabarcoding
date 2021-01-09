@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. Tree building &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="E: Identifying OTU sequences" href="../../otuid.html" />
+    <link rel="prev" title="4. Concatenating alignments" href="concatenating_alignments.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a barcode tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">Phylogenetic Placement</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building a Mitogenome Reference Tree</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="preparing_mitogenome_data.html">1. Preparing mitogenome data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extracting_protein_coding_genes.html">2. Extracting Protein Coding Genes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aligning_protein_coding_genes.html">3. Aligning protein coding genes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concatenating_alignments.html">4. Concatenating alignments</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">5. Tree building</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../otuid.html">E: Identifying OTU sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contactus.html">Contact us</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a> &raquo;</li>
+        
+          <li><a href="../trees.html">Building a Mitogenome Reference Tree</a> &raquo;</li>
+        
+      <li>5. Tree building</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/otu_phylogeny/trees/tree_building.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tree-building">
+<span id="id1"></span><h1>5. Tree building<a class="headerlink" href="#tree-building" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an “approximately maximum likelihood” phylogenetic tree building method, broadly similar in method to <strong>PhyML</strong>, <strong>RAxML</strong> or <strong>IQtree</strong>. It is generally a little less accurate, but it’s faster so better for fiddling around with and learning on.</p>
+<div class="green admonition">
+<p class="admonition-title">Data and software</p>
+<p>The input data for this tutorial is a supermatrix of a set of sequences for which you want to build a phylogeny, and a table of taxonomy for those sequences. If you’re following along step-by-step, the supermatrix was produced in <a class="reference internal" href="concatenating_alignments.html#concat-alignments"><span class="std std-ref">the previous tutorial</span></a>. The file <code class="docutils literal notranslate"><span class="pre">taxonomy_GB_CCCP.csv</span></code> within the <a class="reference internal" href="../../data.html#sectionddata"><span class="std std-ref">sectionD archive</span></a> is the corresponding taxonomy table.</p>
+<p>This tutorial uses the <a class="reference internal" href="../../gettingstarted/setup/installing_software.html#fasttree"><span class="std std-ref">FastTree</span></a> software, as well as the <a class="reference internal" href="../../gettingstarted/setup/installing_software.html#phylostuff"><span class="std std-ref">phylabel.R</span></a> script. You should also have a tree viewer, such as <strong>FigTree</strong> or <strong>Dendroscope</strong>, installed on your personal computer.</p>
+</div>
+</div>
+<div class="section" id="running-fasttree">
+<h2>Running FastTree<a class="headerlink" href="#running-fasttree" title="Permalink to this headline">¶</a></h2>
+<p>Use the following command, using the supermatrix output from the previous step as the input and choosing an appropriate name for your tree. The <code class="docutils literal notranslate"><span class="pre">-gtr</span></code> option tells <strong>FastTree</strong> to use the GTR+CAT model, and the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option specifies that this is DNA data.</p>
+<pre class="literal-block">FastTree -gtr -nt &lt; <span class="var">input.fasta</span> &gt; <span class="var">output.tre</span></pre>
+<p>The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the <code class="docutils literal notranslate"><span class="pre">head</span></code> command. Each terminal in the tree has the ID of the sequence used to generate it.</p>
+</div>
+<div class="section" id="adding-taxonomy">
+<h2>Adding taxonomy<a class="headerlink" href="#adding-taxonomy" title="Permalink to this headline">¶</a></h2>
+<p>The terminals of the tree are named only with the code names for their respective source sequences. We would like to add in the taxonomy so that the terminals are meaningful. There are lots of ways to do this, but our usual method is to use a custom script which takes as input the tree and a table that records the taxonomy of all of the sequences. Happily enough, we happen to have that table handy. Run the following command to rename the tree tips with taxonomy:</p>
+<pre class="literal-block">phylabel.R -p <span class="var">input.tre</span> -r -y <span class="var">taxonomy.csv</span>  -o <span class="var">output.tre</span></pre>
+</div>
+<div class="section" id="assessing-trees">
+<h2>Assessing Trees<a class="headerlink" href="#assessing-trees" title="Permalink to this headline">¶</a></h2>
+<p>You can download the renamed tree to your computer and open it using a tree viewer such as <strong>Figtree</strong> or <strong>Dendroscope</strong>. If you’re completely new to viewing phylogenetic trees, you may want to read the page on <a class="reference internal" href="../otu_trees/tree_viewing.html#tree-viewing"><span class="std std-ref">viewing trees</span></a>.</p>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Whenever we build a phylogenetic tree, we must closely inspect it to determine how well the tree building performed. Have a look at your tree for features that aren’t quite right:</p>
+<ul class="simple">
+<li><p>Check to see whether, in general, the taxonomy of your terminals matches the clade structure of the tree</p></li>
+<li><p>Check to see whether there are any very long branches. Why might these occur?</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>If you’ve been following through these steps with your own data, we would suggest also trying out a more thorough tree building program such as <strong>RAxML</strong>, <strong>IQtree</strong>, <strong>PhyML</strong>, <strong>MrBayes</strong> or <strong>BEAST</strong>. These are much slower to run with mitogenome-scale data, but are much more accurate and appropriate for building a tree for a real analysis. Once you have your tree, you can go back to the tutorial on <a class="reference internal" href="../placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic placement</span></a> to place your OTUs within your tree.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../otuid.html" class="btn btn-neutral float-right" title="E: Identifying OTU sequences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="concatenating_alignments.html" class="btn btn-neutral float-left" title="4. Concatenating alignments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
