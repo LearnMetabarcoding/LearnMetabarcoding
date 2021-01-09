@@ -3,7 +3,7 @@
 .. _role:: var
 
 ==================================
-2. Extracting Protein Coding Genes
+2. Extracting protein coding genes
 ==================================
 
 Introduction
@@ -14,9 +14,9 @@ We are going to focus solely on protein coding genes, rather than using the full
 .. admonition:: Data and software
 	:class: green
 	
-	The input data for this tutorial is one or more genbank-format files containing mitogenome sequences from which you want to build a phylogeny. See the :ref:`preparing mitogenome data<prep_mitogenome_data>` tutorial for how you might acquire these.
+	The input data for this tutorial is one or more genbank-format files containing mitogenome sequences from which you want to build a phylogeny. See the :ref:`preparing mitogenome data <prep_mitogenome_data>` tutorial for how you might acquire these.
 	
-	The files ``references_CCCPmitogenomes.gb``, ``references_GBcoleoptera.gb`` and ``references_GBarthropods.gb`` within the :ref:`sectionD archive<sectionDdata>` can be used as example data.
+	The files ``references_CCCPmitogenomes.gb``, ``references_GBcoleoptera.gb`` and ``references_GBarthropods.gb`` within the :ref:`sectionD archive <sectionDdata>` can be used as example data.
 	
 
 Extracting genes

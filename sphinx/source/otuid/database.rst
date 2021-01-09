@@ -1,7 +1,7 @@
 .. _database_classification:
 
 =======================
-Database Classification
+Database classification
 =======================
 
 .. toctree::

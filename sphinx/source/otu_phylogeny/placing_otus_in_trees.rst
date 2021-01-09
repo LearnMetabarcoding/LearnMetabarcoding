@@ -3,7 +3,7 @@
 .. role:: var
 
 ======================
-Phylogenetic Placement
+Phylogenetic placement
 ======================
 
 Introduction

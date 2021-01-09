@@ -1,5 +1,7 @@
 .. _id_using_megan:
 
+.. role:: var
+
 ======================================
 1. Classification with GenBank & MEGAN
 ======================================

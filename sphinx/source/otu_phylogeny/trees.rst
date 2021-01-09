@@ -1,7 +1,7 @@
 .. _trees:
 
 ====================================
-Building a Mitogenome Reference Tree
+Building a mitogenome reference tree
 ====================================
 
 .. toctree::
@@ -25,4 +25,4 @@ As in the previous sections, we would like to stress here that the focus is on e
 Next Steps
 ==========
 
-We suggest you work through the 5 steps of this subsection one by one, starting with :ref:`Preparing mitogenome data <prep_mitogenome_data>`.
+We suggest you work through the 5 tutorials step-by-step, starting with :ref:`Preparing mitogenome data <prep_mitogenome_data>`.

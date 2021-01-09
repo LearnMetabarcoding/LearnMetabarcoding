@@ -1,5 +1,7 @@
 .. _aligning:
 
+.. _role:: var
+
 ================================
 3. Aligning protein coding genes
 ================================
