@@ -14,9 +14,9 @@ For phylogeny we need to consolidate our genetic data into one file with all of 
 	
 	The input data for this tutorial is a directory of gene alignments in FASTA format, as produced in the :ref:`previous tutorial<aligning>`.
 	
-	This section uses the :ref:`catfasta2phyml.pl<catfasta2phyml>` script.
+	This section uses the :ref:`catfasta2phyml.pl <catfasta2phyml>` script.
 
-Performing Concatenation
+Performing concatenation
 ========================
 
 We use the ``catfasta2phyml.pl`` command to concatenate the aligned files into a supermatrix. 
@@ -35,7 +35,11 @@ We use the ``catfasta2phyml.pl`` command to concatenate the aligned files into a
 		
 		catfasta2phyml.pl -c -fasta :var:`dir`/* > :var:`supermatrix.fasta`
 	
-	This will print the partitions to the terminal. If we want to save them as a file, we can run the below code. Note that we subsequently print them to the terminal: this is because if we have any errors, they will also be printed to the ``partitions.txt`` file so we want to check that out to ensure our command ran OK.
+
+The standard ``catfasta2phyml.pl`` command will print the partitions to the terminal. If we want to save them as a file, we can run the below code. 
+.. admonition:: Solution
+	
+	Note that we print the partitions to the terminal after saving them; this is because if we have any errors, they will also be printed to the ``partitions.txt`` file so we want to check that out to ensure our command ran OK.
 	
 	.. parsed-literal::
 		
@@ -43,7 +47,7 @@ We use the ``catfasta2phyml.pl`` command to concatenate the aligned files into a
 		cat :var:`partitions.txt`
 	
 
-Next Steps
+Next steps
 ==========
 
 Now that we have a supermatrix, we can finally move onto :ref:`5 Tree Building<tree_building>`

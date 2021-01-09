@@ -24,9 +24,9 @@ One of the major benefits of metabarcoding over traditional methods of elucidati
 .. admonition:: Data
 	:class: green
 	
-	The starting point for this section is a FASTA file of sequences from which you want to build a phylogeny, i.e. ASVs or OTUs. If you worked through the previous sections, these data were produced during :ref:`filtering<filtering>` or :ref:`OTU delimitation<otu_delim>`. Alternatively, you can find some example data in the zip archive linked below.
+	The starting point for this section is a FASTA file of sequences from which you want to build a phylogeny, i.e. ASVs or OTUs. If you worked through the previous sections, these data were produced during :ref:`filtering<filtering>` or :ref:`OTU delimitation<otu_delim>`. You wil also need some reference data, as described in the relevant tutorials. 
 	
-	If you follow through the tutorials in this section using the example data, you will also need some reference data. You can download a zip archive of example data for all of the tutorials in this section :ref:`here <sectionDdata>`. Unzip this to a convenient location.
+	You can download a zip archive of example data for all of the tutorials in this section :ref:`here <sectionDdata>`. Unzip this to a convenient location. If you're working through the tutorials using the example data from previous sections, this zip archive contains all the reference data you will need for the relevant tutorials.
 	
 
 Building a phylogeny
@@ -34,15 +34,15 @@ Building a phylogeny
 
 In this section, we will look at two ways to build a phylogeny with your OTUs. We would like to stress here that the focus is on exploring the possibilities and potentialities of phylogenetic metabarcoding, but a detailed exploration of phylogenetic methodologies and analysis is beyond the scope of these resources. The broad methodologies presented here cover a general outline of methods for building phylogenies, but the specific alignment and tree-building software employed has been chosen for speed and ease of use, rather than necessarily for optimal phylogenetic reconstruction. 
 
-First, we will look at direct phylogenetic reconstruction based solely on your OTU sequences in the :ref:`Making a Barcode Tree <otu_tree>` subsection. 
+First, we will look at direct phylogenetic reconstruction based solely on your OTU sequences in the :ref:`Making a barcode tree <otu_tree>` tutorial. 
 
-Second, we will look at how you can add your OTUs to an existing phylogeny based on full mitochondrial genomes to greatly improve accuracy of your resulting tree in the :ref:`Phylogenetic Placement <phylogenetic_placement>` subsection.
+Second, we will look at how you can add your OTUs to an existing phylogeny based on full mitochondrial genomes to greatly improve accuracy of your resulting tree in the :ref:`Phylogenetic placement <phylogenetic_placement>` tutorial.
 
-The third section takes a small detour to work through a pipeline for building a mitochondrial genome tree from freely available data for cases where you don't necessarily have this data already to hand. See the :ref:`Building a Mitogenome Tree <trees>` subsection.
+The third section takes a small detour to work through a pipeline for building a mitochondrial genome tree from freely available data for cases where you don't necessarily have this data already to hand. See the :ref:`Building a mitogenome Tree <trees>` tutorial.
 
-Next Steps
+Next steps
 ==========
 
-We suggest you start with the :ref:`Making a Barcode Tree <otu_tree>` subsection and follow the subsections in order, although each is standalone and does not require the outputs from a previous step.
+We suggest you start with the :ref:`Making a barcode tree <otu_tree>` tutorials and follow the tutorials in order, although each is standalone and does not require the outputs from a previous step.
 
-If you have your own data, we suggest nonetheless following these subsections with the available example data first, as it is small enough to rapidly produce outputs and get you familiar with the steps. Then, you may wish to build your own mitogenome tree with reference data suitable for your project (following :ref:`Building a Mitogenome Reference Tree <trees>`) then place your OTUs on this tree (following :ref:`Phylogenetic Placement <phylogenetic_placement>`)
+If you have your own data, we suggest nonetheless following these tutorials with the available example data first, as it is small enough to rapidly produce outputs and get you familiar with the steps. Then, you may wish to build your own mitogenome tree with reference data suitable for your project (following :ref:`Building a mitogenome tree <trees>`) then place your OTUs on this tree (following :ref:`Phylogenetic placement <phylogenetic_placement>`).

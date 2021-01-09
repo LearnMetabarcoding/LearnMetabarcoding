@@ -1,5 +1,7 @@
 .. _tree_building:
 
+.. _role:: var
+
 ================
 5. Tree building
 ================
@@ -7,7 +9,7 @@
 Introduction
 ============
 
-We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an "approximately maximum likelihood" phylogenetic tree building method, broadly similar in method to **PhyML**, **RAxML** or **IQtree**.
+We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an "approximately maximum likelihood" phylogenetic tree building method, broadly similar in method to **PhyML**, **RAxML** or **IQtree**. It is generally a little less accurate, but it's faster so better for fiddling around with and learning on.
 
 .. admonition:: Data and software
 	:class: green 
@@ -19,18 +21,18 @@ We can now use our supermatrix to build a phylogeny. Here we will be using FastT
 Running FastTree
 ================
 
-Use the following command, using the supermatrix output from the previous step as the input and choosing an appropriate name for your tree. The ``-gtr`` option tells FastTree to use the GTR+CAT model, and the ``-nt`` option specifies that this is DNA data.
+Use the following command, using the supermatrix output from the previous step as the input and choosing an appropriate name for your tree. The ``-gtr`` option tells **FastTree** to use the GTR+CAT model, and the ``-nt`` option specifies that this is DNA data.
 
 .. parsed-literal::
 
-	FastTree -gtr -nt < :var:`input.fasta` > :var:`​tree.nwk`
+	FastTree -gtr -nt < :var:`input.fasta` > :var:`​output.tre`
 
 The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the ``head`` command. Each terminal in the tree has the ID of the sequence used to generate it. 
 
-Adding Taxonomy
+Adding taxonomy
 ===============
 
-The terminals of the tree are named only with the code names for their respective source sequences. We would like to add in the taxonomy so that the terminals are meaningful. There are lots of ways to do this, but our usual method is to use a custom script which takes as input the tree and a table that records the taxonomy of all of the sequences. Happily enough, we happen to have that table handy. :guilabel:`Run the following command to rename the tree tips with taxonomy:`
+The terminals of the tree are named only with the code names for their respective source sequences. We would like to add in the taxonomy so that the terminals are meaningful. There are lots of ways to do this, but our usual method is to use a custom script which takes as input the tree and a table that records the taxonomy of all of the sequences. Happily enough, we happen to have that table handy. Run the following command to rename the tree tips with taxonomy:
 
 .. parsed-literal::
 	
@@ -53,4 +55,4 @@ You can download the renamed tree to your computer and open it using a tree view
 Next Steps
 ==========
 
-If you've been following through these steps with your own data, we would suggest also trying out a more thorough tree building program such as **RAxML**, **IQtree**, **PhyML**, **MrBayes** or **BEAST**. These are much slower to run with mitogenome-scale data, but are much more accurate and appropriate for building a tree for a real analysis. Once you have your tree, you can go back to the tutorial on :ref:`phylogenetic placement <phylogenetic_placement>` to place your OTUs within your tree.
+If you've been following through these steps with your own data, we would suggest also trying out a more thorough tree building program such as **RAxML**, **IQtree**, **PhyML**, **MrBayes** or **BEAST**. These are much slower to run with mitogenome-scale data, but are much more accurate and appropriate for building a tree for a real analysis. Once you have your tree, you can go back to the tutorial on :ref:`Phylogenetic placement <phylogenetic_placement>` to place your OTUs within your tree.

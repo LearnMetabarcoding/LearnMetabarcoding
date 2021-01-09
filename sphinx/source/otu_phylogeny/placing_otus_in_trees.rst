@@ -9,7 +9,7 @@ Phylogenetic Placement
 Introduction
 ============
 
-In the previous section we built a *de novo* phylogenetic tree from our OTU sequences, but this is a short fragment of DNA and not highly accurate. Lots of researchers put a lot of effort into building increasingly accurate phylogenies with much more comprehensive datasets. Wouldn't it be much easier if we could just use those existing phylogenies, rather than building a phylogeny from scratch, and reduce our effort down to simply figuring out where our new sequences fit into those trees? Well, we can. In this subsection, we will use a reference phylogeny of the Coleoptera, built with complete mitochondrial genomes, and place our OTUs onto this tree. The more comprehensive reference phylogeny allows us better resolution for figuring out the deep-level relationships between our OTUs than with the marker region alone. The reference phylogeny forms a 'backbone', to which we add the OTUs. The backbone tree is fixed, and new branches are added for the OTUs. This is often called a "constraint tree".
+In the previous section we built a *de novo* phylogenetic tree from our OTU sequences, but this is a short fragment of DNA and not highly accurate. Lots of researchers put a lot of effort into building increasingly accurate phylogenies with much more comprehensive datasets. Wouldn't it be much easier if we could just use those existing phylogenies, rather than building a phylogeny from scratch, and reduce our effort down to simply figuring out where our new sequences fit into those trees? Well, we can. In this tutorial, we will use a reference phylogeny of the Coleoptera, built with complete mitochondrial genomes, and place our OTUs onto this tree. The more comprehensive reference phylogeny allows us better resolution for figuring out the deep-level relationships between our OTUs than with the marker region alone. The reference phylogeny forms a 'backbone', to which we add the OTUs. The backbone tree is fixed, and new branches are added for the OTUs. This is often called a "constraint tree".
 
 The most important point to remember here is that we must have genetic data for all of the terminals of the existing tree, and at least some of that genetic data should cover the same region of the genome as our metabarcoding marker. Ideally, all of the terminals of the existing tree would have sequence data for our metabarcoding region, but often we have incomplete datasets. This is not the end of the world: the phylogenetic algorithm is able to take account of this missing data and estimate the placement of a new sequence based on its similarity to the sequences with data, and given that incomplete sequences will correspond to other parts of other reference sequences, pairwise distances can be inferred anyway.
 
@@ -44,7 +44,7 @@ The first step is to align our OTUs to our reference mitogenome dataset. Run the
 
 	mafft --thread 1 --addfragments :var:`otus.fasta` --6merpair :var:`supermatrix.fasta` > :var:`output.fasta`
 
-Here we use **MAFFT**'s ``--addfragments`` argument, which you can read about `here <https://mafft.cbrc.jp/alignment/software/addsequences.html>`_. Again, we’re using some options which make this alignment very very fast, but the accuracy might not be great.
+Here we use **MAFFT**'s ``--addfragments`` argument, which you can read about `here <https://mafft.cbrc.jp/alignment/software/addsequences.html>`_. There are several different algorithms we could use to do this, but ``--6merpair`` works well in our experience.
 
 .. admonition:: Exercise
 	
@@ -100,6 +100,6 @@ Next steps
 
 You now have a phylogeny that you can use for downstream analyses. Of course, there are a lot of sequences on this tree that aren't your OTUs, but it would be completely valid to remove the non-OTU sequences and retain only the OTU phylogeny for analysis. You could do this in **R** using commands from the `ape <https://cran.r-project.org/web/packages/ape/>`_ package, for example.
 
-If you want to learn how to build a reference tree like we used here from scratch, check out the :ref:`Building a Mitogenome Tree <trees>` subsection.
+If you want to learn how to build a reference tree, like the one we used here, from scratch, check out the :ref:`Building a mitogenome tree <trees>` tutorials.
 
 If you want to learn how to identify your OTUs, you can see the :ref:`Identifying OTU sequences <otuid>` section, where we will look at several methods for taxonomic identification and/or classification of OTUs. One of these methods draws directly from the tree you've produced here, using the taxonomy of the reference sequences in the backbone tree to infer taxonomy of the OTUs: see the :ref:`Phylogenetic classification <phylogenetic_classification>` tutorial.

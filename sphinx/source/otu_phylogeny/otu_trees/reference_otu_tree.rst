@@ -1,7 +1,7 @@
 .. _reference_otu_tree:
 
 =======================================
-Extension: Barcode Tree with References
+Extension: Barcode tree with references
 =======================================
 
 Introduction
@@ -35,8 +35,8 @@ Another way to assess accuracy of a tree is to add in some sequences with known 
 	* Does the taxonomy of the reference sequences match with the tree topology? I.e. are reference sequences from the same family grouped together?
 	* If we are able to identify some clades of the tree as containing reference sequences only from the same taxonomic group, what does that enable us to conclude about the anonymous OTU sequences in that clade?
 
-Next Steps
+Next steps
 ==========
 
-In the next tutorial, :ref:`Phylogenetic Placement <phylogenetic_placement>`, we will similarly use a reference, but a reference *tree* rather than a set of reference sequences.
+In the next tutorial, :ref:`Phylogenetic placement <phylogenetic_placement>`, we will similarly use a reference, but a reference *tree* rather than a set of reference sequences.
 

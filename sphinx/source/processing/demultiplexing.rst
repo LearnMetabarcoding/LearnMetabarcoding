@@ -192,6 +192,12 @@ Let's get rid of the files we don't need. You've doubled the amount of storage y
 		fi; 			:comment:`# end if clause`
 	done 				:comment:`# end loop`
 
+.. sidebar:: Alternatives
+	
+	The approach we've used for demultiplexing here doesn't scale well to larger datasets: the aim is to help you understand what demultiplexing involves. There is an alternative way of specifying the index sequences in **cutadapt** using a fasta file of indices, `see the cutadapt documentation <https://cutadapt.readthedocs.io/en/stable/guide.html#demultiplexing>`_ for more information.
+	
+	We use **cutadapt** because it is very versatile and has many useful options. However, there are other tools out there. **OBITools** has the `obigrep <https://pythonhosted.org/OBITools/scripts/obigrep.html>`_ and `ngsfilter <https://pythonhosted.org/OBITools/scripts/ngsfilter.html>`_ scripts, the latter of which seems designed for bulk demultiplexing but doesn't have anywhere near the sensitivity and customisability of **cutadapt**. **QIIME** has the `split_libraries <http://qiime.org/scripts/split_libraries.html>`_ script which seems to have more features. Our approach is to use a wrapper script for **cutadapt** that reads a table of index sequences and a set of cutadapt arguments that automatically builds the cutadapt command.
+
 This isn't a crucial bioinformatics step, it's just to tidy things up. You don't need to understand everything about this command, although the loop syntax is going to crop up frequently. If you're keen to try and figure this out, you might want to review the page on :ref:`loops in bash<loops>`, making sure to read about :ref:`parameter substitution<parameter-substitution>`
 
 Finally, to remove the files beginning with ``unknown``, run:
