@@ -1,6 +1,6 @@
 .. _extract_genes:
 
-.. _role:: var
+.. role:: var
 
 ==================================
 2. Extracting Protein Coding Genes
@@ -32,7 +32,7 @@ Replace the placeholder names in the following command with the names of the thr
 
 .. parsed-literal::
 
-	extract_genes.pl -g ​:var:`input1.gb` :var:`input2.gb` :var:`input3.gp` ​-out :var:`​output/`​ -k -regiontypes CDS
+	extract_genes.pl -g :var:`input1.gb` :var:`input2.gb` :var:`input3.gp` -out :var:`output/` -k -regiontypes CDS
 
 Once complete, you should see thirteen files in your output folder, one for each gene. 
 
