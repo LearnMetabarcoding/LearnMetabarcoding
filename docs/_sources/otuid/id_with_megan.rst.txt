@@ -21,14 +21,14 @@ While we could simply look at the hits we get from a **BLAST** search to estimat
 	
 	The input data to this tutorial is a FASTA file of sequences that you want to classify. If you've been following along step-by-step, you can use ASVs or OTUs you produced in previous sections. Alternatively, you can use the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionD archive <sectionDdata>` can be used as example data.
 	
-	You will also need a local copy of the GenBank nucleotide (nt) database. If you're working with your own data, you can find out how to download this `here <ftp://ftp.ncbi.nlm.nih.gov/blast/documents/blastdb.html>`_. If you are working with the example data, we have created a mini version of the nt database designed to rapidly produce results *for this dataset only*. This is in the directory ``blastdb`` within the :ref:`sectionD archive <sectionDdata>`.
+	You will also need a local copy of the GenBank nucleotide (nt) database. If you're working with your own data, you can find out how to download this `here <ftp://ftp.ncbi.nlm.nih.gov/blast/documents/blastdb.html>`_. If you are working with the example data, we have created a mini version of the nt database designed to rapidly produce results **for this dataset only**. This is in the directory ``blastdb`` within the :ref:`sectionD archive <sectionDdata>`.
 	
 	This tutorial uses the :ref:`BLAST<blast>` software. You should also have the software `MEGAN <https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/megan6/>`_ installed on your personal computer.
 
 Running BLAST
 =============
 
-Running **BLAST** is fairly straightforward, although there are a lot of options, some of which are fairly obscure. Be sure to check out the `documentation <https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_>`_ at some point. We will use the following **BLAST** command to search our sequences against a local copy of the GenBank nt database (see the Data and software box above for details of acquiring this database). :guilabel:`Run this command, making sure to specify the correct path to the blastdb directory and replacing the other file names with the name of your OTU sequences and a sensible output name.`
+Running **BLAST** is fairly straightforward, although there are a lot of options, some of which are fairly obscure. Be sure to check out the `documentation <https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_>`_ at some point. We will use the following **BLAST** command to search our sequences against a local copy of the GenBank nt database (see the Data and software box above for details of acquiring this database). Run this command, making sure to specify the correct path to the blastdb directory and replacing the other file names with the name of your OTU sequences and a sensible output name.
 
 .. parsed-literal::
 	
@@ -58,9 +58,9 @@ Once **MEGAN** has opened and loaded the tree, you should see a very high-level 
 
 Go to the :menuselection:`LCA Params` tab at the top. Here you will see the parameters that **MEGAN** uses when assigning taxonomy using its lowest common ancestor algorithm. For now we'll leave these as default and just press :menuselection:`Apply`. It will take a little while to process your BLAST results (longer if you have a large dataset and/or increased the number of hits returned in your **BLAST** command.
 
-Once **MEGAN** has finished you should see a reduced version of the taxonomy tree. It may not be very detailed: at the top bar, select :menuselection:`Rank` and choose :menuselection:`Species`. Have a look at the tree.
+Once **MEGAN** has finished you should see a reduced version of the taxonomy tree. It may not be very detailed: at the top bar, select :menuselection:`Rank` and choose :menuselection:`Species`. 
 
-:guilabel:`Are all the OTUs Coleoptera?`
+:guilabel`Have a look at the tree. Are all the OTUs Coleoptera?`
 
 Each circle on the tree is one or more OTUs that have been assigned to a node. The larger the circle, the more OTUs have been assigned to that node. If you click on a node, you’ll see two values. :menuselection:`Assigned` is the number of OTUs assigned to that node, :menuselection:`Summed` is the number of OTUs assigned to that node and all child nodes. If you ​right click on a node and click :menuselection:`Inspect`, you can see more details about that node and the OTU(s) assigned to it, as well as all the BLAST information. The greyed out BLAST hits are those that aren’t taken into account in the LCA analysis.
 
@@ -73,7 +73,7 @@ Each circle on the tree is one or more OTUs that have been assigned to a node. T
 
 To output the taxonomic assignment for all of the OTUs for use in analysis, we need to select all of the nodes. You can do this by going to :menuselection:`Select --> All Nodes`. Then go to :menuselection:`File --> Export --> Text (CSV) Format`. For the :menuselection:`Choose data to export:` field, select :menuselection:`readName_to_taxonPath`, click OK and select your output location. This generates a comma-separated table with the OTU name and full NCBI taxon path of the assigned node. 
 
-Next Steps
+Next steps
 ==========
 
 The major downside to this method is that it relies on GenBank being a) comprehensive and b) accurate. Some OTUs may be able to be classified to family or genus level if that family or genus is well represented in GenBank (for the locus we're using) and the identifications of the sequences on GenBank are both accurate and complete to the necessary taxonomic level. However, many other OTUs may not be able to be classified below the class or order level if there are insufficient close sequences available to match to, or if the available sequences are incorrectly identified or identified only to the class or order level. 

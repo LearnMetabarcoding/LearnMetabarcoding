@@ -1,5 +1,7 @@
 .. _extract_genes:
 
+.. role:: var
+
 ==================================
 2. Extracting Protein Coding Genes
 ==================================
@@ -26,11 +28,11 @@ We will use a custom script to extract the 13 mitochondrial protein coding genes
 
 	extract_genes.pl -h
 
-Replace the placeholder names in the following command with the names of the three genbank files containing the novel references, the coleoptera from GenBank and the arthropods from GenBank. Make sure you match up the arguments with the help file and understand what you’re doing here! The ``outdir/`` will be a directory holding a file for each gene, you should of course replace this with a sensible name. You don’t need to create this, the script will.
+Replace the placeholder names in the following command with the names of the three genbank files containing the novel references, the Coleoptera from GenBank and the Arthropods from GenBank. Make sure you match up the arguments with the help file and understand what you’re doing here! The ``outdir/`` will be a directory holding a file for each gene, you should of course replace this with a sensible name. You don’t need to create this, the script will.
 
 .. parsed-literal::
 
-	extract_genes.pl -g ​input1.gb input2.gb input3.gp ​-out ​outdir/​ -k -regiontypes CDS
+	extract_genes.pl -g :var:`input1.gb` :var:`input2.gb` :var:`input3.gp` -out :var:`output/` -k -regiontypes CDS
 
 Once complete, you should see thirteen files in your output folder, one for each gene. 
 
@@ -43,11 +45,11 @@ Once complete, you should see thirteen files in your output folder, one for each
 	
 	This script is one we have written and is a very rigid solution. There is no standard format for gene names in GenBank, so our sequences use many different variants for the same gene: e.g. cox1, co1, coi, etc. The script is hardcoded to recognise as many variants as we have seen, but if you were to use this script on your own data, it might miss a gene if it had a different name, especially if you're working with a taxon that has different naming conventions. The more common approach to this task is to manually extract the sequences using a GUI tool such as Geneious, but we have not done this for several reasons:
 	
-	* It’s slow and boring, we prefer automated tools
+	* It's slow and boring, we prefer automated tools
 	* Geneious is not free
 	* Manual processes frequently introduce errors into sequence naming
 
 Next Steps
 ==========
 
-Now that we have our folder of genes, we will move on to :ref:`3. Aligning Protein Coding Genes<aligning>`.
+Now that we have our folder of genes, we will move on to :ref:`3. Aligning protein coding genes <aligning>`.

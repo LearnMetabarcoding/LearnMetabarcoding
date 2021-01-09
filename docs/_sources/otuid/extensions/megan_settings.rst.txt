@@ -1,8 +1,8 @@
 .. _megan_settings: 
 
-====================================
+=========================
 Extension: MEGAN settings
-====================================
+=========================
 
 Go to :menuselection:`Options --> Change LCA Parameters`. Let's adjust this to only take into account close relatives by modifying the :menuselection:`Min Percent Identity` parameter to ignore any hits below, say, 80% similarity (i.e. :menuselection:`Min Percent Identity: = 0.80).`
 

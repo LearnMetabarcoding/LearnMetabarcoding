@@ -42,7 +42,7 @@ Notice how we've looped on the extracted gene files, running MAFFT on each file 
 .. admonition:: Solution
 	:class: toggle
 	
-	FFT-NS-2 is a fast but inaccurate method; if using your own data, you might want to instead use the **MAFFT** G-INS-i method as we did when we :ref:`made an OTU tree <otu_trees>`. We generally would use this method, optimising gap opening and extension penalties for each gene to reduce gap formation. Sometimes the L-INS-I method works better on poorly-aligning genes. But there are no hard and fast rules about which is the most appropriate method in any case, generally the best strategy is to try several methods and use whatever works the best
+	FFT-NS-2 is a fast but inaccurate method; if using your own data, you might want to instead use the **MAFFT** G-INS-i method as we did when we :ref:`made an OTU tree <otu_tree>`. We generally would use this method, optimising gap opening and extension penalties for each gene to reduce gap formation. Sometimes the L-INS-I method works better on poorly-aligning genes. But there are no hard and fast rules about which is the most appropriate method in any case, generally the best strategy is to try several methods and use whatever works the best
 	
 
 .. admonition:: Exercise

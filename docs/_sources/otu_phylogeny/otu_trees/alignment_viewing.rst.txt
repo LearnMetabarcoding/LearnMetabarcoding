@@ -1,13 +1,13 @@
 .. _alignment_viewing:
 
-==================
-Viewing alignments
-==================
+================================
+Fundamentals: Viewing alignments
+================================
 
 Introduction
 ===============
 
-This quick tutorial focuses on how to view an alignment in the free software **AliView**. If you already are familiar with **AliView** or another alignment viewer software then feel free to skip this section.
+This quick tutorial focuses on how to view an alignment in the free software **AliView**. If you already are familiar with **AliView** or another alignment viewer software then feel free to skip this.
 
 .. admonition:: Software and data
     :class: green
@@ -30,6 +30,6 @@ The furthest right drop down menu is for selecting the correct genetic code for 
 Next steps
 ============
 
-If you haven't already you can check out the viewing trees :ref:`page <tree_viewing>`. You can also check out the :ref:`Barcode Tree with References <reference_otu_tree>` extension or the :ref:`OTU Comparison Tree <otu_comparison_tree>` extension.
+If you haven't already you can check out the viewing trees :ref:`page <tree_viewing>`. You can also check out the :ref:`Barcode tree with references <reference_otu_tree>` extension or the :ref:`OTU comparison tree <otu_comparison_tree>` extension.
 
-Alternatively, you can proceed to the next subsection, :ref:`Phylogenetic Placement. <phylogenetic_placement>`
+Alternatively, you can proceed to the next tutorial, :ref:`Phylogenetic placement. <phylogenetic_placement>`

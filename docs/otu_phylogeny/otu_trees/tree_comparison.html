@@ -40,7 +40,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Phylogenetic Placement" href="../placing_otus_in_trees.html" />
-    <link rel="prev" title="Extension: Barcode Tree with References" href="reference_otu_tree.html" /> 
+    <link rel="prev" title="Extension: Barcode tree with references" href="reference_otu_tree.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,10 +92,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../otu_trees.html">Making a Barcode Tree</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="alignment_viewing.html">Viewing alignments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tree_viewing.html">Viewing Trees</a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference_otu_tree.html">Extension: Barcode Tree with References</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../otu_trees.html">Making a barcode tree</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="alignment_viewing.html">Fundamentals: Viewing alignments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tree_viewing.html">Fundamentals: Viewing trees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference_otu_tree.html">Extension: Barcode tree with references</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Extension: Comparing OTU methods</a></li>
 </ul>
 </li>
@@ -153,7 +153,7 @@
         
           <li><a href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a> &raquo;</li>
         
-          <li><a href="../otu_trees.html">Making a Barcode Tree</a> &raquo;</li>
+          <li><a href="../otu_trees.html">Making a barcode tree</a> &raquo;</li>
         
       <li>Extension: Comparing OTU methods</li>
     
@@ -189,7 +189,7 @@
 </div>
 <p>First, let’s create a directory for this little side project, just to be organised</p>
 <p>Second, we need to create copies of our OTU files with names added to the headers in order to differentiate OTUs from different methods. For each OTU file, run the following command, replacing <code class="docutils literal notranslate"><span class="pre">method</span></code> with a description of the method used to create OTUS, e.g. <code class="docutils literal notranslate"><span class="pre">greedy97</span></code> (text or numbers only, no spaces or other characters!):</p>
-<pre class="literal-block">sed -e &quot;s/\(^&gt;.*$\)/\1:var:<cite>method</cite>/&quot; <span class="var">input.fasta</span> &gt; <span class="var">newdirectory/output.fasta</span></pre>
+<pre class="literal-block">sed -e &quot;s/\(^&gt;.*$\)/\1<span class="var">method</span>/&quot; <span class="var">input.fasta</span> &gt; <span class="var">newdirectory/output.fasta</span></pre>
 <p>Next, concatenate these OTU files into one file - you’ll need to be inside your new directory for this:</p>
 <pre class="literal-block">cat *.fasta &gt; <span class="var">output.fasta</span></pre>
 <div class="admonition-exercise admonition">
@@ -212,7 +212,7 @@
         <a href="../placing_otus_in_trees.html" class="btn btn-neutral float-right" title="Phylogenetic Placement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="reference_otu_tree.html" class="btn btn-neutral float-left" title="Extension: Barcode Tree with References" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="reference_otu_tree.html" class="btn btn-neutral float-left" title="Extension: Barcode tree with references" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

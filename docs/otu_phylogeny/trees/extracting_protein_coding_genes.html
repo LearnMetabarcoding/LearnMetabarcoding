@@ -92,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a Barcode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a barcode tree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">Phylogenetic Placement</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building a Mitogenome Reference Tree</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="preparing_mitogenome_data.html">1. Preparing mitogenome data</a></li>
@@ -192,10 +192,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extract_genes</span><span class="o">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">h</span>
 </pre></div>
 </div>
-<p>Replace the placeholder names in the following command with the names of the three genbank files containing the novel references, the coleoptera from GenBank and the arthropods from GenBank. Make sure you match up the arguments with the help file and understand what you’re doing here! The <code class="docutils literal notranslate"><span class="pre">outdir/</span></code> will be a directory holding a file for each gene, you should of course replace this with a sensible name. You don’t need to create this, the script will.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>extract_genes.pl -g ​input1.gb input2.gb input3.gp ​-out ​outdir/​ -k -regiontypes CDS
-</pre></div>
-</div>
+<p>Replace the placeholder names in the following command with the names of the three genbank files containing the novel references, the Coleoptera from GenBank and the Arthropods from GenBank. Make sure you match up the arguments with the help file and understand what you’re doing here! The <code class="docutils literal notranslate"><span class="pre">outdir/</span></code> will be a directory holding a file for each gene, you should of course replace this with a sensible name. You don’t need to create this, the script will.</p>
+<pre class="literal-block">extract_genes.pl -g <span class="var">input1.gb</span> <span class="var">input2.gb</span> <span class="var">input3.gp</span> -out <span class="var">output/</span> -k -regiontypes CDS</pre>
 <p>Once complete, you should see thirteen files in your output folder, one for each gene.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
@@ -216,7 +214,7 @@
 </div>
 <div class="section" id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have our folder of genes, we will move on to <a class="reference internal" href="aligning_protein_coding_genes.html#aligning"><span class="std std-ref">3. Aligning Protein Coding Genes</span></a>.</p>
+<p>Now that we have our folder of genes, we will move on to <a class="reference internal" href="aligning_protein_coding_genes.html#aligning"><span class="std std-ref">3. Aligning protein coding genes</span></a>.</p>
 </div>
 </div>
 

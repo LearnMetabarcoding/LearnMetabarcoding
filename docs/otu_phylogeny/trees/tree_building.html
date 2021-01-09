@@ -92,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a Barcode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a barcode tree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">Phylogenetic Placement</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building a Mitogenome Reference Tree</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="preparing_mitogenome_data.html">1. Preparing mitogenome data</a></li>
@@ -179,7 +179,7 @@
 <span id="id1"></span><h1>5. Tree building<a class="headerlink" href="#tree-building" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an “approximately maximum likelihood” phylogenetic tree building method, broadly similar in method to <strong>PhyML</strong>, <strong>RAxML</strong> or <strong>IQtree</strong>.</p>
+<p>We can now use our supermatrix to build a phylogeny. Here we will be using FastTree to quickly generate a tree, since this is (unsurprisingly) fast. This is an “approximately maximum likelihood” phylogenetic tree building method, broadly similar in method to <strong>PhyML</strong>, <strong>RAxML</strong> or <strong>IQtree</strong>. It is generally a little less accurate, but it’s faster so better for fiddling around with and learning on.</p>
 <div class="green admonition">
 <p class="admonition-title">Data and software</p>
 <p>The input data for this tutorial is a supermatrix of a set of sequences for which you want to build a phylogeny, and a table of taxonomy for those sequences. If you’re following along step-by-step, the supermatrix was produced in <a class="reference internal" href="concatenating_alignments.html#concat-alignments"><span class="std std-ref">the previous tutorial</span></a>. The file <code class="docutils literal notranslate"><span class="pre">taxonomy_GB_CCCP.csv</span></code> within the <a class="reference internal" href="../../data.html#sectionddata"><span class="std std-ref">sectionD archive</span></a> is the corresponding taxonomy table.</p>
@@ -188,13 +188,13 @@
 </div>
 <div class="section" id="running-fasttree">
 <h2>Running FastTree<a class="headerlink" href="#running-fasttree" title="Permalink to this headline">¶</a></h2>
-<p>Use the following command, using the supermatrix output from the previous step as the input and choosing an appropriate name for your tree. The <code class="docutils literal notranslate"><span class="pre">-gtr</span></code> option tells FastTree to use the GTR+CAT model, and the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option specifies that this is DNA data.</p>
-<pre class="literal-block">FastTree -gtr -nt &lt; <span class="var">input.fasta</span> &gt; <span class="var">​tree.nwk</span></pre>
+<p>Use the following command, using the supermatrix output from the previous step as the input and choosing an appropriate name for your tree. The <code class="docutils literal notranslate"><span class="pre">-gtr</span></code> option tells <strong>FastTree</strong> to use the GTR+CAT model, and the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option specifies that this is DNA data.</p>
+<pre class="literal-block">FastTree -gtr -nt &lt; <span class="var">input.fasta</span> &gt; <span class="var">output.tre</span></pre>
 <p>The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the <code class="docutils literal notranslate"><span class="pre">head</span></code> command. Each terminal in the tree has the ID of the sequence used to generate it.</p>
 </div>
 <div class="section" id="adding-taxonomy">
-<h2>Adding Taxonomy<a class="headerlink" href="#adding-taxonomy" title="Permalink to this headline">¶</a></h2>
-<p>The terminals of the tree are named only with the code names for their respective source sequences. We would like to add in the taxonomy so that the terminals are meaningful. There are lots of ways to do this, but our usual method is to use a custom script which takes as input the tree and a table that records the taxonomy of all of the sequences. Happily enough, we happen to have that table handy. <span class="guilabel">Run the following command to rename the tree tips with taxonomy:</span></p>
+<h2>Adding taxonomy<a class="headerlink" href="#adding-taxonomy" title="Permalink to this headline">¶</a></h2>
+<p>The terminals of the tree are named only with the code names for their respective source sequences. We would like to add in the taxonomy so that the terminals are meaningful. There are lots of ways to do this, but our usual method is to use a custom script which takes as input the tree and a table that records the taxonomy of all of the sequences. Happily enough, we happen to have that table handy. Run the following command to rename the tree tips with taxonomy:</p>
 <pre class="literal-block">phylabel.R -p <span class="var">input.tre</span> -r -y <span class="var">taxonomy.csv</span>  -o <span class="var">output.tre</span></pre>
 </div>
 <div class="section" id="assessing-trees">
@@ -211,7 +211,7 @@
 </div>
 <div class="section" id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
-<p>If you’ve been following through these steps with your own data, we would suggest also trying out a more thorough tree building program such as <strong>RAxML</strong>, <strong>IQtree</strong>, <strong>PhyML</strong>, <strong>MrBayes</strong> or <strong>BEAST</strong>. These are much slower to run with mitogenome-scale data, but are much more accurate and appropriate for building a tree for a real analysis. Once you have your tree, you can go back to the tutorial on <a class="reference internal" href="../placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">phylogenetic placement</span></a> to place your OTUs within your tree.</p>
+<p>If you’ve been following through these steps with your own data, we would suggest also trying out a more thorough tree building program such as <strong>RAxML</strong>, <strong>IQtree</strong>, <strong>PhyML</strong>, <strong>MrBayes</strong> or <strong>BEAST</strong>. These are much slower to run with mitogenome-scale data, but are much more accurate and appropriate for building a tree for a real analysis. Once you have your tree, you can go back to the tutorial on <a class="reference internal" href="../placing_otus_in_trees.html#phylogenetic-placement"><span class="std std-ref">Phylogenetic placement</span></a> to place your OTUs within your tree.</p>
 </div>
 </div>
 

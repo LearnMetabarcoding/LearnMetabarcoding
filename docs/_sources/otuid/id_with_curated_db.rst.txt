@@ -1,7 +1,9 @@
 .. _id_curated:
 
+.. role:: var
+
 ========================================
-2. Classification with Curated Databases
+2. Classification with curated databases
 ========================================
 
 Introduction
@@ -9,7 +11,7 @@ Introduction
 
 **BLAST** is not designed as a taxonomic assignment tool, and **MEGAN** is forced to work with **BLAST**'s alignment and matching summary outputs to assign taxonomy. There are other tools out there that are specifically designed for the assignment of taxonomy to anonymous sequences. Rather than comparing a sequence against a database one-by-one, these methods use k-mer approaches to place a sequence within the whole set of references. Then, they use an approach broadly analogous to **MEGAN**'s LCA method to probabilistically assign taxonomy, generally assigning confidence scores to different taxonomic levels. Such methods include **PROTAX**, **SINTAX**, **SPINGO** and **RDPclassifier**. It should be noted that like much of the software available for metabarcoding, these tools are often written for use on 16S. It should always be considered whether other loci may not be treated as expected by such tools.
 
-The other downside to the prior method is that GenBank is not necessarily authoritative - it is well known that many sequences available on GenBank are misidentified. This would not be an issue if we were working with a well-known taxon, but when our survey lineages are likely to be poorly covered in GenBank, yet we require a relatively detailed identification, searching against all of GenBank is likely to be less successful. Some researchers have taken sections of GenBank and curated the sequences, removing sequences that are poor quality or unlikely to be correct.
+The other downside to the prior method is that GenBank is not necessarily authoritative - it is well known that many sequences available on GenBank are misidentified, or only identified to order or family. This would not be an issue if we were working with a well-known taxon, but when our survey lineages are likely to be poorly covered in GenBank, yet we require a relatively detailed identification, searching against all of GenBank is likely to be less successful. Some researchers have taken sections of GenBank and curated the sequences, removing sequences that do not have species-level identification, are poor quality or unlikely to be correct. Remember though - just because a dataset has been curated, doesn't mean it's perfect!
 
 .. admonition:: Data and software
 	:class: green
@@ -20,28 +22,34 @@ The other downside to the prior method is that GenBank is not necessarily author
 	
 	This tutorial uses the :ref:`VSEARCH<vsearch>` software.
 
-The MIDORI Database
+The MIDORI database
 ===================
 
-One issue with using these more advanced classification tools is that they often require quite specific reference database structures. Thankfully, many curated database authors have released their databases in these formats. For eukaryotic studies, the MIDORI database (Machida, 2017, doi: 10.1038/sdata.2017.27) has curated databases for 14 different loci, including CO1, and releases versions of their databases for 5 different taxonomic assignment tools. We find that this is a good database for metazoan metabarcoding. For other taxa, the fungal UNITE database is widely used, and there are many available 16S databases for microbial metabarcoding.
+One issue with using these more advanced classification tools is that they often require quite specific reference database structures. Thankfully, many curated database authors have released their databases in these formats. For eukaryotic studies, the MIDORI database (Machida, 2017, doi: 10.1038/sdata.2017.27) has curated databases for 14 different loci, including CO1, and releases versions of their databases for 5 different taxonomic assignment tools. This is quite handy for metazoan metabarcoding. For other taxa, the fungal UNITE database is widely used, and there are many available 16S databases for microbial metabarcoding.
 
 Classification using SINTAX
 ===========================
 
-We will perform **SINTAX** classification against the MIDORI database ourselves, as this is pretty straightforward to do. The first thing to do is to download the reference dataset you want to use from the MIDORI website. Head to the `download page <http://reference-midori.info/download.php#>`_ and select the :menuselection:`Latest_GenBankRelease`, then select :menuselection:`SINTAX --> uniq`. You can download this file directly to your machine by using the command below; note how the structure of the download path matches the information shown on the MIDORI page. You would obviously need to modify this to download a file for a different classifier or for a different locus. We then unzip this file and use VSEARCH to convert this to a special database format.
+We will perform **SINTAX** classification against the MIDORI database ourselves, as this is pretty straightforward to do. The first thing to do is to download the reference dataset you want to use from the MIDORI website. Head to the `download page <http://reference-midori.info/download.php#>`_ and select the :menuselection:`Latest_GenBankRelease`, then select :menuselection:`SINTAX --> uniq`. You can download this file directly to your working directory by using the command below; note how the structure of the download path matches the information shown on the MIDORI page. You would obviously need to modify this to download a file for a different classifier or for a different locus. We then unzip this file and use VSEARCH to convert this to a special database format.
 
 .. parsed-literal::
 	
 	wget http://reference-midori.info/download/Latest_GenBankRelease240/SINTAX/uniq/MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
 	unzip MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
-	vsearch --makeudb_usearch MIDORI_UNIQ_GB240_CO1_SINTAX.fasta --output MIDORI_UNIQ_GB240_CO1_SINTAX.udb
+	vsearch --makeudb_usearch MIDORI_UNIQ_GB240_CO1_SINTAX.fasta \
+	--output MIDORI_UNIQ_GB240_CO1_SINTAX.udb
 
 Classifying our OTUs using this database is now very simple. We simply run SINTAX, which is also part of VSEARCH:
 
 .. parsed-literal::
 	
-	vsearch -sintax :var:`input.fasta` -db MIDORI_UNIQ_GB240_CO1_SINTAX.udb -tabbedout :var:`output.tsv` -strand both -sintax_cutoff 1
+	vsearch -sintax :var:`input.fasta` -db MIDORI_UNIQ_GB240_CO1_SINTAX.udb \
+	-tabbedout :var:`output.tsv` -strand both -sintax_cutoff 1
 	
+
+The ``-strand`` argument controls whether sequences are compared as-is, or whether the reverse complement of the sequences is also checked; we use ``both`` just in case any database sequences are the wrong strand, although this is generally unlikely. The ``-sintax_cutoff`` argument gives the minimum bootstrap value with which to accept taxonomy, ``1`` is the strictest setting (i.e. a sequence must always be placed into this taxon for it to be accepted).
+
+Open up the output table and have a look at it. The second column gives the full predicted taxonomy, with bootstrap support in parentheses. The third column contains the strand and the fourth column gives only the taxonomic ranks wih support at or above our ``-sintax_cutoff`` threshold.
 
 Classification using RDP or SPINGO
 ==================================
@@ -50,16 +58,16 @@ We won't run these tools on our own machine because they take a little bit more 
 
 Instead, we will take advantage of the server made available by the MIDORI team. You can access the server `here <http://reference-midori.info/server.php>`_. You can see that you can select a program, paste or upload your sequences, and select a database and searching parameters. We suggest uploading your OTU sequences and running RDPClassifier against the Unique CO1 database, with default parameters. We use Unique because it's a smaller database so won't take quite as long, we don't want to overload their server. You could run **SPINGO** too, but its outputs require more processing to be comparable. **RDP** outputs two files, the ``hier_outfile`` is a summary and the ``usga_classified`` is the individual OTU taxonomies, you want the latter. Upload it to your machine alongside the **MEGAN** and **SINTAX** classifications.
 
-Comparing Classifications
+Comparing classifications
 =========================
 
 .. admonition:: Exercise
 	
-	To quickly get an idea of how many Coleoptera OTUs we have, run the following command on the **SINTAX** file, the RDP classified file, and the MEGAN output you uploaded:
+	To quickly get an idea of how many Coleoptera OTUs we have, run the following command on the **SINTAX** output file, the **RDP** classified file, and the MEGAN output you uploaded:
 	
 	.. parsed-literal:: 
 	
-		grep -c “Coleoptera”
+		grep -c "Coleoptera" :var:`input`
 	
 	* Do the different assignment programs agree?
 	
@@ -81,7 +89,7 @@ Comparing Classifications
 
 Classification is only as good as the database and the method used. We tend to find considerable variation between different methods, and it's hard to decide which is correct. Generally, we would advise treating classifications conservatively, and if using a method that assigns confidence, only accept high confidence classifications. 
 
-Next Steps
+Next steps
 ==========
 
 Of course, the ideal situation would be that you have a reference set of barcode sequences for all possible species in your dataset. In the :ref:`next tutorial<id_local>`, we will look at how to match your OTUs to a reference set.

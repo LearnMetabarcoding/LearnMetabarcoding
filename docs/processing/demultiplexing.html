@@ -237,7 +237,7 @@ head -n 24 <span class="var">input_R2.fastq</span> | grep -E &quot;TA.AC.TC.GG.T
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cutadapt</span> <span class="o">--</span><span class="n">help</span>
 </pre></div>
 </div>
-<p>It’s quite long, but at least read the first section. It’s helpful to think about exactly what our data is and what we want to do:</p>
+<p>It’s quite long, but at least read the first section to get acquainted with it. Don’t worry, we’re going to give you a command shortly, but before we do it’s helpful to think about exactly what our data is and what we want to do:</p>
 <ul class="simple">
 <li><p>We have paired data</p></li>
 <li><p>Our indices are at the beginning of the reads</p></li>
@@ -245,14 +245,13 @@ head -n 24 <span class="var">input_R2.fastq</span> | grep -E &quot;TA.AC.TC.GG.T
 <li><p>We want to output a different file for each index</p></li>
 </ul>
 <p><strong>Cutadapt</strong> has settings for all of these situations. It will allow reading two files as input, and will ensure that pairs of reads in these files are kept in sync. Indices at the beginning of reads are specified using <code class="docutils literal notranslate"><span class="pre">-g</span></code> (or <code class="docutils literal notranslate"><span class="pre">​-G</span></code> for the second file of reads), we can specify these multiple times, and name different adapters. We also specify that the adapters are right at the beginning, with no gaps, using a <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol. We can specify that we want output files depending on the combination of adapters found using the <code class="docutils literal notranslate"><span class="pre">​-o</span></code> and <code class="docutils literal notranslate"><span class="pre">​-p</span></code> options for the first and second files respectively.</p>
-<p>Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1.</p>
 <p>To avoid a mess of files, <span class="guilabel">make sure you’re in the to the parent directory, then create a new directory</span>. Call this new directory something appropriate. If you’re unsure how to do this check the solution box below.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <pre class="literal-block">cd ../        <span class="comment"># Change working directory to the parent of the current working directory</span>
 mkdir 1_demux <span class="comment"># Create a new directory called 1_demux</span></pre>
 </div>
-<p>The following commands assume that you are in the directory that contains the <code class="docutils literal notranslate"><span class="pre">0_rawsequences</span></code> directory and an empty directory called <code class="docutils literal notranslate"><span class="pre">1_demux</span></code>. Let’s first try and demultiplex a single file. <span class="guilabel">Carefully examine the following command and look at the help file to make sure you’re clear on what each of the arguments is doing</span>.</p>
+<p>Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1. The following commands assume that you are in the directory that contains the <code class="docutils literal notranslate"><span class="pre">0_rawsequences</span></code> directory and an empty directory called <code class="docutils literal notranslate"><span class="pre">1_demux</span></code>. Let’s first try and demultiplex a single file. <span class="guilabel">Carefully examine the following command and look at the help file to make sure you’re clear on what each of the arguments is doing</span>.</p>
 <p>Then, type in the command. Reminder: we used the <code class="docutils literal notranslate"><span class="pre">​\</span></code> to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command all in one long line (without pressing Enter until you’re done). Finally, run the command and inspect the terminal output and make sure you understand what it’s saying. Note that if you didn’t call your directory <code class="docutils literal notranslate"><span class="pre">1_demux</span></code>, you should change those parts of the command.</p>
 <pre class="literal-block">cutadapt -g T4=^AAGAGG -g T9=^AATCGC -g T11=^AGCTAC \
 -G T4=^AAGAGG -G T9=^AATCGC -G T11=^AGCTAC \
@@ -305,6 +304,11 @@ do
                 mv $f ${f#*-}; <span class="comment"># keep if same, removing first part of name</span>
         fi;                     <span class="comment"># end if clause</span>
 done                            <span class="comment"># end loop</span></pre>
+<div class="sidebar">
+<p class="sidebar-title">Alternatives</p>
+<p>The approach we’ve used for demultiplexing here doesn’t scale well to larger datasets: the aim is to help you understand what demultiplexing involves. There is an alternative way of specifying the index sequences in <strong>cutadapt</strong> using a fasta file of indices, <a class="reference external" href="https://cutadapt.readthedocs.io/en/stable/guide.html#demultiplexing">see the cutadapt documentation</a> for more information.</p>
+<p>We use <strong>cutadapt</strong> because it is very versatile and has many useful options. However, there are other tools out there. <strong>OBITools</strong> has the <a class="reference external" href="https://pythonhosted.org/OBITools/scripts/obigrep.html">obigrep</a> and <a class="reference external" href="https://pythonhosted.org/OBITools/scripts/ngsfilter.html">ngsfilter</a> scripts, the latter of which seems designed for bulk demultiplexing but doesn’t have anywhere near the sensitivity and customisability of <strong>cutadapt</strong>. <strong>QIIME</strong> has the <a class="reference external" href="http://qiime.org/scripts/split_libraries.html">split_libraries</a> script which seems to have more features. Our approach is to use a wrapper script for <strong>cutadapt</strong> that reads a table of index sequences and a set of cutadapt arguments that automatically builds the cutadapt command.</p>
+</div>
 <p>This isn’t a crucial bioinformatics step, it’s just to tidy things up. You don’t need to understand everything about this command, although the loop syntax is going to crop up frequently. If you’re keen to try and figure this out, you might want to review the page on <a class="reference internal" href="../gettingstarted/cli_bioinformatics/loops.html#loops"><span class="std std-ref">loops in bash</span></a>, making sure to read about <a class="reference internal" href="../gettingstarted/cli_bioinformatics/loops.html#parameter-substitution"><span class="std std-ref">parameter substitution</span></a></p>
 <p>Finally, to remove the files beginning with <code class="docutils literal notranslate"><span class="pre">unknown</span></code>, run:</p>
 <pre class="literal-block">rm unknown*</pre>

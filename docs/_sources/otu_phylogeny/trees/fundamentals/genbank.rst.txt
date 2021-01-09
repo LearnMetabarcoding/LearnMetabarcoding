@@ -4,7 +4,7 @@
 Fundamentals: Working with GenBank 
 ==================================
 
-There are many ways to get data from GenBank, including NCBI's command line tools. However, if you're new to working with GenBank data, using the online portal is the easiest introduction. These instructions imagine that you're looking for the GenBank data described in the :ref:`preparing mitogenome data<prep_mitogenome_data>` tutorial, i.e. that we want to acquire a set of Coleoptera mitogenomes and a set of mitogenomes from a subset of other Arthropod orders. We're going to search only the RefSeq database, a subset of the **nt** database, and generally a good starting place.
+There are many ways to get data from GenBank, including NCBI's command line tools. However, if you're new to working with GenBank data, using the online portal is the easiest introduction. These instructions imagine that you're looking for the GenBank data described in the :ref:`preparing mitogenome data <prep_mitogenome_data>` tutorial, i.e. that we want to acquire a set of Coleoptera mitogenomes and a set of mitogenomes from a subset of other Arthropod orders. We're going to search only the RefSeq database, a subset of the **nt** database, and generally a good starting place.
 
 Getting Coleoptera data
 =======================
@@ -20,16 +20,16 @@ Getting Coleoptera data
 		
 		"Coleoptera"[Organism] AND srcdb_refseq[PROP] AND mitochondrion[filter]
 
-We are asking for any sequences with Coleoptera in the Organism field, from the RefSeq database, and from the mitochondrion only. You should get around 200 sequences. 
+We are asking for any sequences with Coleoptera in the Organism field, from the RefSeq database, and from the mitochondrion only. You should get around 300 sequences as of December 2020.
 
 .. admonition:: Exercise
 	
-	We will download all of these as a GenBank file - click on the :guilabel:`Send to:` link and select as follows:
+	We will download all of these as a GenBank file - click on the :menuselection:`Send to:` link and select as follows:
 
 	.. image:: genbank_screenshot.png
 		:align: center
 
-	Then click :guilabel:`​Create File​` and download it.
+	Then click :menuselection:`​Create File​` and download it.
 
 At this point, we strongly suggest you name this file sensibly. It's worth the keystrokes to name something accurately so you know what it is later. We would usually include that it's from genbank, what the searchterms were, and the date, eg: “GBdl_RefSeq_ColeopMT_2021-01-12.gb”
 

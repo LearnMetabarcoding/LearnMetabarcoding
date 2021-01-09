@@ -1,6 +1,6 @@
 .. _id_curated:
 
-.. _role:: var
+.. role:: var
 
 ========================================
 2. Classification with curated databases

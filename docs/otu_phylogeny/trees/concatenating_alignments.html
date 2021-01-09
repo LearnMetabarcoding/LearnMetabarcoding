@@ -92,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a Barcode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a barcode tree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">Phylogenetic Placement</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building a Mitogenome Reference Tree</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="preparing_mitogenome_data.html">1. Preparing mitogenome data</a></li>
@@ -187,7 +187,7 @@
 </div>
 </div>
 <div class="section" id="performing-concatenation">
-<h2>Performing Concatenation<a class="headerlink" href="#performing-concatenation" title="Permalink to this headline">¶</a></h2>
+<h2>Performing concatenation<a class="headerlink" href="#performing-concatenation" title="Permalink to this headline">¶</a></h2>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">catfasta2phyml.pl</span></code> command to concatenate the aligned files into a supermatrix.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
@@ -200,13 +200,17 @@
 <p class="admonition-title">Solution</p>
 <p><code class="docutils literal notranslate"><span class="pre">dir</span></code> should of course be replaced with the name of the directory containing your alignments, and <code class="docutils literal notranslate"><span class="pre">supermatrix.fasta</span></code> with a sensible name.</p>
 <pre class="literal-block">catfasta2phyml.pl -c -fasta <span class="var">dir</span>/* &gt; <span class="var">supermatrix.fasta</span></pre>
-<p>This will print the partitions to the terminal. If we want to save them as a file, we can run the below code. Note that we subsequently print them to the terminal: this is because if we have any errors, they will also be printed to the <code class="docutils literal notranslate"><span class="pre">partitions.txt</span></code> file so we want to check that out to ensure our command ran OK.</p>
+</div>
+<p>The standard <code class="docutils literal notranslate"><span class="pre">catfasta2phyml.pl</span></code> command will print the partitions to the terminal. If we want to save them as a file, we can run the below code.
+.. admonition:: Solution</p>
+<blockquote>
+<div><p>Note that we print the partitions to the terminal after saving them; this is because if we have any errors, they will also be printed to the <code class="docutils literal notranslate"><span class="pre">partitions.txt</span></code> file so we want to check that out to ensure our command ran OK.</p>
 <pre class="literal-block">catfasta2phyml.pl -c -fasta <span class="var">dir</span>/* &gt; <span class="var">supermatrix.fasta</span> 2&gt; <span class="var">partitions.txt</span>
 cat <span class="var">partitions.txt</span></pre>
-</div>
+</div></blockquote>
 </div>
 <div class="section" id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have a supermatrix, we can finally move onto <a class="reference internal" href="tree_building.html#tree-building"><span class="std std-ref">5 Tree Building</span></a></p>
 </div>
 </div>

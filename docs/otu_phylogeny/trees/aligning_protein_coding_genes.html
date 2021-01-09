@@ -92,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a Barcode Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../otu_trees.html">Making a barcode tree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../placing_otus_in_trees.html">Phylogenetic Placement</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../trees.html">Building a Mitogenome Reference Tree</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="preparing_mitogenome_data.html">1. Preparing mitogenome data</a></li>
@@ -188,8 +188,7 @@
 </div>
 <div class="section" id="running-alignment">
 <h2>Running alignment<a class="headerlink" href="#running-alignment" title="Permalink to this headline">¶</a></h2>
-<p>We will do a quick alignment using <strong>MAFFT</strong> for each gene, using the FFT-NS-2 method. This is a fast, but less-accurate method.
-First, make a directory to store your aligned genes.</p>
+<p>We will do a quick alignment using <strong>MAFFT</strong> for each gene, using the FFT-NS-2 method. This is a fast, but less-accurate method. First, make a directory to store your aligned genes.</p>
 <p>Run the following command, making sure to replace <code class="docutils literal notranslate"><span class="pre">raw</span></code> with the name of the directory you extracted your genes into in the last step, and <code class="docutils literal notranslate"><span class="pre">new</span></code> with the name of your new directory:</p>
 <pre class="literal-block">for f in <span class="var">raw</span>/*;
 do
@@ -202,7 +201,7 @@ done</pre>
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<p>FFT-NS-2 is a fast but inaccurate method; if using your own data, you might want to instead use the <strong>MAFFT</strong> G-INS-i method. We generally would use this method, optimising gap opening and extension penalties for each gene to reduce gap formation. Sometimes the L-INS-I method works better on poorly-aligning genes. But there are no hard and fast rules about which is the most appropriate method in any case, generally the best strategy is to try several methods and use whatever works the best</p>
+<p>FFT-NS-2 is a fast but inaccurate method; if using your own data, you might want to instead use the <strong>MAFFT</strong> G-INS-i method as we did when we <a class="reference internal" href="../otu_trees.html#otu-tree"><span class="std std-ref">made an OTU tree</span></a>. We generally would use this method, optimising gap opening and extension penalties for each gene to reduce gap formation. Sometimes the L-INS-I method works better on poorly-aligning genes. But there are no hard and fast rules about which is the most appropriate method in any case, generally the best strategy is to try several methods and use whatever works the best</p>
 </div>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
@@ -214,10 +213,11 @@ done</pre>
 </ul>
 </div>
 <p>Sequence alignment is a big topic, beyond the scope of this course. There is a wide range of software out there: two other commonly-used alignment tools are <strong>MUSCLE</strong> and <strong>CLUSTAL</strong>. We find <strong>MAFFT</strong> to be very versatile and fast for all sorts of alignment tasks. If doing this with your own data, you would generally try to optimise the gap opening parameters for each gene in order to generate an optimum alignment, and you might manually edit your alignment. Manual editing is used to remove sequencing errors, correct obvious misalignments and most importantly to check start/stop codons and ensure that codon positions are correctly maintained across the alignment.</p>
+<p>Another way to align sequences is by translating them into amino acid sequences, then aligning the amino acids. This ensures that the <a class="reference external" href="https://en.wikipedia.org/wiki/Genetic_code#Codons">codon positions</a> are always aligned and the reading frame is maintained. You would then either translate the amino acid sequence back into nucleotides, or run the phylogenetic algorithm on the amino acids (which has slightly different assumptions). Covering amino acid alignment and/or phylogeny using amino acid alignments is beyond the scope of these resources, but if you’re interested in phylogenetics we suggest you bear these options in mind.</p>
 </div>
 <div class="section" id="next-steps">
 <h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have an alignment of each of our genes, we can bring this data together by <a class="reference internal" href="concatenating_alignments.html#concat-alignments"><span class="std std-ref">4. Concatenating Alignments</span></a>.</p>
+<p>Now that we have an alignment of each of our genes, we can bring this data together by <a class="reference internal" href="concatenating_alignments.html#concat-alignments"><span class="std std-ref">4. Concatenating alignments</span></a>.</p>
 </div>
 </div>
 
