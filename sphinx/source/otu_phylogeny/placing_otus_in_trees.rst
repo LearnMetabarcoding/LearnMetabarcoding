@@ -90,6 +90,7 @@ Finally, we just need to add the taxonomy onto the tree for our reference sequen
 .. admonition:: Exercise
 	
 	* Download this tree to your computer and view it.
+	* Is the tree correctly rooted? I.e. is the most basal clade (Araneae, spiders) correctly oriented? You might need to re-root the tree (see :ref:`here <tree_viewing>` if you don't know how to do this). You should make sure to reroot both the renamed and the un-renamed trees.
 	* Use your tree viewer's search function to highlight the OTUs. Has their topology changed compared with the OTU-only tree? Is it improved?
 	* Are OTUs distributed across taxonomic clades, or are they clustered within clades? What might be the reasons for these patterns?
 	* Have any OTUs been placed very close to any of our novel references? What might this mean?

@@ -46,11 +46,15 @@ You can download the renamed tree to your computer and open it using a tree view
 
 .. admonition:: Exercise
 	
+	First we should make sure our tree is correctly rooted. Our most basal clade is some sequences of Araneae, so these three sequences should be sisters to the rest of the tree. Find the clade containing these three terminals and set it as the outgroup (see :ref:`here <tree_viewing>` if you're not sure how to reroot the tree). Make sure to reroot both your renamed and un-renamed versions.
+	
 	Whenever we build a phylogenetic tree, we must closely inspect it to determine how well the tree building performed. Have a look at your tree for features that aren't quite right:
 	
 	* Check to see whether, in general, the taxonomy of your terminals matches the clade structure of the tree
 	* Check to see whether there are any very long branches. Why might these occur?
 	
+
+
 
 Next Steps
 ==========

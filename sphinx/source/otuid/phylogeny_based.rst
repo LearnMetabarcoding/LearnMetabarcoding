@@ -22,10 +22,10 @@ The optimal classification may then be best achieved through a combination of br
 	
 	This tutorial uses the :ref:`phylabel.R<phylostuff>` and :ref:`treedentify.R<phylostuff>` scripts.
 
-Approaches
-==========
+Overview
+========
 
-This task has two main steps. First we must place OTUs onto a phylogenetic tree. We cover one way of doing this in the :ref:`phylogenetic placement <phylogenetic_placement>` tutorial, we strongly suggest you head over and do that tutorial before this one. 
+This task has two main steps. First we must place OTUs onto a phylogenetic tree. We cover one way of doing this in the :ref:`phylogenetic placement <phylogenetic_placement>` tutorial, we strongly suggest you head over and do that tutorial before this one. It is important that your tree is properly rooted, i.e. that the most basal clade is a sister taxon to the rest of the tree. If you're using the tree you produced yourself in the :ref:`phylogenetic placement <phylogenetic_placement>`, you should double check that the clade of Araneae sequences is sister to the rest of the tree - see that tutorial for more details. If you're using the example data, this tree is already correctly rooted.
 
 The second step involves parsing the taxonomy of the references and inferring the taxonomy of the OTUs. We do this with some custom R scripts, because we find this option is the most flexible. Here we will use these R scripts as standalone tools, but if you're familiar with R we suggest you open up the scripts and see what they're doing. The key function for our purpose is the ``nodelabel.phylo`` function from `geiger <https://www.rdocumentation.org/packages/geiger/versions/2.0.7/topics/nodelabel.phylo>`_, which does the work of assigning taxonomy to the internal nodes of the tree based on the tips.
 
@@ -76,6 +76,7 @@ The ``-e`` argument tells **treedentify** that we want to classify any tips begi
 	* Download and open the taxonomy classification table. Check a few of the OTUs against the tree. Do they fit?
 	* Have all the OTUs recieved the same depth of classification? Why might some have fewer or more taxonomic levels? 
 	* Compare the classification of some of the OTUs against the classification achieved by the database approaches. Can you see any discrepancies? Which do you think is more accurate?
+	* How has our selection of reference sequences affected how well we can classify OTUs? Look particularly at the other Coleoptera orders: can you see any issues?
 
 Different approaches
 ====================
