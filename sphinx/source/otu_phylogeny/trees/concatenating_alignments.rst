@@ -1,6 +1,6 @@
 .. _concat_alignments:
 
-.. _role:: var
+.. role:: var
 
 ===========================
 4. Concatenating alignments
