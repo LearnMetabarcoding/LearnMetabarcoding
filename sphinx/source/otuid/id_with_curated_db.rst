@@ -37,7 +37,7 @@ We will perform **SINTAX** classification against the MIDORI database ourselves,
 	
 	wget \http://reference-midori.info/download/Latest_GenBankRelease240/SINTAX/uniq/MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
 	unzip MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
-	vsearch --makeudb_usearch MIDORI_UNIQ_GB240_CO1_SINTAX.fasta \
+	vsearch --makeudb_usearch MIDORI_UNIQ_GB240_CO1_SINTAX.fasta \\
 	--output MIDORI_UNIQ_GB240_CO1_SINTAX.udb
 
 Classifying our OTUs using this database is now very simple. We simply run SINTAX, which is also part of VSEARCH:
@@ -45,7 +45,7 @@ Classifying our OTUs using this database is now very simple. We simply run SINTA
 .. parsed-literal::
 	:class: codebg
 	
-	vsearch -sintax :var:`input.fasta` -db MIDORI_UNIQ_GB240_CO1_SINTAX.udb \
+	vsearch -sintax :var:`input.fasta` -db MIDORI_UNIQ_GB240_CO1_SINTAX.udb \\
 	-tabbedout :var:`output.tsv` -strand both -sintax_cutoff 1
 	
 
