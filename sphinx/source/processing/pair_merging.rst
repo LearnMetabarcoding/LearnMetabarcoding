@@ -88,7 +88,7 @@ PEAR gives us some really informative information on the terminal, make sure to 
 	1. Run your command again, applying a sensible minimum overlap based on what we calculated earlier. 
 	2. Run your command again, trying out some different p values and quality thresholds. The former is the threshold probability of an overlap being incorrect, the latter is the threshold score for trimming off low quality read ends.
 
-W generally set the quality threshold (``-q``)for trimming low quality ends to 26, and the minimum overlap (``-v``) to a value around 20-30 bases less than the presumed overlap length. These sequences are pretty good quality so these settings won’t reject much more than the default in this case. 
+We generally set the quality threshold (``-q``)for trimming low quality ends to 26, and the minimum overlap (``-v``) to a value around 20-30 bases less than the presumed overlap length. These sequences are pretty good quality so these settings won’t reject much more than the default in this case. 
 
 Clean up your experimentation by removing the output files
 

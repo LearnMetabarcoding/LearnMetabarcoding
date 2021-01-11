@@ -106,7 +106,7 @@ Run the following command, replacing the file names with the names of your files
 
 .. parsed-literal::
 
-	metaMATE dump -A :var:`denoisedASVs.fasta` -C :var:`path/to_resultcache` -i :var:`N` -o :var:`output.fasta`
+	metaMATE dump -A :var:`denoisedASVs.fasta` -C :var:`path/to_resultcache` -i :var:`N` -f :var:`output.fasta`
 
 This FASTA contains the ASVs that result from the threshold we selected. In addition, any ASV that matched against our reference set is always included, even if it would otherwise be excluded based on the threshold, and any ASV that is the incorrect length or has stops in the translation is excluded, even if it would otherwise be included based on the threshold. We would generally recommend performing chimera filtering on this output, but otherwise this is ready to be used for analysis.
 
