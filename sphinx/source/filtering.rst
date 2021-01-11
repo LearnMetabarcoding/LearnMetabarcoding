@@ -40,7 +40,7 @@ Erroneous sequences may arise through many processes, but these can generally be
 PCR errors
 ----------
 
-It is likely that the numerical majority of errors arise during PCR, either through errors in transcription or by the formation of chimeric fragments. The latter term is used to describe cases where DNA from different source organisms incorrectly binds together to form a DNA molecule that no longer accurately reflects the genome of any real organism. PCR errors are so frequent because of the high chance of stochastic errors in the biochemical reactions and because the exponential amplification of sequences can cause errors to propogate into many individual fragments.
+It is likely that the numerical majority of errors arise during PCR, either through errors in transcription or by the formation of chimeric fragments. The latter term is used to describe cases where DNA from different source organisms incorrectly binds together to form a DNA molecule that no longer accurately reflects the genome of any real organism. PCR errors are so frequent because of the high chance of stochastic errors in the biochemical reactions and because the exponential amplification of sequences can cause errors to propagate into many individual fragments.
 
 Sequencing errors
 -----------------

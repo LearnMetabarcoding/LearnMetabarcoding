@@ -50,7 +50,7 @@ Oh dear, what’s happened to our reads? Check the first 10 lines of the fasta:
 
 	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' :var:`input.fasta` > :var:`output.fasta`
 
-:guilabel:`Use the output from this in the ``sed`` command above to check the *real* length distribution of our reads.`
+:guilabel:`Use the output from this` in the ``sed`` command above to check the *real* length distribution of our reads.
 
 Length filtering
 ================

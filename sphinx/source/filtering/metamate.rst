@@ -50,13 +50,13 @@ We can specify these by typing the following into a text document:
 
 .. parsed-literal::
 	
-	[total; n; 1-5/5,6-20/8,25-50/10,60-100/5]
+	[total; n; 1-5/5,6-20/8,25-50/6,60-100/5]
 	+
 	[library; p; 0.00025,0.0005-0.007/14,0.008-0.01/3]
 	+
 	[library|clade; p; 0.001,0.0025,0.005-0.065/13,0.075,0.09,0.1-0.4/7,0.5-0.9/5]
 
-The first command tells **metaMATE** to filter ASVs by total frequency with 5 + 8 + 10 + 5 = 28 different thresholds: 5 values from 1-5, 8 values from 6-20, 10 values from 25-50 and 5 values from 60-100. This is just a shorthand way of typing ``1,2,3,4,5,6,8,10,12,14,16,18,20,25,30,35,40,45,50,60,70,80,90,100``! The ``n`` denotes actual values of frequency, whereas on later lines the ``p`` denotes proportional values, relative to the total number of reads in the given category. So for the second command, we have 18 thresholds, the first being "reject an ASV if it is less than 0.025% of all reads of all ASVS in every sample in which that ASV occurs", with each iteration increasing that percentage up to 1%. Finally, the last command does something similar, but instead of comparing against the total number of reads in a sample, looks at the total number of reads from ASVs in the same clade as the ASV in question. 
+The first command tells **metaMATE** to filter ASVs by total frequency with 5 + 8 + 10 + 5 = 28 different thresholds: 5 values from 1-5, 8 values from 6-20, 6 values from 25-50 and 5 values from 60-100. This is just a shorthand way of typing ``1,2,3,4,5,6,8,10,12,14,16,18,20,25,30,35,40,45,50,60,70,80,90,100``! The ``n`` denotes actual values of frequency, whereas on later lines the ``p`` denotes proportional values, relative to the total number of reads in the given category. So for the second command, we have 18 thresholds, the first being "reject an ASV if it is less than 0.025% of all reads of all ASVS in every sample in which that ASV occurs", with each iteration increasing that percentage up to 1%. Finally, the last command does something similar, but instead of comparing against the total number of reads in a sample, looks at the total number of reads from ASVs in the same clade as the ASV in question. 
 
 This is complicated at first, but is quite straightforward once you get your head around it. Create a text document in your **metaMATE** directory with the above 5 lines - don't forget the ``+`` symbol!
 
