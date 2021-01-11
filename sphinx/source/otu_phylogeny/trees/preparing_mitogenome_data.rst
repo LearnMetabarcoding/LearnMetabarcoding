@@ -25,7 +25,7 @@ In this subsection, we will collect and consolidate our mitogenome data from mul
 Novel reference mitogenomes
 ===========================
 
-We have generated novel mitogenome assemblies through sequencing of a set of reference specimens collected as part of same project as our example metabarcoding dataset. These mitogenomes were produced using the mitochondrial metagenomics (MMG) methodology, which you can read more about `here <https://doi.org/10.1186/s13742-016-0120-y>`_
+We have generated novel mitogenome assemblies through sequencing of a set of reference specimens collected as part of same project as our example metabarcoding dataset. These mitogenomes were produced using the mitochondrial metagenomics (MMG) methodology [#]_
 
 These mitogenomes are stored in a genbank-format file called ``references_CCCPmitogenomes.gb`` file (see the Data and software box above). You might want to have a look at this file to see the format if you're not familiar with it, although if it's completely new keep reading to find out more.
 
@@ -44,3 +44,5 @@ Next steps
 ==========
 
 Now we should have three genbank-format files. The next step is to :ref:`2. Extract protein coding genes <extract_genes>`.
+
+.. [#] Alex Crampton-Platt, Douglas W Yu, Xin Zhou, Alfried P Vogler, Mitochondrial metagenomics: letting the genes out of the bottle, GigaScience, Volume 5, Issue 1, December 2016, s13742–016–0120–y, https://doi.org/10.1186/s13742-016-0120-y
