@@ -65,5 +65,5 @@ div[role=contentinfo]:after {
 }
 
 .codebg {
-    background: none repeat scroll 0 0 #e7f2fa !important; 
+    background-color: #e7f2fa;
 }
