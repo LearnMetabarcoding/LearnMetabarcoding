@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The bioinformatics toolbox &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Command line bioinformatics" href="cli_bioinformatics.html" />
+    <link rel="prev" title="How to use these resources" href="how_to_use.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../gettingstarted.html">Getting started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup.html">Setting up a bioinformatics machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="remote_access.html">Accessing linux servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_use.html">How to use these resources</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The bioinformatics toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli_bioinformatics.html">Command line bioinformatics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">E: Identifying OTU sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contactus.html">Contact us</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../gettingstarted.html">Getting started</a> &raquo;</li>
+        
+      <li>The bioinformatics toolbox</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/gettingstarted/toolbox_pipelines.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-bioinformatics-toolbox">
+<span id="toolbox-pipelines"></span><h1>The bioinformatics toolbox<a class="headerlink" href="#the-bioinformatics-toolbox" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pipelines">
+<h2>Pipelines<a class="headerlink" href="#pipelines" title="Permalink to this headline">¶</a></h2>
+<p>The course is structured in a linear format to aid learning. In practice, while the final bioinformatic procedure employed by a study will be largely linear, the development of this procedure will be anything but. We strongly recommend against treating the set of tools presented here as a self-contained pipeline that’s directly applicable to any metabarcoding. We strongly encourage that the best approach to metabarcoding is to develop a good understanding of the steps required and the tools available first. Then design a pipeline with the principle aim of most appropriately answering your research question, selecting only those steps that are relevant to your research aim and employing them in the most appropriate and efficient manner. There is no one-size-fits-all pipeline for metabarcoding.</p>
+</div>
+<div class="section" id="the-toolbox">
+<h2>The toolbox<a class="headerlink" href="#the-toolbox" title="Permalink to this headline">¶</a></h2>
+<p>Generally, in these resources we present a single software tool to tackle each specific metabarcoding step. A comprehensive comparison of all available software for metabarcoding is simply beyond the scope of these resources, and the focus here is introducing the bioinformatic challenges and helping you develop an understanding of the issues concerning different aspects of metabarcoding. For some steps, such as length filtering, the bioinformatic process is very straightforward and any software should work exactly the same, so software choice doesn’t matter. For many steps, such as pair merging, different software works in a largely similar manner and although results might vary slightly between tools, there shouldn’t be a huge difference; in these cases, we use a single tool but suggest some alternatives. In some cases, the theoretical basis of different software is considerably different, or different software offers markedly different approaches: in these cases, we discuss and examine at least some of these different approaches.</p>
+<p>While we generally have selected the software that we think is most appropriate, this choice should always be made with consideration of your data and research questions. The software and parameters we suggest are those that fit the example dataset well and/or help us to explain the concepts best. While <em>in general</em> we would likely recommend the same approach with no knowledge of your data, remember that the principal aim of these resources is to teach the concepts and important considerations, not evangelise any particular pipeline or set of software.</p>
+<div class="section" id="our-software">
+<h3>Our software<a class="headerlink" href="#our-software" title="Permalink to this headline">¶</a></h3>
+<p>In producing these resources, we have striven to use software that is widely used by the metabarcoding community, is free and open source, and is well maintained. While we beleive we have largely met this goal, in a few tutorials we use custom scripts and software that we have written. The aim here is not to evangelise our tools and suggest you use them to the exclusion of other approaches out there, but to fill a gap where no other software is actually available. To this end, we always make very clear when a script or software is our own work.</p>
+</div>
+</div>
+<div class="section" id="packages">
+<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
+<p>If you’re at all familiar with metabarcoding, you’ll likely have heard of some of the metabarcoding software packages. Widely used ones include <strong>USEARCH</strong>, <strong>VSEARCH</strong>, <strong>OBITools</strong>, <strong>QIIME</strong> and <strong>mothur</strong>. These are collections of scripts and tools that are grouped together under one umbrella to form a “one stop shop” for metabarcoding bioinformatics. The benefit of using one of these packages is that all of the tools you need are available under one umbrella, with consistent functions and data requirements. They are often (but not always) easier to install than many separate tools.</p>
+<p>The downside of these packages is that if you need to think outside the box or develop in a new direction, being used to a specific narrow ecosystem may make this harder, especially for beginners. It is very easy just to follow the package’s “tutorial pipeline” and think that this is all you need, whereas your data or research question might be more appropriately addressed using an alternative pipeline or indeed software outside of the package. Furthermore, many packages simply provide a wrapper around other software, which may limit your access (or knowledge) about all available settings for that software and cause inaccurate reporting of the methods used.</p>
+<p>In these resources we have avoided staying within a single package’s ecosystem so as to use what we believe is the most appropriate software out there, at least for the example data and the concepts we’re trying to teach. We have avoided wrapper scripts so that you know exactly what software is actually running whatever process is being implemented. However, you will find that many of the commands we use are from the <strong>VSEARCH</strong> package. <strong>VSEARCH</strong> is a free and open-source implementation of <strong>USEARCH</strong>, is very easy to install and is very full-featured. You will see that we use <strong>VSEARCH</strong> as our general-purpose multi-tool for a lot of relatively basic processing, but where there might be other software that is more appropriate for the task on hand, we never feel bound to use the <strong>VSEARCH</strong> equivalent just because it’s there.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cli_bioinformatics.html" class="btn btn-neutral float-right" title="Command line bioinformatics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="how_to_use.html" class="btn btn-neutral float-left" title="How to use these resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
