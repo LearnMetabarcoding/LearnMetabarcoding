@@ -23,12 +23,14 @@ First, let’s create a directory for this little side project, just to be organ
 Second, we need to create copies of our OTU files with names added to the headers in order to differentiate OTUs from different methods. For each OTU file, run the following command, replacing ``method`` with a description of the method used to create OTUS, e.g. ``greedy97`` (text or numbers only, no spaces or other characters!):
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -e "s/\\(^>.\*$\\)/\\1\ :var:`method`/" :var:`input.fasta` > :var:`newdirectory/output.fasta`
 
 Next, concatenate these OTU files into one file - you’ll need to be inside your new directory for this:
 
 .. parsed-literal::
+	:class: codebg
 
 	cat \*.fasta > :var:`output.fasta`
 

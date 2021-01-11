@@ -41,6 +41,7 @@ Alignment
 The first step is to align our OTUs to our reference mitogenome dataset. Run the following command, using your OTU FASTA and the supermatrix FASTA.
 
 .. parsed-literal::
+	:class: codebg
 
 	mafft --thread 1 --addfragments :var:`otus.fasta` --6merpair :var:`supermatrix.fasta` > :var:`output.fasta`
 
@@ -67,6 +68,7 @@ For **FastTree**, we must convert our existing tree into a constraint alignment,
 	:class: toggle
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		wget \http://www.microbesonline.org/fasttree/TreeToConstraints.pl
 		perl TreeToConstraints.pl < :var:`reference.tre` ​> :var:`constraints.txt`
@@ -77,14 +79,16 @@ Building the tree
 Now we can run the new tree building to place the OTUs within the reference. We add the ``​-constraints`` option to **FastTree** to do this. Remember, we're running this using the combined supermatrix you just made with **MAFFT**.
 
 .. parsed-literal::
+	:class: codebg
 	
 	FastTree -nt -gtr -constraints :var:`constraints.txt` < :var:`combinedsupermatrix.fasta` > :var:`output.tre`
 
 Finally, we just need to add the taxonomy onto the tree for our reference sequences using the **phylabel.R** script, as follows:
 
 .. parsed-literal::
+	:class: codebg
 	
-	phylabel.R -p :var:`input.tre` -r -y :var:`taxonomy.csv`  -o :var:`output.tre`
+	phylabel.R -p :var:`input.tre` -r -y :var:`taxonomy.csv` -o :var:`output.tre`
 	
 
 .. admonition:: Exercise
