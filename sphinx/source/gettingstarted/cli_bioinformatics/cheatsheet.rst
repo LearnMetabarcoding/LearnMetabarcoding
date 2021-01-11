@@ -146,9 +146,9 @@ Say we have a list of sequence headers and we want only those sequences from a l
 
 .. parsed-literal::
 
-	grep --no-group-separator -A1 -f -F :var:`headers.txt` :var:`sequences.fasta` > :var:`output.fasta`
+	grep --no-group-separator -A1 -F -f :var:`headers.txt` :var:`sequences.fasta` > :var:`output.fasta`
 
-By default grep prints only lines that match, the ``-A1`` adds one line after each match as well (this is why it must be unwrapped!). The ``-f`` means the search looks for fixed text strings, not RegEx, and the ``-F`` looks for a list of search terms supplied in a file.
+By default grep prints only lines that match, the ``-A1`` adds one line after each match as well (this is why it must be unwrapped!). The ``-F`` means the search looks for fixed text strings, not RegEx, and the ``-f`` looks for a list of search terms supplied in a file.
 
 We can of course pipe this with some of our previous examples. Note that the standard input to ``grep`` is the file to be searched, so we need to redirect standard input elsewhere:
 
