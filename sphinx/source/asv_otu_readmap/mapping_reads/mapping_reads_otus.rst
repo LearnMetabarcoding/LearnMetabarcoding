@@ -112,7 +112,7 @@ Summing over OTUs
 The last issue is that we have multiple rows for each OTU, and we want to sum all occurences of all ASVs within each OTU into one row. We can do this using an R one-liner.
 
 .. parsed-literal::
-	:class:
+	:class: codebg
 	
 	Rscript -e 'x<-read.table(":var:`input.tsv`",header=T,comment.char="",sep="\\t");rowsum(x[,-1],x[,1])' > :var:`output.tsv`
 	
