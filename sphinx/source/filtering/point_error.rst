@@ -28,7 +28,7 @@ Check the helpfile for this script by running:
 
 .. parsed-literal::
 
-	filtertranslate -help
+	filtertranslate --help
 
 .. admonition:: Exercise
 	

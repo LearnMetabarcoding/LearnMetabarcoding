@@ -85,7 +85,10 @@ Bayesian phylogeny-based species delimitation, github `here <https://github.com/
 	cd PTP
 	sudo -H python3 -m pip install -r requirements.txt
 	cd /PTP/bin
+	:comment:`# Patch the python version`
 	for f in \*.py; do sed -i "1s/python$/python3/" $f; done
+	:comment:`# Patch for running on headless server`
+	sudo sed -i -e "14s/^$/\nos.environ['QT_QPA_PLATFORM'] = 'offscreen'\n/" bPTP.py
 	sudo ln -s /usr/local/src/PTP/bin/bPTP.py /usr/local/bin/bPTP
 	sudo ln -s /usr/local/src/PTP/bin/PTP.py /usr/local/bin/PTP
 
