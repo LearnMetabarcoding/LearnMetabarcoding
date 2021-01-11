@@ -35,6 +35,7 @@ Taxonomising the tree
 First, we must assign taxonomy to the tree. We do this with the ``phylabel.R`` script. This script takes as input the tree and the taxonomy, and outputs a tree with taxonomic names assigned to some of the internal nodes. We've seen this script before for relabelling terminals, but it also works on nodes.
 
 .. parsed-literal::
+	:class: codebg
 	
 	phylabel.R -p :var:`input.tre` -x -y :var:`taxonomy.csv` -o :var:`output.tre`
 	
@@ -65,6 +66,7 @@ Now that we have our taxonomised tree, we can infer the OTU classification. This
 Run this process using the following command. We suggest you use as ``input.tre`` the first taxonomised tree you generated, without strict taxonomisation.
 
 .. parsed-literal::
+	:class: codebg
 	
 	treedentify.R -p :var:`input.tre` -e ^otu -u -o :var:`output.csv`
 	
