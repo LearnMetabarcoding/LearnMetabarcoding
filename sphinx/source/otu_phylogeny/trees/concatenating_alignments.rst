@@ -34,6 +34,7 @@ We use the ``catfasta2phyml.pl`` command to concatenate the aligned files into a
 	``dir`` should of course be replaced with the name of the directory containing your alignments, and ``supermatrix.fasta`` with a sensible name.
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		catfasta2phyml.pl -c -fasta :var:`dir`/* > :var:`supermatrix.fasta`
 	
@@ -44,6 +45,7 @@ The standard ``catfasta2phyml.pl`` command will print the partitions to the term
 	Note that we print the partitions to the terminal after saving them; this is because if we have any errors, they will also be printed to the ``partitions.txt`` file so we want to check that out to ensure our command ran OK.
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		catfasta2phyml.pl -c -fasta :var:`dir`/* > :var:`supermatrix.fasta` 2> :var:`partitions.txt`
 		cat :var:`partitions.txt`

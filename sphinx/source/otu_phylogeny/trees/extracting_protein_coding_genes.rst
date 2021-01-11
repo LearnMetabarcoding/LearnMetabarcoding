@@ -25,12 +25,14 @@ Extracting genes
 We will use a custom script to extract the 13 mitochondrial protein coding genes from our genbank files, because it’s quick and easy. You can see the help file of this script as follows:
 
 .. parsed-literal::
+	:class: codebg
 
 	extract_genes.pl -h
 
 Replace the placeholder names in the following command with the names of the three genbank files containing the novel references, the Coleoptera from GenBank and the Arthropods from GenBank. Make sure you match up the arguments with the help file and understand what you’re doing here! The ``outdir/`` will be a directory holding a file for each gene, you should of course replace this with a sensible name. You don’t need to create this, the script will.
 
 .. parsed-literal::
+	:class: codebg
 
 	extract_genes.pl -g :var:`input1.gb` :var:`input2.gb` :var:`input3.gp` -out :var:`output/` -k -regiontypes CDS
 
