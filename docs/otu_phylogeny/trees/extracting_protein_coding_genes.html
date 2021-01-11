@@ -189,11 +189,11 @@
 <div class="section" id="extracting-genes">
 <h2>Extracting genes<a class="headerlink" href="#extracting-genes" title="Permalink to this headline">¶</a></h2>
 <p>We will use a custom script to extract the 13 mitochondrial protein coding genes from our genbank files, because it’s quick and easy. You can see the help file of this script as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extract_genes</span><span class="o">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">h</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extract_genes</span><span class="o">.</span><span class="n">pl</span> <span class="o">-</span><span class="n">h</span>
 </pre></div>
 </div>
 <p>Replace the placeholder names in the following command with the names of the three genbank files containing the novel references, the Coleoptera from GenBank and the Arthropods from GenBank. Make sure you match up the arguments with the help file and understand what you’re doing here! The <code class="docutils literal notranslate"><span class="pre">outdir/</span></code> will be a directory holding a file for each gene, you should of course replace this with a sensible name. You don’t need to create this, the script will.</p>
-<pre class="literal-block">extract_genes.pl -g <span class="var">input1.gb</span> <span class="var">input2.gb</span> <span class="var">input3.gp</span> -out <span class="var">output/</span> -k -regiontypes CDS</pre>
+<pre class="codebg literal-block">extract_genes.pl -g <span class="var">input1.gb</span> <span class="var">input2.gb</span> <span class="var">input3.gp</span> -out <span class="var">output/</span> -k -regiontypes CDS</pre>
 <p>Once complete, you should see thirteen files in your output folder, one for each gene.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>

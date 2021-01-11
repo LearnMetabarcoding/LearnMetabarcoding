@@ -31,6 +31,7 @@ While the **USEARCH** **UPARSE** pipeline is probably the most commonly used too
 The following is the basic command for 97% clustering of our ASVs, using the **USEARCH** algorithm. Run this command, using your ASVs as input and making sure to use a sensible name for the output file. We would suggest including in your output file name the method and the threshold parameter (e.g. ``otus_greedy_0.97.fasta``)
 
 .. parsed-literal::
+	:class: codebg
 
 	vsearch --cluster_size :var:`input.fasta` --id 0.97 --centroids :var:`output.fasta` --sizein --relabel otu
 
@@ -55,6 +56,7 @@ One common question after performing clustering like this is to ask "which ASVs 
 	* Note that it labels the centroids (columnh 2) as 0, 1, 2, etc. rather than otu1, otu2, otu3, etc. We can correct this a little by doing the following:
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		:comment:`# Remove the cluster lines`
 		grep -v "^C" :var:`input.uc` > asvgroups.temp

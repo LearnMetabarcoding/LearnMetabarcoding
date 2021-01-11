@@ -190,7 +190,7 @@
 <h2>Running greedy clustering<a class="headerlink" href="#running-greedy-clustering" title="Permalink to this headline">¶</a></h2>
 <p>While the <strong>USEARCH</strong> <strong>UPARSE</strong> pipeline is probably the most commonly used tool for greedy clustering, we will instead once again use <strong>VSEARCH</strong>. <strong>VSEARCH</strong> implements exactly the same clustering algorithm as <strong>USEARCH</strong>, but also allows greater flexibility in outputs and in similarity algorithms available.</p>
 <p>The following is the basic command for 97% clustering of our ASVs, using the <strong>USEARCH</strong> algorithm. Run this command, using your ASVs as input and making sure to use a sensible name for the output file. We would suggest including in your output file name the method and the threshold parameter (e.g. <code class="docutils literal notranslate"><span class="pre">otus_greedy_0.97.fasta</span></code>)</p>
-<pre class="literal-block">vsearch --cluster_size <span class="var">input.fasta</span> --id 0.97 --centroids <span class="var">output.fasta</span> --sizein --relabel otu</pre>
+<pre class="codebg literal-block">vsearch --cluster_size <span class="var">input.fasta</span> --id 0.97 --centroids <span class="var">output.fasta</span> --sizein --relabel otu</pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">--cluster_size</span></code> function specifies that we want to cluster based on the <code class="docutils literal notranslate"><span class="pre">size=</span></code> tags in our input FASTA. The <code class="docutils literal notranslate"><span class="pre">--centroids</span></code> argument tells VSEARCH where to output the centroid sequences, <code class="docutils literal notranslate"><span class="pre">--relabel</span></code>led as <code class="docutils literal notranslate"><span class="pre">otu001</span></code> etc.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
@@ -211,7 +211,7 @@
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">more</span></code> on the <code class="docutils literal notranslate"><span class="pre">.uc</span></code> file to view this table, checking the <a class="reference external" href="https://github.com/torognes/vsearch#getting-help">VSEARCH documentation</a> (page 11) to see what each column means.</p></li>
 <li><p>Note that it labels the centroids (columnh 2) as 0, 1, 2, etc. rather than otu1, otu2, otu3, etc. We can correct this a little by doing the following:</p></li>
 </ul>
-<pre class="literal-block"><span class="comment"># Remove the cluster lines</span>
+<pre class="codebg literal-block"><span class="comment"># Remove the cluster lines</span>
 grep -v &quot;^C&quot; <span class="var">input.uc</span> &gt; asvgroups.temp
 
 <span class="comment"># Convert to the correct names</span>

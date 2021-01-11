@@ -185,7 +185,7 @@
 <div class="green admonition">
 <p class="admonition-title">Data and software</p>
 <p>This tutorial works with raw FASTQ-format sequence data that contains indices at the beginning of the reads. The example data for this can be found in the <code class="docutils literal notranslate"><span class="pre">0_rawsequences</span></code> directory within the <a class="reference internal" href="../data.html#sectionadata"><span class="std std-ref">sectionA archive</span></a>. You should copy this directory over to your working directory as follows:</p>
-<pre class="literal-block">cp -r <span class="var">path/to</span>/exampledata/sectionA/0_rawsequences/ ./</pre>
+<pre class="codebg literal-block">cp -r <span class="var">path/to</span>/exampledata/sectionA/0_rawsequences/ ./</pre>
 <p>If you are completely new to sequence data, you might at this point want to <a class="reference internal" href="fastq.html#fastq"><span class="std std-ref">review the FASTQ format</span></a></p>
 <p>This tutorial uses the <a class="reference internal" href="../gettingstarted/setup/installing_software.html#cutadapt"><span class="std std-ref">cutadapt</span></a> software.</p>
 </div>
@@ -193,26 +193,22 @@
 <div class="section" id="primers-and-indices">
 <h2>Primers and indices<a class="headerlink" href="#primers-and-indices" title="Permalink to this headline">¶</a></h2>
 <p>Each of these libraries is actually three different metabarcoding samples. Each sample within each library was amplified with a different 6-base index. You can see these indices in the <code class="docutils literal notranslate"><span class="pre">indices.txt</span></code> file within the <code class="docutils literal notranslate"><span class="pre">0_rawsequences/</span></code> directory. First, change into the <code class="docutils literal notranslate"><span class="pre">0_rawsequences/</span></code> directory and then view the file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="mi">0</span><span class="n">_rawsequences</span><span class="o">/</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="mi">0</span><span class="n">_rawsequences</span><span class="o">/</span>
 <span class="n">cat</span> <span class="n">indices</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">​cat</span></code> command simply outputs the entire contents of the files it is given, one after the other. Here we’re using it to just output the content of one file, but look out for this command later!</p>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">grep</span></code> command to check for indices in a file (see <a class="reference internal" href="../gettingstarted/cli_bioinformatics/grep.html#grep"><span class="std std-ref">here</span></a> for more detail on this). Select any of the starting FASTQ files and run the following on it to search for the <code class="docutils literal notranslate"><span class="pre">AAGAGG</span></code> index</p>
-<pre class="literal-block">head -n 24 <span class="var">file.fastq</span> | grep -E &quot;AAGAGG|$&quot;</pre>
+<pre class="codebg literal-block">head -n 24 <span class="var">file.fastq</span> | grep -E &quot;AAGAGG|$&quot;</pre>
 <p>You should see the index sequence bolded at the beginning of a sequence. You might also see it elsewhere in sequences - it’s such a short base sequence it’s completely possible that real sequence reads contain this motif. If you see no bolded text, try a different FASTQ file.</p>
 <p>When we did PCR, the index was part of the primers used, so that the reaction added this sequence to our amplicons when copying them. The primer binding sequences used for this metabarcoding reaction were (don’t run these!):</p>
 <div class="topic">
 <p class="topic-title">Forward(R1)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CCNGAYATRGCNTTYCCNCG</span>
-</pre></div>
-</div>
+<pre class="literal-block">CCNGAYATRGCNTTYCCNCG</pre>
 </div>
 <div class="topic">
 <p class="topic-title">Reverse (R2)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TANACYTCNGGRTGNCCRAARAAYCA</span>
-</pre></div>
-</div>
+<pre class="literal-block">TANACYTCNGGRTGNCCRAARAAYCA</pre>
 </div>
 <p>Note the presence of non ATCG bases - these are ambiguities added to the primers to allow them to be less specific and bind to a greater variety of taxa. The indices are <strong>not</strong> shown here: they would go at the start of the primer binding sequence.</p>
 <div class="admonition-exercise admonition">
@@ -225,7 +221,7 @@
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<pre class="literal-block">head -n 24 <span class="var">input_R1.fastq</span> | grep -E &quot;CC.GA.AT.GC.TT.CC.CG|$&quot;
+<pre class="codebg literal-block">head -n 24 <span class="var">input_R1.fastq</span> | grep -E &quot;CC.GA.AT.GC.TT.CC.CG|$&quot;
 head -n 24 <span class="var">input_R2.fastq</span> | grep -E &quot;TA.AC.TC.GG.TG.CC.AA.AA.CA|$&quot;</pre>
 </div>
 <p>You’ll probably see that there are occasions where no index or primer is highlighted on a sequence. This means there was a sequencing error. Look closely and you’ll see that a base is missing or inserted, or just wrong.</p>
@@ -234,7 +230,7 @@ head -n 24 <span class="var">input_R2.fastq</span> | grep -E &quot;TA.AC.TC.GG.T
 <h2>Demultiplexing<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>We want to split each of these libraries up by index into a separate pair of files for each of the 12 samples, and remove the index sequences. We will do this using the tool <strong>cutadapt</strong>. This versatile tool allows separating files by index and removal of these indices and primers. It can allow for some error in the index sequence, and can keep read pairs in sync (more on this later).</p>
 <p>As ever with a new tool, first cast your eye over the help, either online or by running:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cutadapt</span> <span class="o">--</span><span class="n">help</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cutadapt</span> <span class="o">--</span><span class="n">help</span>
 </pre></div>
 </div>
 <p>It’s quite long, but at least read the first section to get acquainted with it. Don’t worry, we’re going to give you a command shortly, but before we do it’s helpful to think about exactly what our data is and what we want to do:</p>
@@ -248,12 +244,12 @@ head -n 24 <span class="var">input_R2.fastq</span> | grep -E &quot;TA.AC.TC.GG.T
 <p>To avoid a mess of files, <span class="guilabel">make sure you’re in the parent directory, then create a new directory</span>. Call this new directory something appropriate. If you’re unsure how to do this check the solution box below.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<pre class="literal-block">cd ../        <span class="comment"># Change working directory to the parent of the current working directory</span>
+<pre class="codebg literal-block">cd ../        <span class="comment"># Change working directory to the parent of the current working directory</span>
 mkdir 1_demux <span class="comment"># Create a new directory called 1_demux</span></pre>
 </div>
 <p>Referring to the indices.txt file, we can now construct a command that demultiplexes our Lib1. The following commands assume that you are in the directory that contains the <code class="docutils literal notranslate"><span class="pre">0_rawsequences</span></code> directory and an empty directory called <code class="docutils literal notranslate"><span class="pre">1_demux</span></code>. Let’s first try and demultiplex a single file. <span class="guilabel">Carefully examine the following command and look at the help file to make sure you’re clear on what each of the arguments is doing</span>.</p>
 <p>Then, type in the command. Reminder: we used the <code class="docutils literal notranslate"><span class="pre">​\</span></code> to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command all in one long line (without pressing Enter until you’re done). Finally, run the command and inspect the terminal output and make sure you understand what it’s saying. Note that if you didn’t call your directory <code class="docutils literal notranslate"><span class="pre">1_demux</span></code>, you should change those parts of the command.</p>
-<pre class="literal-block">cutadapt -g T4=^AAGAGG -g T9=^AATCGC -g T11=^AGCTAC \
+<pre class="codebg literal-block">cutadapt -g T4=^AAGAGG -g T9=^AATCGC -g T11=^AGCTAC \
 -G T4=^AAGAGG -G T9=^AATCGC -G T11=^AGCTAC \
 -o 1_demux/{name1}-{name2}_R1.fastq -p 1_demux/{name1}-{name2}_R2.fastq \
 0_rawsequences/Lib1_R1.fastq 0_rawsequences/Lib1_R2.fastq</pre>
@@ -266,7 +262,7 @@ mkdir 1_demux <span class="comment"># Create a new directory called 1_demux</spa
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<pre class="literal-block">ls 1_demux/*
+<pre class="codebg literal-block">ls 1_demux/*
 grep -c &quot;^&#64;D00&quot; 1_demux/*</pre>
 </div>
 <p>Are there more files than expected? This is because the command has looked for all adapter combinations. When we have 3 different forward indices and 3 different reverse indices, there are 9 different combinations possible. Add on top of this that there are 6 possibilites where only a forward <em>or</em> a reverse index is used, plus the possibility where <em>no</em> indices are used. Hence you should have 16 file pairs.</p>
@@ -289,10 +285,10 @@ grep -c &quot;^&#64;D00&quot; 1_demux/*</pre>
 <p>You should now have lots of files in your output directory. It’s good practice to keep track of how demultiplexing performed: you could <span class="guilabel">try to write a command that saves the output of your previos grep command into a file</span> to keep a record (see the solution box below if you’re not sure how to do this).</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<pre class="literal-block">grep -c &quot;^&#64;D00&quot; 1_demux/* &gt; <span class="var">output.txt</span></pre>
+<pre class="codebg literal-block">grep -c &quot;^&#64;D00&quot; 1_demux/* &gt; <span class="var">output.txt</span></pre>
 </div>
 <p>Let’s get rid of the files we don’t need. You’ve doubled the amount of storage you’re using - here the files aren’t very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don’t match. You do not need to type any <code class="docutils literal notranslate"><span class="pre">#comments</span></code>, or add the extra spaces - this is just to make it clearer.</p>
-<pre class="literal-block">for f in *;                    <span class="comment"># loop through files</span>
+<pre class="codebg literal-block">for f in *;                    <span class="comment"># loop through files</span>
 do
         s1=${f%-*};
         s2=${f%_*};            <span class="comment"># extract sample names</span>
@@ -311,7 +307,7 @@ done                            <span class="comment"># end loop</span></pre>
 </div>
 <p>This isn’t a crucial bioinformatics step, it’s just to tidy things up. You don’t need to understand everything about this command, although the loop syntax is going to crop up frequently. If you’re keen to try and figure this out, you might want to review the page on <a class="reference internal" href="../gettingstarted/cli_bioinformatics/loops.html#loops"><span class="std std-ref">loops in bash</span></a>, making sure to read about <a class="reference internal" href="../gettingstarted/cli_bioinformatics/loops.html#parameter-substitution"><span class="std std-ref">parameter substitution</span></a></p>
 <p>Finally, to remove the files beginning with <code class="docutils literal notranslate"><span class="pre">unknown</span></code>, run:</p>
-<pre class="literal-block">rm unknown*</pre>
+<pre class="codebg literal-block">rm unknown*</pre>
 <p>These files contain the sequences for which no index was identified - we’re not interested in keeping them.</p>
 </div>
 <div class="section" id="next-steps">

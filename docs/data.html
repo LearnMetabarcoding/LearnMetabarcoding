@@ -201,18 +201,18 @@
 <div class="section" id="downloading-the-data-in-linux">
 <h2>Downloading the data in Linux<a class="headerlink" href="#downloading-the-data-in-linux" title="Permalink to this headline">¶</a></h2>
 <p>First, create and navigate to the folder where you want to store the downloaded data. For example, we’ll make this a folder called <code class="docutils literal notranslate"><span class="pre">exampledata</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">exampledata</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">exampledata</span>
 <span class="n">cd</span> <span class="n">exampledata</span>
 </pre></div>
 </div>
 <p>Download the data, unzip it and list the contents</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">URL</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">URL</span>
 <span class="n">unzip</span> <span class="n">sectionA</span><span class="o">.</span><span class="n">zip</span>
 <span class="n">ls</span> <span class="n">sectionA</span>
 </pre></div>
 </div>
 <p>We suggest actually working through the tutorials in a separate directory, so as to keep the example data from getting mixed up with the data that you produce. For example, you might decide to work through the tutorials in a directory called <code class="docutils literal notranslate"><span class="pre">tutorialwork</span></code>. The below code shows how you would set this up and copy over the data for the very first tutorial. Note that the first data is a directory of files, so we use <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span></code>.</p>
-<pre class="literal-block">cd ../  <span class="comment"># Return up to the main directory</span>
+<pre class="codebg literal-block">cd ../  <span class="comment"># Return up to the main directory</span>
 mkdir tutorialwork
 cd tutorialwork
 cp -r ../exampledata/sectionA/0_rawsequences/ ./</pre>

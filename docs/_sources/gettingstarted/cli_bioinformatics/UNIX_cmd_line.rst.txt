@@ -12,6 +12,7 @@ The command prompt
 Whether you are using SSH to access a remote linux server, using Terminal on a Mac or Windows Linux subsystem, you will be presented with a window of text awaiting your command. Depending on the computer and how it is configured, this exact nature of the promt will vary, but most commonly it will say your username, machine name and/or current directory, followed by a ``$`` sign, like this:
 
 .. parsed-literal::
+	:class: codebg
 
 	user@server:~/file/path$
 
@@ -20,14 +21,16 @@ When you see this ``$`` sign, this means the shell is expecting a new command. W
 Try running the following:
 
 .. parsed-literal::
+	:class: codebg
 
-	echo "hello
+	echo \"hello
 
 You should be met with a ``>`` symbol. Finish the command by typing ``world"`` and pressing Enter (Return). You should see a line saying ``hello world`` and then a new prompt, ending with ``$``.
 
 Sometimes in these resources we will ask you to run a command that is quite long, and to help you read it easily we will present the command broken over multiple lines. It will look like this:
 
 .. parsed-literal::
+	:class: codebg
 
 	echo \\
 	"hello world"
@@ -41,6 +44,7 @@ If you ever get to a situation where you have accidentally forgotten to close a 
 Finally, the shell will ignore anything on a line after the first ``#`` symbol it encounters. This is to allow for comments, and these resources will sometimes use this to comment lines of code. For example, you could type everything in the following command into the terminal and run it:
 
 .. parsed-literal::
+	:class: codebg
 
 	echo "hello world"  :comment:`# prints "hello world"`
 
@@ -68,12 +72,14 @@ Many linux commands have three standard methods for input and output, called sta
 The terminal is the default destination for standard output and standard error. For example, when we used the ``echo`` command above without specifying anything else, the standard output was printed to the terminal. However, we can specify that we want the standard output to be stored in a file using the ``>`` symbol.
 
 .. parsed-literal::
+	:class: codebg
 
-	echo "hello world" > hello.txt
+	echo \"hello world" > hello.txt
 
 When we run this, nothing is printed to the terminal, instead it is directed to a file. We can see the contents of this file using the ``cat`` command:
 
 .. parsed-literal::
+	:class: codebg
 
 	cat hello.txt
 
@@ -82,12 +88,14 @@ Because we didn't specify an output location with ``>`` after the ``cat`` comman
 Some functions expect information to be supplied to them on standard input. For this we would use the ``<`` command. This works with ``cat`` for example:
 
 .. parsed-literal::
+	:class: codebg
 
 	cat < hello.txt
 
 Often this ``<`` symbol can be omitted, but where there is abiguity about what the input is, it's useful to be able to specify. Because many functions are able to read from the standard input and output to the standard output, this gives us access to a very powerful command line ability called piping. We can chain together commands using the ``|`` symbol, taking the standard output from one command and feeding it directly into the standard input of the next command, rather than storing it in a file. For example, let's create a three-line text file, sort the lines alphabetically, then find the unique lines. Note that when we use ``echo`` to create the file, we add a ``-e``. This is an optional parameter which we use to tell ``echo`` to *evaluate* the contents of the string, converting the special character ``\n`` into newlines.
 
 .. parsed-literal::
+	:class: codebg
 
 	echo -e "line2\\nline1\\nline2" > lines.txt
 	sort lines.txt > linessorted.txt
@@ -96,6 +104,7 @@ Often this ``<`` symbol can be omitted, but where there is abiguity about what t
 Let's view all these files
 
 .. parsed-literal::
+	:class: codebg
 
 	cat lines.txt
 	cat linessorted.txt
@@ -104,6 +113,7 @@ Let's view all these files
 Now let's do all of that in one command:
 
 .. parsed-literal::
+	:class: codebg
 
 	echo -e "line2\\nline1\\nline2" | sort | uniq > linesunique2.txt
 	cat linesunique2.txt
@@ -117,6 +127,7 @@ Learning about programs
 If presented with a new function that you have no idea how to use, don't panic! There are lots of resources to help you understand them. The vast majority of functions should have some sort of help file. For example, these are the different ways you could find help for the ``echo`` function:
 
 .. parsed-literal::
+	:class: codebg
 
 	man uniq      :comment:`# Returns a scrollable manual if it exists`
 	uniq --help   :comment:`# Outputs a text summary of the function's options`

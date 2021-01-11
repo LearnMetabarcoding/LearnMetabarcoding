@@ -27,6 +27,7 @@ Filtering by translation
 Check the helpfile for this script by running:
 
 .. parsed-literal::
+	:class: codebg
 
 	filtertranslate -help
 
@@ -44,6 +45,7 @@ Check the helpfile for this script by running:
 	:class: toggle
 
 	.. parsed-literal::
+		:class: codebg
 
 		filtertranslate -i :var:`input.fasta` -t 5 -y separate -o :var:`output`
 

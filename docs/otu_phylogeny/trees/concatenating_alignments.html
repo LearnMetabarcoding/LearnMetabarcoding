@@ -199,15 +199,15 @@
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p><code class="docutils literal notranslate"><span class="pre">dir</span></code> should of course be replaced with the name of the directory containing your alignments, and <code class="docutils literal notranslate"><span class="pre">supermatrix.fasta</span></code> with a sensible name.</p>
-<pre class="literal-block">catfasta2phyml.pl -c -fasta <span class="var">dir</span>/* &gt; <span class="var">supermatrix.fasta</span></pre>
+<pre class="codebg literal-block">catfasta2phyml.pl -c -fasta <span class="var">dir</span>/* &gt; <span class="var">supermatrix.fasta</span></pre>
 </div>
-<p>The standard <code class="docutils literal notranslate"><span class="pre">catfasta2phyml.pl</span></code> command will print the partitions to the terminal. If we want to save them as a file, we can run the below code.
-.. admonition:: Solution</p>
-<blockquote>
-<div><p>Note that we print the partitions to the terminal after saving them; this is because if we have any errors, they will also be printed to the <code class="docutils literal notranslate"><span class="pre">partitions.txt</span></code> file so we want to check that out to ensure our command ran OK.</p>
-<pre class="literal-block">catfasta2phyml.pl -c -fasta <span class="var">dir</span>/* &gt; <span class="var">supermatrix.fasta</span> 2&gt; <span class="var">partitions.txt</span>
+<p>The standard <code class="docutils literal notranslate"><span class="pre">catfasta2phyml.pl</span></code> command will print the partitions to the terminal. If we want to save them as a file, we can run the below code.</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">Solution</p>
+<p>Note that we print the partitions to the terminal after saving them; this is because if we have any errors, they will also be printed to the <code class="docutils literal notranslate"><span class="pre">partitions.txt</span></code> file so we want to check that out to ensure our command ran OK.</p>
+<pre class="codebg literal-block">catfasta2phyml.pl -c -fasta <span class="var">dir</span>/* &gt; <span class="var">supermatrix.fasta</span> 2&gt; <span class="var">partitions.txt</span>
 cat <span class="var">partitions.txt</span></pre>
-</div></blockquote>
+</div>
 </div>
 <div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>

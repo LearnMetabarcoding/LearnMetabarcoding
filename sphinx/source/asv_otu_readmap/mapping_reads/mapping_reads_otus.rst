@@ -34,6 +34,7 @@ Greedy clustering using VSEARCH
 Here our list takes the form of a table, so it's already almost in the format we want, we just need to drop the hit statistics and strip the ``;size=`` tags
 
 .. parsed-literal::
+	:class: codebg
 	
 	cut -f1,8 :var:`input.uc` | sed -e "s/;size.*$//" > :var:`output.tsv`
 
@@ -43,6 +44,7 @@ Linkage delimitation using swarm
 Here each line of the file is a list of ASVs in one OTU, with the centroid sequence being the first ASV name. The following command strips out the ``size=`` tags then converts into a table by looping through each line one by one, storing the first item in each line, then looping through the items in a line to generate the output.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sed -e "s/;size=[^ ]\*//g" :var:`input.tsv` |
 	while read l;
@@ -62,6 +64,7 @@ The file output by **CROP** is similar to that output by swarm. The first item o
 The following command is similar to the command for **swarm**. We convert commas to spaces, then loop through the table in the same way, this time instead of using a single variable ``$l`` for a line we use two, because we've specified that the Input File should be Separated by tab (``IFS=$'\t'``). We generate a line for each ASV read as we did before, but this time we pipe this into a ``sort`` then find the ``uniq`` lines to strip out those duplicates.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sed -e "s/,/ /g" :var:`input.list` |
 	while IFS=$'\\t' read -r n l;
@@ -83,6 +86,7 @@ Joining our data
 Now we can join the output from the above to your table of read counts per ASV per sample, as produced in the previous step, with ASVs as the rows and samples as the columns. We do this using the linux ``join`` command. The first table will be our table of ASVs and OTUs: the ASVs are column two, so we specify that the join column for the first table is column two (``-1 2``). The second table is our ASV read counts table, where the join column (the column of ASV names) is column one (``-2 1``).
 
 .. parsed-literal::
+	:class: codebg
 	
 	join -1 2 -2 1 <(sort :var:`ASV-OTU.tsv`) :var:`ASV_read_map.tsv` > output.tsv
 
@@ -91,12 +95,14 @@ Note that we sorted the ASV-to-OTU table, this is a necessary step for ``join`` 
 Use ``head`` to view the output file. You'll see two columns of sequence names followed by the read count data. The first column is the join column, i.e. the ASV names. The second column is the other column from the ASV-to-OTU table, i.e. the OTU centroid names. We can now get rid of the first column, the ASV names, after changing the file from space-delimited back to tab-delimited
 
 .. parsed-literal::
+	:class: codebg
 	
 	sed -e "s/ /\\t/g" :var:`input.tsv` | cut -d2- > :var:`output.tsv`
 
 You might have noticed that we've lost the header column from the ASV read map table: this is because it didn't have an ASV name in column 1 to match against the other table. No matter, we can bring it back again.
 
 .. parsed-literal::
+	:class: codebg
 	
 	cat <(head -1 :var:`ASV_read_map.tsv`) :var:`input.tsv` > :var:`output.tsv`
 
@@ -106,6 +112,7 @@ Summing over OTUs
 The last issue is that we have multiple rows for each OTU, and we want to sum all occurences of all ASVs within each OTU into one row. We can do this using an R one-liner.
 
 .. parsed-literal::
+	:class: codebg
 	
 	Rscript -e 'x<-read.table(":var:`input.tsv`",header=T,comment.char="",sep="\\t");rowsum(x[,-1],x[,1])' > :var:`output.tsv`
 	
@@ -118,8 +125,9 @@ Shortcut for greedy clustering
 In the introduction, we discussed that simply matching reads directly to OTUs is not appropriate unless the method we use to match reads to OTUs accurately reflects the method by which OTUs were initially delimited. In fact, for greedy clustering, this is true. Greedy clustering uses pairwise similarity to group ASVs, working in order of ASV frequency which has the effect that ties are broken by choosing the more frequent cluster. Given that the outputs are thus ordered by frequency, and that ``--usearch_global`` chooses the the first record in the database in the case of ties, we can in fact search reads directly against the OTUs **for greedy clustering only**. This uses the same command as we saw in less-strict ASV mapping:
 
 .. parsed-literal::
+	:class: codebg
 	
-	$ vsearch --usearch_global :var:`reads.fasta` -db :var:`​otus.fasta` ​-id 0.97 -otutabout :var:`output.tsv`
+	vsearch --usearch_global :var:`reads.fasta` -db :var:`​otus.fasta` -id 0.97 -otutabout :var:`output.tsv`
 	
 
 We use the ``-id 0.97`` parameter to set a 3% similarity cutoff for OTUs that have been clustered at 97% similarity. Obviously if you had used a different similarity threshold when clustering, you'd use the same value here.

@@ -35,18 +35,21 @@ Length distributions
 Before we start, let’s double-check the length distribution of our reads. Learn more about the ``sed`` command :ref:`here <sed>` - note we've adapted this command for FASTAs where the sequences are every other line, rather than every 4 lines):
 
 .. parsed-literal::
+	:class: codebg
 
-	sed -n '2~2p' ​file​ | while read l; do echo ${#l} ; done | sort | uniq -c
+	sed -n '2~2p' file | while read l; do echo ${#l} ; done | sort | uniq -c
 
 Oh dear, what’s happened to our reads? Check the first 10 lines of the fasta:
 
 .. parsed-literal::
+	:class: codebg
 
-	head -n 10 ​file
+	head -n 10 file
 
 **VSEARCH**, although it’s great in many respects, outputs files in wrapped format, which means it starts a new line after 80 sequence characters. While this is nicer to look at, this is a pain for using quick-and-easy tools to summarise data on the Linux command line. So we must run a quick command first to unwrap this data:
 
 .. parsed-literal::
+	:class: codebg
 
 	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' :var:`input.fasta` > :var:`output.fasta`
 
@@ -58,6 +61,7 @@ Length filtering
 If we have a very variable region, we might not want to do any filtering at all, or we may know a reasonable range of lengths within which we expect our reads to fall. There are lots of tools for length filtering; we’ll use **VSEARCH** again - in fact, the ``​--fastx_filter`` function again. Let’s try filtering with quite a wide range:
 
 .. parsed-literal::
+	:class: codebg
 
 	vsearch --fastx_filter :var:`input.fasta` --fastq_minlen 400 --fastq_maxlen 440 --fastaout :var:`output.fasta​`
 
@@ -71,6 +75,7 @@ In this case, the region of CO1 we use is sufficiently conserved that, on balanc
 	:class: toggle
 	
 	.. parsed-literal::
+		:class: codebg
 	
 		vsearch --fastx_filter :var:`input.fasta` --fastq_minlen 418 --fastq_maxlen 418 --fastaout :var:`output.fasta​`
 

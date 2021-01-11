@@ -188,7 +188,7 @@
 <div class="section" id="taxonomising-the-tree">
 <h2>Taxonomising the tree<a class="headerlink" href="#taxonomising-the-tree" title="Permalink to this headline">¶</a></h2>
 <p>First, we must assign taxonomy to the tree. We do this with the <code class="docutils literal notranslate"><span class="pre">phylabel.R</span></code> script. This script takes as input the tree and the taxonomy, and outputs a tree with taxonomic names assigned to some of the internal nodes. We’ve seen this script before for relabelling terminals, but it also works on nodes.</p>
-<pre class="literal-block">phylabel.R -p <span class="var">input.tre</span> -x -y <span class="var">taxonomy.csv</span> -o <span class="var">output.tre</span></pre>
+<pre class="codebg literal-block">phylabel.R -p <span class="var">input.tre</span> -x -y <span class="var">taxonomy.csv</span> -o <span class="var">output.tre</span></pre>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <ul class="simple">
@@ -216,7 +216,7 @@
 <p>A slight complexity here: these tools only know what we tell them. If you took a random tip in the taxonomised tree and looked at all of its parent nodes, you’ll see that only some of the taxonomy is present. We might be missing order-level or even family-level taxonomy if our phylogeny doesn’t closely match the taxonomy, even if we have an ancestral node with a genus-level identification. However, if we can infer that an OTU belongs to a genus, it of course also belongs to the corresponding family, order, etc, and we want that information!</p>
 </div>
 <p>Run this process using the following command. We suggest you use as <code class="docutils literal notranslate"><span class="pre">input.tre</span></code> the first taxonomised tree you generated, without strict taxonomisation.</p>
-<pre class="literal-block">treedentify.R -p <span class="var">input.tre</span> -e ^otu -u -o <span class="var">output.csv</span></pre>
+<pre class="codebg literal-block">treedentify.R -p <span class="var">input.tre</span> -e ^otu -u -o <span class="var">output.csv</span></pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">-e</span></code> argument tells <strong>treedentify</strong> that we want to classify any tips beginning with <code class="docutils literal notranslate"><span class="pre">otu</span></code>. This is a regular expression, and you might need to alter this to <code class="docutils literal notranslate"><span class="pre">^uniq</span></code> or something else if your OTU or ASV sequences have different names. The <code class="docutils literal notranslate"><span class="pre">-u</span></code> argument tells <strong>treedentify</strong> to check NCBI to get the complete taxonomy of any matches.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>

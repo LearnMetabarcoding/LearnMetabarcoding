@@ -41,12 +41,14 @@ For basic fastq filtering based on minimum score, we will use **fastq_quality_fi
 This simple tool alows us to remove any reads that contain any bases with a quality score lower than the threshold we set. For example, let's keep only reads where 100% of the bases have a quality score greater than or equal to 13 (the equivalent of a 0.05 probability that that base is incorrect). The ``-v`` option reports the results to terminal for us. As always, replace ``input.fastq`` with the name of the file you're filtering (see the Data and software box above) and ``output.fasta`` with a sensible name to call the output.
 
 .. parsed-literal::
+	:class: codebg
 
 	fastq_quality_filter -v -q 13 -p 100 -i :var:`input.fastq` -o :var:`output.fastq`
 
 We can additionally specify a proportion of the bases that must meet our threshold using ``-p``. Following is another command that will keep only reads where 60% or more of the bases have a quality score equal to or greater than 30 (p = 0.001):
 
 .. parsed-literal::
+	:class: codebg
 	
 	fastq_quality_filter -v -q 30 -p 60 -i :var:`input.fastq` -o :var:`output.fastq`
 
@@ -64,12 +66,14 @@ Rather than setting per-base quality thresholds, another approach is to analyse 
 Given that the quality scores are just a set of probabilities, we can calculate the expected number of errors in the read as a whole. The following command will exclude any reads that have one or more expected errors. Note the difference with the previous section: we don't necessarily ascertain if any particular base is incorrect, we simply calculate how many bases would, on average, be incorrect on a read with this set of quality scores.
 
 .. parsed-literal::
+	:class: codebg
 	
 	vsearch --fastx_filter :var:`input.fastq` --fastq_maxee 1 --fastaout :var:`output.fasta`
 
 As you can imagine, the longer the read, the higher the chance that there is at least one error, simply by chance alone. So instead of basing our threshold on the total number of expected errors, we could base our threshold on the rate of errors. The following command will exclude any reads with more than 0.1 expected errors per base: 
 
 .. parsed-literal::
+	:class: codebg
 	
 	vsearch --fastx_filter :var:`input.fastq` --fastq_maxee_rate 0.1 --fastaout :var:`output.fasta`
 
@@ -94,6 +98,7 @@ In our opinion, filtering based on the number of expected errors makes sense: th
 	If you pick the output of ``fastq_quality_filter`` , you will need to convert this output to fasta using:
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		fastq_to_fasta -i :var:`input.fastq` -o :var:`output.fasta`
 
@@ -110,6 +115,7 @@ We now have a FASTA file of all of our reads. This is an important file to retai
 	However, when performing metabarcoding bioinformatics it may be more efficient to perform this quality filtering earlier, as it substantially reduces the data size. If you wanted to do this, you'd need to run quality filtering in a loop on all of your individual sample files. For example, if you wanted to quality filter your :ref:`primer-trimmed<primer_removal>` using **VSEARCH**, you'd run the following, replacing ``input`` with the name of the directory containing the files you want to quality filter, and ``output`` with the sensible name of a directory to place the filtered files in.
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		mkdir :var:`output`
 		samples=$(ls :var:`input`/ | cut -d\_ -f1 | sort | uniq)

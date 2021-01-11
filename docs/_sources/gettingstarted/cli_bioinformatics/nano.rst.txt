@@ -9,6 +9,7 @@ If you are new to using the command line, and need to make substantial changes t
 To create a document using nano you simply type ``nano`` followed by the name you would like to give the file. For example:
 
 .. parsed-literal::
+	:class: codebg
 
 	nano example.txt
 
@@ -24,6 +25,7 @@ You can now type whatever you need into this file. To save the file you press ``
 To open an existing file you type ``nano`` followed by the file name.
 
 .. parsed-literal::
+	:class: codebg
 
 	nano filename
 

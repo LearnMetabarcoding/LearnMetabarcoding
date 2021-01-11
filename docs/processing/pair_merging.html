@@ -205,7 +205,7 @@ The reverse primer is 26 bases long, plus a 6 base index gives 32 bases. Thus th
 <h2>Sequence quality<a class="headerlink" href="#sequence-quality" title="Permalink to this headline">¶</a></h2>
 <p>An important consideration when pair merging is that, in general, sequence reads decline in quality along their length. This quality information is stored in the FASTQ file - it would be a lot of work to check all of our sequences manually, but there are some ways to summarise the quality scores. It’s good practice to do this with your reads at this point</p>
 <p>One very popular option is to use the program <strong>FastQC</strong>. You can run it on a single file like this:</p>
-<pre class="literal-block">fastqc <span class="var">​input.fastq</span></pre>
+<pre class="codebg literal-block">fastqc <span class="var">input.fastq</span></pre>
 <p>You can view the output of <strong>FastQC</strong> by using your FTP software (e.g. FileZilla) to access the server, navigating to the directory in which you ran <strong>FastQC</strong> and opening the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file with the same name as your file. There are lots of useful graphs, but the first one is key here.</p>
 <p>The ends away from the primer are the parts that the merging algorithm is attempting to match, and you’ll notice these tend to be lower quality. This leads to two considerations:</p>
 <ol class="arabic simple">
@@ -216,13 +216,13 @@ The reverse primer is 26 bases long, plus a 6 base index gives 32 bases. Thus th
 <div class="section" id="pair-merging-with-pear">
 <h2>Pair merging with PEAR<a class="headerlink" href="#pair-merging-with-pear" title="Permalink to this headline">¶</a></h2>
 <p>We will use <strong>PEAR</strong> for merging. As always, check out the helpfile for <strong>PEAR</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pear</span> <span class="o">--</span><span class="n">help</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pear</span> <span class="o">--</span><span class="n">help</span>
 </pre></div>
 </div>
 <p>Not too many options.</p>
 <p>First, <span class="guilabel">create a new directory to to store the results of merging</span>.</p>
 <p>Try running the below <strong>PEAR</strong> command on a single pair of your primer-trimmed files from the previous section. The output should be the first part of the name - <strong>PEAR</strong> will add to this for the output files.</p>
-<pre class="literal-block">pear -f <span class="var">​input_R1.fastq​</span> -r <span class="var">​input_R2.fastq​</span> -o <span class="var">​merged/output</span></pre>
+<pre class="codebg literal-block">pear -f <span class="var">input_R1.fastq</span> -r <span class="var">input_R2.fastq</span> -o <span class="var">merged/output</span></pre>
 <p>PEAR gives us some really informative information on the terminal, make sure to review it. As you’ll have seen from the helpfile, there are many different thresholds that can be applied to the merging.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
@@ -237,14 +237,14 @@ The reverse primer is 26 bases long, plus a 6 base index gives 32 bases. Thus th
 <div class="section" id="running-pear-in-a-loop">
 <h2>Running <strong>PEAR</strong> in a loop<a class="headerlink" href="#running-pear-in-a-loop" title="Permalink to this headline">¶</a></h2>
 <p>Like with <strong>cutadapt</strong> in the <a class="reference internal" href="primer_removal.html#primer-removal"><span class="std std-ref">previous tutorial</span></a>, we can run <strong>PEAR</strong> in a loop to apply it to all of our samples: again, we list our files to find our unique samples, then loop on these and use each sample name to run an iteration of <strong>PEAR</strong>. Make sure to replace <code class="docutils literal notranslate"><span class="pre">input</span></code> and <code class="docutils literal notranslate"><span class="pre">output</span></code> with the names of the directory holding your input (index- and primer- trimmed sequences), and the directory into which you want to hold your merged sequences:</p>
-<pre class="literal-block">samples=$(ls <span class="var">input</span>/ | cut -d_ -f1 | sort | uniq)
+<pre class="codebg literal-block">samples=$(ls <span class="var">input</span>/ | cut -d_ -f1 | sort | uniq)
 for s in $samples;
 do
         pear -f <span class="var">input</span>/${s}_R1.fastq -r <span class="var">input</span>/${s}_R2.fastq \
         -o <span class="var">output</span>/$s -q <span class="var">N</span> -v <span class="var">N</span>;
 done</pre>
 <p>Make sure to review those terminal outputs! Then <span class="guilabel">list the contents of your output directory</span>, you’ll see files for the assembled, unassembled and discarded reads. We don’t need the latter two, so let’s clean up:</p>
-<pre class="literal-block">cd <span class="var">output/</span>
+<pre class="codebg literal-block">cd <span class="var">output/</span>
 rm *discarded* *unassembled* &amp;&amp; rename -e &quot;s/assembled\.//&quot; *
 cd ../</pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> here runs both commands on this line one after the other. We could use <code class="docutils literal notranslate"><span class="pre">;</span></code> instead, but <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> only runs the second command if the first one succeeds. This is important because the <code class="docutils literal notranslate"><span class="pre">rename</span></code> command uses regular expressions to remove the “assembled followed by a full stop” part from any files with that in the name. If we hadn’t removed any files with “unassembled” in the name, then that would have renamed them too!</p>

@@ -46,7 +46,7 @@ The process is exactly the same, except we use a more specific search term:
 
 .. parsed-literal::
 
-	"Blattodea"[Organism] OR "Hemiptera"[Organism] OR "Lepidoptera"[Organism] OR "Diptera"[Organism] OR "Araneae"[Organism] OR "Collembola"[Organism]) AND srcdb_refseq[PROP] AND mitochondrion[filter]
+	\"Blattodea\"[Organism] OR \"Hemiptera\"[Organism] OR \"Lepidoptera\"[Organism] OR \"Diptera\"[Organism] OR \"Araneae\"[Organism] OR \"Collembola\"[Organism]) AND srcdb_refseq[PROP] AND mitochondrion[filter]
 
 Next steps
 ==========

@@ -190,7 +190,7 @@
 <h2>Running alignment<a class="headerlink" href="#running-alignment" title="Permalink to this headline">¶</a></h2>
 <p>We will do a quick alignment using <strong>MAFFT</strong> for each gene, using the FFT-NS-2 method. This is a fast, but less-accurate method. First, make a directory to store your aligned genes.</p>
 <p>Run the following command, making sure to replace <code class="docutils literal notranslate"><span class="pre">raw</span></code> with the name of the directory you extracted your genes into in the last step, and <code class="docutils literal notranslate"><span class="pre">new</span></code> with the name of your new directory:</p>
-<pre class="literal-block">for f in <span class="var">raw</span>/*;
+<pre class="codebg literal-block">for f in <span class="var">raw</span>/*;
 do
         mafft --thread 1 --retree 2 --maxiterate 0 $f &gt; <span class="var">new</span>/​${f#*/};
 done</pre>

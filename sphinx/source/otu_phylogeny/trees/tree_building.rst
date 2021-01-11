@@ -24,6 +24,7 @@ Running FastTree
 Use the following command, using the supermatrix output from the previous step as the input and choosing an appropriate name for your tree. The ``-gtr`` option tells **FastTree** to use the GTR+CAT model, and the ``-nt`` option specifies that this is DNA data.
 
 .. parsed-literal::
+	:class: codebg
 
 	FastTree -gtr -nt < :var:`input.fasta` > :var:`output.tre`
 
@@ -35,8 +36,9 @@ Adding taxonomy
 The terminals of the tree are named only with the code names for their respective source sequences. We would like to add in the taxonomy so that the terminals are meaningful. There are lots of ways to do this, but our usual method is to use a custom script which takes as input the tree and a table that records the taxonomy of all of the sequences. Happily enough, we happen to have that table handy. Run the following command to rename the tree tips with taxonomy:
 
 .. parsed-literal::
+	:class: codebg
 	
-	phylabel.R -p :var:`input.tre` -r -y :var:`taxonomy.csv`  -o :var:`output.tre`
+	phylabel.R -p :var:`input.tre` -r -y :var:`taxonomy.csv` -o :var:`output.tre`
 	
 
 Assessing Trees

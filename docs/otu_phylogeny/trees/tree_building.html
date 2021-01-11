@@ -189,13 +189,13 @@
 <div class="section" id="running-fasttree">
 <h2>Running FastTree<a class="headerlink" href="#running-fasttree" title="Permalink to this headline">¶</a></h2>
 <p>Use the following command, using the supermatrix output from the previous step as the input and choosing an appropriate name for your tree. The <code class="docutils literal notranslate"><span class="pre">-gtr</span></code> option tells <strong>FastTree</strong> to use the GTR+CAT model, and the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option specifies that this is DNA data.</p>
-<pre class="literal-block">FastTree -gtr -nt &lt; <span class="var">input.fasta</span> &gt; <span class="var">output.tre</span></pre>
+<pre class="codebg literal-block">FastTree -gtr -nt &lt; <span class="var">input.fasta</span> &gt; <span class="var">output.tre</span></pre>
 <p>The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the <code class="docutils literal notranslate"><span class="pre">head</span></code> command. Each terminal in the tree has the ID of the sequence used to generate it.</p>
 </div>
 <div class="section" id="adding-taxonomy">
 <h2>Adding taxonomy<a class="headerlink" href="#adding-taxonomy" title="Permalink to this headline">¶</a></h2>
 <p>The terminals of the tree are named only with the code names for their respective source sequences. We would like to add in the taxonomy so that the terminals are meaningful. There are lots of ways to do this, but our usual method is to use a custom script which takes as input the tree and a table that records the taxonomy of all of the sequences. Happily enough, we happen to have that table handy. Run the following command to rename the tree tips with taxonomy:</p>
-<pre class="literal-block">phylabel.R -p <span class="var">input.tre</span> -r -y <span class="var">taxonomy.csv</span>  -o <span class="var">output.tre</span></pre>
+<pre class="codebg literal-block">phylabel.R -p <span class="var">input.tre</span> -r -y <span class="var">taxonomy.csv</span> -o <span class="var">output.tre</span></pre>
 </div>
 <div class="section" id="assessing-trees">
 <h2>Assessing Trees<a class="headerlink" href="#assessing-trees" title="Permalink to this headline">¶</a></h2>

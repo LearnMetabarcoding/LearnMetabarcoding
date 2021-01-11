@@ -43,6 +43,7 @@ To run the following command, your working directory should be the directory con
 Run the following command, making sure to replace ``output.fastq`` with a sensible name:
 
 .. parsed-literal::
+	:class: codebg
 
 	for f in \*;
 	do                         :comment:`# ↓ the space here should be included!`
@@ -69,6 +70,7 @@ FASTA files
 If you instead have a directory of FASTAs, the command is pretty much the same, but we don't have to worry about FASTQ header format. Again, to run this command your working directory should be the directory containing the sequences you want to concatenate.
 
 .. parsed-literal::
+	:class: codebg
 
 	for f in \*;
 	do                      :comment:`# ↓ the space here should be included!`

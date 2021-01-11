@@ -184,7 +184,7 @@
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>The following commands install some general purpose Linux tools and some libraries that are required for installing one or more software tools detailed below.</p>
-<pre class="literal-block"><span class="comment"># Set up directories</span>
+<pre class="codebg literal-block"><span class="comment"># Set up directories</span>
 sudo mkdir /usr/local/deb/
 
 <span class="comment"># Update installed packages</span>
@@ -205,13 +205,13 @@ sudo apt install python3-pip perl-doc default-jre -y</pre>
 <div class="section" id="alan">
 <span id="id1"></span><h3>ALAN<a class="headerlink" href="#alan" title="Permalink to this headline">¶</a></h3>
 <p>Commandline alignment viewer, github <a class="reference external" href="https://github.com/mpdunne/alan">here</a>.</p>
-<pre class="literal-block">sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/mpdunne/alan/master/alan
+<pre class="codebg literal-block">sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/mpdunne/alan/master/alan
 sudo chmod a+x /usr/local/bin/alan</pre>
 </div>
 <div class="section" id="blast">
 <span id="id2"></span><h3>BLAST<a class="headerlink" href="#blast" title="Permalink to this headline">¶</a></h3>
 <p>Widely used sequence searching software, documentation and installation instructions <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK279690/">here</a>.</p>
-<pre class="literal-block">cd /usr/local/src/
+<pre class="codebg literal-block">cd /usr/local/src/
 
 BLAST_VERSION=&quot;2.11.0&quot; <span class="comment"># Change as appropriate</span>
 sudo wget &quot;ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${BLAST_VERSION}/ncbi-blast-${BLAST_VERSION}+-x64-linux.tar.gz&quot;
@@ -221,7 +221,7 @@ sudo cp ncbi-blast-${BLAST_VERSION}+/bin/* /usr/local/bin/</pre>
 <div class="section" id="bptp">
 <span id="id4"></span><h3>bPTP<a class="headerlink" href="#bptp" title="Permalink to this headline">¶</a></h3>
 <p>Bayesian phylogeny-based species delimitation, github <a class="reference external" href="https://github.com/zhangjiajie/PTP">here</a>.</p>
-<pre class="literal-block">cd /usr/local/src
+<pre class="codebg literal-block">cd /usr/local/src
 sudo git clone https://github.com/zhangjiajie/PTP
 cd PTP
 sudo -H python3 -m pip install -r requirements.txt
@@ -233,16 +233,16 @@ sudo ln -s /usr/local/src/PTP/bin/PTP.py /usr/local/bin/PTP</pre>
 <div class="section" id="catfasta2phyml">
 <span id="id6"></span><h3>catfasta2phyml<a class="headerlink" href="#catfasta2phyml" title="Permalink to this headline">¶</a></h3>
 <p>Script for concatenating alignments into a supermatrix, github <a class="reference external" href="https://github.com/nylander/catfasta2phyml">here</a>.</p>
-<pre class="literal-block">sudo wget -O /usr/local/bin/ https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
+<pre class="codebg literal-block">sudo wget -O /usr/local/bin/ https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
 sudo chmod a+x /usr/local/bin/catfasta2phyml.pl</pre>
 <p>Installation not necessary: you could simply download it to your working directory and run it using <code class="docutils literal notranslate"><span class="pre">perl</span></code>:</p>
-<pre class="literal-block">wget /usr/local/bin/ https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
+<pre class="codebg literal-block">wget /usr/local/bin/ https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
 perl catfasta2phyml.pl</pre>
 </div>
 <div class="section" id="crop">
 <span id="id8"></span><h3>CROP<a class="headerlink" href="#crop" title="Permalink to this headline">¶</a></h3>
 <p>Bayesian OTU delimitation, github <a class="reference external" href="https://github.com/tingchenlab/CROP">here</a>.</p>
-<pre class="literal-block">sudo apt install libgsl-dev
+<pre class="codebg literal-block">sudo apt install libgsl-dev
 
 cd /usr/local/src
 sudo git clone https://github.com/zhangjiajie/PTP
@@ -255,25 +255,25 @@ sudo ln -s /usr/local/src/PTP/bin/bPTP.py /usr/local/bin/bPTP</pre>
 <div class="section" id="cutadapt">
 <span id="id10"></span><h3>Cutadapt<a class="headerlink" href="#cutadapt" title="Permalink to this headline">¶</a></h3>
 <p>Versatile adapter sequence removal, documentation <a class="reference external" href="https://cutadapt.readthedocs.io/en/stable/">here</a>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">H</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">cutadapt</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">H</span> <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">cutadapt</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="extract-genes">
 <span id="id12"></span><h3>extract_genes<a class="headerlink" href="#extract-genes" title="Permalink to this headline">¶</a></h3>
 <p>Script for extracting individual gene sequences from GenBank files, github <a class="reference external" href="https://github.com/tjcreedy/biotools">here</a>.</p>
-<pre class="literal-block">sudo apt install bioperl libarray-utils-perl
+<pre class="codebg literal-block">sudo apt install bioperl libarray-utils-perl
 
 sudo wget -O /usr/local/bin/ https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
 sudo chmod a+x /usr/local/bin/extract_genes.pl</pre>
 <p>Installation not necessary: you coul simply download it to your working directory and run it using <code class="docutils literal notranslate"><span class="pre">perl</span></code>:</p>
-<pre class="literal-block">wget https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
+<pre class="codebg literal-block">wget https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
 perl extract_genes.pl</pre>
 </div>
 <div class="section" id="fasttree">
 <span id="id14"></span><h3>FastTree<a class="headerlink" href="#fasttree" title="Permalink to this headline">¶</a></h3>
 <p>Fast maximum likelihood phylogenetic inference, website <a class="reference external" href="http://www.microbesonline.org/fasttree/">here</a>.</p>
-<pre class="literal-block">cd /usr/local/bin/
+<pre class="codebg literal-block">cd /usr/local/bin/
 sudo wget http://www.microbesonline.org/fasttree/FastTree
 sudo wget http://www.microbesonline.org/fasttree/FastTreeMP
 sudo chmod a+x FastTree*</pre>
@@ -281,7 +281,7 @@ sudo chmod a+x FastTree*</pre>
 <div class="section" id="fastqc">
 <span id="id16"></span><h3>FastQC<a class="headerlink" href="#fastqc" title="Permalink to this headline">¶</a></h3>
 <p>Raw sequence quality assessment, website <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">here</a>.</p>
-<pre class="literal-block">cd /usr/local/src/
+<pre class="codebg literal-block">cd /usr/local/src/
 sudo wget https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.9.zip
 sudo unzip fastqc_v0.11.9.zip
 sudo chmod a+x FastQC/fastqc
@@ -290,7 +290,7 @@ sudo ln -s /usr/local/src/FastQC/fastqc /usr/local/bin/fastqc</pre>
 <div class="section" id="fastx-toolkit">
 <span id="id18"></span><h3>FASTX Toolkit<a class="headerlink" href="#fastx-toolkit" title="Permalink to this headline">¶</a></h3>
 <p>Various handy tools for dealing with FASTA and FASTQ files. A little out of date though, requires patching to work in modern Ubuntu (all done in the below commands). Website <a class="reference external" href="http://hannonlab.cshl.edu/fastx_toolkit/index.html">here</a>.</p>
-<pre class="literal-block">cd /usr/local/src/
+<pre class="codebg literal-block">cd /usr/local/src/
 
 sudo wget https://github.com/agordon/libgtextutils/releases/download/0.7/libgtextutils-0.7.tar.gz
 sudo tar -xzf libgtextutils-0.7.tar.gz
@@ -314,26 +314,26 @@ cd ../</pre>
 <div class="section" id="mafft">
 <span id="id20"></span><h3>MAFFT<a class="headerlink" href="#mafft" title="Permalink to this headline">¶</a></h3>
 <p>Sequence alignment software, website <a class="reference external" href="https://mafft.cbrc.jp/alignment/software/">here</a>.</p>
-<pre class="literal-block">sudo wget -P /usr/local/deb/ https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb
+<pre class="codebg literal-block">sudo wget -P /usr/local/deb/ https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb
 sudo apt install /usr/local/deb/mafft_7.475-1_amd64.deb</pre>
 </div>
 <div class="section" id="metamate">
 <span id="metamate-install"></span><h3>metaMATE<a class="headerlink" href="#metamate" title="Permalink to this headline">¶</a></h3>
 <p>Tool for exploring detailed read frequency filtering thresholds, github <a class="reference external" href="https://github.com/tjcreedy/metaMATE">here</a>. Requires <a class="reference internal" href="#blast"><span class="std std-ref">BLAST</span></a>, <a class="reference internal" href="#mafft"><span class="std std-ref">MAFFT</span></a> and <a class="reference internal" href="#r"><span class="std std-ref">R</span></a></p>
-<pre class="literal-block">sudo -H python3 -m pip install metaMATE
+<pre class="codebg literal-block">sudo -H python3 -m pip install metaMATE
 sudo Rscript -e &quot;install.packages(c('getopt', 'ape', 'fastcluster'), repos = 'https://cloud.r-project.org')&quot;</pre>
 </div>
 <div class="section" id="pairfq">
 <span id="id23"></span><h3>Pairfq<a class="headerlink" href="#pairfq" title="Permalink to this headline">¶</a></h3>
 <p>Ensures paired read files are syncronised, github <a class="reference external" href="https://github.com/sestaton/Pairfq">here</a>.</p>
-<pre class="literal-block">sudo apt install libdbd-sqlite3-perl
+<pre class="codebg literal-block">sudo apt install libdbd-sqlite3-perl
 
 sudo curl -sL cpanmin.us | sudo perl - git://github.com/sestaton/Pairfq.git</pre>
 </div>
 <div class="section" id="pear">
 <span id="id25"></span><h3>PEAR<a class="headerlink" href="#pear" title="Permalink to this headline">¶</a></h3>
 <p>Paired end read merger, website <a class="reference external" href="http://www.exelixis-lab.org/pear">here</a>. You must sign up for a PEAR academic licence on that website and you will receive an email with a link to download the installation files. The command here assumes you’ve downloaded the file to your home directory.</p>
-<pre class="literal-block">cd /usr/local/src/
+<pre class="codebg literal-block">cd /usr/local/src/
 sudo cp ~/pear-0.9.11-linux-x86_64.tar.gz ./   <span class="comment"># Change the source path if necessary</span>
 sudo tar -xzf pear-0.9.11-linux-x86_64.tar.gz
 cd pear-0.9.11-linux-x86_64
@@ -344,7 +344,7 @@ sudo cp man/pear.1.gz /usr/share/man/man1/</pre>
 <div class="section" id="phylostuff">
 <span id="id27"></span><h3>phylostuff<a class="headerlink" href="#phylostuff" title="Permalink to this headline">¶</a></h3>
 <p>A set of scripts for doing stuff with phylogenies, including relabelling and inferring taxonomy. Github <a class="reference external" href="https://github.com/tjcreedy/phylostuff">here</a>. Requires <a class="reference internal" href="#r"><span class="std std-ref">R</span></a>.</p>
-<pre class="literal-block">sudo apt install libxml2-dev libssl-dev libcurl4-openssl-dev
+<pre class="codebg literal-block">sudo apt install libxml2-dev libssl-dev libcurl4-openssl-dev
 
 cd /usr/local/src
 sudo git clone https://github.com/tjcreedy/phylostuff.git
@@ -355,7 +355,7 @@ sudo ./install.sh</pre>
 <div class="section" id="r">
 <span id="id29"></span><h3>R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h3>
 <p>Versatile data handling language, website <a class="reference external" href="https://cran.r-project.org">here</a>.</p>
-<pre class="literal-block">sudo apt install apt-transport-https
+<pre class="codebg literal-block">sudo apt install apt-transport-https
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
 sudo apt install r-base</pre>
@@ -363,7 +363,7 @@ sudo apt install r-base</pre>
 <div class="section" id="swarm">
 <span id="id31"></span><h3>swarm<a class="headerlink" href="#swarm" title="Permalink to this headline">¶</a></h3>
 <p>Linkage-based OTU delimitation, github <a class="reference external" href="https://github.com/torognes/swarm">here</a>.</p>
-<pre class="literal-block">cd /usr/local/src
+<pre class="codebg literal-block">cd /usr/local/src
 
 sudo git clone https://github.com/torognes/swarm.git
 cd swarm/
@@ -377,7 +377,7 @@ sudo mv swarm.1.gz /usr/share/man/man1/</pre>
 <div class="section" id="vsearch">
 <span id="id33"></span><h3>VSEARCH<a class="headerlink" href="#vsearch" title="Permalink to this headline">¶</a></h3>
 <p>Open-source implementation of USEARCH with more versatility. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. Github <a class="reference external" href="https://github.com/torognes/vsearch">here</a>.</p>
-<pre class="literal-block">sudo apt install autoconf groff
+<pre class="codebg literal-block">sudo apt install autoconf groff
 
 cd /usr/local/src
 

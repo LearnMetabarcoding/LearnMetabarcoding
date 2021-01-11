@@ -189,9 +189,9 @@
 </div>
 <p>First, let’s create a directory for this little side project, just to be organised</p>
 <p>Second, we need to create copies of our OTU files with names added to the headers in order to differentiate OTUs from different methods. For each OTU file, run the following command, replacing <code class="docutils literal notranslate"><span class="pre">method</span></code> with a description of the method used to create OTUS, e.g. <code class="docutils literal notranslate"><span class="pre">greedy97</span></code> (text or numbers only, no spaces or other characters!):</p>
-<pre class="literal-block">sed -e &quot;s/\(^&gt;.*$\)/\1<span class="var">method</span>/&quot; <span class="var">input.fasta</span> &gt; <span class="var">newdirectory/output.fasta</span></pre>
+<pre class="codebg literal-block">sed -e &quot;s/\(^&gt;.*$\)/\1<span class="var">method</span>/&quot; <span class="var">input.fasta</span> &gt; <span class="var">newdirectory/output.fasta</span></pre>
 <p>Next, concatenate these OTU files into one file - you’ll need to be inside your new directory for this:</p>
-<pre class="literal-block">cat *.fasta &gt; <span class="var">output.fasta</span></pre>
+<pre class="codebg literal-block">cat *.fasta &gt; <span class="var">output.fasta</span></pre>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <ul class="simple">

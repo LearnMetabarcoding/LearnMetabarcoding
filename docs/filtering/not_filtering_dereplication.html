@@ -178,14 +178,14 @@
 <p>From now on, the main purpose is to find these unique sequences and filter out those that may be erroneous. For now, we ignore the source of these sequences; the dataset is considered as a whole with (largely) no reference to the individual samples. There is no need for this filtering process to be performed on many thousands of reads if lots of them are identical; better to dereplicate and reduce our data size to speed up what are generally quite computationally intensive tasks.</p>
 <div class="green admonition">
 <p class="admonition-title">Data and software</p>
-<p>The input data for this tutorial is a FASTA file comprising all of the reads in your dataset. If you’re following along step-by-step, this was produced <a class="reference internal" href="quality_filtering.html#quality-filtering"><span class="std std-ref">the previous tutorial</span></a>. Alternatively, the file <code class="docutils literal notranslate"><span class="pre">4_mbc_concat.fasta</span></code> within the <a class="reference internal" href="../data.html#sectionbdata"><span class="std std-ref">sectionB archive</span></a> can be used as example data.</p>
+<p>The input data for this tutorial is a FASTA file comprising all of the reads in your dataset. If you’re following along step-by-step, this was produced in <a class="reference internal" href="quality_filtering.html#quality-filtering"><span class="std std-ref">the previous tutorial</span></a>. Alternatively, the file <code class="docutils literal notranslate"><span class="pre">4_mbc_concat.fasta</span></code> within the <a class="reference internal" href="../data.html#sectionbdata"><span class="std std-ref">sectionB archive</span></a> can be used as example data.</p>
 <p>This tutorial uses the <a class="reference internal" href="../gettingstarted/setup/installing_software.html#vsearch"><span class="std std-ref">VSEARCH</span></a> software.</p>
 </div>
 </div>
 <div class="section" id="performing-dereplication">
 <h2>Performing dereplication<a class="headerlink" href="#performing-dereplication" title="Permalink to this headline">¶</a></h2>
 <p>Dereplication is a pretty straightforward task - there are very few parameters to worry about. Therefore choosing a tool for dereplication has few considerations, and is often a matter of convenience. We will use the dereplication function within <strong>VSEARCH</strong>, because we already have <strong>VSEARCH</strong> installed for other steps.</p>
-<pre class="literal-block">vsearch --derep_fulllength <span class="var">input.fasta</span> --output <span class="var">output.fasta</span> --sizeout --relabel uniq</pre>
+<pre class="codebg literal-block">vsearch --derep_fulllength <span class="var">input.fasta</span> --output <span class="var">output.fasta</span> --sizeout --relabel uniq</pre>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <ul class="simple">

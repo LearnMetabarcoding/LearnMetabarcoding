@@ -72,6 +72,7 @@ Downloading the data in Linux
 First, create and navigate to the folder where you want to store the downloaded data. For example, we'll make this a folder called ``exampledata``
 
 .. parsed-literal::
+	:class: codebg
 	
 	mkdir exampledata
 	cd exampledata
@@ -79,6 +80,7 @@ First, create and navigate to the folder where you want to store the downloaded 
 Download the data, unzip it and list the contents
 
 .. parsed-literal::
+	:class: codebg
 	
 	wget URL
 	unzip sectionA.zip
@@ -87,6 +89,7 @@ Download the data, unzip it and list the contents
 We suggest actually working through the tutorials in a separate directory, so as to keep the example data from getting mixed up with the data that you produce. For example, you might decide to work through the tutorials in a directory called ``tutorialwork``. The below code shows how you would set this up and copy over the data for the very first tutorial. Note that the first data is a directory of files, so we use ``cp -r``.
 
 .. parsed-literal::
+	:class: codebg
 	
 	cd ../  :comment:`# Return up to the main directory`
 	mkdir tutorialwork

@@ -24,7 +24,8 @@ Simulation
 
 We will use the same starting data as from the :ref:`pair merging <pair_merging>` tutorial; that is, a set of paired FASTQ files, one pair per sample. We can apply **cutadapt** to remove 150bp from the 3’ end of each read for a pair of files (see the :ref:`demultiplexing<demultiplexing>` and/or :ref:`primer removal <primer_removal>` tutorials for more about **cutadapt**). First, create a folder for this experiment (mine is called ``trimmed_150``). Next, run the following commands, selecting the file pair from a single sample as the inputs.
 
-.. parsed-literal:: 
+.. parsed-literal::
+	:class: codebg
 
 	cutadapt -u -150 -o :var:`trimmed_150/output_R1.fastq` :var:`input_R1.fastq`
 	cutadapt -u -150 -o :var:`trimmed_150/output_R2.fastq` :var:`input_R2.fastq`
@@ -41,9 +42,10 @@ In most cases, we would trim or discard reads such that the forward and reverse 
 
 Let’s review the length distribution of our sequences to select a fixed length for each direction:
 
-.. parsed-literal:: 
+.. parsed-literal::
+	:class: codebg
 
-	sed -n '2~4p' ​in.fastq​ | while read l; do echo ${#l} ; done | sort | uniq -c
+	sed -n '2~4p' in.fastq | while read l; do echo ${#l} ; done | sort | uniq -c
 
 Generally, we would select something around the central tendency, to retain as much data as possible.
 
@@ -51,7 +53,8 @@ Generally, we would select something around the central tendency, to retain as m
 
 We know the end with the primer is the accurate end, so we trim bases from the other end. We use **cutadapt** for this. The ``-l`` argument trims reads down to a value, and the ``-m`` argument specifies a minimum length. Set them as the same value, and then run the following command on each of your simulated short read files.
 
-.. parsed-literal:: 
+.. parsed-literal::
+	:class: codebg
 
 	cutadapt -l :var:`N` -m :var:`N` -o :var:`output.fastq` :var:`input.fastq`
 
@@ -64,9 +67,10 @@ Re-pairing mates
 	
 	Run **pairfq** on your simulated short read files, as follows. There are a lot of names to replace in this command!
 	
-	.. parsed-literal:: 
+	.. parsed-literal::
+		:class: codebg
 	
-		pairfq makepairs -f :var:`input_R1.fastq` -r :var:`input_R2.fastq` -fp :var:`output_R1.fastq` -rp :var:`output_R2.fastq` -fs :var:`output_R1_unpaired.fastq -rs` :var:`​output_R2_unpaired.fastq`
+		pairfq makepairs -f :var:`input_R1.fastq` -r :var:`input_R2.fastq` -fp :var:`output_R1.fastq` -rp :var:`output_R2.fastq` -fs :var:`output_R1_unpaired.fastq -rs` :var:`output_R2_unpaired.fastq`
 	
 	As always, use ``grep`` to check output file read numbers. 
 
@@ -75,7 +79,8 @@ Stitching
 
 **PEAR** can stitch our mate pairs, and it reverse-complements the reverse reads for us.
 
-.. parsed-literal:: 
+.. parsed-literal::
+	:class: codebg
 
 	pear -i -f :var:`input_R1.fastq` -r :var:`input_R2.fastq` -o :var:`outname`
 

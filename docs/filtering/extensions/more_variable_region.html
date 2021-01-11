@@ -195,19 +195,19 @@
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>We filter for each length, one at a time, and join the results into a single file.</p>
-<pre class="literal-block">vsearch --fastx_filter <span class="var">input.fasta</span> --fastq_minlen 415 --fastq_maxlen 415 --fastaout output415.fasta
+<pre class="codebg literal-block">vsearch --fastx_filter <span class="var">input.fasta</span> --fastq_minlen 415 --fastq_maxlen 415 --fastaout output415.fasta
 vsearch --fastx_filter <span class="var">input.fasta</span> --fastq_minlen 418 --fastq_maxlen 418 --fastaout output418.fasta
 vsearch --fastx_filter <span class="var">input.fasta</span> --fastq_minlen 421 --fastq_maxlen 421 --fastaout output421.fasta
 cat output415.fasta output418.fasta output421.fasta &gt; <span class="var">output.fasta</span></pre>
 <p>Of course, we could also do this in a loop:</p>
-<pre class="literal-block">for l in 415 418 421;
+<pre class="codebg literal-block">for l in 415 418 421;
 do
         vsearch --fastx_filter <span class="var">input.fasta</span> --fastq_minlen $l \
         --fastq_maxlen $l --fastaout output_${l}_ctrim.fasta;
 done &amp;&amp;
 cat *ctrim.fasta &gt; <span class="var">output.fasta</span></pre>
 <p>When we’re running loops, we want to make sure it worked properly, so let’s check the number of sequences in the relevant files:</p>
-<pre class="literal-block">grep -c &quot;^&gt;&quot; *ctrim.fasta</pre>
+<pre class="codebg literal-block">grep -c &quot;^&gt;&quot; *ctrim.fasta</pre>
 </div>
 </div>
 

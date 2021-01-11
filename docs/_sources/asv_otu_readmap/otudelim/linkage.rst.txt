@@ -26,8 +26,9 @@ Running swarm
 Run the following command to have **swarm** cluster your input ASVs.
 
 .. parsed-literal::
+	:class: codebg
 
-	swarm ​-z :var:`input.fasta` -d 1 -w :var:`output.fasta`
+	swarm -z :var:`input.fasta` -d 1 -w :var:`output.fasta`
 
 .. admonition:: Exercise
 	
@@ -42,6 +43,7 @@ Run the following command to have **swarm** cluster your input ASVs.
 	418 * 0.03 ≈ 13
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		swarm -z :var:`input.fasta` -d 13 -w :var:`output.fasta`
 	
@@ -62,6 +64,7 @@ We can get **swarm** to output a list of ASVs that were grouped to form each OTU
 	:class: toggle
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		swarm -z :var:`input.fasta` -d 1 -w :var:`output.fasta` -o :var:`output.txt`
 		

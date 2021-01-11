@@ -189,7 +189,7 @@
 <h2>Running swarm<a class="headerlink" href="#running-swarm" title="Permalink to this headline">¶</a></h2>
 <p><strong>Swarm</strong> is pretty easy to run. The main parameter is <code class="docutils literal notranslate"><span class="pre">-d</span></code>, which specifies the number of differences to iteratively group ASVs together. This should always be an integer greater than or equal to 1. Our input contains <code class="docutils literal notranslate"><span class="pre">;size=</span></code> tags so we use the <code class="docutils literal notranslate"><span class="pre">-z</span></code> parameter.</p>
 <p>Run the following command to have <strong>swarm</strong> cluster your input ASVs.</p>
-<pre class="literal-block">swarm ​-z <span class="var">input.fasta</span> -d 1 -w <span class="var">output.fasta</span></pre>
+<pre class="codebg literal-block">swarm -z <span class="var">input.fasta</span> -d 1 -w <span class="var">output.fasta</span></pre>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <ul class="simple">
@@ -202,7 +202,7 @@
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>418 * 0.03 ≈ 13</p>
-<pre class="literal-block">swarm -z <span class="var">input.fasta</span> -d 13 -w <span class="var">output.fasta</span></pre>
+<pre class="codebg literal-block">swarm -z <span class="var">input.fasta</span> -d 13 -w <span class="var">output.fasta</span></pre>
 </div>
 </div>
 <div class="section" id="tracking-our-asvs">
@@ -219,7 +219,7 @@
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<pre class="literal-block">swarm -z <span class="var">input.fasta</span> -d 1 -w <span class="var">output.fasta</span> -o <span class="var">output.txt</span>
+<pre class="codebg literal-block">swarm -z <span class="var">input.fasta</span> -d 1 -w <span class="var">output.fasta</span> -o <span class="var">output.txt</span>
 
 grep -n -o &quot;uniq&quot; <span class="var">input.txt</span> | cut -d: -f1 | sort | uniq -c</pre>
 <p>Check out the page on <a class="reference internal" href="../../gettingstarted/cli_bioinformatics/grep.html#grep"><span class="std std-ref">grep</span></a> for more help figuring out what this command is doing</p>

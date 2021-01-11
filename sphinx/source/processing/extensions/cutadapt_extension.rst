@@ -69,6 +69,7 @@ To visualise this, we can consider a search using the index ``g=XNAACACC`` with 
 	:class: toggle
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		cutadapt -g T4=XNAAGAGG -g T9=XNAATCGC -g T11=XNAGCTAC \\
 		-G T4=XNAAGAGG -G T9=XNAATCGC -G T11=XNAGCTAC \\

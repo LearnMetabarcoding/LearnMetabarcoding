@@ -191,28 +191,27 @@
 <div class="section" id="for-loops">
 <h2>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
 <p>We use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop when we have a predefined list contained in a variable. For example, say I have a directory called <code class="docutils literal notranslate"><span class="pre">inputs</span></code> with five FASTA files in it. You could create a variable containing a list of these files as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>files=$(ls inputs/)
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span>files=$(ls inputs/)
 echo &quot;$files&quot;
 </pre></div>
 </div>
 <p>Note how we list the directory, then enclose that command in <code class="docutils literal notranslate"><span class="pre">$()</span></code>. This allows us to create the variable <code class="docutils literal notranslate"><span class="pre">$files</span></code> containing the output of the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command. We can check what that variable contains by <code class="docutils literal notranslate"><span class="pre">echo</span></code> ing it.</p>
 <p>Now we run a simple <code class="docutils literal notranslate"><span class="pre">for</span></code> loop where we run <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code> on each file. This reports the number of lines in the file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in $files;
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span>for f in $files;
 do
         wc -l $f;
 done
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop essentially says “for each item in <code class="docutils literal notranslate"><span class="pre">$files</span></code>, call that item <code class="docutils literal notranslate"><span class="pre">f</span></code> and do the following to it”. The <code class="docutils literal notranslate"><span class="pre">do</span></code> and <code class="docutils literal notranslate"><span class="pre">done</span></code> terms surround the expression(s) to be run within the loop. Did you notice how we were able to write this command over multiple lines without using the <code class="docutils literal notranslate"><span class="pre">\</span></code> to separate lines? This is because the <code class="docutils literal notranslate"><span class="pre">;</span></code> symbol and the special <code class="docutils literal notranslate"><span class="pre">do</span></code> keyword also signal to bash that we haven’t finished our command yet, so we don’t need the <code class="docutils literal notranslate"><span class="pre">\</span></code>. We can also run the loop in a more compact form:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for f in $files; do wc -l $f; done
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span>for f in $files; do wc -l $f; done
 </pre></div>
 </div>
 <p>See how we use <code class="docutils literal notranslate"><span class="pre">;</span></code> to separate expressions in a single line, in exactly the same way we did for the multiline loop.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The terminal of Mac OS works slightly differently, and you can’t use this method of looping over a variable containing multiple lines. Instead, you can swap out for a while loop:
-.. parsed-literal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>while read -r f;
+<p>The terminal of Mac OS works slightly differently, and you can’t use this method of looping over a variable containing multiple lines. Instead, you can swap out for a while loop:</p>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span>while read -r f;
 do
         wc -l $f;
 done &lt;&lt;&lt; $files
@@ -223,37 +222,37 @@ done &lt;&lt;&lt; $files
 <div class="section" id="while-read-loops">
 <h2>While read loops<a class="headerlink" href="#while-read-loops" title="Permalink to this headline">¶</a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is largely the same as a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. If you looked at the resources above, you’ll see the main difference is that it runs continuously for as long as a condition is true. For our purposes, we’re going to harness this to use it to parse files, applying an expression to each line of a file. For example, let’s assume we have a list of sequence indices in a file:</p>
-<pre class="literal-block">echo -e &quot;ATCGCA\nTAACGA\nTACAGA\nATTCAT&quot; &gt; indices.txt</pre>
+<pre class="codebg literal-block">echo -e &quot;ATCGCA\nTAACGA\nTACAGA\nATTCAT&quot; &gt; indices.txt</pre>
 <p>Say as above we have a directory called <code class="docutils literal notranslate"><span class="pre">inputs</span></code> with five FASTA files in it, and we want to search all files for each of these indices, returning a count of the times they were matched. This is the command we used</p>
-<pre class="literal-block">while read i;
+<pre class="codebg literal-block">while read i;
 do
         grep -c &quot;$i&quot; inputs/*.fasta;
 done &lt; indices.txt</pre>
 <p>Again, there’s a one-liner format.</p>
-<pre class="literal-block">while read i; do grep -c &quot;$i&quot; inputs/*.fasta; done &lt; indices.txt</pre>
+<pre class="codebg literal-block">while read i; do grep -c &quot;$i&quot; inputs/*.fasta; done &lt; indices.txt</pre>
 <p>Notice that we use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> symbol to set indices.txt as the standard input. As the <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">read</span></code> syntax operates on the standard input, we can also use <code class="docutils literal notranslate"><span class="pre">while</span></code> loops on data we’ve piped from previous commands. Imagine we wanted to add a <code class="docutils literal notranslate"><span class="pre">T</span></code> base to the end of every input index before we search them: one way of doing this is as follows:</p>
-<pre class="literal-block">sed -e &quot;s/$/T/&quot; indices.txt | while read i; do grep -c &quot;$i&quot; inputs/*.fasta; done</pre>
+<pre class="codebg literal-block">sed -e &quot;s/$/T/&quot; indices.txt | while read i; do grep -c &quot;$i&quot; inputs/*.fasta; done</pre>
 </div>
 <div class="section" id="variables-in-loops">
 <span id="parameter-substitution"></span><h2>Variables in loops<a class="headerlink" href="#variables-in-loops" title="Permalink to this headline">¶</a></h2>
 <p>When we set up a loop we initialise a variable that will contain a different value for each iteration of the loop. For the for loops, we named the variable <code class="docutils literal notranslate"><span class="pre">$f</span></code>, and for the while loops we named it <code class="docutils literal notranslate"><span class="pre">$i</span></code>. The name is arbitrary, the contents is what is important. As we are often operating on many files, the variable often contains a file path and/or name, but we may want to modify this while carrying out the loop - we might want to change the file extension or the path to the file. We do this using something called bash parameter substitution, which is a very powerful way of modifying the content of a variable on the fly. We’ll cover just two methods of parameter expansion, but you can read about many more ways at <a class="reference external" href="https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html">nixCraft</a>.</p>
 <p>The basic syntax of parameter substitution is <code class="docutils literal notranslate"><span class="pre">${f</span> <span class="pre">operation}</span></code> where <code class="docutils literal notranslate"><span class="pre">f</span></code> is the name of your variable and <code class="docutils literal notranslate"><span class="pre">operation</span></code> is the alteration you want to make. Firstly, to remove text from the end of a variable, you use the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator, like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>i=&quot;file.fasta&quot;
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span>i=&quot;file.fasta&quot;
 o=${i%.fasta}
 echo &quot;$o&quot;
 </pre></div>
 </div>
 <p>If you run the above lines, you should see that the file extension has been removed. If you don’t know what the exact file extension will be, you can use <code class="docutils literal notranslate"><span class="pre">*</span></code>, the wildcard character:</p>
-<pre class="literal-block">i=&quot;file.fasta&quot;
+<pre class="codebg literal-block">i=&quot;file.fasta&quot;
 o=${i%.*}
 echo &quot;$o&quot;</pre>
 <p>Alternatively, we might want to remove a directory name from the front of the text. We do this using the <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol:</p>
-<pre class="literal-block">i=&quot;directory/file.fastq&quot;
+<pre class="codebg literal-block">i=&quot;directory/file.fastq&quot;
 o=${i#*/}
 echo &quot;$o&quot;</pre>
 <p>Notice how we used a wildcard character rather than removing the directory?</p>
 <p>We can chain these together to make very flexible loops. For example, imagine we have many FASTQ files in a directory called “raw” and we want to convert them to FASTA files and put them in a directory called “converted”. Let’s just assume our conversion tool is called <code class="docutils literal notranslate"><span class="pre">convert</span></code>. This is a toy example:</p>
-<pre class="literal-block">for f in raw/*;             <span class="comment"># Loop through the contents of raw/</span>
+<pre class="codebg literal-block">for f in raw/*;             <span class="comment"># Loop through the contents of raw/</span>
 do
         o=${f%.fastq};           <span class="comment"># Remove the .fastq file extension</span>
         o=${o#raw/};             <span class="comment"># Remove the directory</span>
@@ -261,7 +260,7 @@ do
         convert --input $f --output &quot;$o&quot;;
 done</pre>
 <p>This can be written in a condensed, one-line format as follows:</p>
-<pre class="literal-block">for f in raw/*; do o=${f%.*}; convert --input $f --output &quot;converted/${o#raw/}.fastq&quot;; done</pre>
+<pre class="codebg literal-block">for f in raw/*; do o=${f%.*}; convert --input $f --output &quot;converted/${o#raw/}.fastq&quot;; done</pre>
 <p>Notice how we did the second parameter expansion within another command, rather than by itself.</p>
 </div>
 </div>

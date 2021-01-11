@@ -192,11 +192,13 @@
 <div class="section" id="classification-using-sintax">
 <h2>Classification using SINTAX<a class="headerlink" href="#classification-using-sintax" title="Permalink to this headline">¶</a></h2>
 <p>We will perform <strong>SINTAX</strong> classification against the MIDORI database ourselves, as this is pretty straightforward to do. The first thing to do is to download the reference dataset you want to use from the MIDORI website. Head to the <a class="reference external" href="http://reference-midori.info/download.php#">download page</a> and select the <span class="menuselection">Latest_GenBankRelease</span>, then select <span class="menuselection">SINTAX ‣ uniq</span>. You can download this file directly to your working directory by using the command below; note how the structure of the download path matches the information shown on the MIDORI page. You would obviously need to modify this to download a file for a different classifier or for a different locus. We then unzip this file and use VSEARCH to convert this to a special database format.</p>
-<pre class="literal-block">wget <a class="reference external" href="http://reference-midori.info/download/Latest_GenBankRelease240/SINTAX/uniq/MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip">http://reference-midori.info/download/Latest_GenBankRelease240/SINTAX/uniq/MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip</a>
+<pre class="codebg literal-block">wget http://reference-midori.info/download/Latest_GenBankRelease240/SINTAX/uniq/MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
 unzip MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
-vsearch --makeudb_usearch MIDORI_UNIQ_GB240_CO1_SINTAX.fasta --output MIDORI_UNIQ_GB240_CO1_SINTAX.udb</pre>
+vsearch --makeudb_usearch MIDORI_UNIQ_GB240_CO1_SINTAX.fasta \
+--output MIDORI_UNIQ_GB240_CO1_SINTAX.udb</pre>
 <p>Classifying our OTUs using this database is now very simple. We simply run SINTAX, which is also part of VSEARCH:</p>
-<pre class="literal-block">vsearch -sintax <span class="var">input.fasta</span> -db MIDORI_UNIQ_GB240_CO1_SINTAX.udb -tabbedout <span class="var">output.tsv</span> -strand both -sintax_cutoff 1</pre>
+<pre class="codebg literal-block">vsearch -sintax <span class="var">input.fasta</span> -db MIDORI_UNIQ_GB240_CO1_SINTAX.udb \
+-tabbedout <span class="var">output.tsv</span> -strand both -sintax_cutoff 1</pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">-strand</span></code> argument controls whether sequences are compared as-is, or whether the reverse complement of the sequences is also checked; we use <code class="docutils literal notranslate"><span class="pre">both</span></code> just in case any database sequences are the wrong strand, although this is generally unlikely. The <code class="docutils literal notranslate"><span class="pre">-sintax_cutoff</span></code> argument gives the minimum bootstrap value with which to accept taxonomy, <code class="docutils literal notranslate"><span class="pre">1</span></code> is the strictest setting (i.e. a sequence must always be placed into this taxon for it to be accepted).</p>
 <p>Open up the output table and have a look at it. The second column gives the full predicted taxonomy, with bootstrap support in parentheses. The third column contains the strand and the fourth column gives only the taxonomic ranks wih support at or above our <code class="docutils literal notranslate"><span class="pre">-sintax_cutoff</span></code> threshold.</p>
 </div>
@@ -210,7 +212,7 @@ vsearch --makeudb_usearch MIDORI_UNIQ_GB240_CO1_SINTAX.fasta --output MIDORI_UNI
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <p>To quickly get an idea of how many Coleoptera OTUs we have, run the following command on the <strong>SINTAX</strong> output file, the <strong>RDP</strong> classified file, and the MEGAN output you uploaded:</p>
-<pre class="literal-block">grep -c &quot;Coleoptera&quot; <span class="var">input</span></pre>
+<pre class="codebg literal-block">grep -c &quot;Coleoptera&quot; <span class="var">input</span></pre>
 <ul class="simple">
 <li><p>Do the different assignment programs agree?</p></li>
 </ul>

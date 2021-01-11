@@ -27,8 +27,9 @@ Another way to assess accuracy of a tree is to add in some sequences with known 
 	* Use the following command to add the taxonomy from your taxonomy table onto your tree:
 	
 	.. parsed-literal::
+		:class: codebg
 		
-		phylabel.R -p :var:`input.tre` -r -t :var:`taxonomy.csv`  -o :var:`output.tre`
+		phylabel.R -p :var:`input.tre` -r -y :var:`taxonomy.csv` -o :var:`output.tre`
 		
 	
 	* Download this renamed tree to your personal computer and view it. 

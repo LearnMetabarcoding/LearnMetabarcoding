@@ -192,7 +192,7 @@
 <p>If you’re following along step-by-step, we’ll be working on a set of FASTQ files. As we’ve seen previously using <code class="docutils literal notranslate"><span class="pre">grep</span></code>, it’s not necessarily straightforward to identify the lines corresponding to headers in FASTQ files, because quality lines can also start with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>. However, in this case we know that our headers start with <code class="docutils literal notranslate"><span class="pre">&#64;D00</span></code> and we can use this to our advantage. If you’re using your own data, you should use <code class="docutils literal notranslate"><span class="pre">head</span></code> to check what your headers start with.</p>
 <p>To run the following command, your working directory should be the directory containing the sequences you want to concatenate, namely the directory of FASTQ files that have indices and primers removed, and pairs merged.</p>
 <p>Run the following command, making sure to replace <code class="docutils literal notranslate"><span class="pre">output.fastq</span></code> with a sensible name:</p>
-<pre class="literal-block">for f in *;
+<pre class="codebg literal-block">for f in *;
 do                         <span class="comment"># ↓ the space here should be included!</span>
         sed -e &quot;s/\(^&#64;D00.*\) .*$/\1;sample=${f%.*};/&quot; $f \
         &gt;&gt; ../<span class="var">output.fastq</span>;
@@ -210,7 +210,7 @@ done</pre>
 <div class="section" id="fasta-files">
 <h3>FASTA files<a class="headerlink" href="#fasta-files" title="Permalink to this headline">¶</a></h3>
 <p>If you instead have a directory of FASTAs, the command is pretty much the same, but we don’t have to worry about FASTQ header format. Again, to run this command your working directory should be the directory containing the sequences you want to concatenate.</p>
-<pre class="literal-block">for f in *;
+<pre class="codebg literal-block">for f in *;
 do                      <span class="comment"># ↓ the space here should be included!</span>
         sed -e &quot;s/\(^&gt;.*\) .*$/\1;sample=${f%.*};/&quot; $f \
         &gt;&gt; ../<span class="var">output.fasta</span>;

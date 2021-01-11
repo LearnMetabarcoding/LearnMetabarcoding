@@ -25,11 +25,11 @@ It is very important that the FASTA of read sequences contains a record of which
 
 .. parsed-literal::
 	
-	>readsequence1;sample=sample1
+	\>readsequence1;sample=sample1
 	ATAGCATGACGCCGATAGCGATGA
-	>readsequence2;sample=sample1
+	\>readsequence2;sample=sample1
 	CGATGACCCCGACCGATACTAGCG
-	>readsequence3;sample=sample2
+	\>readsequence3;sample=sample2
 	ACGCCACGCAGTAGCAGACGACGA
 
 The read names themselves (``readsequenceN`` in the example) are irrelevant, and the sample names can be any string as long as it doesn't contain ``;`` or ``=`` and is unique for each unique sample. Note that there can be a ``;`` after the sample name. See the :ref:`Data concatenation <data_concat>` tutorial for more information.
@@ -40,6 +40,7 @@ Strict mapping
 This process is conceptually straightforward: we search the reads FASTA against the ASVs looking for exact matches, and then for each exact match check the sample that read came from and tally the number of reads for each sample for each ASV. This is all done in a single step using a specific output format within the VSEARCH ``--search_exact`` command, as follows. Make sure you use your real file names!
 
 .. parsed-literal::
+	:class: codebg
 	
 	vsearch --search_exact :var:`reads.fasta` -db :var:`asvs.fasta` -otutabout :var:`output.tsv`
 	
@@ -47,6 +48,7 @@ This process is conceptually straightforward: we search the reads FASTA against 
 **VSEARCH** will print a record of how many reads found a match. The ``.tsv`` file extension just reminds you that the output is a Tab Separated Variables file, but this is just a specific layout of plain text so like all of our other files we can view it on the command line using ``cat`` or ``more``. However, it may have very long rows and thus be too messy to make sense. You can view a subset of it using the following command:
 
 .. parsed-literal::
+	:class: codebg
 	
 	head -10 :var:`input.tsv` | cut -f1-10
 	
@@ -76,6 +78,7 @@ The process here is almost identical to the above, except we allow matches of le
 The following command matches reads to ASVs with 99.5% similarity. Over a 418 bp amplicon as we are using in our example dataset, this allows for 2 differences between read and ASV. Remember that our reads aren't length-filtered, so these differences could be insertions or deletions as well as point differences.
 
 .. parsed-literal::
+	:class: codebg
 	
 	vsearch --usearch_global :var:`reads.fasta` -db :var:`asvs.fasta` -id 0.995 -otutabout :var:`output.tsv`
 	

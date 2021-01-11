@@ -41,12 +41,14 @@ The first thing to do is build a phylogenetic tree of our ASVs. We do this using
 First we must strip out our ``;size=`` annotations, as these often cause issues in newick-format trees. Run the following command, replacing ``input.fasta`` with the name of your ASV file.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sed -e "s/;size=.\*$//" :var:`input.fasta` > :var:`output.fasta`
 
 Now run FastTree; your input file should be the output from the ``sed`` command.
 
 .. parsed-literal::
+	:class: codebg
 	
 	FastTree -gtr -nt < :var:`input.fasta` > :var:`output.tre`
 	
@@ -59,6 +61,7 @@ Running bPTP
 The ``-s`` argument sets a seed (a starting number for random number generation in the software). Setting a seed means that performing the same command twice will have the same outcome.
 
 .. parsed-literal::
+	:class: codebg
 	
 	mkdir bPTP_outputs
 	bPTP -t :var:`input.tre` -r -s 1234 -o bPTP_outputs/:var:`output`
@@ -86,6 +89,7 @@ Like other methods, bPTP has grouped together ASV sequences into groups we can c
 First let's reformat the ``PTPhSupportPartition.txt`` file a little bit. We want to just extract out the lists of ASVs, dropping all other lines. We then change the lists to space-delimited to make it easier to handle. Run the following command:
 
 .. parsed-literal::
+	:class: codebg
 	
 	:comment:`# find only lines starting with space, the lists`
 	grep "^ " :var:`input.txt` | 
@@ -97,6 +101,7 @@ First let's reformat the ``PTPhSupportPartition.txt`` file a little bit. We want
 Then, for each line we're going to find the ASV with the largest size. This is a little bit of effort. First we must sort our ASVs into size order. The input to this command must not be the file you stripped ``;size=`` tags from earlier!
 
 .. parsed-literal::
+	:class: codebg
 	
 	vsearch --sortbysize :var:`input.fasta` --output :var:`output.fasta`
 	
@@ -104,6 +109,7 @@ Then, for each line we're going to find the ASV with the largest size. This is a
 The following command loops through the lines of the reformatted partition summary text file that we just created. For each line, it converts the space-separated list of ASVs into a multi-line string, then searches for those ASVs in the sorted ASVs FASTA we just created. Because this is sorted by size, the most frequent ASV will be the first hit, so we take the first line, remove the ``>`` at the beginning of the line and output this to a file. Run this command.
 
 .. parsed-literal::
+	:class: codebg
 	
 	while read l;
 	do
@@ -120,6 +126,7 @@ The following command loops through the lines of the reformatted partition summa
 :guilabel:`Paste this output together with the reformatted partition table to get our final list of ASVs and OTUs`
 
 .. parsed-literal::
+	:class: codebg
 	
 	paste -d$' ':var:`representativeASVs.txt` :var:`reformattedpartitionsummary.txt` > :var:`output.txt`
 	
@@ -129,6 +136,7 @@ This output file is the record of ASVs grouped into each OTU, just like we gener
 Finally, let's filter our ASVs to get only the OTU representative sequences. See the bash command :ref:`cheatsheet<cheatsheet>` for how this command works. Run this command, making sure to use the version of the ASVs *with* ``;size=`` tags.
 
 .. parsed-literal::
+	:class: codebg
 	
 	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' :var:`asvs.fasta` |
 	grep --no-group-separator -A1 -Ff :var:`representativeASVs.txt` <() > :var:`output.fasta`

@@ -186,71 +186,71 @@
 <h2>Some commonly used commands<a class="headerlink" href="#some-commonly-used-commands" title="Permalink to this headline">¶</a></h2>
 <p>The following are some basic commands you might use to navigate around and manipulate files on a linux computer using the command line interface. You can read more about some of these commands below.</p>
 <p>Print the current working directory</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
 </pre></div>
 </div>
 <p>Make a new directory ​called <code class="docutils literal notranslate"><span class="pre">dir​</span></code> inside the working directory</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir ​./dir
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir ​./dir
 </pre></div>
 </div>
 <p>Change working directory to a directory named to ​dir​ that is inside the working directory</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ​./dir
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span>cd ​./dir
 </pre></div>
 </div>
 <p>Change working directory to the parent of the working directory</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span>
 </pre></div>
 </div>
 <p>Show the contents of the working directory</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
 </pre></div>
 </div>
 <p>Show the contents in an ordered list with file sizes</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">lh</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">lh</span>
 </pre></div>
 </div>
 <p>Create a blank file called <code class="docutils literal notranslate"><span class="pre">fileA</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">fileA</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">fileA</span>
 </pre></div>
 </div>
 <p>Move <code class="docutils literal notranslate"><span class="pre">fileA</span></code> ​to the parent of the working directory</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileA</span> <span class="o">../</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileA</span> <span class="o">../</span>
 </pre></div>
 </div>
 <p>Copy <code class="docutils literal notranslate"><span class="pre">fileA</span></code> from the parent of the working directory to the working directory</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">../</span><span class="n">fileA</span> <span class="o">./</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">../</span><span class="n">fileA</span> <span class="o">./</span>
 </pre></div>
 </div>
 <p>Rename <code class="docutils literal notranslate"><span class="pre">fileA</span></code> to <code class="docutils literal notranslate"><span class="pre">fileB</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileA</span> <span class="n">fileB</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileA</span> <span class="n">fileB</span>
 </pre></div>
 </div>
 <p>Delete <code class="docutils literal notranslate"><span class="pre">fileA</span></code> (be careful!)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="n">fileA</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="n">fileA</span>
 </pre></div>
 </div>
 <p>Delete an empty directory called <code class="docutils literal notranslate"><span class="pre">dirA</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">d</span> <span class="n">dirA</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">d</span> <span class="n">dirA</span>
 </pre></div>
 </div>
 <p>Move all files starting with <code class="docutils literal notranslate"><span class="pre">file</span></code> in the current directory to directory <code class="docutils literal notranslate"><span class="pre">dir</span></code></p>
-<pre class="literal-block">mv file* ./dir</pre>
+<pre class="codebg literal-block">mv file* ./dir</pre>
 <p>Delete all files ending with <code class="docutils literal notranslate"><span class="pre">.fasta</span></code> (be really careful!)</p>
-<pre class="literal-block">rm *.fasta</pre>
+<pre class="codebg literal-block">rm *.fasta</pre>
 <p>Delete the directory called <code class="docutils literal notranslate"><span class="pre">dirA</span></code> and its contents (be extremely careful!)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">dirA</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">dirA</span>
 </pre></div>
 </div>
 <p>Display first 10 lines of <code class="docutils literal notranslate"><span class="pre">fileB</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>head ​fileB
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span>head ​fileB
 </pre></div>
 </div>
 <p>Display first 20 lines of <code class="docutils literal notranslate"><span class="pre">fileB</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>head -n 20 ​fileB
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span>head -n 20 ​fileB
 </pre></div>
 </div>
 <p>Display <code class="docutils literal notranslate"><span class="pre">fileB</span></code> in a scrollable format (press <span class="menuselection">q</span> to quit)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>more ​fileB
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span>more ​fileB
 </pre></div>
 </div>
 </div>
@@ -260,19 +260,19 @@
 <h3>Navigating a linux system<a class="headerlink" href="#navigating-a-linux-system" title="Permalink to this headline">¶</a></h3>
 <p>To check where you are in a system you type in <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and press Enter (Return). This will show you your current working directory.
 If you need to change directory you can type <code class="docutils literal notranslate"><span class="pre">cd</span></code> followed by the path of the directory you want.</p>
-<pre class="literal-block">cd <span class="var">path/to/directory</span></pre>
+<pre class="codebg literal-block">cd <span class="var">path/to/directory</span></pre>
 <p>If you need to create a new directory you can use the <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> command followed by what name you want to give the new directory.</p>
-<pre class="literal-block">mkdir <span class="var">new_directory</span></pre>
+<pre class="codebg literal-block">mkdir <span class="var">new_directory</span></pre>
 </div>
 <div class="section" id="creating-a-file">
 <h3>Creating a file<a class="headerlink" href="#creating-a-file" title="Permalink to this headline">¶</a></h3>
 <p>To create a file you can either use commands <code class="docutils literal notranslate"><span class="pre">echo</span></code> or <code class="docutils literal notranslate"><span class="pre">touch</span></code>, or the nano text editor (described in a later section).
 To create an empty file you can use the <code class="docutils literal notranslate"><span class="pre">touch</span></code> command followed by the name you want to save the empty file under.</p>
-<pre class="literal-block">touch <span class="var">filename</span></pre>
+<pre class="codebg literal-block">touch <span class="var">filename</span></pre>
 <p>To create a file that has certain contents you can use <code class="docutils literal notranslate"><span class="pre">echo</span></code> or <code class="docutils literal notranslate"><span class="pre">nano</span></code>.
 Lets say you want a file that contains the text “this is a file” and you wanted to name that file <code class="docutils literal notranslate"><span class="pre">fileA.txt</span></code>.
 You would do this as shown below:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;this is a file&quot;</span> <span class="o">&gt;</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;this is a file&quot;</span> <span class="o">&gt;</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>If you want to create a text file with multiple lines of text from the terminal it will be easier to use nano (see later section).</p>
@@ -282,26 +282,26 @@ You would do this as shown below:</p>
 <p>You might want to copy a file under a different name so you can edit it but still keep the original.
 To do this we can us the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command. Type <code class="docutils literal notranslate"><span class="pre">cp</span></code> followed by the name of the file you want to copy then the name you want to give the copy.
 Lets say we wanted to make a copy of <code class="docutils literal notranslate"><span class="pre">fileA.txt</span></code> named <code class="docutils literal notranslate"><span class="pre">fileB.txt</span></code>. The block below shows us how we would do this.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span> <span class="n">fileB</span><span class="o">.</span><span class="n">txt</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span> <span class="n">fileB</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>You can also copy a file into a different directory by putting the target directory path as the second argument followed by a <code class="docutils literal notranslate"><span class="pre">/</span></code> and the name you want the copy to be saved under.
 For example, if we wanted to copy <code class="docutils literal notranslate"><span class="pre">fileA.txt</span></code> to a directory named <code class="docutils literal notranslate"><span class="pre">dirB</span></code> that was in our current parent directory and name the copy <code class="docutils literal notranslate"><span class="pre">fileB.txt</span></code>, we would run the below command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span> <span class="o">../</span><span class="n">dirB</span><span class="o">/</span><span class="n">fileB</span><span class="o">.</span><span class="n">txt</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span> <span class="o">../</span><span class="n">dirB</span><span class="o">/</span><span class="n">fileB</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="moving-files">
 <h3>Moving files<a class="headerlink" href="#moving-files" title="Permalink to this headline">¶</a></h3>
 <p>If you want to move a file into a different directory without copying it you can use the <code class="docutils literal notranslate"><span class="pre">mv</span></code> command. You type <code class="docutils literal notranslate"><span class="pre">mv</span></code> followed by the name of the file you would like to move then the target directory path. Lets say we want to move a file named <code class="docutils literal notranslate"><span class="pre">fileC.txt</span></code> into a directory named <code class="docutils literal notranslate"><span class="pre">dirB</span></code> which is contained within our current parent directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileC</span><span class="o">.</span><span class="n">txt</span> <span class="o">../</span><span class="n">dirB</span><span class="o">/</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileC</span><span class="o">.</span><span class="n">txt</span> <span class="o">../</span><span class="n">dirB</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="renaming-files">
 <h3>Renaming files<a class="headerlink" href="#renaming-files" title="Permalink to this headline">¶</a></h3>
 <p>The simplest way to rename files is to use the <code class="docutils literal notranslate"><span class="pre">mv</span></code> command. This might seem strange, but think of the path of a file as being simply a longer version of the file name. Thus moving files between directories is essentially just a matter of changing their name. So you can rename a file by “moving” it to another file name. So say you wanted to change the name of <code class="docutils literal notranslate"><span class="pre">fileA.txt</span></code> to <code class="docutils literal notranslate"><span class="pre">fileD.txt</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span> <span class="n">fileD</span><span class="o">.</span><span class="n">txt</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">fileA</span><span class="o">.</span><span class="n">txt</span> <span class="n">fileD</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>It’s that simple!</p>

@@ -188,7 +188,7 @@
 <div class="section" id="alignment">
 <h2>Alignment<a class="headerlink" href="#alignment" title="Permalink to this headline">¶</a></h2>
 <p>The first stage of any tree building is to align the sequences so that homologous bases are lined up with one another. There are many alignment programs, perhaps the three most commonly used are <strong>Clustal</strong>, <strong>MUSCLE</strong> and <strong>MAFFT</strong>. We will use <strong>MAFFT</strong> because it is straightforward to use, fast, and generally very accurate. We will perform a global alignment using the accurate INS-i algorithm:</p>
-<pre class="literal-block">mafft --thread 1 --globalpair --maxiterate 1000 <span class="var">input.fasta</span> &gt; <span class="var">output.fasta</span></pre>
+<pre class="codebg literal-block">mafft --thread 1 --globalpair --maxiterate 1000 <span class="var">input.fasta</span> &gt; <span class="var">output.fasta</span></pre>
 <p>Where we have a coding locus with a very strict length expectation, such as in the example data where all sequences are 418bp, we might choose to skip this step, because the sequences are already “aligned”, although this might not necessarily be the most accurate alignment.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
@@ -204,7 +204,7 @@
 <div class="section" id="building-a-tree">
 <h2>Building a tree<a class="headerlink" href="#building-a-tree" title="Permalink to this headline">¶</a></h2>
 <p>We will build a tree of our OTUs using <strong>FastTree</strong>. We are using <strong>FastTree</strong> because it’s fast, not because it’s necessarily highly accurate, although it generally does pretty well. The command to use to build this tree is below. The <code class="docutils literal notranslate"><span class="pre">-gtr</span></code> option tells FastTree to use the GTR+CAT model, and the <code class="docutils literal notranslate"><span class="pre">-nt</span></code> option specifies that this is DNA data.</p>
-<pre class="literal-block">FastTree -gtr -nt &lt; <span class="var">input.fasta</span> &gt; <span class="var">output.tre</span></pre>
+<pre class="codebg literal-block">FastTree -gtr -nt &lt; <span class="var">input.fasta</span> &gt; <span class="var">output.tre</span></pre>
 <p>The algorithm generates a newick file, which is the most common format for phylogenetic trees. This is a plain text format, you can view the file using the <code class="docutils literal notranslate"><span class="pre">head</span></code> command. Each terminal in the tree has the ID of the sequence used to generate it.</p>
 <p>You can download this tree to your computer and open it using a tree viewer such as <strong>Figtree</strong> or <strong>Dendroscope</strong>. If you’re completely new to viewing phylogenetic trees, you may want to read the page on <a class="reference internal" href="otu_trees/tree_viewing.html#tree-viewing"><span class="std std-ref">Viewing trees</span></a>.</p>
 <p>It is hard to assess the accuracy of these trees with anonymous sequences, but we can get some idea by looking at the bootstrap values of the nodes. These tell us how many times this clade was recovered as a monophyletic clade in 100 random permutations of the tree building algorithm. A higher value suggests that a clade is more accurate, while a lower value suggest that a clade may have been grouped together inaccurately.</p>

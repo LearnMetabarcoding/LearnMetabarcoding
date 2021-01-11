@@ -24,6 +24,7 @@ You can use the native terminal application available on any Mac or Linux machin
 Once you have a terminal open, you then type an SSH command which looks like this: 
 
 .. parsed-literal:: 
+	:class: codebg
 
 	ssh :var:`username@server_address`
 
@@ -55,6 +56,7 @@ If you are running MacOS or Linux you can transfer files from local machine to s
 An example of using ``scp`` to transfer a file from your local machine to a server is below: 
 
 .. parsed-literal::
+	:class: codebg
 
 	scp :var:`filename` :var:`username@server_address:/path/`
 

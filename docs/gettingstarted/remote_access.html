@@ -179,7 +179,7 @@
 <h3>Using terminal in MacOS or Linux<a class="headerlink" href="#using-terminal-in-macos-or-linux" title="Permalink to this headline">¶</a></h3>
 <p>You can use the native terminal application available on any Mac or Linux machine. In Mac, if you haven’t used this before you can access it by using spotlight to search for “Terminal” or by navigating to the “Terminal” application using launchpad. On Linux starting a terminal using your GUI will vary depending on your distribution, but you can generally launch a terminal by pressing <span class="menuselection">Ctrl + Alt + T</span>.</p>
 <p>Once you have a terminal open, you then type an SSH command which looks like this:</p>
-<pre class="literal-block">ssh <span class="var">username&#64;server_address</span></pre>
+<pre class="codebg literal-block">ssh <span class="var">username&#64;server_address</span></pre>
 <p>You will need to replace the <code class="docutils literal notranslate"><span class="pre">username</span></code> in the above command with your username for the server. You’ll also need to replace the <code class="docutils literal notranslate"><span class="pre">server_address</span></code> with the actual address of the server you are connecting to. If it is your first time connecting it will ask you if you trust the server, then will usually ask you for a password.</p>
 </div>
 <div class="section" id="using-putty-in-windows">
@@ -199,7 +199,7 @@
 <h3>Using the scp command in the terminal in Linux or MacOS<a class="headerlink" href="#using-the-scp-command-in-the-terminal-in-linux-or-macos" title="Permalink to this headline">¶</a></h3>
 <p>If you are running MacOS or Linux you can transfer files from local machine to server using the <code class="docutils literal notranslate"><span class="pre">scp</span></code> command in the terminal.</p>
 <p>An example of using <code class="docutils literal notranslate"><span class="pre">scp</span></code> to transfer a file from your local machine to a server is below:</p>
-<pre class="literal-block">scp <span class="var">filename</span> <span class="var">username&#64;server_address:/path/</span></pre>
+<pre class="codebg literal-block">scp <span class="var">filename</span> <span class="var">username&#64;server_address:/path/</span></pre>
 <p>You type <code class="docutils literal notranslate"><span class="pre">scp</span></code> followed by the file name (if you are not in the directory the file is in you will need to write the whole file path) followed by your <code class="docutils literal notranslate"><span class="pre">username&#64;server_address</span></code> followed by a colon then the path (from the root) to where you want the copy to go in the destination server. If you don’t know what the path is that you need to type in, remember, you can use pwd in the directory you want to send the file to and this will return the path of that directory.</p>
 <p>To transfer from the server to your local machine you simply swap the order of your file paths i.e. server address and filepath then local file path.</p>
 <div class="admonition warning">

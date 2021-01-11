@@ -33,6 +33,7 @@ Alignment
 The first stage of any tree building is to align the sequences so that homologous bases are lined up with one another. There are many alignment programs, perhaps the three most commonly used are **Clustal**, **MUSCLE** and **MAFFT**. We will use **MAFFT** because it is straightforward to use, fast, and generally very accurate. We will perform a global alignment using the accurate INS-i algorithm:
 
 .. parsed-literal::
+	:class: codebg
 	
 	mafft --thread 1 --globalpair --maxiterate 1000 :var:`input.fasta` > :var:`output.fasta`
 	
@@ -53,6 +54,7 @@ Building a tree
 We will build a tree of our OTUs using **FastTree**. We are using **FastTree** because it's fast, not because it's necessarily highly accurate, although it generally does pretty well. The command to use to build this tree is below. The ``-gtr`` option tells FastTree to use the GTR+CAT model, and the ``-nt`` option specifies that this is DNA data.
 
 .. parsed-literal::
+	:class: codebg
 	
 	FastTree -gtr -nt < :var:`input.fasta` > :var:`output.tre`
 	

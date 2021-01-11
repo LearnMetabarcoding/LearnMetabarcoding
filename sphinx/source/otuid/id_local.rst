@@ -28,8 +28,9 @@ Using BLAST
 We will use BLAST to search our OTUs against the FASTA of references. Run the following BLAST command, remembering to replace the ``otus.fasta`` and ``references.fasta`` with paths to the respective files, and ``output.txt`` with a sensible name.
 
 .. parsed-literal::
+	:class: codebg
 
-	blastn -query :var:`otus.fasta` -subject :var:`references.fasta` -outfmt 6 -out :var:`output.txt` \
+	blastn -query :var:`otus.fasta` -subject :var:`references.fasta` -outfmt 6 -out :var:`output.txt` \\
 	-num_threads 1 -evalue 0.001 -perc_identity 97
 
 This is similar to the command we used in the tutorial on :ref:`classification with BLAST<id_using_megan>`. However, we know that both our OTUs and our reference set are likely to all be closely related, so we're setting a strict ``-evalue`` and a threshold percentage identity so that we don’t simply get every OTU matching against every reference.

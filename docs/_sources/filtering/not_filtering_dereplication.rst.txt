@@ -16,7 +16,7 @@ From now on, the main purpose is to find these unique sequences and filter out t
 .. admonition:: Data and software
 	:class: green 
 	
-	The input data for this tutorial is a FASTA file comprising all of the reads in your dataset. If you're following along step-by-step, this was produced :ref:`the previous tutorial<quality_filtering>`. Alternatively, the file ``4_mbc_concat.fasta`` within the :ref:`sectionB archive<sectionBdata>` can be used as example data.
+	The input data for this tutorial is a FASTA file comprising all of the reads in your dataset. If you're following along step-by-step, this was produced in :ref:`the previous tutorial<quality_filtering>`. Alternatively, the file ``4_mbc_concat.fasta`` within the :ref:`sectionB archive<sectionBdata>` can be used as example data.
 	
 	This tutorial uses the :ref:`VSEARCH <vsearch>` software.
 	
@@ -27,6 +27,7 @@ Performing dereplication
 Dereplication is a pretty straightforward task - there are very few parameters to worry about. Therefore choosing a tool for dereplication has few considerations, and is often a matter of convenience. We will use the dereplication function within **VSEARCH**, because we already have **VSEARCH** installed for other steps.
 
 .. parsed-literal::
+	:class: codebg
 	
 	vsearch --derep_fulllength :var:`input.fasta` --output :var:`output.fasta` --sizeout --relabel uniq
 

@@ -178,7 +178,7 @@
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>When performing demultiplexing, <strong>cutadapt</strong> removed the indices from our samples. You can check this using the <code class="docutils literal notranslate"><span class="pre">grep</span></code> command from the previous tutorial. Alternatively, you can use the following command to explore the length distribution of the sequences. Run this twice, on a raw sequence FASTQ file and demultiplexed FASTQ file.</p>
-<pre class="literal-block">sed -n '2~4p'​ <span class="var">input.fastq​</span> | while read l; do echo ${#l} ; done | sort | uniq -c</pre>
+<pre class="codebg literal-block">sed -n '2~4p' <span class="var">input.fastq</span> | while read l; do echo ${#l} ; done | sort | uniq -c</pre>
 <div class="togglegreen admonition">
 <p class="admonition-title">How this command works</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">sed</span></code> command ​p​rints only every 4th line, starting at the 2nd. This is sent to a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, which reads each line and stores it in <code class="docutils literal notranslate"><span class="pre">l</span></code> ​. The loop outputs the number of characters in the <code class="docutils literal notranslate"><span class="pre">l</span></code> variable, one per line. These are then sorted into alphanumeric order, and then each unique number is counted to get the distribution.</p>
@@ -211,18 +211,18 @@
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <p>Make sure you change <code class="docutils literal notranslate"><span class="pre">output</span></code> in the command below to the name of the new directory you created to store these files in. We’re assuming the directory with your files is named <code class="docutils literal notranslate"><span class="pre">1_demux</span></code>, if it isn’t, make sure to change that below as well.</p>
-<pre class="literal-block">cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \
+<pre class="codebg literal-block">cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \
 -o <span class="var">output</span>/T11_R1.fastq -p <span class="var">output</span>/T11_R2.fastq --discard-untrimmed \
 1_demux/T11_R1.fastq 1_demux/T11_R2.fastq</pre>
 </div>
 <p>Make sure to look over the output from <strong>cutadapt</strong> because this is very informative. You’ll notice now that some errors are being allowed, since these sequences are longer and so the default 10% allows 2 errors in these primers. Additionally you’ll notice that unlike with the indices, the length of sequence removed has varied slightly. We’ll come back to this.</p>
 <p>We want to run this on all of our files, ideally without writing the command over and over. We can put this in a loop using bash. Since we need all of the unique samples, we first need to design a command for listing these:</p>
-<pre class="literal-block">ls <span class="var">1_demux</span>/ | cut -d_ -f1 | sort | uniq</pre>
+<pre class="codebg literal-block">ls <span class="var">1_demux</span>/ | cut -d_ -f1 | sort | uniq</pre>
 <p>This extracts the part of each name before the first <code class="docutils literal notranslate"><span class="pre">_</span></code> and finds the unique ones. We can then store this list of library names in a bash variable, and check it’s contents with <code class="docutils literal notranslate"><span class="pre">echo</span></code>:</p>
-<pre class="literal-block">samples=$(ls <span class="var">1_demux</span>/ | cut -d_ -f1 | sort | uniq)
+<pre class="codebg literal-block">samples=$(ls <span class="var">1_demux</span>/ | cut -d_ -f1 | sort | uniq)
 echo $samples</pre>
 <p>We can then loop on the contents of this variable using <code class="docutils literal notranslate"><span class="pre">for</span></code></p>
-<pre class="literal-block">for s in $samples;
+<pre class="codebg literal-block">for s in $samples;
 do
         cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \
         -o <span class="var">output</span>/${s}_R1.fastq -p <span class="var">output</span>/${s}_R2.fastq --discard-untrimmed \
@@ -233,7 +233,7 @@ done</pre>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>To run these loops, we generated a list of our unique sample names by listing our files and then editing the text to remove file extensions and direction information, as reprinted below.</p>
-<pre class="literal-block">samples=$(ls 1_demux/ | cut -d_ -f1 | sort | uniq)</pre>
+<pre class="codebg literal-block">samples=$(ls 1_demux/ | cut -d_ -f1 | sort | uniq)</pre>
 <p>If you have your own data, your file names are likely to be different and the exact code used above may not work! You will need to come up with your own version. If you have multiple underscores in your file names, but the number of underscores is consistent, you could simply tweak the number given to <code class="docutils literal notranslate"><span class="pre">cut</span> <span class="pre">-f</span></code>. Otherwise, you might need to use <code class="docutils literal notranslate"><span class="pre">sed</span></code> to remove parts of the names, or even use <code class="docutils literal notranslate"><span class="pre">rename</span></code> to batch rename the files to something that will work.</p>
 </div>
 </div>

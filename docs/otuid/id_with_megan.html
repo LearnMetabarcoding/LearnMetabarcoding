@@ -193,9 +193,9 @@
 <div class="section" id="running-blast">
 <h2>Running BLAST<a class="headerlink" href="#running-blast" title="Permalink to this headline">¶</a></h2>
 <p>Running <strong>BLAST</strong> is fairly straightforward, although there are a lot of options, some of which are fairly obscure. Be sure to check out the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_">documentation</a> at some point. We will use the following <strong>BLAST</strong> command to search our sequences against a local copy of the GenBank nt database (see the Data and software box above for details of acquiring this database). Run this command, making sure to specify the correct path to the blastdb directory and replacing the other file names with the name of your OTU sequences and a sensible output name.</p>
-<pre class="literal-block">blastn -db <span class="var">path/to/</span>blastdb/nt -query <span class="var">input.fasta</span> -outfmt 5 -out <span class="var">output.xml</span> -evalue 0.001</pre>
+<pre class="codebg literal-block">blastn -db <span class="var">path/to/</span>blastdb/nt -query <span class="var">input.fasta</span> -outfmt 5 -out <span class="var">output.xml</span> -evalue 0.001</pre>
 <p>This command generates a very large XML file containing the full record of all the alignments BLAST has found for our OTUs. You should transfer this to your personal computer for the next step, but to save bandwidth, let’s first compress the xml using zip:</p>
-<pre class="literal-block">zip <span class="var">file.xml.zip</span> <span class="var">file.xml</span></pre>
+<pre class="codebg literal-block">zip <span class="var">file.xml.zip</span> <span class="var">file.xml</span></pre>
 <p>Using your FTP client, or whatever file transfer method you like, transfer the zipped XML file to your computer and extract it.</p>
 </div>
 <div class="section" id="running-megan">

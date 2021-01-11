@@ -16,16 +16,17 @@ A lot of software outputs wrapped FASTA files, where sequence lines are truncate
 
 .. parsed-literal::
 	
-	>sequence1
+	\>sequence1
 	ATACGACGATAAGCAGACTAGACATATT
 	CGCCCGATTGACCG
-	>sequence2
+	\>sequence2
 	ACGCGCTGAAAAGCAGACTTTTTACACG
 	CGCGTAAACAACGC
 
 This can be really annoying for quick and easy command line bash bioinformatics, because the number of lines for each sequence is unpredictable. The following perl one-liner, from `this biostars answer <https://www.biostars.org/p/9262/#118460>`_, easily unwraps a FASTA file:
 
 .. parsed-literal::
+	:class: codebg
 	
 	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' :var:`input.fasta` > :var:`output.fasta`
 
@@ -40,12 +41,14 @@ You may sometimes have sequence data that isn't quite appropriate for a piece of
 Degap an alignment (i.e. de-align):
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -e "/^[^>]/s/-//g" :var:`input.fasta` > :var:`output.fasta`
 
 Replace any ambiguities with ``N``:
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -e "/^[^>]/s/[YRWSKMDVHBX]/N/g" :var:`input.fasta` > :var:`output.fasta`
 
@@ -56,12 +59,14 @@ Getting sequence lengths
 Here we delete header lines, delete gaps then count how many characters each line has. 
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -e "/^>/d" -e "s/-//g" :var:`input.fasta` | awk '{ print length }' > :var:`lengths.txt`
 
 The FASTA file must be unwrapped - if it's not, you could add the perl one-liner above to the beginning of the pipe.
 
 .. parsed-literal::
+	:class: codebg
 
 	perl -pe '$. > 1 and /^>/ ? print "\\n" : chomp' :var:`input.fasta` | 
 	sed -e "/^>/d" -e "s/-//g" | awk '{ print length }' > :var:`lengths.txt`
@@ -69,6 +74,7 @@ The FASTA file must be unwrapped - if it's not, you could add the perl one-liner
 What to with these lengths? Well, we can get a rough idea of the distribution by counting the number of each unique length:
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -e "/^>/d" -e "s/-//g" :var:`input.fasta` | 
 	awk '{ print length }' | 
@@ -77,6 +83,7 @@ What to with these lengths? Well, we can get a rough idea of the distribution by
 Or we could use an R one-liner to count the mean and standard deviation. Note that we've split this over lines to 
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -e "/^>/d" -e "s/-//g" :var:`input.fasta` | 
 	awk '{ print length }' | 
@@ -93,6 +100,7 @@ Generating a random FASTA
 Sometimes we want some dummy data to test on. This command makes 30 sequences, each 300 bases long:
 
 .. parsed-literal::
+	:class: codebg
 
 	paste -d '\\n' \
 	    <(for i in {01..30}; do echo ">seq$i"; done) \
@@ -106,6 +114,7 @@ Get the headers of a FASTA
 There are two ways to do this:
 
 .. parsed-literal::
+	:class: codebg
 
 	grep "^>" :var:`input.fasta` | sed -e "s/>//" > :var:`headers.txt`
 	grep -oP "(?<=^>).\*$" :var:`input.fasta` > :var:`headers.txt`
@@ -120,19 +129,21 @@ Say I have a table, ``data.csv``, that looks like this:
 
 .. parsed-literal::
 
-	seq1,Coleoptera,425
-	seq2,Diptera,256
-	seq3,Hemiptera,786
+	seq1\,Coleoptera\,425
+	seq2\,Diptera\,256
+	seq3\,Hemiptera\,786
 
 If I wanted to find the sequence names that are Coleoptera, I could do this:
 
 .. parsed-literal::
+	:class: codebg
 
 	grep "Coleoptera" data.csv | cut -d, -f1 > :var:`headers.txt`
 
 Or the sequences where column three is greater than 500:
 
 .. parsed-literal::
+	:class: codebg
 
 	awk -F',' ' $3 > 500 ' data.csv | cut -d, -f1 > :var:`headers.txt`
 
@@ -145,6 +156,7 @@ Extract sequence by header
 Say we have a list of sequence headers and we want only those sequences from a larger (unwrapped!) FASTA.
 
 .. parsed-literal::
+	:class: codebg
 
 	grep --no-group-separator -A1 -F -f :var:`headers.txt` :var:`sequences.fasta` > :var:`output.fasta`
 
@@ -153,6 +165,7 @@ By default grep prints only lines that match, the ``-A1`` adds one line after ea
 We can of course pipe this with some of our previous examples. Note that the standard input to ``grep`` is the file to be searched, so we need to redirect standard input elsewhere:
 
 .. parsed-literal::
+	:class: codebg
 
 	grep "Coleoptera" data.csv | cut -d, -f1 | grep --no-group-separator -A1 -f -F /dev/stdin :var:`sequences.fasta` > :var:`output.fasta`
 

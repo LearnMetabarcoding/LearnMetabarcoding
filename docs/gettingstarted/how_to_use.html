@@ -193,18 +193,16 @@
 <div class="section" id="commands-and-code">
 <h3>Commands and code<a class="headerlink" href="#commands-and-code" title="Permalink to this headline">¶</a></h3>
 <p>Once the topic and software is introduced, the tutorial will suggest running a command to perform a bioinformatic step. Commands are printed like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;hello world&quot;</span>
-</pre></div>
-</div>
+<pre class="codebg literal-block">echo &quot;hello world&quot;</pre>
 <p>Whenever you see this, it is a command that we suggest you run and to do so you would type everything in this box into your terminal, then press Enter (Return). If this is very new to you, you might want to check out the <a class="reference internal" href="cli_bioinformatics/UNIX_cmd_line.html#unix-cli"><span class="std std-ref">UNIX command line introduction</span></a>, which has more information.</p>
 <p>Sometimes in these resources we will ask you to run a command that is quite long, and to help you read it easily we will present the command broken over multiple lines. It will look like this:</p>
-<pre class="literal-block">echo \
+<pre class="codebg literal-block">echo \
 &quot;hello world&quot;</pre>
 <p>To enter this in the command prompt, we type the first line and then press Enter after typing the <code class="docutils literal notranslate"><span class="pre">\</span></code> symbol. This symbol at the end of the command tells the shell that we want to continue typing the same command on the next line. The prompt will change to a <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</p>
 <p>We will frequently suggest commands that contain placeholder values that need to be edited before running. The following command has placeholder values:</p>
-<pre class="literal-block">head -n <span class="var">N</span> sequences.fasta &gt; <span class="var">output.fasta</span></pre>
+<pre class="codebg literal-block">head -n <span class="var">N</span> sequences.fasta &gt; <span class="var">output.fasta</span></pre>
 <p>The <code class="docutils literal notranslate"><span class="pre">N</span></code> and the <code class="docutils literal notranslate"><span class="pre">output.fasta</span></code> of this command are formatted differently to show that these are placeholders, and so before you run this command, you <strong>must</strong> replace <code class="docutils literal notranslate"><span class="pre">N</span></code> with a number and <code class="docutils literal notranslate"><span class="pre">output.fasta</span></code> with the file path of a specific file. So you might decide to show <code class="docutils literal notranslate"><span class="pre">10</span></code> lines and call your output <code class="docutils literal notranslate"><span class="pre">firstten.fasta</span></code>. So you would actually run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="n">sequences</span><span class="o">.</span><span class="n">fasta</span> <span class="o">&gt;</span> <span class="n">firstten</span><span class="o">.</span><span class="n">fasta</span>
+<div class="codebg highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">-</span><span class="n">n</span> <span class="mi">10</span> <span class="n">sequences</span><span class="o">.</span><span class="n">fasta</span> <span class="o">&gt;</span> <span class="n">firstten</span><span class="o">.</span><span class="n">fasta</span>
 </pre></div>
 </div>
 <p>Don’t worry, we’ll try to make it really clear what file you should use and how to figure out what number to use. Placeholder file names will often be <code class="docutils literal notranslate"><span class="pre">input</span></code> or <code class="docutils literal notranslate"><span class="pre">output</span></code>, but sometimes we’ll use different names, generally where there is more than one input.</p>
@@ -221,7 +219,7 @@
 <li><p>Alternatively it might suggest you read a helpfile or manual to design a command, sometimes suggesting you use a certain argument such as <code class="docutils literal notranslate"><span class="pre">--a</span></code>.</p></li>
 <li><p>You might also find that an exercise box contains a complete command that we suggest you run, such as:</p></li>
 </ul>
-<pre class="literal-block">sed -e &quot;/^&gt;/,s/-//g&quot; <span class="var">input.fasta</span> &gt; <span class="var">output.fasta</span></pre>
+<pre class="codebg literal-block">sed -e &quot;/^&gt;/,s/-//g&quot; <span class="var">input.fasta</span> &gt; <span class="var">output.fasta</span></pre>
 </div>
 </div>
 <div class="section" id="solutions">
@@ -229,7 +227,7 @@
 <p>When we ask you to figure out how to design a command yourself, because we’re nice people we’ll usually give you the solution in a hidden box like the below:</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<pre class="literal-block">grep -c &quot;^&gt;&quot; <span class="var">input.fasta</span></pre>
+<pre class="codebg literal-block">grep -c &quot;^&gt;&quot; <span class="var">input.fasta</span></pre>
 </div>
 </div>
 <div class="section" id="next-steps">

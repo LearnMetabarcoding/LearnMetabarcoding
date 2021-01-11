@@ -31,6 +31,7 @@ Simple frequency filtering
 We can apply a simple threshold, keeping only ASVs that are present at equal to or greater than a given number of reads in the entire dataset. A standard threshold here would be 2, i.e. any singletons will be removed. This is a very straightforward function to apply, once again this could be performed by any number of different software tools but we will use **VSEARCH** because we probably have it installed already. Run the below command, remembering to replace ``input.fasta`` with the input data (see the software and data box above) and ``output.fasta`` with a sensible name.
 
 .. parsed-literal::
+	:class: codebg
 	
 	vsearch --fastx_filter :var:`input.fasta` --minsize 2 --fastaout :var:`output.fasta`
 	
@@ -43,6 +44,7 @@ Denoising
 A much more sophisticated approach to filtering errors is denoising. Denoising is crucial to modern metabarcoding pipelines, especially as increased work with Metazoan communities shows the scale of erroneous ASVs present in datasets. This is just one way that denoising can be performed, albeit the most common algorithm used. Denoising algorithms use read frequency and sequence composition to infer likely sequencing errors. ASVs are compared against one another and frequency thresholds are applied relative to counts of similar (but more common) ASVs. Instead of doing the size filtering as part of dereplication, we will instead do it as part of a denoising command. We will use the `UNOISE3 <https://drive5.com/usearch/manual/unoise_algo.html>`_ algorithm, implemented again in **VSEARCH**. Run the following command, remembering to replace ``input.fasta`` with the input data (see the software and data box above) and ``output.fasta`` with a sensible name.
 
 .. parsed-literal::
+	:class: codebg
 
 	vsearch --cluster_unoise :var:`input.fasta` --minsize 4 --unoise_alpha 2 --centroids :var:`output.fasta`
 
@@ -56,6 +58,7 @@ The key parameter here is the alpha parameter, which determines the threshold le
 	You can get the size distribution by running:
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		grep -oP "(?<=size=).\*$" :var:`input.fasta` | sort | uniq -c
 	

@@ -33,12 +33,14 @@ Running BLAST
 Running **BLAST** is fairly straightforward, although there are a lot of options, some of which are fairly obscure. Be sure to check out the `documentation <https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_>`_ at some point. We will use the following **BLAST** command to search our sequences against a local copy of the GenBank nt database (see the Data and software box above for details of acquiring this database). Run this command, making sure to specify the correct path to the blastdb directory and replacing the other file names with the name of your OTU sequences and a sensible output name.
 
 .. parsed-literal::
+	:class: codebg
 	
 	blastn -db :var:`path/to/`\blastdb/nt -query :var:`input.fasta` -outfmt 5 -out :var:`output.xml` -evalue 0.001
 
 This command generates a very large XML file containing the full record of all the alignments BLAST has found for our OTUs. You should transfer this to your personal computer for the next step, but to save bandwidth, let's first compress the xml using zip:
 
 .. parsed-literal::
+	:class: codebg
 
 	zip :var:`file.xml.zip` :var:`file.xml`
 

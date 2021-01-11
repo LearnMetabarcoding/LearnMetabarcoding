@@ -192,7 +192,7 @@
 <div class="section" id="alignment">
 <h2>Alignment<a class="headerlink" href="#alignment" title="Permalink to this headline">¶</a></h2>
 <p>The first step is to align our OTUs to our reference mitogenome dataset. Run the following command, using your OTU FASTA and the supermatrix FASTA.</p>
-<pre class="literal-block">mafft --thread 1 --addfragments <span class="var">otus.fasta</span> --6merpair <span class="var">supermatrix.fasta</span> &gt; <span class="var">output.fasta</span></pre>
+<pre class="codebg literal-block">mafft --thread 1 --addfragments <span class="var">otus.fasta</span> --6merpair <span class="var">supermatrix.fasta</span> &gt; <span class="var">output.fasta</span></pre>
 <p>Here we use <strong>MAFFT</strong>’s <code class="docutils literal notranslate"><span class="pre">--addfragments</span></code> argument, which you can read about <a class="reference external" href="https://mafft.cbrc.jp/alignment/software/addsequences.html">here</a>. There are several different algorithms we could use to do this, but <code class="docutils literal notranslate"><span class="pre">--6merpair</span></code> works well in our experience.</p>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
@@ -215,16 +215,16 @@
 </div>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
-<pre class="literal-block">wget http://www.microbesonline.org/fasttree/TreeToConstraints.pl
+<pre class="codebg literal-block">wget http://www.microbesonline.org/fasttree/TreeToConstraints.pl
 perl TreeToConstraints.pl &lt; <span class="var">reference.tre</span> ​&gt; <span class="var">constraints.txt</span></pre>
 </div>
 </div>
 <div class="section" id="building-the-tree">
 <h2>Building the tree<a class="headerlink" href="#building-the-tree" title="Permalink to this headline">¶</a></h2>
 <p>Now we can run the new tree building to place the OTUs within the reference. We add the <code class="docutils literal notranslate"><span class="pre">​-constraints</span></code> option to <strong>FastTree</strong> to do this. Remember, we’re running this using the combined supermatrix you just made with <strong>MAFFT</strong>.</p>
-<pre class="literal-block">FastTree -nt -gtr -constraints <span class="var">constraints.txt</span> &lt; <span class="var">combinedsupermatrix.fasta</span> &gt; <span class="var">output.tre</span></pre>
+<pre class="codebg literal-block">FastTree -nt -gtr -constraints <span class="var">constraints.txt</span> &lt; <span class="var">combinedsupermatrix.fasta</span> &gt; <span class="var">output.tre</span></pre>
 <p>Finally, we just need to add the taxonomy onto the tree for our reference sequences using the <strong>phylabel.R</strong> script, as follows:</p>
-<pre class="literal-block">phylabel.R -p <span class="var">input.tre</span> -r -y <span class="var">taxonomy.csv</span>  -o <span class="var">output.tre</span></pre>
+<pre class="codebg literal-block">phylabel.R -p <span class="var">input.tre</span> -r -y <span class="var">taxonomy.csv</span> -o <span class="var">output.tre</span></pre>
 <div class="admonition-exercise admonition">
 <p class="admonition-title">Exercise</p>
 <ul class="simple">

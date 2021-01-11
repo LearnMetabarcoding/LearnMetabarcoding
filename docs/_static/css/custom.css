@@ -64,6 +64,10 @@ div[role=contentinfo]:after {
 	content: "";
 }
 
-.background {
-    background: none repeat scroll 0 0 cadetblue;
+.highlight{
+    background-color: #e7f2fa;
+}
+
+.codebg {
+    background-color: #e7f2fa;
 }

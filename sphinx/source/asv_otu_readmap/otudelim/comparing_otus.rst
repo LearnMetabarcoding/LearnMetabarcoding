@@ -39,6 +39,7 @@ We will merge all OTUs into a single file, then search the ASVs against this fil
 First, concatenate all of your OTUs. You might notice we're using a similar method to earlier in the pipeline - this is a great example of where we can find tools in our toolbox that we already understand and apply them to new use cases.
 
 .. parsed-literal::
+	:class: codebg
 	
 	for f in :var:`delim_outputs`/\*;
 	do
@@ -50,6 +51,7 @@ First, concatenate all of your OTUs. You might notice we're using a similar meth
 Next, we map these OTUs to the ASVs. This should be the ASV file that you used as the input for all of the OTU delimitation runs you did.
 
 .. parsed-literal::
+	:class: codebg
 	
 	vsearch --search_exact :var:`concatenatedOTUs.fasta` --db :var:`asvs.fasta` --otutabout :var:`output.tsv`
 

@@ -200,14 +200,14 @@
 <h2>Tracking ASVs to OTUs<a class="headerlink" href="#tracking-asvs-to-otus" title="Permalink to this headline">¶</a></h2>
 <p>We will merge all OTUs into a single file, then search the ASVs against this file. This will give us a table showing which ASVs were used as OTU centroids for each method/parameter.</p>
 <p>First, concatenate all of your OTUs. You might notice we’re using a similar method to earlier in the pipeline - this is a great example of where we can find tools in our toolbox that we already understand and apply them to new use cases.</p>
-<pre class="literal-block">for f in <span class="var">delim_outputs</span>/*;
+<pre class="codebg literal-block">for f in <span class="var">delim_outputs</span>/*;
 do
         n=${f#*/};
         n=${n%.fasta};
         sed -e &quot;/^&gt;/s/$/;sample=$n/&quot; $f &gt;&gt; <span class="var">output.fasta</span>;
  done</pre>
 <p>Next, we map these OTUs to the ASVs. This should be the ASV file that you used as the input for all of the OTU delimitation runs you did.</p>
-<pre class="literal-block">vsearch --search_exact <span class="var">concatenatedOTUs.fasta</span> --db <span class="var">asvs.fasta</span> --otutabout <span class="var">output.tsv</span></pre>
+<pre class="codebg literal-block">vsearch --search_exact <span class="var">concatenatedOTUs.fasta</span> --db <span class="var">asvs.fasta</span> --otutabout <span class="var">output.tsv</span></pre>
 <p>Here we simply search each of the OTU sequences against the ASVs to find which ASV each OTU is based upon. This is known as the OTU centroid sequence, even though not all of the methods necessarily use a centroid-based approach. Think of it as the “representative” sequence for an OTU, it’s generally the most frequent and/or the sequence that is closest to the “average” ASV in an OTU.</p>
 <p>You can now download this table and see which ASVs formed OTU centroids for which method and parameter combination. This isn’t the complete picture, of course, because it doesn’t record which ASVs merged into which OTUs for each different method, but it gives a broad overview of how similar different OTU methods are in terms of the OTUs they produce. If you wanted to look more closely at which ASVs formed each OTU in each different method, that’s possible but beyond the scope of these resources. We’d suggest mapping ASVs to OTUs as described within the different methods, and then bringing all of that data together with this table in R.</p>
 <div class="admonition-exercise admonition">
