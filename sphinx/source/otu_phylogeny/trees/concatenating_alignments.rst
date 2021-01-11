@@ -40,6 +40,7 @@ We use the ``catfasta2phyml.pl`` command to concatenate the aligned files into a
 	
 
 The standard ``catfasta2phyml.pl`` command will print the partitions to the terminal. If we want to save them as a file, we can run the below code. 
+
 .. admonition:: Solution
 	
 	Note that we print the partitions to the terminal after saving them; this is because if we have any errors, they will also be printed to the ``partitions.txt`` file so we want to check that out to ensure our command ran OK.
