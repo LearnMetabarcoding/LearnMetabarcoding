@@ -245,7 +245,7 @@ head -n 24 <span class="var">input_R2.fastq</span> | grep -E &quot;TA.AC.TC.GG.T
 <li><p>We want to output a different file for each index</p></li>
 </ul>
 <p><strong>Cutadapt</strong> has settings for all of these situations. It will allow reading two files as input, and will ensure that pairs of reads in these files are kept in sync. Indices at the beginning of reads are specified using <code class="docutils literal notranslate"><span class="pre">-g</span></code> (or <code class="docutils literal notranslate"><span class="pre">​-G</span></code> for the second file of reads), we can specify these multiple times, and name different adapters. We also specify that the adapters are right at the beginning, with no gaps, using a <code class="docutils literal notranslate"><span class="pre">^</span></code> symbol. We can specify that we want output files depending on the combination of adapters found using the <code class="docutils literal notranslate"><span class="pre">​-o</span></code> and <code class="docutils literal notranslate"><span class="pre">​-p</span></code> options for the first and second files respectively.</p>
-<p>To avoid a mess of files, <span class="guilabel">make sure you’re in the to the parent directory, then create a new directory</span>. Call this new directory something appropriate. If you’re unsure how to do this check the solution box below.</p>
+<p>To avoid a mess of files, <span class="guilabel">make sure you’re in the parent directory, then create a new directory</span>. Call this new directory something appropriate. If you’re unsure how to do this check the solution box below.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Solution</p>
 <pre class="literal-block">cd ../        <span class="comment"># Change working directory to the parent of the current working directory</span>
@@ -317,7 +317,7 @@ done                            <span class="comment"># end loop</span></pre>
 <div class="section" id="next-steps">
 <h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
 <p>We have generated a set of paired files, each containing the forward or reverse reads of the sequences we are confident belong to a specific sample.</p>
-<p>If you’d like to explore more <strong>cutadapt</strong> parameters, you there are some further cutadapt exercises <a class="reference internal" href="extensions/cutadapt_extension.html#cutadapt-extension"><span class="std std-ref">here</span></a>, but this isn’t necessary for the next step.</p>
+<p>If you’d like to explore more <strong>cutadapt</strong> parameters, there are some further cutadapt exercises <a class="reference internal" href="extensions/cutadapt_extension.html#cutadapt-extension"><span class="std std-ref">here</span></a>, but this isn’t necessary for the next step.</p>
 <p>Next we remove the primers from the sequences in these files: <a class="reference internal" href="primer_removal.html#primer-removal"><span class="std std-ref">2. Primer removal.</span></a></p>
 </div>
 </div>

@@ -112,7 +112,7 @@ It's quite long, but at least read the first section to get acquainted with it. 
 
 **Cutadapt** has settings for all of these situations. It will allow reading two files as input, and will ensure that pairs of reads in these files are kept in sync. Indices at the beginning of reads are specified using ``-g`` (or ``​-G`` for the second file of reads), we can specify these multiple times, and name different adapters. We also specify that the adapters are right at the beginning, with no gaps, using a ``^`` symbol. We can specify that we want output files depending on the combination of adapters found using the ``​-o`` and ``​-p`` options for the first and second files respectively.
 
-To avoid a mess of files, :guilabel:`make sure you're in the to the parent directory, then create a new directory`. Call this new directory something appropriate. If you're unsure how to do this check the solution box below.
+To avoid a mess of files, :guilabel:`make sure you're in the parent directory, then create a new directory`. Call this new directory something appropriate. If you're unsure how to do this check the solution box below.
 
 .. admonition:: Solution
 	:class: toggle
@@ -213,6 +213,6 @@ Next steps
 
 We have generated a set of paired files, each containing the forward or reverse reads of the sequences we are confident belong to a specific sample.
 
-If you'd like to explore more **cutadapt** parameters, you there are some further cutadapt exercises :ref:`here<cutadapt_extension>`, but this isn't necessary for the next step.
+If you'd like to explore more **cutadapt** parameters, there are some further cutadapt exercises :ref:`here<cutadapt_extension>`, but this isn't necessary for the next step.
 
 Next we remove the primers from the sequences in these files: :ref:`2. Primer removal.<primer_removal>`

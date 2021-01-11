@@ -118,8 +118,8 @@ If presented with a new function that you have no idea how to use, don't panic! 
 
 .. parsed-literal::
 
-	man ​echo      :comment:`# Returns a scrollable manual if it exists`
-	echo --help   :comment:`# Outputs a text summary of the function's options`
+	man uniq      :comment:`# Returns a scrollable manual if it exists`
+	uniq --help   :comment:`# Outputs a text summary of the function's options`
 
 Many programs also let you use ``-h`` instead of ``--help``. 
 

@@ -243,7 +243,7 @@
 <h2>Implementing thresholds<a class="headerlink" href="#implementing-thresholds" title="Permalink to this headline">¶</a></h2>
 <p>We can now use metaMATE again to output the ASVs for the selected threshold. This is much more simple than before. We need two input files: the same set of denoised ASVs as we used for the <code class="docutils literal notranslate"><span class="pre">metaMATE</span> <span class="pre">find</span></code> command, and the file ending <code class="docutils literal notranslate"><span class="pre">_resultcache</span></code> in the output directory.</p>
 <p>Run the following command, replacing the file names with the names of your files, and <code class="docutils literal notranslate"><span class="pre">N</span></code> with the resultindex of your selected threshold.</p>
-<pre class="literal-block">metaMATE dump -A <span class="var">denoisedASVs.fasta</span> -C <span class="var">path/to_resultcache</span> -i <span class="var">N</span> -o <span class="var">output.fasta</span></pre>
+<pre class="literal-block">metaMATE dump -A <span class="var">denoisedASVs.fasta</span> -C <span class="var">path/to_resultcache</span> -i <span class="var">N</span> -f <span class="var">output.fasta</span></pre>
 <p>This FASTA contains the ASVs that result from the threshold we selected. In addition, any ASV that matched against our reference set is always included, even if it would otherwise be excluded based on the threshold, and any ASV that is the incorrect length or has stops in the translation is excluded, even if it would otherwise be included based on the threshold. We would generally recommend performing chimera filtering on this output, but otherwise this is ready to be used for analysis.</p>
 </div>
 <div class="section" id="next-steps">
