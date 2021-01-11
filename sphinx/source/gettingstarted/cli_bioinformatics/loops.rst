@@ -49,6 +49,7 @@ See how we use ``;`` to separate expressions in a single line, in exactly the sa
 .. warning::
 	
 	The terminal of Mac OS works slightly differently, and you can't use this method of looping over a variable containing multiple lines. Instead, you can swap out for a while loop:
+	
 	.. parsed-literal::
 		:class: codebg
 		
