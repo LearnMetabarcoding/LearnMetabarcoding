@@ -67,7 +67,7 @@ You will have observed that a substantial proportion of all of your reads were n
 Less strict mapping
 ===================
 
-The process here is almost identical to the above, except we allow matches of less than 100%. We are using **VSEARCH** again, because we know that when multiple matches are found for a query (read) in our database (ASVs), it will select the closest match (by similarity). You could do a similar process using **BLAST** or any other sequence matching algorithm, but now that we permit non-exact matches, there will be cases where a read matches multiple ASVs and you must be very very confident that the program you use selects 1. one and only one match for each read and 2. the best match for each read. For example, BLAST using ``-max_target_seqs`` does not necessarily select the best match, just the first one (TODO FOOTNOTE).
+The process here is almost identical to the above, except we allow matches of less than 100%. We are using **VSEARCH** again, because we know that when multiple matches are found for a query (read) in our database (ASVs), it will select the closest match (by similarity). You could do a similar process using **BLAST** or any other sequence matching algorithm, but now that we permit non-exact matches, there will be cases where a read matches multiple ASVs and you must be very very confident that the program you use selects 1. one and only one match for each read and 2. the best match for each read. For example, BLAST using ``-max_target_seqs`` does not necessarily select the best match, just the first one [#]_.
 
 .. warning::
 
@@ -96,3 +96,5 @@ Next steps
 For working at the ASV level, the ``.tsv`` table you have produced is ready to be used in downstream analyses, although we would recommend some further filtering which we discuss in the :ref:`Analysing read tables <analysis>` tutorial. You may want to learn about building a phylogeny of your ASVs in the :ref:`Building OTU phylogeny <phylogeny>` section, or taxonomically identifying and/or classifying your ASVs in the :ref:`Identifying OTU sequences <otuid>` section.
 
 For working at the OTU level, we cover how to reduce this ASV-level table you've produce to OTU level in the next subsection: :ref:`Mapping reads to OTUs <mapping_reads_otus>`.
+
+.. [#] Nidhi Shah, Michael G Nute, Tandy Warnow, Mihai Pop, Misunderstood parameter of NCBI BLAST impacts the correctness of bioinformatics workflows, Bioinformatics, Volume 35, Issue 9, 1 May 2019, Pages 1613–1614, https://doi.org/10.1093/bioinformatics/bty833
