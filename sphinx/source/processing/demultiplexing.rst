@@ -29,6 +29,7 @@ There are many ways in which metabarcoding libraries may be sequenced. If you ar
 	This tutorial works with raw FASTQ-format sequence data that contains indices at the beginning of the reads. The example data for this can be found in the ``0_rawsequences`` directory within the :ref:`sectionA archive<sectionAdata>`. You should copy this directory over to your working directory as follows:
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		cp -r :var:`path/to`\/exampledata/sectionA/0_rawsequences/ ./
 		
@@ -45,6 +46,7 @@ Primers and indices
 Each of these libraries is actually three different metabarcoding samples. Each sample within each library was amplified with a different 6-base index. You can see these indices in the ``indices.txt`` file within the ``0_rawsequences/`` directory. First, change into the ``0_rawsequences/`` directory and then view the file:
 
 .. parsed-literal::
+	:class: codebg
 	
 	cd 0_rawsequences/
 	cat indices.txt
@@ -54,6 +56,7 @@ The ``​cat`` command simply outputs the entire contents of the files it is giv
 We can use the ``grep`` command to check for indices in a file (see :ref:`here<grep>` for more detail on this). Select any of the starting FASTQ files and run the following on it to search for the ``AAGAGG`` index
 
 .. parsed-literal::
+	:class: codebg
 	
 	head -n 24 :var:`file.fastq` | grep -E "AAGAGG|$"
 
@@ -65,13 +68,13 @@ When we did PCR, the index was part of the primers used, so that the reaction ad
 
 	.. parsed-literal::
 
-		CCNGAYATRGCNTTYCCNCG
+		\CCNGAYATRGCNTTYCCNCG
 
 .. topic:: Reverse (R2)
 
 	.. parsed-literal::
 
-		TANACYTCNGGRTGNCCRAARAAYCA
+		\TANACYTCNGGRTGNCCRAARAAYCA
 
 Note the presence of non ATCG bases - these are ambiguities added to the primers to allow them to be less specific and bind to a greater variety of taxa. The indices are **not** shown here: they would go at the start of the primer binding sequence.
 
@@ -86,6 +89,7 @@ Note the presence of non ATCG bases - these are ambiguities added to the primers
 	:class: toggle
 	
 	.. parsed-literal::
+		:class: codebg
 
 		head -n 24 :var:`input_R1.fastq` | grep -E "CC.GA.AT.GC.TT.CC.CG|$"
 		head -n 24 :var:`input_R2.fastq` | grep -E "TA.AC.TC.GG.TG.CC.AA.AA.CA|$"
@@ -100,6 +104,7 @@ We want to split each of these libraries up by index into a separate pair of fil
 As ever with a new tool, first cast your eye over the help, either online or by running: 
 
 .. parsed-literal::
+	:class: codebg
 	
 	cutadapt --help
 
@@ -118,6 +123,7 @@ To avoid a mess of files, :guilabel:`make sure you're in the parent directory, t
 	:class: toggle
 
 	.. parsed-literal::
+		:class: codebg
 
 		cd ../        :comment:`# Change working directory to the parent of the current working directory`
 		mkdir 1_demux :comment:`# Create a new directory called 1_demux`
@@ -127,6 +133,7 @@ Referring to the indices.txt file, we can now construct a command that demultipl
 Then, type in the command. Reminder: we used the ``​\`` to split the command over multiple lines. You can either type this and press enter afterwards, or you can just ignore it and continue typing the command all in one long line (without pressing Enter until you're done). Finally, run the command and inspect the terminal output and make sure you understand what it's saying. Note that if you didn't call your directory ``1_demux``, you should change those parts of the command.
 
 .. parsed-literal::
+	:class: codebg
 
 	cutadapt -g T4=^AAGAGG -g T9=^AATCGC -g T11=^AGCTAC \\
 	-G T4=^AAGAGG -G T9=^AATCGC -G T11=^AGCTAC \\
@@ -141,7 +148,8 @@ Then, type in the command. Reminder: we used the ``​\`` to split the command o
 .. admonition:: Solution
 	:class: toggle
 	
-	.. parsed-literal:: 
+	.. parsed-literal::
+		:class: codebg
 	
 		ls 1_demux/\*
 		grep -c "^\@D00" 1_demux/\*
@@ -172,12 +180,14 @@ You should now have lots of files in your output directory. It's good practice t
 	:class: toggle
 
 	.. parsed-literal::
+		:class: codebg
 	
 		grep -c "^\@D00" 1_demux/\* > :var:`output.txt`
 
 Let's get rid of the files we don't need. You've doubled the amount of storage you're using - here the files aren't very large but if you were doing this with a standard dataset, directories would fill up quickly. Navigate to the demux folder, very carefully copy the following command and run it. It works through the files, extracting the first and second sample name, then deletes the file if they don't match. You do not need to type any ``#comments``, or add the extra spaces - this is just to make it clearer.
 
 .. parsed-literal::
+	:class: codebg
 
 	for f in \*;			:comment:`# loop through files`
 	do
@@ -203,7 +213,8 @@ This isn't a crucial bioinformatics step, it's just to tidy things up. You don't
 Finally, to remove the files beginning with ``unknown``, run:
 
 .. parsed-literal::
-
+	:class: codebg
+	
 	rm unknown\*
 
 These files contain the sequences for which no index was identified - we're not interested in keeping them.

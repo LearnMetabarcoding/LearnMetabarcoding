@@ -136,12 +136,14 @@ Say I have a table, ``data.csv``, that looks like this:
 If I wanted to find the sequence names that are Coleoptera, I could do this:
 
 .. parsed-literal::
+	:class: codebg
 
 	grep "Coleoptera" data.csv | cut -d, -f1 > :var:`headers.txt`
 
 Or the sequences where column three is greater than 500:
 
 .. parsed-literal::
+	:class: codebg
 
 	awk -F',' ' $3 > 500 ' data.csv | cut -d, -f1 > :var:`headers.txt`
 
@@ -154,6 +156,7 @@ Extract sequence by header
 Say we have a list of sequence headers and we want only those sequences from a larger (unwrapped!) FASTA.
 
 .. parsed-literal::
+	:class: codebg
 
 	grep --no-group-separator -A1 -F -f :var:`headers.txt` :var:`sequences.fasta` > :var:`output.fasta`
 
@@ -162,6 +165,7 @@ By default grep prints only lines that match, the ``-A1`` adds one line after ea
 We can of course pipe this with some of our previous examples. Note that the standard input to ``grep`` is the file to be searched, so we need to redirect standard input elsewhere:
 
 .. parsed-literal::
+	:class: codebg
 
 	grep "Coleoptera" data.csv | cut -d, -f1 | grep --no-group-separator -A1 -f -F /dev/stdin :var:`sequences.fasta` > :var:`output.fasta`
 
