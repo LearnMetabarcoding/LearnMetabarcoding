@@ -70,6 +70,7 @@ We run **metaMATE** specifying the path to these four files, as well as a few ot
 Run the following code, obviously swapping the names of the files for whatever your file names are. ``metamateout`` should be the name of a directory into which you want to place the results - **metaMATE** will create this if it doesn't exist.
 
 .. parsed-literal::
+	:class: codebg
 	
 	metaMATE find \\
 	-A :var:`denoisedASVs.fasta` -L :var:`concatenatedReads.fasta` \\
@@ -105,6 +106,7 @@ We can now use metaMATE again to output the ASVs for the selected threshold. Thi
 Run the following command, replacing the file names with the names of your files, and ``N`` with the resultindex of your selected threshold.
 
 .. parsed-literal::
+	:class: codebg
 
 	metaMATE dump -A :var:`denoisedASVs.fasta` -C :var:`path/to_resultcache` -i :var:`N` -f :var:`output.fasta`
 

@@ -25,6 +25,7 @@ Getting started
 **CROP** needs every unique read for each ASV in the input dataset, it cannot read ``;size=`` tags. We can generate this from our input ASVs quite easily though, using the ``--rereplicate`` function of **VSEARCH**.
 
 .. parsed-literal::
+	:class: codebg
 
 	vsearch --rereplicate :var:`input.fasta` --output :var:`output.fasta`
 
@@ -36,6 +37,7 @@ We then use this rereplicated FASTA file in **CROP**. Note it creates several ou
 Try running the following command:
 
 .. parsed-literal::
+	:class: codebg
 
 	crop -b 40 -z 400 -s -r 0 -i :var:`input.fasta` -o :var:`output`
 
