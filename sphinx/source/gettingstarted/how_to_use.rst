@@ -41,7 +41,7 @@ Once the topic and software is introduced, the tutorial will suggest running a c
 .. parsed-literal::
 	:class: codebg
 	
-	echo "hello world"
+	echo \"hello world"
 	
 
 Whenever you see this, it is a command that we suggest you run and to do so you would type everything in this box into your terminal, then press Enter (Return). If this is very new to you, you might want to check out the :ref:`UNIX command line introduction <unix_cli>`, which has more information.
