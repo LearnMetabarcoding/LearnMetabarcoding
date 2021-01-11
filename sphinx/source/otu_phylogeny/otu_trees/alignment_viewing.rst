@@ -19,13 +19,19 @@ Viewing alignment in AliView
 
 The first step is to open your alignment file using **AliView**. To do this you need to navigate to the top menu and go to :menuselection:`File --> Open File` .
 You can then select your file from your file browser. **AliView** will then load your alignment and you will be able to zoom and scroll to see your alignment. 
-You can zoom in and out using the large and small A buttons on the top bar of the program or by pressing the + and - keys.
+You can zoom in and out using the large and small A buttons on the top bar of the program or by pressing the + and - keys. Your screen should look somewhat like the below screenshot. 
+
+.. image:: aliview_open.png
+    :align: centre
 
 Translating your alignment
 =============================
 
 You can also translate your alignment by pressing the fourth button on the top row of **AliView**. This will add more options to the top bar including two dropdown menus. 
 The furthest right drop down menu is for selecting the correct genetic code for your taxa. The one to the left of this is so you can change your reading frame. 
+
+.. image:: aliview_translate_dropdowm.png
+    :align: centre
 
 Next steps
 ============
