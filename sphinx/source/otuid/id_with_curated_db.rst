@@ -33,8 +33,9 @@ Classification using SINTAX
 We will perform **SINTAX** classification against the MIDORI database ourselves, as this is pretty straightforward to do. The first thing to do is to download the reference dataset you want to use from the MIDORI website. Head to the `download page <http://reference-midori.info/download.php#>`_ and select the :menuselection:`Latest_GenBankRelease`, then select :menuselection:`SINTAX --> uniq`. You can download this file directly to your working directory by using the command below; note how the structure of the download path matches the information shown on the MIDORI page. You would obviously need to modify this to download a file for a different classifier or for a different locus. We then unzip this file and use VSEARCH to convert this to a special database format.
 
 .. parsed-literal::
+	:class: codebg
 	
-	wget http://reference-midori.info/download/Latest_GenBankRelease240/SINTAX/uniq/MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
+	wget \http://reference-midori.info/download/Latest_GenBankRelease240/SINTAX/uniq/MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
 	unzip MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
 	vsearch --makeudb_usearch MIDORI_UNIQ_GB240_CO1_SINTAX.fasta \
 	--output MIDORI_UNIQ_GB240_CO1_SINTAX.udb
@@ -42,6 +43,7 @@ We will perform **SINTAX** classification against the MIDORI database ourselves,
 Classifying our OTUs using this database is now very simple. We simply run SINTAX, which is also part of VSEARCH:
 
 .. parsed-literal::
+	:class: codebg
 	
 	vsearch -sintax :var:`input.fasta` -db MIDORI_UNIQ_GB240_CO1_SINTAX.udb \
 	-tabbedout :var:`output.tsv` -strand both -sintax_cutoff 1
@@ -65,7 +67,8 @@ Comparing classifications
 	
 	To quickly get an idea of how many Coleoptera OTUs we have, run the following command on the **SINTAX** output file, the **RDP** classified file, and the MEGAN output you uploaded:
 	
-	.. parsed-literal:: 
+	.. parsed-literal::
+		:class: codebg
 	
 		grep -c "Coleoptera" :var:`input`
 	
