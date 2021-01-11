@@ -52,8 +52,9 @@ An important consideration when pair merging is that, in general, sequence reads
 One very popular option is to use the program **FastQC**. You can run it on a single file like this:
 
 .. parsed-literal::
+	:class: codebg
 
-	fastqc :var:`​input.fastq`
+	fastqc :var:`input.fastq`
 
 You can view the output of **FastQC** by using your FTP software (e.g. FileZilla) to access the server, navigating to the directory in which you ran **FastQC** and opening the ``.html`` file with the same name as your file. There are lots of useful graphs, but the first one is key here.
 
@@ -68,6 +69,7 @@ Pair merging with PEAR
 We will use **PEAR** for merging. As always, check out the helpfile for **PEAR**:
 
 .. parsed-literal::
+	:class: codebg
 	
 	pear --help
 
@@ -78,8 +80,9 @@ First, :guilabel:`create a new directory to to store the results of merging`.
 Try running the below **PEAR** command on a single pair of your primer-trimmed files from the previous section. The output should be the first part of the name - **PEAR** will add to this for the output files.
 
 .. parsed-literal::
+	:class: codebg
 
-	pear -f :var:`​input_R1.fastq​` -r :var:`​input_R2.fastq​` -o :var:`​merged/output`
+	pear -f :var:`input_R1.fastq` -r :var:`input_R2.fastq` -o :var:`merged/output`
 
 PEAR gives us some really informative information on the terminal, make sure to review it. As you’ll have seen from the helpfile, there are many different thresholds that can be applied to the merging.
 
@@ -98,6 +101,7 @@ Running **PEAR** in a loop
 Like with **cutadapt** in the :ref:`previous tutorial<primer_removal>`, we can run **PEAR** in a loop to apply it to all of our samples: again, we list our files to find our unique samples, then loop on these and use each sample name to run an iteration of **PEAR**. Make sure to replace ``input`` and ``output`` with the names of the directory holding your input (index- and primer- trimmed sequences), and the directory into which you want to hold your merged sequences:
 
 .. parsed-literal::
+	:class: codebg
 
 	samples=$(ls :var:`input`/ | cut -d\_ -f1 | sort | uniq)
 	for s in $samples;
@@ -109,6 +113,7 @@ Like with **cutadapt** in the :ref:`previous tutorial<primer_removal>`, we can r
 Make sure to review those terminal outputs! Then :guilabel:`list the contents of your output directory`, you’ll see files for the assembled, unassembled and discarded reads. We don’t need the latter two, so let’s clean up:
 
 .. parsed-literal::
+	:class: codebg
 
 	cd :var:`output/`
 	rm \*discarded\* \*unassembled\* && rename -e "s/assembled\\.//" \*

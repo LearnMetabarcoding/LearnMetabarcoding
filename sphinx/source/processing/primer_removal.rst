@@ -17,8 +17,9 @@ Introduction
 When performing demultiplexing, **cutadapt** removed the indices from our samples. You can check this using the ``grep`` command from the previous tutorial. Alternatively, you can use the following command to explore the length distribution of the sequences. Run this twice, on a raw sequence FASTQ file and demultiplexed FASTQ file.
 
 .. parsed-literal::
+	:class: codebg
 
-	sed -n '2~4p'​ :var:`input.fastq​` | while read l; do echo ${#l} ; done | sort | uniq -c
+	sed -n '2~4p' :var:`input.fastq` | while read l; do echo ${#l} ; done | sort | uniq -c
 
 .. admonition:: How this command works
 	:class: togglegreen
@@ -67,6 +68,7 @@ This process is very similar to demultiplexing, except we only have one sequence
 	Make sure you change ``output`` in the command below to the name of the new directory you created to store these files in. We're assuming the directory with your files is named ``1_demux``, if it isn't, make sure to change that below as well.
 	
 	.. parsed-literal::
+		:class: codebg
 
 		cutadapt -g ^CCNGAYATRGCNTTYCCNCG -G ^TANACYTCNGGRTGNCCRAARAAYCA \\
 		-o :var:`output`/T11_R1.fastq -p :var:`output`/T11_R2.fastq --discard-untrimmed \\
@@ -76,20 +78,23 @@ Make sure to look over the output from **cutadapt** because this is very informa
 
 We want to run this on all of our files, ideally without writing the command over and over. We can put this in a loop using bash. Since we need all of the unique samples, we first need to design a command for listing these:
 
-.. parsed-literal:: 
+.. parsed-literal::
+	:class: codebg
 	
 	ls :var:`1_demux`/ | cut -d\_ -f1 | sort | uniq
 
 This extracts the part of each name before the first ``_`` and finds the unique ones. We can then store this list of library names in a bash variable, and check it's contents with ``echo``:
 
-.. parsed-literal:: 
+.. parsed-literal::
+	:class: codebg
 	
 	samples=$(ls :var:`1_demux`/ | cut -d\_ -f1 | sort | uniq)
 	echo $samples
 
 We can then loop on the contents of this variable using ``for``
 
-.. parsed-literal:: 
+.. parsed-literal::
+	:class: codebg
 
 	for s in $samples;
 	do
@@ -106,7 +111,8 @@ Check your trimmed directory to make sure you have all of your files, and check 
 
 	To run these loops, we generated a list of our unique sample names by listing our files and then editing the text to remove file extensions and direction information, as reprinted below.
 	
-	.. parsed-literal:: 
+	.. parsed-literal::
+		:class: codebg
 		
 		samples=$(ls 1_demux/ | cut -d\_ -f1 | sort | uniq)
 	
