@@ -65,5 +65,5 @@ div[role=contentinfo]:after {
 }
 
 .codebg {
-    background-color: #e7f2fa;
+    background-color: #e7f2fa !important;
 }
