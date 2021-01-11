@@ -39,6 +39,7 @@ Commands and code
 Once the topic and software is introduced, the tutorial will suggest running a command to perform a bioinformatic step. Commands are printed like this:
 
 .. parsed-literal::
+	:class: codebg
 	
 	echo "hello world"
 	
@@ -48,6 +49,7 @@ Whenever you see this, it is a command that we suggest you run and to do so you 
 Sometimes in these resources we will ask you to run a command that is quite long, and to help you read it easily we will present the command broken over multiple lines. It will look like this:
 
 .. parsed-literal::
+	:class: codebg
 
 	echo \\
 	"hello world"
@@ -57,6 +59,7 @@ To enter this in the command prompt, we type the first line and then press Enter
 We will frequently suggest commands that contain placeholder values that need to be edited before running. The following command has placeholder values:
 
 .. parsed-literal::
+	:class: codebg
 	
 	head -n :var:`N` sequences.fasta > :var:`output.fasta`
 	
@@ -64,6 +67,7 @@ We will frequently suggest commands that contain placeholder values that need to
 The ``N`` and the ``output.fasta`` of this command are formatted differently to show that these are placeholders, and so before you run this command, you **must** replace ``N`` with a number and ``output.fasta`` with the file path of a specific file. So you might decide to show ``10`` lines and call your output ``firstten.fasta``. So you would actually run:
 
 .. parsed-literal::
+	:class: codebg
 	
 	head -n 10 sequences.fasta > firstten.fasta
 	
@@ -86,6 +90,7 @@ As part of a tutorial, we will suggest you design a command yourself, or ask you
 	* You might also find that an exercise box contains a complete command that we suggest you run, such as:
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		sed -e "/^>/,s/-//g" :var:`input.fasta` > :var:`output.fasta`
 		
@@ -99,6 +104,7 @@ When we ask you to figure out how to design a command yourself, because we're ni
 	:class: toggle
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		grep -c "^>" :var:`input.fasta`
 	
