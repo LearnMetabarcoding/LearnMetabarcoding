@@ -33,18 +33,21 @@ Finding a sequence motif
 We can use grep to find instances of a particular sequence in a sequence file. For example, we can search these files for a particular index sequence, e.g. ``AACACC``. Remember, replace ``file.fastq`` with the name of a FASTQ file.
 
 .. parsed-literal::
+	:class: codebg
 
 	grep "AACACC" :var:`file.fastq`
 
 This will print lots and lots of lines, because this is a very common motif. This is too much to handle, so let's instead just count the number of lines that have a match:
 
 .. parsed-literal::
+	:class: codebg
 
 	grep -c "AACACC" :var:`file.fastq`
 
 In this specific case, this index is used for demultiplexing, so we might want to review some sequences to check that it's in the right place. We'll just look at the first three sequences (first 12 lines) using the ``head`` command, then send that to grep. We're going to add ``|$`` to our regular expression. ``|`` in regular expressions means "or", and ``$`` means "the end of a line". So we're searching for either our sequence of interest, or the end of a line. This means that every line will match (since every line ends), but only our sequenc of interest will be highlighted. The ``-E`` tells grep to use extended regular expressions, which is needed to make this search work.
 
 .. parsed-literal::
+	:class: codebg
 
 	head -n 12 file.fastq | grep -E "AACACC|$"
 
@@ -56,6 +59,7 @@ Counting sequences
 We saw the ``-c`` option earlier - this is really useful for counting up the number of sequences in a FASTA or FASTQ file. This is because the structure of these files is very predictable. Each sequence will have one and only one header line, and this line will start with ``>`` for FASTA files and ``@`` for FASTQ files. So for FASTA files, we can count the number of sequences by counting the number of lines that start with ``>``:
 
 .. parsed-literal::
+	:class: codebg
 
 	grep -c "^>" :var:`file.fasta`
 
@@ -64,12 +68,14 @@ The ``^`` symbol means "the start of a line". So the regex ``^>`` means "the sta
 For FASTQ files it's a little more tricky, because ``@`` is also a symbol used to denote a base quality score, and it's possible that the first base of a sequence has this score. So if we just searched for the number of lines starting with ``@``, we'd risk overestimating because we'd be counting all of the header lines *and* all of the quality score lines starting with ``@``. However, if the sequences you're working with are sequence reads, it's likely that they have very similar headers, because the sequence matchine has named them. Check this by looking at the first 20 lines of a FASTQ file: you'll see that they probably all start with the same string, often a sequence machine identifier code.
 
 .. parsed-literal::
+	:class: codebg
 
 	head -20 :var:`file.fastq`
 
 You can then add this to the regular expression to search more accurately. For example, say our sequence headers all start with ``D00``
 
 .. parsed-literal::
+	:class: codebg
 
 	grep -c "^@D00"
 

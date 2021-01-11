@@ -16,10 +16,10 @@ A lot of software outputs wrapped FASTA files, where sequence lines are truncate
 
 .. parsed-literal::
 	
-	>sequence1
+	\>sequence1
 	ATACGACGATAAGCAGACTAGACATATT
 	CGCCCGATTGACCG
-	>sequence2
+	\>sequence2
 	ACGCGCTGAAAAGCAGACTTTTTACACG
 	CGCGTAAACAACGC
 

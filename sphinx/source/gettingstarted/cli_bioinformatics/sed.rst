@@ -15,12 +15,14 @@ Find-replace using sed
 Let's create a simple text file
 
 .. parsed-literal::
+	:class: codebg
 
 	echo -e "lineA\\nlineB\\nlineC" > lines.txt
 
 Let's say we want to replace "line" on each line with "row". We would use the following ``sed`` expression:
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -e "s/line/row/" lines.txt > rows.txt
 	cat rows.txt
@@ -30,12 +32,14 @@ The ``-e`` option tells sed that we want to use a regular expression for editing
 Note that if you want to edit a file directly, rather than edit a file and send the edited version to standard output, you would use the ``-i`` (inplace) argument. Be careful with this: you should always test out your regular expression before running it, in case it does things you don't intend! If you have a large file, you can use ``head`` to see just the first 10 lines, then pipe this to ``sed``:
 
 .. parsed-literal::
+	:class: codebg
 
 	head file.txt | sed -e "s/find/replace/"
 
 This will allow you to test out your regular expression on a subset of the file. When you're happy, you can run it on the whole file in place:
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -i -e "s/find/replace/" file.txt
 
@@ -48,18 +52,21 @@ Selecting lines from a file with sed
 To print a specific line using sed, you use the ``p`` instruction. You pair this with the ``-n`` option, which does not return any lines unless explicitely told to. So, to print the 10th line of a file, you'd do:
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -n \'10p\' file.txt
 
 To print lines 56 to 61:
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -n \'56,61p\' file.txt
 
 To print every second line, starting with the second line, you'd do:
 
 .. parsed-literal::
+	:class: codebg
 
 	sed -n \'2~2p\' file.txt
 
