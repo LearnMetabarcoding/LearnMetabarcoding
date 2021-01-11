@@ -65,9 +65,9 @@ div[role=contentinfo]:after {
 }
 
 .highlight{
-    background-color: #e7f2fa !important;
+    background-color: #e7f2fa;
 }
 
 .codebg {
-    background-color: #e7f2fa !important;
+    background-color: #e7f2fa;
 }
