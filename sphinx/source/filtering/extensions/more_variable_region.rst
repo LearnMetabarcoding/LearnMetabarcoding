@@ -26,6 +26,7 @@ As it happens, it doesn’t seem that there are any programs out there that do t
 	We filter for each length, one at a time, and join the results into a single file.
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		vsearch --fastx_filter :var:`input.fasta` --fastq_minlen 415 --fastq_maxlen 415 --fastaout output415.fasta
 		vsearch --fastx_filter :var:`input.fasta` --fastq_minlen 418 --fastq_maxlen 418 --fastaout output418.fasta
@@ -35,6 +36,7 @@ As it happens, it doesn’t seem that there are any programs out there that do t
 	Of course, we could also do this in a loop:
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		for l in 415 418 421;
 		do
@@ -46,5 +48,6 @@ As it happens, it doesn’t seem that there are any programs out there that do t
 	When we're running loops, we want to make sure it worked properly, so let's check the number of sequences in the relevant files:
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		grep -c "^>" \*ctrim.fasta

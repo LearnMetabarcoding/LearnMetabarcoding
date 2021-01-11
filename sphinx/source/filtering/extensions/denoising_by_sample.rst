@@ -34,6 +34,7 @@ Denoising by sample
 	5. Re-dereplicate the output file using the following command:
 	
 	.. parsed-literal::
+		:class: codebg
 		
 		vsearch --derep_fulllength :var:`input.fasta` --sizein --sizeout --relabel uniq --output :var:`output.fasta`
 	

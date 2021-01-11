@@ -27,6 +27,7 @@ Performing dereplication
 Dereplication is a pretty straightforward task - there are very few parameters to worry about. Therefore choosing a tool for dereplication has few considerations, and is often a matter of convenience. We will use the dereplication function within **VSEARCH**, because we already have **VSEARCH** installed for other steps.
 
 .. parsed-literal::
+	:class: codebg
 	
 	vsearch --derep_fulllength :var:`input.fasta` --output :var:`output.fasta` --sizeout --relabel uniq
 

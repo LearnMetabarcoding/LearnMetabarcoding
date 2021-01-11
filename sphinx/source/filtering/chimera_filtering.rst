@@ -24,6 +24,7 @@ Performing chimera filtering
 For a complex algorithm, chimera filtering is very easy to implement, as it doesn't generally require much in the way of parametric tuning (i.e. fiddling with arbitrary thresholds).
 
 .. parsed-literal::
+	:class: codebg
 
 	vsearch --uchime3_denovo :var:`input.fasta` --nonchimeras :var:`output.fasta`
 
