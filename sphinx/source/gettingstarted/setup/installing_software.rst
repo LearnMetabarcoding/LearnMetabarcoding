@@ -20,6 +20,7 @@ Setup
 The following commands install some general purpose Linux tools and some libraries that are required for installing one or more software tools detailed below.
 
 .. parsed-literal::
+	:class: codebg
 	
 	:comment:`# Set up directories`
 	sudo mkdir /usr/local/deb/
@@ -50,7 +51,8 @@ ALAN
 Commandline alignment viewer, github `here <https://github.com/mpdunne/alan>`_.
 
 .. parsed-literal::
-	
+	:class: codebg
+
 	sudo wget -P /usr/local/bin/ \https://raw.githubusercontent.com/mpdunne/alan/master/alan
 	sudo chmod a+x /usr/local/bin/alan
 
@@ -63,6 +65,8 @@ BLAST
 Widely used sequence searching software, documentation and installation instructions `here <https://www.ncbi.nlm.nih.gov/books/NBK279690/>`_.
 
 .. parsed-literal::
+	:class: codebg
+
 	cd /usr/local/src/
 	
 	BLAST_VERSION="2.11.0" :comment:`# Change as appropriate`
@@ -79,6 +83,7 @@ bPTP
 Bayesian phylogeny-based species delimitation, github `here <https://github.com/zhangjiajie/PTP>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	cd /usr/local/src
 	sudo git clone \https://github.com/zhangjiajie/PTP
@@ -98,6 +103,7 @@ catfasta2phyml
 Script for concatenating alignments into a supermatrix, github `here <https://github.com/nylander/catfasta2phyml>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sudo wget -O /usr/local/bin/ \https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
 	sudo chmod a+x /usr/local/bin/catfasta2phyml.pl
@@ -105,7 +111,8 @@ Script for concatenating alignments into a supermatrix, github `here <https://gi
 Installation not necessary: you could simply download it to your working directory and run it using ``perl``:
 
 .. parsed-literal::
-	
+	:class: codebg
+
 	wget /usr/local/bin/ \https://raw.githubusercontent.com/nylander/catfasta2phyml/master/catfasta2phyml.pl
 	perl catfasta2phyml.pl
 
@@ -118,6 +125,7 @@ CROP
 Bayesian OTU delimitation, github `here <https://github.com/tingchenlab/CROP>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sudo apt install libgsl-dev
 	
@@ -138,6 +146,7 @@ Cutadapt
 Versatile adapter sequence removal, documentation `here <https://cutadapt.readthedocs.io/en/stable/>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sudo -H python3 -m pip install cutadapt
 
@@ -150,6 +159,7 @@ extract_genes
 Script for extracting individual gene sequences from GenBank files, github `here <https://github.com/tjcreedy/biotools>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sudo apt install bioperl libarray-utils-perl
 	
@@ -159,6 +169,7 @@ Script for extracting individual gene sequences from GenBank files, github `here
 Installation not necessary: you coul simply download it to your working directory and run it using ``perl``:
 
 .. parsed-literal::
+	:class: codebg
 	
 	wget \https://raw.githubusercontent.com/tjcreedy/biotools/master/extract_genes.pl
 	perl extract_genes.pl
@@ -172,6 +183,7 @@ FastTree
 Fast maximum likelihood phylogenetic inference, website `here <http://www.microbesonline.org/fasttree/>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	cd /usr/local/bin/
 	sudo wget \http://www.microbesonline.org/fasttree/FastTree
@@ -187,6 +199,7 @@ FastQC
 Raw sequence quality assessment, website `here <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	cd /usr/local/src/ 
 	sudo wget \https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.9.zip
@@ -203,6 +216,7 @@ FASTX Toolkit
 Various handy tools for dealing with FASTA and FASTQ files. A little out of date though, requires patching to work in modern Ubuntu (all done in the below commands). Website `here <http://hannonlab.cshl.edu/fastx_toolkit/index.html>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	cd /usr/local/src/
 	
@@ -234,6 +248,7 @@ MAFFT
 Sequence alignment software, website `here <https://mafft.cbrc.jp/alignment/software/>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sudo wget -P /usr/local/deb/ \https://mafft.cbrc.jp/alignment/software/mafft_7.475-1_amd64.deb
 	sudo apt install /usr/local/deb/mafft_7.475-1_amd64.deb
@@ -247,6 +262,7 @@ metaMATE
 Tool for exploring detailed read frequency filtering thresholds, github `here <https://github.com/tjcreedy/metaMATE>`_. Requires :ref:`BLAST<blast>`, :ref:`MAFFT<mafft>` and :ref:`R<r>`
 
 .. parsed-literal::
+	:class: codebg
 	
 	sudo -H python3 -m pip install metaMATE
 	sudo Rscript -e "install.packages(c('getopt', 'ape', 'fastcluster'), repos = '\https://cloud.r-project.org')"
@@ -260,6 +276,7 @@ Pairfq
 Ensures paired read files are syncronised, github `here <https://github.com/sestaton/Pairfq>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sudo apt install libdbd-sqlite3-perl
 	
@@ -274,6 +291,7 @@ PEAR
 Paired end read merger, website `here <http://www.exelixis-lab.org/pear>`_. You must sign up for a PEAR academic licence on that website and you will receive an email with a link to download the installation files. The command here assumes you've downloaded the file to your home directory.
 
 .. parsed-literal::
+	:class: codebg
 	
 	cd /usr/local/src/
 	sudo cp ~/pear-0.9.11-linux-x86_64.tar.gz ./   :comment:`# Change the source path if necessary`
@@ -292,6 +310,8 @@ phylostuff
 A set of scripts for doing stuff with phylogenies, including relabelling and inferring taxonomy. Github `here <https://github.com/tjcreedy/phylostuff>`_. Requires :ref:`R<r>`.
 
 .. parsed-literal::
+	:class: codebg
+
 	sudo apt install libxml2-dev libssl-dev libcurl4-openssl-dev
 	
 	cd /usr/local/src
@@ -310,6 +330,7 @@ R
 Versatile data handling language, website `here <https://cran.r-project.org>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sudo apt install apt-transport-https
 	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
@@ -325,7 +346,7 @@ swarm
 Linkage-based OTU delimitation, github `here <https://github.com/torognes/swarm>`_.
 
 .. parsed-literal::
-	
+	:class: codebg
 	
 	cd /usr/local/src
 
@@ -347,6 +368,7 @@ VSEARCH
 Open-source implementation of USEARCH with more versatility. VSEARCH is a software package specifically designed for metabarcoding, based on the USEARCH package but completely free and open source. Github `here <https://github.com/torognes/vsearch>`_.
 
 .. parsed-literal::
+	:class: codebg
 	
 	sudo apt install autoconf groff
 	
