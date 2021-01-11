@@ -29,7 +29,7 @@ You can select different layouts for your tree using the buttons on the top bar.
 Rerooting a tree in Dendroscope
 ===============================
 
-To reroot a tree you in Dendroscope you must first select the branch that you want to set as root. If you already have something selected, clear it by going to :menuselection:`Select --> Deselect`. Then select the branch you want to set as root with your cursor. The below screenshot shows an example of a selected branch.
+To reroot a tree you in Dendroscope you must first select the branch that you want to set as root. If you already have something selected, clear it by going to :menuselection:`Select --> Deselect All`. Then select the branch you want to set as root with your cursor. The below screenshot shows an example of a selected branch.
 
 .. image:: dendroscope_selected.png
     :align: center
