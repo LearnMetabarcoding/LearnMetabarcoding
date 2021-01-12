@@ -16,7 +16,7 @@
 }
 
 .green {
-    background: none repeat scroll 0 0 #e7f2fa;
+    background: none repeat scroll 0 0 lightgreen;
 }
 
 .green .admonition-title {
@@ -25,7 +25,7 @@
     background-color: green;
 }
 .togglegreen {
-    background: none repeat scroll 0 0 #e7f2fa;
+    background: none repeat scroll 0 0 lightgreen;
 }
 
 .togglegreen .admonition-title {
@@ -65,9 +65,9 @@ div[role=contentinfo]:after {
 }
 
 .highlight{
-    background-color: #e7f2fa;
+    background-color: lightyellow;
 }
 
 .codebg {
-    background-color: #e7f2fa;
+    background-color: lightyellow;
 }
