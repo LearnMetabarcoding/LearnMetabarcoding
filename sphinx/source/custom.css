@@ -16,7 +16,7 @@
 }
 
 .green .rst-content .admonition{
-    background: none repeat scroll 0 0 lightgreen;
+    background: none repeat scroll 0 0 lightgreen !important;
 }
 
 .green .admonition-title {
@@ -25,7 +25,7 @@
     background-color: green;
 }
 .togglegreen .rst-content .admonition {
-    background: none repeat scroll 0 0 lightgreen;
+    background: none repeat scroll 0 0 lightgreen !important;
 }
 
 .togglegreen .admonition-title {
