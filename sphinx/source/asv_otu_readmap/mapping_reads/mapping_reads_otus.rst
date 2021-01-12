@@ -88,7 +88,7 @@ Now we can join the output from the above to your table of read counts per ASV p
 .. parsed-literal::
 	:class: codebg
 	
-	join -1 2 -2 1 <(sort :var:`ASV-OTU.tsv`) :var:`ASV_read_map.tsv` > output.tsv
+	join -1 2 -2 1 <(sort -k2 :var:`ASV-OTU.tsv`) :var:`ASV_read_map.tsv` > output.tsv
 
 Note that we sorted the ASV-to-OTU table, this is a necessary step for ``join`` to work properly.
 
@@ -97,7 +97,7 @@ Use ``head`` to view the output file. You'll see two columns of sequence names f
 .. parsed-literal::
 	:class: codebg
 	
-	sed -e "s/ /\\t/g" :var:`input.tsv` | cut -d2- > :var:`output.tsv`
+	sed -e "s/ /\\t/g" :var:`input.tsv` | cut -f2- > :var:`output.tsv`
 
 You might have noticed that we've lost the header column from the ASV read map table: this is because it didn't have an ASV name in column 1 to match against the other table. No matter, we can bring it back again.
 
