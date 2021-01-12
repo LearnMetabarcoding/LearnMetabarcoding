@@ -31,10 +31,22 @@ Getting started
 
 Create a new directory and place copies of all of the FASTA files you want to compare, and only these FASTA files, into this directory. I'm going to assume you've called this directory ``delim_outputs/``.
 
+We want to strip out any ``;size=`` tags in these files, because they're not necessary for what we're doing.
+
+.. parsed-literal::
+	:class: codebg
+	
+	for f in :var:`delim_outputs`/\*;
+	do
+		sed -i -e "s/;size=.*$//" $f
+	done
+
+The ``-i`` in the ``sed`` command modifies the file "inplace", meaning it saves over the existing version of the file. You should be careful with this option!
+
 Tracking ASVs to OTUs
 =====================
 
-We will merge all OTUs into a single file, then search the ASVs against this file. This will give us a table showing which ASVs were used as OTU centroids for each method/parameter. 
+Next we will merge all OTUs into a single file, then search the ASVs against this file. This will give us a table showing which ASVs were used as OTU centroids for each method/parameter. 
 
 First, concatenate all of your OTUs. You might notice we're using a similar method to earlier in the pipeline - this is a great example of where we can find tools in our toolbox that we already understand and apply them to new use cases.
 
