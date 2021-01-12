@@ -15,7 +15,7 @@
     content: " ▲";
 }
 
-.green {
+.green .admonition{
     background: none repeat scroll 0 0 lightgreen;
 }
 
@@ -24,7 +24,7 @@
     clear: both;
     background-color: green;
 }
-.togglegreen {
+.togglegreen .admonition{
     background: none repeat scroll 0 0 lightgreen;
 }
 
