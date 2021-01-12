@@ -15,7 +15,7 @@
     content: " ▲";
 }
 
-.green .admonition{
+.green .rst-content .admonition{
     background: none repeat scroll 0 0 lightgreen;
 }
 
@@ -24,7 +24,7 @@
     clear: both;
     background-color: green;
 }
-.togglegreen .admonition{
+.togglegreen .rst-content .admonition {
     background: none repeat scroll 0 0 lightgreen;
 }
 
