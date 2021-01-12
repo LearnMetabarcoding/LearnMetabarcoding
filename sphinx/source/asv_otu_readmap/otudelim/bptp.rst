@@ -128,7 +128,7 @@ The following command loops through the lines of the reformatted partition summa
 .. parsed-literal::
 	:class: codebg
 	
-	paste -d$' ':var:`representativeASVs.txt` :var:`reformattedpartitionsummary.txt` > :var:`output.txt`
+	paste -d$' ' :var:`representativeASVs.txt` :var:`reformattedpartitionsummary.txt` > :var:`output.txt`
 	
 
 This output file is the record of ASVs grouped into each OTU, just like we generated in the OTU delimitation methods.
