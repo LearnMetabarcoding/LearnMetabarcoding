@@ -71,7 +71,7 @@ For **FastTree**, we must convert our existing tree into a constraint alignment,
 		:class: codebg
 		
 		wget \http://www.microbesonline.org/fasttree/TreeToConstraints.pl
-		perl TreeToConstraints.pl < :var:`reference.tre` ​> :var:`constraints.txt`
+		perl TreeToConstraints.pl < :var:`reference.tre` > :var:`constraints.txt`
 
 Building the tree
 =================
