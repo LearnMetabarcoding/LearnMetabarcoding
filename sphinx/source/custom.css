@@ -16,7 +16,7 @@
 }
 
 div.green.admonition{
-    background: none repeat scroll 0 0 palegreen;
+    background: none repeat scroll 0 0 #d1ffd1;
 }
 
 .green .admonition-title {
@@ -25,7 +25,7 @@ div.green.admonition{
     background-color: green;
 }
 div.togglegreen.admonition {
-    background: none repeat scroll 0 0 palegreen;
+    background: none repeat scroll 0 0 #d1ffd1;
 }
 
 .togglegreen .admonition-title {
