@@ -52,13 +52,13 @@ This process is very similar to demultiplexing, except we only have one sequence
 
 	.. parsed-literal::
 
-		CCNGAYATRGCNTTYCCNCG
+		\CCNGAYATRGCNTTYCCNCG
 		
 	**Reverse (R2)**
 
 	.. parsed-literal::
 
-		TANACYTCNGGRTGNCCRAARAAYCA
+		\TANACYTCNGGRTGNCCRAARAAYCA
 		
 	**Cutadapt** is aware of ambiguous bases so it’s fine to use the primer sequences as-is. The primers should have been consecutive with the indices, so now must be at the start of the reads: thus you can use ​^ to anchor the sequence as before. You don’t need to name the primer sequences (``XX=``), and you don’t need to use ``{name}``  in the output - the file name will do. Try running  your command, if it doesn’t work, check the solution below.
 
