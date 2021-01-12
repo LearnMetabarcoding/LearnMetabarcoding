@@ -15,8 +15,8 @@
     content: " ▲";
 }
 
-.green .rst-content .admonition{
-    background: none repeat scroll 0 0 lightgreen !important;
+div.green.admonition{
+    background: none repeat scroll 0 0 lightgreen;
 }
 
 .green .admonition-title {
