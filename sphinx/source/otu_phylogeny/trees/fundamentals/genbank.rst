@@ -18,7 +18,7 @@ Getting Coleoptera data
 
 	.. parsed-literal::
 		
-		"Coleoptera"[Organism] AND srcdb_refseq[PROP] AND mitochondrion[filter]
+		\"Coleoptera\"[Organism] AND srcdb_refseq[PROP] AND mitochondrion[filter]
 
 We are asking for any sequences with Coleoptera in the Organism field, from the RefSeq database, and from the mitochondrion only. You should get around 300 sequences as of December 2020.
 

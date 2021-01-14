@@ -174,7 +174,7 @@ If you add all of the read counts up, you'll notice we're missing some reads fro
 Cleaning up
 ===========
 
-You should now have lots of files in your output directory. It's good practice to keep track of how demultiplexing performed: you could :guilabel:`try to write a command that saves the output of your previos grep command into a file` to keep a record (see the solution box below if you're not sure how to do this). 
+You should now have lots of files in your output directory. It's good practice to keep track of how demultiplexing performed: you could :guilabel:`try to write a command that saves the output of your previous grep command into a file` to keep a record (see the solution box below if you're not sure how to do this). 
 
 .. admonition:: Solution
 	:class: toggle
