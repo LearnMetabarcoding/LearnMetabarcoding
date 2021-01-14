@@ -36,7 +36,7 @@ Here we will just do step 5.
 Building a tree
 ===============
 
-The first thing to do is build a phylogenetic tree of our ASVs. We do this using the **FastTree**. This is a quick and dirty approach, we'll revisit building OTU phylogeneny in more detail in the :ref:`Building OTU phylogeny<phylogeny>` section.
+The first thing to do is build a phylogenetic tree of our ASVs. We do this using the **FastTree**. This is a quick and dirty approach, we'll revisit building OTU phylogeny in more detail in the :ref:`Building OTU phylogeny<phylogeny>` section.
 
 First we must strip out our ``;size=`` annotations, as these often cause issues in newick-format trees. Run the following command, replacing ``input.fasta`` with the name of your ASV file.
 

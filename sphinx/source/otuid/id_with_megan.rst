@@ -21,7 +21,7 @@ While we could simply look at the hits we get from a **BLAST** search to estimat
 .. admonition:: Data and software
 	:class: green
 	
-	The input data to this tutorial is a FASTA file of sequences that you want to classify. If you've been following along step-by-step, you can use ASVs or OTUs you produced in previous sections. Alternatively, you can use the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionD archive <sectionDdata>` can be used as example data.
+	The input data to this tutorial is a FASTA file of sequences that you want to classify. If you've been following along step-by-step, you can use ASVs or OTUs you produced in previous sections. Alternatively, you can use the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionE archive <sectionEdata>` can be used as example data.
 	
 	You will also need a local copy of the GenBank nucleotide (nt) database. If you're working with your own data, you can find out how to download this `here <ftp://ftp.ncbi.nlm.nih.gov/blast/documents/blastdb.html>`_. If you are working with the example data, we have created a mini version of the nt database designed to rapidly produce results **for this dataset only**. This is in the directory ``blastdb`` within the :ref:`sectionD archive <sectionDdata>`.
 	
@@ -64,7 +64,7 @@ Go to the :menuselection:`LCA Params` tab at the top. Here you will see the para
 
 Once **MEGAN** has finished you should see a reduced version of the taxonomy tree. It may not be very detailed: at the top bar, select :menuselection:`Rank` and choose :menuselection:`Species`. 
 
-:guilabel`Have a look at the tree. Are all the OTUs Coleoptera?`
+:guilabel:`Have a look at the tree. Are all the OTUs Coleoptera?`
 
 Each circle on the tree is one or more OTUs that have been assigned to a node. The larger the circle, the more OTUs have been assigned to that node. If you click on a node, you’ll see two values. :menuselection:`Assigned` is the number of OTUs assigned to that node, :menuselection:`Summed` is the number of OTUs assigned to that node and all child nodes. If you ​right click on a node and click :menuselection:`Inspect`, you can see more details about that node and the OTU(s) assigned to it, as well as all the BLAST information. The greyed out BLAST hits are those that aren’t taken into account in the LCA analysis.
 

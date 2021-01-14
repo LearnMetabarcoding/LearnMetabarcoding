@@ -38,7 +38,7 @@ We want to strip out any ``;size=`` tags in these files, because they're not nec
 	
 	for f in :var:`delim_outputs`/\*;
 	do
-		sed -i -e "s/;size=.*$//" $f
+		sed -i -e "s/;size=.*$//" $f;
 	done
 
 The ``-i`` in the ``sed`` command modifies the file "inplace", meaning it saves over the existing version of the file. You should be careful with this option!
