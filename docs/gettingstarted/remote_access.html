@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Accessing linux servers &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to use these resources" href="how_to_use.html" />
+    <link rel="prev" title="Software installation" href="setup/installing_software.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../gettingstarted.html">Getting started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup.html">Setting up a bioinformatics machine</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Accessing linux servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_use.html">How to use these resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toolbox_pipelines.html">The bioinformatics toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli_bioinformatics.html">Command line bioinformatics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">E: Identifying OTU sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contactus.html">Contact us</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../gettingstarted.html">Getting started</a> &raquo;</li>
+        
+      <li>Accessing linux servers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/gettingstarted/remote_access.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="accessing-linux-servers">
+<span id="remote-access"></span><h1>Accessing linux servers<a class="headerlink" href="#accessing-linux-servers" title="Permalink to this headline">¶</a></h1>
+<p>If you have access to a remote Linux server this page covers how to connect to it remotely from your personal computer. Depending on the operating system (OS) and OS version of your personal computer, there are a few different ways of doing this. Note that this assumes that you are accessing your remote server directly and authenticating via password. If your institution or VPS provider uses intermediate authentication servers or key-based authentication, you should follow the instructions provided by them.</p>
+<p>If you are attending the <strong>Theory and practice in metabarcoding for biodiversity</strong> workshop 7th - 13th January 2021, these instructions apply to you! The server IP address will be shared with you separately.</p>
+<div class="section" id="connecting-via-ssh">
+<h2>Connecting via SSH<a class="headerlink" href="#connecting-via-ssh" title="Permalink to this headline">¶</a></h2>
+<p>We use SSH (Secure SHell) to send commands to the remote server and receive basic information in return, using the <a class="reference internal" href="cli_bioinformatics.html#cli-bioinformatics"><span class="std std-ref">command line interface</span></a>. When you log into a server for the first time it will ask you to reset your password. Once you have done so it will automatically log you out. You will then need to log back in using your new password.</p>
+<div class="section" id="using-terminal-in-macos-or-linux">
+<h3>Using terminal in MacOS or Linux<a class="headerlink" href="#using-terminal-in-macos-or-linux" title="Permalink to this headline">¶</a></h3>
+<p>You can use the native terminal application available on any Mac or Linux machine. In Mac, if you haven’t used this before you can access it by using spotlight to search for “Terminal” or by navigating to the “Terminal” application using launchpad. On Linux starting a terminal using your GUI will vary depending on your distribution, but you can generally launch a terminal by pressing <span class="menuselection">Ctrl + Alt + T</span>.</p>
+<p>Once you have a terminal open, you then type an SSH command which looks like this:</p>
+<pre class="codebg literal-block">ssh <span class="var">username&#64;server_address</span></pre>
+<p>You will need to replace the <code class="docutils literal notranslate"><span class="pre">username</span></code> in the above command with your username for the server. You’ll also need to replace the <code class="docutils literal notranslate"><span class="pre">server_address</span></code> with the actual address of the server you are connecting to. If it is your first time connecting it will ask you if you trust the server, then will usually ask you for a password.</p>
+</div>
+<div class="section" id="using-putty-in-windows">
+<h3>Using PuTTY in Windows<a class="headerlink" href="#using-putty-in-windows" title="Permalink to this headline">¶</a></h3>
+<p>If you are running Windows you can use a program called <a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a>, an SSH client for windows. Once you have installed PuTTY, open it and type the server address in the <span class="menuselection">host name</span> field (see below screenshot). Then click <span class="menuselection">open</span>. This will then bring up the login screen. Enter your credentials and click through any remaning prompts and it will give you access to the server.</p>
+<img alt="../_images/putty.png" class="align-center" src="../_images/putty.png" />
+</div>
+<div class="section" id="using-windows-subsystem-for-linux">
+<h3>Using Windows Subsystem for Linux<a class="headerlink" href="#using-windows-subsystem-for-linux" title="Permalink to this headline">¶</a></h3>
+<p>If you are running Windows 10, then an alternative to PuTTY is the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about">Windows Subsystem for Linux (WSL)</a>, which allows you to effectively install a Linux operating system inside your Windows operating system. It is perhaps overkill to install a complete operating system simply to use SSH, but if you do decide to do this, once you have your Linux subsystem running you should follow the instructions above for using terminal in MacOS or Linux</p>
+</div>
+</div>
+<div class="section" id="transferring-files-between-local-machine-and-server">
+<h2>Transferring files between local machine and server<a class="headerlink" href="#transferring-files-between-local-machine-and-server" title="Permalink to this headline">¶</a></h2>
+<p>There will be instances where you need to transfer files between your machine and a remote server. There are different ways to do this depending on your operating system and preferences.</p>
+<div class="section" id="using-the-scp-command-in-the-terminal-in-linux-or-macos">
+<h3>Using the scp command in the terminal in Linux or MacOS<a class="headerlink" href="#using-the-scp-command-in-the-terminal-in-linux-or-macos" title="Permalink to this headline">¶</a></h3>
+<p>If you are running MacOS or Linux you can transfer files from local machine to server using the <code class="docutils literal notranslate"><span class="pre">scp</span></code> command in the terminal.</p>
+<p>An example of using <code class="docutils literal notranslate"><span class="pre">scp</span></code> to transfer a file from your local machine to a server is below:</p>
+<pre class="codebg literal-block">scp <span class="var">filename</span> <span class="var">username&#64;server_address:/path/</span></pre>
+<p>You type <code class="docutils literal notranslate"><span class="pre">scp</span></code> followed by the file name (if you are not in the directory the file is in you will need to write the whole file path) followed by your <code class="docutils literal notranslate"><span class="pre">username&#64;server_address</span></code> followed by a colon then the path (from the root) to where you want the copy to go in the destination server. If you don’t know what the path is that you need to type in, remember, you can use pwd in the directory you want to send the file to and this will return the path of that directory.</p>
+<p>To transfer from the server to your local machine you simply swap the order of your file paths i.e. server address and filepath then local file path.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">scp</span></code> command is always given from your local machines terminal.</p>
+</div>
+</div>
+<div class="section" id="using-ftp-software">
+<h3>Using FTP software<a class="headerlink" href="#using-ftp-software" title="Permalink to this headline">¶</a></h3>
+<p>FTP software comes with the advantage of having a GUI so you can drag and drop files rather than typing out commands.</p>
+<div class="section" id="winscp-windows">
+<h4>WinSCP (Windows)<a class="headerlink" href="#winscp-windows" title="Permalink to this headline">¶</a></h4>
+<p>Windows users can use an application called WinSCP to transfer files.</p>
+<p>Follow the below steps to set up WinSCP:</p>
+<ol class="arabic simple">
+<li><p>Change the file protocol drop down menu to SCP</p></li>
+<li><p>Type the address of the server you want to connect to in the Host Name field</p></li>
+<li><p>Enter your username and password for the server you want to connect to</p></li>
+<li><p>Click login</p></li>
+<li><p>Click through the remaining prompts</p></li>
+<li><p>You can now drag and drop files between your local machine and the server</p></li>
+</ol>
+<img alt="../_images/winscp.png" class="align-center" src="../_images/winscp.png" />
+</div>
+<div class="section" id="filezilla-windows-macos-linux">
+<h4>FileZilla (Windows, MacOS, Linux)<a class="headerlink" href="#filezilla-windows-macos-linux" title="Permalink to this headline">¶</a></h4>
+<p>Follow the steps below (see screenshot if unsure where to enter information):</p>
+<ol class="arabic simple">
+<li><p>Open FileZilla</p></li>
+<li><p>Enter the server address in Host field</p></li>
+<li><p>Enter your username and password in the correct fields</p></li>
+<li><p>Enter 22 in the Port field</p></li>
+<li><p>Press quick connect</p></li>
+<li><p>Click through remaining prompts</p></li>
+<li><p>You can now drag and drop files between your local machine and the server</p></li>
+</ol>
+<img alt="../_images/filezilla.png" class="align-center" src="../_images/filezilla.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="how_to_use.html" class="btn btn-neutral float-right" title="How to use these resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup/installing_software.html" class="btn btn-neutral float-left" title="Software installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, The Vogler Lab
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
