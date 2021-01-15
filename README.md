@@ -21,7 +21,7 @@ The course documentation site is built using sphinx. This can be downloaded [her
 
 We created some custom classes for the site to allow more flexibility in the sites styles (such as adding solution boxes that can be opened and closed). In the root of the repository there is a file named template.rst which has information on how to use these classes as well as where they are used in the site. To change the styles of any of these classes you can edit the custom.css file which is located in the sphinx/source/ directory.
 
-Once you have edited you need to run sphinx to build the updated HTML and rearrange the folders so the custom styles are inserted and github pages serves the site correctly. The file Make_script.sh at the root of the repository can be run to do this all automatically. To run this in a terminal you simply type `bash Make_script.sh.` Review the output of the terminal as it will tell you about any errors and in which files these errors are so you can go and correct them before pushing your changes. Once you push github will automatically update the site.
+Once you have edited you need to run sphinx to build the updated HTML and rearrange the folders so the custom styles are inserted and github pages serves the site correctly. The file Make_script.sh at the root of the repository can be run to do this all automatically. To run this in a terminal you simply type `bash Make_script.sh`. Review the output of the terminal as it will tell you about any errors and in which files these errors are so you can go and correct them before pushing your changes. Once you push github will automatically update the site.
 
 
 
