@@ -43,6 +43,6 @@ We have already searched GenBank and downloaded data for the Coleoptera and sele
 Next steps
 ==========
 
-Now we should have three genbank-format files. The next step is to :ref:`2. Extract protein coding genes <extract_genes>`.
+Now we should have three genbank-format files. The next step is to :ref:`2. Extract protein coding genes <extracting_genes>`.
 
 .. [#] Alex Crampton-Platt, Douglas W Yu, Xin Zhou, Alfried P Vogler, Mitochondrial metagenomics: letting the genes out of the bottle, GigaScience, Volume 5, Issue 1, December 2016, s13742–016–0120–y, https://doi.org/10.1186/s13742-016-0120-y

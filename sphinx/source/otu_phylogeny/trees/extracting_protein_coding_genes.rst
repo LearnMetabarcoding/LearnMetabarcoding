@@ -1,4 +1,4 @@
-.. _extract_genes:
+.. _extracting_genes:
 
 .. role:: var
 
@@ -17,6 +17,8 @@ We are going to focus solely on protein coding genes, rather than using the full
 	The input data for this tutorial is one or more genbank-format files containing mitogenome sequences from which you want to build a phylogeny. See the :ref:`preparing mitogenome data <prep_mitogenome_data>` tutorial for how you might acquire these.
 	
 	The files ``references_CCCPmitogenomes.gb``, ``references_GBcoleoptera.gb`` and ``references_GBarthropods.gb`` within the :ref:`sectionD archive <sectionDdata>` can be used as example data.
+	
+	This tutorial uses the :ref:`extract_genes.pl <extract_genes>` script.
 	
 
 Extracting genes

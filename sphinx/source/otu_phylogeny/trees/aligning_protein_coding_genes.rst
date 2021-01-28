@@ -14,7 +14,7 @@ The sequences for each gene need to be aligned so that comparable regions are li
 .. admonition:: Data and software
 	:class: green
 	
-	The input data for this tutorial is a directory of gene sequences in FASTA format, as produced in :ref:`the previous tutorial <extract_genes>`.
+	The input data for this tutorial is a directory of gene sequences in FASTA format, as produced in :ref:`the previous tutorial <extracting_genes>`.
 	
 	This tutorial uses the :ref:`MAFFT <mafft>` software. You should also have an alignment viewer, such as **Aliview**, installed on your personal computer.
 
