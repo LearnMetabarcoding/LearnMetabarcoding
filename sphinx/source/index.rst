@@ -13,6 +13,11 @@ Each tutorial is generally centred around a particular step in metabarcoding, in
 
 While we have made every effort to cover a wide range of metabarcoding bioinfirmatic topics, metabarcoding is a continually evolving field and it's impossible to be comprehensive. This course explicitly focuses on metabarcoding for bulk community samples of arthropods using protein-coding markers, as distinct from many other forms of metabarcoding such as environmental DNA sequencing, dietary-derived metabarcoding, or microbiome sequencing using ribosomal RNA markers. As such, we do not tackle some areas, such as adaptation of the bioinformatic approaches to degraded DNA, and some areas we do cover may not be universal, such as translation-based ASV filtering. Nonetheless, the majority of the core concepts are identical across all metabarcoding so we hope this resource will be useful to any metabarcoder, no matter their background.
 
+Feedback
+========
+
+We're really keen to hear about your experience using these resources, so whether you've just read one or two pages or gone through the entire site, please fill in our `feedback form <https://forms.gle/46FSR9husitW6LDR7>`_ - it'll only take a minute!
+
 Resource structure
 ==================
 
