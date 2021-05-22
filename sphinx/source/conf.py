@@ -39,6 +39,9 @@ templates_path = ['html_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 
+# Point to correct master doc
+root_doc = 'index'
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
