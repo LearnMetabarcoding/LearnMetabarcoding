@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>OTU delimitation &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/custom.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Greedy clustering" href="otudelim/greedy.html" />
+    <link rel="prev" title="C: ASVs, OTUs and read mapping" href="../asv_otu_readmap.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OTU delimitation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="otudelim/greedy.html">Greedy clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="otudelim/linkage.html">Linkage-based delimitation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="otudelim/bayesian.html">Bayesian clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="otudelim/bptp.html">Extension: Phylogenetic delimitation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="otudelim/comparing_otus.html">Comparing OTU delimitation methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mapping_reads.html">Mapping reads</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../otuid.html">E: Identifying OTU sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contactus.html">Contact us</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a> &raquo;</li>
+        
+      <li>OTU delimitation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/asv_otu_readmap/otudelim.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="otu-delimitation">
+<span id="otu-delim"></span><h1>OTU delimitation<a class="headerlink" href="#otu-delimitation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>After processing reads and filtering we get a set of ASVs that, ideally, represent all of the true biological sequences (aka haplotypes) present in our samples. However, these encompass both intra- and inter-specific variation and we often want data that is comparable to species-level ecological data. Therefore, we can try to collapse the intra-specific variation while maintaining inter-specific variation. We will try several different methods for doing this, and compare them.</p>
+<p>As well as generating approximately species-level taxonomic units, grouping ASVs into OTUs is also a method for removing errors. While we hope that our filtering has been stringent enough to remove all erroneous sequences, the chances are that it is not. However, small variations from true haplotypes will generally get grouped in with the true haplotype, thus slight errors will not be found in the OTU sequences. The downside of course is that we also remove a large proportion of the <em>real</em> variation among our ASVs, the true intra-specific variation in our dataset.</p>
+<div class="green admonition">
+<p class="first admonition-title">Data</p>
+<p>The starting point for this section is a FASTA file comprising ASVs, that is to say unique sequences with errors removed. These sequences must have <code class="docutils literal notranslate"><span class="pre">;size=</span></code> tags in the sequence headers to denote the abundance of each sequence in the dataset.</p>
+<p>If you worked through <a class="reference internal" href="../filtering.html#filtering"><span class="std std-ref">the previous section</span></a>, these data were produced by the <a class="reference internal" href="../filtering/chimera_filtering.html#chimera"><span class="std std-ref">chimera filtering</span></a> tutorial.</p>
+<p class="last">If you didn’t work through the previous section, you can download a zip archive of the data for all of the tutorials in this section <a class="reference internal" href="../data.html#sectioncdata"><span class="std std-ref">here</span></a>. Unzip this to a convenient location.</p>
+</div>
+</div>
+<div class="section" id="delimitation-methods">
+<h2>Delimitation methods<a class="headerlink" href="#delimitation-methods" title="Permalink to this headline">¶</a></h2>
+<p>Delimiting OTUs is analagous to grouping individuals or morphotypes into species, but perhaps even harder as we have to apply some sort of standard grouping protocol to all of our ASVs. As our ASVs are completely anonymous at this stage, we can’t necessarily apply different protocols to different taxonomic or phylogenetic subsets of our data (while theoretically possible, there is no known implementation of this…). The only information we have is knowledge about our metabarcoding locus of choice, and the extent to which it diverges within and between species. We want to try and select a method and its parameters to consistently lump together ASVs belonging to the same species, while splitting ASVs belonging to different species. We can never be 100% confident that we have correctly grouped into species, so we don’t call the resulting groups “species”, instead using the term “OTU”.</p>
+<p>Due to the challenge of certainty in OTU grouping, many methods have been developed. We will look at three methods that use quite different theoretical underpinnings, and explore the key parameters and the effect of changing these parameters on the output.</p>
+</div>
+<div class="section" id="otu-delimitation-vs-species-delimitation">
+<h2>OTU delimitation vs species delimitation<a class="headerlink" href="#otu-delimitation-vs-species-delimitation" title="Permalink to this headline">¶</a></h2>
+<p>One thing to remember is that while OTU delimitation methods were built with the broad aim of finding species-like units, they must be suitable for handling large amplicon datasets. In barcoding, researchers often also want to group sequences into species, but usually have smaller datasets and a greater need for high fidelity. As such, analagous “species” delimitation methods have been developed that are based on our understanding of the evolutionary processes and patterns that form species. These methods are usually quite computationally intensive for the size of datasets usually encountered in metabarcoding, hence why they are rarely if ever used for metabarcoding. However, sometimes it may be useful as a sanity check to test a subset of our dataset using these methods.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>We will look at three methods of OTU delimitation commonly used in metabarcoding, and one method of species delimitation commonly used in barcoding studies as an extension. You can work through these tutorials in any order.</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="otudelim/greedy.html#greedy-clustering"><span class="std std-ref">Greedy clustering</span></a> is by far the most common method for OTU delimitation, generally at the 3% similarity level.</li>
+<li><a class="reference internal" href="otudelim/linkage.html#linkage-delimitation"><span class="std std-ref">Linkage delimitation</span></a> works by building a linkage graph of ASVs and breaking this into OTUs</li>
+<li><a class="reference internal" href="otudelim/bayesian.html#bayesian-clustering"><span class="std std-ref">Bayesian clustering</span></a> uses a bayesian similarity approach to group ASVs into OTUs</li>
+<li><a class="reference internal" href="otudelim/bptp.html#bptp-delim"><span class="std std-ref">Phylogenetic delimitation</span></a> borrows from species delimitation methods in barcoding and uses a phylogenetics-based approach to group ASVs.</li>
+</ol>
+<p>For each step, we will generate OTU sequences and a record of which ASVs were grouped into which OTUs. Once you’ve learned about some different methods, you may want to read about how to <a class="reference internal" href="otudelim/comparing_otus.html#comparing-otus"><span class="std std-ref">Compare OTU delimitation methods</span></a>. This is largely an exercise in exploring data, and doesn’t have any specific outputs aside from helping you choose which set of OTUs to accept.</p>
+<p>Once you have a final set of OTUs, and the associated record of ASVs within each OTU, you can move on to the <a class="reference internal" href="mapping_reads.html#mapping-reads"><span class="std std-ref">Mapping reads</span></a> tutorials.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="otudelim/greedy.html" class="btn btn-neutral float-right" title="Greedy clustering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../asv_otu_readmap.html" class="btn btn-neutral float-left" title="C: ASVs, OTUs and read mapping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Vogler Lab.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
