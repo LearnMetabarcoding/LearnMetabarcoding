@@ -30,7 +30,7 @@ One issue with using these more advanced classification tools is that they often
 Classification using SINTAX
 ===========================
 
-We will perform **SINTAX** classification against the MIDORI database ourselves, as this is pretty straightforward to do. The first thing to do is to download the reference dataset you want to use from the MIDORI website. Head to the `download page <http://reference-midori.info/download.php#>`_ and select the :menuselection:`Latest_GenBankRelease`, then select :menuselection:`SINTAX --> uniq`. You can download this file directly to your working directory by using the command below; note how the structure of the download path matches the information shown on the MIDORI page. You would obviously need to modify this to download a file for a different classifier or for a different locus. We then unzip this file and use VSEARCH to convert this to a special database format.
+We will perform **SINTAX** classification against the MIDORI database ourselves, as this is pretty straightforward to do. The first thing to do is to download the reference dataset you want to use from the MIDORI website. Head to the `download page <http://reference-midori.info/download.php#>`_ and select the :menuselection:`Latest_GenBankRelease`, then select :menuselection:`SINTAX --> uniq`. You can download this file directly to your working directory by using the **example** command below. **Note that** the structure of the download path matches the information shown on the MIDORI page - you would obviously need to modify this to download a file for a different classifier, for a different locus, or for a newer version (240 at the time of writing, but very likely to change!). We then unzip this file and use VSEARCH to convert this to a special database format.
 
 .. parsed-literal::
 	:class: codebg
@@ -51,7 +51,7 @@ Classifying our OTUs using this database is now very simple. We simply run SINTA
 
 The ``-strand`` argument controls whether sequences are compared as-is, or whether the reverse complement of the sequences is also checked; we use ``both`` just in case any database sequences are the wrong strand, although this is generally unlikely. The ``-sintax_cutoff`` argument gives the minimum bootstrap value with which to accept taxonomy, ``1`` is the strictest setting (i.e. a sequence must always be placed into this taxon for it to be accepted).
 
-Open up the output table and have a look at it. The second column gives the full predicted taxonomy, with bootstrap support in parentheses. The third column contains the strand and the fourth column gives only the taxonomic ranks wih support at or above our ``-sintax_cutoff`` threshold.
+Open up the output table and have a look at it. The second column gives the full predicted taxonomy, with bootstrap support in parentheses. The third column contains the strand and the fourth column gives only the taxonomic ranks with support at or above our ``-sintax_cutoff`` threshold.
 
 Classification using RDP or SPINGO
 ==================================

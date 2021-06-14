@@ -23,7 +23,7 @@ While we could simply look at the hits we get from a **BLAST** search to estimat
 	
 	The input data to this tutorial is a FASTA file of sequences that you want to classify. If you've been following along step-by-step, you can use ASVs or OTUs you produced in previous sections. Alternatively, you can use the file ``otus_greedy_0.97.fasta`` within the :ref:`sectionE archive <sectionEdata>` can be used as example data.
 	
-	You will also need a local copy of the GenBank nucleotide (nt) database. If you're working with your own data, you can find out how to download this `here <ftp://ftp.ncbi.nlm.nih.gov/blast/documents/blastdb.html>`_. If you are working with the example data, we have created a mini version of the nt database designed to rapidly produce results **for this dataset only**. This is in the directory ``blastdb`` within the :ref:`sectionD archive <sectionDdata>`.
+	You will also need a local copy of the GenBank nucleotide (nt) database. If you're working with your own data, you can find out how to download this `here <ftp://ftp.ncbi.nlm.nih.gov/blast/documents/blastdb.html>`_. If you are working with the example data, we have created a mini version of the nt database designed to rapidly produce results **for this dataset only**. This is in the directory ``blastdb`` within the :ref:`sectionE archive <sectionEdata>`.
 	
 	This tutorial uses the :ref:`BLAST<blast>` software. You should also have the software `MEGAN <https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/algorithms-in-bioinformatics/software/megan6/>`_ installed on your personal computer.
 
