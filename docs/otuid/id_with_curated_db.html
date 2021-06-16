@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2. Classification with curated databases &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/js/custom.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Identifying OTUs with references" href="id_local.html" />
+    <link rel="prev" title="Extension: MEGAN settings" href="extensions/megan_settings.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../otuid.html">E: Identifying OTU sequences</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="database.html">Database classification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="id_with_megan.html">1. Classification with GenBank &amp; MEGAN</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2. Classification with curated databases</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="id_local.html">Identifying OTUs with references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phylogeny_based.html">Phylogenetic classification</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contactus.html">Contact us</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../otuid.html">E: Identifying OTU sequences</a> &raquo;</li>
+        
+          <li><a href="database.html">Database classification</a> &raquo;</li>
+        
+      <li>2. Classification with curated databases</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/otuid/id_with_curated_db.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="classification-with-curated-databases">
+<span id="id-curated"></span><h1>2. Classification with curated databases<a class="headerlink" href="#classification-with-curated-databases" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p><strong>BLAST</strong> is not designed as a taxonomic assignment tool, and <strong>MEGAN</strong> is forced to work with <strong>BLAST</strong>’s alignment and matching summary outputs to assign taxonomy. There are other tools out there that are specifically designed for the assignment of taxonomy to anonymous sequences. Rather than comparing a sequence against a database one-by-one, these methods use k-mer approaches to place a sequence within the whole set of references. Then, they use an approach broadly analogous to <strong>MEGAN</strong>’s LCA method to probabilistically assign taxonomy, generally assigning confidence scores to different taxonomic levels. Such methods include <strong>PROTAX</strong>, <strong>SINTAX</strong>, <strong>SPINGO</strong> and <strong>RDPclassifier</strong>. It should be noted that like much of the software available for metabarcoding, these tools are often written for use on 16S. It should always be considered whether other loci may not be treated as expected by such tools.</p>
+<p>The other downside to the prior method is that GenBank is not necessarily authoritative - it is well known that many sequences available on GenBank are misidentified, or only identified to order or family. This would not be an issue if we were working with a well-known taxon, but when our survey lineages are likely to be poorly covered in GenBank, yet we require a relatively detailed identification, searching against all of GenBank is likely to be less successful. Some researchers have taken sections of GenBank and curated the sequences, removing sequences that do not have species-level identification, are poor quality or unlikely to be correct. Remember though - just because a dataset has been curated, doesn’t mean it’s perfect!</p>
+<div class="green admonition">
+<p class="first admonition-title">Data and software</p>
+<p>The input data to this tutorial is a FASTA file of sequences that you want to classify. If you’ve been following along step-by-step, you can use ASVs or OTUs you produced in previous sections. Alternatively, the file <code class="docutils literal notranslate"><span class="pre">otus_greedy_0.97.fasta</span></code> within the <a class="reference internal" href="../data.html#sectionedata"><span class="std std-ref">sectionE archive</span></a> can be used as example data.</p>
+<p>The last part of this tutorial assumes you have the output from taxonomic classification using BLAST and MEGAN, as produced in <a class="reference internal" href="id_with_megan.html#id-using-megan"><span class="std std-ref">the previous tutorial</span></a>. If you have not run this tutorial, the file <code class="docutils literal notranslate"><span class="pre">otus_greedy_0.97_MEGAN_default.csv</span></code> within the <a class="reference internal" href="../data.html#sectionedata"><span class="std std-ref">sectionE archive</span></a> can be used as example data.</p>
+<p class="last">This tutorial uses the <a class="reference internal" href="../gettingstarted/setup/installing_software.html#vsearch"><span class="std std-ref">VSEARCH</span></a> software.</p>
+</div>
+</div>
+<div class="section" id="the-midori-database">
+<h2>The MIDORI database<a class="headerlink" href="#the-midori-database" title="Permalink to this headline">¶</a></h2>
+<p>One issue with using these more advanced classification tools is that they often require quite specific reference database structures. Thankfully, many curated database authors have released their databases in these formats. For eukaryotic studies, the MIDORI database (Machida, 2017, doi: 10.1038/sdata.2017.27) has curated databases for 14 different loci, including CO1, and releases versions of their databases for 5 different taxonomic assignment tools. This is quite handy for metazoan metabarcoding. For other taxa, the fungal UNITE database is widely used, and there are many available 16S databases for microbial metabarcoding.</p>
+</div>
+<div class="section" id="classification-using-sintax">
+<h2>Classification using SINTAX<a class="headerlink" href="#classification-using-sintax" title="Permalink to this headline">¶</a></h2>
+<p>We will perform <strong>SINTAX</strong> classification against the MIDORI database ourselves, as this is pretty straightforward to do. The first thing to do is to download the reference dataset you want to use from the MIDORI website. Head to the <a class="reference external" href="http://reference-midori.info/download.php#">download page</a> and select the <span class="menuselection">Latest_GenBankRelease</span>, then select <span class="menuselection">SINTAX ‣ uniq</span>. You can download this file directly to your working directory by using the <strong>example</strong> command below. <strong>Note that</strong> the structure of the download path matches the information shown on the MIDORI page - you would obviously need to modify this to download a file for a different classifier, for a different locus, or for a newer version (240 at the time of writing, but very likely to change!). We then unzip this file and use VSEARCH to convert this to a special database format.</p>
+<pre class="codebg literal-block">
+wget http://reference-midori.info/download/Latest_GenBankRelease240/SINTAX/uniq/MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
+unzip MIDORI_UNIQ_GB240_CO1_SINTAX.fasta.zip
+vsearch --makeudb_usearch MIDORI_UNIQ_GB240_CO1_SINTAX.fasta \
+--output MIDORI_UNIQ_GB240_CO1_SINTAX.udb
+</pre>
+<p>Classifying our OTUs using this database is now very simple. We simply run SINTAX, which is also part of VSEARCH:</p>
+<pre class="codebg literal-block">
+vsearch -sintax <span class="var">input.fasta</span> -db MIDORI_UNIQ_GB240_CO1_SINTAX.udb \
+-tabbedout <span class="var">output.tsv</span> -strand both -sintax_cutoff 1
+</pre>
+<p>The <code class="docutils literal notranslate"><span class="pre">-strand</span></code> argument controls whether sequences are compared as-is, or whether the reverse complement of the sequences is also checked; we use <code class="docutils literal notranslate"><span class="pre">both</span></code> just in case any database sequences are the wrong strand, although this is generally unlikely. The <code class="docutils literal notranslate"><span class="pre">-sintax_cutoff</span></code> argument gives the minimum bootstrap value with which to accept taxonomy, <code class="docutils literal notranslate"><span class="pre">1</span></code> is the strictest setting (i.e. a sequence must always be placed into this taxon for it to be accepted).</p>
+<p>Open up the output table and have a look at it. The second column gives the full predicted taxonomy, with bootstrap support in parentheses. The third column contains the strand and the fourth column gives only the taxonomic ranks with support at or above our <code class="docutils literal notranslate"><span class="pre">-sintax_cutoff</span></code> threshold.</p>
+</div>
+<div class="section" id="classification-using-rdp-or-spingo">
+<h2>Classification using RDP or SPINGO<a class="headerlink" href="#classification-using-rdp-or-spingo" title="Permalink to this headline">¶</a></h2>
+<p>We won’t run these tools on our own machine because they take a little bit more preliminary work to get the classifier set up. RDP, for example, requires that you train the classifier using the sequences and an associated taxonomy file - MIDORI supplies these, but the format isn’t quite correct so they would require some manual fiddling. If you want to figure out how to use <strong>RDP</strong> for your own data with a custom database, <a class="reference external" href="http://john-quensen.com/tutorials/training-the-rdp-classifier/">this page</a> provides a good starting point, and you should also review the instructions available on the <a class="reference external" href="https://github.com/rdpstaff/classifier">RDP classifier github page</a>.</p>
+<p>Instead, we will take advantage of the server made available by the MIDORI team. You can access the server <a class="reference external" href="http://reference-midori.info/server.php">here</a>. You can see that you can select a program, paste or upload your sequences, and select a database and searching parameters. We suggest uploading your OTU sequences and running RDPClassifier against the Unique CO1 database, with default parameters. We use Unique because it’s a smaller database so won’t take quite as long, we don’t want to overload their server. You could run <strong>SPINGO</strong> too, but its outputs require more processing to be comparable. <strong>RDP</strong> outputs two files, the <code class="docutils literal notranslate"><span class="pre">hier_outfile</span></code> is a summary and the <code class="docutils literal notranslate"><span class="pre">usga_classified</span></code> is the individual OTU taxonomies, you want the latter. Upload it to your machine alongside the <strong>MEGAN</strong> and <strong>SINTAX</strong> classifications.</p>
+</div>
+<div class="section" id="comparing-classifications">
+<h2>Comparing classifications<a class="headerlink" href="#comparing-classifications" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-exercise admonition">
+<p class="first admonition-title">Exercise</p>
+<p>To quickly get an idea of how many Coleoptera OTUs we have, run the following command on the <strong>SINTAX</strong> output file, the <strong>RDP</strong> classified file, and the MEGAN output you uploaded:</p>
+<pre class="codebg literal-block">
+grep -c &quot;Coleoptera&quot; <span class="var">input</span>
+</pre>
+<ul class="simple">
+<li>Do the different assignment programs agree?</li>
+</ul>
+<p>Download these files to your computer using your FTP client and open them up in a text editor or spreadsheet software. The exact format varies, but all they output broadly similar information: the name of the OTU, some taxonomy and a confidence for each taxonomic level. They are fairly intuitive.</p>
+<p>Compare the MEGAN, RDP and SINTAX classifications for some different OTUs.</p>
+<ul class="simple">
+<li>Which programs produce identifications to the lowest taxonomic levels (i.e. towards species)?</li>
+<li>Are species level identifications likely to be accurate?</li>
+<li>What levels of confidence are given to the order level identifications? Might this be very conservative? Why?</li>
+<li>What other taxa do we apparently have?</li>
+</ul>
+<p>You will see that we have some obvious non-Coleoptera OTUs, but also some OTUs that have been assigned to other Insect orders.</p>
+<ul class="simple">
+<li>How consistent are these identifications between methods?</li>
+<li>Are we confident that these really are not Coleoptera?</li>
+</ul>
+<p class="last">Note that it’s perfectly feasible that there could have been non-Coleoptera Insect DNA in these samples.</p>
+</div>
+<p>Classification is only as good as the database and the method used. We tend to find considerable variation between different methods, and it’s hard to decide which is correct. Generally, we would advise treating classifications conservatively, and if using a method that assigns confidence, only accept high confidence classifications.</p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Of course, the ideal situation would be that you have a reference set of barcode sequences for all possible species in your dataset. In the <a class="reference internal" href="id_local.html#id-local"><span class="std std-ref">next tutorial</span></a>, we will look at how to match your OTUs to a reference set.</p>
+<p>An alternative approach to classification uses phylogenetics to assign taxonomy based on phylogenetic placement. We look at one method to do this in the <a class="reference internal" href="phylogeny_based.html#phylogenetic-classification"><span class="std std-ref">phylogenetic classification</span></a> tutorial.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="id_local.html" class="btn btn-neutral float-right" title="Identifying OTUs with references" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="extensions/megan_settings.html" class="btn btn-neutral float-left" title="Extension: MEGAN settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Vogler Lab.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
