@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Keeping your data organised &mdash; Bioinformatic Methods for Biodiversity Metabarcoding  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/js/custom.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Example data" href="../../data.html" />
+    <link rel="prev" title="Cheatsheet of useful commands" href="cheatsheet.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Bioinformatic Methods for Biodiversity Metabarcoding
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../gettingstarted.html">Getting started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up a bioinformatics machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../remote_access.html">Accessing linux servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how_to_use.html">How to use these resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../toolbox_pipelines.html">The bioinformatics toolbox</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../cli_bioinformatics.html">Command line bioinformatics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="UNIX_cmd_line.html">UNIX command line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_UNIX.html">Basic UNIX commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nano.html">Using nano to edit documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="grep.html">The grep command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sed.html">The sed command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loops.html">Loops in bash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cheatsheet.html">Cheatsheet of useful commands</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Keeping your data organised</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data.html">Example data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../readprocessing.html">A: Read processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../filtering.html">B: Filtering amplicons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../asv_otu_readmap.html">C: ASVs, OTUs and read mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../building_otu_phylogeny.html">D: Building OTU phylogeny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../otuid.html">E: Identifying OTU sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contactus.html">Contact us</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Bioinformatic Methods for Biodiversity Metabarcoding</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../gettingstarted.html">Getting started</a> &raquo;</li>
+        
+          <li><a href="../cli_bioinformatics.html">Command line bioinformatics</a> &raquo;</li>
+        
+      <li>Keeping your data organised</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/gettingstarted/cli_bioinformatics/keeping_organised.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="keeping-your-data-organised">
+<span id="keeping-organised"></span><h1>Keeping your data organised<a class="headerlink" href="#keeping-your-data-organised" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Command line bioinformatics has a much more restricted interface to your data and directory tree, and learning all of the different software and commands can take so much energy that keeping organised gets forgotten. However, lots of different files get created as you work through a bioinformatic pipeline, and keeping these organised is very very important. This is most crucial when you want to backtrack in your pipeline and try an alternative approach, or you need to track down the cause of an error or a major shift in your data structure.</p>
+<p>To this end, we strongly recommend two useful tips:</p>
+<ol class="arabic simple">
+<li>Keep a very clear and consistent naming convention and directory tree</li>
+<li>Keep a well organised record of the final commands you use</li>
+</ol>
+</div>
+<div class="section" id="naming-conventions">
+<h2>Naming conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h2>
+<p>If you make sure your files are clearly named using a consistent convention, you will save yourself so much time. It might be easy to keep track of an arbitrary naming system during a day’s work, but come back to it after the weekend or when your advisor suggests doing something differently a month later and you’ll be lost!</p>
+<p>There are lots of ways of naming directories and files, this is our method which isn’t necessarily the best but works well for use. Hopefully this will help you think of the best method for you. Remember that Linux always sorts files alphabetically when you list the contents of a directory.</p>
+<div class="section" id="our-method">
+<h3>Our method<a class="headerlink" href="#our-method" title="Permalink to this headline">¶</a></h3>
+<p>Each pipeline is in its own directory, named clearly with the pipeline name and a date (in ISO format, i.e. 2020-12-25, for easier sorting)</p>
+<p>Each pipeline directory contains a <code class="docutils literal notranslate"><span class="pre">commands.txt</span></code> file that lists the commands used to generate the files in that directory (see below)</p>
+<p>When a step draws on or creates multiple files that should be treated as a group, these are always in their own directory and that directory is treated as if it’s a complete file for naming purposes. The files within successive directories never change their names unless they are split up or merged together.</p>
+<p>Each file or directory of files is named using a serial number at the beginning of the file, which increments for each step that modifies the composition or format of the data at that step.</p>
+<p>So, for example, the starting example data is a set of FASTQ files with the name of the sequencing library. These are placed in a directory called <code class="docutils literal notranslate"><span class="pre">0_rawsequences/</span></code>. When these are demultiplexed, we call the output directory <code class="docutils literal notranslate"><span class="pre">1_demux/</span></code> to show that this is the next set of data in order, and that the step used to produce them was demultiplexing.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">11</span></code> comes before <code class="docutils literal notranslate"><span class="pre">2</span></code> in alphabetical sorting, so if you expect to have more than 10 stages you may want to use <code class="docutils literal notranslate"><span class="pre">00</span></code>, <code class="docutils literal notranslate"><span class="pre">01</span></code>, etc for successive stages, or use the first number for major versions and the second number for minor versions.</p>
+</div>
+</div>
+<div class="section" id="command-records">
+<h2>Command records<a class="headerlink" href="#command-records" title="Permalink to this headline">¶</a></h2>
+<p>As you work through a bioinformatics pipeline, you will try out lots of different commands and in between major steps perhaps carry out some reorganisation of your data or renaming. It is really useful to keep a record of your “final” commands for each step, absent any test runs, so that in theory you can completely rerun your entire pipeline from the beginning just by copy-and-pasting your list of “final” commands. This is really helpful to record your methodology, and to easily implement tweaks or changes to your pipeline - you can simply create a new commands file, create a new directory for the altered pipeline, copy across your starting data, then run your altered commands.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../data.html" class="btn btn-neutral float-right" title="Example data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cheatsheet.html" class="btn btn-neutral float-left" title="Cheatsheet of useful commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Vogler Lab.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p><br>Creedy, Vogler & Penlington, Natural History Museum London, Bioinformatic Methods for Biodiversity Metabarcoding. This site is a a deliverable of the iBioGen consortium funded by EU grant agreement No 810729, the content of this site is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank">Creative Commons Attribution ShareAlike 4.0 License</a></p>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
